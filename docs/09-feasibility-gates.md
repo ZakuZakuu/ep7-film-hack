@@ -6,7 +6,7 @@
 | --- | --- | --- |
 | G0 社区先例 | 有公开实现及其精确机型、版本、许可和验证范围 | 仅作研究问题，不进入产品开发 |
 | G1 可研究介质 | 合规的 E-P7 固件样本或经过确认的只读协议入口 | 停止虚构固件解包，调查合法获取与替代路径 |
-| G2 ART 路径定位 | E-P7 特定版本下真实的滤镜 ID、数据表、调用或 ISP 参数的证据 | 不造补丁、不宣称已找到 LUT |
+| G2 原生成像路径定位 | E-P7 特定版本下风格选择 → 配置/参数记录 → 实际预览/JPEG consumer 的证据，区分持久化与菜单/诊断/协议描述；不限 ART | 不造补丁、不把字符串/诊断读取当成成像算法、不宣称已找到 LUT |
 | G3 色彩表达能力 | 目标 LUT 在原生可控参数上具有可量化的拟合效果 | 列出不可表达之处，不承诺 1:1 胶片色彩 |
 | G4 可重复离线修改 | 版本限定、原始字节 guard、校验/签名约束、差分和合成测试 | 仅保留离线研究成果 |
 | G5 实机安全 | 可独立验证的升级接受与恢复方案、单独用户授权 | **禁止真实相机写入** |
@@ -21,8 +21,11 @@
 ## 先例不能直接迁移
 
 - [GR4-LUTSmith](https://github.com/lemonadesaltbagel/GR4-LUTSmith) 把创意 LUT 拟合到 GR IV 自带的色彩参数，非通用的任意 LUT 运行时。E-P7 的色彩表达自由度可能更低。
+- [GR Custom Tool](https://github.com/DoYitNow/gr-custom-tool) 的原生 profile 描述符、getter/setter、保存/加载方法可供研究；公开版明确缺少独立完整实机验收，GPL-2.0-only 代码和 GR4 地址不能直接移植。见 [T4 方法复核](14-native-profile-private-validation.md)。
 - [GR IV firmware research](https://github.com/radium-wang/ricoh-gr4-firmware-analysis-and-feature-expansion) 的工厂脚本及写入接口为理光特有。
 - [Magic Lantern](https://github.com/reticulatedpines/magiclantern_simplified) / [FujiHack](https://github.com/fujihack/fujihack) 的加载器、CPU/OS 和地址映射不能直接复制。
 - [NikonHacker](https://github.com/simeonpilgrim/nikon-firmware-tools) 的固件校验/补丁只针对其支持的尼康机型。
 
 一项可复现的 E-P7 证据，胜过大量看似完整但无法验证的代码。
+
+[Issue #18](../research/e142-native-profile-chain.md) 找到真实 Picture Mode 诊断字段与部分选择/地址链，尚未定位 COLOR 槽持久化或成像 consumer；G2 未通过，G4/G5 仍 NO-GO。官方四槽手动编辑不等于自动导入，也不等于本项目已验证自定义机内效果。

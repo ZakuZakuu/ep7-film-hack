@@ -36,6 +36,14 @@
 
 日期与访问结果见 [source-access-review](../research/source-access-review.md)；跨品牌实机事实仍是 author/community-reported。
 
+## T4 · GR Custom Tool 方法复核（2026-10-11）
+
+固定阅读 [DoYitNow/gr-custom-tool `549591db6ee7809fa7617c3637296ddc79b34f59`](https://github.com/DoYitNow/gr-custom-tool/tree/549591db6ee7809fa7617c3637296ddc79b34f59)。GR4 `1.11.10.x` 容器读取范围不等于资源写入范围；README 把识别的官方 `1.11.10.7` 和工具候选与未知布局分开。公开版明确**未完成独立端到端及实机验收**，生成文件、软件拟合和 XMP 功能不能算 E-P7 实机先例。
+
+源码存在性 **verified locally**：`firmware.py` 验证实际地址构造和资源边界；`filter_reader.py` 关联 style→profile→descriptor，区分 getter/default 与不可获取的 camera UserData；`slots.py` 分列 getter/setter/default 和 save/load/reset/snapshot 路线；矩阵/gamma codec 为 GR-specific、author-reported 重建。学习顺序为身份→记录→typed read/consumer→持久化→拟合；没有复制代码/地址/ARM模式、运行工具或生成候选。作者原创源为 **GPL-2.0-only**，第三方资源另有权利；本仓库 MIT 工具保持原创。精确源文件链接和局限见 [复现与来源](14-native-profile-private-validation.md)。
+
+优先级 P0 **方法研究**，不是 E-P7 工程资格。E-P7 [T4](../research/e142-native-profile-chain.md) 的两条候选停止在名称数据/诊断参数读取，未找到 COLOR 持久化与成像 consumer；不能套用 GR 的表尺寸、矩阵系数、gamma 编码或安装路径。
+
 ## T1.2 resource-format follow-up
 
 [Issue #10 report](../research/e142-resource-mapping.md) revisits CHDK's historical block categories and DVXuser's author-reported resource extractor/OSD observations. OE transformation is verified on E-P7; a transferable TruePic VIII resource-index implementation and its reuse license remain unverified. No old-model loading address/font layout or Ricoh resource convention was imported. Two bounded E-P7 structural probes did not establish an index or ART reference; two JPEG assets are independently decodable, not ART-linked.
