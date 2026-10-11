@@ -24,3 +24,4 @@ __pycache__/
 .DS_Store
 # Transient reference checkouts and source caches; never research deliverables
 work/
+*.squashfs

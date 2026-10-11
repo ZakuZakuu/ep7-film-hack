@@ -1,6 +1,6 @@
-# Evidence ledger — T0 / Issue #1
+# Evidence ledger — T0 through T1.1
 
-**No E-P7 firmware sample acquired, unpacked, patched or flashed. No real camera connected.** 核对日期 2026-10-11；官方目标版本 E-P7 1.1，用户机身版本 unknown。
+**Historical T0 scope: at that milestone no sample had been acquired. Superseded by the later T1/T1.1 measurements below; no camera connected or written.** 核对日期 2026-10-11；官方目标版本 E-P7 1.1，用户机身版本 unknown。
 
 `official` = 原厂文献；`verified locally` = 本轮可读的源码/文档内容或合成测试，不是相机实测；`author-reported / community-reported` = 上游声称的设备结果；`hypothesis / unknown` = 尚未验证。对于源码，model/version 是其目标范围，不是 E-P7 兼容承诺。E-P7 SHA-256 空缺不能用网页/跨品牌镜像哈希填充。
 
@@ -23,3 +23,17 @@
 | F15 / 2026-10-11 | Public source retrieval can return HTTP 200 interstitials; latest LUTSmith release differs from reviewed main | verified locally (HTTP/content) | No E-P7 sample; LUTSmith release v2.0.2 / main 2.1.0 | — | [source-access-review](source-access-review.md); [response metadata](source-access.json) | N/A | Reddit discussion and nonofficial updater content unverified; article also links an updater, so “all direct downloads closed” is not established | New lawful acquisition evidence required; no challenge/tool execution in T0 |
 
 **当前 gate 决策**：固件介质 G1 BLOCKED / 本轮 no-go；只读协议 CONDITIONAL research（执行仍需单独授权）；G2/G4/G5/G6 未通过，G3 需原生参数实测。下一步实验仅是提案，不延续 T0 授权。
+
+## Later T1/T1.1 evidence and resolved access failures
+
+The following chronological records retain their original scope; initial access failures were subsequently resolved by the authorized official download. ART remains unknown.
+
+| Date | Claim | Evidence class | Camera/version | Sample SHA-256 | Evidence | Limit or counterevidence | Next falsifiable test |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 2026-10-11 | Prior session validated five OE blocks/checksums and a plausible SquashFS superblock in block #2 | prior-session verified; NOT repeated in this run | E-P7 / owner-reported 1.1 | `9d1610124ad98f6edae4540182205f06c9c703d9033ef0c4f19847193f95eaeb` (prior measurement) | [PR #6 report](e142-first-sample-analysis.md); decoded payload-relative `0x021367e0`, NOT runtime address | Directory/content unvalidated; checksum not digital signature | Restore private input access, run actual upstream -s/-ll |
+| 2026-10-11 | Actual attachment cannot enter this executor: exceeds 32 MiB transfer cap; no mounted copy found | verified tool failure; not a firmware defect | E-P7 / expected 1.1 | Expected hash as above; NOT measured here | [Attachment access blocker](blockers/BLOCKER-e142-attachment-access.md) | Prior G1 evidence remains valid; current filesystem/data checks blocked | Private readable mount/link or ordered sub-32-MiB fragments; verify restored whole hash |
+| 2026-10-11 | Upstream squashfs-tools 4.6.1 compiled at pinned d8cb82d9840330f9344ec37b992595b5d7b44184 with LZO; synthetic tree listed/selectively extracted byte-exactly | verified locally, synthetic only | No camera / LZO synthetic filesystem | — (NO OEM sample) | [Build/reproduction](../docs/11-squashfs-private-validation.md); tests/test_extract_olympus_squashfs.py | No real E-P7 content validated, no ART filenames/offsets inferred | Run same tools on privately carved real segment after guards pass |
+| 2026-10-11 | Explicit local-only carving reuses existing OE checks and transformation; guards expected hash/size/all blocks/candidate range/no overwrite/revalidation | verified locally, synthetic only | No camera; offset tests include unaligned and chunk-crossing synthetic candidates | — (NO OEM sample) | tools/inspect_olympus_oe.py; [Issue #7 report](e142-squashfs-validation.md) | Carving does not validate filesystem content, signature, installation or recovery | Mature-tool directory validation, then bounded real file reads |
+| 2026-10-11 | Authorized official download command stopped before network: EP7_SERIAL absent; exit 2, no request made | verified process/CLI result; no secret value read or printed | E-P7 / expected 1.1 | Expected only; NOT measured here | [Input blocker](blockers/BLOCKER-e142-attachment-access.md); tools/ep7_firmware_fetch.py; two mock-only tests | Not a network failure, hash mismatch or filesystem defect | Bind variable privately to this task, then one authorized download and exact size/SHA check |
+| 2026-10-11 | Official download matches size/SHA, five OE checksums; real SquashFS -s/-ll and seven-file extraction exit 0 | verified in this run | E-P7 / owner-reported 1.1 | `9d1610124ad98f6edae4540182205f06c9c703d9033ef0c4f19847193f95eaeb` | [Real validation](e142-squashfs-validation.md); decoded block #2 payload+0x021367e0, NOT runtime address | Other 68 regular-file contents not extracted; no digital-signature validation | Evidence-based resource mapping in another scoped task |
+| 2026-10-11 | Five selected ELF files are ARM ELF32 LE; ART keyword/path checks yield no direct candidate | verified bounded observation; Linux auxiliary role hypothesized | Same E-P7 sample | Same measured whole-file hash | readelf 2.44 -h/-d; [ART blocker](blockers/BLOCKER-e142-art-evidence.md) | Not proof of main processor ISA or ART absence; no resource ID/caller evidence | Community format precedent + version-specific index/reference validation |

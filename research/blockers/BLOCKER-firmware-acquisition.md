@@ -1,3 +1,5 @@
+> Historical T0 blocker; access resolved for the hash-verified E-P7 candidate by [T1](../e142-first-sample-analysis.md) / [T1.1](../e142-squashfs-validation.md). Remaining ART/signature/recovery gates are not implied passed.
+
 # BLOCKER｜E-P7 完整固件研究介质尚未建立
 
 日期：2026-10-11；范围：T0 / Issue #1；型号：Olympus PEN E-P7；目标官方版本：1.1（并非用户机身版本）。

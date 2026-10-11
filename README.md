@@ -9,7 +9,7 @@
 
 The E-P7 has useful Color/Mono Profile Controls and built-in ART effects, but they are difficult to combine and limited for intricate film looks. The long-term user experience we want is *choose a named film look in-camera, preview it, shoot a finished JPEG*, with several switchable presets. We prefer reusing existing ART UI/processing capabilities rather than writing a new ISP engine.
 
-**A goal is not a capability.** We do not know whether E-P7 ART effects are stored as editable tables, code, fixed ISP modes, or a mixture. Firmware access, acceptance of modified updates, and safe recovery remain unverified.
+**A goal is not a capability.** We do not know whether E-P7 ART effects are stored as editable tables, code, fixed ISP modes, or a mixture. The candidate firmware is privately accessible; ART representation, acceptance of modified updates, and safe recovery remain unverified.
 
 ## Research strategy (borrow proven methods, not patches)
 
@@ -25,15 +25,15 @@ Cross-camera implementations are **precedent for an investigation**, not evidenc
 
 ## Project state
 
-- T0 review: [findings and three proposed experiments](research/first-pass-findings.md), [acquisition blocker](research/blockers/BLOCKER-firmware-acquisition.md), [source audit](research/source-access-review.md), and [synthetic validation](research/validation-t0.md). Firmware G1 is blocked in this run; protocol/native-profile routes remain conditional research only. No T1 work has started.
+- T0 review: [findings and three proposed experiments](research/first-pass-findings.md), [acquisition blocker](research/blockers/BLOCKER-firmware-acquisition.md), [source audit](research/source-access-review.md), and [synthetic validation](research/validation-t0.md). The historical G1 access blocker was subsequently resolved by T1/T1.1; protocol/native-profile routes remain conditional research.
 - Official firmware listing: E-P7 **1.1**, dated 2022-02-28 ([OM SYSTEM](https://support.jp.omsystem.com/en/support/imsg/digicamera/download/software/firm/e1/)). This is a listing, **not** a verified downloadable firmware image.
-- No proprietary E-P7 firmware sample has been acquired, unpacked, disassembled or patched in this repository.
+- An owner-provided candidate was privately validated as five OE blocks in [PR #6 findings](research/e142-first-sample-analysis.md); no OEM binary is in Git. [Issue #7 findings](research/e142-squashfs-validation.md) verify the real LZO SquashFS directory and seven selected files using upstream tools. ART remains unknown; no device writes.
 - No E-P7 hardware has been connected or tested.
 - Included helper `tools/inspect_blob.py` only reports metadata and sample entropy on user-provided files; it does **not** parse E-P7 firmware.
 
-## First task (Codex Cloud)
+## Current milestones and next task
 
-Read [`AGENTS.md`](AGENTS.md), [`CODEX_START.md`](CODEX_START.md) and the existing research notes. Perform **T0 only**: verify official references; assess source/firmware availability and legal/reproducibility constraints; record evidence and concrete next experiments. Do not invent analysis from missing binaries and do not build UI or patches before establishing a substrate.
+[T0 findings](research/first-pass-findings.md) establish the source/feasibility baseline; [T1 container findings](research/e142-first-sample-analysis.md) and [T1.1 filesystem findings](research/e142-squashfs-validation.md) record private sample validation. Next: [Issue #10](https://github.com/ZakuZakuu/ep7-film-hack/issues/10), bounded resource-index/reference research beyond the network SquashFS. ART linkage remains unknown. Read [AGENTS.md](AGENTS.md), [research policy](RESEARCH_POLICY.md) and the current issue; [CODEX_START.md](CODEX_START.md) is the historical T0 startup scope, not the current milestone.
 
 ```bash
 python3 -m unittest discover -s tests -v
