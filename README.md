@@ -33,7 +33,7 @@ Cross-camera implementations are **precedent for an investigation**, not evidenc
 
 ## Current milestones and next task
 
-[T0 findings](research/first-pass-findings.md) establish the source/feasibility baseline; [T1 container findings](research/e142-first-sample-analysis.md) and [T1.1 filesystem findings](research/e142-squashfs-validation.md) record private sample validation. Next: [Issue #10](https://github.com/ZakuZakuu/ep7-film-hack/issues/10), bounded resource-index/reference research beyond the network SquashFS. ART linkage remains unknown. Read [AGENTS.md](AGENTS.md), [research policy](RESEARCH_POLICY.md) and the current issue; [CODEX_START.md](CODEX_START.md) is the historical T0 startup scope, not the current milestone.
+[T0 findings](research/first-pass-findings.md) establish the source/feasibility baseline; [T1 container findings](research/e142-first-sample-analysis.md) and [T1.1 filesystem findings](research/e142-squashfs-validation.md) record private sample validation. [T1.2 resource findings](research/e142-resource-mapping.md) for [Issue #10](https://github.com/ZakuZakuu/ep7-film-hack/issues/10) identify two JPEG assets and aligned layout beyond the network SquashFS; resource index and ART linkage remain unknown. The next bounded experiment requires a reviewed Olympus resource-format precedent. Read [AGENTS.md](AGENTS.md), [research policy](RESEARCH_POLICY.md) and the current issue; [CODEX_START.md](CODEX_START.md) is the historical T0 startup scope, not the current milestone.
 
 ```bash
 python3 -m unittest discover -s tests -v
