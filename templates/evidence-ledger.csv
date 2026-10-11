@@ -1,0 +1,3 @@
+date,claim,classification,model,firmware_version,sha256,source_or_command,file_offset_or_address,counterevidence,next_test
+2026-10-11,"E-P7 uses TruePic VIII",official,E-P7,unspecified,not_applicable,https://explore.omsystem.com/c/en/e-p7,not_applicable,,
+2026-10-11,"E-P7 ART algorithms are replaceable LUTs",hypothesis,E-P7,unknown,no_sample,not_yet_evidenced,unknown,"No E-P7 firmware sample analyzed",Investigate firmware and ART structures

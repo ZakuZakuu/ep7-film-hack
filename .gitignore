@@ -1,0 +1,24 @@
+# OEM firmware, extracted images and proprietary device content
+private_samples/
+firmware/
+firmware-*/
+extracted/
+image_dump/
+flash_dump/
+*.BIN
+*.bin
+*.fw
+*.img
+*.orf
+*.ORF
+*.dng
+*.DNG
+captures/
+logs/private/
+*.pcap
+*.pcapng
+__pycache__/
+.pytest_cache/
+.venv/
+.env
+.DS_Store
