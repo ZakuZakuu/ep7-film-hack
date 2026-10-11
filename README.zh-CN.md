@@ -42,6 +42,6 @@ T0 复核结果见 [首轮报告](research/first-pass-findings.md)、[固件获�
 
 ## 跳转
 
-[当前任务 Issue #10](https://github.com/ZakuZakuu/ep7-film-hack/issues/10) · [T0 研究基线](research/first-pass-findings.md) · [T1 容器成果](research/e142-first-sample-analysis.md) · [T1.1 文件系统成果](research/e142-squashfs-validation.md) · [技术路线](docs/03-technical-playbook.md) · [完整资源](docs/08-sources.md)
+[Issue #10 资源布局成果](research/e142-resource-mapping.md) · [T0 研究基线](research/first-pass-findings.md) · [T1 容器成果](research/e142-first-sample-analysis.md) · [T1.1 文件系统成果](research/e142-squashfs-validation.md) · [技术路线](docs/03-technical-playbook.md) · [完整资源](docs/08-sources.md)
 
 公开发布约束：本仓库不包含原厂固件或提取代码，也尚无已验证 E-P7 实机改造功能。详见 [English README](README.md)、[可行性闸门](docs/09-feasibility-gates.md) 及 [研究政策](RESEARCH_POLICY.md)。

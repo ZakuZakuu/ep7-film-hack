@@ -35,3 +35,7 @@
 - olympus-view-and-delete: [README.md](https://github.com/dpolarov/olympus-view-and-delete/blob/3fbfa1784cea16392aa68af460e1b44ce7f23371/README.md).
 
 日期与访问结果见 [source-access-review](../research/source-access-review.md)；跨品牌实机事实仍是 author/community-reported。
+
+## T1.2 resource-format follow-up
+
+[Issue #10 report](../research/e142-resource-mapping.md) revisits CHDK's historical block categories and DVXuser's author-reported resource extractor/OSD observations. OE transformation is verified on E-P7; a transferable TruePic VIII resource-index implementation and its reuse license remain unverified. No old-model loading address/font layout or Ricoh resource convention was imported. Two bounded E-P7 structural probes did not establish an index or ART reference; two JPEG assets are independently decodable, not ART-linked.
