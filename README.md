@@ -31,9 +31,11 @@ Cross-camera implementations are **precedent for an investigation**, not evidenc
 - No E-P7 hardware has been connected or tested.
 - Included helper `tools/inspect_blob.py` only reports metadata and sample entropy on user-provided files; it does **not** parse E-P7 firmware.
 
-## Current milestones and next task
+## Current milestones and decision
 
-[T0 findings](research/first-pass-findings.md) establish the source/feasibility baseline; [T1 container findings](research/e142-first-sample-analysis.md) and [T1.1 filesystem findings](research/e142-squashfs-validation.md) record private sample validation. [T1.2 resource findings](research/e142-resource-mapping.md) for [Issue #10](https://github.com/ZakuZakuu/ep7-film-hack/issues/10) identify two JPEG assets and aligned layout beyond the network SquashFS; resource index and ART linkage remain unknown. The next bounded experiment requires a reviewed Olympus resource-format precedent. Read [AGENTS.md](AGENTS.md), [research policy](RESEARCH_POLICY.md) and the current issue; [CODEX_START.md](CODEX_START.md) is the historical T0 startup scope, not the current milestone.
+[T0 baseline](research/first-pass-findings.md), [OE validation](research/e142-first-sample-analysis.md), [filesystem findings](research/e142-squashfs-validation.md), [resource layout](research/e142-resource-mapping.md) and [media limits](research/e142-media-triage-and-feasibility.md) are retained. [Issue #13 decision](research/art-update-feasibility.md): OEM-added Bleach Bypass is verified history, but E-P7 ART processing/editability and modified-image acceptance/recovery remain unknown. Pause firmware-modification engineering; further offline research needs the documented prerequisites. Official E-P7 profile-import destinations are unsupported; native manual profiles remain an alternative to measure.
+
+Read [AGENTS.md](AGENTS.md), [research policy](RESEARCH_POLICY.md) and the authorized issue. [CODEX_START.md](CODEX_START.md) records the historical T0 scope.
 
 ```bash
 python3 -m unittest discover -s tests -v

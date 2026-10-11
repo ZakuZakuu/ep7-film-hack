@@ -13,7 +13,7 @@
 | 过去有人针对旧 Olympus 机型解包/修改固件，涉及录像限制/镜头白名单 | P | [2010 年固件格式工具研究](https://www.dvxuser.com/threads/e-p1-e-p2-e-pl1-hack-research.217453/)、[2019 M43 社区链接](https://www.reddit.com/r/M43/comments/bnhfb5/modified_olympus_firmware_removes_30minute/)、[原论坛讨论](https://micro43club.pro/forum/threads/modifikacija-proshivki-kamer-olympus.22086/)；**不可推出 E-P7 已可刷自制固件** |
 | GR IV 有解包器、只读探针、通过工厂脚本替换关机画面案例 | P | [GR IV 研究仓库](https://github.com/radium-wang/ricoh-gr4-firmware-analysis-and-feature-expansion) |
 | GR IV research 仓库提供任意 3D LUT 运行时 | N | 此处特指 radium-wang 研究仓库，不能泛指所有 GR IV 项目。GR4-LUTSmith 是另一个项目，公开源码拟合 creative LUT 到原生参数并修改槽位，非任意 LUT 运行时；范围/许可见 [T0 矩阵](10-prior-art-matrix.md) |
-| E-P7 的 ART 滤镜存在可换的 LUT/资源表 | H | **尚无 E-P7 固件实证** |
+| E-P7 的 ART 滤镜存在可换的 LUT/资源表 | H | 已验证容器与 ART 名称线索，未建立参数/算法归属；见 [T2 决策](../research/art-update-feasibility.md) |
 | E-P7 可以运行自定义 ARM/Linux 插件直接处理实时 JPEG | H | Linux 组件存在不意味着访问 ISP 或任意代码执行 |
 | Wi-Fi 可发现 E-P7 的配方写入命令 | H | 公开 OPC 工具只证明**某些 Olympus 机型**有远程控制/部分设置能力；未见 E-P7 配方写入验证 |
 | E-P7 可安全降级、恢复损坏启动分区 | N | 未见 E-P7 可靠的独立恢复路径；禁止假设 |
@@ -26,8 +26,12 @@
 
 ## 未确认事项（优先补证）
 
-- E-P7 的 v1.1 原始完整固件是否可从合规来源直接取得？OM Workspace 获取过程是否含机型绑定或通信加密？
+- E-P7 v1.1 候选已通过授权官方路线取得并核对 size/SHA；修改包接受的型号/版本/信任校验仍未知。
 - 官方 Linux 软件组件在相机中的具体职责是什么？是否有可提取的设备树、文件系统和 ELF？
 - ART 滤镜名称/标识符/参数在哪里存储？是否存在多组数据表和 shared processing routines？
 - USB、PTP/MTP 和 Wi-Fi 的 E-P7 能力列表到底有哪些？其中是否存在配置只读、配置写入接口？
 - 官方 ART 子效果已有何种**允许的**组合？不能把 UI 的所有限制都归因于“一个简单锁”。
+
+## T2 官方新增证据
+
+2018 原厂更新为 PEN-F 3.0、E-M1 II 2.0、E-M5 II 4.0 新增 Bleach Bypass；厂家扩展 ART 的先例不证明 E-P7 第三方算法修改。官方 FAQ 007489 / 007407 区分 E-P7 JPEG 作为 profile 来源与写入目标，E-P7 不支持这两项官方 Profile Load 目的机功能。来源及限制见 [决策](../research/art-update-feasibility.md)。
