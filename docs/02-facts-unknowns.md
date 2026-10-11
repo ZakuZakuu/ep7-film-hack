@@ -39,3 +39,9 @@
 ## T3 程序级证据
 
 同一 owner-reported v1.1 / SHA-256 `9d1610124ad98f6edae4540182205f06c9c703d9033ef0c4f19847193f95eaeb` 中，GNU binutils 验证 #0 的 MN10300-family 小程序调用与返回，并由八个具名常量的落点支持静态映射 `payload offset + 0x60020020`；具体 CPU 子型、OS、硬件运行地址和 ART consumer 仍未知。#3 也有 MN103 代码，职责与基址未知；辅助 ARM ELF 不代表主程序架构。三处 BleachBypass 名称在合法 `oishare` XML 中，仅是接口描述。见 [完整程序图与反证](../research/e142-executable-map.md)；G2 未通过，安装/恢复闸门没有变化。
+
+## T4 原生 Picture Mode 证据与产品边界
+
+[Issue #18](../research/e142-native-profile-chain.md) 在同一哈希的 #0 中验证了诊断入口 0x13be62f 的六个 byte 字段（工作缓冲 +0x124…0x129），以及 CREATE_PARAM 入口 0x13c1f98 的 group/type/mode 字段（输入对象 +8/+9/+0xa，mode 为 halfword）。选择辅助函数 0x2e9e99 有四个地址选择分支，但没有证据对应 COLOR1–4；未知 `udfu01` 语义与外部调用 0x47001052 阻止把它当成已解码配置记录。持久化与预览/JPEG consumer 仍 N/unknown。
+
+官方说明书 pp.51–53、103、130 支持四个 COLOR 槽的编辑/保存、屏幕效果和 Picture Mode 的原生处理；未证明任意 XMP/LUT 的导入、拟合质量或更多槽。优先沿已有字段找 producer/consumer，手动配方仅是产品的部分能力，非完整导入成果。两条假设已停止，见 [blocker](../research/blockers/BLOCKER-e142-native-profile-consumer.md)。
