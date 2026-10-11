@@ -61,34 +61,34 @@ python3 tools/ep7_firmware_fetch.py --serial-env EP7_SERIAL --output-dir /tmp/ep
 不要用 `sudo`，不要挂载镜像，不执行提取的文件，不把 stdout/目录列表交给 GitHub CI。`private_samples/`、`work/`、`*.squashfs` 被忽略；忽略规则不替代提交清单审查。
 
 ```bash
-# 私有任务环境内：先把获授权且可读取的输入置于这个位置，不通过 Git 传送
+# 私有任务环境内：输入为上一步下载的绝对路径，不复制到 checkout
 umask 077
-mkdir -p private_samples/t11
-chmod 700 private_samples private_samples/t11
+mkdir -p /tmp/ep7-firmware/t11
+chmod 700 /tmp/ep7-firmware /tmp/ep7-firmware/t11
 # 确认 111017984 bytes 和用户预期 SHA-256；任一不符就停止
-wc -c < private_samples/E142_EP7_firmware_download.BIN
-sha256sum private_samples/E142_EP7_firmware_download.BIN
+wc -c < /tmp/ep7-firmware/E142_EP7_firmware_download.BIN
+sha256sum /tmp/ep7-firmware/E142_EP7_firmware_download.BIN
 python3 tools/inspect_olympus_oe.py \
-  private_samples/E142_EP7_firmware_download.BIN --json \
-  > private_samples/t11/container.json
+  /tmp/ep7-firmware/E142_EP7_firmware_download.BIN --json \
+  > /tmp/ep7-firmware/t11/container.json
 # 本行自身也核对 SHA/size/所有块校验、唯一候选与 bounds；拒绝已存在的输出
 python3 tools/inspect_olympus_oe.py \
-  private_samples/E142_EP7_firmware_download.BIN \
-  --extract-squashfs private_samples/t11/block2.squashfs \
+  /tmp/ep7-firmware/E142_EP7_firmware_download.BIN \
+  --extract-squashfs /tmp/ep7-firmware/t11/block2.squashfs \
   --allow-local-oem-output \
   --expected-size 111017984 \
   --expected-sha256 9d1610124ad98f6edae4540182205f06c9c703d9033ef0c4f19847193f95eaeb \
   --block-index 2 --payload-offset 0x021367e0 --json \
-  > private_samples/t11/carving.json
+  > /tmp/ep7-firmware/t11/carving.json
 ```
 
 成功 carving 不表示内容被验证。下面依次运行；上一条非零即停，不屏蔽错误：
 
 ```bash
 work/squashfs-upstream/source/squashfs-tools/unsquashfs \
-  -s private_samples/t11/block2.squashfs > private_samples/t11/superblock.txt 2>&1
+  -s /tmp/ep7-firmware/t11/block2.squashfs > /tmp/ep7-firmware/t11/superblock.txt 2>&1
 work/squashfs-upstream/source/squashfs-tools/unsquashfs \
-  -ll private_samples/t11/block2.squashfs > private_samples/t11/listing.txt 2>&1
+  -ll /tmp/ep7-firmware/t11/block2.squashfs > /tmp/ep7-firmware/t11/listing.txt 2>&1
 ```
 
 确认上面的真实目录后，才从私有 listing 中挑选少量**普通文件**。用 upstream `-strict-errors -no-xattrs -no-progress -processors 1 -no-wildcards -d PRIVATE_NEW_DEST IMAGE EXACT_FILE_PATH...` 选择性提取。不要选择设备节点、整棵根目录或未经审查的符号链接；不使用 `-force`、`-ignore-errors` 或 `-no-exit-code`。仅列表能读不证明文件压缩数据可解，记录真正文件读取的独立结果。

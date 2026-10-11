@@ -22,7 +22,7 @@
 7. `docs/07-image-science-and-backup.md` — 色彩模拟验证方法及失败备选。
 8. `docs/08-sources.md` — 带链接的来源与局限（2026-10-11 核查）。
 9. `docs/09-feasibility-gates.md` — 分阶段可行性判定、硬阻塞与替代路线。
-10. `CODEX_START.md` — **准备好后直接复制给 Codex Cloud 的启动指令**。
+10. `CODEX_START.md` — 历史 T0 启动指令；当前任务以 Issue 的授权范围为准。
 11. `AGENTS.md` — Codex 在仓库内应自动遵循的执行规则。
 
 ## 阶段目标不是写出一个假插件
@@ -40,6 +40,6 @@
 
 ## 跳转
 
-[立即给 Codex 的任务](CODEX_START.md) · [技术路线](docs/03-technical-playbook.md) · [完整资源](docs/08-sources.md)
+[当前任务 Issue #10](https://github.com/ZakuZakuu/ep7-film-hack/issues/10) · [T0 研究基线](research/first-pass-findings.md) · [T1 容器成果](research/e142-first-sample-analysis.md) · [T1.1 文件系统成果](research/e142-squashfs-validation.md) · [技术路线](docs/03-technical-playbook.md) · [完整资源](docs/08-sources.md)
 
 公开发布约束：本仓库不包含原厂固件或提取代码，也尚无已验证 E-P7 实机改造功能。详见 [English README](README.md)、[可行性闸门](docs/09-feasibility-gates.md) 及 [研究政策](RESEARCH_POLICY.md)。

@@ -9,7 +9,7 @@
 
 The E-P7 has useful Color/Mono Profile Controls and built-in ART effects, but they are difficult to combine and limited for intricate film looks. The long-term user experience we want is *choose a named film look in-camera, preview it, shoot a finished JPEG*, with several switchable presets. We prefer reusing existing ART UI/processing capabilities rather than writing a new ISP engine.
 
-**A goal is not a capability.** We do not know whether E-P7 ART effects are stored as editable tables, code, fixed ISP modes, or a mixture. Firmware access, acceptance of modified updates, and safe recovery remain unverified.
+**A goal is not a capability.** We do not know whether E-P7 ART effects are stored as editable tables, code, fixed ISP modes, or a mixture. The candidate firmware is privately accessible; ART representation, acceptance of modified updates, and safe recovery remain unverified.
 
 ## Research strategy (borrow proven methods, not patches)
 
@@ -30,9 +30,9 @@ Cross-camera implementations are **precedent for an investigation**, not evidenc
 - No E-P7 hardware has been connected or tested.
 - Included helper `tools/inspect_blob.py` only reports metadata and sample entropy on user-provided files; it does **not** parse E-P7 firmware.
 
-## First task (Codex Cloud)
+## Current milestones and next task
 
-Read [`AGENTS.md`](AGENTS.md), [`CODEX_START.md`](CODEX_START.md) and the existing research notes. Perform **T0 only**: verify official references; assess source/firmware availability and legal/reproducibility constraints; record evidence and concrete next experiments. Do not invent analysis from missing binaries and do not build UI or patches before establishing a substrate.
+[T0 findings](research/first-pass-findings.md) establish the source/feasibility baseline; [T1 container findings](research/e142-first-sample-analysis.md) and [T1.1 filesystem findings](research/e142-squashfs-validation.md) record private sample validation. Next: [Issue #10](https://github.com/ZakuZakuu/ep7-film-hack/issues/10), bounded resource-index/reference research beyond the network SquashFS. ART linkage remains unknown. Read [AGENTS.md](AGENTS.md), [research policy](RESEARCH_POLICY.md) and the current issue; [CODEX_START.md](CODEX_START.md) is the historical T0 startup scope, not the current milestone.
 
 ```bash
 python3 -m unittest discover -s tests -v
