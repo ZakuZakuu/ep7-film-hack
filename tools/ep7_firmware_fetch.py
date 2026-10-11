@@ -48,12 +48,23 @@ def build_request(serial: str) -> bytes:
     return ET.tostring(root, encoding="utf-8", xml_declaration=True)
 
 
+def get_serial(env_name: str | None = None) -> str:
+    """Get a serial via env for noninteractive Cloud setup, or prompt locally.
+
+    Environment values are exposed to the task and must never be logged.
+    """
+    if env_name:
+        return os.environ.get(env_name, "").strip()
+    return getpass.getpass("E-P7 camera serial (entered locally; not stored): ").strip()
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--output-dir", type=Path, default=Path("~/ep7-firmware").expanduser())
     ap.add_argument("--allow-http", action="store_true", help="Allow HTTP on verified vendor hosts (not preferred)")
+    ap.add_argument("--serial-env", metavar="NAME", help="Read serial from an environment variable (noninteractive; never printed)")
     args = ap.parse_args()
-    serial = getpass.getpass("E-P7 camera serial (entered locally; not stored): ").strip()
+    serial = get_serial(args.serial_env)
     if not serial or len(serial) > 60:
         print("No plausible serial entered; no request made.", file=sys.stderr)
         return 2
