@@ -1,5 +1,7 @@
 # T2 evidence / reproducibility appendix
 
+Later correction: [T3](e142-executable-map.md) validates the exact 8,011-byte `oishare` XML slice at #0 payload 0xec5a28. The first three #0 anchors below belong to that interface description; the fourth property-name occurrence is not a demonstrated processing reference. T2's aligned-word test did not cover variable-length MN103 instruction operands or T3's newly supported execution alias.
+
 2026-10-11; decision memo: [ART and install feasibility](art-update-feasibility.md). Baseline `efed91b1d9aeb3315cf2b8c3b5d3b2771418b6f9`; PR #11/#12 already merged, not pending as described in the original issue snapshot. No implementation work or new parser was necessary.
 
 ## Primary sources and provenance
