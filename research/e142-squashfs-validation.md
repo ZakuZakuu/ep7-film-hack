@@ -1,66 +1,66 @@
-# E-P7 T1.1：SquashFS 工具验证与真实样本访问状态
+# E-P7 T1.1：真实 SquashFS 验证与有界资源调查
 
-日期：2026-10-11；任务 [Issue #7](https://github.com/ZakuZakuu/ep7-film-hack/issues/7)。基线为 [PR #6](https://github.com/ZakuZakuu/ep7-film-hack/pull/6) 的 `research/e142-container-validation`，commit `770960ba86da3d9ebd24963500cb264d8b53eae4`。本轮仅只读静态工具研究，无设备通信或写入。
+日期 2026-10-11；[Issue #7](https://github.com/ZakuZakuu/ep7-film-hack/issues/7)。基线：[PR #6](https://github.com/ZakuZakuu/ep7-film-hack/pull/6)，`research/e142-container-validation` / `770960ba86da3d9ebd24963500cb264d8b53eae4`。仅私有环境只读静态分析，无设备连接、程序执行、repack 或写入。
 
-**当前结论：已完成 upstream LZO 工具与受保护的 OE→SquashFS 提取入口的合成验证；附件传输受限，且官方下载路径的 `EP7_SERIAL` 未注入当前进程；本轮未能读取真实 E-P7 输入，因此未验证真实文件系统目录/文件，也未开展 ART 资源调查。** 不用合成测试代替真实固件证据。Issue #7 的真实样本验收仍未完成。
+**verified：官方下载文件的 size/SHA、五个 OE 块、真实 LZO SquashFS 目录及七个普通文件的选择性提取成功。unknown：ART 滤镜、色彩参数表及主成像处理器。** 没有把关键词或 ELF 架构升级为 ART/主 CPU 证据。
 
-## 真实输入与证据等级
+## 输入、复现与边界
 
-用户授权私有静态分析的候选：E-P7 / owner-reported v1.1，111,017,984 bytes，SHA-256 `9d1610124ad98f6edae4540182205f06c9c703d9033ef0c4f19847193f95eaeb`。这是本轮**预期值**，并非新测量值。PR #6 的结果是此前私有环境的实测记录，本轮只复核该报告/源码，不冒充重新跑过真实文件。
+用户授权官方只读下载；序列号仅临时输入进程，没有写入文件、报告或 Git，也未回显。下载器补齐 `--serial-env`；最初任务变量缺失，命令在请求前退出 2。用户提供授权输入后进行一次实际下载，官方 metadata 返回 host `dl01.om-digitalsolutions.net` 和 `OLY_E_142_1100_0000_0000.BIN`。附件 32 MiB 传输上限仍存在，但官方路线已解除本任务输入 blocker，见 [历史 blocker](blockers/BLOCKER-e142-attachment-access.md)。
 
-| 问题 | 可用证据 | 本轮判定 |
-| --- | --- | --- |
-| 真实原厂文件大小/哈希 | 用户及 PR #6 记录 | prior-session verified；本轮未读取/复测 |
-| 五个 OE 块、历史 XOR/permutation、加和校验 | PR #6 的真实记录；复用其 decoder，原 8 项合成测试通过 | 本轮 verified on synthetic；真实重验待输入可访问 |
-| block #2 的 SquashFS v4/LZO 候选 | PR #6：decoded payload+`0x021367e0`，247 inodes、block_size 131072、bytes_used 3393511 | 真实 superblock 是 prior-session verified；目录/内容仍 unknown |
-| upstream unsquashfs 的 LZO 能力 | 固定上游源码构建；help 列 gzip/lzo；合成 LZO 树真实列出并选择性提取、逐字节匹配 | verified locally on synthetic filesystem |
-| ART、Color Profile 或成像组件 | 无本轮真实目录/文件输出 | unknown；没有找到或排除 ART，未声称滤镜地址/参数表 |
-| OEM 签名、安装、恢复 | 无证据 | unknown / no-go；加和校验不等于数字签名 |
+- 机型/版本：E-P7，owner-reported v1.1；原厂文件名与此一致，未独立验证 OEM 数字签名。
+- 原文件实测 **111017984 bytes**、SHA-256 **`9d1610124ad98f6edae4540182205f06c9c703d9033ef0c4f19847193f95eaeb`**，与用户预期及 PR #6 完全相同。
+- 独立 size/SHA 检查通过；默认 OE 检查及 carving 内全文件两次重验通过：5 个块覆盖全文件，每块 checksum residual 为零。加和校验不是数字签名或安装安全证明。
+- 原文件、carved segment、完整 listing、提取文件和 readelf 输出都留在 `/tmp/ep7-firmware/`。不上传到 CI、GitHub 或第三方分析服务。
 
-`0x021367e0` 是 **block #2 解码 payload 内的文件偏移**，不是相机运行时地址，也不是 ART 地址。由于变换是 16-byte lane permutation，不能将解码位置简单当成一个可直接 memcpy 的原始连续文件切片。提取器先复用 lane decode，再按精确 bytes_used 截取。
+命令与固定工具构建见 [复现步骤](../docs/11-squashfs-private-validation.md)。已有 OE decoder/社区先例来自 PR #6；本轮只加 bounded carving 和 guards，不另写 SquashFS decoder。
 
-## 当前为何不能读取真实内容
+## 真实文件系统：verified
 
-私有附件的受支持下载工具返回：`file exceeds the executor transfer limit of 32 MiB`。任务环境 `/workspace`、`/mnt` 没有该文件挂载，`/mnt/data` 不存在。没有可读文件，就无法计算新哈希/重验 OE 或运行真实 `unsquashfs -s/-ll`。完整失败、边界与可行替代见 [BLOCKER-e142-attachment-access](blockers/BLOCKER-e142-attachment-access.md)。用户随后授权官方下载器路径；补齐其 `--serial-env` 参数后，指定命令以退出码 2 停在请求之前：`Serial environment variable is unavailable or empty; no request made.` 当前进程的变量存在性检查为 false，未打印或记录序列号。没有官方服务响应或下载文件，因此不能判断网络、实际 hash 或文件系统是否有问题。缺失绑定已报告，未重试。
+block #2 原文件块起点 `0x03200000`，SquashFS 位于**解码 payload 内文件偏移** `0x021367e0`；不是运行时地址，也不是 ART 地址。复用 16-byte lane 变换后按 bytes_used 截取，不能直接用原始文件连续切片替代。
 
-这是输入访问限制，**不是固件校验失败、SquashFS 损坏或 LZO 不支持**。
+| 项目 | 本轮实测 |
+| --- | --- |
+| Carved segment | 3393511 bytes；SHA-256 `de0fe0b6ee12013d89f6c0bff455d8c03893f8bd05fc9d8ba5716076897c7f79` |
+| 工具 | upstream squashfs-tools 4.6.1，commit `d8cb82d9840330f9344ec37b992595b5d7b44184`；LZO build |
+| `unsquashfs -s` | exit 0；SquashFS 4.0、LZO、block size 131072、247 inodes、12 fragments、1 ID、无 xattrs |
+| 内部 timestamp | 2020-10-21 14:08:33；文件系统记录，不代表固件发布日期 |
+| `unsquashfs -ll` | exit 0；13 directories（含根）、159 symlinks、75 regular files；主要是 bin/lib/sbin/share |
+| 选择性提取 | strict-errors、no-xattrs、processors 1、no-wildcards；7 个事先由 listing 确认的普通文件，exit 0；未提取设备节点或选择符号链接 |
 
-与 PR #6 不同，本轮已经解决成熟 LZO 工具缺失问题：不再用不支持 SquashFS 的 libarchive，不开发自制文件系统解码器。
+目录名称包括 curl、hostapd、dnsmasq、lighttpd 及网络库；**hypothesized** 为 Linux 网络/辅助软件区域。目录名不能证明版本、许可证合规、服务运行状态或完整相机架构。未验证其余 68 个普通文件的数据解压，不声称所有文件都已读过。
 
-## 本轮实现与已完成验证
+以下是少量实际读取的文件 metadata，无原厂内容、完整目录或反汇编：
 
-1. `tools/inspect_olympus_oe.py` 默认依旧仅检查/输出 metadata。显式 `--extract-squashfs` 必须同时给出 local OEM output opt-in、期望 SHA-256/长度、块索引、decoded payload offset。
-2. 复用原 OE 变换、全文件哈希与每块加和校验。输出前检查候选唯一性/bytes_used/边界，允许非 lane 对齐的 FS 起止；对同一个 read-only descriptor 再验证全输入，防止检测到输入变化后发布 artifact。
-3. 只输出 bytes_used 的私有 SquashFS segment，不输出其他块、原厂代码片段或镜像安装包。临时输出权限 0600，失败清理；通过所有 guards 后以 no-replace link 发布，不覆盖文件/符号链接。Git checkout 内只允许 `private_samples/`，外部私有目录也可用。这些保护不能替代发布前逐项审核或防止人为 `git add -f`。
-4. 提取只证明 bounded carving 成功，**目录/文件必须另由 upstream unsquashfs 检查**。没有 decoder/FS patch/repack/installer 功能。全部原创增量；没有复制历史社区或 GPL 上游实现到 MIT 项目。
-5. 十二项新增测试（另含两项 `--serial-env` mock-only 用例：缺失/不合法值请求前停止，合成值不出现在输出中）（含空 OE 拒绝）包括 opt-in/hash/size/index/offset、越界、其他块损坏、已有输出/符号链接、Git 输出位置、跨 1 MiB 边界、输入不变/0600/失败清理、CLI，以及成熟工具 LZO integration。integration 在临时目录用 upstream mksquashfs 生成一个 131072 block size 的纯合成树，封装成两个合成 OE 块，再 carve、`-s`、`-ll`、选择性提取并比对两文件完整字节；截断镜像由 upstream 拒绝。
+| 路径 | bytes | SHA-256 | 验证范围 |
+| --- | ---: | --- | --- |
+| bin/am | 4448 | `fd09e02821ed8695efedfe4c26603d39cd1ee356706a50d32a0d21dc061c82d9` | readelf: ELF32 LE ARM EXEC；NEEDED libisc.so/libc.so.6 |
+| bin/bsa_server | 1416200 | `bc66595c4b2491e088ec0db9a9119ec6529ebedf205e497d31a2844277bda95f` | ELF32 LE ARM EXEC；存在 Bluetooth/A2DP/OBEX 字词 |
+| bin/linux_status | 124 | `507a745a145c7ea2afccb6e3e3c36ec4fa4e464abe631f79541339c96f409d5e` | 实际解压/读取，非 ELF |
+| lib/libisc.so | 8764 | `f9a3f7c003d4ab145b0c7c2ecf8ee33fe13a09ce5fb82da88c260340c85a3be9` | ELF32 LE ARM DYN；NEEDED libc.so.6 |
+| lib/libper.so | 4204 | `6094742e8141925788a9a28197ed15db2449760387640313e70eb94c51ac820b` | ELF32 LE ARM DYN；NEEDED libisc.so/libpthread.so.0/libc.so.6 |
+| sbin/lighttpd | 212908 | `daa46df12efd0ec0faed5f23c5cd5ff0450ad55bece1f4b6a2e57849b92307c5` | ELF32 LE ARM EXEC；NEEDED libpcre.so.1/libdl.so.2/libc.so.6 |
+| share/udhcpc/default.script | 1611 | `0c99e8c051340fce021a2d3824d2e45d3dd29d7ca1b3105c524a3a172891238e` | 实际解压/读取，非 ELF；没有执行脚本 |
 
-执行：
+GNU readelf 2.44 的 `-h -d` 对五个 ELF 均 exit 0。这是真实文件的 ELF 证据，与 PR #6 原始 magic 扫描的伪阳性不同；**仅描述所选 Linux 文件，不推断 TruePic 主 CPU 或其他块 ISA**。
 
-```bash
-SQUASHFS_TOOLS_DIR="$PWD/work/squashfs-upstream/source/squashfs-tools" \
-  python3 -m unittest discover -s tests -v
-python3 tools/inspect_olympus_oe.py --help
-git diff --check
-```
+## ART 调查：有界负面结果，不能排除
 
-结果：**20 tests passed，0 skipped**（包括 8 项基线测试），CLI 帮助及 diff check 通过。仅在没有 mksquashfs/unsquashfs 的环境，integration 有明确 skip；CI 安装 upstream squashfs-tools 对合成输入执行 integration，不访问 OEM 文件或私有附件。
+两条有限检查：
 
-## 成熟工具来源、许可和可重现步骤
+1. 实际目录路径检查：case-insensitive `art.?filter`、whole-word `lut`、`gamma`、`colou?r.?profile`、`monochrome`、`sepia` 均无候选路径。未发现独立可识别 LUT/profile 文件名。
+2. 上述七文件字节检查：whole-word ART/LUT、art[_ -]?filter、gamma、color/colour profile、monochrome、sepia 均 0 次命中。零关键词不排除二进制参数表、资源编号、压缩内容或其他块。`bin/bsa_server` 有 1 个 JPEG 字词，同时有 18 个 Bluetooth、2 个 A2DP、5 个 OBEX 字词；**只支持通信相关候选，不支持 ART 归属**。没有公开原始字符串或代码片段。
 
-实际使用 squashfs-tools **4.6.1**，tag `4.6.1` 解引用 commit **`d8cb82d9840330f9344ec37b992595b5d7b44184`**。版本、支持能力与固定构建方式见 [upstream setup and private validation](../docs/11-squashfs-private-validation.md)。上游 GPL-2.0-or-later（unsquashfs/mksquashfs version 输出及源码），仅在私有 work 中独立构建/运行，不 vendor、链接进或重许可到本仓库。LZO 依赖从 Debian 官方包取得，亦不提交。
+`bin/am` 依赖 `libisc.so`，`lib/libper.so` 也依赖 `libisc.so`；静态符号 metadata 有 mmap/ioctl 线索。**hypothesized** 为值得进一步核实的辅助控制边界；没有实证连接到滤镜、成像控制或实时预览。本轮不沿模糊名称扩大逆向。ART/ISP 表示位置仍 unknown，G2 未通过，见 [ART 证据 blocker](blockers/BLOCKER-e142-art-evidence.md)。
 
-本轮 build 输出的本地 binary SHA-256（不是 OEM/样本哈希，换编译器/路径会改变）：
+## 原创工具与合成验证
 
-- unsquashfs：`94117bee5d097dac3f9478be427c689ccc82218aa2d01126e3017e4003e39f04`
-- mksquashfs：`bd4f435e45c2a228378e20902f4270b0af4fa88cb92bbfb9f554ba1747c0b3a1`
+提取入口要求 explicit opt-in、expected SHA/size、block index、decoded payload offset；复用全块校验，核对唯一候选及 bounds；同一 read-only fd 再验输入，0600 临时输出、no-replace 发布、失败清理。Git checkout 内只允许 private_samples/，外部私有目录可用。忽略规则不代替发布审查。
 
-只启用 gzip/LZO；足以测试 PR #6 的 LZO 候选，不声称支持所有压缩器/未来格式。
+**20 tests passed，0 skipped**：含基线测试、guards/跨 chunk/非 lane 对齐/失败清理、环境变量 mock-only 测试，以及 upstream mksquashfs 生成 LZO 树→synthetic OE→carve→-s/-ll→选择性提取的字节精确 integration。截断合成镜像由 upstream 拒绝。CI 仅合成输入。`git diff --check` 通过。上游 GPL 工具及 Debian LZO 依赖只在 work/ 构建，不 vendor 到本 MIT 项目。
 
-## 后续最有价值的验证（当前未执行）
+## 推荐下一步（本轮不执行）
 
-1. **先确认已授权的 `EP7_SERIAL` 在任务进程中的绑定，或恢复原始私有输入访问**，核对完整长度/哈希。两者任何一个不符立即停止；符合后检查五 OE blocks，并 carve 唯一候选。输入仅在私有环境保留，公开只报告 metadata。
-2. **运行真实 `unsquashfs -s` 与 `-ll`**，确认 v4/LZO 和真实目录，metadata 能读取不等于所有压缩数据可读取。对 listing 中存在的少量普通文件选择性提取，核对读取成功、文件类型和一般职责；任一 corruption/incompatible 错误即记录并停止，不屏蔽错误。
-3. **只沿实测目录产生的线索研究 ART**：先判断内容更像 Linux 启动/网络辅助文件还是成像资源；若出现明确 profile/filter 参数或成像模块，再记录其文件哈希、文件内偏移/结构和对照解释。关键词/名称只是候选，需资源 ID/调用引用才可关联 ART；未见命中也不证明 ART 不在其他块/封闭 ISP 中。不能盲猜地址、扫描构建完整补丁或运行提取的二进制/脚本。
+最有价值的是**版本限定的资源映射实验**：以这个已核对原文件 hash 的其他 decoded 块（尤其 PR #6 的 block #4 resource-like 候选）为范围，先复用已有社区资源格式先例，验证结构化记录/索引及其引用；把可解析资产与公开 ART 模式/资源 ID 对照。JPEG magic、名称或颜色外观单独都不够，必须证明引用链才可报告 ART。
 
-最值得做的是步骤 2 的真实目录和少量实际文件读取，先确定这个 3.39 MB 候选究竟包含什么，而不是继续猜 ART 地址。当前 G2 未通过，G4/G5/G6 未推进。取得可访问输入后可直接在任务环境继续，不要求用户搭建本地 Codex。
+若社区格式先例不足，先查同代 Olympus/TruePic VIII 已验证格式与公开软件通知，或单独提出 libisc/辅助控制边界的只读静态任务；不要凭猜测造资源 parser。可行的体验替代是评估官方 Color Profile 原生参数的表达能力，但需独立受控样张实验，不能承诺任意 LUT 或 ART 替换。G1 passed；G2 unknown；G3–G6 未推进，无设备操作。

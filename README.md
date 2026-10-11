@@ -26,7 +26,7 @@ Cross-camera implementations are **precedent for an investigation**, not evidenc
 ## Project state
 
 - Official firmware listing: E-P7 **1.1**, dated 2022-02-28 ([OM SYSTEM](https://support.jp.omsystem.com/en/support/imsg/digicamera/download/software/firm/e1/)). This is a listing, **not** a verified downloadable firmware image.
-- An owner-provided candidate was privately validated as five OE blocks in [PR #6 findings](research/e142-first-sample-analysis.md); no OEM binary is in Git. Filesystem contents and ART remain unverified. [Issue #7 findings](research/e142-squashfs-validation.md) include guarded local carving, upstream LZO synthetic validation and the current attachment transfer blocker.
+- An owner-provided candidate was privately validated as five OE blocks in [PR #6 findings](research/e142-first-sample-analysis.md); no OEM binary is in Git. [Issue #7 findings](research/e142-squashfs-validation.md) verify the real LZO SquashFS directory and seven selected files using upstream tools. ART remains unknown; no device writes.
 - No E-P7 hardware has been connected or tested.
 - Included helper `tools/inspect_blob.py` only reports metadata and sample entropy on user-provided files; it does **not** parse E-P7 firmware.
 

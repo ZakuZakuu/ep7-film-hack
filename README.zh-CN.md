@@ -1,7 +1,7 @@
 # Olympus PEN E-P7 · Film Simulation Reverse Engineering Research
 
 **公开研究仓库启动稿 v1.1 — 2026-10-11**  
-**状态：此前私有样本已验证 OE 容器/解码和 SquashFS 候选头；文件系统目录和 ART 未验证；未连接或修改相机。** [Issue #7 进度与附件传输 blocker](research/e142-squashfs-validation.md)。
+**状态：已在私有环境验证真实 OE 容器、LZO SquashFS 目录及七个选择性提取文件；ART 仍未知；未连接或修改相机。** [Issue #7 实测报告](research/e142-squashfs-validation.md)。
 
 ## 一句话目标
 
