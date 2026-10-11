@@ -10,5 +10,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - name: Upstream filesystem tools (synthetic inputs only)
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends squashfs-tools
       - name: Standard-library unit tests
         run: python -m unittest discover -s tests -v

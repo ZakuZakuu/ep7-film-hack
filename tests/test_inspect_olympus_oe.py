@@ -30,6 +30,13 @@ def synthetic_block(payload: bytes, block_no: int = 0) -> bytes:
 
 
 class TestOlmyContainer(unittest.TestCase):
+    def test_fails_on_empty_container(self):
+        with tempfile.TemporaryDirectory() as td:
+            p = Path(td, 'empty.bin')
+            p.write_bytes(b'')
+            with self.assertRaisesRegex(FormatError, 'empty OE container'):
+                inspect(p)
+
     def test_permutation_roundtrip(self):
         plain = bytes(range(256))
         self.assertEqual(decode_chunk(encode(plain)), plain)

@@ -51,9 +51,17 @@ def build_request(serial: str) -> bytes:
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--output-dir", type=Path, default=Path("~/ep7-firmware").expanduser())
+    ap.add_argument("--serial-env", metavar="NAME",
+                    help="Read an injected serial from this environment variable; never print it")
     ap.add_argument("--allow-http", action="store_true", help="Allow HTTP on verified vendor hosts (not preferred)")
     args = ap.parse_args()
-    serial = getpass.getpass("E-P7 camera serial (entered locally; not stored): ").strip()
+    if args.serial_env:
+        serial = os.environ.get(args.serial_env, "").strip()
+        if not serial:
+            print("Serial environment variable is unavailable or empty; no request made.", file=sys.stderr)
+            return 2
+    else:
+        serial = getpass.getpass("E-P7 camera serial (entered locally; not stored): ").strip()
     if not serial or len(serial) > 60:
         print("No plausible serial entered; no request made.", file=sys.stderr)
         return 2
