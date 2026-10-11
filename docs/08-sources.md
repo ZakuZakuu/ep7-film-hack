@@ -1,6 +1,6 @@
 # 08｜经核对的参考来源（2026-10-11）
 
-以下来源公开可读，但网站和仓库会变化。后续 Codex 在使用时应重新核对页面状态与修订时间，并在 `evidence-ledger.md` 里注明。公开项目源码的引用要单独核对 license。
+以下为启动包的参考目录。T0 已逐项检查访问状态；不能把 HTTP 200 当作内容可读或设备功能已验证。2019 Reddit 链接本轮只返回中间页，第三方文章链接的 updater 只返回 JavaScript/cookie challenge。完整结果与响应元数据见 [source-access-review](../research/source-access-review.md)，固定源码版本和许可见 [先例矩阵](10-prior-art-matrix.md)。后续使用时仍须重新核对。
 
 ## OM SYSTEM 官方（高优先级）
 
@@ -12,7 +12,7 @@
 6. [OM Workspace 官方更新方式与提醒](https://learnandsupport.getolympus.com/ca-en/updating-your-digital-camera-or-lens) — 更新注意事项、可能无法回退等。
 7. [OM 官方第三方软件版权声明](https://support.jp.omsystem.com/en/support/imsg/digicamera/download/notice/notice.html) — E-P7 明确列 Linux、Expat；**不能证明图像 ISP 的完整实现**。
 
-## 已核实的开源研究
+## 公开源码研究（许可证不能统一假定为开源）
 
 8. [GR IV Firmware Analysis — radium-wang](https://github.com/radium-wang/ricoh-gr4-firmware-analysis-and-feature-expansion) — 固件封装、只读探针和关机画面实验；未公开成熟任意 LUT 管理器；新内容非商业 source license。
 9. [GR IIIx Firmware Exploration — hhornbacher](https://github.com/hhornbacher/gr3x-fw-hack) — 解包、Docker 模拟、硬件依赖局限。

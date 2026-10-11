@@ -1,0 +1,274 @@
+{
+  "scope": "Public reference responses only; SHA-256 values below are NOT firmware sample hashes. No raw responses committed.",
+  "responses": [
+    {
+      "url": "https://explore.omsystem.com/c/en/e-p7",
+      "status": 200,
+      "final_url": "https://explore.omsystem.com/c/en/e-p7",
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 686733,
+      "sha256": "514d5e106cf8a116144183ce13d80fb26e8a934796a6185b7dfa421b84c690ab",
+      "checked_on": "2026-10-11",
+      "content_review": "content inspected"
+    },
+    {
+      "url": "https://github.com/dpolarov/olympus-view-and-delete",
+      "status": 200,
+      "final_url": "https://github.com/dpolarov/olympus-view-and-delete",
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 477096,
+      "sha256": "73e886beb4747af01a25c3a7e11512c8059904091e9ce996cdde494c18d37669",
+      "checked_on": "2026-10-11",
+      "content_review": "content inspected"
+    },
+    {
+      "url": "https://github.com/fujihack/fujihack",
+      "status": 200,
+      "final_url": "https://github.com/fujihack/fujihack",
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 283113,
+      "sha256": "0e43ecc5fcedfda90ba5246979366cd85594b1f85b2e42e167620a26d5b70137",
+      "checked_on": "2026-10-11",
+      "content_review": "content inspected"
+    },
+    {
+      "url": "https://github.com/hhornbacher/gr3x-fw-hack",
+      "status": 200,
+      "final_url": "https://github.com/hhornbacher/gr3x-fw-hack",
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 274797,
+      "sha256": "17b312816de8df6e7faa7bd0446133a5a49ad11513df9c24a9a3d1817c38b571",
+      "checked_on": "2026-10-11",
+      "content_review": "content inspected"
+    },
+    {
+      "url": "https://github.com/joergmlpts/olympus-wifi",
+      "status": 200,
+      "final_url": "https://github.com/joergmlpts/olympus-wifi",
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 264827,
+      "sha256": "736694bd82b5bf71adf27d8bfb1185cf1703cd851a7e0b528712519ec58f3c5c",
+      "checked_on": "2026-10-11",
+      "content_review": "content inspected"
+    },
+    {
+      "url": "https://github.com/lemonadesaltbagel/GR4-LUTSmith",
+      "status": 200,
+      "final_url": "https://github.com/lemonadesaltbagel/GR4-LUTSmith",
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 437980,
+      "sha256": "16dfa42e7c5b17c79828cd9196de57b62100c8086ad96d30b99943434082fc04",
+      "checked_on": "2026-10-11",
+      "content_review": "content inspected"
+    },
+    {
+      "url": "https://github.com/radium-wang/ricoh-gr4-firmware-analysis-and-feature-expansion",
+      "status": 200,
+      "final_url": "https://github.com/radium-wang/ricoh-gr4-firmware-analysis-and-feature-expansion",
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 324101,
+      "sha256": "bc4d2e162ad96cca4052aa11c67630bcf867e87a77d777caf2eea310ff5f05e7",
+      "checked_on": "2026-10-11",
+      "content_review": "content inspected"
+    },
+    {
+      "url": "https://github.com/reticulatedpines/magiclantern_simplified",
+      "status": 200,
+      "final_url": "https://github.com/reticulatedpines/magiclantern_simplified",
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 299679,
+      "sha256": "6d9bab6374bd287577a467cbb27dbd8d537444ae38fcd292a1c01ee3bc4bfe12",
+      "checked_on": "2026-10-11",
+      "content_review": "content inspected"
+    },
+    {
+      "url": "https://github.com/simeonpilgrim/nikon-firmware-tools",
+      "status": 200,
+      "final_url": "https://github.com/simeonpilgrim/nikon-firmware-tools",
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 279487,
+      "sha256": "94df43df075d62501b5d4af2a54858c52c5f8b160826ef0c85d96f27bfb5c077",
+      "checked_on": "2026-10-11",
+      "content_review": "content inspected"
+    },
+    {
+      "url": "https://learnandsupport.getolympus.com/ca-en/updating-your-digital-camera-or-lens",
+      "status": 200,
+      "final_url": "https://learnandsupport.getolympus.com/ca-en/updating-your-digital-camera-or-lens",
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 91088,
+      "sha256": "a40ae13675a35bf8d8ca1e30bc7a0b0b642d26b6891314b41ad5765425971792",
+      "checked_on": "2026-10-11",
+      "content_review": "content inspected"
+    },
+    {
+      "url": "https://manualzz.com/doc/59292907/olympus-e-p7-user-manual",
+      "status": 200,
+      "final_url": "https://manualzz.com/doc/59292907/olympus-e-p7-user-manual",
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 519726,
+      "sha256": "8de8b4a8316f15502a5bd7c1fca2e0a9d30bb420a9f45f57d96dfa7d50bbd1a1",
+      "checked_on": "2026-10-11",
+      "content_review": "content inspected"
+    },
+    {
+      "url": "https://marcrphoto.wordpress.com/2026/05/11/olympus-om-system-firmware-updates-the-situation-changed-again-may-2026/",
+      "status": 200,
+      "final_url": "https://marcrphoto.wordpress.com/2026/05/11/olympus-om-system-firmware-updates-the-situation-changed-again-may-2026/",
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 204497,
+      "sha256": "824ebbcc5aeba26454d47442295e8f9f65cdd5a5ad73dc6b3e8c33eb24a08a15",
+      "checked_on": "2026-10-11",
+      "content_review": "content inspected"
+    },
+    {
+      "url": "https://micro43club.pro/forum/threads/modifikacija-proshivki-kamer-olympus.22086/",
+      "status": 200,
+      "final_url": "https://micro43club.pro/forum/threads/modifikacija-proshivki-kamer-olympus.22086/",
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 141668,
+      "sha256": "1359c01edf19adf013d8113c2919ea69dc5fd50b121528a3dc20e42e85e1e62f",
+      "checked_on": "2026-10-11",
+      "content_review": "content inspected"
+    },
+    {
+      "url": "https://my.omsystem.com/consumer/manuals/cameras/E-P7_MANUAL_EN.pdf",
+      "status": 200,
+      "final_url": "https://my.omsystem.com/consumer/manuals/cameras/E-P7_MANUAL_EN.pdf",
+      "content_type": "application/pdf",
+      "bytes": 16862659,
+      "sha256": "54b139500c2f4192bc678b10427309d1ead22c8455550b6d235d467c2eea83f8",
+      "checked_on": "2026-10-11",
+      "content_review": "content inspected"
+    },
+    {
+      "url": "https://olympus-wifi.readthedocs.io/en/stable/api.html",
+      "status": 200,
+      "final_url": "https://olympus-wifi.readthedocs.io/en/stable/api.html",
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 116650,
+      "sha256": "47deb3c6f3814e53e03cd9dbc3ff1c160d02e0412e20aadb3da5df5ceaf56c6e",
+      "checked_on": "2026-10-11",
+      "content_review": "content inspected"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/ccrome/olympus-omd-remote-control/master/OPC_Communication_Protocol_EN_1.0a/OPC_Communication_Protocol_EN_1.0a.pdf",
+      "status": 200,
+      "final_url": "https://raw.githubusercontent.com/ccrome/olympus-omd-remote-control/master/OPC_Communication_Protocol_EN_1.0a/OPC_Communication_Protocol_EN_1.0a.pdf",
+      "content_type": "application/octet-stream",
+      "bytes": 2526997,
+      "sha256": "33563efb11f4611d53d1cc40932663b90d89757e736e933ac2501f4e75a1c434",
+      "checked_on": "2026-10-11",
+      "content_review": "PDF retrieved; not used as E-P7-specific evidence"
+    },
+    {
+      "url": "https://support.jp.omsystem.com/en/support/imsg/digicamera/download/notice/notice.html",
+      "status": 200,
+      "final_url": "https://support.jp.omsystem.com/en/support/imsg/digicamera/download/notice/notice.html",
+      "content_type": "text/html",
+      "bytes": 16729,
+      "sha256": "58eee4f7d54e192cb1b8908a73bca3286d0a1d8b908a0bba580f224438c1551b",
+      "checked_on": "2026-10-11",
+      "content_review": "content inspected"
+    },
+    {
+      "url": "https://support.jp.omsystem.com/en/support/imsg/digicamera/download/software/firm/e1/",
+      "status": 200,
+      "final_url": "https://support.jp.omsystem.com/en/support/imsg/digicamera/download/software/firm/e1/",
+      "content_type": "text/html",
+      "bytes": 81159,
+      "sha256": "f055f69ac236858220fd8b8097ef5fee5ca8785a9cc63c4c58d2bfa4a771e1af",
+      "checked_on": "2026-10-11",
+      "content_review": "content inspected"
+    },
+    {
+      "url": "https://support.jp.omsystem.com/en/support/imsg/digicamera/qa/products/ep7/",
+      "status": 200,
+      "final_url": "https://support.jp.omsystem.com/en/support/imsg/digicamera/qa/products/ep7/",
+      "content_type": "text/html",
+      "bytes": 74898,
+      "sha256": "cff491f92bcff8bd120b57bf43dad0c3fbb8dcbd69b9b23120f3add14279a129",
+      "checked_on": "2026-10-11",
+      "content_review": "content inspected"
+    },
+    {
+      "url": "https://www.dvxuser.com/threads/e-p1-e-p2-e-pl1-hack-research.217453/",
+      "status": 200,
+      "final_url": "https://www.dvxuser.com/threads/e-p1-e-p2-e-pl1-hack-research.217453/",
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 183010,
+      "sha256": "db7051417345cc178eebbbdcd363b63ae4950090bb795eeb406e2ba2c1ab51bd",
+      "checked_on": "2026-10-11",
+      "content_review": "content inspected"
+    },
+    {
+      "url": "https://www.reddit.com/r/M43/comments/bnhfb5/modified_olympus_firmware_removes_30minute/",
+      "status": 200,
+      "final_url": "https://www.reddit.com/r/M43/comments/bnhfb5/modified_olympus_firmware_removes_30minute/",
+      "content_type": "text/html",
+      "bytes": 8462,
+      "sha256": "b73bd213233332a7c96e084a639256182b89fd047f53a187f5eef50072510034",
+      "checked_on": "2026-10-11",
+      "content_review": "Reddit interstitial; discussion content not verified despite HTTP 200"
+    },
+    {
+      "url": "https://dl01.om-digitalsolutions.net/ww/ud2/ENU/0001/1420/index01a.html",
+      "status": 200,
+      "final_url": "https://dl01.om-digitalsolutions.net/ww/ud2/ENU/0001/1420/index01a.html",
+      "content_type": "text/html",
+      "bytes": 2324,
+      "sha256": "db7c5707bd005903b05422e6af56a9b2b88ee3c0f1074b1dd678c30f9469e2bc",
+      "checked_on": "2026-10-11",
+      "content_review": "content inspected"
+    },
+    {
+      "url": "https://support.jp.omsystem.com/en/support/imsg/digicamera/qa/contents/ow/ow_a1.html",
+      "status": 200,
+      "final_url": "https://support.jp.omsystem.com/en/support/imsg/digicamera/qa/contents/ow/ow_a1.html",
+      "content_type": "text/html",
+      "bytes": 30892,
+      "sha256": "c484720dcb4228d4dd3a60f99a808a1e36254893b62eeb7d9c5ab68c3b7d0d30",
+      "checked_on": "2026-10-11",
+      "content_review": "content inspected"
+    },
+    {
+      "url": "https://support.jp.omsystem.com/en/support/imsg/digicamera/qa/contents/omw/omw_a1.html",
+      "status": 200,
+      "final_url": "https://support.jp.omsystem.com/en/support/imsg/digicamera/qa/contents/omw/omw_a1.html",
+      "content_type": "text/html",
+      "bytes": 32555,
+      "sha256": "5ea6c2ae010ab1ad2a83d7de15cc019ba4728261aff0d7a7ffcefc4ea40fa790",
+      "checked_on": "2026-10-11",
+      "content_review": "content inspected"
+    },
+    {
+      "url": "https://support.jp.omsystem.com/en/support/imsg/digicamera/download/notice/pdf/Software_Notice_ep7_linux.pdf",
+      "status": 200,
+      "final_url": "https://support.jp.omsystem.com/en/support/imsg/digicamera/download/notice/pdf/Software_Notice_ep7_linux.pdf",
+      "content_type": "application/pdf",
+      "bytes": 704438,
+      "sha256": "28b58793da9c9f2ae13c49032836502ed4fb462aab7e0be5e828809e9233e3ed",
+      "checked_on": "2026-10-11",
+      "content_review": "content inspected"
+    },
+    {
+      "url": "https://api.github.com/repos/lemonadesaltbagel/GR4-LUTSmith/releases/latest",
+      "status": 200,
+      "final_url": "https://api.github.com/repos/lemonadesaltbagel/GR4-LUTSmith/releases/latest",
+      "content_type": "application/json; charset=utf-8",
+      "bytes": 11471,
+      "sha256": "7f4480781f22dde5fbcefac1a1f7c149a0add331eec5cae15bc78dcf90459845",
+      "checked_on": "2026-10-11",
+      "content_review": "content inspected"
+    },
+    {
+      "url": "https://ofu.infinityfreeapp.com/?utm_source=chatgpt.com",
+      "status": 200,
+      "final_url": "https://ofu.infinityfreeapp.com/?utm_source=chatgpt.com",
+      "bytes": 873,
+      "sha256": "827b2ccf060f91c63ef070946f8aba24d83319ab7d7e2edaec9091dc3c58301f",
+      "content_review": "JavaScript/cookie challenge only; updater content not verified",
+      "checked_on": "2026-10-11"
+    }
+  ]
+}
