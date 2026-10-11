@@ -1,7 +1,7 @@
 # Olympus PEN E-P7 · Film Simulation Reverse Engineering Research
 
 **公开研究仓库启动稿 v1.1 — 2026-10-11**  
-**状态：已在私有环境验证真实 OE 容器、LZO SquashFS 目录及七个选择性提取文件；ART 仍未知；未连接或修改相机。** [Issue #13 可行性决策](research/art-update-feasibility.md)：ART 处理归属与修改包接受/恢复仍未知，建议暂停固件修改工程投入。
+**状态：已在私有环境验证 OE、LZO SquashFS，以及 #0 的 MN103 程序代码与调用/返回关系；ART 仍未知；未连接或修改相机。** [Issue #15 程序级成果](research/e142-executable-map.md)支持静态执行映射 `payload offset + 0x60020020`，可继续有限离线调用者分析，无需等待旧版固件。该地址尚未经过实机观测，三处 BleachBypass 名称属于 OI.Share XML 接口描述。[Issue #13 可行性决策](research/art-update-feasibility.md)中的修改包接受/恢复阻塞仍在，暂停修改与安装工程。
 
 ## 一句话目标
 

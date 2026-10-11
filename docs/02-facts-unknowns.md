@@ -35,3 +35,7 @@
 ## T2 官方新增证据
 
 2018 原厂更新为 PEN-F 3.0、E-M1 II 2.0、E-M5 II 4.0 新增 Bleach Bypass；厂家扩展 ART 的先例不证明 E-P7 第三方算法修改。官方 FAQ 007489 / 007407 区分 E-P7 JPEG 作为 profile 来源与写入目标，E-P7 不支持这两项官方 Profile Load 目的机功能。来源及限制见 [决策](../research/art-update-feasibility.md)。
+
+## T3 程序级证据
+
+同一 owner-reported v1.1 / SHA-256 `9d1610124ad98f6edae4540182205f06c9c703d9033ef0c4f19847193f95eaeb` 中，GNU binutils 验证 #0 的 MN10300-family 小程序调用与返回，并由八个具名常量的落点支持静态映射 `payload offset + 0x60020020`；具体 CPU 子型、OS、硬件运行地址和 ART consumer 仍未知。#3 也有 MN103 代码，职责与基址未知；辅助 ARM ELF 不代表主程序架构。三处 BleachBypass 名称在合法 `oishare` XML 中，仅是接口描述。见 [完整程序图与反证](../research/e142-executable-map.md)；G2 未通过，安装/恢复闸门没有变化。

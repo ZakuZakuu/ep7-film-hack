@@ -2,6 +2,8 @@
 
 2026-10-11，[Issue #13](https://github.com/ZakuZakuu/ep7-film-hack/issues/13)。最新 main 基线 `efed91b1d9aeb3315cf2b8c3b5d3b2771418b6f9`，已含 #11/#12。E-P7 owner-reported 1.1 私有原文件 **111017984 bytes / SHA-256 `9d1610124ad98f6edae4540182205f06c9c703d9033ef0c4f19847193f95eaeb`**。本轮再验 size/hash、五 OE 校验、输入不变；没有下载其他机型固件、生成修改镜像或设备操作。
 
+**后续范围澄清：**下文“唯一条件性下一实验”是 T2 当轮提案，不是所有离线逆向的前置闸门。[T3 / Issue #15](e142-executable-map.md)已在同一真实样本上建立 MN103 代码与静态引用证据，可独立继续有限函数分析；旧版 binary 对是可选证据。T3 还确认三处 BleachBypass 名称位于 OI.Share XML，不是处理代码。
+
 **建议：暂停固件修改方向的工程投入。保留一个有前置条件的离线研究机会；当前不能承诺机内自建 ART、任意 LUT、修改包安装或恢复。unknown 不等于技术上已证明不可能。**
 
 | 必要闸门 | 已证明的事实 / 缺失的关键证据 | 判定与停止理由 |
