@@ -1,0 +1,90 @@
+[
+  {
+    "id": "oem-art-release",
+    "url": "https://www.olympus-global.com/news/2018/nr00715.html",
+    "checked_date": "2026-10-11",
+    "artifact_type": "public document/source metadata, NOT firmware",
+    "status": 200,
+    "final_url": "https://www.olympus-global.com/news/2018/nr00715.html",
+    "bytes": 21805,
+    "sha256": "148bf3d7355f2d4335e768625f50241b28c5a44e7f63f0723c9bf262660e9940"
+  },
+  {
+    "id": "penf-support",
+    "url": "https://learnandsupport.getolympus.com/support/pen-f",
+    "checked_date": "2026-10-11",
+    "artifact_type": "public document/source metadata, NOT firmware",
+    "status": 200,
+    "final_url": "https://learnandsupport.getolympus.com/support/pen-f",
+    "bytes": 202461,
+    "sha256": "206646d9038da2ce33e112423efbef30d6c46c64fa4c5a9797f95a6249ff1aa6"
+  },
+  {
+    "id": "em1ii-support",
+    "url": "https://explore.omsystem.com/gb/en/om-d-e-m1-mark-ii-support",
+    "checked_date": "2026-10-11",
+    "artifact_type": "public document/source metadata, NOT firmware",
+    "error": "HTTPError",
+    "message": "HTTP Error 403: Forbidden",
+    "browser_read": "Public text readable via web connector; shell HTTP 403, no retry or hash available."
+  },
+  {
+    "id": "update-instructions",
+    "url": "https://explore.omsystem.com/c/en/firmware-update-instructions",
+    "checked_date": "2026-10-11",
+    "artifact_type": "public document/source metadata, NOT firmware",
+    "error": "HTTPError",
+    "message": "HTTP Error 403: Forbidden",
+    "browser_read": "Public text readable via web connector; shell HTTP 403, no retry or hash available."
+  },
+  {
+    "id": "profile-oi-share",
+    "url": "https://digital-faq.jp.omsystem.com/faq/public/app/servlet/qadoc?QID=007489",
+    "checked_date": "2026-10-11",
+    "artifact_type": "public document/source metadata, NOT firmware",
+    "status": 200,
+    "final_url": "https://digital-faq.jp.omsystem.com/faq/public/app/servlet/qadoc?QID=007489",
+    "bytes": 62534,
+    "sha256": "70241ed6b9a365cd5d62552f03ccea63346af31befe38c7d851b3b6a9b3e3e9f"
+  },
+  {
+    "id": "profile-workspace",
+    "url": "https://digital-faq.jp.omsystem.com/faq/public/app/servlet/qadoc?QID=007407",
+    "checked_date": "2026-10-11",
+    "artifact_type": "public document/source metadata, NOT firmware",
+    "status": 200,
+    "final_url": "https://digital-faq.jp.omsystem.com/faq/public/app/servlet/qadoc?QID=007407",
+    "bytes": 60018,
+    "sha256": "fbdb716ae747bd9adec40b53b31e595e69b755d31fee3a45ca488f804a01e621"
+  },
+  {
+    "id": "exiftool-commit",
+    "url": "https://api.github.com/repos/exiftool/exiftool/commits/master",
+    "checked_date": "2026-10-11",
+    "artifact_type": "public document/source metadata, NOT firmware",
+    "status": 200,
+    "final_url": "https://api.github.com/repos/exiftool/exiftool/commits/master",
+    "bytes": 151416,
+    "sha256": "ea2eca18b10f5a0f11a1d7745e07bf7c85d983f0d4065e1ca30bc64d8d1eb9dc"
+  },
+  {
+    "id": "exiftool-Olympus.pm",
+    "url": "https://github.com/exiftool/exiftool/blob/2200871d9cef988051d2a99d67df3bda6cbb30a8/lib/Image/ExifTool/Olympus.pm",
+    "commit": "2200871d9cef988051d2a99d67df3bda6cbb30a8",
+    "checked_date": "2026-10-11",
+    "bytes": 157893,
+    "sha256": "f974dc7c82b5e187148e0defc8d733734445df2121175097f001fe551ae08651",
+    "artifact_type": "public SOURCE, NOT firmware",
+    "reuse": "read only; no source imported"
+  },
+  {
+    "id": "exiftool-README",
+    "url": "https://github.com/exiftool/exiftool/blob/2200871d9cef988051d2a99d67df3bda6cbb30a8/README",
+    "commit": "2200871d9cef988051d2a99d67df3bda6cbb30a8",
+    "checked_date": "2026-10-11",
+    "bytes": 13787,
+    "sha256": "e13005e5431c89910feba2309710d844f1bf4fd97df1236284e6475161bc14da",
+    "artifact_type": "public SOURCE, NOT firmware",
+    "reuse": "read only; no source imported"
+  }
+]
