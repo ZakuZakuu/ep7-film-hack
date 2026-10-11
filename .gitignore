@@ -22,5 +22,6 @@ __pycache__/
 .venv/
 .env
 .DS_Store
+# Transient reference checkouts and source caches; never research deliverables
 work/
 *.squashfs

@@ -9,6 +9,8 @@
 
 ## 别误会当前状态
 
+T0 复核结果见 [首轮报告](research/first-pass-findings.md)、[固件获取 blocker](research/blockers/BLOCKER-firmware-acquisition.md)、[来源核对](research/source-access-review.md) 与 [合成测试记录](research/validation-t0.md)。该历史 G1 获取阻塞已由 T1/T1.1 解除；原生参数/只读协议路线仍为条件性后续研究。
+
 **这不是现成的 E-P7 破解包、刷机工具或已验证的自定义 LUT 方案。** 官方确认 E-P7 有 16 种 ART 滤镜、4 组彩色配置、TruePic VIII，且产品的软件通知涉及 Linux；但没有公开资料证明 E-P7 的 ART 算法可以通过修改某张 LUT 表直接替换。理光目前还出现了 GR4-LUTSmith，可以将创意 LUT 拟合到 GR IV 原生调色参数并替换滤镜槽，但这不意味着 E-P7 具备对应参数和固件写入路径。理光逆向、早期奥林巴斯固件改动和其他相机项目可借鉴的是*研究方法*，不是可直接移植的补丁。
 
 ## 建议阅读顺序

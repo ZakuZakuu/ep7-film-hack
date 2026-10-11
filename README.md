@@ -25,6 +25,7 @@ Cross-camera implementations are **precedent for an investigation**, not evidenc
 
 ## Project state
 
+- T0 review: [findings and three proposed experiments](research/first-pass-findings.md), [acquisition blocker](research/blockers/BLOCKER-firmware-acquisition.md), [source audit](research/source-access-review.md), and [synthetic validation](research/validation-t0.md). The historical G1 access blocker was subsequently resolved by T1/T1.1; protocol/native-profile routes remain conditional research.
 - Official firmware listing: E-P7 **1.1**, dated 2022-02-28 ([OM SYSTEM](https://support.jp.omsystem.com/en/support/imsg/digicamera/download/software/firm/e1/)). This is a listing, **not** a verified downloadable firmware image.
 - An owner-provided candidate was privately validated as five OE blocks in [PR #6 findings](research/e142-first-sample-analysis.md); no OEM binary is in Git. [Issue #7 findings](research/e142-squashfs-validation.md) verify the real LZO SquashFS directory and seven selected files using upstream tools. ART remains unknown; no device writes.
 - No E-P7 hardware has been connected or tested.
