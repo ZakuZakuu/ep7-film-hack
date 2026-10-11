@@ -12,7 +12,7 @@
 | ART 包含颜色和非颜色的处理，RAW+JPEG 仅 JPEG 加入 ART 效果 | F | [相机说明书在线内容](https://manualzz.com/doc/59292907/olympus-e-p7-user-manual)；[官方 FAQ](https://support.jp.omsystem.com/en/support/imsg/digicamera/qa/products/ep7/) |
 | 过去有人针对旧 Olympus 机型解包/修改固件，涉及录像限制/镜头白名单 | P | [2010 年固件格式工具研究](https://www.dvxuser.com/threads/e-p1-e-p2-e-pl1-hack-research.217453/)、[2019 M43 社区链接](https://www.reddit.com/r/M43/comments/bnhfb5/modified_olympus_firmware_removes_30minute/)、[原论坛讨论](https://micro43club.pro/forum/threads/modifikacija-proshivki-kamer-olympus.22086/)；**不可推出 E-P7 已可刷自制固件** |
 | GR IV 有解包器、只读探针、通过工厂脚本替换关机画面案例 | P | [GR IV 研究仓库](https://github.com/radium-wang/ricoh-gr4-firmware-analysis-and-feature-expansion) |
-| GR IV 已有公开、可重复使用的任意 3D LUT 导入工具 | N | 公开仓库 README **没有**此功能；社交平台个别成功说法不足以证明通用实现 |
+| GR IV research 仓库提供任意 3D LUT 运行时 | N | 此处特指 radium-wang 研究仓库，不能泛指所有 GR IV 项目。GR4-LUTSmith 是另一个项目，公开源码拟合 creative LUT 到原生参数并修改槽位，非任意 LUT 运行时；范围/许可见 [T0 矩阵](10-prior-art-matrix.md) |
 | E-P7 的 ART 滤镜存在可换的 LUT/资源表 | H | **尚无 E-P7 固件实证** |
 | E-P7 可以运行自定义 ARM/Linux 插件直接处理实时 JPEG | H | Linux 组件存在不意味着访问 ISP 或任意代码执行 |
 | Wi-Fi 可发现 E-P7 的配方写入命令 | H | 公开 OPC 工具只证明**某些 Olympus 机型**有远程控制/部分设置能力；未见 E-P7 配方写入验证 |

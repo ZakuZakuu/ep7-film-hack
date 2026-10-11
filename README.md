@@ -25,6 +25,7 @@ Cross-camera implementations are **precedent for an investigation**, not evidenc
 
 ## Project state
 
+- T0 review: [findings and three proposed experiments](research/first-pass-findings.md), [acquisition blocker](research/blockers/BLOCKER-firmware-acquisition.md), [source audit](research/source-access-review.md), and [synthetic validation](research/validation-t0.md). Firmware G1 is blocked in this run; protocol/native-profile routes remain conditional research only. No T1 work has started.
 - Official firmware listing: E-P7 **1.1**, dated 2022-02-28 ([OM SYSTEM](https://support.jp.omsystem.com/en/support/imsg/digicamera/download/software/firm/e1/)). This is a listing, **not** a verified downloadable firmware image.
 - No proprietary E-P7 firmware sample has been acquired, unpacked, disassembled or patched in this repository.
 - No E-P7 hardware has been connected or tested.

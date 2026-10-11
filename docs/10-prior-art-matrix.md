@@ -1,14 +1,37 @@
-# 10｜跨品牌先例矩阵（2026-10-11）
+# 10｜跨品牌先例与许可复核（T0，2026-10-11）
 
-| 项目 | 公开实现/作者报告 | 可以参考 | 不可照搬 | 优先级 |
+标签：**verified locally** 仅指本轮读取公开文档/源码或执行本仓库合成测试；**author-reported / community-reported** 指相机效果的原作者/社区报告；**official** 指厂家资料；**hypothesis / unknown** 指未验证事项。源码可读不等于独立复现实机结果。本轮没有验证任何相机上的补丁，未发现所审阅来源提供 E-P7 专属补丁证据。
+
+以下链接固定到实际阅读的完整 commit，避免把 release 与后来更新的 main 混为一谈。许可证必须按文件核对；本轮没有复制或导入第三方实现。
+
+| 项目 / 固定源码 | 已核对的实现及验证范围 | 许可证 / 重用决定 | 可借鉴与 E-P7 缺口 | 优先级 |
 | --- | --- | --- | --- | --- |
-| [GR4-LUTSmith](https://github.com/lemonadesaltbagel/GR4-LUTSmith) | 将 creative .cube LUT 拟合到 GR IV 原生调色参数并修改既有 Image Control 槽位；带误差评估和桌面工具；存在 v2.0.2 release | 原生参数拟合、ΔE 色差测量、精确目标版本的补丁护栏、UI 槽位 | 固件偏移、调色参数的自由度、刷机路径 | P0 |
-| [GR IV Research](https://github.com/radium-wang/ricoh-gr4-firmware-analysis-and-feature-expansion) | 固件容器解析、只读探针和部分机型关机图片替换 | 可复现的偏移/结构调查、实验证据记录 | Ricoh TTL/工厂菜单/资源地址 | P0 |
-| [Olympus legacy work](https://www.dvxuser.com/threads/e-p1-e-p2-e-pl1-hack-research.217453/) | 旧奥林巴斯固件封装格式调查；部分后续社区功能改动报告 | 可能有历史结构线索 | E-P7 新固件与信任链 | P0 |
-| [gr3x-fw-hack](https://github.com/hhornbacher/gr3x-fw-hack) | 部分环境仿真与静态分析 | 环境限制、可重复研究 | 不可当作 E-P7 ISP 模拟器 | P1 |
-| [FujiHack](https://github.com/fujihack/fujihack) | 富士特定机型调试、补丁、模块研究 | 渐进验证、只读探测、后期插件架构 | Fuji CPU、接口、签名、救砖路径 | P1 |
-| [Magic Lantern](https://github.com/reticulatedpines/magiclantern_simplified) | 佳能特定型号扩展 | 机型特定加载器、测试框架 | 佳能引导方式与内存布局 | P2 |
-| [NikonHacker](https://github.com/simeonpilgrim/nikon-firmware-tools) | 旧尼康逆向与精确固件版本补丁 | 原字节断言、格式研究 | Nikon 加解密与偏移 | P1 |
-| [olympus-wifi](https://github.com/joergmlpts/olympus-wifi) | 部分 Olympus 机型的 Wi-Fi 协议 | E-P7 只读能力探测（待证明） | 不代表 ART 写入能力 | P1 |
+| [GR4-LUTSmith](https://github.com/lemonadesaltbagel/GR4-LUTSmith/tree/0f0856e246524ccd435bb93aaf1ede29cd338aa6) | GR IV **1.11**；源码版本 **2.1.0**。creative LUT → 原生矩阵、tone curves、12 hue sectors → 指定 Image Control 槽位；源码有 CIEDE2000、输入 SHA-256/长度、原字节及范围 guard。源码存在性 verified locally；机内 still/movie/viewfinder/RAW Development 及恢复原厂 1.11 是 author-reported。Hue sectors 仅报告 ISO 200 日光绿/黄场景 RAW Development 测试，红/蓝/紫及高 ISO 未测；after-curves 尚无实机结果。 | 未见项目自身 root LICENSE 或 pyproject 许可声明。packaging/NOTICE 和 GPL/LGPL 文本是依赖组件许可，不能当作项目授权。仅研究方法，不复制代码。 | 参数拟合、分布/灰阶/肤色误差和版本 guard；必须另外证明 E-P7 参数自由度、资源位置、更新接受与恢复。 | P0 |
+| [ricoh-gr4-firmware-analysis-and-feature-expansion](https://github.com/radium-wang/ricoh-gr4-firmware-analysis-and-feature-expansion/tree/e0e0b69a71d8d7727d2b5c97c9e809a3d8f45c85) | Ricoh GR IV；README 明示 container 检查/解码、只读探针、factory-script 关机图片替换。功能和相机结果为 author-reported，公开工具/文档 verified locally；不是任意 LUT 机内运行时。具体版本须按各实验记录确认，不能把 GR4-LUTSmith 的 1.11 泛化至此仓库所有记录。 | GR IV Project Noncommercial Source License 1.0；截至 a55a2c7 的旧 Apache-2.0 grant 及其未改变材料仍有效。不能整体当 Apache/MIT；本轮不导入。 | 按型号/版本/哈希建证据链、区分静态与设备输出；Ricoh 工厂接口与映射不迁移。 | P0 |
+| [gr3x-fw-hack](https://github.com/hhornbacher/gr3x-fw-hack/tree/dc84ad50a0e5afc86d7273eb75e86ff889b83b19) | GR III(x)，README 示例 GR IIIx v1.21；包含提取与 Docker/mock 工具。作者明确 camctld 受共享内存/IPC 限制，未完整启动，QEMU 内核尚未运行；author-reported，未在本轮执行。 | 未见项目 root LICENSE；扫描报告中第三方 license summary 不构成项目许可。仅阅读。 | 有 Linux 文件系统也不证明 ISP 可模拟；E-P7 无对应介质/驱动证据。 | P1 |
+| [fujihack](https://github.com/fujihack/fujihack/tree/754acff9aa0322df19446cf7eca699b221c3330d) | README：USB/PTP debugger 已移植 XF1、X-A2；构建示例 xa2_130。patched firmware 才能运行；read/write/exec debugger 不是可直接调用的原厂只读接口。author-reported。SoC boot ROM 恢复途径尚未逆向。 | LICENSE/README：GPL v3.0；不能把其代码当 MIT 复制发布，本轮只读。 | 逐型号 stubs、补丁校验与渐进验证；Fuji 的执行路径/固件/恢复不适用于 E-P7。 | P1 |
+| [magiclantern_simplified](https://github.com/reticulatedpines/magiclantern_simplified/tree/142472e95054d73640f50789ac0fd66325499d82) | Canon 特定机型；README 描述从卡加载并与 Canon 软件共存，需启用相应启动能力；公开多机型平台代码 verified locally，实机行为 author/community-reported。未按全机型复核固件版本/支持等级。 | COPYING：GPL v2；子组件另有许可，逐文件确认，本轮不导入。 | 扩展框架与型号限定的加载路径；不能推导 E-P7 可加载模块。 | P2 |
+| [nikon-firmware-tools](https://github.com/simeonpilgrim/nikon-firmware-tools/tree/de8019ee30db7fe7bc61e520da289078ae82dcaa) | D5100 1.01/1.02、D7000 1.03/1.04/1.05 等版本化类；LocalUI/PatchControl.cs 输入哈希映射、Package.cs PatchCheck 原字节核对，源码 verified locally。具体相机效果未在本轮复现。 | 无统一 root LICENSE；GNU Patches 子目录有 BSD-3-Clause/GPL/LGPL 选择条款，Java 依赖另有条款，不能套到 LocalUI 全部源码。仅研究，导入前另行核权。 | 精确版本与原字节断言；Nikon 格式、加密、偏移不能迁移。 | P1 |
+| [olympus-wifi](https://github.com/joergmlpts/olympus-wifi/tree/364dfcd1d8b12ead9d27dd9837463976e2a068fe) | docs/source/usage.rst 有 **TG-5 3.10 / oitrack 2.20** 示例；公开 command-list/property 查询和设置代码 verified locally，设备响应为 author-reported。未见本轮所审阅材料中的 E-P7 实机验证。 | LICENSE：MIT，未来可以在保留版权/许可后复用经审查部分；本轮未导入或实例化。 | get_commandlist/get_caminfo 可作待审查询先例；**构造器自动 switch_cammode(rec) 再切 play**，不得当作无副作用只读探针。 | P1 |
+| [olympus-view-and-delete](https://github.com/dpolarov/olympus-view-and-delete/tree/3fbfa1784cea16392aa68af460e1b44ce7f23371) | 照片浏览/下载/删除与连接管理；README 举 TG-6、OM-1 QR 格式。公开源码 verified locally，设备范围 author-reported；不是 ART 配方管理证据。 | 未见 root LICENSE；README 仅 “Open source. Free to use and modify.”，重分发/合并授权不清楚；本轮仅阅读。 | 连接/图片管理参考；删除有副作用，E-P7 配方接口未知。 | P2 |
 
-本表的“公开实现”可能仅是作者验证，不代表第三方复现。公开仓库不等于允许重用源码；导入前逐一检查许可证和归属。
+## Legacy Olympus 的单独边界
+
+[2010 DVXuser 帖](https://www.dvxuser.com/threads/e-p1-e-p2-e-pl1-hack-research.217453/) 本轮可读，给出 OlympusFwTool 的旧格式 unpack/repack 示例和 MN103/IDA 描述；帖子标题为 E-P1/E-P2/E-PL1。**这些旧型号地址、架构与流程不是 E-P7 证据**。工具的源码可得性/完整重用许可未确认，不下载或运行其可执行附件。[micro43club 讨论](https://micro43club.pro/forum/threads/modifikacija-proshivki-kamer-olympus.22086/) 可读，保留为旧型号 community-reported 线索；未独立复现。[2019 Reddit 链接](https://www.reddit.com/r/M43/comments/bnhfb5/modified_olympus_firmware_removes_30minute/) 虽返回 HTTP 200，本轮只有中间页，**讨论内容未复核**。
+
+## GR4-LUTSmith 的 release 与主分支不是同一快照
+
+公开 releases/latest API 本轮返回 [v2.0.2](https://github.com/lemonadesaltbagel/GR4-LUTSmith/releases/tag/v2.0.2)，published_at `2026-10-11T07:51:44Z`。表中审阅的 main commit 的 `VERSION` 为 2.1.0。未下载 release 安装包，不将 main 功能一律归给 v2.0.2。
+
+## 复核位置
+
+- GR4-LUTSmith: [README.md](https://github.com/lemonadesaltbagel/GR4-LUTSmith/blob/0f0856e246524ccd435bb93aaf1ede29cd338aa6/README.md), [gr4_lutsmith.py](https://github.com/lemonadesaltbagel/GR4-LUTSmith/blob/0f0856e246524ccd435bb93aaf1ede29cd338aa6/gr4_lutsmith.py), [pyproject.toml](https://github.com/lemonadesaltbagel/GR4-LUTSmith/blob/0f0856e246524ccd435bb93aaf1ede29cd338aa6/pyproject.toml), [packaging/NOTICE.txt](https://github.com/lemonadesaltbagel/GR4-LUTSmith/blob/0f0856e246524ccd435bb93aaf1ede29cd338aa6/packaging/NOTICE.txt).
+- ricoh-gr4-firmware-analysis-and-feature-expansion: [README.md](https://github.com/radium-wang/ricoh-gr4-firmware-analysis-and-feature-expansion/blob/e0e0b69a71d8d7727d2b5c97c9e809a3d8f45c85/README.md), [LICENSE](https://github.com/radium-wang/ricoh-gr4-firmware-analysis-and-feature-expansion/blob/e0e0b69a71d8d7727d2b5c97c9e809a3d8f45c85/LICENSE).
+- gr3x-fw-hack: [README.md](https://github.com/hhornbacher/gr3x-fw-hack/blob/dc84ad50a0e5afc86d7273eb75e86ff889b83b19/README.md).
+- fujihack: [README.md](https://github.com/fujihack/fujihack/blob/754acff9aa0322df19446cf7eca699b221c3330d/README.md), [LICENSE](https://github.com/fujihack/fujihack/blob/754acff9aa0322df19446cf7eca699b221c3330d/LICENSE).
+- magiclantern_simplified: [README.md](https://github.com/reticulatedpines/magiclantern_simplified/blob/142472e95054d73640f50789ac0fd66325499d82/README.md), [COPYING](https://github.com/reticulatedpines/magiclantern_simplified/blob/142472e95054d73640f50789ac0fd66325499d82/COPYING).
+- nikon-firmware-tools: [Nikon-Patch/LocalUI/D5100.cs](https://github.com/simeonpilgrim/nikon-firmware-tools/blob/de8019ee30db7fe7bc61e520da289078ae82dcaa/Nikon-Patch/LocalUI/D5100.cs), [Nikon-Patch/LocalUI/D7000.cs](https://github.com/simeonpilgrim/nikon-firmware-tools/blob/de8019ee30db7fe7bc61e520da289078ae82dcaa/Nikon-Patch/LocalUI/D7000.cs), [Nikon-Patch/LocalUI/Package.cs](https://github.com/simeonpilgrim/nikon-firmware-tools/blob/de8019ee30db7fe7bc61e520da289078ae82dcaa/Nikon-Patch/LocalUI/Package.cs), [GNU Patches/gnu-patches-license.txt](https://github.com/simeonpilgrim/nikon-firmware-tools/blob/de8019ee30db7fe7bc61e520da289078ae82dcaa/GNU%20Patches/gnu-patches-license.txt).
+- olympus-wifi: [src/olympuswifi/camera.py](https://github.com/joergmlpts/olympus-wifi/blob/364dfcd1d8b12ead9d27dd9837463976e2a068fe/src/olympuswifi/camera.py), [docs/source/usage.rst](https://github.com/joergmlpts/olympus-wifi/blob/364dfcd1d8b12ead9d27dd9837463976e2a068fe/docs/source/usage.rst), [LICENSE](https://github.com/joergmlpts/olympus-wifi/blob/364dfcd1d8b12ead9d27dd9837463976e2a068fe/LICENSE).
+- olympus-view-and-delete: [README.md](https://github.com/dpolarov/olympus-view-and-delete/blob/3fbfa1784cea16392aa68af460e1b44ce7f23371/README.md).
+
+日期与访问结果见 [source-access-review](../research/source-access-review.md)；跨品牌实机事实仍是 author/community-reported。
