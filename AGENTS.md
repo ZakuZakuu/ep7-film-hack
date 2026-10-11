@@ -2,7 +2,7 @@
 
 ## Mission
 
-A reproducible, cautious exploration of Olympus PEN E-P7 firmware and image processing to evaluate in-camera custom film simulations through ART filter slots or other native UI. Preserve the distinction between useful film SOOC output and generic post-processing.
+A reproducible, cautious exploration of Olympus PEN E-P7 firmware and image processing to achieve **importable, selectable custom film looks with live view and finished in-camera JPEGs**. ART is one possible implementation only; native COLOR1–4, Picture Mode/Image Control, persistent profiles, an evidenced runtime extension or other camera-native flow are equally valid candidates. Preserve the distinction between real SOOC output and external post-processing.
 
 ## Start by reading
 
@@ -30,11 +30,11 @@ Never commit: original .BIN/.FW images, disassembled proprietary code dumps, rea
 ## The priority order
 
 1. Proven facts and firmware access.
-2. ART effect data-vs-code-vs-ISP distinction.
+2. Trace a verified **native picture-style/profile selector → stored parameter record → actual preview/JPEG processing consumer**, whether or not it belongs to ART.
 3. Only then evaluate offline, reversible modification possibilities.
 4. Live-device read-only experiments only as separate scoped tasks, with user consent.
 5. Custom operators and actual flashing are long-term, not first-phase scope.
 
 ## Evidence-first implementation gate
 
-No feature implementation without a **community-proven camera precedent** and model-specific E-P7 evidence. Treat documented GR4-LUTSmith LUT fitting as an implementation to study, not proof of E-P7 adjustable hue controls or firmware compatibility. On hard blockers, state the missing requirement, experiments tried, risk and realistic alternative; stop rather than invent custom operators.
+No feature implementation without a **community-proven camera precedent** and model-specific E-P7 evidence. Do not pursue ART strings or JPEG resources by default when a native COLOR/Profile consumer path is more direct. Official four-slot manual adjustment is not proof of external import, arbitrary LUT capability, extra named slots, or native rendering of an XMP look. Treat documented GR4-LUTSmith LUT fitting as an implementation to study, not proof of E-P7 adjustable hue controls or firmware compatibility. On hard blockers, state the missing requirement, experiments tried, risk and realistic alternative; stop rather than invent custom operators.
