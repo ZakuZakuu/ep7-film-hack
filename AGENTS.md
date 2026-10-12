@@ -29,6 +29,8 @@ Never commit: original .BIN/.FW images, disassembled proprietary code dumps, rea
 
 ## The priority order
 
+Before substantial ISA, loader, CFG, container or decompiler work, search and audit existing official/source/community implementations first. Record version/commit, license, target coverage, actual Cloud usability and limits in a short build-vs-reuse decision. Prefer a tested external tool; implement only the smallest evidenced gap. Model recollection alone never establishes that no tool exists.
+
 1. Proven facts and firmware access.
 2. Establish exact-model stock expression, saved-state scope and selection effort first. For new binary engineering, still require a verified **native selector → parameter record → actual preview/JPEG consumer**; documented stock workflows do not prove new import/unlocked operators.
 3. Only then evaluate offline, reversible modification possibilities.

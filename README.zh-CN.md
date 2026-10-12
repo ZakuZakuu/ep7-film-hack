@@ -2,7 +2,9 @@
 
 **公开研究进展 — 2026-10-12**
 
-**当前：[Issue #37 系统逆向工作台](research/e142-system-re-workbench.md)。** 已有可复现的工具初始化脚本和经过真实固件校验的私有 GNU/SQLite 索引；可直接复制的 [Cloud Setup 内容与运行命令](docs/20-re-workbench.md)。Ghidra 无界面合成 ELF 验证成功，但 MN103 语言/反编译尚未准入，REA 实际调用受云运行时阻塞。尚未实现自定义 ART 或修改固件。
+**当前：[Issue #39 GNU 模拟器与复制循环准入](research/e142-mn103-semantics.md)。** 优先复用现成 GNU sim，原创合成调用/数据/分支/复制测试通过，并保留 LIR 缓存反例。两处真实复制循环已有条件性静态证明，私有 CFG 能越过首个循环；没有执行原厂代码、制作反编译器或实现 ART 修改。[运行命令与兼容的 Cloud Setup](docs/21-mn103-semantics.md)。
+
+**已有基础：[Issue #37 系统逆向工作台](research/e142-system-re-workbench.md)。** 已有可复现的工具初始化脚本和经过真实固件校验的私有 GNU/SQLite 索引；可直接复制的 [Cloud Setup 内容与运行命令](docs/20-re-workbench.md)。Ghidra 无界面合成 ELF 验证成功，但 MN103 语言/反编译尚未准入，REA 实际调用受云运行时阻塞。尚未实现自定义 ART 或修改固件。
 
 **已有 ART 证据：[Issue #33 ART 颗粒门控与自定义项目边界](research/e142-art-host-gates.md)。** 新代码关系确认三个复合键强制 MonoEnable，以及独立的 Type 条件清除 FilmNoise、保留 MonoEnable。局部条件下保留颗粒位不等于相机接受彩色颗粒，更不等于真实处理或预览。**ART 是当前第一候选；仅继续有锚点的研究，不实现或刷写。** 新项目注册、独立保存、实际处理及名称/图标/预览映射仍有阻塞。见[精确复现](docs/19-art-gates-private-validation.md)。机主已确认专用 ART 的 Add Effects 无法从普通 P/A/S/M Picture Mode 调用，旧跨入口实验不再提议。[T10 对比](research/e142-cross-model-style-entrypoints.md)、[T9 原生能力](research/e142-native-style-workflows.md)保留为历史证据。
 
