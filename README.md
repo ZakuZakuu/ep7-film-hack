@@ -8,7 +8,7 @@
 
 ## Why
 
-The E-P7 has useful Color/Mono Profile Controls and built-in ART effects, but they are difficult to combine and limited for intricate film looks. The user experience we want is *import a personal film look, select it in-camera, preview it, shoot a finished JPEG*, starting with at least two switchable looks. Native COLOR1–4/Picture Mode controls are the first candidate; ART is an optional route. Manual recipes alone do not complete the import/export product.
+The E-P7 has useful Picture Modes, Color/Mono Profile Controls and ART effects, but saving, selecting and combining satisfactory personal looks is inconvenient. The goal is *save a useful film look, select it quickly, preview it honestly and shoot a finished JPEG*, starting with at least two switchable looks. Issue #29 prioritizes reusing the camera's existing processing; no particular LUT or mode family is required. External transfer is desirable, with manual entry clearly distinguished from automatic import.
 
 **A goal is not a capability.** Stock four-profile editing/saving and on-screen effect are documented; automatic import, native parameter representation and the preview/JPEG consumer chain remain unverified. The candidate firmware is privately accessible; acceptance of modified updates and safe recovery remain unverified.
 
@@ -35,11 +35,13 @@ Cross-camera implementations are **precedent for an investigation**, not evidenc
 
 ## Current milestones and decision
 
-**Current: [Issue #27 public-interface review](research/e142-public-interface-evidence.md).** Three source-specific routes found no actionable E-P7 frame/color/ISP interface. Official notices verify a conditional source-code offer; related-model TruePic VIII statements and generic MN103/Linux support do not supply the missing driver/ABI. **Keep firmware-static work paused.** A provenance-qualified E-P7 source/interface package with relevant build/driver definitions is the highest-value next input; eligibility, availability and imaging coverage are unknown. No vendor contact or camera work occurred; G2 incomplete, G4/G5 NO-GO.
+**Current: [Issue #29 native-style workflows](research/e142-native-style-workflows.md).** Exact-model sources support separately stored Picture Mode/filter adjustments and four COLOR/four MONO profiles, with real selection shortcuts. Full-state/WB recall, automatic import and free ART stacking remain unverified. MONO grain is not previewed in live view. A public original JPEG supports partial metadata observability; processed official samples were rejected as capture controls. **Pivot to stock workflow research and a small separately chosen recall audit; keep firmware/upload/unlocking work paused.** See the capability/route matrices and [private reproduction](docs/17-native-style-metadata-validation.md). No camera operation or target-film-quality claim.
+
+[Issue #27 public-interface review](research/e142-public-interface-evidence.md) found no actionable E-P7 frame/color/ISP interface after three source-specific routes. Its driver/ABI and G4/G5 blockers remain for firmware engineering; this does not prevent assessing documented stock workflows.
 
 [Issue #25 system-boundary map](research/e142-system-boundary-map.md) recovered startup-backed initializer/helper relocation, a three-level method-name lookup, a typed one-shot capture request and a generic custom-setting path. The former external copy/fill helpers are located in #0. These are static architecture/control findings; no native COLOR record→actual preview/JPEG consumer or external custom-look import was established. See the [small numeric index](research/e142-system-boundary-map.json) and [guarded reproduction](docs/16-system-map-private-validation.md).
 
-The following milestones retain their historical decisions; T8's current decision supersedes their next-experiment proposals.
+The following milestones retain their historical decisions; T9 separates the current stock-workflow route from paused firmware engineering.
 
 [T0 baseline](research/first-pass-findings.md), [OE validation](research/e142-first-sample-analysis.md), [filesystem findings](research/e142-squashfs-validation.md), [resource layout](research/e142-resource-mapping.md) and [media limits](research/e142-media-triage-and-feasibility.md) are retained. [Issue #13 decision](research/art-update-feasibility.md): OEM-added Bleach Bypass is verified history; E-P7 ART processing/editability and modified-image acceptance/recovery remain unknown. Pause firmware-modification engineering. Official E-P7 profile-import destinations are unsupported; native manual profiles remain an alternative to measure.
 
