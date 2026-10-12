@@ -77,7 +77,7 @@
     "source_candidate": 4991620,
     "bytes": 32,
     "initial_effect_word": 0,
-    "target": "temporary parameters at entry-SP+40",
+    "target": "temporary parameters at current post-prologue SP+40",
     "origins": [
       3153186,
       3153192,

@@ -70,7 +70,7 @@ class AnalysisTests(unittest.TestCase):
         self.assertNotIn('sp',e['register_writes'])
         self.assertEqual(effect(Instruction(0,'rets',''),2)['sp_delta'],0)
         self.assertEqual(effect(Instruction(0,'ret','[],44'),3)['sp_delta'],44)
-        self.assertEqual(effect(Instruction(0,'retf','[],4'),3)['target'],{'register':'entry_mdr'})
+        self.assertEqual(effect(Instruction(0,'retf','[],4'),3)['target'],{'register':'mdr_before_restore'})
 
     def test_widths_extensions_and_preserved_move_flags(self):
         for m,width in [('mov',4),('movbu',1),('movhu',2)]:

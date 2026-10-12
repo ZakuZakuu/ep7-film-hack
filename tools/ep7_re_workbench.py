@@ -356,7 +356,7 @@ def build(original, objdump, output, legacy_flow=False, sim_root=Path('/tmp/ep7-
         graph['parameter_seed'] = {
             'source_candidate':source,'bytes':seed_loop['bytes_transferred'],
             'initial_effect_word':struct.unpack_from('<I',data,source+12)[0],
-            'target':'temporary parameters at entry-SP+40',
+            'target':'temporary parameters at current post-prologue SP+40',
             'origins':[0x301d22,0x301d28,0x301d29,0x301d2d],
             'confidence':'verified','qualification':'under admitted #0 static alias; flags value immediately after copy only, not through later callees'}
         if graph['parameter_seed']['initial_effect_word'] != 0:

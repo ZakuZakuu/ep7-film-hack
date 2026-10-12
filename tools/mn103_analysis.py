@@ -64,7 +64,7 @@ def effect(row, size):
             else:
                 target = {'decoded_direct':row.direct_target()}
             r.update(status='modeled',link_offset=size,sp_delta=0,flags='preserved',
-                     target=target,memory_writes=[{'base':'entry_sp','offset':0,'width':4,'value':'next_pc'}],
+                     target=target,memory_writes=[{'base':'sp_before_call','offset':0,'width':4,'value':'next_pc'}],
                      register_writes=['mdr','pc'])
             if m == 'call':
                 if len(p) != 3: raise SemanticGap('call operands')
@@ -74,7 +74,7 @@ def effect(row, size):
                 if any(x not in ('d2','d3','a2','a3') for x in saved):
                     raise SemanticGap('other/EX register save groups not admitted')
                 saved = [x for x in ('d2','d3','a2','a3') if x in saved]
-                r['memory_writes'] += [{'base':'entry_sp','offset':-4*(i+1),'width':4,'value':reg} for i,reg in enumerate(saved)]
+                r['memory_writes'] += [{'base':'sp_before_call','offset':-4*(i+1),'width':4,'value':reg} for i,reg in enumerate(saved)]
                 r.update(sp_delta=-frame,saved_registers=saved)
                 r['register_writes'].append('sp')
         elif m in ('ret','retf','rets'):
@@ -82,7 +82,7 @@ def effect(row, size):
             frame = 0 if m=='rets' else int(p[1],0)
             if not 0 <= frame <= 255: raise SemanticGap('return frame range')
             r.update(status='modeled',sp_delta=frame,flags='preserved',
-                     target={'memory':'restored_sp','width':4} if m!='retf' else {'register':'entry_mdr'},
+                     target={'memory':'restored_sp','width':4} if m!='retf' else {'register':'mdr_before_restore'},
                      note='RETS does not add four to SP; RETF target precedes register restore')
             if m != 'rets':
                 saved = p[0].strip('[]').split(',') if p[0] != '[]' else []
