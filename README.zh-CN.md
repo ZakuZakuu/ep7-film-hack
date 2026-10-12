@@ -2,9 +2,11 @@
 
 **公开研究进展 — 2026-10-12**
 
+**当前：[Issue #27 公开接口调查](research/e142-public-interface-evidence.md)。** 三条不同来源路线没有找到可用于 E-P7 交叉验证的图像帧、颜色参数或 ISP 接口。官方通知提供有条件的源码申请说明；相关型号的 TruePic VIII 架构声明和通用 MN103/Linux 源码无法补齐驱动对应关系。**保持暂停固件静态追踪。** 最有价值的新输入是有型号/版本来源与构建配置、相关驱动定义的 E-P7 对应源码包；是否可取得、是否覆盖成像仍未知。本轮未联系厂商、读取固件或操作真机；G2 未通过，G4/G5 NO-GO。
+
 **状态：已验证 OE、LZO SquashFS、MN103 代码及部分系统结构；尚未找到自定义色彩参数的真实预览/JPEG 消费者；未连接或修改相机。** [Issue #25 系统边界研究](research/e142-system-boundary-map.md)在四轮有依据的离线实验中恢复了初始化数据与辅助代码的搬移关系、三层方法名称查找、带类型的单次拍摄请求，以及通用自定义设置路径。原先未定位的复制/填充辅助函数已在 #0 找到；这些发现仍属于架构和控制层，没有证明 COLOR 槽记录、成像实现或外部风格导入。见[有限数值索引](research/e142-system-boundary-map.json)和[私有复现](docs/16-system-map-private-validation.md)。**暂停进一步静态调用追踪，等待精确机型/处理器相关的驱动、接口或具体成像变更证据。** G2 未通过，G4/G5 NO-GO；不自动开启下一项 callee 任务，也不要求用户做相机测量。
 
-[Issue #15 程序级成果](research/e142-executable-map.md)中的 `payload offset + 0x60020020` 只适用于已核对锚点，T7 新增不同范围的搬移映射；均未经过实机观测。三处 BleachBypass 名称属于 OI.Share XML 接口描述。[Issue #13 可行性决策](research/art-update-feasibility.md)中的修改包接受/恢复阻塞仍在，暂停修改与安装工程。下列历史研究保留原结论，其下一项实验建议已由 T7 当前决策取代。
+[Issue #15 程序级成果](research/e142-executable-map.md)中的 `payload offset + 0x60020020` 只适用于已核对锚点，T7 新增不同范围的搬移映射；均未经过实机观测。三处 BleachBypass 名称属于 OI.Share XML 接口描述。[Issue #13 可行性决策](research/art-update-feasibility.md)中的修改包接受/恢复阻塞仍在，暂停修改与安装工程。下列历史研究保留原结论，其下一项实验建议已由 T8 当前决策取代。
 
 ## 一句话目标
 
