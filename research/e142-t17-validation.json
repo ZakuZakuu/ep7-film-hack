@@ -7,7 +7,7 @@
   "baseline": "e85a954d6b1ea10b7b5f1815cd40c160e8130600",
   "issue": "https://github.com/ZakuZakuu/ep7-film-hack/issues/43",
   "schema_version": 1,
-  "status": "A/B validated; independent deployment audit C in progress",
+  "status": "all three tracks completed; no ART style/renderer or safe deployment breakthrough",
   "new_windows": [
     {
       "id": "associated_factory",
@@ -203,7 +203,7 @@
     "curated_relationships": 62,
     "copy_loop_proofs": 2,
     "t17_guards": 26,
-    "tests": 63,
+    "tests": 64,
     "skipped": 0,
     "original_oe_decoded_unchanged": true,
     "oem_execution": false
@@ -255,5 +255,111 @@
     ],
     "qualification": "literal-to-name-resolver fragment, NOT GUI caller, registration handler or ART parameter proof"
   },
-  "publication": "selected original numerical metadata only; no OEM bytes/listings/database"
+  "publication": "selected original numerical metadata only; no OEM bytes/listings/database",
+  "deployment_audit": {
+    "input_size": 111017984,
+    "input_sha256": "9d1610124ad98f6edae4540182205f06c9c703d9033ef0c4f19847193f95eaeb",
+    "blocks": 5,
+    "header_trailer_bytes": 320,
+    "payload_bytes": 111017664,
+    "full_outer_coverage": true,
+    "unparsed_outer_suffix_bytes": 0,
+    "all_residuals_zero": true,
+    "block_lengths": [
+      26214336,
+      26214336,
+      45219776,
+      262080,
+      13107136
+    ],
+    "decoded0_sha256": "5dd9af164b4590c7e82f6905c919b3cc450bb58f2d5742ab2a0e3a4eb2e26190",
+    "authentication": "unknown; no device/boot verifier analyzed",
+    "compression": [
+      {
+        "index": 2,
+        "candidates": [
+          {
+            "payload_offset": 34826208,
+            "inode_count": 247,
+            "block_size": 131072,
+            "compression_id": 3,
+            "version": "4.0",
+            "bytes_used": 3393511
+          }
+        ]
+      }
+    ],
+    "synthetic_sum_counterexample": {
+      "sum": 300,
+      "distinct_sha256": true,
+      "inputs": "two original8-byte integer arrays, NOT OE/update images"
+    }
+  },
+  "gates": {
+    "G0": "lawful tools/historical other-model methods; no EP7 modification proof",
+    "G1": "passed",
+    "G2": "incomplete",
+    "G3_G6": "untested",
+    "G4_G5": "NO-GO"
+  },
+  "source_audit": [
+    {
+      "url": "https://explore.omsystem.com/c/en/firmware-update-instructions",
+      "status": 200,
+      "sha256": "dc0359b9e31c091706cc792a08d241d0c3341ce6cdb9225e33b6100aabc23980",
+      "scope": "official; general update/rollback warning, not EP7-tested recovery",
+      "cached_document_not_published": true
+    },
+    {
+      "url": "https://support.jp.omsystem.com/en/support/imsg/digicamera/download/software/firm/e1/",
+      "status": 200,
+      "sha256": "f055f69ac236858220fd8b8097ef5fee5ca8785a9cc63c4c58d2bfa4a771e1af",
+      "scope": "official; EP7 latest1.1listing",
+      "cached_document_not_published": true
+    },
+    {
+      "url": "https://support.jp.omsystem.com/en/support/imsg/digicamera/info/update2024.html",
+      "status": 200,
+      "sha256": "10fd8fbcea798db6a6ea5229e2cd4288804ae2b06be765b4480374a8951a579c",
+      "scope": "official; application lifecycle, NOT SD/authentication",
+      "cached_document_not_published": true
+    },
+    {
+      "url": "https://www.dvxuser.com/threads/e-p1-e-p2-e-pl1-hack-research.217453/",
+      "status": 200,
+      "sha256": "90367655f88997e835f54ba2c73b7af3564bc43c388a9875273d3be04e868efa",
+      "scope": "author-reported;2010 E-P1 resource modification, not EP7",
+      "cached_document_not_published": true
+    },
+    {
+      "url": "https://micro43club.pro/forum/threads/modifikacija-proshivki-kamer-olympus.22086/",
+      "status": 200,
+      "sha256": "378ad05cd1fca85dceed04db1b2f5ad57cdb4f81c1d504003090d56707a4dd26",
+      "scope": "community-reported; old E-M1/E-M10, not EP7",
+      "cached_document_not_published": true
+    },
+    {
+      "url": "https://lightsnowdev.com/Olympus/",
+      "status": 410,
+      "scope": "unavailable; old capabilities/license/support not revalidated"
+    },
+    {
+      "url": "https://github.com/FromF/OlympusCameraKit/tree/7593857ab68e74ebd669a0210b9f2d799d48fdb0",
+      "commit": "7593857ab68e74ebd669a0210b9f2d799d48fdb0",
+      "license": "MIT samples; vendor SDK EULA referenced, not MIT",
+      "scope": "AIR A01, not EP7; headers read only/no binaries/copied code"
+    },
+    {
+      "url": "https://github.com/gphoto/libgphoto2/tree/a4ec9cc8b799d3e620c89feeaeb3ec86f362a12f",
+      "version": "v2.5.34",
+      "commit": "a4ec9cc8b799d3e620c89feeaeb3ec86f362a12f",
+      "license": "LGPL-2.1-or-later",
+      "scope": "source-only model/PTP audit; no verified EP7 recovery/auth definition"
+    }
+  ],
+  "source_limitations": [
+    "BingRSS returned generic indistinguishable results, excluded as technical evidence",
+    "GitHub tool-name results from this repository excluded as circular",
+    "No global absence claim/no external firmware/service files obtained"
+  ]
 }

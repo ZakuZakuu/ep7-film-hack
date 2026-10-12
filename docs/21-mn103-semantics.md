@@ -1,6 +1,6 @@
 # T15 · Run the admitted synthetic simulator and static copy proofs
 
-T16 extends the default private corpus to36 nominated windows and adds a qualified proxy/setting-byte map; [current reproduction](22-art-architecture-private-validation.md). Historical counts below remain T14/T15 results. UDF is still unadmitted.
+T17 extends the default private corpus to48 nominated windows; [current reproduction](23-t17-private-validation.md). Historical counts below remain T14/T15 results. UDF is still unadmitted.
 
 2026-10-12 · [Research/admission report](../research/e142-mn103-semantics.md). Existing owner Cloud Setup call is unchanged:
 

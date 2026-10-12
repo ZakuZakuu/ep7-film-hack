@@ -12,3 +12,11 @@
 暂停固件修改投入。只保留有合法 paired inputs 前提的版本差分研究；目前输入不足，未执行。现实替代是另行授权的手动 OEM Color Profile 样张表达能力测量，可保留预览与机内 JPEG，但不能增加隐藏色彩自由度/自定义 ART。E-P7 作为官方 OI.Share/Workspace Profile Load 写入目标不受支持，JPEG 作为来源与目的机不同。
 
 [决策备忘录](../art-update-feasibility.md)与[来源/精确探针边界](../t2-art-update-evidence.md)。无需为本任务接相机或提供序列号。
+
+## T17 update · 2026-10-13
+
+[Issue43 audit](../e142-longrun-architecture-and-deployment.md) completes three independent tracks, with source hashes and explicit counterevidence. New control-word/entry contracts do not establish a style writer/renderer. Two install-feasibility approaches were completed separately: (1) current official version/update/application lifecycle docs contrasted with historical E-P1/E-M1/E-M10 modification claims and unavailable loader410; (2) exact OE full-coverage/additive-checksum audit, with an original integer-array collision and no image mutation. Neither identifies a device verifier or independent exact-E-P7 recovery.
+
+G4/G5 remain NO-GO: authentication/acceptance, startup-failure recovery and per-device restoration are unknown, not proven impossible. Official prior-version return is unsupported; historical low-level rollback claims are other-model/community reports. No leaked service files obtained, updater/client run, OEM execution, camera/boot-mode action, package or bypass developed. The server update bundle is not demonstrated to be a complete device snapshot.
+
+Resume installation research only with lawful exact-model trust/checker and independent recovery evidence, then separate authorization; do not experimentally brick/rollback the sole camera. Current offline ART research does **not** require an old-version pair or hardware access; it requires a genuinely independent selector/source+20/consumer anchor. No COLOR/generic-bank/UI fallback is substituted for native custom ART entries.

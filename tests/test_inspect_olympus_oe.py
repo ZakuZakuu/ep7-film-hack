@@ -30,6 +30,15 @@ def synthetic_block(payload: bytes, block_no: int = 0) -> bytes:
 
 
 class TestOlmyContainer(unittest.TestCase):
+    def test_additive_sum_does_not_establish_authentication(self):
+        # Original integer arrays only: no OE image, patch or checksum repair.
+        first=struct.pack('<II',100,200)
+        second=struct.pack('<II',150,150)
+        self.assertNotEqual(first,second)
+        self.assertEqual(sum_u32_le(first),300)
+        self.assertEqual(sum_u32_le(first),sum_u32_le(second))
+        self.assertNotEqual(hashlib.sha256(first).digest(),hashlib.sha256(second).digest())
+
     def test_fails_on_empty_container(self):
         with tempfile.TemporaryDirectory() as td:
             p = Path(td, 'empty.bin')

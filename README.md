@@ -35,7 +35,9 @@ Cross-camera implementations are **precedent for an investigation**, not evidenc
 
 ## Current milestones and decision
 
-**Current: [Issue #41 architecture sprint](research/e142-art-architecture-sprint.md).** New constructor-path evidence binds a software proxy and its request delegation; generic settings expose a returned-byte control map. Neither is an ART writer, saved-look format or renderer. A GNU UDF counterexample keeps extension semantics unadmitted. [Reproduction and unchanged Cloud Setup](docs/22-art-architecture-private-validation.md). ART source identity and processing ownership remain blocked.
+**Current: [Issue #43 multi-track investigation](research/e142-longrun-architecture-and-deployment.md).** Verified an adjusted subobject return and shared-body entry contracts, plus two independently bound ART-labelled control roots. Neither supplies a style record or renderer. Fresh official/community/container audit leaves modified acceptance and independent E-P7 recovery unknown: G4/G5 NO-GO. [Reproduction](docs/23-t17-private-validation.md); Cloud Setup unchanged.
+
+**Previous: [Issue #41 architecture sprint](research/e142-art-architecture-sprint.md).** Constructor-path proxy and returned-byte control map; not an ART writer or renderer. GNU UDF semantics remain unadmitted.
 
 **Previous: [Issue #39 GNU simulator and copy-loop admission](research/e142-mn103-semantics.md).** Reused external GNU sim passes original call/data/branch/copy fixtures; a cached-code counterexample limits its LIR fidelity. Two conditional static proofs let the private CFG pass the producer/receiver first loops; no OEM execution or decompiler is claimed. [Commands](docs/21-mn103-semantics.md).
 

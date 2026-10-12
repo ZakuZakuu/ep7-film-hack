@@ -2,7 +2,9 @@
 
 **公开研究进展 — 2026-10-12**
 
-**当前：[Issue #41 系统架构研究](research/e142-art-architecture-sprint.md)。** 新证据绑定了一条创建路径下的软件代理与请求分派关系，并确认通用设置的返回字节控制映射。尚未找到 ART 写入者、风格保存格式或渲染器；GNU UDF 反例说明扩展语义仍不能准入。[复现命令与无需改动的 Cloud Setup](docs/22-art-architecture-private-validation.md)。源对象身份与成像归属仍有阻塞。
+**当前：[Issue #43 多方向自主研究](research/e142-longrun-architecture-and-deployment.md)。** 新证据确认子对象返回调整、同体双入口栈约定，以及两个独立的 ART 命名控制入口；仍未绑定风格参数或渲染器。独立官方/社区/真实容器审计表明：修改包接受和 E-P7 独立恢复仍未知，G4/G5 NO-GO。[复现命令](docs/23-t17-private-validation.md)，Cloud Setup 无需调整。
+
+**已有基础：[Issue #41 系统架构研究](research/e142-art-architecture-sprint.md)。** 已绑定创建路径下的代理与返回字节控制映射；不是 ART 参数写入或渲染证据，GNU UDF 语义仍未准入。
 
 **已有基础：[Issue #39 GNU 模拟器与复制循环准入](research/e142-mn103-semantics.md)。** 优先复用现成 GNU sim，原创合成调用/数据/分支/复制测试通过，并保留 LIR 缓存反例。两处真实复制循环已有条件性静态证明，私有 CFG 能越过首个循环；没有执行原厂代码、制作反编译器或实现 ART 修改。[运行命令](docs/21-mn103-semantics.md)。
 
