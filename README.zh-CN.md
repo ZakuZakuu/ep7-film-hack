@@ -2,9 +2,11 @@
 
 **公开研究进展 — 2026-10-12**
 
-**当前：[Issue #33 ART 颗粒门控与自定义项目边界](research/e142-art-host-gates.md)。** 新代码关系确认三个复合键强制 MonoEnable，以及独立的 Type 条件清除 FilmNoise、保留 MonoEnable。局部条件下保留颗粒位不等于相机接受彩色颗粒，更不等于真实处理或预览。**ART 是当前第一候选；仅继续有锚点的研究，不实现或刷写。** 新项目注册、独立保存、实际处理及名称/图标/预览映射仍有阻塞。见[精确复现](docs/19-art-gates-private-validation.md)。机主已确认专用 ART 的 Add Effects 无法从普通 P/A/S/M Picture Mode 调用，旧跨入口实验不再提议。[T10 对比](research/e142-cross-model-style-entrypoints.md)、[T9 原生能力](research/e142-native-style-workflows.md)保留为历史证据。
+**当前：[Issue #37 系统逆向工作台](research/e142-system-re-workbench.md)。** 已有可复现的工具初始化脚本和经过真实固件校验的私有 GNU/SQLite 索引；可直接复制的 [Cloud Setup 内容与运行命令](docs/20-re-workbench.md)。Ghidra 无界面合成 ELF 验证成功，但 MN103 语言/反编译尚未准入，REA 实际调用受云运行时阻塞。尚未实现自定义 ART 或修改固件。
 
-**状态：已验证 OE、LZO SquashFS、MN103 代码及部分系统结构；尚未找到自定义色彩参数的真实预览/JPEG 消费者；未连接或修改相机。** [Issue #25 系统边界研究](research/e142-system-boundary-map.md)在四轮有依据的离线实验中恢复了初始化数据与辅助代码的搬移关系、三层方法名称查找、带类型的单次拍摄请求，以及通用自定义设置路径。原先未定位的复制/填充辅助函数已在 #0 找到；这些发现仍属于架构和控制层，没有证明 COLOR 槽记录、成像实现或外部风格导入。见[有限数值索引](research/e142-system-boundary-map.json)和[私有复现](docs/16-system-map-private-validation.md)。**暂停进一步静态调用追踪，等待精确机型/处理器相关的驱动、接口或具体成像变更证据。** G2 未通过，G4/G5 NO-GO；不自动开启下一项 callee 任务，也不要求用户做相机测量。
+**已有 ART 证据：[Issue #33 ART 颗粒门控与自定义项目边界](research/e142-art-host-gates.md)。** 新代码关系确认三个复合键强制 MonoEnable，以及独立的 Type 条件清除 FilmNoise、保留 MonoEnable。局部条件下保留颗粒位不等于相机接受彩色颗粒，更不等于真实处理或预览。**ART 是当前第一候选；仅继续有锚点的研究，不实现或刷写。** 新项目注册、独立保存、实际处理及名称/图标/预览映射仍有阻塞。见[精确复现](docs/19-art-gates-private-validation.md)。机主已确认专用 ART 的 Add Effects 无法从普通 P/A/S/M Picture Mode 调用，旧跨入口实验不再提议。[T10 对比](research/e142-cross-model-style-entrypoints.md)、[T9 原生能力](research/e142-native-style-workflows.md)保留为历史证据。
+
+**状态：已验证 OE、LZO SquashFS、MN103 代码及部分系统结构；尚未找到自定义色彩参数的真实预览/JPEG 消费者；未连接或修改相机。** [Issue #25 系统边界研究](research/e142-system-boundary-map.md)在四轮有依据的离线实验中恢复了初始化数据与辅助代码的搬移关系、三层方法名称查找、带类型的单次拍摄请求，以及通用自定义设置路径。原先未定位的复制/填充辅助函数已在 #0 找到；这些发现仍属于架构和控制层，没有证明 COLOR 槽记录、成像实现或外部风格导入。见[有限数值索引](research/e142-system-boundary-map.json)和[私有复现](docs/16-system-map-private-validation.md)。**该轮停止逐函数追踪；T14 现已建立有证据的离线工作台，仍未解锁成像消费者或固件修改。** G2 未通过，G4/G5 NO-GO；不自动开启下一项 callee 任务，也不要求用户做相机测量。
 
 [Issue #15 程序级成果](research/e142-executable-map.md)中的 `payload offset + 0x60020020` 只适用于已核对锚点，T7 新增不同范围的搬移映射；均未经过实机观测。三处 BleachBypass 名称属于 OI.Share XML 接口描述。[Issue #13 可行性决策](research/art-update-feasibility.md)中的修改包接受/恢复阻塞仍在，暂停修改与安装工程。下列历史研究保留原结论，T9 当前决策区分可继续的原生工作流与仍暂停的固件工程。
 

@@ -1,0 +1,163 @@
+{
+  "model": "E-P7",
+  "firmware_version": "owner-reported 1.1",
+  "input_size": 111017984,
+  "input_sha256": "9d1610124ad98f6edae4540182205f06c9c703d9033ef0c4f19847193f95eaeb",
+  "decoded_sha256": "5dd9af164b4590c7e82f6905c919b3cc450bb58f2d5742ab2a0e3a4eb2e26190",
+  "schema_version": 1,
+  "block_index": 0,
+  "decoded_size": 26214336,
+  "main_static_alias": "0x60020020",
+  "qualification": "Bounded static views only, not observed runtime/linker sections; unlisted bytes remain unclassified.",
+  "inherited_index": "research/e142-system-boundary-map.json",
+  "windows": [
+    {
+      "id": "effect_producer",
+      "start": "0x301d16",
+      "end": "0x301ef3",
+      "role": "source record to temporary parameters; writer origin unknown"
+    },
+    {
+      "id": "effect_receiver",
+      "start": "0x3337cb",
+      "end": "0x333c97",
+      "role": "context copy, composite key, eligibility normalization; not rendering"
+    },
+    {
+      "id": "type_classifier",
+      "start": "0x3954fd",
+      "end": "0x3955a6",
+      "role": "T12 scalar classification counterexample; exhausted route"
+    }
+  ],
+  "tables": [
+    {
+      "id": "art_special_cases",
+      "start": "0x501a34",
+      "end": "0x501ab4",
+      "record_bytes": 8,
+      "role": "16 sparse special branches, NOT full ART registry"
+    },
+    {
+      "id": "class_dispatch",
+      "start": "0x501ab4",
+      "end": "0x501adc",
+      "record_bytes": 4,
+      "role": "10 bounded branch targets, NOT a Type/grain legality crosswalk"
+    }
+  ],
+  "structures": [
+    {
+      "id": "source_record",
+      "extent_min": 35,
+      "fields": [
+        {
+          "offset": 4,
+          "width": 4,
+          "role": "return status write, NOT effect writer"
+        },
+        {
+          "offset": 16,
+          "width": 1,
+          "role": "group"
+        },
+        {
+          "offset": 17,
+          "width": 1,
+          "role": "picture type byte"
+        },
+        {
+          "offset": 18,
+          "width": 2,
+          "role": "mode"
+        },
+        {
+          "offset": 20,
+          "width": 4,
+          "role": "compact effects, actual writer unknown"
+        },
+        {
+          "offset": 24,
+          "width": 2,
+          "role": "Type halfword"
+        },
+        {
+          "offset": 33,
+          "width": 1,
+          "role": "secondary classifier input; semantic identity unknown"
+        }
+      ]
+    },
+    {
+      "id": "temporary_parameters",
+      "extent_min": 32,
+      "fields": [
+        {
+          "offset": 8,
+          "width": 1,
+          "role": "group"
+        },
+        {
+          "offset": 9,
+          "width": 1,
+          "role": "picture type"
+        },
+        {
+          "offset": 10,
+          "width": 2,
+          "role": "mode"
+        },
+        {
+          "offset": 12,
+          "width": 4,
+          "role": "expanded effect bits"
+        },
+        {
+          "offset": 16,
+          "width": 2,
+          "role": "Type halfword"
+        },
+        {
+          "offset": 30,
+          "width": 1,
+          "role": "secondary classifier input"
+        }
+      ]
+    }
+  ],
+  "negative_identities": [
+    {
+      "id": "classifier_is_grain_legality",
+      "status": "rejected",
+      "source": "Issue #35; same class for T=0/0x100, different FilmNoise gate"
+    },
+    {
+      "id": "source4_is_effect_writer",
+      "status": "rejected",
+      "origin": "0x301e91",
+      "source": "Issue #36"
+    },
+    {
+      "id": "method_names_are_handlers",
+      "status": "rejected",
+      "origin": "0x75068f",
+      "source": "T7 resolver returns text"
+    },
+    {
+      "id": "changePicMode_legacy_callers",
+      "status": "rejected",
+      "origins": [
+        "0x786f46",
+        "0x79e80c"
+      ],
+      "source": "T7: MOV 258 false identity"
+    },
+    {
+      "id": "producer_direct_caller_route",
+      "status": "exhausted",
+      "source": "T5/T13; do not re-scan direct encodings or self literal"
+    }
+  ],
+  "baseline": "7291a45014b3f909d25928d11e067f079496959d",
+  "issue": "https://github.com/ZakuZakuu/ep7-film-hack/issues/37"
+}

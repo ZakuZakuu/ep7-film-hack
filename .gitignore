@@ -25,3 +25,10 @@ __pycache__/
 # Transient reference checkouts and source caches; never research deliverables
 work/
 *.squashfs
+# Proprietary reverse-engineering databases/projects and compiled artifacts
+*.sqlite
+*.sqlite-*
+*.gpr
+*.rep/
+*.o
+*.elf
