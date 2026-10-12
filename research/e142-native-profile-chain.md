@@ -56,6 +56,8 @@ The six byte reads are at **0x13be7de / 0x13be7fa / 0x13be817 / 0x13be834 / 0x13
 
 The getter and entry-prefix windows decode identically under GNU `mn10300`, `am33`, `am33-2`; this does not resolve `udfu01` or the exact chip. The payload-relative external call target **0xe6fe1032** is a wrapped coordinate: translating it modulo 2^32 gives **0x47001052**. It is not an in-payload offset or evidence of a decoder failure. No other block/boot ROM was guessed to supply that callee.
 
+**2026-10-12 T7 superseding evidence:** [system-boundary map](e142-system-boundary-map.md) explains the formerly external0x47001052 target through startup relocation to0x47000800: source/body `[0x141d232,0x141d33e)` is a generic copy loop (strong static inference). A moved-data view also recovers the old name array's three-level lookup consumer, which returns strings rather than handlers. These resolve mapping gaps, **not** the helper's unknown `udfu01` semantics, COLOR record identity, persistence or imaging. T4's historical observations/budget below remain; current stop/restart decision is in T7.
+
 ### CREATE_PARAM diagnostic: a more useful next anchor
 
 The short `PictureMode` heading at **0x13faf33**, candidate address **0x6141af53**, has two u32 matches: **0x13bfa8e** and **0x13c1fa8**. Both local GNU contexts place the literals at **0x13bfa8c** and **0x13c1fa6**. The latter belongs to diagnostic entry **0x13c1f98**, bounded **`[0x13c1f98, 0x13c217f)`**, **112 reachable instructions**, return **0x13c217c**, titled **`CREATE_PARAM`**.

@@ -48,6 +48,8 @@ Neutral names A/B below are analyst labels, not recovered symbols. These are num
 
 No bootloader copy sequence or device memory map was recovered. The inferred image-header origin 0x60020000 is not the payload start; neither is a measured physical RAM/flash location. The translation is not automatically applicable to later constants, other blocks, overlays or separately relocated code. PC-relative calls remain valid evidence even independently of this base.
 
+**2026-10-12 T7 address-scope update:** [system-boundary research](e142-system-boundary-map.md) adds startup-backed copied-data and helper execution views to #0. The0x60020020 alias remains supported at the tested main-code anchors; it is not a uniform map for every data/helper byte or a physical memory map. Former external helpers0x47001052/0x4700115e are now located in a boot-relocated6-KiB span. This does not identify the processor chip or imaging owner.
+
 ## ART boundary, decision and next minimum experiment
 
 The exact known slice #0 **`[0xec5a28, 0xec5a28+8011)`** was validated with the standard XML parser: root `oishare`. **Three** prior BleachBypass anchors are inside that valid interface-description XML; the fourth is outside it. No rescanning for names or publishing XML. This confirms the warning in Issue #15 and supersedes any interpretation of those three names as processing-code leads. The fourth property-name occurrence still has no demonstrated processing caller. The T2 aligned-word negative result also never tested MN103 variable-length instruction operands at the newly supported execution alias.

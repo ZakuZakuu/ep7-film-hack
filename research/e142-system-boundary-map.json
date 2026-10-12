@@ -1,0 +1,429 @@
+{
+  "schema_version": 1,
+  "issue": "https://github.com/ZakuZakuu/ep7-film-hack/issues/25",
+  "protocol": "https://github.com/ZakuZakuu/ep7-film-hack/issues/25#issuecomment-6116290139",
+  "baseline": "710ddf0c8d0db6c9f1169c9fd2ab63354aa61114",
+  "model": "E-P7",
+  "firmware_version": "owner-reported 1.1",
+  "input_size": 111017984,
+  "input_sha256": "9d1610124ad98f6edae4540182205f06c9c703d9033ef0c4f19847193f95eaeb",
+  "decoded_block_index": 0,
+  "decoded_sha256": "5dd9af164b4590c7e82f6905c919b3cc450bb58f2d5742ab2a0e3a4eb2e26190",
+  "qualification": "Selected metadata, not a complete module/section/function map. All address views are statically supported candidates, not observed device memory.",
+  "address_views": {
+    "main_code": "0x60020020 + decoded offset at tested anchors",
+    "copied_data": {
+      "source_start": "0x2107e0",
+      "source_end": "0x23eb30",
+      "rom_source_candidate": "0x408b0800",
+      "boot_destination": "0xa1f98540",
+      "lower_view_candidate": "0x61f98540",
+      "effective_base": "0x61d87d60",
+      "qualification": "Only this initializer span; paired views differ by 0x40000000, cache attributes unknown"
+    },
+    "relocated_helpers": {
+      "source_start": "0x141c9e0",
+      "source_end": "0x141e1e0",
+      "staging_destination": "0xa143ca00",
+      "execution_view_candidate": "0x47000800",
+      "copy_bytes": "0x1800",
+      "qualification": "Startup 1536-word copy; helper role checked independently; no physical-memory claim"
+    }
+  },
+  "name_metadata": {
+    "name_vector_start": "0x21f8a4",
+    "name_vector_end": "0x221078",
+    "string_pointer_words": 1525,
+    "group_vector_start": "0x221078",
+    "group_vector_end": "0x2211a0",
+    "group_pointer_words": 74,
+    "root_start": "0x2211a0",
+    "root_end": "0x2211b8",
+    "bank_class_counts": [
+      21,
+      4,
+      37,
+      4,
+      7,
+      1
+    ],
+    "consumer_mov": "0x75069f",
+    "encoded_literal": "0x7506a1",
+    "root_address_candidate": "0x61fa8f00",
+    "qualification": "Name-returning metadata, not handler registration. Bank names imply orientation only."
+  },
+  "identity_bindings": [
+    {
+      "id": "0x020165",
+      "bank": 2,
+      "group": 1,
+      "method": 101,
+      "label": "Shooting::oneShotTakingPicture",
+      "wrapper": "capture_wrapper"
+    },
+    {
+      "id": "0x010212",
+      "bank": 1,
+      "group": 2,
+      "method": 18,
+      "label": "SettingController::saveCustom",
+      "wrapper": "custom_wrapper"
+    }
+  ],
+  "code_windows": [
+    {
+      "id": "boot_entry",
+      "start": "0xd9",
+      "end": "0x37c",
+      "coordinate": "decoded #0 payload offset",
+      "role": "startup and data transfers",
+      "evidence": "verified code; transfer roles inferred"
+    },
+    {
+      "id": "rom_read",
+      "start": "0x142e",
+      "end": "0x1601",
+      "coordinate": "decoded #0 payload offset",
+      "role": "page-aligned ROM transfer frontend",
+      "evidence": "strong role inference"
+    },
+    {
+      "id": "page_controller",
+      "start": "0xb87",
+      "end": "0xcbe",
+      "coordinate": "decoded #0 payload offset",
+      "role": "controller-shaped paged transfer",
+      "evidence": "strong role inference; hardware identity unknown"
+    },
+    {
+      "id": "name_resolver",
+      "start": "0x75068f",
+      "end": "0x7506c4",
+      "coordinate": "decoded #0 payload offset",
+      "role": "three-index name lookup returning a string",
+      "evidence": "verified"
+    },
+    {
+      "id": "capture_wrapper",
+      "start": "0x7dcf56",
+      "end": "0x7dcfb7",
+      "coordinate": "decoded #0 payload offset",
+      "role": "metadata-linked one-shot operation wrapper",
+      "evidence": "verified binding; runtime availability untested"
+    },
+    {
+      "id": "capture_callback",
+      "start": "0x7a5420",
+      "end": "0x7a5456",
+      "coordinate": "decoded #0 payload offset",
+      "role": "same identity with an unresolved virtual callback",
+      "evidence": "verified; callback target unknown"
+    },
+    {
+      "id": "capture_backend",
+      "start": "0x77138b",
+      "end": "0x77144a",
+      "coordinate": "decoded #0 payload offset",
+      "role": "constructs and submits a typed request",
+      "evidence": "verified data flow; not rendering proof"
+    },
+    {
+      "id": "request_ctor",
+      "start": "0x7554e7",
+      "end": "0x7554fe",
+      "coordinate": "decoded #0 payload offset",
+      "role": "sets request vptr and halfword type 1007",
+      "evidence": "verified"
+    },
+    {
+      "id": "request_type_getter",
+      "start": "0x748450",
+      "end": "0x748457",
+      "coordinate": "decoded #0 payload offset",
+      "role": "reads halfword at request+4",
+      "evidence": "verified"
+    },
+    {
+      "id": "context_ctor",
+      "start": "0x78ab0b",
+      "end": "0x78ab32",
+      "coordinate": "decoded #0 payload offset",
+      "role": "sets submit-context vptr and fields",
+      "evidence": "verified"
+    },
+    {
+      "id": "submit",
+      "start": "0x78abdc",
+      "end": "0x78ad28",
+      "coordinate": "decoded #0 payload offset",
+      "role": "polymorphic actor/request control",
+      "evidence": "verified structure; backend ownership unknown"
+    },
+    {
+      "id": "actor_locator",
+      "start": "0x78adaa",
+      "end": "0x78ae52",
+      "coordinate": "decoded #0 payload offset",
+      "role": "lazy runtime actor selection",
+      "evidence": "verified structure; concrete runtime object unobserved"
+    },
+    {
+      "id": "actor_ctor",
+      "start": "0x804cc2",
+      "end": "0x804ce7",
+      "coordinate": "decoded #0 payload offset",
+      "role": "constructor-path actor vptr assignment",
+      "evidence": "verified"
+    },
+    {
+      "id": "actor_dispatch",
+      "start": "0x78b3a5",
+      "end": "0x78b49e",
+      "coordinate": "decoded #0 payload offset",
+      "role": "stores type and performs notification/wait-shaped control",
+      "evidence": "verified instructions; scheduler role inferred"
+    },
+    {
+      "id": "executor",
+      "start": "0x804812",
+      "end": "0x80485a",
+      "coordinate": "decoded #0 payload offset",
+      "role": "forwards request through runtime-object virtual slot+20",
+      "evidence": "verified unresolved boundary"
+    },
+    {
+      "id": "custom_wrapper",
+      "start": "0x7d9f4f",
+      "end": "0x7d9fc9",
+      "coordinate": "decoded #0 payload offset",
+      "role": "metadata-linked saveCustom operation",
+      "evidence": "verified binding; not COLOR evidence"
+    },
+    {
+      "id": "custom_backend",
+      "start": "0x807330",
+      "end": "0x807357",
+      "coordinate": "decoded #0 payload offset",
+      "role": "normalizes index and calls setting layer",
+      "evidence": "verified"
+    },
+    {
+      "id": "custom_index",
+      "start": "0x807996",
+      "end": "0x8079ba",
+      "coordinate": "decoded #0 payload offset",
+      "role": "index 0..3 maps to descriptor IDs 53..56",
+      "evidence": "verified"
+    },
+    {
+      "id": "custom_setting_1",
+      "start": "0x28fe0c",
+      "end": "0x28fe32",
+      "coordinate": "decoded #0 payload offset",
+      "role": "descriptor/application-setting call path with selector 1",
+      "evidence": "verified; persistence semantics unknown"
+    },
+    {
+      "id": "custom_setting_2",
+      "start": "0x28fd00",
+      "end": "0x28fd27",
+      "coordinate": "decoded #0 payload offset",
+      "role": "descriptor/application-setting call path with selector 2",
+      "evidence": "verified; persistence semantics unknown"
+    },
+    {
+      "id": "setting_descriptor",
+      "start": "0x28fae4",
+      "end": "0x28fb56",
+      "coordinate": "decoded #0 payload offset",
+      "role": "typed descriptor fields; traversal includes unsupported udfu01",
+      "evidence": "verified accesses; traversal semantics incomplete"
+    },
+    {
+      "id": "relocated_copy",
+      "start": "0x141d232",
+      "end": "0x141d33e",
+      "coordinate": "decoded #0 payload offset",
+      "role": "generic copy loops in relocated helper span",
+      "evidence": "verified instructions; memcpy-like strong inference"
+    },
+    {
+      "id": "relocated_fill",
+      "start": "0x141d33e",
+      "end": "0x141d3b5",
+      "coordinate": "decoded #0 payload offset",
+      "role": "generic fill loops in relocated helper span",
+      "evidence": "verified instructions; memset-like strong inference"
+    }
+  ],
+  "direct_calls": [
+    {
+      "window": "boot_entry",
+      "source": "0x1d9",
+      "target": "0x142e",
+      "evidence": "nominated direct encoding in entry-derived window; no runtime execution claim"
+    },
+    {
+      "window": "boot_entry",
+      "source": "0x1f6",
+      "target": "0x142e",
+      "evidence": "nominated direct encoding in entry-derived window; no runtime execution claim"
+    },
+    {
+      "window": "boot_entry",
+      "source": "0x213",
+      "target": "0x142e",
+      "evidence": "nominated direct encoding in entry-derived window; no runtime execution claim"
+    },
+    {
+      "window": "boot_entry",
+      "source": "0x230",
+      "target": "0x142e",
+      "evidence": "nominated direct encoding in entry-derived window; no runtime execution claim"
+    },
+    {
+      "window": "boot_entry",
+      "source": "0x24d",
+      "target": "0x142e",
+      "evidence": "nominated direct encoding in entry-derived window; no runtime execution claim"
+    },
+    {
+      "window": "boot_entry",
+      "source": "0x261",
+      "target": "0x142e",
+      "evidence": "nominated direct encoding in entry-derived window; no runtime execution claim"
+    },
+    {
+      "window": "rom_read",
+      "source": "0x14ca",
+      "target": "0xb87",
+      "evidence": "nominated direct encoding in entry-derived window; no runtime execution claim"
+    },
+    {
+      "window": "capture_wrapper",
+      "source": "0x7dcf62",
+      "target": "0x75068f",
+      "evidence": "nominated direct encoding in entry-derived window; no runtime execution claim"
+    },
+    {
+      "window": "capture_wrapper",
+      "source": "0x7dcf96",
+      "target": "0x77138b",
+      "evidence": "nominated direct encoding in entry-derived window; no runtime execution claim"
+    },
+    {
+      "window": "capture_backend",
+      "source": "0x77140b",
+      "target": "0x7554e7",
+      "evidence": "nominated direct encoding in entry-derived window; no runtime execution claim"
+    },
+    {
+      "window": "capture_backend",
+      "source": "0x771414",
+      "target": "0x78abdc",
+      "evidence": "nominated direct encoding in entry-derived window; no runtime execution claim"
+    },
+    {
+      "window": "actor_locator",
+      "source": "0x78ae27",
+      "target": "0x804cc2",
+      "evidence": "nominated direct encoding in entry-derived window; no runtime execution claim"
+    },
+    {
+      "window": "actor_dispatch",
+      "source": "0x78b41b",
+      "target": "0x804812",
+      "evidence": "nominated direct encoding in entry-derived window; no runtime execution claim"
+    },
+    {
+      "window": "custom_wrapper",
+      "source": "0x7d9f64",
+      "target": "0x75068f",
+      "evidence": "nominated direct encoding in entry-derived window; no runtime execution claim"
+    },
+    {
+      "window": "custom_wrapper",
+      "source": "0x7d9fa0",
+      "target": "0x807330",
+      "evidence": "nominated direct encoding in entry-derived window; no runtime execution claim"
+    },
+    {
+      "window": "custom_backend",
+      "source": "0x807344",
+      "target": "0x28fe0c",
+      "evidence": "nominated direct encoding in entry-derived window; no runtime execution claim"
+    },
+    {
+      "window": "custom_backend",
+      "source": "0x80734c",
+      "target": "0x28fd00",
+      "evidence": "nominated direct encoding in entry-derived window; no runtime execution claim"
+    },
+    {
+      "window": "custom_setting_1",
+      "source": "0x28fe1f",
+      "target": "0x28fae4",
+      "evidence": "nominated direct encoding in entry-derived window; no runtime execution claim"
+    },
+    {
+      "window": "custom_setting_2",
+      "source": "0x28fd14",
+      "target": "0x28fae4",
+      "evidence": "nominated direct encoding in entry-derived window; no runtime execution claim"
+    }
+  ],
+  "conditional_virtual_evidence": [
+    {
+      "source": "0x78ac04",
+      "vtable_payload_offset": "0xa5dd04",
+      "slot_bytes": 12,
+      "target": "0x748450",
+      "qualification": "Request constructor path stamps vptr; returns request type, not ISP ownership"
+    },
+    {
+      "source": "0x78ac6b",
+      "vtable_payload_offset": "0xa7a2a4",
+      "slot_bytes": 36,
+      "target": "0x78adaa",
+      "qualification": "Submit-context constructor path; actor instance contents remain runtime-dependent"
+    },
+    {
+      "source": "0x78aca9",
+      "vtable_payload_offset": "0xabc100",
+      "slot_bytes": 164,
+      "target": "0x78b3a5",
+      "qualification": "Actor constructor path; not a proof all runtime instances use this type"
+    }
+  ],
+  "control_identity_spaces": {
+    "method_identifier": "low 24 bits as three 1-based indices",
+    "one_shot_request_type": 1007,
+    "custom_input_indices": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "custom_descriptor_ids": [
+      53,
+      54,
+      55,
+      56
+    ],
+    "qualification": "Do not equate these with each other, COLOR slots, ART indices or ISP opcodes"
+  },
+  "controls": {
+    "moved_root_exact_u32_hits": 1,
+    "old_rom_root_hits": 0,
+    "header_shift_plus_32_hits": 0,
+    "raw_name_resolver_call_candidates": 2258,
+    "caller_contexts_screened": 4,
+    "qualification": "Raw candidates are not validated function counts; name availability does not establish implemented/runtime-enabled APIs"
+  },
+  "verdict": {
+    "architecture_progress": true,
+    "G2": "incomplete; no custom parameter -> actual preview/JPEG/ISP consumer",
+    "G4_G5": "NO-GO",
+    "decision": "Pause additional firmware-static traversal without independent processor/driver or version-specific processing evidence; no automatic next-callee task"
+  }
+}
