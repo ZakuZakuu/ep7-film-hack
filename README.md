@@ -43,6 +43,8 @@ Cross-camera implementations are **precedent for an investigation**, not evidenc
 
 [Issue #21 producer/consumer follow-up](research/e142-picturemode-producers-and-remote-controls.md) recovers a real CREATE_PARAM caller, source-to-temporary group/type/mode writes and a non-formatting receiver that packs those fields into a key and selects local flag-setting branches. This advances beyond diagnostics; native COLOR slot identities, persistence and actual preview/JPEG processing remain unproved. The fixed OI.Share schema describes named stock ART controls without establishing custom-profile import; official Profile Library excludes E-P7 as a write destination. See [guarded reproduction](docs/15-picturemode-and-schema-private-validation.md). Next: one bounded analysis of the observed downstream hand-off, not firmware modification. G2 incomplete, G4/G5 NO-GO.
 
+[Issue #23 hand-off verdict](research/e142-picturemode-handoff-verdict.md) completes that experiment: `0x334780` reads group/options/flags and conditionally delegates, with no identified imaging consumer. Stop this incremental chain; neither new callee met the independent rendering-evidence condition. G2 is incomplete, G4/G5 remain NO-GO. Prefer a separately authorized stock COLOR expressivity pilot, or pause if manual controls cannot meet the owner's needs. The report includes the route comparison and private reproduction; no camera experiment or automatic import is claimed.
+
 Read [AGENTS.md](AGENTS.md), [research policy](RESEARCH_POLICY.md) and the authorized issue. [CODEX_START.md](CODEX_START.md) records the historical T0 scope.
 
 ```bash

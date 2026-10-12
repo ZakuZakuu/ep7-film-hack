@@ -1,6 +1,6 @@
 # Blocker · COLOR/Picture Mode processing and persistence ownership
 
-2026-10-11 · [Issue #18](https://github.com/ZakuZakuu/ep7-film-hack/issues/18), updated by [Issue #21](https://github.com/ZakuZakuu/ep7-film-hack/issues/21) · **OPEN, G2 incomplete**. E-P7 **owner-reported v1.1**, private original **111017984 bytes / SHA-256 `9d1610124ad98f6edae4540182205f06c9c703d9033ef0c4f19847193f95eaeb`**. T5 main baseline `034730639a30456637bee627d0366990c83b2f45`; T4 baseline retained in its report. All coordinates below are decoded #0 offsets or explicitly qualified static address candidates; no observed device memory.
+2026-10-12 · [Issue #18](https://github.com/ZakuZakuu/ep7-film-hack/issues/18), updated by [Issue #21](https://github.com/ZakuZakuu/ep7-film-hack/issues/21) and [Issue #23](https://github.com/ZakuZakuu/ep7-film-hack/issues/23) · **OPEN, G2 incomplete; incremental chain stopped**. E-P7 **owner-reported v1.1**, private original **111017984 bytes / SHA-256 `9d1610124ad98f6edae4540182205f06c9c703d9033ef0c4f19847193f95eaeb`**. T6 main baseline `a51099b989fa4a928c2ec9b9e790813c78b68962`; historical baselines retained in their reports. All coordinates below are decoded #0 offsets or explicitly qualified static address candidates; no observed device memory.
 
 ## Missing requirements and the two finite paths tested
 
@@ -38,8 +38,14 @@ Recover **one verified caller/function-pointer use of 0x13c1f98**, trace its inp
 
 The caller and temporary-object writes are now recovered; the non-formatting consumer advances beyond that minimum but does not satisfy G2's rendering criterion.
 
-## Next minimum experiment
+## T5's next experiment (completed by T6)
 
 Inspect **0x334780**, reached by observed receiver hand-off0x333c72, and at most one direct downstream receiver. Follow the context key **+0x2c2c** or demonstrably derived flags into a specifically corroborated processing consumer. If the function merely registers/queues an opaque object, record that boundary and stop. No broad offset/name scan, alternate-base guessing or assumed COLOR IDs. COLOR binding and persistence still need independent evidence even if processing ownership is found.
 
-No new secret, user upload or hardware access is needed. A later device experiment requires its own scope/authorization; continued research does not authorize writes. **T5 has stopped at this evidence boundary.**
+## T6 verdict and new direction
+
+[T6 memo/reproduction](../e142-picturemode-handoff-verdict.md) verifies the actual hand-off, same context-relative group/flag locations and a complete23-instruction local CFG. The primary is an option/group/flag-gated dispatcher, with **no identified imaging request/consumer**. Its two callees lack independent rendering evidence; zero new downstream bodies were inspected. Prior0x3346e9 may change context contents, so earlier values are not presumed intact. This is an evidence boundary, not proof of firmware-level impossibility.
+
+**Do not continue with another same-style callee issue.** Prefer a separately authorized, controlled stock COLOR expressivity pilot: private baseline repeats and one-step saturation/tone responses, declared target color space, then independent JPEG/scene comparison if warranted. No binary G2, automatic import, arbitrary LUT or fitting-quality claim follows from the stock UI; no test is executed here. If manual controls/workflow are already unacceptable, pause the project instead. Full single-page cost/value/evidence comparison is in the T6 memo.
+
+Static investigation can resume for **materially new external/model-specific evidence**, such as an identified processor/color-driver operation or lawful version-specific difference with a concrete relevant anchor; an old paired image is optional, not a prerequisite. Existing upload and G4/G5 acceptance/recovery blockers remain. A later capture/device task requires separate scope/authorization. **T6 stops here and its PR awaits review.**

@@ -97,6 +97,8 @@ Updated [processing/persistence blocker](blockers/BLOCKER-e142-native-profile-co
 
 **Most valuable next experiment:** inspect just **0x334780**, the observed success-path hand-off at **0x333c72**, and at most one direct downstream receiver. Trace the context and the composite key at **+0x2c2c** (or demonstrably derived flags) into a specific processing request/consumer. Success requires real field use with corroborated imaging ownership, not an acronym or function-shaped decode. If it only registers/queues an opaque object, record that boundary and stop; no alternate base, broad field-offset search or generic resource scan. COLOR slot/persistence attribution remains a separate necessary proof even if this consumer is found. This task does not execute that proposed next experiment.
 
+**2026-10-12 follow-up:** [T6 / Issue #23](e142-picturemode-handoff-verdict.md) completed this proposal. The primary has group/option/flag gating and opaque delegated calls, with no established imaging consumer; no new downstream body qualified for investigation. The incremental chain is now stopped. Prefer stock COLOR expressivity measurement or pause; the paragraph above records T5's historical recommendation.
+
 A lower-priority, separately authorized **device** experiment could obtain only the actual command list and `get_camprop` descriptions/current values with mode side effects explicitly reviewed. It could falsify runtime ART-query assumptions or reveal different properties, but the offline schema currently gives no reason to promise COLOR import. It is **not authorized or performed here**, and the community constructor/getter is not a safe ready-made read-only procedure.
 
 ## Validation and publication boundary
