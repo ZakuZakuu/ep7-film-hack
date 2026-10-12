@@ -1,0 +1,229 @@
+{
+  "model": "E-P7",
+  "firmware_version": "owner-reported 1.1",
+  "input_size": 111017984,
+  "input_sha256": "9d1610124ad98f6edae4540182205f06c9c703d9033ef0c4f19847193f95eaeb",
+  "decoded_sha256": "5dd9af164b4590c7e82f6905c919b3cc450bb58f2d5742ab2a0e3a4eb2e26190",
+  "schema_version": 1,
+  "issue": "https://github.com/ZakuZakuu/ep7-film-hack/issues/41",
+  "baseline": "796f8bec0f695802895dacafc000c9fbf17a2373",
+  "coordinate": "decoded OE #0 offsets, scoped static aliases; no runtime observation",
+  "outcome": "narrower generic architecture evidence, NOT ART breakthrough",
+  "cycles": {
+    "A": "no independent source anchor; skipped new code",
+    "B": "constructor-path proxy and qualified request delegation",
+    "C": "returned-byte control map; no persistence; UDF unadmitted",
+    "D": "no independent processing ownership anchor; skipped new code"
+  },
+  "new_windows": [
+    {
+      "id": "dispatch_receiver_getter",
+      "start": "0x804792",
+      "end": "0x8047e3",
+      "reachable_rows": 17,
+      "role": "T16 static receiver publication; runtime mutation unknown"
+    },
+    {
+      "id": "actor_field_reset",
+      "start": "0x804d28",
+      "end": "0x804d44",
+      "reachable_rows": 8,
+      "role": "T16 negative: actor field zeros do not bind receiver"
+    },
+    {
+      "id": "dispatch_receiver_factory",
+      "start": "0xa154b4",
+      "end": "0xa154da",
+      "reachable_rows": 10,
+      "role": "T16 conditional static-object initialization/return"
+    },
+    {
+      "id": "dispatch_receiver_ctor",
+      "start": "0xa154da",
+      "end": "0xa154fe",
+      "reachable_rows": 14,
+      "role": "T16 vptr and associated receiver member+8"
+    },
+    {
+      "id": "dispatch_receiver_base",
+      "start": "0xa1558c",
+      "end": "0xa1558f",
+      "reachable_rows": 1,
+      "role": "T16 identity-preserving base return"
+    },
+    {
+      "id": "dispatch_proxy",
+      "start": "0xa15565",
+      "end": "0xa15580",
+      "reachable_rows": 12,
+      "role": "T16 request forwarding through resolved virtual+4"
+    },
+    {
+      "id": "associated_receiver_lookup",
+      "start": "0xa150a9",
+      "end": "0xa150cd",
+      "reachable_rows": 18,
+      "role": "T16 member+148 / conditional virtual+176 resolution"
+    },
+    {
+      "id": "request_type_format",
+      "start": "0x80485a",
+      "end": "0x80486e",
+      "reachable_rows": 5,
+      "role": "T16 negative: format wrapper, not type selector"
+    },
+    {
+      "id": "setting_byte_submit",
+      "start": "0x293854",
+      "end": "0x293887",
+      "reachable_rows": 17,
+      "role": "T16 scalar byte handoff, not full style record"
+    },
+    {
+      "id": "setting_byte_consumer",
+      "start": "0x293887",
+      "end": "0x293910",
+      "reachable_rows": 58,
+      "role": "T16 1..8 to 3000..3007 control constants; storage unknown"
+    }
+  ],
+  "new_code_bytes": 457,
+  "new_instruction_rows": 160,
+  "new_evidence": [
+    {
+      "kind": "static_factory",
+      "source": "0xa154b4",
+      "target": "static address 0x622f4a58",
+      "origins": [
+        "0xa154c6",
+        "0xa154cc",
+        "0xa154d1",
+        "0x8047c4"
+      ],
+      "coordinate": "decoded #0 offsets; explicit static address values",
+      "confidence": "verified",
+      "note": "constructor path only; outside admitted initializer map; not observed device RAM"
+    },
+    {
+      "kind": "conditional_virtual",
+      "source": "0x80484a",
+      "target": "0xa15565",
+      "origins": [
+        "0xa1558c",
+        "0xa154e2",
+        "0xa154e8",
+        "0xb6b4b4",
+        "0x804847"
+      ],
+      "coordinate": "decoded #0 offsets; explicit static address values",
+      "confidence": "verified",
+      "note": "conditional on constructor-stamped instance and unchanged vptr; runtime instances unobserved"
+    },
+    {
+      "kind": "associated_receiver",
+      "source": "proxy+8",
+      "target": "lookup input a0",
+      "origins": [
+        "0xa154f8",
+        "0xa1556a",
+        "0xa1556f"
+      ],
+      "coordinate": "decoded #0 offsets; explicit static address values",
+      "confidence": "verified",
+      "note": "load verified; preceding ctor store alias requires opaque initializer preserving A2/A3; type/ownership unknown"
+    },
+    {
+      "kind": "request_forward",
+      "source": "original request a1",
+      "target": "resolved receiver virtual+4",
+      "origins": [
+        "0x804844",
+        "0xa1556e",
+        "0xa1556f",
+        "0xa150ca",
+        "0xa15575",
+        "0xa15578",
+        "0xa1557b"
+      ],
+      "coordinate": "decoded #0 offsets; explicit static address values",
+      "confidence": "verified",
+      "note": "matched CALL/RET saves/restores A2 under normal-return contract; target unknown, no imaging claim"
+    },
+    {
+      "kind": "auxiliary_argument",
+      "source": "0xa2d714 return a0",
+      "target": "proxy d0",
+      "origins": [
+        "0x80483a",
+        "0x804841"
+      ],
+      "coordinate": "decoded #0 offsets; explicit static address values",
+      "confidence": "verified",
+      "note": "overwrites earlier type result; pointee/ABI meaning unknown, not request1007 selector"
+    },
+    {
+      "kind": "setting_scalar",
+      "source": "returned descriptor byte+4",
+      "target": "0x293887 input d0",
+      "origins": [
+        "0x28fe24",
+        "0x28fd19",
+        "0x293854",
+        "0x29387e",
+        "0x29387f"
+      ],
+      "coordinate": "decoded #0 offsets; explicit static address values",
+      "confidence": "verified",
+      "note": "not a full parameter-record pointer; opaque intervening calls remain qualified"
+    },
+    {
+      "kind": "control_constants",
+      "source": "scalar 1..8",
+      "target": "0x29141e d0=3000..3007,d1=1",
+      "origins": [
+        "0x293889",
+        "0x2938a5",
+        "0x2938d1",
+        "0x2938d3"
+      ],
+      "coordinate": "decoded #0 offsets; explicit static address values",
+      "confidence": "verified",
+      "note": "other inputs skip this call; no ART IDs, storage medium or recall semantics assigned"
+    }
+  ],
+  "validation": {
+    "windows": 36,
+    "instructions": 2132,
+    "cfg_edges": 2159,
+    "stops": 15,
+    "curated_relationships": 55,
+    "copy_loop_proofs": 2,
+    "inherited_instruction_guards": 43,
+    "seed_guards": 4,
+    "t16_guards": 87,
+    "unit_tests": 60,
+    "skipped": 0,
+    "original_oe_decoded_unchanged": true,
+    "oem_execution": false
+  },
+  "gnu_udf_provider": {
+    "source_commit": "815d9a14cbbb3b81843f7566222c87fb22e7255d",
+    "fixture": "tests/fixtures/mn103_udf_provider.s",
+    "architecture_results": {
+      "mn10300": 91,
+      "am33": 91,
+      "am33-2": 91
+    },
+    "tested_imm6": "17*6=102; low-word overflow checked",
+    "imm255_result": "0xfffffffe vs unsigned expectation510",
+    "ep7_semantics": "unadmitted; manufacturer operation user-defined"
+  },
+  "gates": {
+    "G0": "methods validated, no EP7 custom-ART precedent",
+    "G1": "pass",
+    "G2": "incomplete",
+    "G3_G6": "untested",
+    "G4_G5": "NO-GO"
+  },
+  "publication": "selected original numerical metadata; no OEM bytes/text/full CFG/database"
+}

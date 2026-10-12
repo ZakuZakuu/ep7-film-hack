@@ -2,7 +2,9 @@
 
 **公开研究进展 — 2026-10-12**
 
-**当前：[Issue #39 GNU 模拟器与复制循环准入](research/e142-mn103-semantics.md)。** 优先复用现成 GNU sim，原创合成调用/数据/分支/复制测试通过，并保留 LIR 缓存反例。两处真实复制循环已有条件性静态证明，私有 CFG 能越过首个循环；没有执行原厂代码、制作反编译器或实现 ART 修改。[运行命令与兼容的 Cloud Setup](docs/21-mn103-semantics.md)。
+**当前：[Issue #41 系统架构研究](research/e142-art-architecture-sprint.md)。** 新证据绑定了一条创建路径下的软件代理与请求分派关系，并确认通用设置的返回字节控制映射。尚未找到 ART 写入者、风格保存格式或渲染器；GNU UDF 反例说明扩展语义仍不能准入。[复现命令与无需改动的 Cloud Setup](docs/22-art-architecture-private-validation.md)。源对象身份与成像归属仍有阻塞。
+
+**已有基础：[Issue #39 GNU 模拟器与复制循环准入](research/e142-mn103-semantics.md)。** 优先复用现成 GNU sim，原创合成调用/数据/分支/复制测试通过，并保留 LIR 缓存反例。两处真实复制循环已有条件性静态证明，私有 CFG 能越过首个循环；没有执行原厂代码、制作反编译器或实现 ART 修改。[运行命令](docs/21-mn103-semantics.md)。
 
 **已有基础：[Issue #37 系统逆向工作台](research/e142-system-re-workbench.md)。** 已有可复现的工具初始化脚本和经过真实固件校验的私有 GNU/SQLite 索引；可直接复制的 [Cloud Setup 内容与运行命令](docs/20-re-workbench.md)。Ghidra 无界面合成 ELF 验证成功，但 MN103 语言/反编译尚未准入，REA 实际调用受云运行时阻塞。尚未实现自定义 ART 或修改固件。
 

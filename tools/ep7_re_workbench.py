@@ -141,6 +141,125 @@ def guard(row, mnemonic, operands=None):
         raise FormatError('nominated instruction guard failed')
 
 
+def bound_slot_target(data, table, slot, base, rows):
+    """One independently nominated slot, constrained to admitted boundaries."""
+    at = table + slot
+    if table < 0 or table % 4 or slot < 0 or slot % 4 or not 0 <= at <= len(data)-4:
+        raise FormatError('nominated slot outside bounds')
+    target = struct.unpack_from('<I',data,at)[0]-base
+    if target not in rows:
+        raise FormatError('slot is not an admitted code boundary')
+    return target
+
+
+def architecture_evidence(data, decoded):
+    """T16 fixed hypotheses only; no indirect discovery or OEM execution."""
+    edges, count = [], 0
+    def g(w,at,m,o):
+        nonlocal count
+        guard(decoded[w][at],m,o)
+        count += 1
+    def e(kind,source,target,origins,note):
+        edges.append(dict(kind=kind,source=source,target=target,
+                          origins=[hex(a) for a in origins],
+                          coordinate='decoded #0 offsets; explicit static address values',
+                          confidence='verified',note=note))
+    # Factory returns an explicit static address. Base initializer is an
+    # identity return, so the derived vptr store applies to that same object.
+    for w,a,m,o in [
+        ('executor',0x804813,'call','0x804792,[],4'),
+        ('executor',0x804818,'mov','a0,a3'),
+        ('dispatch_receiver_getter',0x804792,'mov','(0x61fa9968),a0'),
+        ('dispatch_receiver_getter',0x8047da,'mov','(0x61fa9968),a0'),
+        ('dispatch_receiver_getter',0x8047bd,'call','0xa154b4,[],4'),
+        ('dispatch_receiver_getter',0x8047c4,'mov','a0,(0x61fa9968)'),
+        ('dispatch_receiver_factory',0xa154c6,'mov','1647266392,a0'),
+        ('dispatch_receiver_factory',0xa154cc,'call','0xa154da,[a2,a3],16'),
+        ('dispatch_receiver_factory',0xa154d1,'mov','1647266392,a0'),
+        ('dispatch_receiver_ctor',0xa154dc,'call','0xa1558c,[],0'),
+        ('dispatch_receiver_base',0xa1558c,'retf','[],0'),
+        ('dispatch_receiver_ctor',0xa154e1,'mov','a0,a3'),
+        ('dispatch_receiver_ctor',0xa154e2,'mov','1622717632,d0'),
+        ('dispatch_receiver_ctor',0xa154e8,'mov','d0,(a3)'),
+        ('dispatch_receiver_ctor',0xa154e9,'mov','8,a2'),
+        ('dispatch_receiver_ctor',0xa154eb,'add','a3,a2'),
+        ('dispatch_receiver_ctor',0xa154f1,'call','0xa09a5b,[],4'),
+        ('dispatch_receiver_ctor',0xa154f8,'mov','a0,(a2)'),
+        ('dispatch_receiver_ctor',0xa154fa,'mov','a3,a0'),
+        ('executor',0x804841,'mov','a0,d0'),
+        ('executor',0x804843,'mov','a3,a0'),
+        ('executor',0x804844,'mov','a2,a1'),
+        ('executor',0x804847,'mov','(20,a2),a2'),
+        ('executor',0x80484a,'calls','(a2)'),
+        ('dispatch_proxy',0xa1556a,'mov','(8,a0),a0'),
+        ('dispatch_proxy',0xa1556e,'mov','a1,a2'),
+        ('dispatch_proxy',0xa1556f,'call','0xa150a9,[a2],8'),
+        ('dispatch_proxy',0xa15575,'mov','a2,a1'),
+        ('dispatch_proxy',0xa15578,'mov','(4,a2),a2'),
+        ('dispatch_proxy',0xa1557b,'calls','(a2)'),
+        ('associated_receiver_lookup',0xa150a9,'mov','148,a1'),
+        ('associated_receiver_lookup',0xa150ab,'add','a0,a1'),
+        ('associated_receiver_lookup',0xa150ad,'mov','(a1),d0'),
+        ('associated_receiver_lookup',0xa150af,'cmp','a2,d0'),
+        ('associated_receiver_lookup',0xa150b1,'beq','0xa150b7'),
+        ('associated_receiver_lookup',0xa150b3,'cmp','0,d0'),
+        ('associated_receiver_lookup',0xa150b5,'bne','0xa150bb'),
+        ('associated_receiver_lookup',0xa150b7,'mov','(a1),a0'),
+        ('associated_receiver_lookup',0xa150b9,'bra','0xa150ca'),
+        ('associated_receiver_lookup',0xa150bf,'mov','(176,a1),a1'),
+        ('associated_receiver_lookup',0xa150c5,'cmp','0,a0'),
+        ('associated_receiver_lookup',0xa150c7,'bne','0xa150ca'),
+        ('associated_receiver_lookup',0xa150c9,'mov','a2,a0'),
+        ('associated_receiver_lookup',0xa150ca,'ret','[a2],8'),
+        ('custom_setting_1',0x28fe24,'movbu','(4,sp),d0'),
+        ('custom_setting_1',0x28fe27,'call','0x293854,[d3],8'),
+        ('custom_setting_2',0x28fd19,'movbu','(4,sp),d0'),
+        ('custom_setting_2',0x28fd1c,'call','0x293854,[d3],8'),
+        ('setting_byte_submit',0x293854,'mov','d0,d3'),
+        ('setting_byte_submit',0x29387e,'mov','d3,d0'),
+        ('setting_byte_submit',0x29387f,'call','0x293887,[d2,d3],12'),
+        ('setting_byte_consumer',0x293887,'mov','d0,d3'),
+        ('setting_byte_consumer',0x2938a9,'bra','0x2938d8'),
+        ('setting_byte_consumer',0x2938d1,'mov','1,d1'),
+        ('setting_byte_consumer',0x2938d3,'call','0x29141e,[d2,d3,a2,a3],20')]:
+        g(w,a,m,o)
+    if bound_slot_target(data,0xb6b4a0,20,0x60020020,
+                         decoded['dispatch_proxy']) != 0xa15565:
+        raise FormatError('T16 constructor slot mismatch')
+    count += 1
+    # Validate the *local* scalar map, not a complete setting/ART registry.
+    for n in range(1,9):
+        at = 0x293889 + 4*(8-n)
+        dst = 0x2938ab + 5*(8-n)
+        g('setting_byte_consumer',at,'cmp',str(n)+',d3')
+        g('setting_byte_consumer',at+2,'beq',hex(dst))
+        g('setting_byte_consumer',dst,'mov',str(2999+n)+',d0')
+        if n != 1:
+            g('setting_byte_consumer',dst+3,'bra','0x2938d1')
+    e('static_factory','0xa154b4','static address 0x622f4a58',
+      [0xa154c6,0xa154cc,0xa154d1,0x8047c4],
+      'constructor path only; outside admitted initializer map; not observed device RAM')
+    e('conditional_virtual','0x80484a','0xa15565',
+      [0xa1558c,0xa154e2,0xa154e8,0xb6b4b4,0x804847],
+      'conditional on constructor-stamped instance and unchanged vptr; runtime instances unobserved')
+    e('associated_receiver','proxy+8','lookup input a0',
+      [0xa154f8,0xa1556a,0xa1556f],
+      'load verified; preceding ctor store alias requires opaque initializer preserving A2/A3; type/ownership unknown')
+    e('request_forward','original request a1','resolved receiver virtual+4',
+      [0x804844,0xa1556e,0xa1556f,0xa150ca,0xa15575,0xa15578,0xa1557b],
+      'matched CALL/RET saves/restores A2 under normal-return contract; target unknown, no imaging claim')
+    e('auxiliary_argument','0xa2d714 return a0','proxy d0',
+      [0x80483a,0x804841],
+      'overwrites earlier type result; pointee/ABI meaning unknown, not request1007 selector')
+    e('setting_scalar','returned descriptor byte+4','0x293887 input d0',
+      [0x28fe24,0x28fd19,0x293854,0x29387e,0x29387f],
+      'not a full parameter-record pointer; opaque intervening calls remain qualified')
+    e('control_constants','scalar 1..8','0x29141e d0=3000..3007,d1=1',
+      [0x293889,0x2938a5,0x2938d1,0x2938d3],
+      'other inputs skip this call; no ART IDs, storage medium or recall semantics assigned')
+    return edges,count
+
+
 def evidence(data, decoded, inherited):
     """Curated relationship guards, not automatic general data-flow recovery."""
     edges = []
@@ -327,10 +446,13 @@ def build(original, objdump, output, legacy_flow=False, sim_root=Path('/tmp/ep7-
                           'stops':flows[w['id']]['stops'],'role':w['role'],
                           't14_reachable_rows':len(old['visited']),'t14_stops':old['stops']})
     edges, guards = evidence(data,decoded,inherited)
+    architecture_edges, architecture_guards = architecture_evidence(data,decoded)
+    edges.extend(architecture_edges)
     layout = layout_guards(data,decoded,objdump,inherited)
     if inspect(original) != before:
         raise FormatError('input changed during analysis')
-    graph = {'schema_version':2,'model':m['model'],'firmware_version':m['firmware_version'],
+    graph = {'schema_version':2,'baseline':m['baseline'],'issue':m['issue'],
+             'model':m['model'],'firmware_version':m['firmware_version'],
              'input_size':m['input_size'],'input_sha256':m['input_sha256'],
              'decoded_sha256':m['decoded_sha256'],'coordinate':'decoded #0 offsets; scoped static aliases only',
              'address_views':inherited['address_views'],'windows':summaries,
@@ -342,6 +464,9 @@ def build(original, objdump, output, legacy_flow=False, sim_root=Path('/tmp/ep7-
                            'source_effect_writer':'unknown','decompiler':'disabled',
                            'input_unchanged':True}}
     graph['validation']['layout'] = layout
+    graph['validation']['architecture_guards'] = architecture_guards
+    graph['validation']['architecture_result'] = (
+        'T16 generic proxy/request and setting-byte boundaries; NOT an ART breakthrough')
     graph['copy_loop_proofs'] = [{'window':wid,**p} for wid,items in proofs.items() for p in items]
     if not legacy_flow:
         pointer = decoded['effect_producer'][0x301d22]

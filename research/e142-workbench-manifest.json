@@ -28,6 +28,66 @@
       "start": "0x3954fd",
       "end": "0x3955a6",
       "role": "T12 scalar classification counterexample; exhausted route"
+    },
+    {
+      "id": "dispatch_receiver_getter",
+      "start": "0x804792",
+      "end": "0x8047e3",
+      "role": "T16 static receiver publication; runtime mutation unknown"
+    },
+    {
+      "id": "actor_field_reset",
+      "start": "0x804d28",
+      "end": "0x804d44",
+      "role": "T16 negative: actor field zeros do not bind receiver"
+    },
+    {
+      "id": "dispatch_receiver_factory",
+      "start": "0xa154b4",
+      "end": "0xa154da",
+      "role": "T16 conditional static-object initialization/return"
+    },
+    {
+      "id": "dispatch_receiver_ctor",
+      "start": "0xa154da",
+      "end": "0xa154fe",
+      "role": "T16 vptr and associated receiver member+8"
+    },
+    {
+      "id": "dispatch_receiver_base",
+      "start": "0xa1558c",
+      "end": "0xa1558f",
+      "role": "T16 identity-preserving base return"
+    },
+    {
+      "id": "dispatch_proxy",
+      "start": "0xa15565",
+      "end": "0xa15580",
+      "role": "T16 request forwarding through resolved virtual+4"
+    },
+    {
+      "id": "associated_receiver_lookup",
+      "start": "0xa150a9",
+      "end": "0xa150cd",
+      "role": "T16 member+148 / conditional virtual+176 resolution"
+    },
+    {
+      "id": "request_type_format",
+      "start": "0x80485a",
+      "end": "0x80486e",
+      "role": "T16 negative: format wrapper, not type selector"
+    },
+    {
+      "id": "setting_byte_submit",
+      "start": "0x293854",
+      "end": "0x293887",
+      "role": "T16 scalar byte handoff, not full style record"
+    },
+    {
+      "id": "setting_byte_consumer",
+      "start": "0x293887",
+      "end": "0x293910",
+      "role": "T16 1..8 to 3000..3007 control constants; storage unknown"
     }
   ],
   "tables": [
@@ -123,6 +183,33 @@
           "role": "secondary classifier input"
         }
       ]
+    },
+    {
+      "id": "dispatch_proxy",
+      "extent_min": 12,
+      "fields": [
+        {
+          "offset": 0,
+          "width": 4,
+          "role": "ctor vptr; conditional created instance"
+        },
+        {
+          "offset": 8,
+          "width": 4,
+          "role": "associated receiver from opaque initializer"
+        }
+      ]
+    },
+    {
+      "id": "associated_receiver",
+      "extent_min": 152,
+      "fields": [
+        {
+          "offset": 148,
+          "width": 4,
+          "role": "self/null/member resolution; concrete runtime type unknown"
+        }
+      ]
     }
   ],
   "negative_identities": [
@@ -156,8 +243,26 @@
       "id": "producer_direct_caller_route",
       "status": "exhausted",
       "source": "T5/T13; do not re-scan direct encodings or self literal"
+    },
+    {
+      "id": "request_type_is_proxy_d0",
+      "status": "rejected",
+      "origin": "0x804841",
+      "source": "T16 D0 overwritten from auxiliary helper A0"
+    },
+    {
+      "id": "gnu_udfu01_is_ep7_semantics",
+      "status": "unadmitted",
+      "source": "T16 manual user-defined operation; original provider imm255 counterexample"
+    },
+    {
+      "id": "custom_record0_is_notification_byte4",
+      "status": "rejected",
+      "source": "T16 distinct field writes/returned byte handoff; no ART storage attribution"
     }
   ],
-  "baseline": "7291a45014b3f909d25928d11e067f079496959d",
-  "issue": "https://github.com/ZakuZakuu/ep7-film-hack/issues/37"
+  "baseline": "796f8bec0f695802895dacafc000c9fbf17a2373",
+  "issue": "https://github.com/ZakuZakuu/ep7-film-hack/issues/41",
+  "inherited_workbench_baseline": "7291a45014b3f909d25928d11e067f079496959d",
+  "inherited_workbench_issue": "https://github.com/ZakuZakuu/ep7-film-hack/issues/37"
 }

@@ -33,14 +33,15 @@ def check(root):
     results = {}
     with tempfile.TemporaryDirectory(prefix='ep7-synthetic-sim-',dir='/tmp') as d:
         private = Path(d)
-        for name,far in [('mn103_semantics',False),('mn103_long_calls',True),('mn103_lir_control',False)]:
+        for name,far in [('mn103_semantics',False),('mn103_long_calls',True),
+                         ('mn103_lir_control',False),('mn103_udf_provider',False)]:
             elf = private/(name+'.elf')
             compile_fixture(root,FIXTURES/(name+'.s'),elf,far)
             statuses = {}
             for architecture in ('mn10300','am33','am33-2'):
                 p = subprocess.run([str(simulator),'--architecture='+architecture,str(elf)],
                                    capture_output=True,timeout=10)
-                expected = 9 if name=='mn103_lir_control' else 0
+                expected = {'mn103_lir_control':9,'mn103_udf_provider':91}.get(name,0)
                 if p.returncode != expected:
                     raise ValueError('synthetic semantic/fidelity result changed')
                 statuses[architecture] = p.returncode
@@ -60,6 +61,7 @@ def check(root):
     return {'simulator':version,'fixture_results':results,
             'call_data_branch_readonly_loop':'PASSED on these original synthetic fixtures',
             'lir_cached_code_fidelity':'PARTIAL: observed 9; manual cached immediate would remain 7',
+            'udf_ep7_admission':'UNADMITTED: user-defined operation; provider immediate255 unsigned expectation fails (91)',
             'oem_execution':False,'cpu_subtype_of_ep7':'unknown; common fixture passes do not discriminate'}
 
 

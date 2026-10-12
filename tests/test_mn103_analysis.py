@@ -96,6 +96,9 @@ class AnalysisTests(unittest.TestCase):
         self.assertEqual(results['fixture_results']['mn103_long_calls']['mn10300'],0)
         self.assertEqual(results['fixture_results']['mn103_lir_control']['am33-2'],9)
         self.assertEqual(results['fixture_results']['incorrect_pointer_expectation'],73)
+        self.assertEqual(results['fixture_results']['mn103_udf_provider']['am33'],91)
+        self.assertIn('UNADMITTED',results['udf_ep7_admission'])
+        self.assertEqual(effect(Instruction(0,'udfu01','6,d0'),3)['status'],'unmodeled')
         self.assertFalse(results['oem_execution'])
 
 
