@@ -29,3 +29,5 @@
 一项可复现的 E-P7 证据，胜过大量看似完整但无法验证的代码。
 
 [Issue #18](../research/e142-native-profile-chain.md) 找到真实 Picture Mode 诊断字段与部分选择/地址链，尚未定位 COLOR 槽持久化或成像 consumer；G2 未通过，G4/G5 仍 NO-GO。官方四槽手动编辑不等于自动导入，也不等于本项目已验证自定义机内效果。
+
+[Issue #21](../research/e142-picturemode-producers-and-remote-controls.md) 新增真实字段生产者和复合键/标志分支消费者，超出了诊断读取，但尚未建立 COLOR 选择→持久化记录→真实预览/JPEG 链。OI.Share 描述与社区接口不提供已验证自定义导入路线。**G2 仍未通过，G4/G5 不变**；新证据支持一次具体下游调用研究，不支持修改工程。

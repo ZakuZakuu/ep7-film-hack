@@ -9,6 +9,8 @@
 
 [Issue #18 原生配置研究](research/e142-native-profile-chain.md)已验证两种 Picture Mode 诊断结构的字段读取，以及选择相关的地址辅助函数；尚未找到 COLOR1–4 持久化布局、上传接口或预览/JPEG 消费者。两条有限假设均已停止，四个官方 COLOR 槽仍是证据最强的条件性路线。[当前 blocker](research/blockers/BLOCKER-e142-native-profile-consumer.md)与[私有复现](docs/14-native-profile-private-validation.md)记录了下一项字段写入者实验；39 项合成测试通过，未操作相机或公开原厂数据。
 
+[Issue #21 后续研究](research/e142-picturemode-producers-and-remote-controls.md)已找到 CREATE_PARAM 的真实 caller、group/type/mode 字段的临时对象写入，以及将这些字段组成键并选择标志位分支的非格式化消费者。这比诊断读取前进了一步，但仍未证明 COLOR 槽身份、持久化和预览/JPEG 处理链。OI.Share 固定描述列出原厂 ART 控制属性，没有证明自定义配置导入；官方 Profile Library 仍排除 E-P7 写入目标。见[完整复现](docs/15-picturemode-and-schema-private-validation.md)。最值得继续的是一个已观察到的下游调用；G2 未通过，G4/G5 仍 NO-GO。
+
 ## 别误会当前状态
 
 T0 复核结果见 [首轮报告](research/first-pass-findings.md)、[固件获取 blocker](research/blockers/BLOCKER-firmware-acquisition.md)、[来源核对](research/source-access-review.md) 与 [合成测试记录](research/validation-t0.md)。该历史 G1 获取阻塞已由 T1/T1.1 解除；原生参数/只读协议路线仍为条件性后续研究。

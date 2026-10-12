@@ -45,3 +45,9 @@
 [Issue #18](../research/e142-native-profile-chain.md) 在同一哈希的 #0 中验证了诊断入口 0x13be62f 的六个 byte 字段（工作缓冲 +0x124…0x129），以及 CREATE_PARAM 入口 0x13c1f98 的 group/type/mode 字段（输入对象 +8/+9/+0xa，mode 为 halfword）。选择辅助函数 0x2e9e99 有四个地址选择分支，但没有证据对应 COLOR1–4；未知 `udfu01` 语义与外部调用 0x47001052 阻止把它当成已解码配置记录。持久化与预览/JPEG consumer 仍 N/unknown。
 
 官方说明书 pp.51–53、103、130 支持四个 COLOR 槽的编辑/保存、屏幕效果和 Picture Mode 的原生处理；未证明任意 XMP/LUT 的导入、拟合质量或更多槽。优先沿已有字段找 producer/consumer，手动配方仅是产品的部分能力，非完整导入成果。两条假设已停止，见 [blocker](../research/blockers/BLOCKER-e142-native-profile-consumer.md)。
+
+## T5 字段生产与非格式化消费
+
+[Issue #21](../research/e142-picturemode-producers-and-remote-controls.md) 在同一哈希的 #0 中验证真实调用链 0x301e7b → 0x2e4e58 → 0x2e4e75（callsite0x2e50eb）→ CREATE_PARAM0x13c1f98。生产者0x301d16 将源对象 +16/+17/+18 的 byte/byte/halfword 复制到临时对象 +8/+9/+0xa；同一对象还经 0x301e88 传入0x3337cb。后者形成 `(group<<24)|(type<<16)|mode`，保存在上下文 +0x2c2c，使用函数内键→代码分支表并改变标志。这是 **verified 静态程序数据使用**，不是仅凭日志名称推断；但源对象上游、COLOR1–4 身份、保存函数及实际成像 consumer 仍 unknown，G2 未通过。
+
+固定 `oishare` XML 的 GET desc/get 分别列出33/31个属性，POST set列出23个属性，含 ART 与子效果控制，没有明确 COLOR/PictureMode/profile 上传项，也没有允许值响应。`colorphase` 的名称不能证明十二色配置能力；社区枚举设置方法不证明 E-P7 可导入任意风格。已观察到下游调用0x333c72→0x334780，适合下一项有界离线实验；本轮未追踪其函数体、未连接设备。
