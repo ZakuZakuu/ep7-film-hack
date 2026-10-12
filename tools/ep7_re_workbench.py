@@ -21,12 +21,14 @@ try:
         Instruction, disassemble, parse_objdump, BRANCHES, CALLS, RETURNS, UNMODELED_FLOW)
     from .mn103_analysis import prove_copy_loop, effect
     from .check_mn103_sim import check as check_simulator
+    from .t17_identity_roots import roots as identity_roots
 except ImportError:
     from inspect_olympus_oe import FormatError, inspect, check_expected, decode_chunk
     from probe_oe_executable import (
         Instruction, disassemble, parse_objdump, BRANCHES, CALLS, RETURNS, UNMODELED_FLOW)
     from mn103_analysis import prove_copy_loop, effect
     from check_mn103_sim import check as check_simulator
+    from t17_identity_roots import roots as identity_roots
 
 REPO = Path(__file__).resolve().parents[1]
 
@@ -260,6 +262,109 @@ def architecture_evidence(data, decoded):
     return edges,count
 
 
+def t17_evidence(data, decoded, objdump):
+    """Fixed adjusted-object/entry and two independent control-root checks."""
+    edges,count=[],0
+    def g(w,at,m,o):
+        nonlocal count
+        guard(decoded[w][at],m,o);count+=1
+    for w,a,m,o in [
+        ('associated_factory',0xa09a75,'call','0xa09a88,[d2,d3,a2,a3],40'),
+        ('associated_factory',0xa09a7a,'mov',str(0x622f2ee0)+',a0'),
+        ('associated_factory',0xa09a80,'call','0xa09c1f,[],0'),
+        ('associated_ctor',0xa09b6d,'ret','[d2,d3,a2,a3],40'),
+        ('associated_return',0xa09c1f,'add','1884,a0'),
+        ('associated_return',0xa09c23,'retf','[],0'),
+        ('associated_ctor',0xa09ada,'mov','1884,a3'),
+        ('associated_ctor',0xa09add,'add','a2,a3'),
+        ('associated_ctor',0xa09adf,'mov','a3,a0'),
+        ('associated_ctor',0xa09ae2,'call','0xa080cf,[d2,d3,a2,a3],24'),
+        ('associated_subobject_ctor',0xa080db,'mov',str(0x60b893b8)+',d0'),
+        ('associated_subobject_ctor',0xa080e1,'mov','d0,(a3)'),
+        ('associated_full_entry',0xa150a4,'movm','[a2],(sp)'),
+        ('associated_full_entry',0xa150a6,'add','-4,sp'),
+        ('dispatch_proxy',0xa1556f,'call','0xa150a9,[a2],8'),
+        ('associated_full_entry',0xa150ca,'ret','[a2],8'),
+        ('art_panel_backend',0x775af7,'exthu','d0'),
+        ('art_panel_writer',0x74a276,'movhu','d0,(0x61fa729c)')]:
+        g(w,a,m,o)
+    for w,at,target in [('art_panel_fragment',0x7dfb8c,0x775af7),
+                        ('art_panel_backend',0x775af8,0x74a276),
+                        ('raw_art_fragment',0x7cdfdc,0x7e91c6),
+                        ('raw_art_backend',0x7e9216,0x764ca0)]:
+        row=decoded[w][at]
+        if row.mnemonic!='call' or row.direct_target()!=target:
+            raise FormatError('T17 nominated backend call drifted')
+        count+=1
+    if bound_slot_target(data,0xb69398,176,0x60020020,
+                         decoded['associated_full_entry'])!=0xa150a4:
+        raise FormatError('T17 subtype slot drifted')
+    count+=1
+    # Parent slots are restored from SP+24..36 after the matched frame40.
+    # This is NOT whole-program alias analysis or proof of unknown callees.
+    protected=(24,28,32,36);local=[]
+    rows=list(decoded['associated_ctor'].values())
+    for i,row in enumerate(rows):
+        if row.operands.endswith(',sp'):
+            raise FormatError('unadmitted constructor stack adjustment')
+        end=rows[i+1].address if i+1<len(rows) else 0xa09b70
+        annotation=effect(row,end-row.address)
+        dst=annotation.get('memory_write',{})
+        if dst.get('base')=='sp':
+            offset=dst.get('displacement')
+            if offset is None or any(offset<p+4 and p<offset+annotation['width'] for p in protected):
+                raise FormatError('explicit constructor write overlaps saved frame')
+            local.append(offset)
+    if sorted(set(local))!=[4,8,12,16,20]:
+        raise FormatError('nominated constructor locals drifted')
+    count+=1
+    # Check typed name metadata by its actual root/group/name pointer relation.
+    for key,record,label in [(0x0201e6,0x220358,'Shooting::setArtPanelFlag'),
+                              (0x031b0c,0x220a20,'EditRaw::saveArtBktEdit')]:
+        bank,group,method=(key>>16)&255,(key>>8)&255,key&255
+        u=lambda at:struct.unpack_from('<I',data,at)[0]
+        copied=lambda address:translate(address,0x61f98540,0x2107e0,0x2e350)
+        head=copied(u(0x2211a0+4*(bank-1)))
+        names=copied(u(head+4*(group-1)))
+        if names+4*(method-1)!=record:
+            raise FormatError('T17 name-record identity drifted')
+        ptr=u(record)-0x60020020
+        if data[ptr:ptr+len(label)+1] != label.encode()+b'\0':
+            raise FormatError('T17 exact selected name drifted')
+        count+=1
+    probe=identity_roots(data,objdump)
+    expected=[[0x7c6ff4,0x7dfb4d],[0x7b2b68,0x7cdfa2]]
+    for result,sites in zip(probe['results'],expected):
+        if [int(x['literal'],16) for x in result['qualified_fragments']]!=sites:
+            raise FormatError('registered identity-reference result drifted')
+    def e(kind,source,target,origins,note):
+        edges.append(dict(kind=kind,source=source,target=target,
+                          origins=[hex(a) for a in origins],confidence='verified',
+                          coordinate='decoded #0 offsets/scoped static address values',note=note))
+    e('adjusted_static_return','static whole 0x622f2ee0','subobject 0x622f363c',
+      [0xa09a7a,0xa09a80,0xa09c1f],
+      'exact+1884 adjustment, not identity; no runtime RAM or whole-object file inverse')
+    e('conditional_frame_preservation','0xa09a5b','proxy+8 candidate store 0xa154f8',
+      [0xa09a75,0xa09b6d,0xa09c23],
+      'matched save/restore with disjoint explicit locals; requires normal nested returns, uncorrupted frame and nonaliasing object/stack')
+    e('conditional_virtual','subobject vtable+176','0xa150a4',
+      [0xa09ada,0xa09ae2,0xa080db,0xa080e1,0xb69448],
+      'constructor-path candidate; opaque base-return identity/runtime type still qualified, generic resolver not ART consumer')
+    e('shared_body_entries','full entry 0xa150a4','CALL-prepared body 0xa150a9',
+      [0xa150a4,0xa150a6,0xa1556f,0xa150ca],
+      'MOVM[a2]+local4 vs CALL[a2],8; original synthetic checks, no OEM execution/complete ABI')
+    e('identity_fragment','0x0201e6','0x7dfb8c -> 0x775af7',
+      [0x220358,0x7dfb4d,0x7dfb53,0x7dfb8c],
+      'named software operation fragment; GUI invocation and caller parameters unobserved')
+    e('control_word_write','ArtPanelFlag-labeled operation','u16 at 0x61fa729c',
+      [0x775af7,0x775af8,0x74a276],
+      'low16 write; no established alias to original effect source+20, no legal flag/GUI/persistence semantics')
+    e('identity_fragment','0x031b0c','0x7cdfdc -> 0x7e91c6 -> 0x764ca0',
+      [0x220a20,0x7cdfa2,0x7cdfa8,0x7cdfdc,0x7e9216],
+      'native RAW ART BKT-labeled workflow/class construction; not selected-filter record, actual processing or SOOC')
+    return edges,count,probe
+
+
 def evidence(data, decoded, inherited):
     """Curated relationship guards, not automatic general data-flow recovery."""
     edges = []
@@ -448,6 +553,8 @@ def build(original, objdump, output, legacy_flow=False, sim_root=Path('/tmp/ep7-
     edges, guards = evidence(data,decoded,inherited)
     architecture_edges, architecture_guards = architecture_evidence(data,decoded)
     edges.extend(architecture_edges)
+    t17_edges,t17_guards,t17_probe=t17_evidence(data,decoded,objdump)
+    edges.extend(t17_edges)
     layout = layout_guards(data,decoded,objdump,inherited)
     if inspect(original) != before:
         raise FormatError('input changed during analysis')
@@ -459,7 +566,7 @@ def build(original, objdump, output, legacy_flow=False, sim_root=Path('/tmp/ep7-
              'structures':m['structures'],'tables':m['tables'],'edges':edges,
              'negative_identities':m['negative_identities'],
              'validation':{'oe_blocks':5,'checksum_residuals_zero':True,'instruction_guards':guards,
-                           'gnu_selector_crosscheck':'mn10300/am33/am33-2 equal in 3 known windows; one implementation',
+                           'gnu_selector_crosscheck':f'mn10300/am33/am33-2 equal in {len(m["windows"])} manifest windows; one implementation',
                            'counterexample':'T=0/0x100 class=0; FilmNoise clearing differs; hypothetical states',
                            'source_effect_writer':'unknown','decompiler':'disabled',
                            'input_unchanged':True}}
@@ -467,6 +574,9 @@ def build(original, objdump, output, legacy_flow=False, sim_root=Path('/tmp/ep7-
     graph['validation']['architecture_guards'] = architecture_guards
     graph['validation']['architecture_result'] = (
         'T16 generic proxy/request and setting-byte boundaries; NOT an ART breakthrough')
+    graph['validation']['t17_guards']=t17_guards
+    graph['validation']['t17_identity_probe']=t17_probe
+    graph['validation']['t17_result']='adjusted subobject/dual entries and ART-labelled control roots; no style writer/renderer'
     graph['copy_loop_proofs'] = [{'window':wid,**p} for wid,items in proofs.items() for p in items]
     if not legacy_flow:
         pointer = decoded['effect_producer'][0x301d22]
@@ -529,6 +639,7 @@ def build(original, objdump, output, legacy_flow=False, sim_root=Path('/tmp/ep7-
                             for p in (Path(__file__),manifest_path,inherited_path,
                                       REPO/'tools/probe_oe_executable.py',REPO/'tools/inspect_olympus_oe.py',
                                       REPO/'tools/mn103_analysis.py',REPO/'tools/check_mn103_sim.py',
+                                      REPO/'tools/t17_identity_roots.py',
                                       REPO/'tools/re_environment/pins.json',
                                       *sorted((REPO/'tests/fixtures').glob('mn103_*.s')))}
             fingerprints['external_objdump_sha256'] = hashlib.sha256(objdump.read_bytes()).hexdigest()
