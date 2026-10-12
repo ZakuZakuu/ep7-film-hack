@@ -67,3 +67,11 @@
 [Issue #27 来源矩阵](../research/e142-public-interface-evidence.md)核验三条路线。官方索引绑定的 E-P7 Linux 通知列15项组件，提供原购买后三年内的源码申请说明；未取得对应源码包，未确认资格、响应、内核版本或成像覆盖。E-P7 与 E-M10 IV 通知的 PDF 不同，但 `pdftotext -layout` 全文相同，不能据此认定相同固件/驱动。Olympus 的 E-M1 II 公告区分 TruePic VIII 的 CPU 与图像处理核；这是官方**其他型号**声明，不是 E-P7 的芯片或接口图。固定 Linux v4.16 的 MN103 Kconfig 只提供通用平台/开发板支持。Olympus US9055219B2 描述功能阶段，但没有 E-P7/TruePic/ABI 绑定；另一个“颜色转换”检索命中实际属于 Fujifilm，已排除。
 
 **没有合格的 E-P7 帧/颜色/ISP 接口，保持暂停。** 本轮没有固件字节验证或逐函数追踪。最有价值的下一输入是有型号/版本与构建/板级配置、真实相关接口定义的合法源码/技术资料；仅收到通用内核或通信源码仍不足以恢复逆向。原生 COLOR 测量只检验 G3，需另行授权，也不等于外部导入。
+
+## T9 原生风格的产品边界（2026-10-12）
+
+[Issue #29 能力矩阵](../research/e142-native-style-workflows.md)以原生保存/切换和满意的胶片风格为目标，不再要求某种 LUT 或限定模式。E-P7 手册支持按 Picture Mode/ART 保存适用调整，四 COLOR/四 MONO 槽保存各自参数；COLOR 可组合十二色饱和度、暗角和三段明暗，MONO 还可用颗粒/调色。**MONO 的 Film Grain Effect 不能实时预览**。ART 附加效果随滤镜变化，没有证明脱离模式任意叠加；完整兼容表的未知单元不借用其他型号补齐。
+
+**保存局部风格不等于保存整套配置。** K Custom 是一个 Picture Mode 项，RAW Data Edit Custom1/2 是拍后显影配置，Custom Menu 是设置页，既有二进制 saveCustom 归属仍未知。E-P7 没有 C1/C2 拍摄档位，按钮角色也没有 Picture Mode/任意配方召回。快捷面板或前置 Profile 开关可减少参数重录，但没有证明 WB/偏移、曝光/ISO 等全局状态与风格一并召回。三项官方外部保存/加载说明仍排除 E-P7 作为目标。
+
+公开原始 E-P7 JPEG（SoftwareVersion1.0、来源/哈希见报告）可由固定 ExifTool13.59 读取部分模式、明暗、白平衡及效果字段；Natural 图片仍有非激活的 COLOR/MONO 默认结构，字段存在不能证明模式生效或整库备份。官方三张原尺寸图片标有 Workspace，部分标签与网页说明不符，不能当作原始拍摄对照。完整配方恢复与 ART 细调映射未证明，`AFFineTune` 属自动对焦。**转向 R1 原生工作流与一个可选的最小召回审计；R2 自动导入/R3 解锁及固件工程继续暂停。** 本轮没有实机操作、目标色彩验收或新上传功能。

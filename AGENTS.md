@@ -2,7 +2,7 @@
 
 ## Mission
 
-A reproducible, cautious exploration of Olympus PEN E-P7 firmware and image processing to achieve **importable, selectable custom film looks with live view and finished in-camera JPEGs**. ART is one possible implementation only; native COLOR1–4, Picture Mode/Image Control, persistent profiles, an evidenced runtime extension or other camera-native flow are equally valid candidates. Preserve the distinction between real SOOC output and external post-processing.
+A reproducible, cautious exploration of Olympus PEN E-P7 native image processing and workflows to achieve **pleasing custom film looks, convenient saving/selection, honest live preview and finished in-camera JPEGs**. The owner's Issue #29 update prioritizes reuse of normal Picture Modes, K Custom, COLOR/MONO profiles and eligible ART effects; no particular LUT format or mode family is required. External preset transfer and flexible composition are desirable but must be distinguished from documented manual stock operation. Preserve the distinction between immediate SOOC output, camera playback development and external post-processing.
 
 ## Start by reading
 
@@ -30,7 +30,7 @@ Never commit: original .BIN/.FW images, disassembled proprietary code dumps, rea
 ## The priority order
 
 1. Proven facts and firmware access.
-2. Trace a verified **native picture-style/profile selector → stored parameter record → actual preview/JPEG processing consumer**, whether or not it belongs to ART.
+2. Establish exact-model stock expression, saved-state scope and selection effort first. For new binary engineering, still require a verified **native selector → parameter record → actual preview/JPEG consumer**; documented stock workflows do not prove new import/unlocked operators.
 3. Only then evaluate offline, reversible modification possibilities.
 4. Live-device read-only experiments only as separate scoped tasks, with user consent.
 5. Custom operators and actual flashing are long-term, not first-phase scope.
