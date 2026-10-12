@@ -2,7 +2,7 @@
 """Guarded GNU-backed private SQLite/CFG project; no full-image code discovery.
 
 OEM operands/CFG stay in /tmp. Public graph is curated numerical evidence only.
-No P-code, ABI inference, emulation, decompilation or automatic indirect solving.
+No P-code, ABI inference, OEM emulation, decompilation or automatic indirect solving.
 """
 from __future__ import annotations
 import argparse
@@ -19,10 +19,14 @@ try:
     from .inspect_olympus_oe import FormatError, inspect, check_expected, decode_chunk
     from .probe_oe_executable import (
         Instruction, disassemble, parse_objdump, BRANCHES, CALLS, RETURNS, UNMODELED_FLOW)
+    from .mn103_analysis import prove_copy_loop, effect
+    from .check_mn103_sim import check as check_simulator
 except ImportError:
     from inspect_olympus_oe import FormatError, inspect, check_expected, decode_chunk
     from probe_oe_executable import (
         Instruction, disassemble, parse_objdump, BRANCHES, CALLS, RETURNS, UNMODELED_FLOW)
+    from mn103_analysis import prove_copy_loop, effect
+    from check_mn103_sim import check as check_simulator
 
 REPO = Path(__file__).resolve().parents[1]
 
@@ -34,14 +38,18 @@ def translate(address, destination, source, size):
     return source + delta
 
 
-def cfg(rows, entry):
+def cfg(rows, entry, loop_proofs=None):
     """Conservative instruction CFG; unknown callees may return, not guaranteed.
 
     Linear rows are not all reachable. Stop unknown extension/hardware-loop
-    semantics. Calls create xrefs, never recursively import callees.
+    semantics. Calls create xrefs, never recursively import callees. Only
+    explicit narrow static loop proofs admit SETLB/LNE cached replay edges.
     """
     by = {r.address:r for r in rows}
     following = {a.address:b.address for a,b in zip(rows, rows[1:])}
+    loop_proofs = loop_proofs or []
+    setups = {p['setup']:p for p in loop_proofs}
+    loops = {p['condition_site']:p for p in loop_proofs}
     pending, visited, edges, stops = [entry], set(), [], []
     while pending:
         at = pending.pop()
@@ -52,6 +60,20 @@ def cfg(rows, entry):
             stops.append({'at':at, 'reason':'outside window or non-boundary'})
             continue
         visited.add(at)
+        if at in loops:
+            proof = loops[at]
+            edges.extend([
+                {'source':at,'target':proof['cached_origin'],'kind':'cached_loop',
+                 'qualification':'conditional cached-prefix replay; unchanged-code contract; finite bound proven'},
+                {'source':at,'target':proof['exit'],'kind':'loop_exit',
+                 'qualification':'counter zero after certified iteration count'}])
+            pending.extend([proof['cached_origin'],proof['exit']])
+            continue
+        if at in setups:
+            edges.append({'source':at,'target':setups[at]['cached_origin'],'kind':'loop_setup',
+                          'qualification':'known immediate counter plus logical LIR/LAR assignment'})
+            pending.append(setups[at]['cached_origin'])
+            continue
         if r.mnemonic.startswith(('.', 'udf')) or r.mnemonic in UNMODELED_FLOW | {'break', 'Address', 'trap'}:
             stops.append({'at':at, 'reason':'unmodeled instruction/control'})
             continue
@@ -255,7 +277,7 @@ def private_directory(path):
     return absolute
 
 
-def build(original, objdump, output):
+def build(original, objdump, output, legacy_flow=False, sim_root=Path('/tmp/ep7-re-tools')):
     manifest_path = REPO/'research/e142-workbench-manifest.json'
     m = json.loads(manifest_path.read_text())
     inherited_path = REPO/m['inherited_index']
@@ -268,6 +290,7 @@ def build(original, objdump, output):
     demo = disassemble(objdump,bytes.fromhex('cd08000000df0000df0000'),0)
     if cfg(demo,0)['returns'] != [5] or cfg(demo,8)['returns'] != [8]:
         raise FormatError('synthetic call/return admission failed')
+    sim_admission = None if legacy_flow else check_simulator(sim_root)
     before = inspect(original)
     check_expected(before,m['input_sha256'],m['input_size'])
     if before['block_count'] != 5 or any(b['checksum_residual'] != '0x00000000' for b in before['blocks']):
@@ -279,24 +302,35 @@ def build(original, objdump, output):
     if len(data) != m['decoded_size'] or hashlib.sha256(data).hexdigest() != m['decoded_sha256']:
         raise FormatError('decoded identity mismatch')
     windows = inherited['code_windows']+m['windows']
-    decoded, flows, summaries = {}, {}, []
+    decoded, flows, summaries, proofs, effects = {}, {}, [], {}, {}
     for w in windows:
         a,b = int(w['start'],16),int(w['end'],16)
         if not 0 <= a < b <= len(data) or b-a > 128*1024:
             raise FormatError('window outside admitted bounds')
         rows = disassemble(objdump,data[a:b],a)
         decoded[w['id']] = {r.address:r for r in rows}
-        flows[w['id']] = cfg(rows,a)
+        old = cfg(rows,a)
+        # Two nominated loops only. No whole-image SETLB scan or arbitrary
+        # loop recognition/recursion; a failed proof stops this guarded run.
+        nominated = {'effect_producer':0x301d2d,'effect_receiver':0x3338fb}
+        proofs[w['id']] = [] if legacy_flow or w['id'] not in nominated else [
+            prove_copy_loop(rows,nominated[w['id']])]
+        if proofs[w['id']] and proofs[w['id']][0]['bytes_transferred'] != 32:
+            raise FormatError('known 32-byte copy extent changed')
+        flows[w['id']] = cfg(rows,a,proofs[w['id']])
+        effects[w['id']] = [effect(row,(rows[i+1].address if i+1<len(rows) else b)-row.address)
+                            for i,row in enumerate(rows)]
         if w['id'] in {n['id'] for n in m['windows']}:
             compare_views(objdump,data[a:b],a,rows)
         summaries.append({'id':w['id'],'start':w['start'],'end':w['end'],
                           'linear_rows':len(rows),'reachable_rows':len(flows[w['id']]['visited']),
-                          'stops':flows[w['id']]['stops'],'role':w['role']})
+                          'stops':flows[w['id']]['stops'],'role':w['role'],
+                          't14_reachable_rows':len(old['visited']),'t14_stops':old['stops']})
     edges, guards = evidence(data,decoded,inherited)
     layout = layout_guards(data,decoded,objdump,inherited)
     if inspect(original) != before:
         raise FormatError('input changed during analysis')
-    graph = {'schema_version':1,'model':m['model'],'firmware_version':m['firmware_version'],
+    graph = {'schema_version':2,'model':m['model'],'firmware_version':m['firmware_version'],
              'input_size':m['input_size'],'input_sha256':m['input_sha256'],
              'decoded_sha256':m['decoded_sha256'],'coordinate':'decoded #0 offsets; scoped static aliases only',
              'address_views':inherited['address_views'],'windows':summaries,
@@ -308,6 +342,41 @@ def build(original, objdump, output):
                            'source_effect_writer':'unknown','decompiler':'disabled',
                            'input_unchanged':True}}
     graph['validation']['layout'] = layout
+    graph['copy_loop_proofs'] = [{'window':wid,**p} for wid,items in proofs.items() for p in items]
+    if not legacy_flow:
+        pointer = decoded['effect_producer'][0x301d22]
+        guard(pointer,'mov')
+        literal,register = pointer.operands.split(',')
+        source = (int(literal)&0xffffffff)-0x60020020
+        if register!='a1' or not 0 <= source <= len(data)-32:
+            raise FormatError('nominated seed pointer guard failed')
+        seed_loop = proofs['effect_producer'][0]
+        guard(decoded['effect_producer'][0x301d28],'mov','sp,a0')
+        guard(decoded['effect_producer'][0x301d29],'add','40,a0')
+        graph['parameter_seed'] = {
+            'source_candidate':source,'bytes':seed_loop['bytes_transferred'],
+            'initial_effect_word':struct.unpack_from('<I',data,source+12)[0],
+            'target':'temporary parameters at current post-prologue SP+40',
+            'origins':[0x301d22,0x301d28,0x301d29,0x301d2d],
+            'confidence':'verified','qualification':'under admitted #0 static alias; flags value immediately after copy only, not through later callees'}
+        if graph['parameter_seed']['initial_effect_word'] != 0:
+            raise FormatError('known seed effect value changed')
+        edges.append({
+            'kind':'parameter_seed_copy','source':hex(source)+'[0:32]',
+            'target':'temporary[0:32]','origins':['0x301d22','0x301d28','0x301d29','0x301d2d'],
+            'coordinate':'decoded #0 offsets under admitted static alias','confidence':'verified',
+            'note':'conditional static seed copy; initial flags zero at exit only, later callees unexamined'})
+        for edge in edges:
+            if edge['kind']=='bounded_copy' and edge['target']=='context[4:36]':
+                edge['note']='T15 closed-form 32-byte proof under valid-memory/unchanged-code/nonoverlap contract; no OEM execution'
+        graph['validation']['parameter_seed_guards'] = 4
+    graph['validation']['synthetic_simulator'] = sim_admission
+    graph['validation']['loop_mode'] = 'legacy stops' if legacy_flow else 'two conditional static proofs'
+    if not legacy_flow:
+        graph['negative_identities'].append({
+            'id':'gnu_sim_is_full_lir_hardware','status':'rejected',
+            'source':'T15 synthetic cached-prefix mutation exits 9 vs manual cached 7',
+            'qualification':'synthetic only; unchanged-code contract required'})
     private = private_directory(output)
     # Build atomically. Existing successful project survives a failed rebuild.
     p = private/'sanitized-graph.json'
@@ -328,11 +397,18 @@ def build(original, objdump, output):
               CREATE INDEX incoming_xrefs ON cfg(target,kind);
               CREATE INDEX outgoing_xrefs ON cfg(source,kind);
               CREATE TABLE negative_identities(id TEXT PRIMARY KEY,record TEXT);
+              CREATE TABLE instruction_effects(window_id TEXT,address INTEGER,status TEXT,record TEXT);
+              CREATE TABLE loop_proofs(window_id TEXT,setup INTEGER,record TEXT);
             ''')
             fingerprints = {str(p.relative_to(REPO)):hashlib.sha256(p.read_bytes()).hexdigest()
                             for p in (Path(__file__),manifest_path,inherited_path,
-                                      REPO/'tools/probe_oe_executable.py',REPO/'tools/inspect_olympus_oe.py')}
+                                      REPO/'tools/probe_oe_executable.py',REPO/'tools/inspect_olympus_oe.py',
+                                      REPO/'tools/mn103_analysis.py',REPO/'tools/check_mn103_sim.py',
+                                      REPO/'tools/re_environment/pins.json',
+                                      *sorted((REPO/'tests/fixtures').glob('mn103_*.s')))}
             fingerprints['external_objdump_sha256'] = hashlib.sha256(objdump.read_bytes()).hexdigest()
+            if not legacy_flow:
+                fingerprints['external_sim_sha256'] = hashlib.sha256((sim_root/'gnu-sim/sim/mn10300/run').read_bytes()).hexdigest()
             for key,value in {'graph':graph,'script_fingerprints':fingerprints}.items():
                 db.execute('INSERT INTO metadata VALUES (?,?)',(key,json.dumps(value)))
             for w in windows:
@@ -344,9 +420,13 @@ def build(original, objdump, output):
                 db.executemany('INSERT INTO cfg VALUES (?,?,?,?,?)',
                     [(wid,e['source'],e['target'],e['kind'],e['qualification']) for e in flows[wid]['edges']])
                 db.executemany('INSERT INTO stops VALUES (?,?,?)',[(wid,s['at'],s['reason']) for s in flows[wid]['stops']])
+                db.executemany('INSERT INTO instruction_effects VALUES (?,?,?,?)',
+                    [(wid,e['address'],e['status'],json.dumps(e)) for e in effects[wid]])
+                db.executemany('INSERT INTO loop_proofs VALUES (?,?,?)',
+                    [(wid,p['setup'],json.dumps(p)) for p in proofs[wid]])
             db.executemany('INSERT INTO evidence(kind,source,target,confidence,origins,note) VALUES (?,?,?,?,?,?)',
                 [(e['kind'],e['source'],e['target'],e['confidence'],json.dumps(e['origins']),e['note']) for e in edges])
-            db.executemany('INSERT INTO negative_identities VALUES (?,?)',[(n['id'],json.dumps(n)) for n in m['negative_identities']])
+            db.executemany('INSERT INTO negative_identities VALUES (?,?)',[(n['id'],json.dumps(n)) for n in graph['negative_identities']])
         Path(temp).chmod(0o600)
         os.replace(temp,private/'project.sqlite')
     finally:
@@ -354,7 +434,8 @@ def build(original, objdump, output):
     p.write_text(json.dumps(graph,indent=2)+'\n')
     p.chmod(0o600)
     return {'windows':len(windows),'instruction_guards':guards,'evidence_edges':len(edges),
-            'validation':graph['validation'],'private_project_created':True}
+            'validation':graph['validation'],'private_project_created':True,
+            'copy_loop_proofs':graph['copy_loop_proofs']}
 
 
 def main():
@@ -362,9 +443,11 @@ def main():
     p.add_argument('--firmware',type=Path,required=True)
     p.add_argument('--objdump',type=Path,required=True)
     p.add_argument('--output-dir',type=Path,default=Path('/tmp/ep7-re-project'))
+    p.add_argument('--legacy-flow',action='store_true',help='T14 stops; no simulator required')
+    p.add_argument('--sim-root',type=Path,default=Path('/tmp/ep7-re-tools'))
     a = p.parse_args()
     try:
-        result = build(a.firmware,a.objdump.resolve(),a.output_dir)
+        result = build(a.firmware,a.objdump.resolve(),a.output_dir,a.legacy_flow,a.sim_root)
     except (OSError,ValueError,KeyError,sqlite3.Error,subprocess.SubprocessError):
         p.exit(2,'STOP: sample, decoder, evidence or private-output guard failed; no OEM output published.\n')
     print(json.dumps(result,indent=2))

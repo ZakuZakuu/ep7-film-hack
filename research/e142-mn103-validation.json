@@ -1,0 +1,199 @@
+{
+  "model": "E-P7",
+  "firmware_version": "owner-reported 1.1",
+  "input_size": 111017984,
+  "input_sha256": "9d1610124ad98f6edae4540182205f06c9c703d9033ef0c4f19847193f95eaeb",
+  "decoded_sha256": "5dd9af164b4590c7e82f6905c919b3cc450bb58f2d5742ab2a0e3a4eb2e26190",
+  "coordinate": "decoded #0 offsets; scoped static aliases only",
+  "copy_loop_proofs": [
+    {
+      "window": "effect_producer",
+      "setup": 3153197,
+      "counter_setup": 3153195,
+      "cached_origin": 3153198,
+      "cached_bytes": 4,
+      "lar": 3153202,
+      "condition_site": 3153203,
+      "exit": 3153204,
+      "iterations": 8,
+      "width": 4,
+      "bytes_transferred": 32,
+      "source_register": "a1",
+      "destination_register": "a0",
+      "pointer_delta": 32,
+      "counter_register": "d1",
+      "counter_exit": 0,
+      "exit_condition_codes": {
+        "Z": 1,
+        "N": 0,
+        "V": 0,
+        "C": 1
+      },
+      "confidence": "verified",
+      "claim": "conditional static loop contract",
+      "conditions": [
+        "entry executes immediate counter setup and SETLB",
+        "valid aligned nonvolatile buffers; no fault/interrupt changes",
+        "cached loop code remains unchanged; no intervening LIR/LAR rewrite",
+        "value-preserving field copy requires nonoverlap"
+      ],
+      "note": "logical cached-prefix edge, not a new ordinary PC-relative branch or OEM execution"
+    },
+    {
+      "window": "effect_receiver",
+      "setup": 3356923,
+      "counter_setup": 3356921,
+      "cached_origin": 3356924,
+      "cached_bytes": 4,
+      "lar": 3356928,
+      "condition_site": 3356929,
+      "exit": 3356930,
+      "iterations": 8,
+      "width": 4,
+      "bytes_transferred": 32,
+      "source_register": "a2",
+      "destination_register": "a0",
+      "pointer_delta": 32,
+      "counter_register": "d1",
+      "counter_exit": 0,
+      "exit_condition_codes": {
+        "Z": 1,
+        "N": 0,
+        "V": 0,
+        "C": 1
+      },
+      "confidence": "verified",
+      "claim": "conditional static loop contract",
+      "conditions": [
+        "entry executes immediate counter setup and SETLB",
+        "valid aligned nonvolatile buffers; no fault/interrupt changes",
+        "cached loop code remains unchanged; no intervening LIR/LAR rewrite",
+        "value-preserving field copy requires nonoverlap"
+      ],
+      "note": "logical cached-prefix edge, not a new ordinary PC-relative branch or OEM execution"
+    }
+  ],
+  "parameter_seed": {
+    "source_candidate": 4991620,
+    "bytes": 32,
+    "initial_effect_word": 0,
+    "target": "temporary parameters at current post-prologue SP+40",
+    "origins": [
+      3153186,
+      3153192,
+      3153193,
+      3153197
+    ],
+    "confidence": "verified",
+    "qualification": "under admitted #0 static alias; flags value immediately after copy only, not through later callees"
+  },
+  "baseline": "3dfdfb9ce8b30d18a8da69221c0940e72fa9a87c",
+  "issue": "https://github.com/ZakuZakuu/ep7-film-hack/issues/39",
+  "simulator": {
+    "simulator": "GNU simulator (SIM) 17.0.50.20250202-git",
+    "fixture_results": {
+      "mn103_semantics": {
+        "mn10300": 0,
+        "am33": 0,
+        "am33-2": 0
+      },
+      "mn103_long_calls": {
+        "mn10300": 0,
+        "am33": 0,
+        "am33-2": 0
+      },
+      "mn103_lir_control": {
+        "mn10300": 9,
+        "am33": 9,
+        "am33-2": 9
+      },
+      "incorrect_pointer_expectation": 73
+    },
+    "call_data_branch_readonly_loop": "PASSED on these original synthetic fixtures",
+    "lir_cached_code_fidelity": "PARTIAL: observed 9; manual cached immediate would remain 7",
+    "oem_execution": false,
+    "cpu_subtype_of_ep7": "unknown; common fixture passes do not discriminate"
+  },
+  "window_comparison": [
+    {
+      "id": "relocated_copy",
+      "t14_reachable_rows": 101,
+      "reachable_rows": 101,
+      "stops": [
+        {
+          "at": 21090895,
+          "reason": "unmodeled instruction/control"
+        },
+        {
+          "at": 21090914,
+          "reason": "unmodeled instruction/control"
+        },
+        {
+          "at": 21091015,
+          "reason": "unmodeled instruction/control"
+        },
+        {
+          "at": 21091075,
+          "reason": "unmodeled instruction/control"
+        },
+        {
+          "at": 21091109,
+          "reason": "unmodeled instruction/control"
+        }
+      ]
+    },
+    {
+      "id": "effect_producer",
+      "t14_reachable_rows": 11,
+      "reachable_rows": 175,
+      "stops": []
+    },
+    {
+      "id": "effect_receiver",
+      "t14_reachable_rows": 103,
+      "reachable_rows": 365,
+      "stops": [
+        {
+          "at": 3357057,
+          "reason": "indirect target unresolved"
+        },
+        {
+          "at": 3357160,
+          "reason": "unmodeled instruction/control"
+        },
+        {
+          "at": 3357185,
+          "reason": "indirect target unresolved"
+        }
+      ]
+    },
+    {
+      "id": "type_classifier",
+      "t14_reachable_rows": 80,
+      "reachable_rows": 80,
+      "stops": []
+    }
+  ],
+  "note": "Selected conditional static evidence only; no OEM bytes, full CFG, opcode dumps or runtime observation.",
+  "new_evidence": [
+    {
+      "kind": "parameter_seed_copy",
+      "source": "0x4c2a84[0:32]",
+      "target": "temporary[0:32]",
+      "origins": [
+        "0x301d22",
+        "0x301d28",
+        "0x301d29",
+        "0x301d2d"
+      ],
+      "coordinate": "decoded #0 offsets under admitted static alias",
+      "confidence": "verified",
+      "note": "conditional static seed copy; initial flags zero at exit only, later callees unexamined"
+    }
+  ],
+  "validation_counts": {
+    "instruction_guards": 43,
+    "parameter_seed_guards": 4,
+    "curated_edges": 48
+  }
+}

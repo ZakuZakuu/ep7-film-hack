@@ -31,6 +31,12 @@ def check(root: Path, provider_smoke=False, headless_smoke=False):
     if walk(rows, 0)['direct_calls'][0]['target'] != 8 or walk(rows, 8)['return_offsets'] != [8]:
         raise ValueError('GNU synthetic flow mismatch')
     report['synthetic_gnu'] = 'pass'
+    simulator = root/'gnu-sim/sim/mn10300/run'
+    if simulator.is_file():
+        banner = run([simulator,'--version']).splitlines()[0]
+        if not banner.endswith('17.0.50.20250202-git'):
+            raise ValueError('GNU simulator version mismatch')
+        report['gnu_sim'] = banner+'; synthetic-only, LIR cache fidelity partial'
     ghidra = root / 'ghidra_12.1.4_PUBLIC'
     if ghidra.is_dir():
         props = (ghidra/'Ghidra/application.properties').read_text()

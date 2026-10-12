@@ -30,5 +30,13 @@
     "license": "MIT; dependency licenses separate",
     "audited_source_commit": "c22111eca2c4bc84a084f12711f405b3e7422a40",
     "npm_reported_git_head": "a56f7bb668ab23fec8d33f7af353ac7ed2fe1895"
+  },
+  "gnu_sim": {
+    "version": "17.0.50.20250202-git",
+    "source_tag": "binutils-2_44",
+    "source_commit": "815d9a14cbbb3b81843f7566222c87fb22e7255d",
+    "url": "https://codeload.github.com/RTEMS/sourceware-mirror-binutils-gdb/tar.gz/815d9a14cbbb3b81843f7566222c87fb22e7255d",
+    "sha256": "89810ce6cebbd1a6a86ec8ea4d727b3f811e41c550912f189c14a87f136bc5ae",
+    "license": "GPL-3.0-or-later; external executable only"
   }
 }

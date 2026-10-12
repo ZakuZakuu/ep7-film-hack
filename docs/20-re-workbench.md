@@ -2,6 +2,8 @@
 
 2026-10-12 · [Issue #37](https://github.com/ZakuZakuu/ep7-film-hack/issues/37) · [Tool decisions and architecture](../research/e142-system-re-workbench.md).
 
+**T15 supersedes the default build/CFG behavior:** [docs21](21-mn103-semantics.md) adds external GNU sim for original fixtures and two static loop proofs. Counts/stops below describe the historical T14 run; use --legacy-flow to reproduce them. The owner Setup entrypoint remains unchanged.
+
 The usable E-P7 provider is GNU binutils 2.44 plus a bounded private SQLite project. Official Ghidra headless works on our synthetic x86-64 ELF; REA is installed but its actual native request is blocked in this Cloud runtime. No MN103 decompiler is admitted. This is an intermediate analysis database, not recovered source, an emulator, a camera application or a firmware editor.
 
 ## Paste into Cloud Setup
