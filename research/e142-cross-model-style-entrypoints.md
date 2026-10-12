@@ -2,6 +2,8 @@
 
 2026-10-12 · [Issue #31](https://github.com/ZakuZakuu/ep7-film-hack/issues/31) · latest-main baseline **`c4caf740dbcb41743b5efb229588b078ab17de78`** (merged PR #30). One finite documentation-first/offline investigation; no camera operation, firmware alteration, installer, UI implementation or automatic merge.
 
+**Superseded product direction / owner evidence:** [Issue #33 / T11](e142-art-host-gates.md) makes ART the lead and records the owner's confirmed inability to invoke dedicated-gallery Add Effects through normal P/A/S/M Picture Mode. Do not re-propose this report's historical B→A→B audit. The observation is a workflow constraint, not byte-level state/renderer separation. Original T10 evidence and uncertainty below remain historical.
+
 **Decision: continue investigating A as the daily selector and B as the constrained ART editor; prioritize a separate shooting-bank/recall mechanism for complete looks. Pause E-P7 implementation.** Four exact-model manuals support shared *interaction concepts*, with important differences. New E-P7 static evidence associates ten independent effect subfields with an existing parameter producer and diagnostic reader. It does **not** establish an A/B UI writer, shared persistent record, compatible effect stack, rendering consumer or safe import path. No executable editor hook is claimed.
 
 ## Evidence and the convergence hypothesis
