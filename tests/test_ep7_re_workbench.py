@@ -7,7 +7,8 @@ import tempfile
 import unittest
 
 from tools.ep7_re_workbench import (
-    cfg, translate, classification, noise_cleared, private_directory, guard, FormatError)
+    cfg, translate, classification, noise_cleared, private_directory, guard,
+    bound_slot_target, FormatError)
 from tools.ep7_re_query import query
 from tools.probe_oe_executable import Instruction, disassemble
 
@@ -63,6 +64,19 @@ class WorkbenchTests(unittest.TestCase):
         for m,o in [('movhu','(25,a2),d0'),('movbu','(24,a2),d0')]:
             with self.assertRaises(FormatError):
                 guard(r,m,o)
+
+    def test_slot_binding_requires_bounds_and_actual_code_boundary(self):
+        # Original stand-in table: a typed pointer, not firmware bytes.
+        import struct
+        data = bytes(4)+struct.pack('<I',0x1020)
+        rows = {0x20:Instruction(0x20,'rets','')}
+        self.assertEqual(bound_slot_target(data,0,4,0x1000,rows),0x20)
+        with self.assertRaises(FormatError):
+            bound_slot_target(data,-4,8,0x1000,rows)
+        for slot,base,admitted in [(3,0x1000,rows),(8,0x1000,rows),
+                                    (4,0x1001,rows),(4,0x1000,{})]:
+            with self.assertRaises(FormatError):
+                bound_slot_target(data,0,slot,base,admitted)
 
     def test_private_output_rejects_repository_and_symlink(self):
         with self.assertRaises(FormatError):

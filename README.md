@@ -35,7 +35,9 @@ Cross-camera implementations are **precedent for an investigation**, not evidenc
 
 ## Current milestones and decision
 
-**Current: [Issue #39 GNU simulator and copy-loop admission](research/e142-mn103-semantics.md).** Reused external GNU sim passes original call/data/branch/copy fixtures; a cached-code counterexample limits its LIR fidelity. Two conditional static proofs let the private CFG pass the producer/receiver first loops; no OEM execution or decompiler is claimed. [Commands and unchanged Cloud Setup entrypoint](docs/21-mn103-semantics.md).
+**Current: [Issue #41 architecture sprint](research/e142-art-architecture-sprint.md).** New constructor-path evidence binds a software proxy and its request delegation; generic settings expose a returned-byte control map. Neither is an ART writer, saved-look format or renderer. A GNU UDF counterexample keeps extension semantics unadmitted. [Reproduction and unchanged Cloud Setup](docs/22-art-architecture-private-validation.md). ART source identity and processing ownership remain blocked.
+
+**Previous: [Issue #39 GNU simulator and copy-loop admission](research/e142-mn103-semantics.md).** Reused external GNU sim passes original call/data/branch/copy fixtures; a cached-code counterexample limits its LIR fidelity. Two conditional static proofs let the private CFG pass the producer/receiver first loops; no OEM execution or decompiler is claimed. [Commands](docs/21-mn103-semantics.md).
 
 **Previous foundation: [Issue #37 system RE workbench](research/e142-system-re-workbench.md).** Reproducible public tool bootstrap and a tested private GNU/SQLite index are now available; [Cloud Setup and commands](docs/20-re-workbench.md). Direct Ghidra headless passes a synthetic ELF, but no MN103 language/decompiler is admitted and REA native launch is blocked in this Cloud runtime. No ART feature or firmware modification is implemented.
 
