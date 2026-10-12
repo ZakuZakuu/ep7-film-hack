@@ -2,7 +2,7 @@
 
 **公开研究进展 — 2026-10-12**
 
-**当前：[Issue #31 跨机型选择/编辑入口研究](research/e142-cross-model-style-entrypoints.md)。** 四机型官方资料区分 Picture Mode 选择、ART 编辑与 Myset/Custom 完整配置召回。E-P7 字节已确认十项效果子字段，但没有绑定两个界面的写入者、共享持久化记录或可用编辑 hook。机主观察到 WB/偏移/明暗保持全局；手册的 Profile 明暗保存说明与该操作范围仍需区分。**继续有界的 A/B 状态研究；跨机型优先复用已有原生拍摄配置槽；暂停 E-P7 功能实现。** 见[私有复现](docs/18-style-entrypoint-private-validation.md)。未操作真机，未证明自由效果组合或通用固件兼容；[T9 工作流与元数据](research/e142-native-style-workflows.md)保留为原生能力基线。
+**当前：[Issue #33 ART 颗粒门控与自定义项目边界](research/e142-art-host-gates.md)。** 新代码关系确认三个复合键强制 MonoEnable，以及独立的 Type 条件清除 FilmNoise、保留 MonoEnable。局部条件下保留颗粒位不等于相机接受彩色颗粒，更不等于真实处理或预览。**ART 是当前第一候选；仅继续有锚点的研究，不实现或刷写。** 新项目注册、独立保存、实际处理及名称/图标/预览映射仍有阻塞。见[精确复现](docs/19-art-gates-private-validation.md)。机主已确认专用 ART 的 Add Effects 无法从普通 P/A/S/M Picture Mode 调用，旧跨入口实验不再提议。[T10 对比](research/e142-cross-model-style-entrypoints.md)、[T9 原生能力](research/e142-native-style-workflows.md)保留为历史证据。
 
 **状态：已验证 OE、LZO SquashFS、MN103 代码及部分系统结构；尚未找到自定义色彩参数的真实预览/JPEG 消费者；未连接或修改相机。** [Issue #25 系统边界研究](research/e142-system-boundary-map.md)在四轮有依据的离线实验中恢复了初始化数据与辅助代码的搬移关系、三层方法名称查找、带类型的单次拍摄请求，以及通用自定义设置路径。原先未定位的复制/填充辅助函数已在 #0 找到；这些发现仍属于架构和控制层，没有证明 COLOR 槽记录、成像实现或外部风格导入。见[有限数值索引](research/e142-system-boundary-map.json)和[私有复现](docs/16-system-map-private-validation.md)。**暂停进一步静态调用追踪，等待精确机型/处理器相关的驱动、接口或具体成像变更证据。** G2 未通过，G4/G5 NO-GO；不自动开启下一项 callee 任务，也不要求用户做相机测量。
 
@@ -10,7 +10,7 @@
 
 ## 一句话目标
 
-让 Olympus PEN E-P7 像一台好用的数码胶片相机：复用现有图像处理能力，保存满意的个人风格、方便机内切换，诚实呈现预览与 JPEG。先评估至少两种实用风格，再考虑更大库与自动传输；不要求某种 LUT 格式或指定模式。手动录入可作为阶段性方案，但不会被称作自动导入，不能隐瞒 WB 等额外操作或颗粒预览例外。
+让 Olympus PEN E-P7 像一台好用的数码胶片相机：当前首选 ART 生态，复用原厂彩色风格与兼容效果，研究可保存、快速切换的自建风格，最终争取保留原厂滤镜并增加自定义名称、原创图标和预览。彩色颗粒、柔焦组合须有真实处理依据；不要求任意 LUT 运行时。手动原厂编辑是有限基线，不是自动导入或已实现的命名风格库；不能隐瞒 WB 等全局状态或预览例外。
 
 [Issue #18 原生配置研究](research/e142-native-profile-chain.md)已验证两种 Picture Mode 诊断结构的字段读取，以及选择相关的地址辅助函数；尚未找到 COLOR1–4 持久化布局、上传接口或预览/JPEG 消费者。两条有限假设均已停止，四个官方 COLOR 槽仍是证据最强的条件性路线。[当前 blocker](research/blockers/BLOCKER-e142-native-profile-consumer.md)与[私有复现](docs/14-native-profile-private-validation.md)记录了下一项字段写入者实验；39 项合成测试通过，未操作相机或公开原厂数据。
 
