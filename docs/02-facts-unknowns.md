@@ -51,3 +51,7 @@
 [Issue #21](../research/e142-picturemode-producers-and-remote-controls.md) 在同一哈希的 #0 中验证真实调用链 0x301e7b → 0x2e4e58 → 0x2e4e75（callsite0x2e50eb）→ CREATE_PARAM0x13c1f98。生产者0x301d16 将源对象 +16/+17/+18 的 byte/byte/halfword 复制到临时对象 +8/+9/+0xa；同一对象还经 0x301e88 传入0x3337cb。后者形成 `(group<<24)|(type<<16)|mode`，保存在上下文 +0x2c2c，使用函数内键→代码分支表并改变标志。这是 **verified 静态程序数据使用**，不是仅凭日志名称推断；但源对象上游、COLOR1–4 身份、保存函数及实际成像 consumer 仍 unknown，G2 未通过。
 
 固定 `oishare` XML 的 GET desc/get 分别列出33/31个属性，POST set列出23个属性，含 ART 与子效果控制，没有明确 COLOR/PictureMode/profile 上传项，也没有允许值响应。`colorphase` 的名称不能证明十二色配置能力；社区枚举设置方法不证明 E-P7 可导入任意风格。已观察到下游调用0x333c72→0x334780，适合下一项有界离线实验；本轮未追踪其函数体、未连接设备。
+
+## T6 有界消费者判定（2026-10-12）
+
+[Issue #23](../research/e142-picturemode-handoff-verdict.md) 验证 `0x334780…0x3347be` 的23条可达指令与返回0x3347bb：真实 context+4 指针上的 byte+0x16、group byte+8、flags word+0xc 用于条件调用。group1（此前诊断标签 Art）与group0/2的条件不同，不能叫 COLOR 槽。函数本体不读取复合键、type或mode，也无可识别成像操作。前置callee0x3346e9可能改写内容，值的完整传递未证明；两个新callee的成像归属未知，未深入。**G2 未通过，停止同类调用链追踪**；下一步优先考虑原生 COLOR 表达能力测量或暂停，自动导入与修改/恢复阻塞不变。

@@ -11,6 +11,8 @@
 
 [Issue #21 后续研究](research/e142-picturemode-producers-and-remote-controls.md)已找到 CREATE_PARAM 的真实 caller、group/type/mode 字段的临时对象写入，以及将这些字段组成键并选择标志位分支的非格式化消费者。这比诊断读取前进了一步，但仍未证明 COLOR 槽身份、持久化和预览/JPEG 处理链。OI.Share 固定描述列出原厂 ART 控制属性，没有证明自定义配置导入；官方 Profile Library 仍排除 E-P7 写入目标。见[完整复现](docs/15-picturemode-and-schema-private-validation.md)。最值得继续的是一个已观察到的下游调用；G2 未通过，G4/G5 仍 NO-GO。
 
+[Issue #23 调用判定](research/e142-picturemode-handoff-verdict.md)已完成该实验：`0x334780` 读取 group、选项和标志，进行条件调用；没有确认实际成像消费者，两个新 callee 也没有满足独立成像依据要求，因此停止这条逐函数研究链。G2 未通过，G4/G5 不变。建议另行授权一个原生 COLOR 色彩表达能力测量；若手动控件路线已不符合需求，则暂停项目等待新证据。报告包含路线成本/价值比较和私有复现，本轮未操作相机。
+
 ## 别误会当前状态
 
 T0 复核结果见 [首轮报告](research/first-pass-findings.md)、[固件获取 blocker](research/blockers/BLOCKER-firmware-acquisition.md)、[来源核对](research/source-access-review.md) 与 [合成测试记录](research/validation-t0.md)。该历史 G1 获取阻塞已由 T1/T1.1 解除；原生参数/只读协议路线仍为条件性后续研究。

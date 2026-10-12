@@ -31,3 +31,5 @@
 [Issue #18](../research/e142-native-profile-chain.md) 找到真实 Picture Mode 诊断字段与部分选择/地址链，尚未定位 COLOR 槽持久化或成像 consumer；G2 未通过，G4/G5 仍 NO-GO。官方四槽手动编辑不等于自动导入，也不等于本项目已验证自定义机内效果。
 
 [Issue #21](../research/e142-picturemode-producers-and-remote-controls.md) 新增真实字段生产者和复合键/标志分支消费者，超出了诊断读取，但尚未建立 COLOR 选择→持久化记录→真实预览/JPEG 链。OI.Share 描述与社区接口不提供已验证自定义导入路线。**G2 仍未通过，G4/G5 不变**；新证据支持一次具体下游调用研究，不支持修改工程。
+
+[Issue #23](../research/e142-picturemode-handoff-verdict.md) 完成该下游研究，仅确认选项/group/标志门控及未定性条件调用，未建立真实成像 consumer。**停止这条逐函数路线，G2 未通过，G4/G5 NO-GO。** 原生 COLOR 受控测量可独立检验 G3/原厂控件的产品价值；即使颜色可接受，也不证明二进制调用链或自动导入。测量只作为另行授权提案，手动路线不适用时优先暂停。
