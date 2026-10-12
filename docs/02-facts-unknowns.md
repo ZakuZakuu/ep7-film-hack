@@ -75,3 +75,11 @@
 **保存局部风格不等于保存整套配置。** K Custom 是一个 Picture Mode 项，RAW Data Edit Custom1/2 是拍后显影配置，Custom Menu 是设置页，既有二进制 saveCustom 归属仍未知。E-P7 没有 C1/C2 拍摄档位，按钮角色也没有 Picture Mode/任意配方召回。快捷面板或前置 Profile 开关可减少参数重录，但没有证明 WB/偏移、曝光/ISO 等全局状态与风格一并召回。三项官方外部保存/加载说明仍排除 E-P7 作为目标。
 
 公开原始 E-P7 JPEG（SoftwareVersion1.0、来源/哈希见报告）可由固定 ExifTool13.59 读取部分模式、明暗、白平衡及效果字段；Natural 图片仍有非激活的 COLOR/MONO 默认结构，字段存在不能证明模式生效或整库备份。官方三张原尺寸图片标有 Workspace，部分标签与网页说明不符，不能当作原始拍摄对照。完整配方恢复与 ART 细调映射未证明，`AFFineTune` 属自动对焦。**转向 R1 原生工作流与一个可选的最小召回审计；R2 自动导入/R3 解锁及固件工程继续暂停。** 本轮没有实机操作、目标色彩验收或新上传功能。
+
+## T10 跨机型选择/编辑与召回边界（2026-10-12）
+
+[Issue #31](../research/e142-cross-model-style-entrypoints.md)比较 E-P7、E-M5 Mark II、OM-5 Mark II、PEN-F 的官方入口。Picture Mode 是较广泛的选择概念；专用 ART 编辑器的进入方式与曝光控制不同，PEN-F 用创意拨盘且可保留 P/A/S/M，不能当作 E-P7 模式拨盘 ART。OM-5 II 的 Picture Mode 详细选项包含 Add Effects，不能把 E-P7 机主观察到的两入口编辑差异推广到其他机型。Myset/Custom 是另一个原生配置召回层；只有本轮核对的 OM-5 II 明确支持自定义配置槽名称。类似界面不是地址、固件或补丁兼容证据。
+
+机主确认普通切换及 Profile 拨杆流程中 WB/偏移/明暗保持全局；手册 pp49/53 又明确称 Profile 编辑器的明暗保存到选中槽。**来源与操作范围尚未统一**，不承诺完整风格原子召回，也不把拨杆观察扩大成所有槽内部切换的测量。原厂 Myset 保存 Picture Mode 身份也不保证独立快照每个滤镜的调整表。
+
+真实 #0 `0x301d75…0x301e32` 把源对象+20 的紧凑位字段转换到参数+12；独立诊断关联 StarLight/SoftFocus/Diorama/PinHole/BandShading/WhiteEdge/FilmNoise/Frame/MovieEffect/MonoEnable。**已验证的是子字段转换及诊断关联**，不是同时组合合法、真实处理算子、UI 写入来源或 A/B 共享持久化。已知 changePicMode 名称仍是文本，两个旧候选仍为立即数258的误匹配。未扩大扫描或继续 T6 下游。**继续有界 A/B 状态研究，跨机型优先既有原生召回；暂停 E-P7 实现。** G2 未通过，G4/G5 NO-GO。最小下一实验为另行授权的同基滤镜 B→A→B 效果保留审计，当前未操作相机。

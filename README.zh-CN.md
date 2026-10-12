@@ -2,7 +2,7 @@
 
 **公开研究进展 — 2026-10-12**
 
-**当前：[Issue #29 原生风格工作流](research/e142-native-style-workflows.md)。** 用户目标是拍出满意的理光/富士胶片风格，同时改善保存和切换，不限定 LUT、COLOR 或 ART。已核验普通 Picture Mode/ART 的独立参数、四 COLOR/四 MONO 槽及实际选择流程。完整配置/WB 召回、自动导入和自由效果叠加仍未证明；MONO 颗粒不能实时预览。公开原始 JPEG 可读取部分配方字段，官方经过 Workspace 的样片则不能当作原始拍摄对照。**转向原生工作流的有限可用性研究；固件修改、上传与效果解锁继续暂停。** 见能力矩阵、候选路线与[私有复现](docs/17-native-style-metadata-validation.md)。没有操作真机，也未宣称达到目标胶片色彩。
+**当前：[Issue #31 跨机型选择/编辑入口研究](research/e142-cross-model-style-entrypoints.md)。** 四机型官方资料区分 Picture Mode 选择、ART 编辑与 Myset/Custom 完整配置召回。E-P7 字节已确认十项效果子字段，但没有绑定两个界面的写入者、共享持久化记录或可用编辑 hook。机主观察到 WB/偏移/明暗保持全局；手册的 Profile 明暗保存说明与该操作范围仍需区分。**继续有界的 A/B 状态研究；跨机型优先复用已有原生拍摄配置槽；暂停 E-P7 功能实现。** 见[私有复现](docs/18-style-entrypoint-private-validation.md)。未操作真机，未证明自由效果组合或通用固件兼容；[T9 工作流与元数据](research/e142-native-style-workflows.md)保留为原生能力基线。
 
 **状态：已验证 OE、LZO SquashFS、MN103 代码及部分系统结构；尚未找到自定义色彩参数的真实预览/JPEG 消费者；未连接或修改相机。** [Issue #25 系统边界研究](research/e142-system-boundary-map.md)在四轮有依据的离线实验中恢复了初始化数据与辅助代码的搬移关系、三层方法名称查找、带类型的单次拍摄请求，以及通用自定义设置路径。原先未定位的复制/填充辅助函数已在 #0 找到；这些发现仍属于架构和控制层，没有证明 COLOR 槽记录、成像实现或外部风格导入。见[有限数值索引](research/e142-system-boundary-map.json)和[私有复现](docs/16-system-map-private-validation.md)。**暂停进一步静态调用追踪，等待精确机型/处理器相关的驱动、接口或具体成像变更证据。** G2 未通过，G4/G5 NO-GO；不自动开启下一项 callee 任务，也不要求用户做相机测量。
 
