@@ -1,0 +1,8 @@
+{
+  "name": "ep7-re-provider-environment",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "rea-agents": "6.4.0"
+  }
+}
