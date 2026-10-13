@@ -90,6 +90,11 @@ def effect(row, size):
                     raise SemanticGap('unadmitted restore group')
                 saved = [x for x in ('d2','d3','a2','a3') if x in saved]
                 r['restores'] = [{'base':'restored_sp','offset':-4*(i+1),'width':4,'register':reg} for i,reg in enumerate(saved)]
+        elif m == 'movm' and p == ['[a2]','(sp)'] and size == 2:
+            # T17 admits this ONE common save form, not OTHER/EX or an ABI.
+            r.update(status='modeled',sp_delta=-4,flags='preserved',
+                     memory_writes=[{'base':'sp_before','offset':-4,'width':4,'value':'a2'}],
+                     register_writes=['sp'])
         elif m in ('mov','movbu','movhu') and len(p)==2:
             width = {'mov':4,'movbu':1,'movhu':2}[m]
             src,dst = memory(p[0]),memory(p[1])

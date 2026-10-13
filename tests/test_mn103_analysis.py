@@ -88,6 +88,15 @@ class AnalysisTests(unittest.TestCase):
         self.assertEqual(effect(Instruction(0,'udfu01','6,d0'),3)['status'],'unmodeled')
         self.assertEqual(effect(Instruction(0,'calls','(a0)'),4)['status'],'unmodeled')
 
+    def test_only_validated_movm_save_form_is_admitted(self):
+        e = effect(Instruction(0,'movm','[a2],(sp)'),2)
+        self.assertEqual(e['sp_delta'],-4)
+        self.assertEqual(e['memory_writes'][0]['value'],'a2')
+        self.assertEqual(e['flags'],'preserved')
+        for o in ('[other],(sp)','[ex0],(sp)','(sp),[a2]','[a3],(sp)'):
+            self.assertEqual(effect(Instruction(0,'movm',o),2)['status'],'unmodeled')
+        self.assertEqual(effect(Instruction(0,'movm','[a2],(sp)'),3)['status'],'unmodeled')
+
     @unittest.skipUnless(os.environ.get('EP7_SIM'),'GNU simulator required; run Cloud setup')
     def test_external_simulator_original_fixtures_and_countercontrols(self):
         root = Path(os.environ['EP7_SIM']).parents[3]
@@ -98,6 +107,8 @@ class AnalysisTests(unittest.TestCase):
         self.assertEqual(results['fixture_results']['incorrect_pointer_expectation'],73)
         self.assertEqual(results['fixture_results']['mn103_udf_provider']['am33'],91)
         self.assertIn('UNADMITTED',results['udf_ep7_admission'])
+        self.assertEqual(results['fixture_results']['mn103_entry_pair']['am33'],0)
+        self.assertEqual(results['fixture_results']['incorrect_full_entry_expectation'],73)
         self.assertEqual(effect(Instruction(0,'udfu01','6,d0'),3)['status'],'unmodeled')
         self.assertFalse(results['oem_execution'])
 

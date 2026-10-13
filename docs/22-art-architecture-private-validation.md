@@ -1,5 +1,7 @@
 # T16 · Reproduce the bounded architecture checks
 
+T17 extends the default corpus to48 windows; [current reproduction](23-t17-private-validation.md). Counts below describe the historical T16 result.
+
 [Finding/decision report](../research/e142-art-architecture-sprint.md) · [Issue41](https://github.com/ZakuZakuu/ep7-film-hack/issues/41). Latest main baseline796f8bec0f695802895dacafc000c9fbf17a2373; E-P7 owner-reported1.1. No new Cloud Setup or owner action is required.
 
 All OEM input and generated project remain mode0600 under0700 /tmp directories. Never pass OEM data or a reconstructed original function to GNU sim. Do not put sample acquisition/serials into Setup/CI. The established authorized private sample is reused here.

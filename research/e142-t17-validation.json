@@ -1,0 +1,365 @@
+{
+  "model": "E-P7",
+  "firmware_version": "owner-reported 1.1",
+  "input_size": 111017984,
+  "input_sha256": "9d1610124ad98f6edae4540182205f06c9c703d9033ef0c4f19847193f95eaeb",
+  "decoded_sha256": "5dd9af164b4590c7e82f6905c919b3cc450bb58f2d5742ab2a0e3a4eb2e26190",
+  "baseline": "e85a954d6b1ea10b7b5f1815cd40c160e8130600",
+  "issue": "https://github.com/ZakuZakuu/ep7-film-hack/issues/43",
+  "schema_version": 1,
+  "status": "all three tracks completed; no ART style/renderer or safe deployment breakthrough",
+  "new_windows": [
+    {
+      "id": "associated_factory",
+      "start": "0xa09a5b",
+      "end": "0xa09a88",
+      "reachable_rows": 12,
+      "role": "T17 static whole-object factory and adjusted return"
+    },
+    {
+      "id": "associated_ctor",
+      "start": "0xa09a88",
+      "end": "0xa09b70",
+      "reachable_rows": 79,
+      "role": "T17 matching40-byte restore; subtype construction, nested calls opaque"
+    },
+    {
+      "id": "associated_return",
+      "start": "0xa09c1f",
+      "end": "0xa09c26",
+      "reachable_rows": 2,
+      "role": "T17 whole+1884 adjusted subobject return"
+    },
+    {
+      "id": "associated_subobject_ctor",
+      "start": "0xa080cf",
+      "end": "0xa08158",
+      "reachable_rows": 54,
+      "role": "T17 conditional subtype vptr, not imaging ownership"
+    },
+    {
+      "id": "associated_base_ctor",
+      "start": "0xa1377b",
+      "end": "0xa137a7",
+      "reachable_rows": 16,
+      "role": "T17 base-return qualification; opaque parent remains"
+    },
+    {
+      "id": "associated_full_entry",
+      "start": "0xa150a4",
+      "end": "0xa150cd",
+      "reachable_rows": 20,
+      "role": "T17 full virtual entry shares T16 body; overlap explicitly counted"
+    },
+    {
+      "id": "art_panel_fragment",
+      "start": "0x7dfb4d",
+      "end": "0x7dfbab",
+      "reachable_rows": 23,
+      "role": "T17 identity-bearing fragment, not proved GUI entry"
+    },
+    {
+      "id": "raw_art_fragment",
+      "start": "0x7cdfa2",
+      "end": "0x7cdffd",
+      "reachable_rows": 20,
+      "role": "T17 RAW ART BKT identity fragment, not SOOC/preview"
+    },
+    {
+      "id": "art_panel_backend",
+      "start": "0x775af7",
+      "end": "0x775b02",
+      "reachable_rows": 3,
+      "role": "T17 halfword truncation then direct state writer"
+    },
+    {
+      "id": "art_panel_writer",
+      "start": "0x74a276",
+      "end": "0x74a27f",
+      "reachable_rows": 2,
+      "role": "T17 u16 global cell write; no source+20 alias established"
+    },
+    {
+      "id": "raw_art_backend",
+      "start": "0x7e91c6",
+      "end": "0x7e926f",
+      "reachable_rows": 50,
+      "role": "T17 RAW ART BKT workflow; no actual effect fields"
+    },
+    {
+      "id": "raw_art_actor_ctor",
+      "start": "0x764ca0",
+      "end": "0x764ce5",
+      "reachable_rows": 21,
+      "role": "T17 actor-class construction; not a filter parameter registry"
+    }
+  ],
+  "new_relationships": [
+    {
+      "kind": "adjusted_static_return",
+      "source": "static whole 0x622f2ee0",
+      "target": "subobject 0x622f363c",
+      "origins": [
+        "0xa09a7a",
+        "0xa09a80",
+        "0xa09c1f"
+      ],
+      "confidence": "verified",
+      "coordinate": "decoded #0 offsets/scoped static address values",
+      "note": "exact+1884 adjustment, not identity; no runtime RAM or whole-object file inverse"
+    },
+    {
+      "kind": "conditional_frame_preservation",
+      "source": "0xa09a5b",
+      "target": "proxy+8 candidate store 0xa154f8",
+      "origins": [
+        "0xa09a75",
+        "0xa09b6d",
+        "0xa09c23"
+      ],
+      "confidence": "verified",
+      "coordinate": "decoded #0 offsets/scoped static address values",
+      "note": "matched save/restore with disjoint explicit locals; requires normal nested returns, uncorrupted frame and nonaliasing object/stack"
+    },
+    {
+      "kind": "conditional_virtual",
+      "source": "subobject vtable+176",
+      "target": "0xa150a4",
+      "origins": [
+        "0xa09ada",
+        "0xa09ae2",
+        "0xa080db",
+        "0xa080e1",
+        "0xb69448"
+      ],
+      "confidence": "verified",
+      "coordinate": "decoded #0 offsets/scoped static address values",
+      "note": "constructor-path candidate; opaque base-return identity/runtime type still qualified, generic resolver not ART consumer"
+    },
+    {
+      "kind": "shared_body_entries",
+      "source": "full entry 0xa150a4",
+      "target": "CALL-prepared body 0xa150a9",
+      "origins": [
+        "0xa150a4",
+        "0xa150a6",
+        "0xa1556f",
+        "0xa150ca"
+      ],
+      "confidence": "verified",
+      "coordinate": "decoded #0 offsets/scoped static address values",
+      "note": "MOVM[a2]+local4 vs CALL[a2],8; original synthetic checks, no OEM execution/complete ABI"
+    },
+    {
+      "kind": "identity_fragment",
+      "source": "0x0201e6",
+      "target": "0x7dfb8c -> 0x775af7",
+      "origins": [
+        "0x220358",
+        "0x7dfb4d",
+        "0x7dfb53",
+        "0x7dfb8c"
+      ],
+      "confidence": "verified",
+      "coordinate": "decoded #0 offsets/scoped static address values",
+      "note": "named software operation fragment; GUI invocation and caller parameters unobserved"
+    },
+    {
+      "kind": "control_word_write",
+      "source": "ArtPanelFlag-labeled operation",
+      "target": "u16 at 0x61fa729c",
+      "origins": [
+        "0x775af7",
+        "0x775af8",
+        "0x74a276"
+      ],
+      "confidence": "verified",
+      "coordinate": "decoded #0 offsets/scoped static address values",
+      "note": "low16 write; no established alias to original effect source+20, no legal flag/GUI/persistence semantics"
+    },
+    {
+      "kind": "identity_fragment",
+      "source": "0x031b0c",
+      "target": "0x7cdfdc -> 0x7e91c6 -> 0x764ca0",
+      "origins": [
+        "0x220a20",
+        "0x7cdfa2",
+        "0x7cdfa8",
+        "0x7cdfdc",
+        "0x7e9216"
+      ],
+      "confidence": "verified",
+      "coordinate": "decoded #0 offsets/scoped static address values",
+      "note": "native RAW ART BKT-labeled workflow/class construction; not selected-filter record, actual processing or SOOC"
+    }
+  ],
+  "new_unique_instruction_sites": 284,
+  "overlapping_instruction_sites": 18,
+  "validation": {
+    "windows": 48,
+    "instructions": 2434,
+    "cfg_edges": 2516,
+    "stops": 15,
+    "curated_relationships": 62,
+    "copy_loop_proofs": 2,
+    "t17_guards": 26,
+    "tests": 64,
+    "skipped": 0,
+    "original_oe_decoded_unchanged": true,
+    "oem_execution": false
+  },
+  "identity_query": {
+    "scope": [
+      "0x74e534",
+      "0x7e2516"
+    ],
+    "results": [
+      {
+        "identity": "0x201e6",
+        "raw_matches": [
+          "0x7c6ff6",
+          "0x7dfb4f",
+          "0x7dfb72",
+          "0x7dfb9c"
+        ],
+        "qualified_fragments": [
+          {
+            "literal": "0x7c6ff4",
+            "resolver_call": "0x7c6ffa"
+          },
+          {
+            "literal": "0x7dfb4d",
+            "resolver_call": "0x7dfb53"
+          }
+        ]
+      },
+      {
+        "identity": "0x31b0c",
+        "raw_matches": [
+          "0x7b2b6a",
+          "0x7cdfa4",
+          "0x7cdfc3",
+          "0x7cdfed"
+        ],
+        "qualified_fragments": [
+          {
+            "literal": "0x7b2b68",
+            "resolver_call": "0x7b2b6e"
+          },
+          {
+            "literal": "0x7cdfa2",
+            "resolver_call": "0x7cdfa8"
+          }
+        ]
+      }
+    ],
+    "qualification": "literal-to-name-resolver fragment, NOT GUI caller, registration handler or ART parameter proof"
+  },
+  "publication": "selected original numerical metadata only; no OEM bytes/listings/database",
+  "deployment_audit": {
+    "input_size": 111017984,
+    "input_sha256": "9d1610124ad98f6edae4540182205f06c9c703d9033ef0c4f19847193f95eaeb",
+    "blocks": 5,
+    "header_trailer_bytes": 320,
+    "payload_bytes": 111017664,
+    "full_outer_coverage": true,
+    "unparsed_outer_suffix_bytes": 0,
+    "all_residuals_zero": true,
+    "block_lengths": [
+      26214336,
+      26214336,
+      45219776,
+      262080,
+      13107136
+    ],
+    "decoded0_sha256": "5dd9af164b4590c7e82f6905c919b3cc450bb58f2d5742ab2a0e3a4eb2e26190",
+    "authentication": "unknown; no device/boot verifier analyzed",
+    "compression": [
+      {
+        "index": 2,
+        "candidates": [
+          {
+            "payload_offset": 34826208,
+            "inode_count": 247,
+            "block_size": 131072,
+            "compression_id": 3,
+            "version": "4.0",
+            "bytes_used": 3393511
+          }
+        ]
+      }
+    ],
+    "synthetic_sum_counterexample": {
+      "sum": 300,
+      "distinct_sha256": true,
+      "inputs": "two original8-byte integer arrays, NOT OE/update images"
+    }
+  },
+  "gates": {
+    "G0": "lawful tools/historical other-model methods; no EP7 modification proof",
+    "G1": "passed",
+    "G2": "incomplete",
+    "G3_G6": "untested",
+    "G4_G5": "NO-GO"
+  },
+  "source_audit": [
+    {
+      "url": "https://explore.omsystem.com/c/en/firmware-update-instructions",
+      "status": 200,
+      "sha256": "dc0359b9e31c091706cc792a08d241d0c3341ce6cdb9225e33b6100aabc23980",
+      "scope": "official; general update/rollback warning, not EP7-tested recovery",
+      "cached_document_not_published": true
+    },
+    {
+      "url": "https://support.jp.omsystem.com/en/support/imsg/digicamera/download/software/firm/e1/",
+      "status": 200,
+      "sha256": "f055f69ac236858220fd8b8097ef5fee5ca8785a9cc63c4c58d2bfa4a771e1af",
+      "scope": "official; EP7 latest1.1listing",
+      "cached_document_not_published": true
+    },
+    {
+      "url": "https://support.jp.omsystem.com/en/support/imsg/digicamera/info/update2024.html",
+      "status": 200,
+      "sha256": "10fd8fbcea798db6a6ea5229e2cd4288804ae2b06be765b4480374a8951a579c",
+      "scope": "official; application lifecycle, NOT SD/authentication",
+      "cached_document_not_published": true
+    },
+    {
+      "url": "https://www.dvxuser.com/threads/e-p1-e-p2-e-pl1-hack-research.217453/",
+      "status": 200,
+      "sha256": "90367655f88997e835f54ba2c73b7af3564bc43c388a9875273d3be04e868efa",
+      "scope": "author-reported;2010 E-P1 resource modification, not EP7",
+      "cached_document_not_published": true
+    },
+    {
+      "url": "https://micro43club.pro/forum/threads/modifikacija-proshivki-kamer-olympus.22086/",
+      "status": 200,
+      "sha256": "378ad05cd1fca85dceed04db1b2f5ad57cdb4f81c1d504003090d56707a4dd26",
+      "scope": "community-reported; old E-M1/E-M10, not EP7",
+      "cached_document_not_published": true
+    },
+    {
+      "url": "https://lightsnowdev.com/Olympus/",
+      "status": 410,
+      "scope": "unavailable; old capabilities/license/support not revalidated"
+    },
+    {
+      "url": "https://github.com/FromF/OlympusCameraKit/tree/7593857ab68e74ebd669a0210b9f2d799d48fdb0",
+      "commit": "7593857ab68e74ebd669a0210b9f2d799d48fdb0",
+      "license": "MIT samples; vendor SDK EULA referenced, not MIT",
+      "scope": "AIR A01, not EP7; headers read only/no binaries/copied code"
+    },
+    {
+      "url": "https://github.com/gphoto/libgphoto2/tree/a4ec9cc8b799d3e620c89feeaeb3ec86f362a12f",
+      "version": "v2.5.34",
+      "commit": "a4ec9cc8b799d3e620c89feeaeb3ec86f362a12f",
+      "license": "LGPL-2.1-or-later",
+      "scope": "source-only model/PTP audit; no verified EP7 recovery/auth definition"
+    }
+  ],
+  "source_limitations": [
+    "BingRSS returned generic indistinguishable results, excluded as technical evidence",
+    "GitHub tool-name results from this repository excluded as circular",
+    "No global absence claim/no external firmware/service files obtained"
+  ]
+}

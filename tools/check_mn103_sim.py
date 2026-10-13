@@ -34,7 +34,8 @@ def check(root):
     with tempfile.TemporaryDirectory(prefix='ep7-synthetic-sim-',dir='/tmp') as d:
         private = Path(d)
         for name,far in [('mn103_semantics',False),('mn103_long_calls',True),
-                         ('mn103_lir_control',False),('mn103_udf_provider',False)]:
+                         ('mn103_lir_control',False),('mn103_udf_provider',False),
+                         ('mn103_entry_pair',False)]:
             elf = private/(name+'.elf')
             compile_fixture(root,FIXTURES/(name+'.s'),elf,far)
             statuses = {}
@@ -58,6 +59,17 @@ def check(root):
         if p.returncode != 73:
             raise ValueError('known incorrect copy result was not rejected')
         results['incorrect_pointer_expectation'] = p.returncode
+        # Mistaking the full entry for its CALL-prepared body applies the
+        # prologue twice. This original fixture rejects it before returning.
+        text = (FIXTURES/'mn103_entry_pair.s').read_text()
+        if text.count('call body,[a2],8') != 1:
+            raise ValueError('entry-pair countercontrol location changed')
+        negative.write_text(text.replace('call body,[a2],8','call full,[a2],8'))
+        compile_fixture(root,negative,elf)
+        p = subprocess.run([str(simulator),str(elf)],capture_output=True,timeout=10)
+        if p.returncode != 73:
+            raise ValueError('incorrect double-prologue entry was not rejected')
+        results['incorrect_full_entry_expectation'] = p.returncode
     return {'simulator':version,'fixture_results':results,
             'call_data_branch_readonly_loop':'PASSED on these original synthetic fixtures',
             'lir_cached_code_fidelity':'PARTIAL: observed 9; manual cached immediate would remain 7',

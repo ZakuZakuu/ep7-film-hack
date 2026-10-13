@@ -88,6 +88,78 @@
       "start": "0x293887",
       "end": "0x293910",
       "role": "T16 1..8 to 3000..3007 control constants; storage unknown"
+    },
+    {
+      "id": "associated_factory",
+      "start": "0xa09a5b",
+      "end": "0xa09a88",
+      "role": "T17 static whole-object factory and adjusted return"
+    },
+    {
+      "id": "associated_ctor",
+      "start": "0xa09a88",
+      "end": "0xa09b70",
+      "role": "T17 matching40-byte restore; subtype construction, nested calls opaque"
+    },
+    {
+      "id": "associated_return",
+      "start": "0xa09c1f",
+      "end": "0xa09c26",
+      "role": "T17 whole+1884 adjusted subobject return"
+    },
+    {
+      "id": "associated_subobject_ctor",
+      "start": "0xa080cf",
+      "end": "0xa08158",
+      "role": "T17 conditional subtype vptr, not imaging ownership"
+    },
+    {
+      "id": "associated_base_ctor",
+      "start": "0xa1377b",
+      "end": "0xa137a7",
+      "role": "T17 base-return qualification; opaque parent remains"
+    },
+    {
+      "id": "associated_full_entry",
+      "start": "0xa150a4",
+      "end": "0xa150cd",
+      "role": "T17 full virtual entry shares T16 body; overlap explicitly counted"
+    },
+    {
+      "id": "art_panel_fragment",
+      "start": "0x7dfb4d",
+      "end": "0x7dfbab",
+      "role": "T17 identity-bearing fragment, not proved GUI entry"
+    },
+    {
+      "id": "raw_art_fragment",
+      "start": "0x7cdfa2",
+      "end": "0x7cdffd",
+      "role": "T17 RAW ART BKT identity fragment, not SOOC/preview"
+    },
+    {
+      "id": "art_panel_backend",
+      "start": "0x775af7",
+      "end": "0x775b02",
+      "role": "T17 halfword truncation then direct state writer"
+    },
+    {
+      "id": "art_panel_writer",
+      "start": "0x74a276",
+      "end": "0x74a27f",
+      "role": "T17 u16 global cell write; no source+20 alias established"
+    },
+    {
+      "id": "raw_art_backend",
+      "start": "0x7e91c6",
+      "end": "0x7e926f",
+      "role": "T17 RAW ART BKT workflow; no actual effect fields"
+    },
+    {
+      "id": "raw_art_actor_ctor",
+      "start": "0x764ca0",
+      "end": "0x764ce5",
+      "role": "T17 actor-class construction; not a filter parameter registry"
     }
   ],
   "tables": [
@@ -261,8 +333,10 @@
       "source": "T16 distinct field writes/returned byte handoff; no ART storage attribution"
     }
   ],
-  "baseline": "796f8bec0f695802895dacafc000c9fbf17a2373",
-  "issue": "https://github.com/ZakuZakuu/ep7-film-hack/issues/41",
+  "baseline": "e85a954d6b1ea10b7b5f1815cd40c160e8130600",
+  "issue": "https://github.com/ZakuZakuu/ep7-film-hack/issues/43",
   "inherited_workbench_baseline": "7291a45014b3f909d25928d11e067f079496959d",
-  "inherited_workbench_issue": "https://github.com/ZakuZakuu/ep7-film-hack/issues/37"
+  "inherited_workbench_issue": "https://github.com/ZakuZakuu/ep7-film-hack/issues/37",
+  "inherited_t16_baseline": "796f8bec0f695802895dacafc000c9fbf17a2373",
+  "inherited_t16_issue": "https://github.com/ZakuZakuu/ep7-film-hack/issues/41"
 }
