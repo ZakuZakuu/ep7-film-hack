@@ -7,7 +7,7 @@
   "input_sha256": "9d1610124ad98f6edae4540182205f06c9c703d9033ef0c4f19847193f95eaeb",
   "decoded_sha256": "5dd9af164b4590c7e82f6905c919b3cc450bb58f2d5742ab2a0e3a4eb2e26190",
   "coordinates": "decoded#0 offsets/scoped static values;no observedRAM",
-  "phase": "validated checkpoint;campaign continues",
+  "phase": "second validated checkpoint;final interface/adversarial review continues",
   "validation": {
     "descriptor872": "0x4b0c88",
     "enum872_count": 10,
@@ -148,7 +148,86 @@
         "effect_record_id": "0xf5e1",
         "index": 4
       }
-    ]
+    ],
+    "effect_handoff": {
+      "effect_flag_cases": [
+        {
+          "effect": 0,
+          "keep_mask": "0xffffffff",
+          "set_mask": "0x0"
+        },
+        {
+          "effect": 1,
+          "keep_mask": "0xffffffff",
+          "set_mask": "0x80"
+        },
+        {
+          "effect": 2,
+          "keep_mask": "0xffffffff",
+          "set_mask": "0x400"
+        },
+        {
+          "effect": 3,
+          "keep_mask": "0xffffffff",
+          "set_mask": "0x8000"
+        },
+        {
+          "effect": 4,
+          "keep_mask": "0xffffffff",
+          "set_mask": "0x2000"
+        },
+        {
+          "effect": 5,
+          "keep_mask": "0xffffffff",
+          "set_mask": "0x40"
+        },
+        {
+          "effect": 6,
+          "keep_mask": "0xfffffcff",
+          "set_mask": "0x100"
+        },
+        {
+          "effect": 7,
+          "keep_mask": "0xfffffcff",
+          "set_mask": "0x200"
+        },
+        {
+          "effect": 8,
+          "keep_mask": "0xffffe7ff",
+          "set_mask": "0x800"
+        },
+        {
+          "effect": 9,
+          "keep_mask": "0xffffe7ff",
+          "set_mask": "0x1000"
+        }
+      ],
+      "common_clear_mask": "0x14000",
+      "common_clear_bit14": "FilmNoise in the independently joined receiver representation",
+      "mono_bit23": "conditional on config24054/24055,not effect872 alone",
+      "parameter_bytes": 32,
+      "flags_offset": 12,
+      "type_offset": 16,
+      "receiver": "0x3337cb",
+      "constructor_calls": [
+        "0x3d2812",
+        "0x3d2b8e"
+      ],
+      "receiver_calls": [
+        "0x3d281e",
+        "0x3d2b99"
+      ],
+      "type_input_domain": [
+        "0x0",
+        "0x1000",
+        "0x110",
+        "0x120"
+      ],
+      "old_source35_alias": "unknown;this independent construction bypasses that missing provenance",
+      "auxiliary30": "zero immediately after32-byte fill;no promoted unconditional value across opaque callees",
+      "rendering": "unknown;knownreceiver normalizes parameters,not proven pixel processing",
+      "bank_udf12": "still unadmitted;native-record reads and constructor join do not require its admission"
+    }
   },
   "gates": {
     "G2": "incomplete",
@@ -161,5 +240,14 @@
     "camera_operations": false,
     "private_data_uploaded": false,
     "setup_changed": false
+  },
+  "new_guards": {
+    "native_records": 139,
+    "effect_handoff": 83
+  },
+  "tests": {
+    "count": 77,
+    "skipped": 0,
+    "oem_execution": false
   }
 }

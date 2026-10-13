@@ -694,6 +694,78 @@
       "start": "0x293a06",
       "end": "0x293a40",
       "role": "T19 fragment:opaquevalidation,restoresmirror,gate0,notify"
+    },
+    {
+      "id": "t19_effect_flags",
+      "start": "0x3cab19",
+      "end": "0x3cabdb",
+      "role": "T19 actualnativeeffect0..9 flagwriter;clearsFilmNoise14,in newparameter12"
+    },
+    {
+      "id": "t19_packet_A",
+      "start": "0x3c60fe",
+      "end": "0x3c6198",
+      "role": "T19 actual32-byte receiverparameterconstructorA"
+    },
+    {
+      "id": "t19_packet_B",
+      "start": "0x3c8a67",
+      "end": "0x3c8ad1",
+      "role": "T19 independentparameterconstructorB;knownreceiverjoin"
+    },
+    {
+      "id": "t19_packet_A_handoff",
+      "start": "0x3d27e0",
+      "end": "0x3d2828",
+      "role": "T19 fragment:SP16buffer32 nativecreation->3337cb"
+    },
+    {
+      "id": "t19_packet_B_handoff",
+      "start": "0x3d2aff",
+      "end": "0x3d2ba2",
+      "role": "T19 fragment:SP324buffer32 in372-byteframe->3337cb"
+    },
+    {
+      "id": "t19_type_origin",
+      "start": "0x3ca8e9",
+      "end": "0x3ca944",
+      "role": "T19 nativeType16 creator;numeric possiblevalues,noRAW/JPEGattribution"
+    },
+    {
+      "id": "t19_tuple_origin",
+      "start": "0x3ca9e4",
+      "end": "0x3cab19",
+      "role": "T19 native rawmode/variant intoGTM tuple,opaqueoperationoverrides"
+    },
+    {
+      "id": "t19_tuple_head",
+      "start": "0x329277",
+      "end": "0x3292be",
+      "role": "T19 fragment:ART group1/variantdirectbranch;othermodesnotfollowed"
+    },
+    {
+      "id": "t19_tuple_join",
+      "start": "0x3294ac",
+      "end": "0x3294b7",
+      "role": "T19 fragment:variantbyte/native modehalfwordwrite"
+    },
+    {
+      "id": "t19_effect_program",
+      "start": "0x3c0c05",
+      "end": "0x3c12d9",
+      "role": "T19 boundednativeeffecthalfworddescriptor,notidentifiedISPABI"
+    },
+    {
+      "id": "t19_onehot_effect",
+      "start": "0x2df074",
+      "end": "0x2df0ea",
+      "role": "T19 fragment:indirect field24785 read->ninebit serializationmask"
+    },
+    {
+      "id": "t19_mirror_commit",
+      "start": "0x2ac520",
+      "end": "0x2ac5f8",
+      "role": "T19 nativeleaf setters bypassbytegate;changedkeylist,notNVmedium"
     }
   ],
   "tables": [
@@ -985,6 +1057,42 @@
           "role": "native leaf111 rawmode:selector8->100,12->104"
         }
       ]
+    },
+    {
+      "id": "T19_native_receiver_parameter",
+      "qualification": "32-byte initializednativeconstruction directlypassedtoexisting3337cb;notnewsource35alias/pixels",
+      "fields": [
+        {
+          "offset": 8,
+          "width": 1,
+          "role": "Group tuple"
+        },
+        {
+          "offset": 9,
+          "width": 1,
+          "role": "variant/type tuple"
+        },
+        {
+          "offset": 10,
+          "width": 2,
+          "role": "nativeMode tuple"
+        },
+        {
+          "offset": 12,
+          "width": 4,
+          "role": "actual872-derivedeffectflags/commonFilmNoise14clearing"
+        },
+        {
+          "offset": 16,
+          "width": 2,
+          "role": "nativeTypeproducer3ca8e9"
+        },
+        {
+          "offset": 30,
+          "width": 1,
+          "role": "initialzeroafterfill;lateropaque/nonaliasconditions"
+        }
+      ]
     }
   ],
   "negative_identities": [
@@ -1139,6 +1247,21 @@
       "id": "7076_byte_mirror_is_flash_or_complete_art_look",
       "status": "unproved",
       "source": "T19 separateactive/shadow/backupscalarviews,writegate;noNVmedium/ARTbeginendpairing"
+    },
+    {
+      "id": "direct_displacement_scan_is_complete_field_reader_scan",
+      "status": "rejected",
+      "source": "T19 ADDbase+synthesized24785 pointer foundrealflagwriter/halfwordencoder;guardcompletejoin"
+    },
+    {
+      "id": "setting872_directly_enables_filmnoise",
+      "status": "rejected",
+      "source": "T19 actual32-byte receiverflagswriter clearsbit14 forvalid0..9;doesnotproveallgrainroutesimpossible"
+    },
+    {
+      "id": "native_halfword_tag_is_documented_isp_abi",
+      "status": "unproved",
+      "source": "T19 numeric descriptors3264 identified;typedconsumer/hardwareprotocolnotidentified"
     }
   ],
   "baseline": "6ce9dccb6fecd7fad597a6d14b3ffee204558df6",

@@ -1,6 +1,6 @@
 # T19 · Native ART effect records, selector representation and bracketing state
 
-2026-10-13 · [Issue47](https://github.com/ZakuZakuu/ep7-film-hack/issues/47) · baseline **6ce9dccb6fecd7fad597a6d14b3ffee204558df6**, merged PR46. **New static parameter-source/record evidence, not a pixel pipeline or custom-ART feature.** Research checkpoint; the bounded campaign continues with adversarial/lifecycle verification.
+2026-10-13 · [Issue47](https://github.com/ZakuZakuu/ep7-film-hack/issues/47) · baseline **6ce9dccb6fecd7fad597a6d14b3ffee204558df6**, merged PR46. **New native ART effect→32-byte parameter→existing effects receiver join, plus shared bracketing sources. No actual pixel pipeline or custom-ART feature.** Validated second checkpoint; final interface/adversarial review continues.
 
 E-P7, firmware **owner-reported1.1**. Original **111017984 bytes**, SHA256 **9d1610124ad98f6edae4540182205f06c9c703d9033ef0c4f19847193f95eaeb**; decoded OE#0 SHA256 **5dd9af164b4590c7e82f6905c919b3cc450bb58f2d5742ab2a0e3a4eb2e26190**. All five OE residuals0; original/decoded hashes unchanged. Coordinates are **decoded#0 offsets**, except explicit static values under the inherited scoped mappings. RAM contents and hardware execution were not observed. No OEM execution/modification, device operation, installer, update bypass, original-data publication or Setup change.
 
@@ -56,13 +56,29 @@ Independent directly used diagnostic13c6675 identifies **rec_set_exif_artbkt**, 
 
 - Actual effect reader3c0b64 reduces+24785 to Boolean. Its selected caller3d27c8 uses a control predicate; effect identity is lost there. No effect operator/pixel consumer.
 - Record helper3d24af, called immediately after a selected metadata build, only overlays global bytes38…40. The hypothesis that it normalizes effect+12 is **refuted**.
-- Restore3c162d is followed by3c1641→3c20ce. This shapes mode-dependent scalar/halfword configuration, including+3184; no old35-byte-source alias or typed preview/JPEG/ISP interface. Its bounded helper view supplied no independent processing anchor; generic tracing stops.
+- Restore3c162d is followed by3c1641→3c20ce. This shapes mode-dependent scalar/halfword configuration, including+3184. A synthesized-address check found real numeric effect readers missed by direct displacement matching; their new joins are detailed below. This call alone is not a preview/JPEG/ISP identity.
 - Native descriptor vectorsA26FFA88/A2707A88 have no admitted file inverse/live observation. Two pointer views are not two durable copies. Mode8050 is not assigned RAW/capture semantics.
 - Working word mirror: initializer2abbb9 publishes record8b54's pointer at62253598. Begin293a40 sets gate1, backs up7076 bytes and refreshes1769 shadow words; a nominated end fragment restores the mirror and clears gate0. Exact ART begin/end caller pairing, commit semantics and nonvolatile medium remain unbound. This is a configuration-lifecycle anchor, **not named saved looks**.
 
+## 5 · Breakthrough: native effect to the existing effects parameter interface
+
+The original GNU synthesized-offset check nominates **3cab19**, a real effect consumer: actor+28 supplies the configuration pointer; inputA1 is the destination **word**. It reads config+24785, checks0…9 and indexes ten real code targets at **51dce0**. Selected updates are effect1→OR0x80, effect5→OR0x40, effect6/7→clear0x300 then set0x100/0x200. All valid cases reach the common clear of **0x4000 and0x10000**, then set/clear0x800000 from separate config24054/24055. No pixels are touched.
+
+**Independent type/alias proof, not bit coincidence:** constructors **3c60fe /3c8a67** pass output-record+12 to this writer, use3ca9e4 for Group/PictureType/Mode at+8/+9/+10, and store3ca8e9's halfword at+16. Their real callers clear32-byte buffers, then pass the **same buffer** to the previously verified receiver **3337cb**, at **3d281e /3d2b99**. The second buffer is currentSP324…355, before savedD2 atSP356 in a372-byte frame; its pointer is held separately atSP12 and reloaded for both constructor and receiver. The first path independently uses currentSP+16. Matching constructor CALL/RET frames and explicit receiver calls corroborate identity. Normal returns, valid nonaliasing memory and named opaque-helper qualifications remain.
+
+This is the known **temporary effects word+12**, directly constructed from native ART state and delivered to its real receiver. It **bypasses the still-unidentified >=35-byte source owner**, rather than inventing a source+20 alias. It joins the existing parameter-copy/composite-key/constraint code; that receiver is still not a proved renderer.
+
+**Product discriminator:**872 is a constrained native extra-effect selector here, not a free effect mask. The joined writer clears receiver-associated **FilmNoise bit14** on every valid0…9 path, including0;872 alone cannot turn that bit on through this path. MonoEnable23 depends on separate fields. This does not prove stock Grainy Film has no grain, or that every colour-grain route is impossible. Main-filter identity may select processing outside this flag word. No new colour-grain feature is established.
+
+Native Type producer **[3ca8e9,3ca944)** has local possible outputs **0,0x1000,0x110,0x120**. Actor+194 codes8193/8198 and an opaque helper result select the latter two; actor+206 chooses their low class. No RAW/JPEG/colour meaning is assigned. Under preservation to the inherited Type gate,110/120 belong to its upper0x100 suppression class. Initially zero auxiliary+30 has no local constructor writer, but no unconditional post-helper value is promoted. Old classifier3954fd and333c50/333c72 downstream routes were not reopened.
+
+Two other numeric representations exist: **3c10b0** builds halfword descriptors at config+3264 (selected effect1→0x8040,6/7→0x8080/0x8081 with0x1100); **2df0d0** creates a zero/nine-bit one-hot field at currentSP+72. Their consumer/ABI is not independently identified as ISP or pixels. Packet header+0 points to completion/control code, not a class vptr or renderer. Formats cannot be equated by offsets or tag names.
+
+The mirror apply candidate2ac520 compares native values with word shadow, records changed keys as u16 and calls **2abc54 directly**, bypassing the outer byte gate. Its three loops cover1769+22+274 keys, so the4130-byte scratch capacity matches2065 u16 entries. This is bounded native parameter apply, **not nonvolatile commit**. Active8b54 pointer versus fixed shadow alias and exact ART begin/end pairing remain unproved.
+
 ## Graph and product status
 
-T18 ended at **ART settings→156-byte bundle→872/362→opaque bank dispatch**. T19 adds independently checked native identities/consumers and a shared bracketing source, while preserving that dispatch gap:
+T18 ended at **ART settings→156-byte bundle→872/362→opaque bank dispatch**. T19 adds an independent native effect→known parameter receiver join, preserving bank/value/runtime gaps:
 
 ```mermaid
 flowchart TD
@@ -75,11 +91,15 @@ flowchart TD
  G --> H[Byte config24785 mode_art_effect]
  E -->|independent bracket metadata / getter| I[46-byte bracket record+12]
  H -->|project / selected restore; UDF46 qualified| I
- H --> J[Boolean control / diagnostic]
- I -. no proved alias .-> K[Old source effects20 / Type24 / auxiliary33]
- K -. no proved consumer .-> P[Actual preview / JPEG processing]
+ H --> W[Actual flag writer; clears FilmNoise14]
+ W --> T[Constructed32-byte parameter flags12 / Type16]
+ T -->|two real caller / buffer joins| R[Known receiver3337cb; copy and normalization]
+ O[Old35-byte source owner] -. alternative provenance missing .-> T
+ R -. rendering interface unidentified .-> P[Actual preview / JPEG processing]
+ H --> Q[Halfword descriptors and one-hot serialization]
+ Q -. consumer unbound .-> P
 ```
 
-**G1 pass; G2 incomplete; G3/G6 unvalidated; G4/G5 NO-GO.** Native effect-state storage and per-variant source sharing are newly grounded. Colour grain, arbitrary combinations, independent named custom slots, import, icons/previews, complete WB/exposure recall and safe installation remain unknown/unimplemented. Record discovery alone cannot justify product/UI/patch work.
+**G1 pass; G2 advanced but incomplete; G3/G6 unvalidated; G4/G5 NO-GO.** Native effect storage, shared per-variant bracketing sources, genuine flag creation and the known parameter interface are now grounded. Colour grain, arbitrary combinations, independently named custom slots, import, icons/previews, complete WB/exposure recall and safe installation remain unknown/unimplemented. Records and normalization cannot justify product/UI/patch work.
 
 [Selected validation](e142-t19-validation.json) and [private commands/handoff](../docs/25-t19-private-validation.md) will accompany the final reconciliation. No automatic merge or follow-on task.
