@@ -436,6 +436,264 @@
       "start": "0x292217",
       "end": "0x29224c",
       "role": "T18 grounded pivot bank/type dispatch reads or writes selected scalar; UDF12 remains unadmitted"
+    },
+    {
+      "id": "t19_key_registry_init",
+      "start": "0x29a4ad",
+      "end": "0x29a503",
+      "role": "T19 explicit1333x20 scalar-format registry;runtime loops opaque"
+    },
+    {
+      "id": "t19_key_registry_lookup",
+      "start": "0x29a503",
+      "end": "0x29a52d",
+      "role": "T19 actual key lookup;128 runtime buckets"
+    },
+    {
+      "id": "t19_key_classifier",
+      "start": "0x29a0fa",
+      "end": "0x29a11d",
+      "role": "T19 descriptor17=6 givesclass1;otherpresent gives2"
+    },
+    {
+      "id": "t19_enum_normalize",
+      "start": "0x299dcb",
+      "end": "0x299e14",
+      "role": "T19 optional enum mapping, not actual backing store"
+    },
+    {
+      "id": "t19_scalar_notify",
+      "start": "0x290b00",
+      "end": "0x290b18",
+      "role": "T19 scalar notification to native store, not just hook"
+    },
+    {
+      "id": "t19_record_mapping",
+      "start": "0x2abd1b",
+      "end": "0x2abd77",
+      "role": "T19 fragment: nominated0..1768 key->record-ID/pointer view"
+    },
+    {
+      "id": "t19_record_mapping_index",
+      "start": "0x2abf6b",
+      "end": "0x2abf84",
+      "role": "T19 fragment: nominated index in same4-byte table"
+    },
+    {
+      "id": "t19_scalar_record_get",
+      "start": "0x2abbe7",
+      "end": "0x2abc38",
+      "role": "T19 native scalar getter and null optional buffer"
+    },
+    {
+      "id": "t19_scalar_record_set",
+      "start": "0x2abc38",
+      "end": "0x2abc9f",
+      "role": "T19 gate-dependent native scalar setter"
+    },
+    {
+      "id": "t19_native_read_api",
+      "start": "0x3e951",
+      "end": "0x3e973",
+      "role": "T19 registered record/null pointer resolution"
+    },
+    {
+      "id": "t19_native_read_codec",
+      "start": "0x3ef9d",
+      "end": "0x3efe5",
+      "role": "T19 word/halfword/byte loads and extension"
+    },
+    {
+      "id": "t19_native_write_api",
+      "start": "0x3ea02",
+      "end": "0x3eabf",
+      "role": "T19 validation and separate runtime-mode write paths"
+    },
+    {
+      "id": "t19_native_write_codec",
+      "start": "0x3eabf",
+      "end": "0x3eaf5",
+      "role": "T19 two pointer-view width-dependent stores;notdurability"
+    },
+    {
+      "id": "t19_native_lookup",
+      "start": "0x3d904",
+      "end": "0x3d967",
+      "role": "T19 unobserved native descriptor vectors,nofileinverse"
+    },
+    {
+      "id": "t19_primary_snapshot",
+      "start": "0x288511",
+      "end": "0x28853a",
+      "role": "T19 fragment: signedbytef5d1/0 andunsigned44c1/0"
+    },
+    {
+      "id": "t19_alternate_snapshot",
+      "start": "0xc4709f",
+      "end": "0xc470c4",
+      "role": "T19 independent fragment:same two native byte fields"
+    },
+    {
+      "id": "t19_effect_diagnostic",
+      "start": "0x13d94c9",
+      "end": "0x13d94eb",
+      "role": "T19 direct mode_art_effect(_type) field binding"
+    },
+    {
+      "id": "t19_parallel_notify",
+      "start": "0x29102d",
+      "end": "0x291096",
+      "role": "T19 actual descriptor+48 consumed hook"
+    },
+    {
+      "id": "t19_parallel_scalar_notify",
+      "start": "0x29113a",
+      "end": "0x291152",
+      "role": "T19 parallel scalar notification and word mirror"
+    },
+    {
+      "id": "t19_shadow_set",
+      "start": "0x2ac1d0",
+      "end": "0x2ac1ec",
+      "role": "T19 fragment:key0..1768 word slot;notnativebyte/NV"
+    },
+    {
+      "id": "t19_bracket_builder",
+      "start": "0x3d1e61",
+      "end": "0x3d20e2",
+      "role": "T19 currentrecord plus selectedbracketingentries;UDFindexopaque"
+    },
+    {
+      "id": "t19_bracket_projection",
+      "start": "0x3d20e2",
+      "end": "0x3d2182",
+      "role": "T19 current configuration to46B-shaped record"
+    },
+    {
+      "id": "t19_bracket_restore",
+      "start": "0x3c1fc1",
+      "end": "0x3c20ce",
+      "role": "T19 indexed bracketing record toconfiguration,UDF46opaque"
+    },
+    {
+      "id": "t19_bracket_diagnostic",
+      "start": "0x13c6675",
+      "end": "0x13c66ba",
+      "role": "T19 fragment:actualEXIF/ARTbracketdiagnosticidentity"
+    },
+    {
+      "id": "t19_bracket_metadata_builder",
+      "start": "0x3d2182",
+      "end": "0x3d21ff",
+      "role": "T19 18Bmetadata->46B-shapedrecord,notold35Bsource"
+    },
+    {
+      "id": "t19_effect_predicate",
+      "start": "0x3c0b64",
+      "end": "0x3c0b8c",
+      "role": "T19 nonzeroeffectpredicate,notfilterimplementation"
+    },
+    {
+      "id": "t19_apply_caller",
+      "start": "0x3c1617",
+      "end": "0x3c1646",
+      "role": "T19 fragment:restorethenconfigurationapply"
+    },
+    {
+      "id": "t19_apply_control",
+      "start": "0x3c20ce",
+      "end": "0x3c23e2",
+      "role": "T19 mode-derivedscalarshaping,nopixelownership"
+    },
+    {
+      "id": "t19_composite_keys",
+      "start": "0x2915d2",
+      "end": "0x2915f1",
+      "role": "T19 147x34 key groups;111 has3 active leaf keys,sentinel3200"
+    },
+    {
+      "id": "t19_composite_collect",
+      "start": "0x290d7b",
+      "end": "0x290dd6",
+      "role": "T19 64-byte snapshot collect and finitecopy;transientpool owner"
+    },
+    {
+      "id": "t19_composite_owner",
+      "start": "0x290d1b",
+      "end": "0x290d44",
+      "role": "T19 20-slot64B scratch pool/bytecounter,notpersistence"
+    },
+    {
+      "id": "t19_enum_record_compare",
+      "start": "0x299e5e",
+      "end": "0x299eec",
+      "role": "T19 composite64-byte equality scan;opaquehelper/hardwareloops retained"
+    },
+    {
+      "id": "t19_enum_record_index",
+      "start": "0x299eec",
+      "end": "0x299f06",
+      "role": "T19 positive dimensions/count and bounded returnindex"
+    },
+    {
+      "id": "t19_effect_gate_caller",
+      "start": "0x3d27b8",
+      "end": "0x3d27e0",
+      "role": "T19 fragment:nonzeroeffect Boolean used forcontrol"
+    },
+    {
+      "id": "t19_record_overlay",
+      "start": "0x3d24af",
+      "end": "0x3d24ec",
+      "role": "T19 three global bytes38..40 updated,not effect normalizer"
+    },
+    {
+      "id": "t19_write_gate",
+      "start": "0x2ac6a6",
+      "end": "0x2ac6b8",
+      "role": "T19 bytegate:1 suppresses backing native write,noNVmeaning"
+    },
+    {
+      "id": "t19_active_mirror_init",
+      "start": "0x2abbb9",
+      "end": "0x2abbe7",
+      "role": "T19 fragment:native8b54 pointerpublished62253598"
+    },
+    {
+      "id": "t19_active_mirror_set",
+      "start": "0x2ac102",
+      "end": "0x2ac126",
+      "role": "T19 active nativewordindex write,preservesD2/D3"
+    },
+    {
+      "id": "t19_mirror_backup",
+      "start": "0x2ac3cc",
+      "end": "0x2ac445",
+      "role": "T19 fragment:backup active7076bytes,othergroupsunassigned"
+    },
+    {
+      "id": "t19_mirror_restore",
+      "start": "0x2ac5f8",
+      "end": "0x2ac611",
+      "role": "T19 restoresactive7076bytes,notfree/release/flash"
+    },
+    {
+      "id": "t19_mirror_refresh",
+      "start": "0x2ac611",
+      "end": "0x2ac62d",
+      "role": "T19 fragment:1769nativeleafreads->wordshadow"
+    },
+    {
+      "id": "t19_gate_begin",
+      "start": "0x293a40",
+      "end": "0x293a6c",
+      "role": "T19 setswritegate1/backups/refreshes;ARTcallerunbound"
+    },
+    {
+      "id": "t19_gate_end",
+      "start": "0x293a06",
+      "end": "0x293a40",
+      "role": "T19 fragment:opaquevalidation,restoresmirror,gate0,notify"
     }
   ],
   "tables": [
@@ -452,6 +710,27 @@
       "end": "0x501adc",
       "record_bytes": 4,
       "role": "10 bounded branch targets, NOT a Type/grain legality crosswalk"
+    },
+    {
+      "id": "t19_scalar_format_registry",
+      "start": "0x4ac96c",
+      "end": "0x4b3190",
+      "record_bytes": 20,
+      "role": "explicit1333 records;872present,362absent"
+    },
+    {
+      "id": "t19_native_record_index",
+      "start": "0x4b6bf4",
+      "end": "0x4b8798",
+      "record_bytes": 4,
+      "role": "selected native recordID/index pairs only"
+    },
+    {
+      "id": "t19_bracket_art_metadata",
+      "start": "0x51e250",
+      "end": "0x51e47e",
+      "record_bytes": 18,
+      "role": "31physical ARTassociated candidates;selected mode100 variant1/2 sources only"
     }
   ],
   "structures": [
@@ -642,6 +921,70 @@
           "role": "case8 alternative370/873 result -> outgoing key872"
         }
       ]
+    },
+    {
+      "id": "T19_native_scalar_records",
+      "qualification": "selected numeric ID/index and codec geometry;unobserved descriptor/pointer views",
+      "fields": [
+        {
+          "offset": 0,
+          "width": 1,
+          "role": "recordf5d1 signed byte: outgoing872"
+        },
+        {
+          "offset": 0,
+          "width": 1,
+          "role": "record44c1 unsigned byte:362"
+        },
+        {
+          "offset": 1,
+          "width": 1,
+          "role": "record44c1 unsigned byte:363"
+        }
+      ]
+    },
+    {
+      "id": "T19_mode_configuration",
+      "qualification": "two independent bytegetter snapshots/directdiagnostic,not oldsource/ISP",
+      "fields": [
+        {
+          "offset": 24784,
+          "width": 1,
+          "role": "mode_art_effect_type"
+        },
+        {
+          "offset": 24785,
+          "width": 1,
+          "role": "mode_art_effect"
+        }
+      ]
+    },
+    {
+      "id": "T19_bracket_record",
+      "qualification": "46B-shaped EXIF/Picturebracket transient entries;indexUDF46 unadmitted",
+      "fields": [
+        {
+          "offset": 11,
+          "width": 1,
+          "role": "configuration24784 snapshot/restore"
+        },
+        {
+          "offset": 12,
+          "width": 1,
+          "role": "configuration24785 snapshot/restore"
+        }
+      ]
+    },
+    {
+      "id": "T19_composite111",
+      "qualification": "33physical64-byte enumcandidates/3activeleaffields,notcompletefilmpresets",
+      "fields": [
+        {
+          "offset": 0,
+          "width": 4,
+          "role": "native leaf111 rawmode:selector8->100,12->104"
+        }
+      ]
     }
   ],
   "negative_identities": [
@@ -736,14 +1079,76 @@
       "id": "getSetting_id280_absence_means_unsupported",
       "status": "rejected",
       "source": "T18 callback-only439-record table has no280; generic scalar fallback exists"
+    },
+    {
+      "id": "t19_negative_17",
+      "status": "rejected",
+      "source": "T19 872/362 absent from439x60 hookregistry is not unsupported settings proof"
+    },
+    {
+      "id": "t19_negative_18",
+      "status": "rejected",
+      "source": "T19 872 opcode literal can be log/GUI ID/object offset;not a getter"
+    },
+    {
+      "id": "t19_negative_19",
+      "status": "rejected",
+      "source": "T19 descriptor17 value1 givesclassifier2,notclassifier1"
+    },
+    {
+      "id": "t19_negative_20",
+      "status": "rejected",
+      "source": "T19 872 native signed byte and46Brecord+12 are not oldeffects source word20"
+    },
+    {
+      "id": "t19_negative_21",
+      "status": "rejected",
+      "source": "T19 46-byte bracketing pool is not48 user-saved custom ART slots"
+    },
+    {
+      "id": "t19_negative_22",
+      "status": "rejected",
+      "source": "T19 mode_art_effect_type byte is not oldsource Type halfword24"
+    },
+    {
+      "id": "t19_negative_23",
+      "status": "rejected",
+      "source": "T19 sameenum payload for370/873 doesnotidentify same backingrecord"
+    },
+    {
+      "id": "t19_negative_24",
+      "status": "rejected",
+      "source": "T19 EXIF/ARTbracket diagnostic and scalarapply are not rendering proof"
+    },
+    {
+      "id": "composite111_self_key_means_recursive_getter",
+      "status": "rejected",
+      "source": "T19 raw leafget2abbea differsfromenumget290b28;threevalues not16activefields"
+    },
+    {
+      "id": "composite_enum_records_are_complete_saved_looks",
+      "status": "rejected",
+      "source": "T19 threeactiveleafkeys/64-bytezero-paddedtransientsnapshot;noNV/names/import"
+    },
+    {
+      "id": "bracket_overlay_is_effect_normalizer",
+      "status": "rejected",
+      "source": "T19 3d24af onlywrites38..40;doesnotread/writeeffect12"
+    },
+    {
+      "id": "7076_byte_mirror_is_flash_or_complete_art_look",
+      "status": "unproved",
+      "source": "T19 separateactive/shadow/backupscalarviews,writegate;noNVmedium/ARTbeginendpairing"
     }
   ],
-  "baseline": "d12070d9a662f8a1281cbd9609b566a2951daf9e",
-  "issue": "https://github.com/ZakuZakuu/ep7-film-hack/issues/45",
+  "baseline": "6ce9dccb6fecd7fad597a6d14b3ffee204558df6",
+  "issue": "https://github.com/ZakuZakuu/ep7-film-hack/issues/47",
   "inherited_workbench_baseline": "7291a45014b3f909d25928d11e067f079496959d",
   "inherited_workbench_issue": "https://github.com/ZakuZakuu/ep7-film-hack/issues/37",
   "inherited_t16_baseline": "796f8bec0f695802895dacafc000c9fbf17a2373",
   "inherited_t16_issue": "https://github.com/ZakuZakuu/ep7-film-hack/issues/41",
   "inherited_t17_baseline": "e85a954d6b1ea10b7b5f1815cd40c160e8130600",
-  "inherited_t17_issue": "https://github.com/ZakuZakuu/ep7-film-hack/issues/43"
+  "inherited_t17_issue": "https://github.com/ZakuZakuu/ep7-film-hack/issues/43",
+  "inherited_t18_baseline": "d12070d9a662f8a1281cbd9609b566a2951daf9e",
+  "inherited_t18_issue": "https://github.com/ZakuZakuu/ep7-film-hack/issues/45"
 }
