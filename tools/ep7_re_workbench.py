@@ -24,6 +24,8 @@ try:
     from .t17_identity_roots import roots as identity_roots
     from .t18_art_linkage import evidence as t18_evidence
     from .t18_native_art_records import evidence as native_art_evidence
+    from .t19_art_consumers import evidence as art_consumers_evidence
+    from .t19_effect_handoff import evidence as effect_handoff_evidence
 except ImportError:
     from inspect_olympus_oe import FormatError, inspect, check_expected, decode_chunk
     from probe_oe_executable import (
@@ -33,6 +35,8 @@ except ImportError:
     from t17_identity_roots import roots as identity_roots
     from t18_art_linkage import evidence as t18_evidence
     from t18_native_art_records import evidence as native_art_evidence
+    from t19_art_consumers import evidence as art_consumers_evidence
+    from t19_effect_handoff import evidence as effect_handoff_evidence
 
 REPO = Path(__file__).resolve().parents[1]
 
@@ -538,13 +542,13 @@ def build(original, objdump, output, legacy_flow=False, sim_root=Path('/tmp/ep7-
         rows = disassemble(objdump,data[a:b],a)
         decoded[w['id']] = {r.address:r for r in rows}
         old = cfg(rows,a)
-        # Three nominated loops only. No whole-image SETLB scan or arbitrary
+        # Four nominated loops only. No whole-image SETLB scan or arbitrary
         # loop recognition/recursion; a failed proof stops this guarded run.
         nominated = {'effect_producer':0x301d2d,'effect_receiver':0x3338fb,
-                     'gui_candidate_factory':0xe2ceee}
+                     'gui_candidate_factory':0xe2ceee,'t19_composite_collect':0x290dcc}
         proofs[w['id']] = [] if legacy_flow or w['id'] not in nominated else [
             prove_copy_loop(rows,nominated[w['id']])]
-        expected_copy_bytes=24 if w['id']=='gui_candidate_factory' else 32
+        expected_copy_bytes={'gui_candidate_factory':24,'t19_composite_collect':64}.get(w['id'],32)
         if proofs[w['id']] and proofs[w['id']][0]['bytes_transferred'] != expected_copy_bytes:
             raise FormatError('nominated copy extent changed')
         flows[w['id']] = cfg(rows,a,proofs[w['id']])
@@ -564,6 +568,10 @@ def build(original, objdump, output, legacy_flow=False, sim_root=Path('/tmp/ep7-
     t18_edges,t18_guards,t18_result=t18_evidence(data,decoded,objdump,guard)
     edges.extend(t18_edges)
     native_edges,native_guards,native_result=native_art_evidence(data,decoded,guard)
+    consumer_edges,consumer_guards,consumer_result=art_consumers_evidence(data,decoded,guard)
+    edges.extend(consumer_edges)
+    handoff_edges,handoff_guards,handoff_result=effect_handoff_evidence(data,decoded,guard)
+    edges.extend(handoff_edges)
     edges.extend(native_edges)
     layout = layout_guards(data,decoded,objdump,inherited)
     if inspect(original) != before:
@@ -591,6 +599,10 @@ def build(original, objdump, output, legacy_flow=False, sim_root=Path('/tmp/ep7-
     graph['validation']['t18']=t18_result
     graph['validation']['t18_native_guards']=native_guards
     graph['validation']['t18']['native_records']=native_result
+    graph['validation']['t19_guards']=consumer_guards
+    graph['validation']['t19']=consumer_result
+    graph['validation']['t19_handoff_guards']=handoff_guards
+    graph['validation']['t19']['effect_handoff']=handoff_result
     graph['copy_loop_proofs'] = [{'window':wid,**p} for wid,items in proofs.items() for p in items]
     if not legacy_flow:
         pointer = decoded['effect_producer'][0x301d22]
@@ -620,7 +632,7 @@ def build(original, objdump, output, legacy_flow=False, sim_root=Path('/tmp/ep7-
                 edge['note']='T15 closed-form 32-byte proof under valid-memory/unchanged-code/nonoverlap contract; no OEM execution'
         graph['validation']['parameter_seed_guards'] = 4
     graph['validation']['synthetic_simulator'] = sim_admission
-    graph['validation']['loop_mode'] = 'legacy stops' if legacy_flow else 'two conditional static proofs'
+    graph['validation']['loop_mode'] = 'legacy stops' if legacy_flow else 'four nominated conditional static copy proofs'
     if not legacy_flow:
         graph['negative_identities'].append({
             'id':'gnu_sim_is_full_lir_hardware','status':'rejected',
@@ -656,6 +668,10 @@ def build(original, objdump, output, legacy_flow=False, sim_root=Path('/tmp/ep7-
                                       REPO/'tools/t17_identity_roots.py',
                                       REPO/'tools/t18_art_linkage.py',
                                       REPO/'tools/t18_native_art_records.py',
+                                      REPO/'tools/t19_art_consumers.py',
+                                      REPO/'tools/t19_effect_handoff.py',
+                                      REPO/'tools/t19_reference_probe.py',
+                                      REPO/'tools/check_art_effect_metadata.pl',
                                       REPO/'tools/re_environment/pins.json',
                                       *sorted((REPO/'tests/fixtures').glob('mn103_*.s')))}
             fingerprints['external_objdump_sha256'] = hashlib.sha256(objdump.read_bytes()).hexdigest()

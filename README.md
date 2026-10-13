@@ -35,7 +35,9 @@ Cross-camera implementations are **precedent for an investigation**, not evidenc
 
 ## Current milestones and decision
 
-**Current: [Issue #45 ART parameter graph](research/e142-art-parameter-graph.md).** New ART actuator/cache → native per-selection setting descriptors → registered update hooks →156-byte39-word configuration bundle → scalar handoffs. Panel state and RAW requests are separate. No old effects-source or actual preview/JPEG consumer join; only a focused typed-consumer follow-up is justified, no feature/install engineering. [Reproduction](docs/24-t18-private-validation.md); Cloud Setup unchanged, G4/G5 NO-GO.
+**Current: [Issue #47 native ART consumers](research/e142-art-native-consumers.md).** Native extra-effect state now joins real32-byte constructors and the previously verified effects receiver; per-variant records are independently shared with bracketing. This route clears FilmNoise, and a separate tagged block has an ExifTool-compatible metadata interpretation. Actual pixel rendering, named user looks and durable persistence remain unverified. [Reproduction/handoff](docs/25-t19-private-validation.md); G2 incomplete, G4/G5 NO-GO.
+
+**Previous: [Issue #45 ART parameter graph](research/e142-art-parameter-graph.md).** Native actuator/cache, registered hooks and156-byte bundle/scalar handoffs remain the baseline.
 
 **Previous: [Issue #43 multi-track investigation](research/e142-longrun-architecture-and-deployment.md).** Adjusted subobject/entry contracts and two ART-labelled control roots; acceptance/recovery audit remains applicable.
 

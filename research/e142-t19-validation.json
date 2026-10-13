@@ -1,0 +1,323 @@
+{
+  "issue": "https://github.com/ZakuZakuu/ep7-film-hack/issues/47",
+  "baseline": "6ce9dccb6fecd7fad597a6d14b3ffee204558df6",
+  "model": "E-P7",
+  "firmware_version": "owner-reported1.1",
+  "input_size": 111017984,
+  "input_sha256": "9d1610124ad98f6edae4540182205f06c9c703d9033ef0c4f19847193f95eaeb",
+  "decoded_sha256": "5dd9af164b4590c7e82f6905c919b3cc450bb58f2d5742ab2a0e3a4eb2e26190",
+  "coordinates": "decoded#0 offsets/scoped static values;no observedRAM",
+  "phase": "complete;bounded technical search stopped at missing independent pixel/interface ownership",
+  "validation": {
+    "descriptor872": "0x4b0c88",
+    "enum872_count": 10,
+    "native_mapping": [
+      {
+        "key": 872,
+        "record_id": "0xf5d1",
+        "index": 0,
+        "bytes": 1,
+        "signed_read": true
+      },
+      {
+        "key": 362,
+        "record_id": "0x44c1",
+        "index": 0,
+        "bytes": 1,
+        "signed_read": false
+      },
+      {
+        "key": 363,
+        "record_id": "0x44c1",
+        "index": 1,
+        "bytes": 1,
+        "signed_read": false
+      },
+      {
+        "key": 370,
+        "record_id": "0x44d1",
+        "index": 0,
+        "bytes": 1,
+        "signed_read": false
+      },
+      {
+        "key": 873,
+        "record_id": "0xf5e1",
+        "index": 0,
+        "bytes": 1,
+        "signed_read": true
+      },
+      {
+        "key": 371,
+        "record_id": "0x44d1",
+        "index": 4,
+        "bytes": 1,
+        "signed_read": false
+      },
+      {
+        "key": 875,
+        "record_id": "0xf5e1",
+        "index": 4,
+        "bytes": 1,
+        "signed_read": true
+      }
+    ],
+    "bracket_transfer": [
+      {
+        "config_offset": 24784,
+        "record_offset": 11,
+        "bytes": 1,
+        "projection": [
+          "0x3d212b",
+          "0x3d212f"
+        ],
+        "restore": [
+          "0x3c205a",
+          "0x3c205d"
+        ]
+      },
+      {
+        "config_offset": 24785,
+        "record_offset": 12,
+        "bytes": 1,
+        "projection": [
+          "0x3d2132",
+          "0x3d2136"
+        ],
+        "restore": [
+          "0x3c2068",
+          "0x3c206b"
+        ]
+      }
+    ],
+    "negative_keys_in_439_callback_table": [
+      872,
+      362
+    ],
+    "old_effect_source_alias": "unknown",
+    "pixel_consumer": "unknown",
+    "named_preset_or_nonvolatile_save": "not established",
+    "bank_udf12": "unadmitted",
+    "pool_udf46": "unadmitted",
+    "composite111": {
+      "records": 33,
+      "stride": 64,
+      "active_fields": 3,
+      "selected": [
+        {
+          "selector": 8,
+          "ordinal": 17,
+          "candidate": "0x49ad1c",
+          "native_mode": 100
+        },
+        {
+          "selector": 12,
+          "ordinal": 21,
+          "candidate": "0x49ae1c",
+          "native_mode": 104
+        }
+      ],
+      "scratch_slots": 20
+    },
+    "shared_bracket_sources": [
+      {
+        "candidate": "0x51e250",
+        "native_mode": 100,
+        "variant": 1,
+        "effect_record_id": "0x44d1",
+        "index": 0
+      },
+      {
+        "candidate": "0x51e262",
+        "native_mode": 100,
+        "variant": 2,
+        "effect_record_id": "0xf5e1",
+        "index": 0
+      },
+      {
+        "candidate": "0x51e2bc",
+        "native_mode": 104,
+        "variant": 1,
+        "effect_record_id": "0x44d1",
+        "index": 4
+      },
+      {
+        "candidate": "0x51e2ce",
+        "native_mode": 104,
+        "variant": 2,
+        "effect_record_id": "0xf5e1",
+        "index": 4
+      }
+    ],
+    "effect_handoff": {
+      "effect_flag_cases": [
+        {
+          "effect": 0,
+          "keep_mask": "0xffffffff",
+          "set_mask": "0x0"
+        },
+        {
+          "effect": 1,
+          "keep_mask": "0xffffffff",
+          "set_mask": "0x80"
+        },
+        {
+          "effect": 2,
+          "keep_mask": "0xffffffff",
+          "set_mask": "0x400"
+        },
+        {
+          "effect": 3,
+          "keep_mask": "0xffffffff",
+          "set_mask": "0x8000"
+        },
+        {
+          "effect": 4,
+          "keep_mask": "0xffffffff",
+          "set_mask": "0x2000"
+        },
+        {
+          "effect": 5,
+          "keep_mask": "0xffffffff",
+          "set_mask": "0x40"
+        },
+        {
+          "effect": 6,
+          "keep_mask": "0xfffffcff",
+          "set_mask": "0x100"
+        },
+        {
+          "effect": 7,
+          "keep_mask": "0xfffffcff",
+          "set_mask": "0x200"
+        },
+        {
+          "effect": 8,
+          "keep_mask": "0xffffe7ff",
+          "set_mask": "0x800"
+        },
+        {
+          "effect": 9,
+          "keep_mask": "0xffffe7ff",
+          "set_mask": "0x1000"
+        }
+      ],
+      "common_clear_mask": "0x14000",
+      "common_clear_bit14": "FilmNoise in the independently joined receiver representation",
+      "mono_bit23": "conditional on config24054/24055,not effect872 alone",
+      "parameter_bytes": 32,
+      "flags_offset": 12,
+      "type_offset": 16,
+      "receiver": "0x3337cb",
+      "constructor_calls": [
+        "0x3d2812",
+        "0x3d2b8e"
+      ],
+      "receiver_calls": [
+        "0x3d281e",
+        "0x3d2b99"
+      ],
+      "type_input_domain": [
+        "0x0",
+        "0x1000",
+        "0x110",
+        "0x120"
+      ],
+      "old_source35_alias": "unknown;this independent construction bypasses that missing provenance",
+      "auxiliary30": "zero immediately after32-byte fill;no promoted unconditional value across opaque callees",
+      "rendering": "unknown;knownreceiver normalizes parameters,not proven pixel processing",
+      "bank_udf12": "still unadmitted;native-record reads and constructor join do not require its admission",
+      "metadata_record": {
+        "offset": 3264,
+        "bytes": 40,
+        "external_tag": "Olympus CameraSettings0x52f",
+        "selected_base_ids": {
+          "mode100": [
+            2,
+            16
+          ],
+          "mode104": [
+            6,
+            19
+          ]
+        },
+        "qualification": "numericE-P7 mapping verified;external tag labels community definitions,not rendering/firmware compatibility"
+      }
+    }
+  },
+  "gates": {
+    "G2": "incomplete",
+    "G3_G6": "unvalidated",
+    "G4_G5": "NO-GO"
+  },
+  "safety": {
+    "oem_execution": false,
+    "oem_modified": false,
+    "camera_operations": false,
+    "private_data_uploaded": false,
+    "setup_changed": false
+  },
+  "new_guards": {
+    "native_records": 139,
+    "effect_handoff": 93
+  },
+  "tests": {
+    "count": 77,
+    "skipped": 0,
+    "oem_execution": false
+  },
+  "counts": {
+    "windows": 149,
+    "instructions": 8855,
+    "cfg": 6903,
+    "stops": 74,
+    "evidence": 101,
+    "loop_proofs": 4
+  },
+  "counts_are_not": "executed/whole-program coverage or breakthrough metric",
+  "external_metadata_validation": {
+    "camera_rendering_tested": false,
+    "count": 20,
+    "format": "int16u",
+    "oem_input_used": false,
+    "provider": "ExifTool13.59/2200871d",
+    "synthetic_cases": [
+      {
+        "code": "0x8040",
+        "metadata_label": "Soft Focus"
+      },
+      {
+        "code": "0x8080",
+        "metadata_label": "Blur Top and Bottom"
+      },
+      {
+        "code": "0x8081",
+        "metadata_label": "Blur Left and Right"
+      }
+    ],
+    "tag": "Olympus CameraSettings0x52f",
+    "wrong_slot_control": "rejected"
+  },
+  "sources": [
+    {
+      "url": "https://github.com/RTEMS/sourceware-mirror-binutils-gdb/blob/binutils-2_44/opcodes/m10300-opc.c",
+      "sha256": "1e1150db856998de8366870394297e37d51db464164190e6ed0f988b44910796",
+      "license": "GPL-3.0-or-later;external only"
+    },
+    {
+      "url": "https://github.com/RTEMS/sourceware-mirror-binutils-gdb/blob/815d9a14cbbb3b81843f7566222c87fb22e7255d/sim/mn10300/mn10300.igen#L1986",
+      "sha256": "355754c61879dc24bf6128bbba5a7931355731000e8cb213082b9b9cd4df0129",
+      "license": "GPL-3.0-or-later;only original synthetic inputs"
+    },
+    {
+      "url": "https://github.com/exiftool/exiftool/blob/2200871d9cef988051d2a99d67df3bda6cbb30a8/lib/Image/ExifTool/Olympus.pm#L2400",
+      "sha256": "f974dc7c82b5e187148e0defc8d733734445df2121175097f001fe551ae08651",
+      "license": "Perl Artistic License or GPL;external definitions,not copied"
+    },
+    {
+      "url": "https://github.com/DoYitNow/gr-custom-tool/blob/549591db6ee7809fa7617c3637296ddc79b34f59/gr4_editor/slots.py",
+      "license": "GPL-2.0-only;method reference,no code/address import"
+    }
+  ],
+  "decision": "continue one bounded context-owner/frame-interface question after review;pause generic tracing and feature/install engineering"
+}

@@ -1,6 +1,6 @@
 # T14 · Codex Cloud reverse-engineering workbench
 
-T17 extends the default private corpus to48 nominated windows; [current reproduction](23-t17-private-validation.md). Historical counts below remain T14/T15 results. UDF is still unadmitted.
+T19 extends the default private corpus to149 nominated windows; [current reproduction](25-t19-private-validation.md). Historical counts below remain T14/T15 results. UDF is still unadmitted.
 
 2026-10-12 · [Issue #37](https://github.com/ZakuZakuu/ep7-film-hack/issues/37) · [Tool decisions and architecture](../research/e142-system-re-workbench.md).
 

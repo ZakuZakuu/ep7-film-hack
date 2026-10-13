@@ -79,11 +79,20 @@ def check(root):
         if p.returncode!=73:
             raise ValueError('incorrect arithmetic expectation was not rejected')
         results['incorrect_division_expectation']=p.returncode
+        text=(FIXTURES/'mn103_division.s').read_text()
+        if 'cmp 15,d2' not in text:
+            raise ValueError('signed division countercontrol location changed')
+        negative.write_text(text.replace('cmp 15,d2','cmp 14,d2'))
+        compile_fixture(root,negative,elf)
+        p=subprocess.run([str(simulator),str(elf)],capture_output=True,text=True,timeout=10)
+        if p.returncode != 73:
+            raise ValueError('signed division countercontrol failed')
+        results['incorrect_signed_division_expectation']=p.returncode
     return {'simulator':version,'fixture_results':results,
             'call_data_branch_readonly_loop':'PASSED on these original synthetic fixtures',
             'lir_cached_code_fidelity':'PARTIAL: observed 9; manual cached immediate would remain 7',
             'udf_ep7_admission':'UNADMITTED: user-defined operation; provider immediate255 unsigned expectation fails (91)',
-            'division_scope':'MDR=0, divisor1000, nonnegative31-bit inputs; quotient/remainder only, not flags/overflow/zero-divisor',
+            'division_scope':'DIVU MDR=0/divisor1000/nonnegative31-bit and positive DIV 255/20,32/20,33/64,2112/64; quotient/remainder only, not flags/overflow/zero-divisor',
             'oem_execution':False,'cpu_subtype_of_ep7':'unknown; common fixture passes do not discriminate'}
 
 

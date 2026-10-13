@@ -33,6 +33,42 @@ _start:
  mov mdr,d2
  cmp 0,d2
  bne failure
+ # Independent signed-positive DIV tests. These are arithmetic scalars,
+ # not a reconstructed camera allocator or proprietary function.
+ mov 20,d0
+ mov 255,d1
+ ext d1
+ div d0,d1
+ cmp 12,d1
+ bne failure
+ mov mdr,d2
+ cmp 15,d2
+ bne failure
+ mov 32,d1
+ ext d1
+ div d0,d1
+ cmp 1,d1
+ bne failure
+ mov mdr,d2
+ cmp 12,d2
+ bne failure
+ mov 33,d1
+ mov 64,d0
+ ext d1
+ div d0,d1
+ cmp 0,d1
+ bne failure
+ mov mdr,d2
+ cmp 33,d2
+ bne failure
+ mov 2112,d1
+ ext d1
+ div d0,d1
+ cmp 33,d1
+ bne failure
+ mov mdr,d2
+ cmp 0,d2
+ bne failure
  clr d1
  jmp done
 failure:
