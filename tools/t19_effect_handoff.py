@@ -116,6 +116,15 @@ def evidence(data, decoded, guard):
         ('t19_tuple_join', 0x3294ac, 'movbu', 'd0,(1,a0)'),
         ('t19_tuple_join', 0x3294b1, 'movhu', 'd0,(2,a0)'),
         ('t19_effect_program', 0x3c10b0, 'mov', '24785,a1'),
+        ('t19_effect_program', 0x3c0c5b, 'mov', '3264,a3'),
+        ('t19_effect_program', 0x3c0c62, 'mov', '40,d1'),
+        ('t19_effect_program', 0x3c0c85, 'mov', '1616097560,a0'),
+        ('t19_effect_program', 0x3c0cb4, 'mov', '2,d1'),
+        ('t19_effect_program', 0x3c0cd9, 'movhu', 'd1,(a3)'),
+        ('t19_effect_program', 0x3c0cdd, 'mov', '16,d0'),
+        ('t19_effect_program', 0x3c0d99, 'mov', '6,d2'),
+        ('t19_effect_program', 0x3c0dc0, 'movhu', 'd2,(a3)'),
+        ('t19_effect_program', 0x3c0dc7, 'mov', '19,d0'),
         ('t19_effect_program', 0x3c10b3, 'add', 'd3,a1'),
         ('t19_effect_program', 0x3c10b5, 'movbu', '(a1),d0'),
         ('t19_effect_program', 0x3c10c6, 'mov', '1616097520,a0'),
@@ -149,7 +158,9 @@ def evidence(data, decoded, guard):
     program = [struct.unpack_from('<I',data,0x51b0d0+4*i)[0]-0x60020020 for i in range(10)]
     if (program[1],program[6],program[7]) != (0x3c10d0,0x3c1111,0x3c111e):
         raise FormatError('selected halfword representation drifted')
-    n += 11
+    if [struct.unpack_from('<I',data,0x51b0f8+4*i)[0]-0x60020020 for i in (0,4)] != [0x3c0cb2,0x3c0d97]:
+        raise FormatError('selected base-filter metadata mapping drifted')
+    n += 12
     def e(kind, source, target, origins, note):
         return dict(kind=kind,source=source,target=target,origins=[hex(a) for a in origins],
                     coordinate='decoded#0 offsets/scoped static values',confidence='verified',note=note)
@@ -165,7 +176,7 @@ def evidence(data, decoded, guard):
           'local possible outputs0/1000/110/120hex;no RAW/JPEG/color semantic names;later receiver helper mutation not excluded'),
         e('alternative_effect_representation','config+24785 mode_art_effect','native halfword descriptors at config+3264',
           [0x3c10b0,0x3c10ce,0x3c1136],
-          'same effect produces numeric tags/payload,not independently identified ISP interface/parser/pixel work'),
+          '40-byte/20-halfword record and tags match independentExifTool CameraSettings52f;metadata-compatible,not an identified ISP ABI/pixel consumer'),
         e('bulk_native_apply','wordshadow selected values','raw native setters and changed-u16-key list',
           [0x2ac531,0x2ac547,0x2ac551],
           'bypasses wrapper bytegate using2abc54;active/shadow alias,ART operation pairing and NV commit remain unknown'),
@@ -180,4 +191,7 @@ def evidence(data, decoded, guard):
                     'old_source35_alias':'unknown;this independent construction bypasses that missing provenance',
                     'auxiliary30':'zero immediately after32-byte fill;no promoted unconditional value across opaque callees',
                     'rendering':'unknown;knownreceiver normalizes parameters,not proven pixel processing',
-                    'bank_udf12':'still unadmitted;native-record reads and constructor join do not require its admission'}
+                    'bank_udf12':'still unadmitted;native-record reads and constructor join do not require its admission',
+                    'metadata_record':{'offset':3264,'bytes':40,'external_tag':'Olympus CameraSettings0x52f',
+                                       'selected_base_ids':{'mode100':[2,16],'mode104':[6,19]},
+                                       'qualification':'numericE-P7 mapping verified;external tag labels community definitions,not rendering/firmware compatibility'}}

@@ -7,7 +7,7 @@
   "input_sha256": "9d1610124ad98f6edae4540182205f06c9c703d9033ef0c4f19847193f95eaeb",
   "decoded_sha256": "5dd9af164b4590c7e82f6905c919b3cc450bb58f2d5742ab2a0e3a4eb2e26190",
   "coordinates": "decoded#0 offsets/scoped static values;no observedRAM",
-  "phase": "second validated checkpoint;final interface/adversarial review continues",
+  "phase": "complete;bounded technical search stopped at missing independent pixel/interface ownership",
   "validation": {
     "descriptor872": "0x4b0c88",
     "enum872_count": 10,
@@ -226,7 +226,23 @@
       "old_source35_alias": "unknown;this independent construction bypasses that missing provenance",
       "auxiliary30": "zero immediately after32-byte fill;no promoted unconditional value across opaque callees",
       "rendering": "unknown;knownreceiver normalizes parameters,not proven pixel processing",
-      "bank_udf12": "still unadmitted;native-record reads and constructor join do not require its admission"
+      "bank_udf12": "still unadmitted;native-record reads and constructor join do not require its admission",
+      "metadata_record": {
+        "offset": 3264,
+        "bytes": 40,
+        "external_tag": "Olympus CameraSettings0x52f",
+        "selected_base_ids": {
+          "mode100": [
+            2,
+            16
+          ],
+          "mode104": [
+            6,
+            19
+          ]
+        },
+        "qualification": "numericE-P7 mapping verified;external tag labels community definitions,not rendering/firmware compatibility"
+      }
     }
   },
   "gates": {
@@ -243,11 +259,65 @@
   },
   "new_guards": {
     "native_records": 139,
-    "effect_handoff": 83
+    "effect_handoff": 93
   },
   "tests": {
     "count": 77,
     "skipped": 0,
     "oem_execution": false
-  }
+  },
+  "counts": {
+    "windows": 149,
+    "instructions": 8855,
+    "cfg": 6903,
+    "stops": 74,
+    "evidence": 101,
+    "loop_proofs": 4
+  },
+  "counts_are_not": "executed/whole-program coverage or breakthrough metric",
+  "external_metadata_validation": {
+    "camera_rendering_tested": false,
+    "count": 20,
+    "format": "int16u",
+    "oem_input_used": false,
+    "provider": "ExifTool13.59/2200871d",
+    "synthetic_cases": [
+      {
+        "code": "0x8040",
+        "metadata_label": "Soft Focus"
+      },
+      {
+        "code": "0x8080",
+        "metadata_label": "Blur Top and Bottom"
+      },
+      {
+        "code": "0x8081",
+        "metadata_label": "Blur Left and Right"
+      }
+    ],
+    "tag": "Olympus CameraSettings0x52f",
+    "wrong_slot_control": "rejected"
+  },
+  "sources": [
+    {
+      "url": "https://github.com/RTEMS/sourceware-mirror-binutils-gdb/blob/binutils-2_44/opcodes/m10300-opc.c",
+      "sha256": "1e1150db856998de8366870394297e37d51db464164190e6ed0f988b44910796",
+      "license": "GPL-3.0-or-later;external only"
+    },
+    {
+      "url": "https://github.com/RTEMS/sourceware-mirror-binutils-gdb/blob/815d9a14cbbb3b81843f7566222c87fb22e7255d/sim/mn10300/mn10300.igen#L1986",
+      "sha256": "355754c61879dc24bf6128bbba5a7931355731000e8cb213082b9b9cd4df0129",
+      "license": "GPL-3.0-or-later;only original synthetic inputs"
+    },
+    {
+      "url": "https://github.com/exiftool/exiftool/blob/2200871d9cef988051d2a99d67df3bda6cbb30a8/lib/Image/ExifTool/Olympus.pm#L2400",
+      "sha256": "f974dc7c82b5e187148e0defc8d733734445df2121175097f001fe551ae08651",
+      "license": "Perl Artistic License or GPL;external definitions,not copied"
+    },
+    {
+      "url": "https://github.com/DoYitNow/gr-custom-tool/blob/549591db6ee7809fa7617c3637296ddc79b34f59/gr4_editor/slots.py",
+      "license": "GPL-2.0-only;method reference,no code/address import"
+    }
+  ],
+  "decision": "continue one bounded context-owner/frame-interface question after review;pause generic tracing and feature/install engineering"
 }

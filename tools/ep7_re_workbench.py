@@ -671,6 +671,7 @@ def build(original, objdump, output, legacy_flow=False, sim_root=Path('/tmp/ep7-
                                       REPO/'tools/t19_art_consumers.py',
                                       REPO/'tools/t19_effect_handoff.py',
                                       REPO/'tools/t19_reference_probe.py',
+                                      REPO/'tools/check_art_effect_metadata.pl',
                                       REPO/'tools/re_environment/pins.json',
                                       *sorted((REPO/'tests/fixtures').glob('mn103_*.s')))}
             fingerprints['external_objdump_sha256'] = hashlib.sha256(objdump.read_bytes()).hexdigest()

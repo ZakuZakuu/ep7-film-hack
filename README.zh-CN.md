@@ -2,7 +2,9 @@
 
 **公开研究进展 — 2026-10-13**
 
-**当前：[Issue #45 ART 参数图研究](research/e142-art-parameter-graph.md)。** 新证据连接原生 ART 选择控件、设置缓存、逐项回调描述记录、156字节/39字参数包及标量分派；Panel 状态和 RAW 请求被明确区分。尚未绑定旧效果源对象或实际预览/JPEG 消费者；只支持有新类型依据的局部参数验证，不开发功能或安装工具。[复现命令](docs/24-t18-private-validation.md)，Cloud Setup 无需调整，G4/G5 NO-GO。
+**当前：[Issue #47 原生 ART 消费者](research/e142-art-native-consumers.md)。** 已将原生附加效果字段连接到真实32字节参数构造器和既有效果接收器，并交叉验证逐变体参数与 bracketing 记录的共用关系。这条构造路径清除 FilmNoise；另一组半字标签与 ExifTool 元数据格式吻合，不能当成 ISP 接口。仍未验证像素处理、独立命名风格和永久保存。见[复现与 handoff](docs/25-t19-private-validation.md)，G2 未完成/G4G5 NO-GO。
+
+**上一轮：[Issue #45 ART 参数图](research/e142-art-parameter-graph.md)。** 原生控件缓存、注册回调及156字节参数包是本轮基线，历史成果保留。
 
 **已有基础：[Issue #43 多方向自主研究](research/e142-longrun-architecture-and-deployment.md)。** 子对象返回调整、同体双入口及 ART 命名根；修改包接受和独立恢复审计仍适用。
 
