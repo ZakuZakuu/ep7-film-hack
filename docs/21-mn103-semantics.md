@@ -62,3 +62,7 @@ Core+sim needs roughly1.2GiB including source/build/archive, default full provid
     rm -rf /tmp/ep7-re-tools/cache /tmp/ep7-re-tools/binutils-source /tmp/ep7-re-tools/gnu-sim-source
 
 Installed binaries still run. Future rebuilds redownload missing public sources by their pins. Never remove /tmp/ep7-firmware or /tmp/ep7-re-project as part of tool cleanup. --without-sim retains a legacy tool installation; no new environment secrets required. Preserve inherited proxy/CA; restricted allowlists need codeload.github.com in addition to T14 tool hosts.
+
+T18 reuses the existing finite-copy contract for one nominated six-word GUI block,24 bytes, after unresolved lookup SETLB/UDF instructions. This changes no ISA admission and does not certify the earlier loops or full factory. [Exact boundaries and negative control](24-t18-private-validation.md); prior two32-byte effects proofs remain.
+
+T18 also reads manufacturer p55/pinned GNU DIVU and checks an original nonnegative31-bit/MDR0/divisor1000 arithmetic fixture, plus a wrong-expectation73 control. Quotient/remainder support only; no general flags/overflow/zero-divisor or UDF/E-P7 CPU admission. OEM instructions are never run.

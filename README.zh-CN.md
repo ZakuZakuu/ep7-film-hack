@@ -1,8 +1,10 @@
 # Olympus PEN E-P7 · Film Simulation Reverse Engineering Research
 
-**公开研究进展 — 2026-10-12**
+**公开研究进展 — 2026-10-13**
 
-**当前：[Issue #43 多方向自主研究](research/e142-longrun-architecture-and-deployment.md)。** 新证据确认子对象返回调整、同体双入口栈约定，以及两个独立的 ART 命名控制入口；仍未绑定风格参数或渲染器。独立官方/社区/真实容器审计表明：修改包接受和 E-P7 独立恢复仍未知，G4/G5 NO-GO。[复现命令](docs/23-t17-private-validation.md)，Cloud Setup 无需调整。
+**当前：[Issue #45 ART 参数图研究](research/e142-art-parameter-graph.md)。** 新证据连接原生 ART 选择控件、设置缓存、逐项回调描述记录、156字节/39字参数包及标量分派；Panel 状态和 RAW 请求被明确区分。尚未绑定旧效果源对象或实际预览/JPEG 消费者；只支持有新类型依据的局部参数验证，不开发功能或安装工具。[复现命令](docs/24-t18-private-validation.md)，Cloud Setup 无需调整，G4/G5 NO-GO。
+
+**已有基础：[Issue #43 多方向自主研究](research/e142-longrun-architecture-and-deployment.md)。** 子对象返回调整、同体双入口及 ART 命名根；修改包接受和独立恢复审计仍适用。
 
 **已有基础：[Issue #41 系统架构研究](research/e142-art-architecture-sprint.md)。** 已绑定创建路径下的代理与返回字节控制映射；不是 ART 参数写入或渲染证据，GNU UDF 语义仍未准入。
 

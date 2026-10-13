@@ -22,6 +22,8 @@ try:
     from .mn103_analysis import prove_copy_loop, effect
     from .check_mn103_sim import check as check_simulator
     from .t17_identity_roots import roots as identity_roots
+    from .t18_art_linkage import evidence as t18_evidence
+    from .t18_native_art_records import evidence as native_art_evidence
 except ImportError:
     from inspect_olympus_oe import FormatError, inspect, check_expected, decode_chunk
     from probe_oe_executable import (
@@ -29,6 +31,8 @@ except ImportError:
     from mn103_analysis import prove_copy_loop, effect
     from check_mn103_sim import check as check_simulator
     from t17_identity_roots import roots as identity_roots
+    from t18_art_linkage import evidence as t18_evidence
+    from t18_native_art_records import evidence as native_art_evidence
 
 REPO = Path(__file__).resolve().parents[1]
 
@@ -534,13 +538,15 @@ def build(original, objdump, output, legacy_flow=False, sim_root=Path('/tmp/ep7-
         rows = disassemble(objdump,data[a:b],a)
         decoded[w['id']] = {r.address:r for r in rows}
         old = cfg(rows,a)
-        # Two nominated loops only. No whole-image SETLB scan or arbitrary
+        # Three nominated loops only. No whole-image SETLB scan or arbitrary
         # loop recognition/recursion; a failed proof stops this guarded run.
-        nominated = {'effect_producer':0x301d2d,'effect_receiver':0x3338fb}
+        nominated = {'effect_producer':0x301d2d,'effect_receiver':0x3338fb,
+                     'gui_candidate_factory':0xe2ceee}
         proofs[w['id']] = [] if legacy_flow or w['id'] not in nominated else [
             prove_copy_loop(rows,nominated[w['id']])]
-        if proofs[w['id']] and proofs[w['id']][0]['bytes_transferred'] != 32:
-            raise FormatError('known 32-byte copy extent changed')
+        expected_copy_bytes=24 if w['id']=='gui_candidate_factory' else 32
+        if proofs[w['id']] and proofs[w['id']][0]['bytes_transferred'] != expected_copy_bytes:
+            raise FormatError('nominated copy extent changed')
         flows[w['id']] = cfg(rows,a,proofs[w['id']])
         effects[w['id']] = [effect(row,(rows[i+1].address if i+1<len(rows) else b)-row.address)
                             for i,row in enumerate(rows)]
@@ -555,6 +561,10 @@ def build(original, objdump, output, legacy_flow=False, sim_root=Path('/tmp/ep7-
     edges.extend(architecture_edges)
     t17_edges,t17_guards,t17_probe=t17_evidence(data,decoded,objdump)
     edges.extend(t17_edges)
+    t18_edges,t18_guards,t18_result=t18_evidence(data,decoded,objdump,guard)
+    edges.extend(t18_edges)
+    native_edges,native_guards,native_result=native_art_evidence(data,decoded,guard)
+    edges.extend(native_edges)
     layout = layout_guards(data,decoded,objdump,inherited)
     if inspect(original) != before:
         raise FormatError('input changed during analysis')
@@ -577,6 +587,10 @@ def build(original, objdump, output, legacy_flow=False, sim_root=Path('/tmp/ep7-
     graph['validation']['t17_guards']=t17_guards
     graph['validation']['t17_identity_probe']=t17_probe
     graph['validation']['t17_result']='adjusted subobject/dual entries and ART-labelled control roots; no style writer/renderer'
+    graph['validation']['t18_guards']=t18_guards
+    graph['validation']['t18']=t18_result
+    graph['validation']['t18_native_guards']=native_guards
+    graph['validation']['t18']['native_records']=native_result
     graph['copy_loop_proofs'] = [{'window':wid,**p} for wid,items in proofs.items() for p in items]
     if not legacy_flow:
         pointer = decoded['effect_producer'][0x301d22]
@@ -640,6 +654,8 @@ def build(original, objdump, output, legacy_flow=False, sim_root=Path('/tmp/ep7-
                                       REPO/'tools/probe_oe_executable.py',REPO/'tools/inspect_olympus_oe.py',
                                       REPO/'tools/mn103_analysis.py',REPO/'tools/check_mn103_sim.py',
                                       REPO/'tools/t17_identity_roots.py',
+                                      REPO/'tools/t18_art_linkage.py',
+                                      REPO/'tools/t18_native_art_records.py',
                                       REPO/'tools/re_environment/pins.json',
                                       *sorted((REPO/'tests/fixtures').glob('mn103_*.s')))}
             fingerprints['external_objdump_sha256'] = hashlib.sha256(objdump.read_bytes()).hexdigest()
