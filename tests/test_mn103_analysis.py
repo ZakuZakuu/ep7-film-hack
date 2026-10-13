@@ -108,6 +108,8 @@ class AnalysisTests(unittest.TestCase):
         self.assertEqual(results['fixture_results']['mn103_udf_provider']['am33'],91)
         self.assertIn('UNADMITTED',results['udf_ep7_admission'])
         self.assertEqual(results['fixture_results']['mn103_entry_pair']['am33'],0)
+        self.assertEqual(results['fixture_results']['mn103_division']['am33'],0)
+        self.assertEqual(results['fixture_results']['incorrect_division_expectation'],73)
         self.assertEqual(results['fixture_results']['incorrect_full_entry_expectation'],73)
         self.assertEqual(effect(Instruction(0,'udfu01','6,d0'),3)['status'],'unmodeled')
         self.assertFalse(results['oem_execution'])

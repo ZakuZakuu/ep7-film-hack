@@ -1,0 +1,230 @@
+{
+  "model": "E-P7",
+  "firmware_version": "owner-reported1.1",
+  "date": "2026-10-13",
+  "baseline": "d12070d9a662f8a1281cbd9609b566a2951daf9e",
+  "issue": "https://github.com/ZakuZakuu/ep7-film-hack/issues/45",
+  "input_size": 111017984,
+  "input_sha256": "9d1610124ad98f6edae4540182205f06c9c703d9033ef0c4f19847193f95eaeb",
+  "decoded_sha256": "5dd9af164b4590c7e82f6905c919b3cc450bb58f2d5742ab2a0e3a4eb2e26190",
+  "coordinate": "decoded#0 offsets and explicitly scoped static addresses; no observed RAM",
+  "panel": {
+    "literal_input_sites": {
+      "0xe3b7f8": 1,
+      "0xe3b919": 1,
+      "0xe3ba8d": 0
+    },
+    "meaning": "strong static inference: ART selection-interface activity; not full legal-value/sole-purpose proof",
+    "reference_probe": {
+      "absolute_u32_candidates": [
+        "0x74a278",
+        "0x74a281"
+      ],
+      "direct_getter_candidates": [
+        {
+          "target": "0x74a27f",
+          "candidates": [
+            "0x775b02"
+          ]
+        },
+        {
+          "target": "0x775b02",
+          "candidates": [
+            "0x7dfbeb"
+          ]
+        }
+      ],
+      "virtual_pattern_counts": [
+        {
+          "slot": 816,
+          "raw_pattern_hits": 6
+        },
+        {
+          "slot": 820,
+          "raw_pattern_hits": 7
+        }
+      ],
+      "limits": "#0 only; four direct forms/adjacent slot-load CALLS; no completeness or type proof"
+    },
+    "qualification": "constructor/runtime vptr and opaque callee value joins remain conditional"
+  },
+  "native_art": {
+    "setting_descriptors": [
+      {
+        "gui_selector_key": 70,
+        "setting_key": 363,
+        "record": "0x414900",
+        "callback24": "0x295ce1",
+        "candidate48": "0x298c24"
+      },
+      {
+        "gui_selector_key": 71,
+        "setting_key": 366,
+        "record": "0x4149b4",
+        "callback24": "0x295d45",
+        "candidate48": "0x298b34"
+      },
+      {
+        "gui_selector_key": 74,
+        "setting_key": 364,
+        "record": "0x41493c",
+        "callback24": "0x295cfa",
+        "candidate48": "0x298af8"
+      },
+      {
+        "gui_selector_key": 73,
+        "setting_key": 365,
+        "record": "0x414978",
+        "callback24": "0x295d13",
+        "candidate48": "0x298b16"
+      },
+      {
+        "gui_selector_key": 86,
+        "setting_key": 595,
+        "record": "0x414ae0",
+        "callback24": "0x295dc2",
+        "candidate48": "0x298c9c"
+      },
+      {
+        "gui_selector_key": 85,
+        "setting_key": 367,
+        "record": "0x4149f0",
+        "callback24": "0x295d77",
+        "candidate48": "0x298b52"
+      },
+      {
+        "gui_selector_key": 96,
+        "setting_key": 368,
+        "record": "0x414a2c",
+        "callback24": "0x295d2c",
+        "candidate48": "0x298b70"
+      },
+      {
+        "gui_selector_key": 163,
+        "setting_key": 369,
+        "record": "0x414a68",
+        "callback24": "0x295ddb",
+        "candidate48": "0x298b8e"
+      },
+      {
+        "gui_selector_key": 181,
+        "setting_key": 468,
+        "record": "0x414aa4",
+        "callback24": "0x295df4",
+        "candidate48": "0x298bac"
+      },
+      {
+        "gui_selector_key": 194,
+        "setting_key": 661,
+        "record": "0x414b1c",
+        "callback24": "0x295e0d",
+        "candidate48": "0x298bca"
+      },
+      {
+        "gui_selector_key": 196,
+        "setting_key": 663,
+        "record": "0x414b58",
+        "callback24": "0x295e26",
+        "candidate48": "0x298be8"
+      },
+      {
+        "gui_selector_key": 217,
+        "setting_key": 1454,
+        "record": "0x414b94",
+        "callback24": "0x295e3f",
+        "candidate48": "0x298c06"
+      }
+    ],
+    "registry_source": "0x41178c",
+    "registry_records": 439,
+    "registry_stride": 60,
+    "bundle_producer": "0x297b51",
+    "bundle_bytes": 156,
+    "bundle_words": 39,
+    "selected_selector_cases": [
+      8,
+      12
+    ],
+    "selected_handoffs": [
+      {
+        "record_offset": 32,
+        "setting_key": 362,
+        "call": "0x29896a"
+      },
+      {
+        "record_offset": 76,
+        "setting_key": 872,
+        "call": "0x2989f9"
+      }
+    ],
+    "qualifications": [
+      "no assigned stock filter/parameter names",
+      "unadmitted UDF bank dispatch",
+      "normal returns/intact nonaliasing frames",
+      "not old35-byte effect source",
+      "not image-processing ownership",
+      "context0/1 not RAW/capture mapping"
+    ]
+  },
+  "raw": "request/callback/result regions validated; no shared ART-effect/bundle schema proof",
+  "new_guards": {
+    "control_layout": 60,
+    "native_records": 74
+  },
+  "counts": {
+    "windows": 94,
+    "instructions": 5795,
+    "cfg": 4706,
+    "stops": 28,
+    "evidence": 82,
+    "loop_proofs": 3
+  },
+  "counts_are_not": "whole-program/actual-execution coverage or novelty",
+  "tests": {
+    "count": 70,
+    "skipped": 0,
+    "inputs": "original synthetic only"
+  },
+  "gnu_division": "original nonnegative31-bit/MDR0/divisor1000 quotient-remainder passes all3 selectors; wrong expectation73; flags/overflow/zero-divisor/UDF unknown",
+  "sources": [
+    {
+      "url": "https://github.com/RTEMS/sourceware-mirror-binutils-gdb/blob/binutils-2_44/opcodes/m10300-opc.c",
+      "sha256": "1e1150db856998de8366870394297e37d51db464164190e6ed0f988b44910796",
+      "license": "GPL-3.0-or-later; read externally"
+    },
+    {
+      "url": "https://github.com/DoYitNow/gr-custom-tool/blob/549591db6ee7809fa7617c3637296ddc79b34f59/gr4_editor/filter_reader.py",
+      "sha256": "9d2309b226598ccba2fd12489e1fbb86d7825dcb5e42f9060aed0a8558ab7778",
+      "license": "GPL-2.0-only; methods only"
+    },
+    {
+      "url": "https://github.com/DoYitNow/gr-custom-tool/blob/549591db6ee7809fa7617c3637296ddc79b34f59/gr4_editor/slots.py",
+      "sha256": "d898edb5a7217729a81977070ac8c571685f3b6a32837fd6b64fbb7cd97491b4",
+      "license": "GPL-2.0-only; methods only"
+    },
+    {
+      "url": "https://github.com/DoYitNow/gr-custom-tool/blob/549591db6ee7809fa7617c3637296ddc79b34f59/LICENSE",
+      "sha256": "6f04ae8364d0079a192b14635f4b1da294ce18724c034c39a6a41d1b09df6100",
+      "license": "GPL-2.0-only"
+    },
+    {
+      "url": "https://github.com/RTEMS/sourceware-mirror-binutils-gdb/blob/815d9a14cbbb3b81843f7566222c87fb22e7255d/sim/mn10300/mn10300.igen#L2023",
+      "sha256": "355754c61879dc24bf6128bbba5a7931355731000e8cb213082b9b9cd4df0129",
+      "license": "GPL-3.0-or-later; external pinned provider, original synthetic inputs only"
+    }
+  ],
+  "gates": {
+    "G1": "pass",
+    "G2": "incomplete",
+    "G3_G6": "untested",
+    "G4_G5": "NO-GO"
+  },
+  "decision": "one focused outgoing362/872 typed-consumer test justified; pause generic tracing and feature/install engineering; review before next task",
+  "safety": {
+    "oem_execution": false,
+    "oem_modified": false,
+    "camera_operations": false,
+    "oem_uploaded": false,
+    "setup_change": false
+  }
+}

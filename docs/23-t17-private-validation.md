@@ -29,3 +29,5 @@ Measured64 tests/0 skips, including the two original8-byte additive-sum arrays. 
 Private project remains mode0600 under0700 /tmp; no database/listings/bytes/photos/identifiers may be uploaded. Public sources were read/cached only, no SDK/gphoto/update client/device invocation. Source hashes/versions and unavailable loader410 are in selected metadata; cached documents/header content stay out of Git.
 
 Handoff: A's generic resolver route and B's panel/RAW roots are stopped at their recorded limits. Rebuild from the exact private input and read Issue43/PR before future work. Resume ART code only with a genuinely independent selector/source-record/consumer anchor; deployment requires separate exact-model authentication/recovery evidence and authorization. No automatic next-callee task, camera action or vendor contact.
+
+The counts above describe this historical milestone. Latest main's T18 builder includes94 windows and additional native ART configuration relations; use [T18 reproduction](24-t18-private-validation.md) for current counts/limits. Historical proofs remain qualified and are not relabelled as rendering.

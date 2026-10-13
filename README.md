@@ -35,7 +35,9 @@ Cross-camera implementations are **precedent for an investigation**, not evidenc
 
 ## Current milestones and decision
 
-**Current: [Issue #43 multi-track investigation](research/e142-longrun-architecture-and-deployment.md).** Verified an adjusted subobject return and shared-body entry contracts, plus two independently bound ART-labelled control roots. Neither supplies a style record or renderer. Fresh official/community/container audit leaves modified acceptance and independent E-P7 recovery unknown: G4/G5 NO-GO. [Reproduction](docs/23-t17-private-validation.md); Cloud Setup unchanged.
+**Current: [Issue #45 ART parameter graph](research/e142-art-parameter-graph.md).** New ART actuator/cache → native per-selection setting descriptors → registered update hooks →156-byte39-word configuration bundle → scalar handoffs. Panel state and RAW requests are separate. No old effects-source or actual preview/JPEG consumer join; only a focused typed-consumer follow-up is justified, no feature/install engineering. [Reproduction](docs/24-t18-private-validation.md); Cloud Setup unchanged, G4/G5 NO-GO.
+
+**Previous: [Issue #43 multi-track investigation](research/e142-longrun-architecture-and-deployment.md).** Adjusted subobject/entry contracts and two ART-labelled control roots; acceptance/recovery audit remains applicable.
 
 **Previous: [Issue #41 architecture sprint](research/e142-art-architecture-sprint.md).** Constructor-path proxy and returned-byte control map; not an ART writer or renderer. GNU UDF semantics remain unadmitted.
 

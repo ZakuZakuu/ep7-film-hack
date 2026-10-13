@@ -160,6 +160,282 @@
       "start": "0x764ca0",
       "end": "0x764ce5",
       "role": "T17 actor-class construction; not a filter parameter registry"
+    },
+    {
+      "id": "panel_interface_getter",
+      "start": "0x7daaab",
+      "end": "0x7dab10",
+      "role": "T18 conditional static Shooting interface publication; no observed RAM"
+    },
+    {
+      "id": "panel_interface_ctor",
+      "start": "0x7dab10",
+      "end": "0x7dab1e",
+      "role": "T18 concrete constructor vptr; runtime mutation still unknown"
+    },
+    {
+      "id": "panel_set_entry",
+      "start": "0x7dfb3e",
+      "end": "0x7dfbab",
+      "role": "T18 input scalar retained in D3 across opaque calls; qualified preservation"
+    },
+    {
+      "id": "panel_get_entry",
+      "start": "0x7dfbab",
+      "end": "0x7dfc0e",
+      "role": "T18 u16 getter return path; nested-return/state assumptions apply"
+    },
+    {
+      "id": "panel_field_getter",
+      "start": "0x74a27f",
+      "end": "0x74a288",
+      "role": "T18 explicit u16 load, adjacent to inherited writer"
+    },
+    {
+      "id": "panel_backend_getter",
+      "start": "0x775b02",
+      "end": "0x775b0d",
+      "role": "T18 direct getter and zero extension"
+    },
+    {
+      "id": "panel_debug_get",
+      "start": "0x7c602e",
+      "end": "0x7c605d",
+      "role": "T18 named getter output, not image consumption"
+    },
+    {
+      "id": "panel_ui_bridge",
+      "start": "0xcdd277",
+      "end": "0xcdd293",
+      "role": "T18 returns Shooting interface from final direct call"
+    },
+    {
+      "id": "panel_state_consumer_a",
+      "start": "0xcbff91",
+      "end": "0xcbffd6",
+      "role": "T18 u16==1 plus setting280==3 gates output writes; no effect record alias"
+    },
+    {
+      "id": "panel_state_consumer_b",
+      "start": "0xccb308",
+      "end": "0xccb35e",
+      "role": "T18 one unused getter result then qualified scalar gate/output writes"
+    },
+    {
+      "id": "panel_gui_start_fragment",
+      "start": "0xe3b7cd",
+      "end": "0xe3b806",
+      "role": "T18 direct ART ModeStart label and literal1 at virtual816; fragment only"
+    },
+    {
+      "id": "panel_gui_mode_change",
+      "start": "0xe3b8d5",
+      "end": "0xe3b968",
+      "role": "T18 direct ART ModeChange label and literal1; UI candidate object"
+    },
+    {
+      "id": "panel_gui_exit_fragment",
+      "start": "0xe3ba6b",
+      "end": "0xe3ba8f",
+      "role": "T18 direct ART Exit label and literal0 at virtual816; fragment only"
+    },
+    {
+      "id": "raw_art_request_fields",
+      "start": "0x764d17",
+      "end": "0x764dac",
+      "role": "T18 callback/context +228/+224 and separate request header +236"
+    },
+    {
+      "id": "raw_art_result_callback",
+      "start": "0x765243",
+      "end": "0x7652ab",
+      "role": "T18 event-dependent result copy/callback, not identified style parameters"
+    },
+    {
+      "id": "raw_art_request_tags",
+      "start": "0x7657ad",
+      "end": "0x7657fc",
+      "role": "T18 two scalar helpers; recognized route tags, not identified ART IDs"
+    },
+    {
+      "id": "raw_art_operation_callback",
+      "start": "0x7e9761",
+      "end": "0x7e9818",
+      "role": "T18 456 among multiple operations handled via state2/3"
+    },
+    {
+      "id": "gui_candidate_factory",
+      "start": "0xe2ce88",
+      "end": "0xe2cf01",
+      "role": "T18 explicit catalog pointer; UDF12/24 lookup remains unadmitted"
+    },
+    {
+      "id": "gui_record_ctor",
+      "start": "0xe2cb3a",
+      "end": "0xe2cc33",
+      "role": "T18 six caller words consumed as controller/callback-shaped fields"
+    },
+    {
+      "id": "scene_neighbor_counterexample",
+      "start": "0xe3b968",
+      "end": "0xe3ba4a",
+      "role": "T18 direct SCN labels refute nearby six-case ART interpretation"
+    },
+    {
+      "id": "art_component_factory",
+      "start": "0xdb5126",
+      "end": "0xdb516e",
+      "role": "T18 grounded pivot actual keyed component table; generic lookup not ISP"
+    },
+    {
+      "id": "art_component49_create",
+      "start": "0xd42294",
+      "end": "0xd422d6",
+      "role": "T18 grounded pivot selected key49 factory; unadmitted UDF100"
+    },
+    {
+      "id": "art_actuator_ctor",
+      "start": "0xd422d6",
+      "end": "0xd4239a",
+      "role": "T18 grounded pivot Art Select actuator,12 cached native setting values"
+    },
+    {
+      "id": "art_actuator_destructor",
+      "start": "0xd4239a",
+      "end": "0xd4247c",
+      "role": "T18 grounded pivot qualified per-property cached-value restoration, not firmware recovery"
+    },
+    {
+      "id": "art_actuator_reset",
+      "start": "0xd4247c",
+      "end": "0xd424ac",
+      "role": "T18 grounded pivot 10 explicit callback slots from copied initializer"
+    },
+    {
+      "id": "art_actuator_slot0_wrapper",
+      "start": "0xd424b5",
+      "end": "0xd424df",
+      "role": "T18 grounded pivot consumes concrete object+48 callback"
+    },
+    {
+      "id": "art_actuator_slot0",
+      "start": "0xd424df",
+      "end": "0xd4253e",
+      "role": "T18 grounded pivot child-event success triggers snapshot update, not pixel processing"
+    },
+    {
+      "id": "art_actuator_snapshot",
+      "start": "0xd434f8",
+      "end": "0xd43585",
+      "role": "T18 grounded pivot selector280-dependent refresh of one of12 cache values"
+    },
+    {
+      "id": "art_setting_interface",
+      "start": "0x7d9042",
+      "end": "0x7d90a7",
+      "role": "T18 grounded pivot conditional SettingController singleton"
+    },
+    {
+      "id": "art_setting_interface_ctor",
+      "start": "0x7d90a7",
+      "end": "0x7d90c5",
+      "role": "T18 grounded pivot vptr for actual used get/set slots"
+    },
+    {
+      "id": "art_setting_getter",
+      "start": "0x7d9529",
+      "end": "0x7d95bc",
+      "role": "T18 grounded pivot typed output word via getSetting"
+    },
+    {
+      "id": "art_setting_setter",
+      "start": "0x7da109",
+      "end": "0x7da3a5",
+      "role": "T18 grounded pivot setSetting qualified restore path; generic other gates not imaging"
+    },
+    {
+      "id": "art_setting_get_backend",
+      "start": "0x806c62",
+      "end": "0x806c8b",
+      "role": "T18 grounded pivot scalar settings read boundary"
+    },
+    {
+      "id": "art_setting_get_wrapper",
+      "start": "0x28f867",
+      "end": "0x28f870",
+      "role": "T18 grounded pivot direct scalar-value wrapper"
+    },
+    {
+      "id": "art_setting_value_read",
+      "start": "0x290b28",
+      "end": "0x290ba4",
+      "role": "T18 grounded pivot scalar/optional callback path; source+20 is descriptor pointer, not effects"
+    },
+    {
+      "id": "art_setting_value_write",
+      "start": "0x290ba9",
+      "end": "0x290bf3",
+      "role": "T18 grounded pivot scalar update plus notification; no pixel ownership"
+    },
+    {
+      "id": "art_setting_set_backend",
+      "start": "0x807420",
+      "end": "0x8074c0",
+      "role": "T18 grounded pivot chosen numeric settings write path"
+    },
+    {
+      "id": "art_callback_registry_init",
+      "start": "0x2916d7",
+      "end": "0x29172c",
+      "role": "T18 grounded pivot 439 descriptors/60-byte step,64 bucket initialization; loop admission unchanged"
+    },
+    {
+      "id": "art_callback_registry_lookup",
+      "start": "0x29172c",
+      "end": "0x291756",
+      "role": "T18 grounded pivot keyed linked record lookup, runtime nodes unobserved"
+    },
+    {
+      "id": "art_setting_notification",
+      "start": "0x29141e",
+      "end": "0x29148d",
+      "role": "T18 grounded pivot actual descriptor+24 callback consumer; reused with new ART-key evidence"
+    },
+    {
+      "id": "art_variant_hook8",
+      "start": "0x295ce1",
+      "end": "0x295cfa",
+      "role": "T18 grounded pivot registered key363 hook,setting111==8"
+    },
+    {
+      "id": "art_variant_hook12",
+      "start": "0x295cfa",
+      "end": "0x295d13",
+      "role": "T18 grounded pivot registered key364 countercomparison,setting111==12"
+    },
+    {
+      "id": "art_variant_parallel_hook8",
+      "start": "0x298c24",
+      "end": "0x298c42",
+      "role": "T18 grounded pivot descriptor+48 candidate,parallel context1,dispatch/RAW identity unproved"
+    },
+    {
+      "id": "art_bundle_producer",
+      "start": "0x297b51",
+      "end": "0x2988f6",
+      "role": "T18 grounded pivot selector table +39-word configuration bundle; NOT known35-byte source/pixels"
+    },
+    {
+      "id": "art_bundle_handoff",
+      "start": "0x2988f6",
+      "end": "0x298af8",
+      "role": "T18 grounded pivot 39 key/value handoffs; bank UDF12/indirect target unadmitted"
+    },
+    {
+      "id": "art_bank_dispatch",
+      "start": "0x292217",
+      "end": "0x29224c",
+      "role": "T18 grounded pivot bank/type dispatch reads or writes selected scalar; UDF12 remains unadmitted"
     }
   ],
   "tables": [
@@ -282,6 +558,90 @@
           "role": "self/null/member resolution; concrete runtime type unknown"
         }
       ]
+    },
+    {
+      "id": "T18_raw_request_header",
+      "qualification": "constructor-path static fields; no allocated runtime observation",
+      "fields": [
+        {
+          "offset": 0,
+          "width": 4,
+          "role": "operation456 in nominated caller"
+        },
+        {
+          "offset": 4,
+          "width": 4,
+          "role": "callback765243"
+        },
+        {
+          "offset": 8,
+          "width": 4,
+          "role": "actor self pointer"
+        },
+        {
+          "offset": 12,
+          "width": 2,
+          "role": "normalized route tag from selector4"
+        },
+        {
+          "offset": 14,
+          "width": 2,
+          "role": "normalized route tag from selector1"
+        }
+      ]
+    },
+    {
+      "id": "T18_art_actuator_cache",
+      "qualification": "constructor-path local program relations; later contents/runtime not observed",
+      "fields": [
+        {
+          "offset": 164,
+          "width": 48,
+          "role": "12 scalar setting words; per-property cache refresh and restoration"
+        }
+      ]
+    },
+    {
+      "id": "T18_art_setting_callback_descriptor",
+      "qualification": "439 fixed60-byte records, not original>=35-byte effects source",
+      "fields": [
+        {
+          "offset": 0,
+          "width": 2,
+          "role": "setting key"
+        },
+        {
+          "offset": 20,
+          "width": 4,
+          "role": "optional value callback"
+        },
+        {
+          "offset": 24,
+          "width": 4,
+          "role": "post-notification callback target"
+        },
+        {
+          "offset": 48,
+          "width": 4,
+          "role": "parallel-context target; exact dispatcher unbound"
+        }
+      ]
+    },
+    {
+      "id": "T18_style_configuration_bundle",
+      "qualification": "39 word stores/key-value handoffs,values require opaque getter/UDF/callee assumptions",
+      "fields": [
+        {
+          "offset": 32,
+          "width": 4,
+          "role": "case8 setting363 read -> outgoing key362"
+        },
+        {
+          "offset": 76,
+          "width": 4,
+          "role": "case8 alternative370/873 result -> outgoing key872"
+        }
+      ]
     }
   ],
   "negative_identities": [
@@ -331,12 +691,59 @@
       "id": "custom_record0_is_notification_byte4",
       "status": "rejected",
       "source": "T16 distinct field writes/returned byte handoff; no ART storage attribution"
+    },
+    {
+      "id": "same_virtual_slot_implies_panel_owner",
+      "status": "rejected",
+      "source": "T18 slots816/820 include unbound other-object uses"
+    },
+    {
+      "id": "panel_cell_is_art_id_or_source20",
+      "status": "unproved",
+      "source": "T18 ART entry/exit sites supply1/0; new consumers gate state; no record alias"
+    },
+    {
+      "id": "raw_request12_is_effect_flags12",
+      "status": "rejected",
+      "source": "T18 distinct bases/types: u16 route tag in allocated request vs word flags in copied effects"
+    },
+    {
+      "id": "scene_six_cases_are_art_presets",
+      "status": "rejected",
+      "source": "T18 direct SCN labels at e3b968;1431..1436/438..443 not ART binding"
+    },
+    {
+      "id": "gui_catalog_is_effect_source_record",
+      "status": "unproved",
+      "source": "T18 physical24-byte candidates/228-byte output, nullable callback; no35-byte source alias; UDF lookup unadmitted"
+    },
+    {
+      "id": "actuator_snapshot_is_named_preset_library",
+      "status": "unproved",
+      "source": "T18 temporary12-value cache/setSetting paths; no nonvolatile archive/names/import"
+    },
+    {
+      "id": "bank1_is_raw_art",
+      "status": "unproved",
+      "source": "T18 parallel context inputs0/1, no RAW/capture ownership"
+    },
+    {
+      "id": "art_bundle156_is_effect_source35",
+      "status": "unproved",
+      "source": "T18 distinct typed sizes and offsets; no alias to oldsource+20/+24/+33"
+    },
+    {
+      "id": "getSetting_id280_absence_means_unsupported",
+      "status": "rejected",
+      "source": "T18 callback-only439-record table has no280; generic scalar fallback exists"
     }
   ],
-  "baseline": "e85a954d6b1ea10b7b5f1815cd40c160e8130600",
-  "issue": "https://github.com/ZakuZakuu/ep7-film-hack/issues/43",
+  "baseline": "d12070d9a662f8a1281cbd9609b566a2951daf9e",
+  "issue": "https://github.com/ZakuZakuu/ep7-film-hack/issues/45",
   "inherited_workbench_baseline": "7291a45014b3f909d25928d11e067f079496959d",
   "inherited_workbench_issue": "https://github.com/ZakuZakuu/ep7-film-hack/issues/37",
   "inherited_t16_baseline": "796f8bec0f695802895dacafc000c9fbf17a2373",
-  "inherited_t16_issue": "https://github.com/ZakuZakuu/ep7-film-hack/issues/41"
+  "inherited_t16_issue": "https://github.com/ZakuZakuu/ep7-film-hack/issues/41",
+  "inherited_t17_baseline": "e85a954d6b1ea10b7b5f1815cd40c160e8130600",
+  "inherited_t17_issue": "https://github.com/ZakuZakuu/ep7-film-hack/issues/43"
 }

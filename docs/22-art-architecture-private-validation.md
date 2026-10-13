@@ -32,3 +32,5 @@ The original UDF fixture now yields controlled status91 on mn10300/am33/am33-2: 
 Measured60 tests/0 skipped. If the upstream SquashFS cache is absent, use the existing [filesystem tool setup](11-squashfs-private-validation.md); don't claim a skipped test passed. CI uses synthetic inputs, public GNU tools and repository originals only.
 
 Only original guards, original fixture and selected numerical evidence are public. No complete proprietary listings, bytes, literal text, private SQLite/CFG or photos. The private decision log and handoff are session checkpoints, not repository outputs. Regenerate the private project from the authorized exact input in a later task; don't upload it as a CI artifact.
+
+The counts above describe this historical milestone. Latest main's T18 builder includes94 windows and additional native ART configuration relations; use [T18 reproduction](24-t18-private-validation.md) for current counts/limits. Historical proofs remain qualified and are not relabelled as rendering.
