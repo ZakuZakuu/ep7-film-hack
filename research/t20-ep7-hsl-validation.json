@@ -389,7 +389,13 @@
     "all_32_modeled_registers_equal": true,
     "live_caller_stack_equal": true,
     "full_trace_data_alignment_checked": true,
-    "limits": "Native functions with declared request/context/stack; no ISP pixels, timing or whole boot"
+    "limits": "Native functions with declared request/context/stack; no ISP pixels, timing or whole boot",
+    "selector_preconditions": {
+      "request_offset_1524_custom_table_pointer": 0,
+      "request_type_halfword_at_12": "not 0xf00d",
+      "compound_key": "0x0000000b",
+      "context_flags": 2
+    }
   },
   "S6": {
     "section2": {
@@ -560,7 +566,8 @@
     "reference_scans_not_complete_ownership_proof": true,
     "physical_OK_power_entry_unverified": true,
     "physical_restore_unverified": true,
-    "named_complete_style_storage_UI_not_implemented": true
+    "named_complete_style_storage_UI_not_implemented": true,
+    "custom_table_and_special_type_paths_unmodified_and_not_qualified": true
   },
   "local_unit_suite": {
     "total": 87,
