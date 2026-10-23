@@ -69,6 +69,7 @@ def run_logged(command, directory, log):
 
 
 def main():
+    os.umask(0o077)
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--upstream', type=Path, required=True)
     parser.add_argument('--archive', type=Path, required=True)

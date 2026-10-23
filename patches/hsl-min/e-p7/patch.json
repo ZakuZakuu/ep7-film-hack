@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "model": "Olympus PEN E-P7 (E142)",
+  "firmware": "1.1 / build 1100",
+  "upstream_reference": "fishcu/oly_fw_analysis@539fcf1fa9eda5fdef8ede4deeab94a4691d94c3",
+  "input_bytes": 111017984,
+  "input_sha256": "9d1610124ad98f6edae4540182205f06c9c703d9033ef0c4f19847193f95eaeb",
+  "component_index": 0,
+  "code_base": "0x60020020",
+  "decoded_input_sha256": "5dd9af164b4590c7e82f6905c919b3cc450bb58f2d5742ab2a0e3a4eb2e26190",
+  "decoded_output_sha256": "43f866197867bc699cbe21ea011059fd4742542dce3f421a83b64673393a6aa0",
+  "output_bytes": 111017984,
+  "output_sha256": "d0fa93e752ec2680910dfabfef50cfc2ffb510aa8c8ec49cf6177868037bec8e",
+  "restore_sha256": "9d1610124ad98f6edae4540182205f06c9c703d9033ef0c4f19847193f95eaeb",
+  "tool_version": "2.45",
+  "hook_source_sha256": "7b142632b85c621e8c470b7eb3d464b48448e6be397372bac479c639df562e3d",
+  "modified_ranges": [
+    {
+      "address": "0x603b02d9",
+      "decoded_offset": "0x3902b9",
+      "length": 5,
+      "original_sha256": "a3b96d4f33a4d36b4178f1be5b53c52b63884b6ff2708ea5c6f808002ec87ff7",
+      "replacement_sha256": "8b99de3d9729213d3fd210291fbf5548762a0dbd277037dfcd51f349143c4270"
+    },
+    {
+      "address": "0x6055e5f0",
+      "decoded_offset": "0x53e5d0",
+      "length": 44,
+      "original_sha256": "463d5921a6bfd5c98f6047f561495800372e627c07ce458c23b7ac164a22be51",
+      "replacement_sha256": "ab46c24611bcfabfb21389ddf44a40d8d82e1553fcbadf2a4decb773984dd5ea"
+    }
+  ],
+  "symbols": {
+    "ep7_builder": "0x603b0068",
+    "ep7_resume": "0x603b02de",
+    "ep7_extension": "0x6055e5f0"
+  },
+  "parameters": {
+    "yellow_H_slider": 3,
+    "yellow_H_native": -3000,
+    "yellow_H_output_offset": 706,
+    "blue_L_slider": -5,
+    "blue_L_native": -200,
+    "blue_L_output_offset": 782
+  },
+  "placement": {
+    "section": 2,
+    "start": "0x60280800",
+    "end_exclusive": "0x6055e800",
+    "padding_start": "0x6055e5b0",
+    "prefix_margin": 64,
+    "suffix_margin": 484,
+    "validation": "Native load/reload and all twelve native initializers; literal/direct-candidate scans, bounded ownership only"
+  },
+  "packaging": "Full five-component OEM package; only main payload and its checksum change",
+  "install_path": "install/DCOLYMP/E1429999.BIN",
+  "restore_path": "restore-stock/DCOLYMP/E1429999.BIN",
+  "safety_limit": "No physical E-P7 installation/recovery, cache concurrency or pixels verified"
+}

@@ -1,0 +1,588 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-23",
+  "issue": 49,
+  "baseline_main": "aebe5ca2274ae45379f01e49410f36eb385d0a29",
+  "claim": "E-P7 1.1 offline minimum H/L hook reaches native ISP coefficient writes; no physical validation",
+  "S0": {
+    "upstream_commit": "539fcf1fa9eda5fdef8ede4deeab94a4691d94c3",
+    "gnu_commit": "87ffb882e0f4d73401a0746177ffabb8e8bbe4ac",
+    "gnu_tree": "059d50a3cc76bd13dc10f21023863674e6da515c",
+    "archive_actual_sha256": "b0b06179b0aff88df98978552431d86f16045e2f993faa3d1f98350fb7429865",
+    "archive_documented_sha256": "a5e7cd02f844bb2873c25e0ac8e9a5b50a72c3e8e6570a6b7821d2e4c21178ad",
+    "identity_rule": "Archive bytes are unstable; verify the complete Git tree and two core hashes.",
+    "core_original_sha256": {
+      "sim/mn10300/interp.c": "f6c34c6c81ff67bda52d6b57d0ea47954587e36908923cd7e4e59a90424cd37b",
+      "sim/mn10300/mn10300.igen": "355754c61879dc24bf6128bbba5a7931355731000e8cb213082b9b9cd4df0129"
+    },
+    "configure": [
+      "--target=mn10300-elf",
+      "--disable-gdb",
+      "--disable-gdbserver",
+      "--disable-binutils",
+      "--disable-gas",
+      "--disable-ld",
+      "--disable-gprof",
+      "--disable-gprofng",
+      "--disable-nls",
+      "--disable-werror",
+      "--without-debuginfod",
+      "--enable-sim",
+      "--disable-sim-hardware"
+    ],
+    "provider_sha256": {
+      "build_mn103_emulator.py": "9eb92cb6b3820371e534c283216a8826023f06bd74b538a757a06c7fb116a366",
+      "prepare_mn103_sim.py": "1649926873cc5908b7e735cd22dde0ea3c77ad4d32e1d04ca379c972a381b27e",
+      "mn103_runner.c": "b718fec171d0fad6d58a5818399e44593cef549a888ab67d3041e455d2d61e9c",
+      "mn103_strict.patch": "e9553dc2f6de26c97955c696ddb84b0e7eacd0613b673058c9b5ddacd39262a8"
+    },
+    "patched_core_sha256": {
+      "sim/mn10300/interp.c": "f5082f098c5a49f06969f1e794f9e581f39197f3f02fb1a9d84857f6782bd041",
+      "sim/mn10300/mn10300.igen": "9b509c74593dcb05b08d240b8b67bbd9263721a49f21c8ea0aab8dc4e58d9c01"
+    },
+    "executable_sha256": "645b5cea4727da9bf859108120c76c6908a06e1b4995e1c72358665f7547175b"
+  },
+  "S1": {
+    "stock_bytes": 111017984,
+    "stock_sha256": "9d1610124ad98f6edae4540182205f06c9c703d9033ef0c4f19847193f95eaeb",
+    "decoded_sha256": "5dd9af164b4590c7e82f6905c919b3cc450bb58f2d5742ab2a0e3a4eb2e26190",
+    "table_address": "0x6051de2c",
+    "table_sha256": "a33d64bdb78ac41ba24ccbff820380f563211a095ac08a12a7c37a51b5c00531",
+    "gains": "0x60531810",
+    "builder": "0x603b0068..0x603b0247",
+    "selector": "0x603b0252..0x603b0345",
+    "writer": "0x6034667e..0x6034677b",
+    "code_coordinates": "CPU static addresses / VMA, not encoded file offsets",
+    "all_five_checksums_valid": true,
+    "exact_container_roundtrip": true
+  },
+  "S2": {
+    "PEN_F": "source/docs only, no PEN-F OEM input acquired",
+    "reference_commit": "539fcf1fa9eda5fdef8ede4deeab94a4691d94c3",
+    "PEN_F_call_site": "0x604f7506",
+    "PEN_F_resume": "0x604f750b",
+    "call_frame_bytes": 96,
+    "H_rule": "-1000 * slider",
+    "L_for_sliders_minus7_to_plus7": [
+      -300,
+      -250,
+      -200,
+      -150,
+      -100,
+      -50,
+      -25,
+      0,
+      25,
+      50,
+      100,
+      150,
+      200,
+      250,
+      300
+    ],
+    "wheel_zero_based_to_physical_records": [
+      0,
+      6,
+      1,
+      7,
+      2,
+      8,
+      3,
+      9,
+      4,
+      10,
+      5,
+      11
+    ]
+  },
+  "S3": {
+    "call_site": "0x603b02d9",
+    "resume": "0x603b02de",
+    "request_saturation_offset": 1816,
+    "output_records_offset": 688,
+    "record_bytes": 24,
+    "record_H_S_L_halfword_offsets": [
+      18,
+      20,
+      22
+    ],
+    "control_word_offset": 976,
+    "selector_key": "0x0000000b",
+    "profiles": [
+      {
+        "profile": 1,
+        "public_mode": 54,
+        "entry": "0x602b814e",
+        "saturation_keys": [
+          927,
+          928,
+          929,
+          930,
+          931,
+          932,
+          933,
+          934,
+          935,
+          936,
+          937,
+          938
+        ]
+      },
+      {
+        "profile": 2,
+        "public_mode": 55,
+        "entry": "0x602b823c",
+        "saturation_keys": [
+          939,
+          940,
+          941,
+          942,
+          943,
+          944,
+          945,
+          946,
+          947,
+          948,
+          949,
+          950
+        ]
+      },
+      {
+        "profile": 3,
+        "public_mode": 56,
+        "entry": "0x602b832a",
+        "saturation_keys": [
+          951,
+          952,
+          953,
+          954,
+          955,
+          956,
+          957,
+          958,
+          959,
+          960,
+          961,
+          962
+        ]
+      },
+      {
+        "profile": 4,
+        "public_mode": 64,
+        "entry": "0x602b8418",
+        "saturation_keys": [
+          1655,
+          1656,
+          1657,
+          1658,
+          1659,
+          1660,
+          1661,
+          1662,
+          1663,
+          1664,
+          1665,
+          1666
+        ]
+      }
+    ],
+    "limits": "Four native getter branches/default-input fixtures; not a full settings/capture lifecycle"
+  },
+  "S4_S5": {
+    "placement": "0x6055e5f0",
+    "code_from_native_loaded_section": true,
+    "cases": [
+      {
+        "case": "COLOR1",
+        "key": "0xb",
+        "output_changed_bytes": [
+          706,
+          707,
+          782,
+          783
+        ],
+        "registers_context_live_stack_equal": true,
+        "uploads": [
+          {
+            "base": "0x9f001000",
+            "changed_byte_offsets": [
+              770,
+              771,
+              846,
+              847
+            ]
+          },
+          {
+            "base": "0x9f805000",
+            "changed_byte_offsets": [
+              770,
+              771,
+              846,
+              847
+            ]
+          }
+        ],
+        "aligned_accesses": 1583
+      },
+      {
+        "case": "COLOR2",
+        "key": "0xb",
+        "output_changed_bytes": [
+          706,
+          707,
+          782,
+          783
+        ],
+        "registers_context_live_stack_equal": true,
+        "uploads": [
+          {
+            "base": "0x9f001000",
+            "changed_byte_offsets": [
+              770,
+              771,
+              846,
+              847
+            ]
+          },
+          {
+            "base": "0x9f805000",
+            "changed_byte_offsets": [
+              770,
+              771,
+              846,
+              847
+            ]
+          }
+        ],
+        "aligned_accesses": 1583
+      },
+      {
+        "case": "COLOR3",
+        "key": "0xb",
+        "output_changed_bytes": [
+          706,
+          707,
+          782,
+          783
+        ],
+        "registers_context_live_stack_equal": true,
+        "uploads": [
+          {
+            "base": "0x9f001000",
+            "changed_byte_offsets": [
+              770,
+              771,
+              846,
+              847
+            ]
+          },
+          {
+            "base": "0x9f805000",
+            "changed_byte_offsets": [
+              770,
+              771,
+              846,
+              847
+            ]
+          }
+        ],
+        "aligned_accesses": 1583
+      },
+      {
+        "case": "COLOR4",
+        "key": "0xb",
+        "output_changed_bytes": [
+          706,
+          707,
+          782,
+          783
+        ],
+        "registers_context_live_stack_equal": true,
+        "uploads": [
+          {
+            "base": "0x9f001000",
+            "changed_byte_offsets": [
+              770,
+              771,
+              846,
+              847
+            ]
+          },
+          {
+            "base": "0x9f805000",
+            "changed_byte_offsets": [
+              770,
+              771,
+              846,
+              847
+            ]
+          }
+        ],
+        "aligned_accesses": 1583
+      },
+      {
+        "case": "Natural_associated_key2",
+        "key": "0x2",
+        "output_changed_bytes": [],
+        "registers_context_live_stack_equal": true,
+        "uploads": [
+          {
+            "base": "0x9f001000",
+            "changed_byte_offsets": []
+          },
+          {
+            "base": "0x9f805000",
+            "changed_byte_offsets": []
+          }
+        ],
+        "aligned_accesses": 1746
+      },
+      {
+        "case": "MONO_key12",
+        "key": "0xc",
+        "output_changed_bytes": [],
+        "registers_context_live_stack_equal": true,
+        "uploads": [
+          {
+            "base": "0x9f001000",
+            "changed_byte_offsets": []
+          },
+          {
+            "base": "0x9f805000",
+            "changed_byte_offsets": []
+          }
+        ],
+        "aligned_accesses": 1768
+      },
+      {
+        "case": "ART_key01010064",
+        "key": "0x1010064",
+        "output_changed_bytes": [],
+        "registers_context_live_stack_equal": true,
+        "uploads": [
+          {
+            "base": "0x9f001000",
+            "changed_byte_offsets": []
+          },
+          {
+            "base": "0x9f805000",
+            "changed_byte_offsets": []
+          }
+        ],
+        "aligned_accesses": 1690
+      }
+    ],
+    "target_H": -3000,
+    "target_L": -200,
+    "extra_scratch_bytes": 8,
+    "mmio_write_capture_only": true,
+    "real_dispatcher_call_sites": [
+      "0x60345f8f",
+      "0x60345fb1"
+    ],
+    "context_output_pointer_offset": 12,
+    "MMIO_halfword_offsets": [
+      "0x302",
+      "0x34e"
+    ],
+    "all_other_parameters_and_saturation_equal": true,
+    "all_32_modeled_registers_equal": true,
+    "live_caller_stack_equal": true,
+    "full_trace_data_alignment_checked": true,
+    "limits": "Native functions with declared request/context/stack; no ISP pixels, timing or whole boot"
+  },
+  "S6": {
+    "section2": {
+      "id": 2,
+      "start": "0x60280800",
+      "end": "0x6055e800",
+      "source": "0x40900800"
+    },
+    "cave": "0x6055e5f0",
+    "extension_bytes": 44,
+    "extension_sha256": "ab46c24611bcfabfb21389ddf44a40d8d82e1553fcbadf2a4decb773984dd5ea",
+    "original_load": {
+      "poison": 165,
+      "read_destination": "0xa0280800",
+      "read_source": "0x80900800",
+      "read_bytes": 3006464,
+      "sha256": "526ec5153d09823653af17dbb2e7cc34db867e6799c0e5b5d8cd0300984a9194",
+      "loaded_bit": 2,
+      "model": "One exact successful logical read; no NAND/ECC/cache/timing simulation"
+    },
+    "changed_load": {
+      "poison": 165,
+      "read_destination": "0xa0280800",
+      "read_source": "0x80900800",
+      "read_bytes": 3006464,
+      "sha256": "09db7bf2981741a8fa674aa8467e19402f9b4ed9d623af6e71a9213ef4b4fb03",
+      "loaded_bit": 2,
+      "model": "One exact successful logical read; no NAND/ECC/cache/timing simulation"
+    },
+    "reload": {
+      "poison": 85,
+      "read_destination": "0xa0280800",
+      "read_source": "0x80900800",
+      "read_bytes": 3006464,
+      "sha256": "09db7bf2981741a8fa674aa8467e19402f9b4ed9d623af6e71a9213ef4b4fb03",
+      "loaded_bit": 2,
+      "model": "One exact successful logical read; no NAND/ECC/cache/timing simulation"
+    },
+    "initializer": {
+      "callbacks_executed": 12,
+      "instructions": 18753,
+      "padding_unmapped": [
+        "0x6055e5b0",
+        "0x6055e800"
+      ],
+      "aligned_data_accesses": 5275
+    },
+    "initializer_positive_control": {
+      "counterfactual_count": 52,
+      "expected_fault": "0x6055e5b0",
+      "access": "read"
+    },
+    "literal_candidates_in_modified_span": 0,
+    "relative_candidates": 0,
+    "update_boundary": [
+      {
+        "case": "same_version_valid",
+        "header_build_word": 4352,
+        "events": [
+          {
+            "diagnostic_suppressed": "0x6002247c"
+          },
+          {
+            "diagnostic_suppressed": "0x6002247c"
+          },
+          {
+            "diagnostic_suppressed": "0x6002247c"
+          },
+          {
+            "trapped_before_flash": true,
+            "bytes": 320,
+            "destination": "0x806a0000"
+          }
+        ]
+      },
+      {
+        "case": "bad_checksum",
+        "header_build_word": 4352,
+        "events": [
+          {
+            "diagnostic_suppressed": "0x6002247c"
+          },
+          {
+            "diagnostic_suppressed": "0x6002266d"
+          },
+          {
+            "diagnostic_suppressed": "0x6002266d"
+          },
+          {
+            "diagnostic_suppressed": "0x6002247c"
+          },
+          {
+            "diagnostic_suppressed": "0x6002266d"
+          },
+          {
+            "returned": true,
+            "result": "0x3211"
+          }
+        ]
+      }
+    ],
+    "actual_component_checksums": {
+      "stock": {
+        "bytes": 26214400,
+        "native_result": 0,
+        "instructions": 39321607,
+        "alignment": "Word-aligned base, fixed inc4 stride and word-length extent; bounded tail trace"
+      },
+      "candidate": {
+        "bytes": 26214400,
+        "native_result": 0,
+        "instructions": 39321607,
+        "alignment": "Word-aligned base, fixed inc4 stride and word-length extent; bounded tail trace"
+      }
+    },
+    "limits": [
+      "Declared object buffers; startup and hardware scheduling not reproduced",
+      "Logical storage read succeeds; NAND, cache coherence and recovery not simulated",
+      "Reference scans cannot exclude arbitrary computed/DMA accesses",
+      "Same-version header fixture is not a physical installation or whole-package write"
+    ],
+    "sd_client_entry": "0x60c95bab",
+    "sd_client_task_descriptor": "0x60039370",
+    "sd_client_task_id": 88,
+    "sd_Efile_row": "0x60f2ccb8",
+    "sd_Efile_mode": 0,
+    "header_checksum_entry": "0x60c95a43",
+    "native_checksum_entry": "0x600fa454",
+    "checksum_gate": "Additive decoded-word checksum; header/model validation; native accepted same-version header fixture",
+    "backend_static_review": "0x600c4f35..0x600c508d: program/readback dispatch, not an independent rescue or full hardware-trust proof"
+  },
+  "S7": {
+    "two_builds_byte_identical": true,
+    "full_package_sha256": "d0fa93e752ec2680910dfabfef50cfc2ffb510aa8c8ec49cf6177868037bec8e",
+    "decoded_sha256": "43f866197867bc699cbe21ea011059fd4742542dce3f421a83b64673393a6aa0",
+    "restore_byte_identical_to_official": true,
+    "restore_sha256": "9d1610124ad98f6edae4540182205f06c9c703d9033ef0c4f19847193f95eaeb",
+    "unchanged_other_components": 4,
+    "independent_repository_container_parser": {
+      "candidate": {
+        "size": 111017984,
+        "sha256": "d0fa93e752ec2680910dfabfef50cfc2ffb510aa8c8ec49cf6177868037bec8e",
+        "all_five_checksums_valid": true,
+        "main_sha256": "43f866197867bc699cbe21ea011059fd4742542dce3f421a83b64673393a6aa0"
+      },
+      "restore": {
+        "size": 111017984,
+        "sha256": "9d1610124ad98f6edae4540182205f06c9c703d9033ef0c4f19847193f95eaeb",
+        "all_five_checksums_valid": true,
+        "main_sha256": "5dd9af164b4590c7e82f6905c919b3cc450bb58f2d5742ab2a0e3a4eb2e26190"
+      }
+    },
+    "bad_input_rejected_before_output": true,
+    "unqualified_source_edit_rejected_before_output": true,
+    "unqualified_assembly_refused_before_output": true,
+    "cross_case_MMIO_execution_address_regression_test": true,
+    "decoded_main_changed_bytes": 46,
+    "raw_package_changed_bytes": 50,
+    "allowed_decoded_spans_total": 49
+  },
+  "counterevidence": {
+    "wider_128byte_literal_probe": {
+      "component_kind": "0x0102",
+      "numeric_candidate": "0x6055e62d",
+      "outside_actual_44byte_modification": true,
+      "surrounding_bytes_preserved": true
+    },
+    "reference_scans_not_complete_ownership_proof": true,
+    "physical_OK_power_entry_unverified": true,
+    "physical_restore_unverified": true,
+    "named_complete_style_storage_UI_not_implemented": true
+  },
+  "local_unit_suite": {
+    "total": 87,
+    "passed": 86,
+    "skipped": 1,
+    "skip_reason": "Historical T15 GNU run/host-syscall fixture; new strict engine intentionally blocks host syscalls. CI retains the legacy provider separately."
+  },
+  "safety": {
+    "camera_accessed": false,
+    "vendor_firmware_uploaded": false,
+    "OEM_functions_executed": true,
+    "private_generated_test_and_restore_files_only": true,
+    "original_stock_unchanged": true,
+    "background_successor_started": false
+  },
+  "source_sha256": {
+    "tools/build_upstream_mn103_sim.py": "55d5c3d506a1ad1e3a5ff0dc73fb7e0f2efda14d9ea480ac410a78443bd48770",
+    "tools/setup_t20_environment.sh": "c8b213d1feddfbc195f39f58c3c8c64a859f8d11b0792f53885f01edc149ab5d",
+    "tools/ep7_color_min.py": "f4b6ce4a48cfb125cae05b3777575b9b46d302952ddc46882e28978decc451cb",
+    "tools/ep7_hsl_install_checks.py": "51928c6a8c515975289b7414ca875ed0f3eef4608cdd7ab99079056e57908ad3",
+    "patches/hsl-min/e-p7/build.py": "b0663f5757cdc81e5c549ff305d9df0fa4aa81d5dce3225f272f1f25a14458dd",
+    "patches/hsl-min/e-p7/hook.s": "7b142632b85c621e8c470b7eb3d464b48448e6be397372bac479c639df562e3d",
+    "patches/hsl-min/e-p7/patch.json": "51ac03c81f55637200d8c341a3d50b36744913bf2fe9d24a5b7c6b229c960999"
+  }
+}
