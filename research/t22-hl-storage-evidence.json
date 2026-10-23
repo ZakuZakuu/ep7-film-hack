@@ -1,0 +1,890 @@
+{
+  "schema_version": 1,
+  "issue": 53,
+  "baseline_main": "202d8c206470bf04a2d61f8490a3a020db258cc7",
+  "branch_independent_of_T21": true,
+  "upstream_commit": "539fcf1fa9eda5fdef8ede4deeab94a4691d94c3",
+  "identity": {
+    "model": "E-P7",
+    "firmware": "1.1 / header build 0x1100",
+    "stock_sha256": "9d1610124ad98f6edae4540182205f06c9c703d9033ef0c4f19847193f95eaeb",
+    "decoded_main_sha256": "5dd9af164b4590c7e82f6905c919b3cc450bb58f2d5742ab2a0e3a4eb2e26190",
+    "cpu_static_base": "0x60020020",
+    "binutils": "2.45",
+    "strict_engine_sha256": "645b5cea4727da9bf859108120c76c6908a06e1b4995e1c72358665f7547175b"
+  },
+  "scope": "Unchanged OEM functions, synthetic initialized arrays/tuple inputs and exact ROM metadata only. No physical camera, no firmware generation/modification or host protocol client. Output captures/listings are private /tmp.",
+  "native_windows": [
+    {
+      "start": "0x602b16f7",
+      "end_exclusive": "0x602b174c",
+      "sha256": "060f53415485b5fb879dd1e487c33d8f8d1ec1ccac9263729c8c596cb7261627"
+    },
+    {
+      "start": "0x602b32d8",
+      "end_exclusive": "0x602b332d",
+      "sha256": "72a9269710a48764eb1120d50881fbbc01c85771c7a0a1e5b6c1a098a86a8982"
+    },
+    {
+      "start": "0x602ba4cc",
+      "end_exclusive": "0x602ba523",
+      "sha256": "aa49ffe1aed190063ad1fa0f3c394a507c349a6d04cf5ce803cb19e3e071990b"
+    },
+    {
+      "start": "0x6005d987",
+      "end_exclusive": "0x6005da25",
+      "sha256": "c69475a9120570b88087cccb0dd87ec6674d6fe2bd35e582ce3db26fe98408ef"
+    },
+    {
+      "start": "0x6005dc19",
+      "end_exclusive": "0x6005dc87",
+      "sha256": "1a7dd86ebcb1853252060eafb0db765cd3212d2be7ce6571f6e035a07e35d2af"
+    },
+    {
+      "start": "0x6005c326",
+      "end_exclusive": "0x6005c35f",
+      "sha256": "99c467d94368e7cb49a99f882e63ffb0b05426d9e67d002d0b02bdb9cbecfe16"
+    },
+    {
+      "start": "0x6005e65a",
+      "end_exclusive": "0x6005e676",
+      "sha256": "5ce9f970bdc0c73339c3cfe1ed3f6890aa0e708f2132f2c0b3ca9824436f919e"
+    },
+    {
+      "start": "0x6005efbd",
+      "end_exclusive": "0x6005f005",
+      "sha256": "b19caabb1d046dffbdf35b9669392972ed504922527c934bb5fba127b7e15066"
+    },
+    {
+      "start": "0x6005c5be",
+      "end_exclusive": "0x6005c64c",
+      "sha256": "c1c6c65cb31ab7402cf82cd7239f4883dce37ef2f85e7661238eac24704591de"
+    },
+    {
+      "start": "0x6005c78a",
+      "end_exclusive": "0x6005c818",
+      "sha256": "32063c0b6f6b44b73abfa271bfea485d6abd33ee7b8cc5dcd559a377ef89f5a0"
+    },
+    {
+      "start": "0x6005f1ed",
+      "end_exclusive": "0x6005f22d",
+      "sha256": "f6cfe5ae74a4586fd99b75c3f5a08280640c02956809fe38140a24428ccca427"
+    },
+    {
+      "start": "0x602cbffe",
+      "end_exclusive": "0x602cc146",
+      "sha256": "0baf4dd449a6db0947da8f41867ac7c3f1bee40b43a270360b3adc7718bd8f5b"
+    },
+    {
+      "start": "0x602b97c5",
+      "end_exclusive": "0x602b9890",
+      "sha256": "7a0987d45f26a6cadb3fabc11fe0eaf68981d01f659273f37794ef315b822150"
+    },
+    {
+      "start": "0x602b5e91",
+      "end_exclusive": "0x602b5ef5",
+      "sha256": "6f90860e98b7df4a8cc10fb12dfd8e41dbd2723d04c5edc8092274ee5c02b5c6"
+    },
+    {
+      "start": "0x602b9288",
+      "end_exclusive": "0x602b9300",
+      "sha256": "46b006f916fb44497d5af73d4cb8867d41f44899694c459aeee5177e6e8b8cf9"
+    },
+    {
+      "start": "0x602b9dc4",
+      "end_exclusive": "0x602b9e4c",
+      "sha256": "d669b81c69575806151eb439993944b0ed25ef53360db9ee0a0f84b4113e4224"
+    },
+    {
+      "start": "0x602b9e7e",
+      "end_exclusive": "0x602b9f26",
+      "sha256": "7d0103dda417b6e54a066d01f2f897ddceaa938adcae412e88c1cb0822919e58"
+    },
+    {
+      "start": "0x602b0d9b",
+      "end_exclusive": "0x602b0de1",
+      "sha256": "5537e46d62d9b7b2512392a14253d7d933b0aa3456cb4112803bda550cedb624"
+    },
+    {
+      "start": "0x602b33dc",
+      "end_exclusive": "0x602b340f",
+      "sha256": "1709809876024611aed132b4cef351a80bd191cd619e055b0e8a743c79337067"
+    },
+    {
+      "start": "0x602b38f8",
+      "end_exclusive": "0x602b392d",
+      "sha256": "2104d8981b1d43e011faabf1d208472caad7baa83c081c10b0fbf5d5eb72bf0b"
+    },
+    {
+      "start": "0x60bd21cc",
+      "end_exclusive": "0x60bd23b2",
+      "sha256": "d0b3c19420109ae0909af7008c72035dcc4af48d4e776ed07801758a6d065573"
+    },
+    {
+      "start": "0x60bd2709",
+      "end_exclusive": "0x60bd286a",
+      "sha256": "015cc9ded3f05a4e998ada4b8649d413dbb3d424eb0c15eabef4676c5aa2eafa"
+    },
+    {
+      "start": "0x60bd2a18",
+      "end_exclusive": "0x60bd2ae4",
+      "sha256": "ed60e19d11e67a03676a439a8f4c7c4b51c67e57d19a773b44330c7e23dcadc2"
+    },
+    {
+      "start": "0x60bd408d",
+      "end_exclusive": "0x60bd4175",
+      "sha256": "395f1da2b3abaafe6b4368697c9be1da76874f2264f0b36e51c06d3188cc6a08"
+    },
+    {
+      "start": "0x60bd548d",
+      "end_exclusive": "0x60bd55c5",
+      "sha256": "80d2fef31866cbf7727affe70117e88c6adf47233ccf0d47b584fca43240f18c"
+    },
+    {
+      "start": "0x602d3998",
+      "end_exclusive": "0x602d39aa",
+      "sha256": "a222aeeca3ea376668991591f026ce3b0af83478f9efd98a2cca3cb506509380"
+    },
+    {
+      "start": "0x60bd2044",
+      "end_exclusive": "0x60bd2067",
+      "sha256": "0d63bd3f20a96231df753e4ddfbf49c67dffef1fd32d785b9cd3ff348637b6f9"
+    },
+    {
+      "start": "0x6097c833",
+      "end_exclusive": "0x6097c8d4",
+      "sha256": "087d9c350e90ba48a43985127285ef57431c6449022ae25a78c89f3c6eeefb66"
+    },
+    {
+      "start": "0x60888552",
+      "end_exclusive": "0x6088859b",
+      "sha256": "4dd93b0d6d9d7feaa488fc980504e24040b0ccc855d674f2b68a5b9b855b73a5"
+    },
+    {
+      "start": "0x60888b11",
+      "end_exclusive": "0x60888b3c",
+      "sha256": "cb9e91eb687df0234aacdf67def2359e71285512934d4e4ace986abb7b54d54e"
+    },
+    {
+      "start": "0x602afa11",
+      "end_exclusive": "0x602afa30",
+      "sha256": "f05271dbf38f7c9a91a72b885ccfe669448b0ad2e0a7b270404958e41ab782ce"
+    },
+    {
+      "start": "0x602b0bc9",
+      "end_exclusive": "0x602b0c13",
+      "sha256": "07ccb7ef226c7677b185eed91afcd2762d7bc681e0440989d262e9c9db9a5f87"
+    },
+    {
+      "start": "0x602b143e",
+      "end_exclusive": "0x602b14ad",
+      "sha256": "7003ac7a82016dd7f1c97d85a4053e8ed52ed9a10873539d13f4d8db858df9bc"
+    }
+  ],
+  "E01_registries": [
+    {
+      "name": "consistency",
+      "initializer": "0x602b32d8",
+      "source": "0x6045e5fc",
+      "buckets": 32,
+      "runtime": "0x62246e10",
+      "records": 201,
+      "stride": 20,
+      "linked_native_nodes": 201,
+      "instructions": 7501,
+      "alignment_checked": 2219,
+      "selected": [
+        {
+          "key": 111,
+          "descriptor": "0x6045eb10",
+          "hook_24": null,
+          "staged_hook_48": null,
+          "kind_byte_17": 0
+        }
+      ]
+    },
+    {
+      "name": "properties",
+      "initializer": "0x602b16f7",
+      "source": "0x604317ac",
+      "buckets": 64,
+      "runtime": "0x62245f48",
+      "records": 439,
+      "stride": 60,
+      "linked_native_nodes": 439,
+      "instructions": 17203,
+      "alignment_checked": 5125,
+      "selected": [
+        {
+          "key": 111,
+          "descriptor": "0x60431d10",
+          "hook_24": "0x602b4f81",
+          "staged_hook_48": "0x602b6c3a",
+          "kind_byte_17": null
+        },
+        {
+          "key": 927,
+          "descriptor": "0x60435af0",
+          "hook_24": "0x602b5e91",
+          "staged_hook_48": "0x602b9288",
+          "kind_byte_17": null
+        },
+        {
+          "key": 938,
+          "descriptor": "0x60435d84",
+          "hook_24": "0x602b5e91",
+          "staged_hook_48": "0x602b9288",
+          "kind_byte_17": null
+        },
+        {
+          "key": 939,
+          "descriptor": "0x60435dc0",
+          "hook_24": "0x602b5eaa",
+          "staged_hook_48": "0x602b92a6",
+          "kind_byte_17": null
+        },
+        {
+          "key": 950,
+          "descriptor": "0x60436054",
+          "hook_24": "0x602b5eaa",
+          "staged_hook_48": "0x602b92a6",
+          "kind_byte_17": null
+        },
+        {
+          "key": 951,
+          "descriptor": "0x60436090",
+          "hook_24": "0x602b5ec3",
+          "staged_hook_48": "0x602b92c4",
+          "kind_byte_17": null
+        },
+        {
+          "key": 962,
+          "descriptor": "0x60436324",
+          "hook_24": "0x602b5ec3",
+          "staged_hook_48": "0x602b92c4",
+          "kind_byte_17": null
+        },
+        {
+          "key": 1655,
+          "descriptor": "0x60436360",
+          "hook_24": "0x602b5edc",
+          "staged_hook_48": "0x602b92e2",
+          "kind_byte_17": null
+        },
+        {
+          "key": 1666,
+          "descriptor": "0x604365f4",
+          "hook_24": "0x602b5edc",
+          "staged_hook_48": "0x602b92e2",
+          "kind_byte_17": null
+        }
+      ]
+    },
+    {
+      "name": "conversions",
+      "initializer": "0x602ba4cc",
+      "source": "0x604cc98c",
+      "buckets": 128,
+      "runtime": "0x62248528",
+      "records": 1333,
+      "stride": 20,
+      "linked_native_nodes": 1333,
+      "instructions": 64655,
+      "alignment_checked": 19729,
+      "selected": [
+        {
+          "key": 111,
+          "descriptor": "0x604ccd10",
+          "hook_24": null,
+          "staged_hook_48": null,
+          "kind_byte_17": 6
+        },
+        {
+          "key": 908,
+          "descriptor": "0x604d0e9c",
+          "hook_24": null,
+          "staged_hook_48": null,
+          "kind_byte_17": 1
+        },
+        {
+          "key": 927,
+          "descriptor": "0x604d1054",
+          "hook_24": null,
+          "staged_hook_48": null,
+          "kind_byte_17": 4
+        },
+        {
+          "key": 938,
+          "descriptor": "0x604d13c4",
+          "hook_24": null,
+          "staged_hook_48": null,
+          "kind_byte_17": 4
+        },
+        {
+          "key": 939,
+          "descriptor": "0x604d1068",
+          "hook_24": null,
+          "staged_hook_48": null,
+          "kind_byte_17": 4
+        },
+        {
+          "key": 950,
+          "descriptor": "0x604d13d8",
+          "hook_24": null,
+          "staged_hook_48": null,
+          "kind_byte_17": 4
+        },
+        {
+          "key": 951,
+          "descriptor": "0x604d107c",
+          "hook_24": null,
+          "staged_hook_48": null,
+          "kind_byte_17": 4
+        },
+        {
+          "key": 962,
+          "descriptor": "0x604d13ec",
+          "hook_24": null,
+          "staged_hook_48": null,
+          "kind_byte_17": 4
+        },
+        {
+          "key": 1655,
+          "descriptor": "0x604d1090",
+          "hook_24": null,
+          "staged_hook_48": null,
+          "kind_byte_17": 4
+        },
+        {
+          "key": 1666,
+          "descriptor": "0x604d1400",
+          "hook_24": null,
+          "staged_hook_48": null,
+          "kind_byte_17": 4
+        }
+      ]
+    }
+  ],
+  "registry_execution_contract": {
+    "target_mask": "d2,a2,a3",
+    "frame": 12,
+    "registry_memory": "Poison 0xa5; exact buckets*4+records*8 bytes at runtime address; native initializer clears/links it. ROM read/execute only. Stack synthetic, no hardware.",
+    "assertions": "All nodes unique, acyclic, descriptor addresses in exact source bounds/stride; key modulo bucket selects correct chain. Every declared node reached.",
+    "roles": "Callbacks -> key lookup602b174c, callback at+24 in602b143e; consistency -> lookup602b32ae and rule application602b2961; conversion -> lookup602ba523 and consumers602b9dc4/602b9deb."
+  },
+  "E02_mode_store": {
+    "default_source": "0x60096f90",
+    "working": "0x624ea400",
+    "capacity": 262144,
+    "type_halfword": 7,
+    "descriptor_pointer": "*(0xa2711a9c), heap address not captured",
+    "backing0": "0xa2a78000",
+    "backing1": 0,
+    "index": "0xa26ffa88",
+    "records": [
+      {
+        "record_key": "0x85d4",
+        "declared_u32_cells": 32040,
+        "working_data": "0x624ea8dc",
+        "default_header": "0x60097da0"
+      },
+      {
+        "record_key": "0x8b54",
+        "declared_u32_cells": 1780,
+        "working_data": "0x62509e30",
+        "default_header": "0x600b74f4"
+      },
+      {
+        "record_key": "0x8b64",
+        "declared_u32_cells": 3560,
+        "working_data": "0x6250ba00",
+        "default_header": "0x600b90c8"
+      }
+    ],
+    "instructions": 64546,
+    "alignment_checked": 15179,
+    "limitation": "Native metadata registration from exact ROM template, not device RAM or storage contents; no working-data read or flash I/O."
+  },
+  "mode_registration_contract": {
+    "target": "0x6005d987",
+    "mask": "d2,d3,a2,a3",
+    "frame": 48,
+    "registers": {
+      "a0": "0x60096f98",
+      "a1": "0x624ea408",
+      "d0": "0xa26ffa88"
+    },
+    "index_memory": "Explicit empty 4096*8-byte record index, captured after native metadata registration. Source ROM unchanged; working values not read.",
+    "descriptor_initialization": "6005dc28 reads type7, 6005dc3a supplies backing0 a2a78000, 6005dc4d supplies backing1=0; setters6005c326/32b/331/337 establish type/default/working/capacity."
+  },
+  "E03_cells_and_lifecycle": {
+    "pointer_globals": {
+      "banks": "0x62253590",
+      "ACTIVE": "0x62253594",
+      "LIVE": "0x62253598"
+    },
+    "key_bounds": [
+      0,
+      1768
+    ],
+    "words_per_part": 1769,
+    "parts": 2,
+    "bank_stride_words": 3538,
+    "bank_stride_bytes": 14152,
+    "internal_banks_initialized": 9,
+    "declared_extra_cells": "Record declarations 32040/1780/3560 differ from API extents 9*3538/1769/3538; not qualified free space.",
+    "raw_bank_get": "0x602cc076",
+    "ACTIVE_get": "0x602cc0a7",
+    "ACTIVE_set": "0x602cc0d0",
+    "LIVE_get": "0x602cc0f9",
+    "LIVE_set": "0x602cc11f",
+    "bank_load": "0x602cbffe",
+    "bank_save": "0x602cc03a",
+    "filtered_ACTIVE_to_LIVE": "0x602b97c5",
+    "filtered_LIVE_to_ACTIVE": "0x602b982a",
+    "real_call_joins": [
+      "602b33ec -> bank_load, 602b33f7 -> filter_ACTIVE_to_LIVE, 602b3408 -> bank_load",
+      "602b3920 -> filter_LIVE_to_ACTIVE, 602b3926 -> bank_save"
+    ],
+    "nonvolatile_boundary": "Mode branch6005f1f4/6005f1fa ->6005c5be compares +8 payload, increments counter6005c811 and writes checksum6005c7e7; reaches logical storage6005bc79 at6005c643. Static only, no backend execution/success model.",
+    "restore_stock": "Firmware restoration does not imply resetting Mode cells. Harmlessness depends on no stock consumer of reused cells, still incomplete."
+  },
+  "E04_COLOR_storage": {
+    "ranges": [
+      {
+        "profile": 1,
+        "public_mode": 54,
+        "first": 927,
+        "last": 938,
+        "current_callback": "0x602b5e91",
+        "staged_callback": "0x602b9288"
+      },
+      {
+        "profile": 2,
+        "public_mode": 55,
+        "first": 939,
+        "last": 950,
+        "current_callback": "0x602b5eaa",
+        "staged_callback": "0x602b92a6"
+      },
+      {
+        "profile": 3,
+        "public_mode": 56,
+        "first": 951,
+        "last": 962,
+        "current_callback": "0x602b5ec3",
+        "staged_callback": "0x602b92c4"
+      },
+      {
+        "profile": 4,
+        "public_mode": 64,
+        "first": 1655,
+        "last": 1666,
+        "current_callback": "0x602b5edc",
+        "staged_callback": "0x602b92e2"
+      }
+    ],
+    "native_current_record": {
+      "key": "0xf6fa",
+      "signed_i16_elements": 48,
+      "working": "0x6250f860"
+    },
+    "effective_saturation_record": {
+      "key": "0xf6ea",
+      "elements": 12,
+      "keys": [
+        915,
+        926
+      ],
+      "working": "0x6250f848"
+    },
+    "endpoints": [
+      {
+        "setting": 927,
+        "record": "0xf6fa",
+        "index": 0,
+        "working_address": "0x6250f860",
+        "signed_i16": true
+      },
+      {
+        "setting": 938,
+        "record": "0xf6fa",
+        "index": 11,
+        "working_address": "0x6250f876",
+        "signed_i16": true
+      },
+      {
+        "setting": 939,
+        "record": "0xf6fa",
+        "index": 12,
+        "working_address": "0x6250f878",
+        "signed_i16": true
+      },
+      {
+        "setting": 950,
+        "record": "0xf6fa",
+        "index": 23,
+        "working_address": "0x6250f88e",
+        "signed_i16": true
+      },
+      {
+        "setting": 951,
+        "record": "0xf6fa",
+        "index": 24,
+        "working_address": "0x6250f890",
+        "signed_i16": true
+      },
+      {
+        "setting": 962,
+        "record": "0xf6fa",
+        "index": 35,
+        "working_address": "0x6250f8a6",
+        "signed_i16": true
+      },
+      {
+        "setting": 1655,
+        "record": "0xf6fa",
+        "index": 36,
+        "working_address": "0x6250f8a8",
+        "signed_i16": true
+      },
+      {
+        "setting": 1666,
+        "record": "0xf6fa",
+        "index": 47,
+        "working_address": "0x6250f8be",
+        "signed_i16": true
+      }
+    ],
+    "refresh": "Callback checks typed public setting111 and only refreshes active profile through602b8916; context0/current and1/staged retained as software contexts, not assigned preview/RAW. 602b8916 ->602b7b71 creates156-byte bundle, per-profile cases read all12 values via602b2237.",
+    "firmware_backup": "No E-P7 portable Workspace named exporter/importer/schema linked. Exact PEN-F saturation-record name absent from five decoded payloads; generic backup-name references reach data inventories, not a matched E-P7 serializer. This is a stop boundary, not proof backup is absent.",
+    "upstream_only": "PEN-F named per-bank exporter/importer verified upstream, never promoted to E-P7 capability."
+  },
+  "E05_native_array_cases": [
+    {
+      "operation": "ACTIVE get",
+      "key": 927,
+      "part": 0,
+      "word_index": 927,
+      "instructions": 53,
+      "aligned": 4
+    },
+    {
+      "operation": "ACTIVE get",
+      "key": 927,
+      "part": 1,
+      "word_index": 2696,
+      "instructions": 53,
+      "aligned": 4
+    },
+    {
+      "operation": "ACTIVE set",
+      "key": 927,
+      "part": 1,
+      "changed_word_index": 2696,
+      "instructions": 77,
+      "part0_and_other_cells_unchanged": true,
+      "aligned": 5
+    },
+    {
+      "operation": "ACTIVE get",
+      "key": 939,
+      "part": 0,
+      "word_index": 939,
+      "instructions": 53,
+      "aligned": 4
+    },
+    {
+      "operation": "ACTIVE get",
+      "key": 939,
+      "part": 1,
+      "word_index": 2708,
+      "instructions": 53,
+      "aligned": 4
+    },
+    {
+      "operation": "ACTIVE set",
+      "key": 939,
+      "part": 1,
+      "changed_word_index": 2708,
+      "instructions": 77,
+      "part0_and_other_cells_unchanged": true,
+      "aligned": 5
+    },
+    {
+      "operation": "ACTIVE get",
+      "key": 951,
+      "part": 0,
+      "word_index": 951,
+      "instructions": 53,
+      "aligned": 4
+    },
+    {
+      "operation": "ACTIVE get",
+      "key": 951,
+      "part": 1,
+      "word_index": 2720,
+      "instructions": 53,
+      "aligned": 4
+    },
+    {
+      "operation": "ACTIVE set",
+      "key": 951,
+      "part": 1,
+      "changed_word_index": 2720,
+      "instructions": 77,
+      "part0_and_other_cells_unchanged": true,
+      "aligned": 5
+    },
+    {
+      "operation": "ACTIVE get",
+      "key": 1655,
+      "part": 0,
+      "word_index": 1655,
+      "instructions": 53,
+      "aligned": 4
+    },
+    {
+      "operation": "ACTIVE get",
+      "key": 1655,
+      "part": 1,
+      "word_index": 3424,
+      "instructions": 53,
+      "aligned": 4
+    },
+    {
+      "operation": "ACTIVE set",
+      "key": 1655,
+      "part": 1,
+      "changed_word_index": 3424,
+      "instructions": 77,
+      "part0_and_other_cells_unchanged": true,
+      "aligned": 5
+    },
+    {
+      "operation": "bank save",
+      "bank": 3,
+      "words": 3538,
+      "bytes": 14152,
+      "both_parts_copied": true,
+      "instructions": 399801,
+      "alignment": "Native u32 codec; reviewed word-aligned buffers and index*4 stride, bounded tail trace only",
+      "scope": "Explicit synthetic bank RAM, no registration/recall filtering, callbacks or physical persistence"
+    },
+    {
+      "operation": "bank load",
+      "bank": 3,
+      "words": 3538,
+      "bytes": 14152,
+      "both_parts_copied": true,
+      "instructions": 399801,
+      "alignment": "Native u32 codec; reviewed word-aligned buffers and index*4 stride, bounded tail trace only",
+      "scope": "Explicit synthetic bank RAM, no registration/recall filtering, callbacks or physical persistence"
+    }
+  ],
+  "array_fixture_contract": {
+    "core": 0,
+    "core_selector": "0x8050 = 0",
+    "readonly_guard_global": "0xa2711a88 = 1611107884, exact literal installed by6005daeb; guard6005e65a executed without bypass",
+    "globals": "62253590 triple points to BANK19000000/ACTIVE19100000/LIVE19200000",
+    "sizes": {
+      "banks": 127368,
+      "ACTIVE": 14152,
+      "LIVE": 7076
+    },
+    "witnesses": "ACTIVE word[i]=0x20000000+i; LIVE word[i]=0x30000000+i; banks initially0xa5. Each part1 setter changes one own witness word at1769+key, not OEM data.",
+    "bulk_copy": "Save/load bank3 with exact3538-word extent; full final memory checked, traces bounded32 entries; no whole-trace alignment claim.",
+    "setters": "4 keys x get parts0/1 and one part1 write; frame8/save d2; bank save/load frame12/save d2,d3. Unknown memory faults remain terminal."
+  },
+  "E06_filters": {
+    "table": "0x604a8420",
+    "rows": 70,
+    "list_entry_bytes": 4,
+    "COLOR_key_occurrences": 3360,
+    "COLOR_parts": [
+      0
+    ],
+    "all_rows_have_all_48_COLOR_keys": true,
+    "executed": [
+      {
+        "operation": "active_to_live",
+        "target": "0x602b97c5",
+        "mode": 3,
+        "submode": 0,
+        "COLOR_keys_verified": 48,
+        "stock_part_used": 0,
+        "COLOR_part1_preserved": true,
+        "instructions": 186009,
+        "scope": "Synthetic initialized arrays, native registered filter row; bounded tail, no callbacks/flash/complete recall."
+      },
+      {
+        "operation": "live_to_active",
+        "target": "0x602b982a",
+        "mode": 3,
+        "submode": 0,
+        "COLOR_keys_verified": 48,
+        "stock_part_used": 0,
+        "COLOR_part1_preserved": true,
+        "instructions": 186009,
+        "scope": "Synthetic initialized arrays, native registered filter row; bounded tail, no callbacks/flash/complete recall."
+      }
+    ],
+    "ownership_limit": "70 native filters selecting part0 and native bank preservation support a candidate; direct alternative readers, resets, transactions, later firmware and actual nonvolatile retention not fully excluded. No blanket part1-is-free claim."
+  },
+  "E07_profile_identity": {
+    "conversion_descriptor": "0x604ccd10",
+    "raw_tuple_array": "0x604ba8fc",
+    "public_value_array": "0x604addc8",
+    "declared_vector_bytes": 2112,
+    "vector_stride": 64,
+    "bounded_candidates": 33,
+    "composite_group": "602b15f2 / source60430424, descriptor6043090e, key111 -> native leaves111/908/973 then3200 sentinel",
+    "native_current_leaf_addresses": {
+      "111": "0x6250f278 (raw mode)",
+      "908": "0x6250f836 (COLOR profile)",
+      "973": "0x6250f8cc (separate leaf, not assigned user meaning)"
+    },
+    "executed": [
+      {
+        "profile": 1,
+        "raw_leaf_111": 11,
+        "raw_leaf_908": 1,
+        "raw_leaf_973": 0,
+        "public_value": 54,
+        "instructions": 1243,
+        "alignment_checked": 252
+      },
+      {
+        "profile": 2,
+        "raw_leaf_111": 11,
+        "raw_leaf_908": 2,
+        "raw_leaf_973": 0,
+        "public_value": 55,
+        "instructions": 1319,
+        "alignment_checked": 268
+      },
+      {
+        "profile": 3,
+        "raw_leaf_111": 11,
+        "raw_leaf_908": 3,
+        "raw_leaf_973": 0,
+        "public_value": 56,
+        "instructions": 1395,
+        "alignment_checked": 284
+      },
+      {
+        "profile": 4,
+        "raw_leaf_111": 11,
+        "raw_leaf_908": 4,
+        "raw_leaf_973": 0,
+        "public_value": 64,
+        "instructions": 1471,
+        "alignment_checked": 300
+      }
+    ],
+    "fixture": "Native602b9dc4 frame16/save d2,d3,a2, initialized conversion registry plus own64-byte tuple(11,profile,0,zero tail). Returns54/55/56/64; no device settings altered.",
+    "hook_design": "Acquire committed typed public111 or native leaf908 only with confirmed raw mode11 and transaction state. Copy24 signed H/L bytes into each actual image/job owner before queueing. Do not infer profile from identical saturation arrays, key11 alone, current UI or a stale bank number. T21 owner-to-capture link remains a blocker; no E-P7 job extension offset assigned."
+  },
+  "E08_WIFI": {
+    "outer_GET_POST_rows": [
+      "0x60ee8050",
+      "0x60ee8060"
+    ],
+    "route_pairs": "0x60ef94d4, 8-byte name/handler rows",
+    "get_camprop": "0x60bd21cc",
+    "set_camprop": "0x60bd22de",
+    "named_table": "0x60ef98a4, 33*24-byte rows; setter pointer+16, native ID+4",
+    "qualified_example_rows": [
+      {
+        "name": "expcomp",
+        "id": 2,
+        "getter": "0x60bd3fc5",
+        "setter": "0x60bd408d"
+      },
+      {
+        "name": "wbvalue",
+        "id": 9,
+        "getter": "0x60bd3fc5",
+        "setter": "0x60bd408d"
+      },
+      {
+        "name": "colorphase",
+        "id": 665,
+        "getter": "0x60bd3fc5",
+        "setter": "0x60bd408d"
+      }
+    ],
+    "no_named_COLOR_HL_import": "No COLOR1-4 per-sector/H/L import in inspected33-row table; no stock HSL1 receiver claimed.",
+    "scalar_parser": "60bd235c ->60bd408d via row+16; 60bd40d5 reads ID, 60bd40e7/60bd40ee/60bd40f5 store pending fields",
+    "pending_record": {
+      "ID": "0xa26a4524 u32",
+      "type": "0xa26a4528 u32, parser sets0",
+      "value": "0xa26a452c u32, parser sign-extends i16"
+    },
+    "event": "60bd40fb loads0x041b0011 ->60bd548d ->600459a7; original wait/ack loop retained, no queue model or physical session executed",
+    "application_side": "6097df9b ->6097c833 ->6088606c ->602d38d4; Wi-Fi branch602d39a3 calls60bd2044 to read exact same pending fields. 6097c8af ->60888552 ->60888b11 ->602afa11 ->602b0bc9 ->602b143e ->descriptor+24 callback. Scheduling/event-to-active-state selection not replayed.",
+    "native_setter_guard": "602afa11 reads inhibit62257b04; non-inhibited path reaches registered conversion/write/notification. The flag is not a general mutex.",
+    "raw_numeric_get": "get_mcon route60bd2709 ->602cbc0a at60bd2785",
+    "raw_numeric_set": "set_mcon route60bd2a18 ->602cbc5d at60bd2aba, then raw native write; not registered callbacks/profile refresh. HTTP200 does not establish applied/persistent recipe.",
+    "design_candidates": {
+      "capability_read": "Before60bd2785, reserved read-only version query, exact capability/profile count/ranges required; not implemented/queried on a camera.",
+      "marked_request_parse": "Before60bd2aba, reject reserved malformed/unsupported messages before original raw writer. No pass-through H/L markers to stock.",
+      "receiver": "Add explicit versioned H/L request ownership at application normal edit boundary before60888b35; reuse stock public guard, bank APIs, committed refresh and save lifecycle. Stock has no registered H/L properties: new camera-side extension required; calling602afa11 with an H value under an S key would incorrectly change S.",
+      "concurrency": "Complete profile readback and reboot/backup validation required in later separately authorized work; timeout cancellation, atomic96-value transactions and retry safety are not proved."
+    }
+  },
+  "E09_design_options": [
+    {
+      "route": "Existing alternate part1 cells for48 stored COLOR keys",
+      "data_bytes_per_bank": 192,
+      "logical_HL_values": 96,
+      "basis": "Native allocated two-part records,70 filters selecting part0, verified bank/filter preservation",
+      "proposal_only": "One original versioned marker/complement word per sector with H/L signed nibbles (-7..7); invalid/absent cells neutral. No native format length change; new typed extension API and safe commit still required.",
+      "gates": [
+        "Exclude other stock readers/writers and characterize reset/restore behavior.",
+        "Verify committed save/checksum/reload, independent bank selection and reverted-stock interpretation.",
+        "Identify actual capture owner and snapshot lifetime."
+      ],
+      "status": "Preferred candidate for the next bounded ownership test, not approved safe storage."
+    },
+    {
+      "route": "Separate versioned recipe file on SD",
+      "data_bytes_minimum_HL": 96,
+      "basis": "Native filesystem is used by mapped SD client; separate recipe file would avoid reusing native setting semantics. No recipe file implementation exists.",
+      "gates": [
+        "Prove native writable file API and atomic replacement/power-loss behavior.",
+        "Import on application task and publish per-image snapshot; missing file/removed card ->neutral.",
+        "Prove stock ignores chosen filename and define portable backup."
+      ],
+      "status": "Fallback if alternate-cell ownership fails; no fixed SD offset or new flash writer proposed."
+    },
+    {
+      "route": "New raw flash region, record IDs or trailing undeclared record padding",
+      "status": "Reject for now: no reserved NVS ownership, native bounds/checksum/stock compatibility proof. Declared record surplus is not free space."
+    }
+  ],
+  "E10_backup_design_only": {
+    "proposal": "If an E-P7 native named exporter AND importer are mapped, one versioned EP7_HL_V1 extension record per selected native bank,48 packed bytes/96 hex digits; absence/invalid data must be neutral, incomplete bank must not apply. This name is a proposal, not a firmware finding.",
+    "conditions": "Family/version/count/range/duplicate/truncation/selection validation; preserve stock S named records, reset staging per bank, define non-atomic restore semantics. Until native backup is proved use separately versioned explicit recipe export design; no automatic/portable camera import claimed."
+  },
+  "E11_next_steps": [
+    "No implementation before T20 owner-controlled physical validation and review.",
+    "First: finite part1 ownership + registered save/reload/reset/stock-revert experiments using explicit storage boundaries; identify a real capture/preview snapshot join. If ownership fails switch to SD-file feasibility.",
+    "Then: per-profile H/L acquisition/reader design with concurrency tests; do not alter T20 in this task.",
+    "Then: capability-gated receiver through native application edits and explicit backup contract; host client/UI remain later tasks."
+  ],
+  "reproduce": {
+    "setup": "bash tools/setup_t20_environment.sh (idempotent recheck passed)",
+    "static": "Existing tools/ep7_color_min.py Experiment.disassemble; native_windows SHA checks. All listings/private captures under/tmp/ep7-t22. No upstream code copied.",
+    "native": "Use Experiment.call and penf_emulator.execute with the explicit contracts above; initialize registries and RDI from exact ROM before consuming their pointers; no zero-fill of unknown hardware.",
+    "counts": {
+      "registry_initializers": 3,
+      "Mode_metadata_registration": 1,
+      "ACTIVE_get_set_and_bank_copy": 14,
+      "filter_transfers": 2,
+      "public_COLOR_identity": 4,
+      "total_passed": 24
+    },
+    "limits": "Array/profile inputs synthetic; native functions real. No physical persistence/capture/HTTP session/flash backend run."
+  }
+}
