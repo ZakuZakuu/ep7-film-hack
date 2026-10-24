@@ -1,0 +1,440 @@
+{
+  "schema_version": 1,
+  "issue": 52,
+  "baseline_main": "202d8c206470bf04a2d61f8490a3a020db258cc7",
+  "upstream_commit": "539fcf1fa9eda5fdef8ede4deeab94a4691d94c3",
+  "input": {
+    "model": "E-P7",
+    "firmware": "1.1 / build 1100",
+    "stock_bytes": 111017984,
+    "stock_sha256": "9d1610124ad98f6edae4540182205f06c9c703d9033ef0c4f19847193f95eaeb",
+    "decoded_main_sha256": "5dd9af164b4590c7e82f6905c919b3cc450bb58f2d5742ab2a0e3a4eb2e26190",
+    "static_cpu_base": "0x60020020"
+  },
+  "method": {
+    "disassembler": "GNU binutils 2.45, MN10300",
+    "engine_sha256": "645b5cea4727da9bf859108120c76c6908a06e1b4995e1c72358665f7547175b",
+    "execution": "Unchanged OEM functions only, synthetic request/context/stack, exact ROM inputs, unknown access stops; no generated firmware or device I/O",
+    "xref_scope": "Every byte of verified decoded main; GNU instructions checked from stated boundaries. Literal/relative scan cannot enumerate computed targets or dynamic callbacks.",
+    "reference": "https://github.com/fishcu/oly_fw_analysis/tree/539fcf1fa9eda5fdef8ede4deeab94a4691d94c3"
+  },
+  "native_windows": [
+    {
+      "start": "0x603396dd",
+      "end_exclusive": "0x60339704",
+      "sha256": "0dbcf6a5412cb99482eceb2f7a399141fcdee88dd108b80ed45ab742e51c06a4"
+    },
+    {
+      "start": "0x603397db",
+      "end_exclusive": "0x60339977",
+      "sha256": "7fc707ef56208433f3f3ed872d71d6fd0f21cb3f1d645348068f3d970fd35dda"
+    },
+    {
+      "start": "0x603399b9",
+      "end_exclusive": "0x60339a22",
+      "sha256": "a5dfd9f6866bcbf43f6081a12d4651110b94d8bccc8d0fb7932803dd25f37333"
+    },
+    {
+      "start": "0x603aaced",
+      "end_exclusive": "0x603aad5d",
+      "sha256": "6a09a79fecc60945687e7952d8cffaa18bb6a358d95ea409e318de0e9075b715"
+    },
+    {
+      "start": "0x603aade3",
+      "end_exclusive": "0x603aae13",
+      "sha256": "c1d5b8786a470bba67b85d15548082691f3fa26c9ff2c174297b6202e4ee325d"
+    },
+    {
+      "start": "0x603b0247",
+      "end_exclusive": "0x603b0345",
+      "sha256": "77573908a076caa9499ade824c68f732a6081c0a56c14082ebf0631b15a6fe6b"
+    },
+    {
+      "start": "0x603afb94",
+      "end_exclusive": "0x603afd26",
+      "sha256": "51538856ca2879f94c3e3e87dc7fecb9baef365d8f9fc451f1f9027f3edcabe3"
+    },
+    {
+      "start": "0x603b1466",
+      "end_exclusive": "0x603b1517",
+      "sha256": "189581bf00beef3dd4b3b30ec687d468a53a1afeace95fc65f32cd9d14eb9316"
+    },
+    {
+      "start": "0x603b17e6",
+      "end_exclusive": "0x603b1925",
+      "sha256": "a74ab59125cccb16600c14739d3ac40a0ed05185f036acd032c9fbf687ea75b4"
+    },
+    {
+      "start": "0x6035149e",
+      "end_exclusive": "0x603514e5",
+      "sha256": "a6b942fa2405db03bb11b7e1170d23b12e49275390ea6b961a1c6bd37d6f0725"
+    },
+    {
+      "start": "0x60c40c6e",
+      "end_exclusive": "0x60c40d22",
+      "sha256": "c1dcf7039c7efa087b23115de1ef77007032b8f176b3e94f5cf4b13d87f3ef32"
+    },
+    {
+      "start": "0x60c4a3de",
+      "end_exclusive": "0x60c4a48c",
+      "sha256": "ceb299b8bead3f79448ea006961bf5d9a24a6d6202322c11df8c3bf54cf92982"
+    },
+    {
+      "start": "0x60c4a48c",
+      "end_exclusive": "0x60c4a67a",
+      "sha256": "afa04be002b85f74a80d9e6ece341cdb695bba4931b5c2c15bf94e43599c55c8"
+    },
+    {
+      "start": "0x60c49ac1",
+      "end_exclusive": "0x60c49ada",
+      "sha256": "59c227f82040d7ce8ed977d9be33b575c5fd7a9df7bec1e64b6733ecc4ad49bd"
+    },
+    {
+      "start": "0x60c49a69",
+      "end_exclusive": "0x60c49aba",
+      "sha256": "f8a90e8599cde422f4a79a09fdfd07b46715be39439ebcb3509056288d6ad0a5"
+    },
+    {
+      "start": "0x602ca1b4",
+      "end_exclusive": "0x602ca219",
+      "sha256": "9c576dce736f9c930b36a95bc008f9195ca83f52b30c54c9b12e5d4796c6ca5f"
+    },
+    {
+      "start": "0x60c95bab",
+      "end_exclusive": "0x60c95db0",
+      "sha256": "17e649e0600723d825f8887b2b44f18578f2d6382018ca78ba5588daac9982c1"
+    },
+    {
+      "start": "0x60c96364",
+      "end_exclusive": "0x60c9644b",
+      "sha256": "755e62f6f9fdbe60f1d9e0b211c0babda3734507ce404b5e84feb53b0ee62056"
+    }
+  ],
+  "E01_direct_inventory": {
+    "0x603b0068": {
+      "relative_sites": [
+        "0x603b02d9"
+      ],
+      "literal_matches": 0
+    },
+    "0x603b0252": {
+      "relative_sites": [
+        "0x603b14f3"
+      ],
+      "literal_matches": 0
+    },
+    "0x603afb94": {
+      "relative_sites": [
+        "0x603b027c",
+        "0x603b038b"
+      ],
+      "literal_matches": 0
+    },
+    "0x603b0247": {
+      "relative_sites": [
+        "0x603b029c",
+        "0x603b0393",
+        "0x603b14ce",
+        "0x603b1880",
+        "0x603b18f2"
+      ],
+      "literal_matches": 0
+    }
+  },
+  "E02_native_selector": [
+    {
+      "case": "default",
+      "status": "returned",
+      "completed": 1591,
+      "hook_reached": true,
+      "builder_reached": true,
+      "copy_builder_reached": false,
+      "control": "0xfff",
+      "changed_bytes_from_poison": 331,
+      "alignment_checked": 788
+    },
+    {
+      "case": "custom_dirty",
+      "status": "returned",
+      "completed": 1157,
+      "hook_reached": false,
+      "builder_reached": false,
+      "copy_builder_reached": true,
+      "control": "0xfff",
+      "changed_bytes_from_poison": 331,
+      "alignment_checked": 631
+    },
+    {
+      "case": "custom_clean",
+      "status": "returned",
+      "completed": 17,
+      "hook_reached": false,
+      "builder_reached": false,
+      "copy_builder_reached": false,
+      "control": "0xa5a5a5a5",
+      "changed_bytes_from_poison": 0,
+      "alignment_checked": 4
+    },
+    {
+      "case": "special_f00d",
+      "status": "returned",
+      "completed": 26,
+      "hook_reached": false,
+      "builder_reached": false,
+      "copy_builder_reached": false,
+      "control": "0x0",
+      "changed_bytes_from_poison": 4,
+      "alignment_checked": 6
+    }
+  ],
+  "selector_fixture_contract": {
+    "target": "0x603b0252",
+    "save_mask": "d2,d3,a2,a3",
+    "frame_bytes": 20,
+    "registers": {
+      "a0": "0x19200000"
+    },
+    "ram": {
+      "stack": [
+        "0x18010000",
+        8192
+      ],
+      "request": [
+        "0x19000000",
+        4096
+      ],
+      "context": [
+        "0x19200000",
+        128
+      ],
+      "output": [
+        "0x19100000",
+        3164
+      ],
+      "synthetic_table_descriptor": [
+        "0x19300000",
+        20
+      ]
+    },
+    "initialization": "Request/context/descriptor zero-filled except declared fields; output 0xa5 poison; request+10 u16=11, context+4=request, context+12=output, context+56=0; custom request+1524=0x19300000, descriptor+16=0x6051de2c; context+60 flags default2/custom_dirty0x10000000/custom_clean0; special request+12 u16=0xf00d",
+    "stop": "Real caller returns with original SP; no hardware or service model",
+    "interpretation": "These are branch contracts, not measured live-view/capture requests."
+  },
+  "E03_request_dispatch": {
+    "entry": "0x603396dd",
+    "table": "0x604e4f80",
+    "index": "request+16 u8",
+    "selected_entries": {
+      "0": "0x603397db",
+      "1": "0x60339977",
+      "3": "0x60339aee",
+      "4": "0x603399b9",
+      "12": "0x60339a86",
+      "16": "0x60339b77"
+    },
+    "selector_parent": "0x603b1466",
+    "parent_calls": [
+      "0x603b17ff",
+      "0x603b181a"
+    ],
+    "native_path": "60339870 / 603399d7 -> 603aaced -> request+28 high byte 1/2 -> 603b17e6/603b1819 -> 603b1466 -> 603b0252",
+    "additional_disable_predicate": {
+      "function": "0x603aade3",
+      "request_1808_in": [
+        1,
+        2,
+        3
+      ],
+      "request_12_in": [
+        "0xa200",
+        "0xa600"
+      ],
+      "consequence": "603b14ce invokes 603b0247, skipping 603b14f3 selector"
+    },
+    "type_f00d_producer": {
+      "write": "0x603514d7",
+      "destination": "object+356+12",
+      "cleared_request_bytes": 1884,
+      "clear_call": "0x603514a9 -> 0x4700115e",
+      "limits": "The object producer is identified; upstream workflow ownership and the request-to-this-selector edge are not joined."
+    },
+    "custom_table_producer": "Unresolved. Pointer consumption proves override semantics; no user-facing ownership inferred."
+  },
+  "E04_user_use_classification": {
+    "live_view": {
+      "coverage": "unknown",
+      "missing": "No native workflow-to-request producer and owner-lifetime join; input-family dispatch is insufficient."
+    },
+    "still_JPEG": {
+      "coverage": "unknown",
+      "missing": "No native workflow-to-request producer and owner-lifetime join; input-family dispatch is insufficient."
+    },
+    "continuous_or_low_resolution": {
+      "coverage": "unknown",
+      "missing": "No native workflow-to-request producer and owner-lifetime join; input-family dispatch is insufficient."
+    },
+    "in_camera_RAW_development": {
+      "coverage": "unknown",
+      "missing": "No native workflow-to-request producer and owner-lifetime join; input-family dispatch is insufficient."
+    },
+    "playback": {
+      "coverage": "unknown",
+      "missing": "No native workflow-to-request producer and owner-lifetime join; input-family dispatch is insufficient."
+    }
+  },
+  "E05_sd": {
+    "descriptor": "0x60039370",
+    "task_id": 88,
+    "entry": "0x60c95bab",
+    "descriptor_attributes": 0,
+    "priority": 45,
+    "stack_bytes": 2048,
+    "file_pattern": "DCOLYMP/E142????BIN",
+    "direct_entry_calls": 0,
+    "entry_literal_sites": [
+      "0x6003937c"
+    ],
+    "activation_api_candidate": "0x60051a35",
+    "raw_relative_call_candidates": 309,
+    "constant_id_88_in_preceding_16_bytes": 0,
+    "constant_search_limit": "Only GNU-assembled mov 88,d0 encoding checked in 16 bytes preceding each candidate; dynamic/other activation APIs not excluded.",
+    "physical_OK_entry": "Unresolved, no independent early recovery proved.",
+    "no_file_path": "60c95d71 -> 60c95d98 -> 601e7186; power/task services are called, not established safe COLOR-neutral startup."
+  },
+  "E06_USB_registration": {
+    "registrar": "0x60c4591e",
+    "operations": {
+      "0x911c": {
+        "site": "0x60c40c6e",
+        "handler": "0x60c49ada",
+        "role": "GetFirmwareUpdateMode, reports 1"
+      },
+      "0x9121": {
+        "site": "0x60c40c82",
+        "handler": "0x60c4a48c",
+        "role": "FirmwareCheck"
+      },
+      "0x9122": {
+        "site": "0x60c40c96",
+        "handler": "0x60c49afe",
+        "role": "CheckStatus"
+      },
+      "0x9123": {
+        "site": "0x60c40cb0",
+        "handler": "0x60c4a5c1",
+        "role": "UpdateInitiate"
+      },
+      "0x9117": {
+        "site": "0x60c40cbf",
+        "handler": "0x60c4a5c1",
+        "role": "Same initiate handler, not qualified recovery"
+      },
+      "0x9119": {
+        "site": "0x60c40ce3",
+        "handler": "0x60c4a3de",
+        "role": "SendObjectSplit"
+      },
+      "0x9125": {
+        "site": "0x60c40d0d",
+        "handler": "0x60c4a67a",
+        "role": "SendFirmDataInfo"
+      }
+    },
+    "fields": {
+      "total_bytes": "0x623380d8 u32",
+      "buffer": "0x623380dc pointer",
+      "received_bytes": "0x623380e0 u32",
+      "transfer_complete": "0x623380e4 u16",
+      "validated_ready": "0x623380e6 u16",
+      "validated_version": "0x623380e8 u16",
+      "status": "0x623380f8 u32"
+    },
+    "check_message": "60c4a552 selects service event 3; 60c4a581 sends through 600514b6; 60c96377 sets updater mode2 at 60c96379",
+    "commit_message": "60c4a66a -> 600459a7 with event 0x06000001; application callback chain not fully closed. startFirmUp-labelled 60cda8f4 ends at virtual call 60cda935.",
+    "readiness_api": "602ca1b4 -> 60c403f7 -> 60c49ac1; returns 0 only when ready field nonzero",
+    "service_commit": "60c96427 sets mode1 at 60c96429 -> 60c964c1",
+    "boundary": "Upload handler + check message + commit request + shared service are mapped as separate static links, not a replayed complete session or proven recovery sequence.",
+    "service_event_switch": {
+      "address": "0x60f2d878",
+      "event_3": "0x60c96364",
+      "event_4": "0x60c96392"
+    }
+  },
+  "E07_USB_gate_execution": [
+    {
+      "case": "native_readiness",
+      "ready": 0,
+      "return": 1,
+      "returned_version": "0x1100",
+      "instructions": 10
+    },
+    {
+      "case": "native_readiness",
+      "ready": 1,
+      "return": 0,
+      "returned_version": "0x1100",
+      "instructions": 11
+    },
+    {
+      "case": "initiate_fragment_after_logger",
+      "complete": 0,
+      "ready": 0,
+      "status": "returned",
+      "stop": "0x60c4a671",
+      "reply_code_in_d3": "0x2002",
+      "instructions": 10
+    },
+    {
+      "case": "initiate_fragment_after_logger",
+      "complete": 0,
+      "ready": 1,
+      "status": "returned",
+      "stop": "0x60c4a671",
+      "reply_code_in_d3": "0x2002",
+      "instructions": 10
+    },
+    {
+      "case": "initiate_fragment_after_logger",
+      "complete": 1,
+      "ready": 0,
+      "status": "breakpoint",
+      "stop": "0x602cbc0a",
+      "reply_code_in_d3": "0x2001",
+      "instructions": 10
+    },
+    {
+      "case": "initiate_fragment_after_logger",
+      "complete": 1,
+      "ready": 1,
+      "status": "breakpoint",
+      "stop": "0x602cbc0a",
+      "reply_code_in_d3": "0x2001",
+      "instructions": 10
+    }
+  ],
+  "E08_worst_case": {
+    "COLOR_selected_at_reboot": "Not proved or disproved in T21; no cold-boot persistent-selector replay. Treat COLOR crash loop as unresolved risk, not observed behavior.",
+    "SD_after_COLOR_crash": "Only compiled entry exists; pre-COLOR physical activation unknown.",
+    "USB_after_COLOR_crash": "Native upload/check/application dispatch needed; no independent ROM rescue demonstrated.",
+    "decision": "Do not present USB or original BIN as guaranteed rollback. A-stage needs separate E-P7 entry evidence/owner choice; no patch install inferred from offline result."
+  },
+  "E09_v2_design_only": {
+    "candidate": "0x603b14f8, native return after common selector call",
+    "status": "Conditional design, not a patch specification or new safe placement",
+    "requirements": [
+      "Prove which actual live/capture owner uses override vs default.",
+      "Validate COLOR identity and original enabled control, preserve f00d/disable routes.",
+      "Acquire per-image profile/H/L snapshot upstream; never read current UI at late callback.",
+      "Apply once, preserve LUT pointers/native non-COLOR records and all registers/stack.",
+      "Account for custom dirty bit0x10000000 and subsequent upload dirty mask; test clean/dirty/reused buffers across both MMIO destinations.",
+      "Disassemble and replay any new hook extent before implementation; do not repurpose T20 hashes."
+    ]
+  },
+  "reproduction": {
+    "setup": "bash tools/setup_t20_environment.sh",
+    "disassembly": "Use existing Experiment.disassemble over native_windows, private /tmp output only; require input SHA and window SHA. No assembler dump is committed.",
+    "scans": "Call pinned external penf_code_space_audit.branch_candidates and pointer_candidates for E01/E05 addresses, then verify boundaries with GNU objdump.",
+    "execution": "Use existing Experiment.call with selector_fixture_contract; for E07 execute native readiness getter frame0/save_mask empty with explicit ready/version RAM. Execute initiate fragment 60c4a5d4 until 60c4a671 or breakpoint602cbc0a with all four complete/ready combinations; stop BEFORE service invocation.",
+    "private_only": "Full OEM request/capture/register traces, decoded main and disassembly stay under /tmp/ep7-t21. Public file contains addresses, numeric observations and hashes only."
+  }
+}
