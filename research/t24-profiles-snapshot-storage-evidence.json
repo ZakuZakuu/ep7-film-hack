@@ -1,0 +1,3683 @@
+{
+  "schema_version": 1,
+  "issue": 58,
+  "baseline_main": "fba762f87c5160d16fdefdab53701269c528e372",
+  "stock_sha256": "9d1610124ad98f6edae4540182205f06c9c703d9033ef0c4f19847193f95eaeb",
+  "main_sha256": "5dd9af164b4590c7e82f6905c919b3cc450bb58f2d5742ab2a0e3a4eb2e26190",
+  "extension_bytes": 460,
+  "extension_sha256": "4a95e8366e2cdc273f5de9d13256647b03b4152c973adf109c76918faa4f7008",
+  "decoded_candidate_sha256": "ce249b20d7010706fbe0fb26a18015b6729e36a14d2337614f2ac055201f02de",
+  "native_windows": [
+    {
+      "start": "0x603af871",
+      "end_exclusive": "0x603b0345",
+      "sha256": "d9ffe18cd60f2c3c80c3157b9867feb4a0b0fa887ceed092f7008fcbb57c1309"
+    },
+    {
+      "start": "0x603b551d",
+      "end_exclusive": "0x603b559f",
+      "sha256": "3373755cde09a96bcb47577d497b2d7f0562895f3df3c61124a38da00ac12fbd"
+    },
+    {
+      "start": "0x603b1466",
+      "end_exclusive": "0x603b1517",
+      "sha256": "189581bf00beef3dd4b3b30ec687d468a53a1afeace95fc65f32cd9d14eb9316"
+    },
+    {
+      "start": "0x603e611e",
+      "end_exclusive": "0x603e61b8",
+      "sha256": "ce00d31d66c0f3ef9248f1b3d5b8a999516c21bc68bb2d001717113a0d02d2ef"
+    },
+    {
+      "start": "0x603537eb",
+      "end_exclusive": "0x60353cb7",
+      "sha256": "d139fd1e974c7afb3b1aae1e26cdefb72693bba0585a96b4769ab036728edf4a"
+    },
+    {
+      "start": "0x60354b8c",
+      "end_exclusive": "0x60354c4c",
+      "sha256": "f5aa97be0fd7e70771cfb71a7c1c50a993ed0ea7d8264807b4d8bec5a58a0e17"
+    },
+    {
+      "start": "0x60354cb9",
+      "end_exclusive": "0x60355098",
+      "sha256": "1d191d61937b4bf8e4835b6e8d8ae6a46cd148fdb05a255c2058a70ab0f09619"
+    },
+    {
+      "start": "0x603e8a87",
+      "end_exclusive": "0x603e8af1",
+      "sha256": "bf0014ae16a6dd3a530e4dd09fffbaaa58f6a62545192d94ed2beeed145bd8c2"
+    },
+    {
+      "start": "0x6029b9d1",
+      "end_exclusive": "0x6029ba1e",
+      "sha256": "bd51a555ff39f65101a919d23ead0a2dea0d9489435b70b7a2ff20950cc01b37"
+    },
+    {
+      "start": "0x60343b23",
+      "end_exclusive": "0x60343ebe",
+      "sha256": "a6e0b160414ff589fbf481465ccb8186e186303129f8ac5f1315b7f9dac3e08b"
+    },
+    {
+      "start": "0x60339c27",
+      "end_exclusive": "0x60339c9b",
+      "sha256": "bf0059b33c40b2b8270de306c26353f3e3a88e6c268f23d700f51d75299b6455"
+    },
+    {
+      "start": "0x60345ebe",
+      "end_exclusive": "0x60345fc2",
+      "sha256": "3611d794b8fda7994c02ae2ef5aaebf372d45df1df2c9ab5d86eba507777913f"
+    },
+    {
+      "start": "0x603eaa04",
+      "end_exclusive": "0x603eab39",
+      "sha256": "1d290319930fc89181824fad3160155c07f649b6cf648630613d49e0146ff3e1"
+    },
+    {
+      "start": "0x603f2102",
+      "end_exclusive": "0x603f2190",
+      "sha256": "651700f64b161367d0b94beae05382e40e2983baec0eb155ffde885bc8987054"
+    },
+    {
+      "start": "0x602a859c",
+      "end_exclusive": "0x602a86c7",
+      "sha256": "4bc4c0bfe6452ddab81446a168a413861e8cb8c5b3eba4310234cc9c1e5ac5de"
+    },
+    {
+      "start": "0x6005c5be",
+      "end_exclusive": "0x6005c919",
+      "sha256": "8a73c7208e6e5365161f49cc077cb3e93c4b397c53b85d8b15ae2b2d62afe4b9"
+    },
+    {
+      "start": "0x602cbd00",
+      "end_exclusive": "0x602ccb20",
+      "sha256": "b3f3b2ed71773e54befae106515d1a830fecf60144dc2cc84def2c4bad08315e"
+    },
+    {
+      "start": "0x6005c326",
+      "end_exclusive": "0x6005c583",
+      "sha256": "57919ea519a2a9aac3b15be5f36d6fdc3d87c2a0333b9b953c0d704e64789390"
+    },
+    {
+      "start": "0x6005dc19",
+      "end_exclusive": "0x6005dc87",
+      "sha256": "1a7dd86ebcb1853252060eafb0db765cd3212d2be7ce6571f6e035a07e35d2af"
+    }
+  ],
+  "matrix": {
+    "cases": [
+      {
+        "case": "equal_S_p1_dirty0",
+        "profile": 1,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1656,
+        "changed_offsets": [
+          706,
+          707
+        ],
+        "H": [
+          -3000,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "L": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "upload_bit": false
+      },
+      {
+        "case": "equal_S_p1_dirty2",
+        "profile": 1,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1654,
+        "changed_offsets": [
+          706,
+          707
+        ],
+        "H": [
+          -3000,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "L": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "upload_bit": false
+      },
+      {
+        "case": "equal_S_p2_dirty0",
+        "profile": 2,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1656,
+        "changed_offsets": [
+          782,
+          783
+        ],
+        "H": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "L": [
+          0,
+          0,
+          0,
+          -200,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "upload_bit": false
+      },
+      {
+        "case": "equal_S_p2_dirty2",
+        "profile": 2,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1654,
+        "changed_offsets": [
+          782,
+          783
+        ],
+        "H": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "L": [
+          0,
+          0,
+          0,
+          -200,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "upload_bit": false
+      },
+      {
+        "case": "equal_S_p3_dirty0",
+        "profile": 3,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1656,
+        "changed_offsets": [
+          730,
+          731,
+          830
+        ],
+        "H": [
+          0,
+          3000,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "L": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          100,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "upload_bit": false
+      },
+      {
+        "case": "equal_S_p3_dirty2",
+        "profile": 3,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1654,
+        "changed_offsets": [
+          730,
+          731,
+          830
+        ],
+        "H": [
+          0,
+          3000,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "L": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          100,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "upload_bit": false
+      },
+      {
+        "case": "equal_S_p4_dirty0",
+        "profile": 4,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1656,
+        "changed_offsets": [],
+        "H": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "L": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "upload_bit": false
+      },
+      {
+        "case": "equal_S_p4_dirty2",
+        "profile": 4,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1654,
+        "changed_offsets": [],
+        "H": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "L": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "upload_bit": false
+      },
+      {
+        "case": "factory_S_p1",
+        "profile": 1,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1656,
+        "changed_offsets": [
+          706,
+          707
+        ],
+        "H": [
+          -3000,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "L": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "upload_bit": false
+      },
+      {
+        "case": "factory_S_p2",
+        "profile": 2,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1656,
+        "changed_offsets": [
+          782,
+          783
+        ],
+        "H": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "L": [
+          0,
+          0,
+          0,
+          -200,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "upload_bit": false
+      },
+      {
+        "case": "factory_S_p3",
+        "profile": 3,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1656,
+        "changed_offsets": [
+          730,
+          731,
+          830
+        ],
+        "H": [
+          0,
+          3000,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "L": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          100,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "upload_bit": false
+      },
+      {
+        "case": "factory_S_p4",
+        "profile": 4,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1656,
+        "changed_offsets": [],
+        "H": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "L": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "upload_bit": false
+      },
+      {
+        "case": "edge_S_p1",
+        "profile": 1,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1656,
+        "changed_offsets": [
+          706,
+          707
+        ],
+        "H": [
+          -3000,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "L": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "upload_bit": false
+      },
+      {
+        "case": "edge_S_p2",
+        "profile": 2,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1656,
+        "changed_offsets": [
+          782,
+          783
+        ],
+        "H": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "L": [
+          0,
+          0,
+          0,
+          -200,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "upload_bit": false
+      },
+      {
+        "case": "edge_S_p3",
+        "profile": 3,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1656,
+        "changed_offsets": [
+          730,
+          731,
+          830
+        ],
+        "H": [
+          0,
+          3000,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "L": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          100,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "upload_bit": false
+      },
+      {
+        "case": "alternate_header_owner",
+        "profile": 2,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1656,
+        "changed_offsets": [
+          782,
+          783
+        ],
+        "H": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "L": [
+          0,
+          0,
+          0,
+          -200,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "upload_bit": false
+      },
+      {
+        "case": "operation_record_1",
+        "profile": 3,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1656,
+        "changed_offsets": [
+          730,
+          731,
+          830
+        ],
+        "H": [
+          0,
+          3000,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "L": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          100,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "upload_bit": false
+      },
+      {
+        "case": "operation_record_7",
+        "profile": 3,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1656,
+        "changed_offsets": [
+          730,
+          731,
+          830
+        ],
+        "H": [
+          0,
+          3000,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "L": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          100,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "upload_bit": false
+      },
+      {
+        "case": "operation_record_15",
+        "profile": 3,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1656,
+        "changed_offsets": [
+          730,
+          731,
+          830
+        ],
+        "H": [
+          0,
+          3000,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "L": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          100,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "upload_bit": false
+      },
+      {
+        "case": "Natural",
+        "profile": 1,
+        "eligible": false,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 37,
+        "changed_offsets": [],
+        "H": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "L": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "upload_bit": false
+      },
+      {
+        "case": "MONO",
+        "profile": 1,
+        "eligible": false,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 37,
+        "changed_offsets": [],
+        "H": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "L": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "upload_bit": false
+      },
+      {
+        "case": "invalid_profile_0",
+        "profile": 0,
+        "eligible": false,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1607,
+        "changed_offsets": [],
+        "H": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "L": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "upload_bit": false
+      },
+      {
+        "case": "invalid_profile_5",
+        "profile": 5,
+        "eligible": false,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1607,
+        "changed_offsets": [],
+        "H": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "L": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "upload_bit": false
+      },
+      {
+        "case": "unknown_owner",
+        "profile": 1,
+        "eligible": false,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1603,
+        "changed_offsets": [],
+        "H": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "L": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "upload_bit": false
+      },
+      {
+        "case": "non_record_slot",
+        "profile": 1,
+        "eligible": false,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1602,
+        "changed_offsets": [],
+        "H": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "L": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "upload_bit": false
+      },
+      {
+        "case": "f00d",
+        "profile": 1,
+        "eligible": false,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 33,
+        "changed_offsets": [],
+        "H": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "L": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "upload_bit": false
+      },
+      {
+        "case": "custom_clean",
+        "profile": 1,
+        "eligible": false,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 28,
+        "changed_offsets": [],
+        "H": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "L": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "upload_bit": false
+      },
+      {
+        "case": "custom_dirty",
+        "profile": 1,
+        "eligible": false,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1282,
+        "changed_offsets": [],
+        "H": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "L": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "upload_bit": false
+      }
+    ],
+    "same_S_switch_sequence": [
+      {
+        "case": "switch_0_p1",
+        "profile": 1,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1656,
+        "changed_offsets": [
+          706,
+          707
+        ],
+        "H": [
+          -3000,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "L": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "upload_bit": false
+      },
+      {
+        "case": "switch_1_p2",
+        "profile": 2,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1656,
+        "changed_offsets": [
+          782,
+          783
+        ],
+        "H": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "L": [
+          0,
+          0,
+          0,
+          -200,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "upload_bit": false
+      },
+      {
+        "case": "switch_2_p3",
+        "profile": 3,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1656,
+        "changed_offsets": [
+          730,
+          731,
+          830
+        ],
+        "H": [
+          0,
+          3000,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "L": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          100,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "upload_bit": false
+      },
+      {
+        "case": "switch_3_p4",
+        "profile": 4,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1656,
+        "changed_offsets": [],
+        "H": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "L": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "upload_bit": false
+      },
+      {
+        "case": "switch_4_p3",
+        "profile": 3,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1656,
+        "changed_offsets": [
+          730,
+          731,
+          830
+        ],
+        "H": [
+          0,
+          3000,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "L": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          100,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "upload_bit": false
+      },
+      {
+        "case": "switch_5_p2",
+        "profile": 2,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1656,
+        "changed_offsets": [
+          782,
+          783
+        ],
+        "H": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "L": [
+          0,
+          0,
+          0,
+          -200,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "upload_bit": false
+      },
+      {
+        "case": "switch_6_p1",
+        "profile": 1,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1656,
+        "changed_offsets": [
+          706,
+          707
+        ],
+        "H": [
+          -3000,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "L": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "upload_bit": false
+      },
+      {
+        "case": "switch_7_p4",
+        "profile": 4,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1656,
+        "changed_offsets": [],
+        "H": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "L": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "upload_bit": false
+      }
+    ]
+  },
+  "reentry_gate": [
+    {
+      "input_format": "0x105",
+      "profile": 1,
+      "all_S_zero": true,
+      "original_dirty_flag": 0,
+      "admitted": true,
+      "instructions": 10
+    },
+    {
+      "input_format": "0x105",
+      "profile": 2,
+      "all_S_zero": true,
+      "original_dirty_flag": 0,
+      "admitted": true,
+      "instructions": 10
+    },
+    {
+      "input_format": "0x105",
+      "profile": 3,
+      "all_S_zero": true,
+      "original_dirty_flag": 0,
+      "admitted": true,
+      "instructions": 10
+    },
+    {
+      "input_format": "0x105",
+      "profile": 4,
+      "all_S_zero": true,
+      "original_dirty_flag": 0,
+      "admitted": true,
+      "instructions": 10
+    },
+    {
+      "input_format": "0x205",
+      "profile": 1,
+      "all_S_zero": true,
+      "original_dirty_flag": 0,
+      "admitted": true,
+      "instructions": 12
+    },
+    {
+      "input_format": "0x205",
+      "profile": 2,
+      "all_S_zero": true,
+      "original_dirty_flag": 0,
+      "admitted": true,
+      "instructions": 12
+    },
+    {
+      "input_format": "0x205",
+      "profile": 3,
+      "all_S_zero": true,
+      "original_dirty_flag": 0,
+      "admitted": true,
+      "instructions": 12
+    },
+    {
+      "input_format": "0x205",
+      "profile": 4,
+      "all_S_zero": true,
+      "original_dirty_flag": 0,
+      "admitted": true,
+      "instructions": 12
+    },
+    {
+      "input_format": "0x0",
+      "profile": 1,
+      "all_S_zero": true,
+      "original_dirty_flag": 0,
+      "admitted": false,
+      "instructions": 14
+    },
+    {
+      "input_format": "0x0",
+      "profile": 2,
+      "all_S_zero": true,
+      "original_dirty_flag": 0,
+      "admitted": false,
+      "instructions": 14
+    },
+    {
+      "input_format": "0x0",
+      "profile": 3,
+      "all_S_zero": true,
+      "original_dirty_flag": 0,
+      "admitted": false,
+      "instructions": 14
+    },
+    {
+      "input_format": "0x0",
+      "profile": 4,
+      "all_S_zero": true,
+      "original_dirty_flag": 0,
+      "admitted": false,
+      "instructions": 14
+    }
+  ],
+  "owners": {
+    "native_owner_cases": [
+      {
+        "profile": 1,
+        "handle": 1,
+        "lookup": "0x6029b9d1",
+        "header_owner": "header+4",
+        "job_owner": "job+8",
+        "snapshot": "*(job.owner+28)",
+        "profile_offset": 24083,
+        "public_mode": 54,
+        "source_model": "Own registered handle row and snapshot; native lookup/header/copy executed",
+        "diagnostic_boundary": "0x603e2c0d",
+        "instructions": 89
+      },
+      {
+        "profile": 2,
+        "handle": 1,
+        "lookup": "0x6029b9d1",
+        "header_owner": "header+4",
+        "job_owner": "job+8",
+        "snapshot": "*(job.owner+28)",
+        "profile_offset": 24083,
+        "public_mode": 55,
+        "source_model": "Own registered handle row and snapshot; native lookup/header/copy executed",
+        "diagnostic_boundary": "0x603e2c0d",
+        "instructions": 89
+      },
+      {
+        "profile": 3,
+        "handle": 1,
+        "lookup": "0x6029b9d1",
+        "header_owner": "header+4",
+        "job_owner": "job+8",
+        "snapshot": "*(job.owner+28)",
+        "profile_offset": 24083,
+        "public_mode": 56,
+        "source_model": "Own registered handle row and snapshot; native lookup/header/copy executed",
+        "diagnostic_boundary": "0x603e2c0d",
+        "instructions": 89
+      },
+      {
+        "profile": 4,
+        "handle": 1,
+        "lookup": "0x6029b9d1",
+        "header_owner": "header+4",
+        "job_owner": "job+8",
+        "snapshot": "*(job.owner+28)",
+        "profile_offset": 24083,
+        "public_mode": 64,
+        "source_model": "Own registered handle row and snapshot; native lookup/header/copy executed",
+        "diagnostic_boundary": "0x603e2c0d",
+        "instructions": 89
+      }
+    ],
+    "native_enqueue_prefix": [
+      {
+        "record": 0,
+        "parent_valid": true,
+        "request_backlink_valid": true,
+        "instructions": 36
+      },
+      {
+        "record": 1,
+        "parent_valid": true,
+        "request_backlink_valid": true,
+        "instructions": 48
+      },
+      {
+        "record": 7,
+        "parent_valid": true,
+        "request_backlink_valid": true,
+        "instructions": 120
+      },
+      {
+        "record": 15,
+        "parent_valid": true,
+        "request_backlink_valid": true,
+        "instructions": 216
+      }
+    ],
+    "capture_creator": "0x603e611e ->0x603537eb; direct caller0x603e6d34/3e",
+    "second_creator": "0x603e8a87 ->0x603537eb at0x603f2bb9; callback603e9631 (workflow not named)",
+    "limits": [
+      "The original scheduler/acquisition/slot lifetime is not replayed.",
+      "Compact constructor60321ea8 uses another callback/owner layout: candidate returns stock.",
+      "Record and callback checks establish layout, not general memory-corruption resistance.",
+      "Constant values need stable per-image identity; future mutable recipes need copied values."
+    ]
+  },
+  "uploads": [
+    {
+      "profile": 1,
+      "uploads": [
+        {
+          "bank": 0,
+          "flag": "0x8",
+          "packer_prefix": "60343b23..60343b72",
+          "writer": "0x6034667e",
+          "all_288_coefficient_bytes_match": true,
+          "H": [
+            -3000,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "L": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instructions": 2132
+        },
+        {
+          "bank": 1,
+          "flag": "0x40000",
+          "packer_prefix": "60343b23..60343b72",
+          "writer": "0x6034667e",
+          "all_288_coefficient_bytes_match": true,
+          "H": [
+            -3000,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "L": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instructions": 2139
+        }
+      ]
+    },
+    {
+      "profile": 2,
+      "uploads": [
+        {
+          "bank": 0,
+          "flag": "0x8",
+          "packer_prefix": "60343b23..60343b72",
+          "writer": "0x6034667e",
+          "all_288_coefficient_bytes_match": true,
+          "H": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "L": [
+            0,
+            0,
+            0,
+            -200,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instructions": 2132
+        },
+        {
+          "bank": 1,
+          "flag": "0x40000",
+          "packer_prefix": "60343b23..60343b72",
+          "writer": "0x6034667e",
+          "all_288_coefficient_bytes_match": true,
+          "H": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "L": [
+            0,
+            0,
+            0,
+            -200,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instructions": 2139
+        }
+      ]
+    },
+    {
+      "profile": 3,
+      "uploads": [
+        {
+          "bank": 0,
+          "flag": "0x8",
+          "packer_prefix": "60343b23..60343b72",
+          "writer": "0x6034667e",
+          "all_288_coefficient_bytes_match": true,
+          "H": [
+            0,
+            3000,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "L": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            100,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instructions": 2132
+        },
+        {
+          "bank": 1,
+          "flag": "0x40000",
+          "packer_prefix": "60343b23..60343b72",
+          "writer": "0x6034667e",
+          "all_288_coefficient_bytes_match": true,
+          "H": [
+            0,
+            3000,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "L": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            100,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instructions": 2139
+        }
+      ]
+    },
+    {
+      "profile": 4,
+      "uploads": [
+        {
+          "bank": 0,
+          "flag": "0x8",
+          "packer_prefix": "60343b23..60343b72",
+          "writer": "0x6034667e",
+          "all_288_coefficient_bytes_match": true,
+          "H": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "L": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instructions": 2132
+        },
+        {
+          "bank": 1,
+          "flag": "0x40000",
+          "packer_prefix": "60343b23..60343b72",
+          "writer": "0x6034667e",
+          "all_288_coefficient_bytes_match": true,
+          "H": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "L": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instructions": 2139
+        }
+      ]
+    },
+    {
+      "profile": 3,
+      "uploads": [
+        {
+          "bank": 0,
+          "flag": "0x8",
+          "packer_prefix": "60343b23..60343b72",
+          "writer": "0x6034667e",
+          "all_288_coefficient_bytes_match": true,
+          "H": [
+            0,
+            3000,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "L": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            100,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instructions": 2132
+        },
+        {
+          "bank": 1,
+          "flag": "0x40000",
+          "packer_prefix": "60343b23..60343b72",
+          "writer": "0x6034667e",
+          "all_288_coefficient_bytes_match": true,
+          "H": [
+            0,
+            3000,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "L": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            100,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instructions": 2139
+        }
+      ]
+    },
+    {
+      "profile": 2,
+      "uploads": [
+        {
+          "bank": 0,
+          "flag": "0x8",
+          "packer_prefix": "60343b23..60343b72",
+          "writer": "0x6034667e",
+          "all_288_coefficient_bytes_match": true,
+          "H": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "L": [
+            0,
+            0,
+            0,
+            -200,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instructions": 2132
+        },
+        {
+          "bank": 1,
+          "flag": "0x40000",
+          "packer_prefix": "60343b23..60343b72",
+          "writer": "0x6034667e",
+          "all_288_coefficient_bytes_match": true,
+          "H": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "L": [
+            0,
+            0,
+            0,
+            -200,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instructions": 2139
+        }
+      ]
+    },
+    {
+      "profile": 1,
+      "uploads": [
+        {
+          "bank": 0,
+          "flag": "0x8",
+          "packer_prefix": "60343b23..60343b72",
+          "writer": "0x6034667e",
+          "all_288_coefficient_bytes_match": true,
+          "H": [
+            -3000,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "L": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instructions": 2132
+        },
+        {
+          "bank": 1,
+          "flag": "0x40000",
+          "packer_prefix": "60343b23..60343b72",
+          "writer": "0x6034667e",
+          "all_288_coefficient_bytes_match": true,
+          "H": [
+            -3000,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "L": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instructions": 2139
+        }
+      ]
+    },
+    {
+      "profile": 4,
+      "uploads": [
+        {
+          "bank": 0,
+          "flag": "0x8",
+          "packer_prefix": "60343b23..60343b72",
+          "writer": "0x6034667e",
+          "all_288_coefficient_bytes_match": true,
+          "H": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "L": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instructions": 2132
+        },
+        {
+          "bank": 1,
+          "flag": "0x40000",
+          "packer_prefix": "60343b23..60343b72",
+          "writer": "0x6034667e",
+          "all_288_coefficient_bytes_match": true,
+          "H": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "L": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instructions": 2139
+        }
+      ]
+    }
+  ],
+  "placement": {
+    "section": 2,
+    "loaded_start": "0x60280800",
+    "loaded_end_exclusive": "0x6055e800",
+    "extension_start": "0x6055e5f0",
+    "bytes": 460,
+    "prefix_margin": 64,
+    "suffix_margin": 68,
+    "native_load": {
+      "poison": 165,
+      "read_destination": "0xa0280800",
+      "read_source": "0x80900800",
+      "read_bytes": 3006464,
+      "sha256": "2dd53b1c0d6134d5648084a634295e94d6abb42cc9cd58c56993ca9bd708cd5c",
+      "loaded_bit": 2,
+      "model": "One exact successful logical read; no NAND/ECC/cache/timing simulation"
+    },
+    "native_reload": {
+      "poison": 85,
+      "read_destination": "0xa0280800",
+      "read_source": "0x80900800",
+      "read_bytes": 3006464,
+      "sha256": "2dd53b1c0d6134d5648084a634295e94d6abb42cc9cd58c56993ca9bd708cd5c",
+      "loaded_bit": 2,
+      "model": "One exact successful logical read; no NAND/ECC/cache/timing simulation"
+    },
+    "initializers": {
+      "callbacks_executed": 12,
+      "instructions": 18753,
+      "padding_unmapped": [
+        "0x6055e5b0",
+        "0x6055e800"
+      ],
+      "aligned_data_accesses": 5275
+    },
+    "positive_control": {
+      "counterfactual_count": 52,
+      "expected_fault": "0x6055e5b0",
+      "access": "read"
+    },
+    "raw_pointer_candidates": 6,
+    "classified_encoded_data": [
+      {
+        "component": 4,
+        "alias_base": "0x6055e5f0",
+        "offset": "0x2699f4",
+        "value": "0x6055e62d",
+        "classification": "encoded JPEG data, Pillow full decode passed",
+        "containing_start": "0x2633e0",
+        "containing_end": "0x26bf3c",
+        "entropy_start": "0x26362d",
+        "size": [
+          640,
+          480
+        ]
+      },
+      {
+        "component": 4,
+        "alias_base": "0x6055e5f0",
+        "offset": "0x3b1316",
+        "value": "0x6055e69b",
+        "classification": "encoded JPEG data, Pillow full decode passed",
+        "containing_start": "0x3adfe0",
+        "containing_end": "0x3b2363",
+        "entropy_start": "0x3ae22d",
+        "size": [
+          248,
+          186
+        ]
+      },
+      {
+        "component": 4,
+        "alias_base": "0x6055e5f0",
+        "offset": "0x3cb916",
+        "value": "0x6055e69b",
+        "classification": "encoded JPEG data, Pillow full decode passed",
+        "containing_start": "0x3c85e0",
+        "containing_end": "0x3cc963",
+        "entropy_start": "0x3c882d",
+        "size": [
+          248,
+          186
+        ]
+      },
+      {
+        "component": 4,
+        "alias_base": "0xa055e5f0",
+        "offset": "0x40811f",
+        "value": "0xa055e7ab",
+        "classification": "encoded JPEG data, Pillow full decode passed",
+        "containing_start": "0x4029e0",
+        "containing_end": "0x40da07",
+        "entropy_start": "0x402c2d",
+        "size": [
+          640,
+          480
+        ]
+      },
+      {
+        "component": 4,
+        "alias_base": "0xa055e5f0",
+        "offset": "0x606784",
+        "value": "0xa055e67d",
+        "classification": "encoded JPEG data, Pillow full decode passed",
+        "containing_start": "0x5fe3e0",
+        "containing_end": "0x607631",
+        "entropy_start": "0x5fe62d",
+        "size": [
+          640,
+          480
+        ]
+      },
+      {
+        "component": 2,
+        "alias_base": "0x40bde5f0",
+        "offset": "0x1d6ddb8",
+        "value": "0x40bde73f",
+        "classification": "encoded gzip data, zlib EOF/CRC validation passed",
+        "containing_start": "0x1cc7e78",
+        "containing_end": "0x1e80e84",
+        "decoded_bytes": 3593176
+      }
+    ],
+    "branch_candidates": 0,
+    "limits": "No computed-access/DMA/cache-concurrency or physical recovery proof"
+  },
+  "storage": {
+    "reset_cases": [
+      {
+        "key": 927,
+        "requested_ACTIVE_writes": [
+          {
+            "part": 0,
+            "value": 0
+          },
+          {
+            "part": 1,
+            "value": 0
+          }
+        ],
+        "instructions": 109
+      },
+      {
+        "key": 928,
+        "requested_ACTIVE_writes": [
+          {
+            "part": 0,
+            "value": 0
+          },
+          {
+            "part": 1,
+            "value": 0
+          }
+        ],
+        "instructions": 109
+      },
+      {
+        "key": 929,
+        "requested_ACTIVE_writes": [
+          {
+            "part": 0,
+            "value": 0
+          },
+          {
+            "part": 1,
+            "value": 0
+          }
+        ],
+        "instructions": 109
+      },
+      {
+        "key": 930,
+        "requested_ACTIVE_writes": [
+          {
+            "part": 0,
+            "value": 0
+          },
+          {
+            "part": 1,
+            "value": 0
+          }
+        ],
+        "instructions": 109
+      },
+      {
+        "key": 931,
+        "requested_ACTIVE_writes": [
+          {
+            "part": 0,
+            "value": 0
+          },
+          {
+            "part": 1,
+            "value": 0
+          }
+        ],
+        "instructions": 109
+      },
+      {
+        "key": 932,
+        "requested_ACTIVE_writes": [
+          {
+            "part": 0,
+            "value": 0
+          },
+          {
+            "part": 1,
+            "value": 0
+          }
+        ],
+        "instructions": 109
+      },
+      {
+        "key": 933,
+        "requested_ACTIVE_writes": [
+          {
+            "part": 0,
+            "value": 0
+          },
+          {
+            "part": 1,
+            "value": 0
+          }
+        ],
+        "instructions": 109
+      },
+      {
+        "key": 934,
+        "requested_ACTIVE_writes": [
+          {
+            "part": 0,
+            "value": 0
+          },
+          {
+            "part": 1,
+            "value": 0
+          }
+        ],
+        "instructions": 109
+      },
+      {
+        "key": 935,
+        "requested_ACTIVE_writes": [
+          {
+            "part": 0,
+            "value": 0
+          },
+          {
+            "part": 1,
+            "value": 0
+          }
+        ],
+        "instructions": 109
+      },
+      {
+        "key": 936,
+        "requested_ACTIVE_writes": [
+          {
+            "part": 0,
+            "value": 0
+          },
+          {
+            "part": 1,
+            "value": 0
+          }
+        ],
+        "instructions": 109
+      },
+      {
+        "key": 937,
+        "requested_ACTIVE_writes": [
+          {
+            "part": 0,
+            "value": 0
+          },
+          {
+            "part": 1,
+            "value": 0
+          }
+        ],
+        "instructions": 109
+      },
+      {
+        "key": 938,
+        "requested_ACTIVE_writes": [
+          {
+            "part": 0,
+            "value": 0
+          },
+          {
+            "part": 1,
+            "value": 0
+          }
+        ],
+        "instructions": 109
+      },
+      {
+        "key": 939,
+        "requested_ACTIVE_writes": [
+          {
+            "part": 0,
+            "value": 1
+          },
+          {
+            "part": 1,
+            "value": 1
+          }
+        ],
+        "instructions": 109
+      },
+      {
+        "key": 940,
+        "requested_ACTIVE_writes": [
+          {
+            "part": 0,
+            "value": 1
+          },
+          {
+            "part": 1,
+            "value": 1
+          }
+        ],
+        "instructions": 109
+      },
+      {
+        "key": 941,
+        "requested_ACTIVE_writes": [
+          {
+            "part": 0,
+            "value": 0
+          },
+          {
+            "part": 1,
+            "value": 0
+          }
+        ],
+        "instructions": 109
+      },
+      {
+        "key": 942,
+        "requested_ACTIVE_writes": [
+          {
+            "part": 0,
+            "value": 0
+          },
+          {
+            "part": 1,
+            "value": 0
+          }
+        ],
+        "instructions": 109
+      },
+      {
+        "key": 943,
+        "requested_ACTIVE_writes": [
+          {
+            "part": 0,
+            "value": 0
+          },
+          {
+            "part": 1,
+            "value": 0
+          }
+        ],
+        "instructions": 109
+      },
+      {
+        "key": 944,
+        "requested_ACTIVE_writes": [
+          {
+            "part": 0,
+            "value": 0
+          },
+          {
+            "part": 1,
+            "value": 0
+          }
+        ],
+        "instructions": 109
+      },
+      {
+        "key": 945,
+        "requested_ACTIVE_writes": [
+          {
+            "part": 0,
+            "value": 1
+          },
+          {
+            "part": 1,
+            "value": 1
+          }
+        ],
+        "instructions": 109
+      },
+      {
+        "key": 946,
+        "requested_ACTIVE_writes": [
+          {
+            "part": 0,
+            "value": 1
+          },
+          {
+            "part": 1,
+            "value": 1
+          }
+        ],
+        "instructions": 109
+      },
+      {
+        "key": 947,
+        "requested_ACTIVE_writes": [
+          {
+            "part": 0,
+            "value": 0
+          },
+          {
+            "part": 1,
+            "value": 0
+          }
+        ],
+        "instructions": 109
+      },
+      {
+        "key": 948,
+        "requested_ACTIVE_writes": [
+          {
+            "part": 0,
+            "value": 0
+          },
+          {
+            "part": 1,
+            "value": 0
+          }
+        ],
+        "instructions": 109
+      },
+      {
+        "key": 949,
+        "requested_ACTIVE_writes": [
+          {
+            "part": 0,
+            "value": 1
+          },
+          {
+            "part": 1,
+            "value": 1
+          }
+        ],
+        "instructions": 109
+      },
+      {
+        "key": 950,
+        "requested_ACTIVE_writes": [
+          {
+            "part": 0,
+            "value": 1
+          },
+          {
+            "part": 1,
+            "value": 1
+          }
+        ],
+        "instructions": 109
+      },
+      {
+        "key": 951,
+        "requested_ACTIVE_writes": [
+          {
+            "part": 0,
+            "value": 4
+          },
+          {
+            "part": 1,
+            "value": 4
+          }
+        ],
+        "instructions": 109
+      },
+      {
+        "key": 952,
+        "requested_ACTIVE_writes": [
+          {
+            "part": 0,
+            "value": 4
+          },
+          {
+            "part": 1,
+            "value": 4
+          }
+        ],
+        "instructions": 109
+      },
+      {
+        "key": 953,
+        "requested_ACTIVE_writes": [
+          {
+            "part": 0,
+            "value": 4
+          },
+          {
+            "part": 1,
+            "value": 4
+          }
+        ],
+        "instructions": 109
+      },
+      {
+        "key": 954,
+        "requested_ACTIVE_writes": [
+          {
+            "part": 0,
+            "value": 4
+          },
+          {
+            "part": 1,
+            "value": 4
+          }
+        ],
+        "instructions": 109
+      },
+      {
+        "key": 955,
+        "requested_ACTIVE_writes": [
+          {
+            "part": 0,
+            "value": 4
+          },
+          {
+            "part": 1,
+            "value": 4
+          }
+        ],
+        "instructions": 109
+      },
+      {
+        "key": 956,
+        "requested_ACTIVE_writes": [
+          {
+            "part": 0,
+            "value": 3
+          },
+          {
+            "part": 1,
+            "value": 3
+          }
+        ],
+        "instructions": 109
+      },
+      {
+        "key": 957,
+        "requested_ACTIVE_writes": [
+          {
+            "part": 0,
+            "value": 4
+          },
+          {
+            "part": 1,
+            "value": 4
+          }
+        ],
+        "instructions": 109
+      },
+      {
+        "key": 958,
+        "requested_ACTIVE_writes": [
+          {
+            "part": 0,
+            "value": 4
+          },
+          {
+            "part": 1,
+            "value": 4
+          }
+        ],
+        "instructions": 109
+      },
+      {
+        "key": 959,
+        "requested_ACTIVE_writes": [
+          {
+            "part": 0,
+            "value": 4
+          },
+          {
+            "part": 1,
+            "value": 4
+          }
+        ],
+        "instructions": 109
+      },
+      {
+        "key": 960,
+        "requested_ACTIVE_writes": [
+          {
+            "part": 0,
+            "value": 4
+          },
+          {
+            "part": 1,
+            "value": 4
+          }
+        ],
+        "instructions": 109
+      },
+      {
+        "key": 961,
+        "requested_ACTIVE_writes": [
+          {
+            "part": 0,
+            "value": 4
+          },
+          {
+            "part": 1,
+            "value": 4
+          }
+        ],
+        "instructions": 109
+      },
+      {
+        "key": 962,
+        "requested_ACTIVE_writes": [
+          {
+            "part": 0,
+            "value": 4
+          },
+          {
+            "part": 1,
+            "value": 4
+          }
+        ],
+        "instructions": 109
+      },
+      {
+        "key": 1655,
+        "requested_ACTIVE_writes": [
+          {
+            "part": 0,
+            "value": 4294967292
+          },
+          {
+            "part": 1,
+            "value": 4294967292
+          }
+        ],
+        "instructions": 109
+      },
+      {
+        "key": 1656,
+        "requested_ACTIVE_writes": [
+          {
+            "part": 0,
+            "value": 0
+          },
+          {
+            "part": 1,
+            "value": 0
+          }
+        ],
+        "instructions": 109
+      },
+      {
+        "key": 1657,
+        "requested_ACTIVE_writes": [
+          {
+            "part": 0,
+            "value": 0
+          },
+          {
+            "part": 1,
+            "value": 0
+          }
+        ],
+        "instructions": 109
+      },
+      {
+        "key": 1658,
+        "requested_ACTIVE_writes": [
+          {
+            "part": 0,
+            "value": 0
+          },
+          {
+            "part": 1,
+            "value": 0
+          }
+        ],
+        "instructions": 109
+      },
+      {
+        "key": 1659,
+        "requested_ACTIVE_writes": [
+          {
+            "part": 0,
+            "value": 4294967295
+          },
+          {
+            "part": 1,
+            "value": 4294967295
+          }
+        ],
+        "instructions": 109
+      },
+      {
+        "key": 1660,
+        "requested_ACTIVE_writes": [
+          {
+            "part": 0,
+            "value": 4294967295
+          },
+          {
+            "part": 1,
+            "value": 4294967295
+          }
+        ],
+        "instructions": 109
+      },
+      {
+        "key": 1661,
+        "requested_ACTIVE_writes": [
+          {
+            "part": 0,
+            "value": 4294967295
+          },
+          {
+            "part": 1,
+            "value": 4294967295
+          }
+        ],
+        "instructions": 109
+      },
+      {
+        "key": 1662,
+        "requested_ACTIVE_writes": [
+          {
+            "part": 0,
+            "value": 0
+          },
+          {
+            "part": 1,
+            "value": 0
+          }
+        ],
+        "instructions": 109
+      },
+      {
+        "key": 1663,
+        "requested_ACTIVE_writes": [
+          {
+            "part": 0,
+            "value": 0
+          },
+          {
+            "part": 1,
+            "value": 0
+          }
+        ],
+        "instructions": 109
+      },
+      {
+        "key": 1664,
+        "requested_ACTIVE_writes": [
+          {
+            "part": 0,
+            "value": 0
+          },
+          {
+            "part": 1,
+            "value": 0
+          }
+        ],
+        "instructions": 109
+      },
+      {
+        "key": 1665,
+        "requested_ACTIVE_writes": [
+          {
+            "part": 0,
+            "value": 0
+          },
+          {
+            "part": 1,
+            "value": 0
+          }
+        ],
+        "instructions": 109
+      },
+      {
+        "key": 1666,
+        "requested_ACTIVE_writes": [
+          {
+            "part": 0,
+            "value": 4294967292
+          },
+          {
+            "part": 1,
+            "value": 4294967292
+          }
+        ],
+        "instructions": 109
+      }
+    ],
+    "checksum_cases": [
+      {
+        "profile": 1,
+        "key": 927,
+        "part": 1,
+        "record_relative": 147488,
+        "native_checksum": 51129,
+        "all_halfwords_zero_sum": true,
+        "instructions": 917507,
+        "model": "Own full-sized Mode record; native checksum only, no backend write"
+      },
+      {
+        "profile": 2,
+        "key": 939,
+        "part": 1,
+        "record_relative": 147536,
+        "native_checksum": 51129,
+        "all_halfwords_zero_sum": true,
+        "instructions": 917507,
+        "model": "Own full-sized Mode record; native checksum only, no backend write"
+      },
+      {
+        "profile": 3,
+        "key": 951,
+        "part": 1,
+        "record_relative": 147584,
+        "native_checksum": 51129,
+        "all_halfwords_zero_sum": true,
+        "instructions": 917507,
+        "model": "Own full-sized Mode record; native checksum only, no backend write"
+      },
+      {
+        "profile": 4,
+        "key": 1655,
+        "part": 1,
+        "record_relative": 150400,
+        "native_checksum": 51129,
+        "all_halfwords_zero_sum": true,
+        "instructions": 917507,
+        "model": "Own full-sized Mode record; native checksum only, no backend write"
+      }
+    ],
+    "backend_compare": [
+      {
+        "key": null,
+        "only_part1_changed": false,
+        "outcome": "no write needed",
+        "instructions": 2883499,
+        "native_stop": "0x18020008"
+      },
+      {
+        "key": 927,
+        "only_part1_changed": true,
+        "outcome": "change detected before slot selection",
+        "instructions": 1622334,
+        "native_stop": "0x6005c5ff"
+      },
+      {
+        "key": 939,
+        "only_part1_changed": true,
+        "outcome": "change detected before slot selection",
+        "instructions": 1622862,
+        "native_stop": "0x6005c5ff"
+      },
+      {
+        "key": 951,
+        "only_part1_changed": true,
+        "outcome": "change detected before slot selection",
+        "instructions": 1623390,
+        "native_stop": "0x6005c5ff"
+      },
+      {
+        "key": 1655,
+        "only_part1_changed": true,
+        "outcome": "change detected before slot selection",
+        "instructions": 1654366,
+        "native_stop": "0x6005c5ff"
+      }
+    ],
+    "slot_selection": [
+      {
+        "second_backing": "0x0",
+        "initial_index": 0,
+        "selected": 0,
+        "actual_mode_layout": true,
+        "instructions": 44
+      },
+      {
+        "second_backing": "0x0",
+        "initial_index": 1,
+        "selected": 0,
+        "actual_mode_layout": true,
+        "instructions": 44
+      },
+      {
+        "second_backing": "0xa2ab8000",
+        "initial_index": 0,
+        "selected": 1,
+        "actual_mode_layout": false,
+        "instructions": 47
+      },
+      {
+        "second_backing": "0xa2ab8000",
+        "initial_index": 1,
+        "selected": 0,
+        "actual_mode_layout": false,
+        "instructions": 47
+      }
+    ],
+    "candidate_A": "conditional",
+    "actual_mode_backings": [
+      "0xa2a78000",
+      "0x0"
+    ],
+    "power_loss_counterevidence": "6005dc3a/4d configure one nonzero Mode backing;6005c4b2 keeps slot0. Generic two-slot code is not evidence of Mode redundancy.",
+    "whole_reset": "602b962f iterates keys0..1768, resets parts0/1;602b969e saves all9 banks",
+    "mode_backend": "6005f1fa ->6005c5be: compares payload+8..size-4; increments generation; checksums full record excluding checksum cell; stops before storage6005bc79",
+    "reset_fixture": "Declared environment key4508=0; native default lookup executed. Registered setters and ACTIVE setters record write intent and return0; no persistence modeled.",
+    "reset_warning": "Part1 is allocated alternate storage, not unused zero padding. Reset replaces it with the stock setting default.",
+    "unproved": [
+      "Exhaustive computed/raw pointer consumers",
+      "E-P7 named backup import/export",
+      "Physical power-loss atomicity and recovery after torn settings writes"
+    ],
+    "stock_revert": "No new stock H/L interpretation established; native reset overwrites alternate cells; raw getters/debug can expose them. Not a proof of harmlessness for all stock consumers.",
+    "candidate_B": "Independent SD file avoids part1 ownership, but native parser, atomic replacement and image snapshot remain unverified; not implemented"
+  },
+  "upstream_commit": "539fcf1fa9eda5fdef8ede4deeab94a4691d94c3",
+  "evidence_scope": {
+    "native_execution": "Pinned GNU strict CPU, explicit ROM/stack/own fixtures, unknown memory and services fail closed",
+    "segments": "Native owner/header/copy/enqueue and pack/writer are separate bounded runs, not full RTOS or acquisition replay",
+    "simulation_not_pixels": true,
+    "stock_physical_source": "https://github.com/ZakuZakuu/ep7-film-hack/issues/49#issuecomment-6395587169",
+    "v2_physical_tested": false,
+    "v2_package_file_created": false,
+    "settings_backend_written": false,
+    "licensing": "External fishcu tools read/run only; no upstream source, OEM listing or OEM byte dump vendored"
+  },
+  "toolchain": {
+    "setup_identity": {
+      "upstream_commit": "539fcf1fa9eda5fdef8ede4deeab94a4691d94c3",
+      "gnu_commit": "87ffb882e0f4d73401a0746177ffabb8e8bbe4ac",
+      "gnu_tree": "059d50a3cc76bd13dc10f21023863674e6da515c",
+      "archive_actual_sha256": "8f82f3fe062f81fc7689aa0e1e03b63b4df3efa7ae87c5e7e7bb9598baf95d02",
+      "archive_documented_sha256": "a5e7cd02f844bb2873c25e0ac8e9a5b50a72c3e8e6570a6b7821d2e4c21178ad",
+      "identity_rule": "Archive bytes are unstable; verify the complete Git tree and two core hashes.",
+      "core_original_sha256": {
+        "sim/mn10300/interp.c": "f6c34c6c81ff67bda52d6b57d0ea47954587e36908923cd7e4e59a90424cd37b",
+        "sim/mn10300/mn10300.igen": "355754c61879dc24bf6128bbba5a7931355731000e8cb213082b9b9cd4df0129"
+      }
+    },
+    "engine_sha256": "645b5cea4727da9bf859108120c76c6908a06e1b4995e1c72358665f7547175b",
+    "native_integration": "GNU binutils2.45 and pinned strict GNU simulator, not the legacy optional path",
+    "jpeg_ref_classification": "Pillow complete decode; candidate after SOS in entropy stream",
+    "gzip_ref_classification": "zlib wbits31 complete gzip EOF + CRC; no resource semantic inference"
+  },
+  "new_links": {
+    "profile_source": {
+      "native_snapshot_getter": "602a859c..602a85c4 selects63153 when raw mode11, reads6005e971, writesconfig+24083",
+      "existing_leaf_mapping": "T22 E07: raw111/908/973=(11,1..4,0) ->54/55/56/64;908 current typed address6250f836",
+      "global_not_used": "No6250f836 region or general current-settings memory exists in selector simulations; any such access would fault"
+    },
+    "request_ownership": {
+      "header_producer": "603e611e, store603e6149 callback603e7b83 and603e614a owner atheader+4",
+      "job_copy": "60353915..60353922 copies32 bytes header->job+4; parent atjob+8",
+      "actual_creator": "603e6d34 header call;603e6d3e job constructor;603e6d45 storesjob atowner+36",
+      "alternate_header": "603e8a87 storescallback603e9631, retains sameowner atheader+4; native caller603f2bae/bb9",
+      "do_not_name_alternate": "No user-workflow proof that this alone is RAW editing, preview or capture",
+      "operation_binding": "60354b8c chooses16 records atjob+14576+i*56 and storesparent;60354be4 bindsrequest+4;60354beb record+8 request",
+      "embedded_request": "Native60354bf3/f7 bindsjob+11364; v2 accepts this layout only",
+      "unsupported": "60321ea8 compact producer and6060dbe3 alternative producer are not white-listed; no global fallback"
+    },
+    "same_S_recalculation": {
+      "upstream_gate": "6033985c calls60339c27; sourceformat families1/2 return1 directly, independentofS;12nativecontrols includingunknownfamilynegative. Thisdoesnotprove UIalwayssubmitsa newrequest.",
+      "selector": "603b028b..603b02d9 defaultkey11 always callsbuilder603b0068;60 bit2 tested only aftercall",
+      "counterexample_retained": "Custom table+1524 and clean0x10000000 dirty flag bypassesbuilder;v2 doesnot alter it",
+      "write_flags": "60343b23 prefix picksbank;60343b58/5b/5e unconditionally OR8 intoallocation+0, or60343b38..41 OR0x40000 forotherbank",
+      "dirty_bit_distinction": "Context+108 bit2 is not required to force this coefficient flag. Candidate leaves allcontext bytes identical tostock.",
+      "call_edge": "60339870 ->603aaced, then60339878 ->60343b23; separately603399d7..603399f2 path",
+      "ISP": "Actual60345f81/60345fa0 flags ->nativewriter6034667e at9f001000/9f805000;records source+688 ->bank+752,288bytes"
+    },
+    "ABI": {
+      "hook_site": "603b14f3 oldCALL16 length5, resume603b14f8",
+      "extra_stack_bytes": 32,
+      "no_loop_register_or_MDR_arithmetic": true,
+      "return_slot": "Restore original603b14f8 at the caller return slot after wrapper CALL returns",
+      "MDR": "Only when native leaf exit retains wrapper entering CALL address, remap it to original entering CALL address; otherwise preserve native value",
+      "PSW": "Saved afteroriginalselector, restored afterallguards/copies. All32modeledregisters compared atnative resume."
+    },
+    "Mode_single_backing": {
+      "initialization": "6005dc3a configuresbacking0=a2a78000;6005dc4d/4f configuresbacking1=0;6005dc82 capacity0x40000",
+      "selection": "6005c4b2..6005c521 chooses0 foronlybacking0 regardlessofpriorindex; syntheticboth-nonzero control alternates",
+      "not_redundant_proof": "No second Mode backing configured in this path. Lower medium atomicity is not inferred."
+    }
+  },
+  "storage_consumer_inventory": {
+    "bank_get": [
+      {
+        "site": "0x602aff15",
+        "target": "0x602cc076",
+        "encoding": "call32",
+        "qualification": "Raw encoding match; source may be data or misaligned."
+      },
+      {
+        "site": "0x602b33cf",
+        "target": "0x602cc076",
+        "encoding": "call32",
+        "qualification": "Raw encoding match; source may be data or misaligned."
+      },
+      {
+        "site": "0x602b33e3",
+        "target": "0x602cc076",
+        "encoding": "call32",
+        "qualification": "Raw encoding match; source may be data or misaligned."
+      },
+      {
+        "site": "0x602b3806",
+        "target": "0x602cc076",
+        "encoding": "call32",
+        "qualification": "Raw encoding match; source may be data or misaligned."
+      },
+      {
+        "site": "0x602b3819",
+        "target": "0x602cc076",
+        "encoding": "call32",
+        "qualification": "Raw encoding match; source may be data or misaligned."
+      },
+      {
+        "site": "0x613dc10c",
+        "target": "0x602cc076",
+        "encoding": "call32",
+        "qualification": "Raw encoding match; source may be data or misaligned."
+      }
+    ],
+    "active_get": [
+      {
+        "site": "0x602b3419",
+        "target": "0x602cc0a7",
+        "encoding": "call32",
+        "qualification": "Raw encoding match; source may be data or misaligned."
+      },
+      {
+        "site": "0x602b342c",
+        "target": "0x602cc0a7",
+        "encoding": "call32",
+        "qualification": "Raw encoding match; source may be data or misaligned."
+      },
+      {
+        "site": "0x602b343a",
+        "target": "0x602cc0a7",
+        "encoding": "call32",
+        "qualification": "Raw encoding match; source may be data or misaligned."
+      },
+      {
+        "site": "0x602b344f",
+        "target": "0x602cc0a7",
+        "encoding": "call32",
+        "qualification": "Raw encoding match; source may be data or misaligned."
+      },
+      {
+        "site": "0x602b346c",
+        "target": "0x602cc0a7",
+        "encoding": "call32",
+        "qualification": "Raw encoding match; source may be data or misaligned."
+      },
+      {
+        "site": "0x602b34a5",
+        "target": "0x602cc0a7",
+        "encoding": "call32",
+        "qualification": "Raw encoding match; source may be data or misaligned."
+      },
+      {
+        "site": "0x602b3846",
+        "target": "0x602cc0a7",
+        "encoding": "call32",
+        "qualification": "Raw encoding match; source may be data or misaligned."
+      },
+      {
+        "site": "0x602b3859",
+        "target": "0x602cc0a7",
+        "encoding": "call32",
+        "qualification": "Raw encoding match; source may be data or misaligned."
+      },
+      {
+        "site": "0x602b97fd",
+        "target": "0x602cc0a7",
+        "encoding": "call32",
+        "qualification": "Raw encoding match; source may be data or misaligned."
+      },
+      {
+        "site": "0x602b991b",
+        "target": "0x602cc0a7",
+        "encoding": "call32",
+        "qualification": "Raw encoding match; source may be data or misaligned."
+      },
+      {
+        "site": "0x602b9941",
+        "target": "0x602cc0a7",
+        "encoding": "call32",
+        "qualification": "Raw encoding match; source may be data or misaligned."
+      },
+      {
+        "site": "0x602bf32e",
+        "target": "0x602cc0a7",
+        "encoding": "call32",
+        "qualification": "Raw encoding match; source may be data or misaligned."
+      },
+      {
+        "site": "0x602bf3f2",
+        "target": "0x602cc0a7",
+        "encoding": "call32",
+        "qualification": "Raw encoding match; source may be data or misaligned."
+      },
+      {
+        "site": "0x613da114",
+        "target": "0x602cc0a7",
+        "encoding": "call32",
+        "qualification": "Raw encoding match; source may be data or misaligned."
+      },
+      {
+        "site": "0x613da266",
+        "target": "0x602cc0a7",
+        "encoding": "call32",
+        "qualification": "Raw encoding match; source may be data or misaligned."
+      },
+      {
+        "site": "0x613dc0de",
+        "target": "0x602cc0a7",
+        "encoding": "call32",
+        "qualification": "Raw encoding match; source may be data or misaligned."
+      }
+    ],
+    "active_set": [
+      {
+        "site": "0x602b9651",
+        "target": "0x602cc0d0",
+        "encoding": "call32",
+        "qualification": "Raw encoding match; source may be data or misaligned."
+      },
+      {
+        "site": "0x602b975d",
+        "target": "0x602cc0d0",
+        "encoding": "call32",
+        "qualification": "Raw encoding match; source may be data or misaligned."
+      },
+      {
+        "site": "0x602b97aa",
+        "target": "0x602cc0d0",
+        "encoding": "call32",
+        "qualification": "Raw encoding match; source may be data or misaligned."
+      },
+      {
+        "site": "0x602b986d",
+        "target": "0x602cc0d0",
+        "encoding": "call32",
+        "qualification": "Raw encoding match; source may be data or misaligned."
+      },
+      {
+        "site": "0x602b99f6",
+        "target": "0x602cc0d0",
+        "encoding": "call32",
+        "qualification": "Raw encoding match; source may be data or misaligned."
+      },
+      {
+        "site": "0x602b9a1c",
+        "target": "0x602cc0d0",
+        "encoding": "call32",
+        "qualification": "Raw encoding match; source may be data or misaligned."
+      },
+      {
+        "site": "0x602b9a4c",
+        "target": "0x602cc0d0",
+        "encoding": "call32",
+        "qualification": "Raw encoding match; source may be data or misaligned."
+      },
+      {
+        "site": "0x602b9c75",
+        "target": "0x602cc0d0",
+        "encoding": "call32",
+        "qualification": "Raw encoding match; source may be data or misaligned."
+      },
+      {
+        "site": "0x613dc0c9",
+        "target": "0x602cc0d0",
+        "encoding": "call32",
+        "qualification": "Raw encoding match; source may be data or misaligned."
+      }
+    ],
+    "bank_load": [
+      {
+        "site": "0x602b33ec",
+        "target": "0x602cbffe",
+        "encoding": "call32",
+        "qualification": "Raw encoding match; source may be data or misaligned."
+      },
+      {
+        "site": "0x602b3408",
+        "target": "0x602cbffe",
+        "encoding": "call32",
+        "qualification": "Raw encoding match; source may be data or misaligned."
+      },
+      {
+        "site": "0x602b3823",
+        "target": "0x602cbffe",
+        "encoding": "call32",
+        "qualification": "Raw encoding match; source may be data or misaligned."
+      },
+      {
+        "site": "0x602b3835",
+        "target": "0x602cbffe",
+        "encoding": "call32",
+        "qualification": "Raw encoding match; source may be data or misaligned."
+      },
+      {
+        "site": "0x602b3a9f",
+        "target": "0x602cbffe",
+        "encoding": "call32",
+        "qualification": "Raw encoding match; source may be data or misaligned."
+      }
+    ],
+    "bank_save": [
+      {
+        "site": "0x602b0580",
+        "target": "0x602cc03a",
+        "encoding": "call32",
+        "qualification": "Raw encoding match; source may be data or misaligned."
+      },
+      {
+        "site": "0x602b3926",
+        "target": "0x602cc03a",
+        "encoding": "call32",
+        "qualification": "Raw encoding match; source may be data or misaligned."
+      },
+      {
+        "site": "0x602b39aa",
+        "target": "0x602cc03a",
+        "encoding": "call32",
+        "qualification": "Raw encoding match; source may be data or misaligned."
+      },
+      {
+        "site": "0x602b969e",
+        "target": "0x602cc03a",
+        "encoding": "call32",
+        "qualification": "Raw encoding match; source may be data or misaligned."
+      }
+    ]
+  },
+  "storage_consumer_inventory_limits": "Raw direct-call encodings atallmainbytealignments; not an exhaustive dataflow/pointer consumer proof. Listedreset andbackend sites independently disassembled and/or executed.",
+  "reuse_T22": {
+    "all_70_filters": "604a8420;3360 COLOR occurrences selectpart0; unchanged T22 E06",
+    "both_parts_bank_copy": "602cbffe load /602cc03a save,3538words,9internalbanks; T22 nativecases retained",
+    "remaining_API": "602cc076 and602cc0a7 acceptpart argument;602cc0d0 writespart. Raw/diagnostic callers remain, not vacant storage.",
+    "reset_all": "602b962f -> default602b9bad;602b964e..65 resetsbothparts forall0..1768;602b969e saves9banks",
+    "reset_one": "602b9c4f ->registeredsetters then602b9c72..81 writesparts0and1;48exactCOLORkeys executed",
+    "backup": "E-P7 named backup schema/importer/exporter not located; no claim of portable backup preservation",
+    "unclosed_consumers": "Computedcalls, rawpointer arithmetic, complete Myset staging/recall timeline, allbackup paths andotherfirmwareversions not excluded"
+  },
+  "prospective_build_verification": {
+    "input_sha256": "9d1610124ad98f6edae4540182205f06c9c703d9033ef0c4f19847193f95eaeb",
+    "prospective_output_sha256": "b1ad25019722af31e26bdf29aabaa1867320bea64c9bb2c0acc06cc5aadc4375",
+    "bytes": 111017984,
+    "decoded_output_sha256": "ce249b20d7010706fbe0fb26a18015b6729e36a14d2337614f2ac055201f02de",
+    "unchanged_components": 4,
+    "hook_source_sha256": "8a3907a14d3f1887879d6bb2a68ea1c4f66943116ba2885004f79cf1423de926",
+    "manifest_sha256": "a6e96eec715d6a3857bf316e1e04c7f4cc1d9f02a640e90ffda6a613600cd17e",
+    "tool_versions": {
+      "assembler": "GNU assembler (GNU Binutils) 2.45",
+      "linker": "GNU ld (GNU Binutils) 2.45",
+      "objcopy": "GNU objcopy (GNU Binutils) 2.45",
+      "objdump": "GNU objdump (GNU Binutils) 2.45"
+    },
+    "verify_only": true,
+    "package_files_created": false
+  },
+  "patch_manifest_sha256": "a6e96eec715d6a3857bf316e1e04c7f4cc1d9f02a640e90ffda6a613600cd17e",
+  "T20_protected_unchanged": {
+    "patches/hsl-min/e-p7/README.md": "995bb74f2c38f5fa08935981586a1ada6c9d20ac893cb5cffc38b1f0b3d352f5",
+    "patches/hsl-min/e-p7/build.py": "b0663f5757cdc81e5c549ff305d9df0fa4aa81d5dce3225f272f1f25a14458dd",
+    "patches/hsl-min/e-p7/hook.s": "7b142632b85c621e8c470b7eb3d464b48448e6be397372bac479c639df562e3d",
+    "patches/hsl-min/e-p7/patch.json": "51ac03c81f55637200d8c341a3d50b36744913bf2fe9d24a5b7c6b229c960999"
+  },
+  "source_sha256": {
+    "patches/hsl-profiles/e-p7/hook.s": "8a3907a14d3f1887879d6bb2a68ea1c4f66943116ba2885004f79cf1423de926",
+    "patches/hsl-profiles/e-p7/build.py": "f8ba943373dd2a52b582a34bea579b0fcf7e3bf8e9e40bc33d11a884f262868a",
+    "tools/ep7_t24_probe.py": "ec10e66c206e268f2682b1b9b7d21f821af29bbbee6ab37bdea7908b46e83ac8",
+    "tests/test_ep7_hsl_profiles.py": "1b91d2c76d6247332e3a811745b91935be925279ad1d0deca535680c5115a0b5"
+  },
+  "tests": {
+    "suite": "python3 -m unittest discover -s tests -v",
+    "total": 90,
+    "passed": 85,
+    "skipped": 5,
+    "skips": "Four old optionalGNU checks expectlegacy tool layout; one SquashFS integration lacksoptionaltool. NewT24 GNU syntheticABI testandreal OEM CPU runs executed.",
+    "native_reentry_gate_cases": 12,
+    "native_selector_controls": 28,
+    "same_S_transitions": 8,
+    "native_upload_windows": 16,
+    "native_reset_keys": 48,
+    "native_checksums": 4,
+    "backend_compares": 5,
+    "native_slot_controls": 4
+  },
+  "workflow_decisions": {
+    "COLOR_identity": "Qualified native long-owner layouts only, constrowselection has no currentUI dependency",
+    "equal_S": "Withinasubmittedrequest, defaultbuilderandwriteflagconfirmed; knowncustom bypass unchanged. UI leaf908commit ->snapshotrefresh ->newpreview/capturerequest scheduling notclosed.",
+    "bursts_and_post_capture_switch": "Conditional on retained native owner snapshot. No full acquisition/reuse or scheduler proof.",
+    "in_camera_RAW_edit": "Unknown selected-edit versus original-capture identity. Alternateproducer not sufficient to name this workflow.",
+    "future_import": "Copycommittedbank,versionand24values atimageacquisition; job-owned extensionandcompletion lifecycle requireseparatequalification",
+    "storage_A": "Conditional only; resetoverwrites,checksumcovers,oneModebacking, portablebackup andphysicalpowerlossunproved. No writeimplementationauthorizedhere.",
+    "storage_B": "Alternative only ifA conditionsfail; no fileparser/atomicreplace/snapshot implementation",
+    "acceptance": "Partial offline prototype only. T24 full native-switching/end-to-end workflow acceptance not achieved; do not label the issue fully closed.",
+    "release": "Reviewprotectedv2scope andcompactgap before separatelyauthorizingbuild/B2; no T25"
+  },
+  "reproduce": {
+    "setup": "bash tools/setup_t20_environment.sh",
+    "native": "python3 tools/ep7_t24_probe.py --upstream work/upstream/oly_fw_analysis --stock /tmp/private-stock.BIN --out /tmp/new-private-t24-check",
+    "no_package": "python3 patches/hsl-profiles/e-p7/build.py --upstream work/upstream/oly_fw_analysis --stock /tmp/private-stock.BIN --verify-only",
+    "inputs": "Exact E142/1100 size/hash, 5OE checksums andstockroundtripchecked byExperiment/buildguards",
+    "outputs": "Private OEM main,lists,tracesunder/tmp; publiconlysource/constants/hashes/numericrelationships"
+  }
+}
