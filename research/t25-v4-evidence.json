@@ -1,0 +1,1983 @@
+{
+  "issue": 65,
+  "revision": "owner sequential write",
+  "stock_sha256": "9d1610124ad98f6edae4540182205f06c9c703d9033ef0c4f19847193f95eaeb",
+  "decoded_stock_sha256": "5dd9af164b4590c7e82f6905c919b3cc450bb58f2d5742ab2a0e3a4eb2e26190",
+  "extension_sha256": "945b9456ce33139b023d71d5309c4ed44ccba5eec54ab2c36524bae37b95e9e4",
+  "extension_bytes": 1276,
+  "decoded_output_sha256": "670c4cffe6876bd7a2aa27162b53aab56a36e48ec1894ca8463d1ad568ba1f2b",
+  "native_windows": [
+    {
+      "start": "0x602cbffe",
+      "end_exclusive": "0x602cc122",
+      "sha256": "a20192eff2b3f453697aa289f2eedbb24b5e9b381869ae5a4c6f9550928287f2"
+    },
+    {
+      "start": "0x6005e947",
+      "end_exclusive": "0x6005eb15",
+      "sha256": "166874e33f01e0b57af077be3aef1b1ae896ec8ef205b9d585f87dfe15aa7920"
+    },
+    {
+      "start": "0x6005efbd",
+      "end_exclusive": "0x6005f005",
+      "sha256": "b19caabb1d046dffbdf35b9669392972ed504922527c934bb5fba127b7e15066"
+    },
+    {
+      "start": "0x602cca80",
+      "end_exclusive": "0x602cca8c",
+      "sha256": "bab45e3a761dee4db6a2c2a1f03e22918627029922f081acc5f6a7e35e806b16"
+    },
+    {
+      "start": "0x6005c8cc",
+      "end_exclusive": "0x6005c8e2",
+      "sha256": "944eb894f4780e02fafc19f30d674689d4ef7fe96f4409a90255d3b8a7d6f4ac"
+    },
+    {
+      "start": "0x6005e65a",
+      "end_exclusive": "0x6005e676",
+      "sha256": "5ce9f970bdc0c73339c3cfe1ed3f6890aa0e708f2132f2c0b3ca9824436f919e"
+    },
+    {
+      "start": "0x60067102",
+      "end_exclusive": "0x60067146",
+      "sha256": "c8464aa63171e09563361c2fbe29d2a697870d436e4acd0fa51f31a053be8e88"
+    },
+    {
+      "start": "0x602b9bad",
+      "end_exclusive": "0x602b9c90",
+      "sha256": "c7ce315bc47aaba9b57ce7beb97200d1d9ffdf45778f4f7a815c0bd56d138902"
+    },
+    {
+      "start": "0x602b3330",
+      "end_exclusive": "0x602b3444",
+      "sha256": "1a8d70ffa904bf887c615f9f7d21a09cfffad72d2c40db03355e3340ef5d18f6"
+    },
+    {
+      "start": "0x602b38a7",
+      "end_exclusive": "0x602b392d",
+      "sha256": "4ad0af4f367087967912481f869f78d27960739c3c187d80176105fb292304ab"
+    },
+    {
+      "start": "0x602afa11",
+      "end_exclusive": "0x602afa30",
+      "sha256": "f05271dbf38f7c9a91a72b885ccfe669448b0ad2e0a7b270404958e41ab782ce"
+    },
+    {
+      "start": "0x602cc6c6",
+      "end_exclusive": "0x602cc6d8",
+      "sha256": "c0929beb5bc7fe3a45ca3925405f75512b3313f748da04f24bee51ed5def2d8d"
+    },
+    {
+      "start": "0x60bd408d",
+      "end_exclusive": "0x60bd4150",
+      "sha256": "fec1dc9aa9ba4bde3fa12cd175300a24ba51eab6e903d62b6f10c13bc31de713"
+    },
+    {
+      "start": "0x602b97c5",
+      "end_exclusive": "0x602b98a0",
+      "sha256": "30f6cfd349f41376d6d0bc636f796e4becfb738752c9db83224ad220456551c2"
+    },
+    {
+      "start": "0x602cbc58",
+      "end_exclusive": "0x602cbd98",
+      "sha256": "2805f09e1887e194af3cfa7a1d6ca0f5eeee59d424cdd8783fd540ed85ee124d"
+    },
+    {
+      "start": "0x602cc540",
+      "end_exclusive": "0x602cc580",
+      "sha256": "dfd0506db94419584afbbfb6da69214bc0ec215700d9103e46df710df8952327"
+    },
+    {
+      "start": "0x60bd2709",
+      "end_exclusive": "0x60bd2866",
+      "sha256": "43856779493d4ebbce591a9a4151e1cdadc0a5701508d74e7c38a8227169d3a9"
+    },
+    {
+      "start": "0x60bd2a18",
+      "end_exclusive": "0x60bd2ae4",
+      "sha256": "ed60e19d11e67a03676a439a8f4c7c4b51c67e57d19a773b44330c7e23dcadc2"
+    },
+    {
+      "start": "0x60bd2044",
+      "end_exclusive": "0x60bd20a8",
+      "sha256": "7c6ed3dbcce52a148241833085f979dbc7ebd474891085ff8b3d2cb9722deabd"
+    },
+    {
+      "start": "0x60bd548d",
+      "end_exclusive": "0x60bd5570",
+      "sha256": "c997c2954a5d63bb99d0ce8d043520a821a2f4a8a414794ce8168f76230710ed"
+    },
+    {
+      "start": "0x60888552",
+      "end_exclusive": "0x6088859b",
+      "sha256": "4dd93b0d6d9d7feaa488fc980504e24040b0ccc855d674f2b68a5b9b855b73a5"
+    },
+    {
+      "start": "0x60888b11",
+      "end_exclusive": "0x60888b45",
+      "sha256": "5d8611e73000fcf921ab4570e012fa99d4f66a123c6cac30c15fb29d48abd88f"
+    },
+    {
+      "start": "0x60e083d5",
+      "end_exclusive": "0x60e0844d",
+      "sha256": "f765d04c8479a5012730146221f1649861b5452d8d2ab50c69b4d6c905c22947"
+    },
+    {
+      "start": "0x60343b23",
+      "end_exclusive": "0x60343b72",
+      "sha256": "dbf93d7678005d49f28328fc0b9bbcace2aa20463fc62bb848f5da44afa577a8"
+    },
+    {
+      "start": "0x602b8916",
+      "end_exclusive": "0x602b8b18",
+      "sha256": "41970110447603306d1bdc78343903bffb8475844d56f880b7b050b620471b05"
+    },
+    {
+      "start": "0x603b1466",
+      "end_exclusive": "0x603b1517",
+      "sha256": "189581bf00beef3dd4b3b30ec687d468a53a1afeace95fc65f32cd9d14eb9316"
+    },
+    {
+      "start": "0x603af871",
+      "end_exclusive": "0x603b0345",
+      "sha256": "d9ffe18cd60f2c3c80c3157b9867feb4a0b0fa887ceed092f7008fcbb57c1309"
+    }
+  ],
+  "modified_ranges": [
+    {
+      "address": "0x603b14f3",
+      "length": 5,
+      "original_sha256": "1b03aa08e2a91880a9b4a5b48bb4fbc4eb801f273922d08fa9de96829210fcaa",
+      "replacement_sha256": "8f74c45ea6c0554212b956ae41645186eb97bb1f1ec5cba12b9a6fe3f16986bc"
+    },
+    {
+      "address": "0x60210940",
+      "length": 1276,
+      "original_sha256": "f5462f6df06a890256c84eb69491556cf20587aa8553397861465bafce18c6a2",
+      "replacement_sha256": "945b9456ce33139b023d71d5309c4ed44ccba5eec54ab2c36524bae37b95e9e4"
+    },
+    {
+      "address": "0x60210ec0",
+      "length": 192,
+      "original_sha256": "8f62c344eff1568474fb693b8c18526629db443b9653a84264189c97693605de",
+      "replacement_sha256": "5d89f056865052bcb89c910d2d62872e029fb273c3db03f8968a52a41593c1b5"
+    },
+    {
+      "address": "0x60bd2a60",
+      "length": 7,
+      "original_sha256": "62e43b11c76ea064f22dacfe70d161a6a135e58f8b433222655fc5f613411d34",
+      "replacement_sha256": "185db32268d73c7cf3a6442da9144916853b7b21a0cc61c5bed5b763e1a4e4c6"
+    },
+    {
+      "address": "0x60bd2a8f",
+      "length": 7,
+      "original_sha256": "ad9428bd1442e5143adcfab9943b389c7573159cc234f9d621d3ad5419b6bcb9",
+      "replacement_sha256": "142e2bca5accc141fe31699e954f314d8b51699b31a97782cf299563bc4545f4"
+    },
+    {
+      "address": "0x60bd2aba",
+      "length": 10,
+      "original_sha256": "404c3e28bbd288bb407ecc3a7facf3f077c487d8b06ded88b3f519f9e17fde2b",
+      "replacement_sha256": "6a46a819a31bced7d7b308f133e443b863b92c838c8d6bafa97c710674829d61"
+    },
+    {
+      "address": "0x60bd2785",
+      "length": 7,
+      "original_sha256": "2d5bde4b4b36dd482821514dd8be1a92461bf18229f04c9f800636c704a49eae",
+      "replacement_sha256": "d21ad56ac2c73406b9daed45ef72fc2f321d01bd0228377eafa5c6f73f864a20"
+    },
+    {
+      "address": "0x60888b35",
+      "length": 7,
+      "original_sha256": "2e91da4c8053a11a8cf0236727965fea72ff246ede1271527182148141c1e514",
+      "replacement_sha256": "3e1a971e6fab339f7d8e19201335667e79b4d3a61c66c86dea106444d00fc461"
+    },
+    {
+      "address": "0x602cbcb5",
+      "length": 7,
+      "original_sha256": "f0f72c5cfb4320bbee06a64604e74ac22951ab717b9588bceb1b57417a2b93d3",
+      "replacement_sha256": "fffa9e6de5982b4bf467a21778e4b2102ab2eeac554753ba80508d34eb989826"
+    }
+  ],
+  "labels": {
+    "app_edit": "0x60210b78",
+    "id_parse": "0x60210d72",
+    "publish": "0x60210c5d",
+    "value_parse": "0x60210d99",
+    "wifi_read": "0x60210cf3",
+    "wifi_write": "0x60210a87"
+  },
+  "package_files_created": false,
+  "publication_abi": {
+    "cases": [
+      {
+        "index": 0,
+        "all_registers_and_Mode_equal": true,
+        "mirror_pair": [
+          3,
+          -2
+        ]
+      },
+      {
+        "index": 11,
+        "all_registers_and_Mode_equal": true,
+        "mirror_pair": [
+          3,
+          -2
+        ]
+      },
+      {
+        "index": 12,
+        "all_registers_and_Mode_equal": true,
+        "mirror_pair": [
+          3,
+          -2
+        ]
+      },
+      {
+        "index": 35,
+        "all_registers_and_Mode_equal": true,
+        "mirror_pair": [
+          3,
+          -2
+        ]
+      },
+      {
+        "index": 36,
+        "all_registers_and_Mode_equal": true,
+        "mirror_pair": [
+          3,
+          -2
+        ]
+      },
+      {
+        "index": 47,
+        "all_registers_and_Mode_equal": true,
+        "mirror_pair": [
+          3,
+          -2
+        ]
+      }
+    ],
+    "MDRQ_and_all_registers_equal": true
+  },
+  "read_and_stock": {
+    "native_XML_get": true,
+    "capability": "0x45503731",
+    "stock_capability": 0,
+    "invalid_axis": "0x80000000",
+    "signed_H_response": "0xfffffffd",
+    "ordinary_regressions": [
+      {
+        "key": 927,
+        "value": 3,
+        "native_Mode_equal": true,
+        "no_app_event": true
+      },
+      {
+        "key": 939,
+        "value": -5,
+        "native_Mode_equal": true,
+        "no_app_event": true
+      },
+      {
+        "key": 1655,
+        "value": 5,
+        "native_Mode_equal": true,
+        "no_app_event": true
+      },
+      {
+        "key": 909,
+        "value": 2,
+        "native_Mode_equal": true,
+        "no_app_event": true
+      },
+      {
+        "key": 927,
+        "value": 3,
+        "native_Mode_equal": true,
+        "no_app_event": true
+      },
+      {
+        "key": 927,
+        "value": 17745,
+        "native_Mode_equal": true,
+        "no_app_event": true
+      }
+    ]
+  },
+  "protocol": {
+    "native_inhibit_rejects_without_write": true,
+    "marked": [
+      {
+        "slot": 1,
+        "tag": "0x4551",
+        "value": -7,
+        "http": 200,
+        "event_count": 1
+      },
+      {
+        "slot": 1,
+        "tag": "0x4551",
+        "value": 7,
+        "http": 200,
+        "event_count": 1
+      },
+      {
+        "slot": 1,
+        "tag": "0x4552",
+        "value": -7,
+        "http": 200,
+        "event_count": 1
+      },
+      {
+        "slot": 1,
+        "tag": "0x4552",
+        "value": 7,
+        "http": 200,
+        "event_count": 1
+      },
+      {
+        "slot": 1,
+        "tag": "0x4550",
+        "value": -5,
+        "http": 200,
+        "event_count": 1
+      },
+      {
+        "slot": 1,
+        "tag": "0x4550",
+        "value": 5,
+        "http": 200,
+        "event_count": 1
+      },
+      {
+        "slot": 2,
+        "tag": "0x4551",
+        "value": -7,
+        "http": 200,
+        "event_count": 1
+      },
+      {
+        "slot": 2,
+        "tag": "0x4551",
+        "value": 7,
+        "http": 200,
+        "event_count": 1
+      },
+      {
+        "slot": 2,
+        "tag": "0x4552",
+        "value": -7,
+        "http": 200,
+        "event_count": 1
+      },
+      {
+        "slot": 2,
+        "tag": "0x4552",
+        "value": 7,
+        "http": 200,
+        "event_count": 1
+      },
+      {
+        "slot": 2,
+        "tag": "0x4550",
+        "value": -5,
+        "http": 200,
+        "event_count": 1
+      },
+      {
+        "slot": 2,
+        "tag": "0x4550",
+        "value": 5,
+        "http": 200,
+        "event_count": 1
+      },
+      {
+        "slot": 3,
+        "tag": "0x4551",
+        "value": -7,
+        "http": 200,
+        "event_count": 1
+      },
+      {
+        "slot": 3,
+        "tag": "0x4551",
+        "value": 7,
+        "http": 200,
+        "event_count": 1
+      },
+      {
+        "slot": 3,
+        "tag": "0x4552",
+        "value": -7,
+        "http": 200,
+        "event_count": 1
+      },
+      {
+        "slot": 3,
+        "tag": "0x4552",
+        "value": 7,
+        "http": 200,
+        "event_count": 1
+      },
+      {
+        "slot": 3,
+        "tag": "0x4550",
+        "value": -5,
+        "http": 200,
+        "event_count": 1
+      },
+      {
+        "slot": 3,
+        "tag": "0x4550",
+        "value": 5,
+        "http": 200,
+        "event_count": 1
+      },
+      {
+        "slot": 4,
+        "tag": "0x4551",
+        "value": -7,
+        "http": 200,
+        "event_count": 1
+      },
+      {
+        "slot": 4,
+        "tag": "0x4551",
+        "value": 7,
+        "http": 200,
+        "event_count": 1
+      },
+      {
+        "slot": 4,
+        "tag": "0x4552",
+        "value": -7,
+        "http": 200,
+        "event_count": 1
+      },
+      {
+        "slot": 4,
+        "tag": "0x4552",
+        "value": 7,
+        "http": 200,
+        "event_count": 1
+      },
+      {
+        "slot": 4,
+        "tag": "0x4550",
+        "value": -5,
+        "http": 200,
+        "event_count": 1
+      },
+      {
+        "slot": 4,
+        "tag": "0x4550",
+        "value": 5,
+        "http": 200,
+        "event_count": 1
+      }
+    ],
+    "scalar_units": [
+      {
+        "key": 963,
+        "value": -7,
+        "native_readback_signed": -7
+      },
+      {
+        "key": 963,
+        "value": 7,
+        "native_readback_signed": 7
+      },
+      {
+        "key": 964,
+        "value": -7,
+        "native_readback_signed": -7
+      },
+      {
+        "key": 964,
+        "value": 7,
+        "native_readback_signed": 7
+      },
+      {
+        "key": 965,
+        "value": -7,
+        "native_readback_signed": -7
+      },
+      {
+        "key": 965,
+        "value": 7,
+        "native_readback_signed": 7
+      },
+      {
+        "key": 966,
+        "value": -7,
+        "native_readback_signed": -7
+      },
+      {
+        "key": 966,
+        "value": 7,
+        "native_readback_signed": 7
+      },
+      {
+        "key": 967,
+        "value": -7,
+        "native_readback_signed": -7
+      },
+      {
+        "key": 967,
+        "value": 7,
+        "native_readback_signed": 7
+      },
+      {
+        "key": 968,
+        "value": -7,
+        "native_readback_signed": -7
+      },
+      {
+        "key": 968,
+        "value": 7,
+        "native_readback_signed": 7
+      },
+      {
+        "key": 969,
+        "value": -7,
+        "native_readback_signed": -7
+      },
+      {
+        "key": 969,
+        "value": 7,
+        "native_readback_signed": 7
+      },
+      {
+        "key": 970,
+        "value": -7,
+        "native_readback_signed": -7
+      },
+      {
+        "key": 970,
+        "value": 7,
+        "native_readback_signed": 7
+      },
+      {
+        "key": 971,
+        "value": -7,
+        "native_readback_signed": -7
+      },
+      {
+        "key": 971,
+        "value": 7,
+        "native_readback_signed": 7
+      },
+      {
+        "key": 1672,
+        "value": -7,
+        "native_readback_signed": -7
+      },
+      {
+        "key": 1672,
+        "value": 7,
+        "native_readback_signed": 7
+      },
+      {
+        "key": 1673,
+        "value": -7,
+        "native_readback_signed": -7
+      },
+      {
+        "key": 1673,
+        "value": 7,
+        "native_readback_signed": 7
+      },
+      {
+        "key": 1674,
+        "value": -7,
+        "native_readback_signed": -7
+      },
+      {
+        "key": 1674,
+        "value": 7,
+        "native_readback_signed": 7
+      },
+      {
+        "key": 1667,
+        "value": -5,
+        "native_readback_signed": -5
+      },
+      {
+        "key": 1667,
+        "value": 5,
+        "native_readback_signed": 5
+      },
+      {
+        "key": 1668,
+        "value": -5,
+        "native_readback_signed": -5
+      },
+      {
+        "key": 1668,
+        "value": 5,
+        "native_readback_signed": 5
+      },
+      {
+        "key": 1669,
+        "value": -5,
+        "native_readback_signed": -5
+      },
+      {
+        "key": 1669,
+        "value": 5,
+        "native_readback_signed": 5
+      },
+      {
+        "key": 1670,
+        "value": -5,
+        "native_readback_signed": -5
+      },
+      {
+        "key": 1670,
+        "value": 5,
+        "native_readback_signed": 5
+      }
+    ],
+    "invalid": [
+      {
+        "key": 926,
+        "tag": "0x4551",
+        "value": 0,
+        "status": 520,
+        "no_event_or_settings_write": true
+      },
+      {
+        "key": 927,
+        "tag": "0x4553",
+        "value": 0,
+        "status": 520,
+        "no_event_or_settings_write": true
+      },
+      {
+        "key": 927,
+        "tag": "0x455f",
+        "value": 0,
+        "status": 520,
+        "no_event_or_settings_write": true
+      },
+      {
+        "key": 927,
+        "tag": "0x4551",
+        "value": 8,
+        "status": 520,
+        "no_event_or_settings_write": true
+      },
+      {
+        "key": 927,
+        "tag": "0x4552",
+        "value": -8,
+        "status": 520,
+        "no_event_or_settings_write": true
+      },
+      {
+        "key": 927,
+        "tag": "0x4550",
+        "value": 6,
+        "status": 520,
+        "no_event_or_settings_write": true
+      },
+      {
+        "key": 1667,
+        "tag": "0x4550",
+        "value": 6,
+        "status": 520,
+        "no_event_or_settings_write": true
+      },
+      {
+        "key": 963,
+        "tag": "0x4551",
+        "value": 1,
+        "status": 520,
+        "no_event_or_settings_write": true
+      },
+      {
+        "key": 972,
+        "tag": "0x4550",
+        "value": 0,
+        "status": 520,
+        "no_event_or_settings_write": true
+      },
+      {
+        "key": 65535,
+        "tag": "0x4550",
+        "value": 0,
+        "status": 520,
+        "no_event_or_settings_write": true
+      },
+      {
+        "key": 66463,
+        "tag": "0x4551",
+        "value": 0,
+        "status": 520,
+        "no_event_or_settings_write": true
+      },
+      {
+        "raw_id": "1039F",
+        "raw_value": "45510003",
+        "status": 520,
+        "no_event_or_settings_write": true
+      },
+      {
+        "raw_id": "10000039F",
+        "raw_value": "45510003",
+        "status": 520,
+        "no_event_or_settings_write": true
+      },
+      {
+        "raw_id": "039F",
+        "raw_value": "455100003",
+        "status": 520,
+        "no_event_or_settings_write": true
+      },
+      {
+        "raw_id": "039F",
+        "raw_value": "4551000G",
+        "status": 520,
+        "no_event_or_settings_write": true
+      },
+      {
+        "raw_id": "0039F",
+        "raw_value": "45510003",
+        "status": 520,
+        "no_event_or_settings_write": true
+      }
+    ],
+    "capability": "0x45503731"
+  },
+  "imaging": {
+    "chain": "native query parser -> pending -> modeled RTOS delivery -> native app dispatcher/registered setter -> part API -> typed COLOR publication -> mirror -> native constructor -> ISP writer",
+    "cases": [
+      {
+        "compact": null,
+        "registers_equal": true,
+        "H0": -3000,
+        "L0": -50,
+        "uploads": [
+          {
+            "bank": 0,
+            "flag": "0x8",
+            "packer_prefix": "60343b23..60343b72",
+            "writer": "0x6034667e",
+            "all_288_coefficient_bytes_match": true,
+            "H": [
+              -3000,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "L": [
+              -50,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "instructions": 2132
+          },
+          {
+            "bank": 1,
+            "flag": "0x40000",
+            "packer_prefix": "60343b23..60343b72",
+            "writer": "0x6034667e",
+            "all_288_coefficient_bytes_match": true,
+            "H": [
+              -3000,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "L": [
+              -50,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "instructions": 2139
+          }
+        ]
+      },
+      {
+        "compact": "0x60306ad5",
+        "registers_equal": true,
+        "H0": -3000,
+        "L0": -50,
+        "uploads": [
+          {
+            "bank": 0,
+            "flag": "0x8",
+            "packer_prefix": "60343b23..60343b72",
+            "writer": "0x6034667e",
+            "all_288_coefficient_bytes_match": true,
+            "H": [
+              -3000,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "L": [
+              -50,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "instructions": 2132
+          },
+          {
+            "bank": 1,
+            "flag": "0x40000",
+            "packer_prefix": "60343b23..60343b72",
+            "writer": "0x6034667e",
+            "all_288_coefficient_bytes_match": true,
+            "H": [
+              -3000,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "L": [
+              -50,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "instructions": 2139
+          }
+        ]
+      },
+      {
+        "compact": "0x6031b4de",
+        "registers_equal": true,
+        "H0": -3000,
+        "L0": -50,
+        "uploads": [
+          {
+            "bank": 0,
+            "flag": "0x8",
+            "packer_prefix": "60343b23..60343b72",
+            "writer": "0x6034667e",
+            "all_288_coefficient_bytes_match": true,
+            "H": [
+              -3000,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "L": [
+              -50,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "instructions": 2132
+          },
+          {
+            "bank": 1,
+            "flag": "0x40000",
+            "packer_prefix": "60343b23..60343b72",
+            "writer": "0x6034667e",
+            "all_288_coefficient_bytes_match": true,
+            "H": [
+              -3000,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "L": [
+              -50,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "instructions": 2139
+          }
+        ]
+      },
+      {
+        "compact": "0x0",
+        "registers_equal": true,
+        "H0": -3000,
+        "L0": -50,
+        "uploads": [
+          {
+            "bank": 0,
+            "flag": "0x8",
+            "packer_prefix": "60343b23..60343b72",
+            "writer": "0x6034667e",
+            "all_288_coefficient_bytes_match": true,
+            "H": [
+              -3000,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "L": [
+              -50,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "instructions": 2132
+          },
+          {
+            "bank": 1,
+            "flag": "0x40000",
+            "packer_prefix": "60343b23..60343b72",
+            "writer": "0x6034667e",
+            "all_288_coefficient_bytes_match": true,
+            "H": [
+              -3000,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "L": [
+              -50,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "instructions": 2139
+          }
+        ]
+      }
+    ],
+    "physical_pixels_not_emulated": true
+  },
+  "image_matrix": [
+    {
+      "profile": 1,
+      "eligible": true,
+      "fixture": {
+        "compact": null
+      },
+      "ABI_equal": true,
+      "only_expected_HL": true,
+      "inaccessible_mirror_when_excluded": false
+    },
+    {
+      "profile": 1,
+      "eligible": true,
+      "fixture": {
+        "compact": 1613785813
+      },
+      "ABI_equal": true,
+      "only_expected_HL": true,
+      "inaccessible_mirror_when_excluded": false
+    },
+    {
+      "profile": 1,
+      "eligible": true,
+      "fixture": {
+        "compact": 1613870302
+      },
+      "ABI_equal": true,
+      "only_expected_HL": true,
+      "inaccessible_mirror_when_excluded": false
+    },
+    {
+      "profile": 1,
+      "eligible": true,
+      "fixture": {
+        "compact": 0
+      },
+      "ABI_equal": true,
+      "only_expected_HL": true,
+      "inaccessible_mirror_when_excluded": false
+    },
+    {
+      "profile": 2,
+      "eligible": true,
+      "fixture": {
+        "compact": null
+      },
+      "ABI_equal": true,
+      "only_expected_HL": true,
+      "inaccessible_mirror_when_excluded": false
+    },
+    {
+      "profile": 2,
+      "eligible": true,
+      "fixture": {
+        "compact": 1613785813
+      },
+      "ABI_equal": true,
+      "only_expected_HL": true,
+      "inaccessible_mirror_when_excluded": false
+    },
+    {
+      "profile": 2,
+      "eligible": true,
+      "fixture": {
+        "compact": 1613870302
+      },
+      "ABI_equal": true,
+      "only_expected_HL": true,
+      "inaccessible_mirror_when_excluded": false
+    },
+    {
+      "profile": 2,
+      "eligible": true,
+      "fixture": {
+        "compact": 0
+      },
+      "ABI_equal": true,
+      "only_expected_HL": true,
+      "inaccessible_mirror_when_excluded": false
+    },
+    {
+      "profile": 3,
+      "eligible": true,
+      "fixture": {
+        "compact": null
+      },
+      "ABI_equal": true,
+      "only_expected_HL": true,
+      "inaccessible_mirror_when_excluded": false
+    },
+    {
+      "profile": 3,
+      "eligible": true,
+      "fixture": {
+        "compact": 1613785813
+      },
+      "ABI_equal": true,
+      "only_expected_HL": true,
+      "inaccessible_mirror_when_excluded": false
+    },
+    {
+      "profile": 3,
+      "eligible": true,
+      "fixture": {
+        "compact": 1613870302
+      },
+      "ABI_equal": true,
+      "only_expected_HL": true,
+      "inaccessible_mirror_when_excluded": false
+    },
+    {
+      "profile": 3,
+      "eligible": true,
+      "fixture": {
+        "compact": 0
+      },
+      "ABI_equal": true,
+      "only_expected_HL": true,
+      "inaccessible_mirror_when_excluded": false
+    },
+    {
+      "profile": 4,
+      "eligible": true,
+      "fixture": {
+        "compact": null
+      },
+      "ABI_equal": true,
+      "only_expected_HL": true,
+      "inaccessible_mirror_when_excluded": false
+    },
+    {
+      "profile": 4,
+      "eligible": true,
+      "fixture": {
+        "compact": 1613785813
+      },
+      "ABI_equal": true,
+      "only_expected_HL": true,
+      "inaccessible_mirror_when_excluded": false
+    },
+    {
+      "profile": 4,
+      "eligible": true,
+      "fixture": {
+        "compact": 1613870302
+      },
+      "ABI_equal": true,
+      "only_expected_HL": true,
+      "inaccessible_mirror_when_excluded": false
+    },
+    {
+      "profile": 4,
+      "eligible": true,
+      "fixture": {
+        "compact": 0
+      },
+      "ABI_equal": true,
+      "only_expected_HL": true,
+      "inaccessible_mirror_when_excluded": false
+    },
+    {
+      "profile": 3,
+      "eligible": true,
+      "fixture": {
+        "compact": 1613785813,
+        "record": 0
+      },
+      "ABI_equal": true,
+      "only_expected_HL": true,
+      "inaccessible_mirror_when_excluded": false
+    },
+    {
+      "profile": 3,
+      "eligible": true,
+      "fixture": {
+        "compact": 1613785813,
+        "record": 1
+      },
+      "ABI_equal": true,
+      "only_expected_HL": true,
+      "inaccessible_mirror_when_excluded": false
+    },
+    {
+      "profile": 3,
+      "eligible": true,
+      "fixture": {
+        "compact": 1613785813,
+        "record": 2
+      },
+      "ABI_equal": true,
+      "only_expected_HL": true,
+      "inaccessible_mirror_when_excluded": false
+    },
+    {
+      "profile": 3,
+      "eligible": true,
+      "fixture": {
+        "compact": 1613785813,
+        "record": 3
+      },
+      "ABI_equal": true,
+      "only_expected_HL": true,
+      "inaccessible_mirror_when_excluded": false
+    },
+    {
+      "profile": 3,
+      "eligible": true,
+      "fixture": {
+        "compact": 1613785813,
+        "record": 4
+      },
+      "ABI_equal": true,
+      "only_expected_HL": true,
+      "inaccessible_mirror_when_excluded": false
+    },
+    {
+      "profile": 3,
+      "eligible": true,
+      "fixture": {
+        "compact": 1613785813,
+        "record": 5
+      },
+      "ABI_equal": true,
+      "only_expected_HL": true,
+      "inaccessible_mirror_when_excluded": false
+    },
+    {
+      "profile": 3,
+      "eligible": true,
+      "fixture": {
+        "compact": 1613785813,
+        "record": 6
+      },
+      "ABI_equal": true,
+      "only_expected_HL": true,
+      "inaccessible_mirror_when_excluded": false
+    },
+    {
+      "profile": 3,
+      "eligible": true,
+      "fixture": {
+        "compact": 1613785813,
+        "record": 7
+      },
+      "ABI_equal": true,
+      "only_expected_HL": true,
+      "inaccessible_mirror_when_excluded": false
+    },
+    {
+      "profile": 3,
+      "eligible": true,
+      "fixture": {
+        "compact": 1613785813,
+        "record": 8
+      },
+      "ABI_equal": true,
+      "only_expected_HL": true,
+      "inaccessible_mirror_when_excluded": false
+    },
+    {
+      "profile": 3,
+      "eligible": true,
+      "fixture": {
+        "compact": 1613785813,
+        "record": 9
+      },
+      "ABI_equal": true,
+      "only_expected_HL": true,
+      "inaccessible_mirror_when_excluded": false
+    },
+    {
+      "profile": 3,
+      "eligible": true,
+      "fixture": {
+        "compact": 1613785813,
+        "record": 10
+      },
+      "ABI_equal": true,
+      "only_expected_HL": true,
+      "inaccessible_mirror_when_excluded": false
+    },
+    {
+      "profile": 3,
+      "eligible": true,
+      "fixture": {
+        "compact": 1613785813,
+        "record": 11
+      },
+      "ABI_equal": true,
+      "only_expected_HL": true,
+      "inaccessible_mirror_when_excluded": false
+    },
+    {
+      "profile": 3,
+      "eligible": true,
+      "fixture": {
+        "compact": 1613785813,
+        "record": 12
+      },
+      "ABI_equal": true,
+      "only_expected_HL": true,
+      "inaccessible_mirror_when_excluded": false
+    },
+    {
+      "profile": 3,
+      "eligible": true,
+      "fixture": {
+        "compact": 1613785813,
+        "record": 13
+      },
+      "ABI_equal": true,
+      "only_expected_HL": true,
+      "inaccessible_mirror_when_excluded": false
+    },
+    {
+      "profile": 3,
+      "eligible": true,
+      "fixture": {
+        "compact": 1613785813,
+        "record": 14
+      },
+      "ABI_equal": true,
+      "only_expected_HL": true,
+      "inaccessible_mirror_when_excluded": false
+    },
+    {
+      "profile": 3,
+      "eligible": true,
+      "fixture": {
+        "compact": 1613785813,
+        "record": 15
+      },
+      "ABI_equal": true,
+      "only_expected_HL": true,
+      "inaccessible_mirror_when_excluded": false
+    },
+    {
+      "profile": 2,
+      "eligible": true,
+      "fixture": {
+        "callback": 1614714417
+      },
+      "ABI_equal": true,
+      "only_expected_HL": true,
+      "inaccessible_mirror_when_excluded": false
+    },
+    {
+      "profile": 1,
+      "eligible": false,
+      "fixture": {
+        "key": 2
+      },
+      "ABI_equal": true,
+      "only_expected_HL": true,
+      "inaccessible_mirror_when_excluded": true
+    },
+    {
+      "profile": 1,
+      "eligible": false,
+      "fixture": {
+        "key": 12
+      },
+      "ABI_equal": true,
+      "only_expected_HL": true,
+      "inaccessible_mirror_when_excluded": true
+    },
+    {
+      "profile": 1,
+      "eligible": false,
+      "fixture": {
+        "special": true
+      },
+      "ABI_equal": true,
+      "only_expected_HL": true,
+      "inaccessible_mirror_when_excluded": true
+    },
+    {
+      "profile": 1,
+      "eligible": false,
+      "fixture": {
+        "custom": true
+      },
+      "ABI_equal": true,
+      "only_expected_HL": true,
+      "inaccessible_mirror_when_excluded": true
+    },
+    {
+      "profile": 1,
+      "eligible": false,
+      "fixture": {
+        "callback": 305419896
+      },
+      "ABI_equal": true,
+      "only_expected_HL": true,
+      "inaccessible_mirror_when_excluded": true
+    },
+    {
+      "profile": 1,
+      "eligible": false,
+      "fixture": {
+        "record": -1
+      },
+      "ABI_equal": true,
+      "only_expected_HL": true,
+      "inaccessible_mirror_when_excluded": true
+    },
+    {
+      "profile": 1,
+      "eligible": false,
+      "fixture": {
+        "compact": 1613785813,
+        "current": 0
+      },
+      "ABI_equal": true,
+      "only_expected_HL": true,
+      "inaccessible_mirror_when_excluded": true
+    },
+    {
+      "profile": 1,
+      "eligible": false,
+      "fixture": {
+        "compact": 1613785813,
+        "current": 5
+      },
+      "ABI_equal": true,
+      "only_expected_HL": true,
+      "inaccessible_mirror_when_excluded": true
+    },
+    {
+      "profile": 1,
+      "eligible": false,
+      "fixture": {
+        "compact": 1613785813,
+        "current": 255
+      },
+      "ABI_equal": true,
+      "only_expected_HL": true,
+      "inaccessible_mirror_when_excluded": true
+    }
+  ],
+  "boot_and_staging": {
+    "native_boot_refresh_cells": 48,
+    "boot_loop": "602cc540 ->602cbc74 ->602cbcb5",
+    "staging_does_not_publish": true,
+    "invalid_cells_neutral": 5,
+    "NVS_reload_not_emulated": true
+  },
+  "placement": {
+    "section": 1,
+    "start": "0x600d7800",
+    "end": "0x60211000",
+    "code": "0x60210940",
+    "mirror_cached": "0x60210ec0",
+    "mirror_uncached": "0xa0210ec0",
+    "native_loads": [
+      {
+        "poison": 165,
+        "exact_section_copy": true,
+        "neutral_mirror": true
+      },
+      {
+        "poison": 85,
+        "exact_section_copy": true,
+        "neutral_mirror": true
+      }
+    ],
+    "classified_references": [
+      {
+        "component": 2,
+        "alias_base": "0x60210940",
+        "offset": "0x226ca73",
+        "value": "0x60210b90",
+        "classification": "Exact previously validated SquashFS bytes; serialized filesystem, not MN103 text",
+        "source": "research/e142-squashfs-validation.md"
+      },
+      {
+        "component": 2,
+        "alias_base": "0x60210940",
+        "offset": "0x2290389",
+        "value": "0x60210d71",
+        "classification": "Exact previously validated SquashFS bytes; serialized filesystem, not MN103 text",
+        "source": "research/e142-squashfs-validation.md"
+      },
+      {
+        "component": 2,
+        "alias_base": "0x60210940",
+        "offset": "0x22a4c40",
+        "value": "0x60210aac",
+        "classification": "Exact previously validated SquashFS bytes; serialized filesystem, not MN103 text",
+        "source": "research/e142-squashfs-validation.md"
+      },
+      {
+        "component": 2,
+        "alias_base": "0x60210940",
+        "offset": "0x2343767",
+        "value": "0x60210dcd",
+        "classification": "Exact previously validated SquashFS bytes; serialized filesystem, not MN103 text",
+        "source": "research/e142-squashfs-validation.md"
+      },
+      {
+        "component": 2,
+        "alias_base": "0x60210940",
+        "offset": "0x237784b",
+        "value": "0x60210d8d",
+        "classification": "Exact previously validated SquashFS bytes; serialized filesystem, not MN103 text",
+        "source": "research/e142-squashfs-validation.md"
+      },
+      {
+        "component": 2,
+        "alias_base": "0x60210940",
+        "offset": "0x23bd994",
+        "value": "0x60210a44",
+        "classification": "Exact previously validated SquashFS bytes; serialized filesystem, not MN103 text",
+        "source": "research/e142-squashfs-validation.md"
+      },
+      {
+        "component": 2,
+        "alias_base": "0xa0210940",
+        "offset": "0x2194c79",
+        "value": "0xa0210d24",
+        "classification": "Exact previously validated SquashFS bytes; serialized filesystem, not MN103 text",
+        "source": "research/e142-squashfs-validation.md"
+      },
+      {
+        "component": 2,
+        "alias_base": "0xa0210940",
+        "offset": "0x21a148a",
+        "value": "0xa0210d4f",
+        "classification": "Exact previously validated SquashFS bytes; serialized filesystem, not MN103 text",
+        "source": "research/e142-squashfs-validation.md"
+      },
+      {
+        "component": 2,
+        "alias_base": "0xa0210940",
+        "offset": "0x21da9dd",
+        "value": "0xa021096c",
+        "classification": "Exact previously validated SquashFS bytes; serialized filesystem, not MN103 text",
+        "source": "research/e142-squashfs-validation.md"
+      },
+      {
+        "component": 2,
+        "alias_base": "0xa0210940",
+        "offset": "0x229ba14",
+        "value": "0xa0210a24",
+        "classification": "Exact previously validated SquashFS bytes; serialized filesystem, not MN103 text",
+        "source": "research/e142-squashfs-validation.md"
+      },
+      {
+        "component": 2,
+        "alias_base": "0xa0210940",
+        "offset": "0x229fca3",
+        "value": "0xa0210c58",
+        "classification": "Exact previously validated SquashFS bytes; serialized filesystem, not MN103 text",
+        "source": "research/e142-squashfs-validation.md"
+      },
+      {
+        "component": 2,
+        "alias_base": "0xa0210940",
+        "offset": "0x234b037",
+        "value": "0xa0210e0c",
+        "classification": "Exact previously validated SquashFS bytes; serialized filesystem, not MN103 text",
+        "source": "research/e142-squashfs-validation.md"
+      },
+      {
+        "component": 2,
+        "alias_base": "0xa0210940",
+        "offset": "0x23ed9af",
+        "value": "0xa0210d52",
+        "classification": "Exact previously validated SquashFS bytes; serialized filesystem, not MN103 text",
+        "source": "research/e142-squashfs-validation.md"
+      },
+      {
+        "component": 4,
+        "alias_base": "0xa0210940",
+        "offset": "0x26ae23",
+        "value": "0xa0210d01",
+        "classification": "JPEG entropy data; Pillow complete decode passed",
+        "start": "0x2633e0",
+        "end": "0x26bf3c"
+      },
+      {
+        "component": 0,
+        "alias_base": "0x40890940",
+        "offset": "0x5785a3",
+        "value": "0x40890992",
+        "classification": "Serialized CMIO data within native source/copy extent",
+        "native_copy": "0x6036e227..0x6036e259",
+        "start": "0x6058ed40",
+        "end": "0x605b7180"
+      },
+      {
+        "component": 2,
+        "alias_base": "0x40890940",
+        "offset": "0x2e51e1",
+        "value": "0x40890ae5",
+        "classification": "JPEG entropy data; Pillow complete decode passed",
+        "start": "0x240820",
+        "end": "0x2f5a10"
+      },
+      {
+        "component": 2,
+        "alias_base": "0x40890940",
+        "offset": "0x57f4ff",
+        "value": "0x408909bb",
+        "classification": "JPEG entropy data; Pillow complete decode passed",
+        "start": "0x54a820",
+        "end": "0x5edef8"
+      },
+      {
+        "component": 2,
+        "alias_base": "0x40890940",
+        "offset": "0x221fe1f",
+        "value": "0x40890d90",
+        "classification": "Exact previously validated SquashFS bytes; serialized filesystem, not MN103 text",
+        "source": "research/e142-squashfs-validation.md"
+      },
+      {
+        "component": 0,
+        "alias_base": "0x80890940",
+        "offset": "0x14643",
+        "value": "0x80890c2a",
+        "classification": "Instruction-straddling byte coincidence; no u32 pointer operand",
+        "witness_start": "0x60034663"
+      },
+      {
+        "component": 0,
+        "alias_base": "0x80890940",
+        "offset": "0x16c42",
+        "value": "0x80890c2a",
+        "classification": "Instruction-straddling byte coincidence; no u32 pointer operand",
+        "witness_start": "0x60036c62"
+      },
+      {
+        "component": 0,
+        "alias_base": "0x80890940",
+        "offset": "0x7e2b4f",
+        "value": "0x80890c5d",
+        "classification": "Instruction-straddling byte coincidence; no u32 pointer operand",
+        "witness_start": "0x60802b6f"
+      },
+      {
+        "component": 0,
+        "alias_base": "0x80890940",
+        "offset": "0x7e2d69",
+        "value": "0x80890c5d",
+        "classification": "Instruction-straddling byte coincidence; no u32 pointer operand",
+        "witness_start": "0x60802d89"
+      },
+      {
+        "component": 0,
+        "alias_base": "0x80890940",
+        "offset": "0x7e383b",
+        "value": "0x80890c5d",
+        "classification": "Instruction-straddling byte coincidence; no u32 pointer operand",
+        "witness_start": "0x6080385b"
+      },
+      {
+        "component": 0,
+        "alias_base": "0x80890940",
+        "offset": "0x7e38fc",
+        "value": "0x80890c5d",
+        "classification": "Instruction-straddling byte coincidence; no u32 pointer operand",
+        "witness_start": "0x6080391c"
+      },
+      {
+        "component": 0,
+        "alias_base": "0x80890940",
+        "offset": "0x7e41e2",
+        "value": "0x80890c5d",
+        "classification": "Instruction-straddling byte coincidence; no u32 pointer operand",
+        "witness_start": "0x60804202"
+      },
+      {
+        "component": 0,
+        "alias_base": "0x80890940",
+        "offset": "0x96801c",
+        "value": "0x80890ca0",
+        "classification": "Instruction-straddling byte coincidence; no u32 pointer operand",
+        "witness_start": "0x60988037"
+      },
+      {
+        "component": 0,
+        "alias_base": "0x80890940",
+        "offset": "0xdcee31",
+        "value": "0x80890c20",
+        "classification": "Instruction-straddling byte coincidence; no u32 pointer operand",
+        "witness_start": "0x60deee50"
+      },
+      {
+        "component": 0,
+        "alias_base": "0x80890940",
+        "offset": "0xe755cc",
+        "value": "0x80890af0",
+        "classification": "Instruction-straddling byte coincidence; no u32 pointer operand",
+        "witness_start": "0x60e955ec"
+      },
+      {
+        "component": 0,
+        "alias_base": "0x80890940",
+        "offset": "0xe75651",
+        "value": "0x80890af0",
+        "classification": "Instruction-straddling byte coincidence; no u32 pointer operand",
+        "witness_start": "0x60e95671"
+      },
+      {
+        "component": 0,
+        "alias_base": "0x80890940",
+        "offset": "0x12a9736",
+        "value": "0x80890ac8",
+        "classification": "Instruction-straddling byte coincidence; no u32 pointer operand",
+        "witness_start": "0x612c9756"
+      },
+      {
+        "component": 0,
+        "alias_base": "0x80890940",
+        "offset": "0x13b0195",
+        "value": "0x80890c5d",
+        "classification": "Instruction-straddling byte coincidence; no u32 pointer operand",
+        "witness_start": "0x613d01b5"
+      },
+      {
+        "component": 2,
+        "alias_base": "0x80890940",
+        "offset": "0x21886f2",
+        "value": "0x80890b0f",
+        "classification": "Exact previously validated SquashFS bytes; serialized filesystem, not MN103 text",
+        "source": "research/e142-squashfs-validation.md"
+      },
+      {
+        "component": 2,
+        "alias_base": "0xa0210ec0",
+        "offset": "0x1f6b600",
+        "value": "0xa0210f19",
+        "classification": "gzip encoded data; zlib EOF/CRC passed",
+        "decoded_sha256": "d0d7a4539cbf286e2078f4b5479297d88443138fbf29566e3849b71238c1619e"
+      },
+      {
+        "component": 4,
+        "alias_base": "0x40890ec0",
+        "offset": "0x7aaf8a",
+        "value": "0x40890f79",
+        "classification": "JPEG entropy data; Pillow complete decode passed",
+        "start": "0x7a73e0",
+        "end": "0x7b51cb"
+      }
+    ],
+    "relative_raw_candidates": 1,
+    "relative_classification": "native switch table element, not code",
+    "limits": "No exhaustive computed/DMA access or physical cache/coherency proof"
+  },
+  "modeled_boundaries": [
+    "0x602b5f59",
+    "0x602f3f17"
+  ],
+  "schema_version": 1,
+  "baseline_main": "c80598014e55c1aad60bf4383d853ec6d43d83b8",
+  "upstream_commit": "539fcf1fa9eda5fdef8ede4deeab94a4691d94c3",
+  "owner_revision": "https://github.com/ZakuZakuu/ep7-film-hack/issues/65#issuecomment-6423138124",
+  "build": {
+    "input_sha256": "9d1610124ad98f6edae4540182205f06c9c703d9033ef0c4f19847193f95eaeb",
+    "prospective_output_sha256": "719b57c4fa0b94da60d73f0ed70b0d5dcd536c970e44054152a63b55d30a59e6",
+    "bytes": 111017984,
+    "decoded_output_sha256": "670c4cffe6876bd7a2aa27162b53aab56a36e48ec1894ca8463d1ad568ba1f2b",
+    "unchanged_components": 4,
+    "hook_source_sha256": "7006dea725075c4e7bc6d0825ddf48dc34a543ff26577452be2f480593c6a719",
+    "manifest_sha256": "9588c8081875873939e2366ccdf32b9152b7ab5644b3aca5c102fa43f4127b58",
+    "tool_versions": {
+      "assembler": "GNU assembler (GNU Binutils) 2.45",
+      "linker": "GNU ld (GNU Binutils) 2.45",
+      "objcopy": "GNU objcopy (GNU Binutils) 2.45",
+      "objdump": "GNU objdump (GNU Binutils) 2.45"
+    },
+    "verify_only": true,
+    "package_files_created": false
+  },
+  "legacy_hash_reproduction": {
+    "t20": {
+      "prospective_output_sha256": "d0fa93e752ec2680910dfabfef50cfc2ffb510aa8c8ec49cf6177868037bec8e",
+      "package_files_created": false
+    },
+    "v2": {
+      "input_sha256": "9d1610124ad98f6edae4540182205f06c9c703d9033ef0c4f19847193f95eaeb",
+      "prospective_output_sha256": "b1ad25019722af31e26bdf29aabaa1867320bea64c9bb2c0acc06cc5aadc4375",
+      "bytes": 111017984,
+      "decoded_output_sha256": "ce249b20d7010706fbe0fb26a18015b6729e36a14d2337614f2ac055201f02de",
+      "unchanged_components": 4,
+      "hook_source_sha256": "8a3907a14d3f1887879d6bb2a68ea1c4f66943116ba2885004f79cf1423de926",
+      "manifest_sha256": "a6e96eec715d6a3857bf316e1e04c7f4cc1d9f02a640e90ffda6a613600cd17e",
+      "tool_versions": {
+        "assembler": "GNU assembler (GNU Binutils) 2.45",
+        "linker": "GNU ld (GNU Binutils) 2.45",
+        "objcopy": "GNU objcopy (GNU Binutils) 2.45",
+        "objdump": "GNU objdump (GNU Binutils) 2.45"
+      },
+      "verify_only": true,
+      "package_files_created": false
+    },
+    "v3": {
+      "input_sha256": "9d1610124ad98f6edae4540182205f06c9c703d9033ef0c4f19847193f95eaeb",
+      "prospective_output_sha256": "1916c0cffd83dc0b83cdf34477f76943f37d79da551bc847061eb7d3cd796c91",
+      "bytes": 111017984,
+      "decoded_output_sha256": "8f806925ff9d7e304ca0f632cb022443411fb23b7cc4bfc74eaf2a6d9281044e",
+      "unchanged_components": 4,
+      "hook_source_sha256": "ad1605165f2f3ed6349cbb8c486bca0a2ea34c0dc0bf1ab0cd6770e8b8e61e06",
+      "manifest_sha256": "59db2758e6414ffeba6182e87b87e373dd01ac1368ec921332ce627d0e815d66",
+      "tool_versions": {
+        "assembler": "GNU assembler (GNU Binutils) 2.45",
+        "linker": "GNU ld (GNU Binutils) 2.45",
+        "objcopy": "GNU objcopy (GNU Binutils) 2.45",
+        "objdump": "GNU objdump (GNU Binutils) 2.45"
+      },
+      "verify_only": true,
+      "package_files_created": false
+    }
+  },
+  "source_sha256": {
+    "tools/ep7_t25_v4_probe.py": "6c0373451b0202412acd3f661e38058950c644a16edc7fd0efdffd90199f2325",
+    "patches/hsl-recipes/e-p7/hook.s": "7006dea725075c4e7bc6d0825ddf48dc34a543ff26577452be2f480593c6a719",
+    "patches/hsl-recipes/e-p7/build.py": "4c256d11894427c71919226ebe991fa21b2955d5169924579b039a32958f07a0",
+    "patches/hsl-recipes/e-p7/symbols.json": "e6e584f29fbdcee568f68b10224cf595d1b61f10e03a6d05bb9744ac7f4270f7",
+    "tests/test_ep7_hsl_recipes.py": "e396d9749136edb3bf85d21e0dec9e6d6d7a76385effdd589c3e812066eba252"
+  },
+  "tone_identity": {
+    "profile_starts": [
+      963,
+      966,
+      969,
+      1672
+    ],
+    "native_bundle_source": "0x602b814e..0x602b850d",
+    "bundle_offsets": [
+      144,
+      148,
+      152
+    ],
+    "publication": "0x602b8aee..0x602b8b15",
+    "effective_keys": [
+      384,
+      694,
+      383
+    ],
+    "GUI_getters": "0x60e083f5..0x60e08446",
+    "GUI_value_order": [
+      "high:key384",
+      "low:key383",
+      "mid:key694"
+    ],
+    "printf_format_reference": "0x61172404",
+    "conclusion": "Each native source trio is HIGH/MIDDLE/LOW; protocol logical order is SHADOW/MIDDLE/HIGH"
+  },
+  "model_contract": {
+    "cpu": 0,
+    "Mode": "Owned zero-valued full-sized type7 RAM plus native metadata registration; not captured camera state",
+    "RTOS": "Serialized pending-record delivery to explicit app worker and successful/error event completion modeled; not full scheduling/admission/timeout execution",
+    "services": {
+      "0x602f3f17": "Unrelated UI consistency query returns0 in declared witness",
+      "0x602b5f59": "Non-HSL consumer callback returns0 through owned GNU RETS trampoline",
+      "0x60827954": "Original application notification enqueue boundary, recorded and modeled successful",
+      "0x608886ff": "Application logging only, modeled0",
+      "0x60022782": "Two owned16KiB allocations for native XML getter",
+      "0x60bc43a3": "HTTP response boundary; no socket I/O",
+      "0x6005bc79": "Placement test only: exact logical section read; no NAND/cache/transport emulation"
+    },
+    "notifications": "Actual registered native notification callbacks608276d2 /60bd93cb run up to declared application queue boundary",
+    "reads": "Image and axis get read mirror only. Publisher is read-only, requires native ACTIVE pointer exactly6250ba00; address formula matches native part getter; writes exclusively602cc0d0 API then original normal edit602afa11",
+    "defaults": "Secondary record index disabled, diagnostic/event log disabled, current-cache initially empty, notification-state witness0; unknown accesses stop",
+    "mirror": "Cached60210ec0 / uncacheda0210ec0;192bytes, loaded zero; alignedu32 pair publication; no full-slot atomicity",
+    "native_path_executed": [
+      "numeric query conversion",
+      "pending getter60bd2044",
+      "application60888552/60888b11 patched CALL",
+      "registered conversion/lookup/setter",
+      "part1 API",
+      "typed f6fa store",
+      "COLOR callback/bundle refresh",
+      "native image constructor",
+      "native ISP writer"
+    ]
+  },
+  "unverified_B4": [
+    "realWiFi and rec state admission",
+    "NVS save/cold restart",
+    "Myset/custom bank behavior",
+    "single/full reset",
+    "stock revert harmlessness",
+    "physical cache/core/DMA and scheduling"
+  ],
+  "reproduction": [
+    "bash tools/setup_t20_environment.sh",
+    "python3 tools/ep7_t25_v4_probe.py --upstream work/upstream/oly_fw_analysis --stock /tmp/private-stock.BIN --out /tmp/ep7-v4-check",
+    "python3 patches/hsl-recipes/e-p7/build.py --upstream work/upstream/oly_fw_analysis --stock /tmp/private-stock.BIN --verify-only",
+    "python3 -m unittest discover -s tests -v"
+  ],
+  "tests": {
+    "total": 100,
+    "passed": 94,
+    "skipped": 6,
+    "skips": "Optional prior GNU/fs layout and Recipe Studio dependencies; new v4 tests all passed"
+  },
+  "no_device_access": true,
+  "no_install_files": true,
+  "no_OEM_publication": true
+}

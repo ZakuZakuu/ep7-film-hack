@@ -1,0 +1,150 @@
+{
+  "schema_version": 1,
+  "version": 4,
+  "model": "Olympus PEN E-P7 (E142)",
+  "firmware": "1.1 / build 1100",
+  "upstream_reference": "fishcu/oly_fw_analysis@539fcf1fa9eda5fdef8ede4deeab94a4691d94c3",
+  "input_bytes": 111017984,
+  "input_sha256": "9d1610124ad98f6edae4540182205f06c9c703d9033ef0c4f19847193f95eaeb",
+  "decoded_input_sha256": "5dd9af164b4590c7e82f6905c919b3cc450bb58f2d5742ab2a0e3a4eb2e26190",
+  "output_bytes": 111017984,
+  "decoded_output_sha256": "670c4cffe6876bd7a2aa27162b53aab56a36e48ec1894ca8463d1ad568ba1f2b",
+  "output_sha256": "719b57c4fa0b94da60d73f0ed70b0d5dcd536c970e44054152a63b55d30a59e6",
+  "restore_sha256": "9d1610124ad98f6edae4540182205f06c9c703d9033ef0c4f19847193f95eaeb",
+  "tool_version": "2.45",
+  "hook_source_sha256": "7006dea725075c4e7bc6d0825ddf48dc34a543ff26577452be2f480593c6a719",
+  "symbols": {
+    "ep7_selector": 1614479954,
+    "ep7_resume": 1614484728,
+    "ep7_request_callback": 1614110676,
+    "ep7_owner_callback": 1614707587,
+    "ep7_alternate_owner_callback": 1614714417,
+    "ep7_compact_callback": 1613785813,
+    "ep7_compact_secondary_callback": 1613870302,
+    "ep7_current_profile": 1649473590,
+    "ep7_mirror": 2686521024,
+    "ep7_raw_set": 1613544541,
+    "ep7_raw_get": 1613544458,
+    "ep7_pending": 2724873508,
+    "ep7_post": 1623020685,
+    "ep7_normal_edit": 1613429265,
+    "ep7_inhibit": 1613547215,
+    "ep7_part_read": 1613545639,
+    "ep7_part_write": 1613545680,
+    "ep7_typed_write": 1611000354,
+    "ep7_hex_parse": 1611641026,
+    "ep7_active_pointer": 2720347540
+  },
+  "entrypoints": {
+    "app_edit": "0x60210b78",
+    "id_parse": "0x60210d72",
+    "publish": "0x60210c5d",
+    "value_parse": "0x60210d99",
+    "wifi_read": "0x60210cf3",
+    "wifi_write": "0x60210a87",
+    "ep7_image_extension": "0x60210940"
+  },
+  "modified_ranges": [
+    {
+      "address": "0x60210940",
+      "decoded_offset": "0x1f0920",
+      "length": 1276,
+      "original_sha256": "f5462f6df06a890256c84eb69491556cf20587aa8553397861465bafce18c6a2",
+      "replacement_sha256": "945b9456ce33139b023d71d5309c4ed44ccba5eec54ab2c36524bae37b95e9e4",
+      "kind": "extension"
+    },
+    {
+      "address": "0x60210ec0",
+      "decoded_offset": "0x1f0ea0",
+      "length": 192,
+      "original_sha256": "8f62c344eff1568474fb693b8c18526629db443b9653a84264189c97693605de",
+      "replacement_sha256": "5d89f056865052bcb89c910d2d62872e029fb273c3db03f8968a52a41593c1b5",
+      "kind": "neutral_mirror"
+    },
+    {
+      "address": "0x602cbcb5",
+      "decoded_offset": "0x2abc95",
+      "length": 7,
+      "original_sha256": "f0f72c5cfb4320bbee06a64604e74ac22951ab717b9588bceb1b57417a2b93d3",
+      "replacement_sha256": "fffa9e6de5982b4bf467a21778e4b2102ab2eeac554753ba80508d34eb989826",
+      "kind": "assembly",
+      "assembly": "call publish,[d2,d3,a2,a3],40\n"
+    },
+    {
+      "address": "0x603b14f3",
+      "decoded_offset": "0x3914d3",
+      "length": 5,
+      "original_sha256": "1b03aa08e2a91880a9b4a5b48bb4fbc4eb801f273922d08fa9de96829210fcaa",
+      "replacement_sha256": "8f74c45ea6c0554212b956ae41645186eb97bb1f1ec5cba12b9a6fe3f16986bc",
+      "kind": "assembly",
+      "assembly": "jmp ep7_image_extension\n"
+    },
+    {
+      "address": "0x60888b35",
+      "decoded_offset": "0x868b15",
+      "length": 7,
+      "original_sha256": "2e91da4c8053a11a8cf0236727965fea72ff246ede1271527182148141c1e514",
+      "replacement_sha256": "3e1a971e6fab339f7d8e19201335667e79b4d3a61c66c86dea106444d00fc461",
+      "kind": "assembly",
+      "assembly": "call app_edit,[d2,d3],16\n"
+    },
+    {
+      "address": "0x60bd2785",
+      "decoded_offset": "0xbb2765",
+      "length": 7,
+      "original_sha256": "2d5bde4b4b36dd482821514dd8be1a92461bf18229f04c9f800636c704a49eae",
+      "replacement_sha256": "d21ad56ac2c73406b9daed45ef72fc2f321d01bd0228377eafa5c6f73f864a20",
+      "kind": "assembly",
+      "assembly": "call wifi_read,[],4\n"
+    },
+    {
+      "address": "0x60bd2a60",
+      "decoded_offset": "0xbb2a40",
+      "length": 7,
+      "original_sha256": "62e43b11c76ea064f22dacfe70d161a6a135e58f8b433222655fc5f613411d34",
+      "replacement_sha256": "185db32268d73c7cf3a6442da9144916853b7b21a0cc61c5bed5b763e1a4e4c6",
+      "kind": "assembly",
+      "assembly": "call id_parse,[d2,d3,a2,a3],16\n"
+    },
+    {
+      "address": "0x60bd2a8f",
+      "decoded_offset": "0xbb2a6f",
+      "length": 7,
+      "original_sha256": "ad9428bd1442e5143adcfab9943b389c7573159cc234f9d621d3ad5419b6bcb9",
+      "replacement_sha256": "142e2bca5accc141fe31699e954f314d8b51699b31a97782cf299563bc4545f4",
+      "kind": "assembly",
+      "assembly": "call value_parse,[d2,d3,a2,a3],16\n"
+    },
+    {
+      "address": "0x60bd2aba",
+      "decoded_offset": "0xbb2a9a",
+      "length": 10,
+      "original_sha256": "404c3e28bbd288bb407ecc3a7facf3f077c487d8b06ded88b3f519f9e17fde2b",
+      "replacement_sha256": "6a46a819a31bced7d7b308f133e443b863b92c838c8d6bafa97c710674829d61",
+      "kind": "assembly",
+      "assembly": "call wifi_write,[d2,d3],12\nnop\nnop\nnop\n"
+    }
+  ],
+  "install_path": "install/DCOLYMP/E1429999.BIN",
+  "restore_path": "restore-stock/DCOLYMP/E1429999.BIN",
+  "preserved_versions": {
+    "T20": "d0fa93e752ec2680910dfabfef50cfc2ffb510aa8c8ec49cf6177868037bec8e",
+    "v2": "b1ad25019722af31e26bdf29aabaa1867320bea64c9bb2c0acc06cc5aadc4375",
+    "v3": "1916c0cffd83dc0b83cdf34477f76943f37d79da551bc847061eb7d3cd796c91"
+  },
+  "placement": {
+    "section": 1,
+    "start": "0x600d7800",
+    "end_exclusive": "0x60211000",
+    "code_start": "0x60210940",
+    "code_bytes": 1276,
+    "mirror": "0x60210ec0",
+    "mirror_bytes": 192,
+    "mirror_access": "uncached",
+    "code_prefix_margin": 84,
+    "code_to_mirror_margin": 132,
+    "mirror_suffix_margin": 128
+  },
+  "qualification": "Owner-revised sequential EP71 protocol. Native segmented parser/app/publication/constructor/ISP checks; real NVS, cold boot, Myset, reset, stock revert and radio/cache behavior remain B4.",
+  "prospective_hash_method": "Encoded main and exact unchanged stock tail hashed sequentially; no install file created"
+}
