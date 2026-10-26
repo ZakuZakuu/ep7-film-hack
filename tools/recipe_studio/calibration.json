@@ -1,0 +1,28 @@
+{
+  "format": "ep7-recipe-calibration-v1",
+  "id": "uncalibrated-approximation-1",
+  "status": "uncalibrated",
+  "space": "encoded-sRGB-HSV",
+  "limits": {"hue": 7, "saturation": 5, "lightness": 7, "tone": 7, "shading": 5},
+  "sector_centers_degrees": [50, 25, 0, 330, 300, 270, 240, 210, 180, 150, 120, 85],
+  "sector_width_degrees": 48.0,
+  "hue_degrees_per_step": -4.6666666667,
+  "saturation_log_gain_per_step": 0.10,
+  "lightness_native": [-300, -250, -200, -150, -100, -50, -25, 0, 25, 50, 100, 150, 200, 250, 300],
+  "lightness_gain": 0.9,
+  "neutral_chroma_threshold": 0.08,
+  "tone_gain_per_step": 0.025,
+  "shading_coordinate_words": [0, 928, 952, 976, 1000, 1024],
+  "shading_start": 0.12,
+  "shading_extent": 1.6,
+  "shading_gain": 0.8,
+  "raw_rgb_gain": [1.0, 1.0, 1.0],
+  "raw_gamma": 1.0,
+  "quality_mean_delta_e": [2.0, 6.0],
+  "quality_p95_delta_e": [5.0, 12.0],
+  "provenance": {
+    "reference": "https://github.com/fishcu/oly_fw_analysis/tree/539fcf1fa9eda5fdef8ede4deeab94a4691d94c3",
+    "facts": "Wheel order and H/L coefficient units; shading sign/axis geometry and coordinate scales. No upstream source, mask or curve copied.",
+    "hypotheses": "RGB hue centers, smooth weights, pixel gains, tone basis, shading falloff, quality thresholds. H slope and blue L gain initialized from owner T20 observations, not a camera calibration."
+  }
+}

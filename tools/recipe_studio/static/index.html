@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>E-P7 配方工作室 · 本地预览</title><link rel="stylesheet" href="/static/style.css"></head>
+<body>
+<header><h1>E-P7 配方工作室</h1><span class="badge">本地 · 近似预览</span>
+<p>先选 Natural 或原厂默认 COLOR 照片，再调整配方。所有图像留在这台电脑；预览需要实拍校准。</p></header>
+<main><section class="viewer">
+<label class="file">载入基准 JPEG / ORF<input id="base" type="file" accept=".jpg,.jpeg,.png,.tif,.tiff,.orf"></label>
+<p id="decode">RAW 显影不等同于机内成片。请勿把已经调过色的照片当作中性基准。</p>
+<div id="comparison"><img id="original" alt="基准图"><img id="effect" alt="配方效果"><p id="empty">载入照片后，在这里对比原图与效果</p></div>
+<label class="split">原图 ← 对比分界 → 效果<input id="split" type="range" min="0" max="100" value="50"></label>
+<p id="status" role="status" aria-live="polite">准备中…</p>
+<fieldset><legend>自动拟合起点</legend>
+<label>目标方式<select id="fit-mode"><option value="lut">sRGB LUT（.cube / Hald PNG）</option><option value="target">已对齐的同场景照片</option><option value="reference">不同场景参考照片（粗略）</option></select></label>
+<label class="file">载入目标 / 参考 / LUT<input id="target-file" type="file" accept=".cube,.png,.jpg,.jpeg,.tif,.tiff"></label>
+<button id="fit" disabled>拟合当前照片</button><button id="save-report" disabled>保存误差报告</button>
+<p>同场景必须同尺寸、同裁切并事先对齐；不同场景只比较颜色分布，无法分离光线与场景差异。</p>
+<pre id="fit-summary"></pre>
+</fieldset></section>
+<section class="editor"><h2>配方</h2>
+<label>名称<input id="name" value="新配方" maxlength="2000"></label>
+<label>说明<textarea id="description" rows="2" maxlength="2000"></textarea></label>
+<div class="actions"><button id="save">导出配方 JSON</button><label class="file small">导入配方<input id="recipe-file" type="file" accept=".json"></label><button id="reset">参数归零</button></div>
+<p>H / L 为 −7…+7，S 默认 −5…+5。零值表示相对当前基准不作调整，不代表原厂 COLOR 工厂预设。</p>
+<div id="sectors"></div><fieldset><legend>影调与暗角</legend><div id="other"></div></fieldset>
+<fieldset><legend>拍摄建议 · 仅文字记录，不参与预览或写入</legend>
+<label>白平衡<input id="white_balance" placeholder="如：日光 / 5200 K"></label>
+<label>白平衡偏移<input id="wb_shift" placeholder="如：A +2、G −1"></label>
+<label>曝光补偿<input id="exposure_compensation" placeholder="如：−0.3 EV"></label>
+</fieldset><p id="model-note"></p></section></main>
+<script src="/static/app.js"></script></body></html>
