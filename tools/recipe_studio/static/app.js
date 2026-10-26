@@ -27,6 +27,7 @@ function slider(parent, label, min, max, value, update) {
   const input = document.createElement("input"); input.type="range"; input.min=min; input.max=max; input.step=1; input.value=value;
   const out = document.createElement("output"); out.textContent=value;
   input.addEventListener("input",()=>{out.textContent=input.value;update(Number(input.value));editing++;schedule();});
+  input.addEventListener("dblclick",()=>{if(Number(input.value)===0)return;input.value=0;out.textContent=0;update(0);editing++;schedule();});
   row.append(title,input,out);parent.append(row);
 }
 function controls() {
@@ -55,10 +56,10 @@ async function preview() {
     if(seq===previewSeq){const old=effectURL;effectURL=URL.createObjectURL(blob);$("effect").src=effectURL;$("effect").style.visibility="visible";if(old)URL.revokeObjectURL(old);status("近似预览已更新 · 相机效果仍需校准");}
   }catch(e){status(e.message);}finally{rendering=false;if(pending){pending=false;preview();}}
 }
-$("split").oninput=()=>{$("original").style.clipPath=`inset(0 ${100-Number($("split").value)}% 0 0)`;};
+$("split").oninput=()=>{const v=Number($("split").value);$("original").style.clipPath=`inset(0 ${100-v}% 0 0)`;$("divider").style.left=`${v}%`;};
 $("base").onchange=async()=>{
   if(!$("base").files[0])return;
-  try{status("正在本机解码…");const form=new FormData();form.append("file",$("base").files[0]);const data=await(await api("/api/upload/base",{method:"POST",body:form})).json();$("decode").textContent=data.info.warning+" · "+data.info.decoder;$("original").src="/api/base.png?v="+data.revision;$("original").style.visibility="visible";$("empty").hidden=true;ready=true;editing++;$("fit").disabled=false;schedule();}catch(e){status(e.message);}
+  try{status("正在本机解码…");const form=new FormData();form.append("file",$("base").files[0]);const data=await(await api("/api/upload/base",{method:"POST",body:form})).json();$("decode").textContent=data.info.warning+" · "+data.info.decoder;$("original").src="/api/base.png?v="+data.revision;$("original").style.visibility="visible";$("empty").hidden=true;$("divider").hidden=false;ready=true;editing++;$("fit").disabled=false;schedule();}catch(e){status(e.message);}
 };
 $("target-file").onchange=async()=>{
   if(!$("target-file").files[0])return;

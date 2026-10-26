@@ -1,1 +1,72 @@
-:root{color-scheme:dark;font-family:system-ui,"Microsoft YaHei",sans-serif;background:#11151b;color:#e8edf4}*{box-sizing:border-box}body{margin:0}header{padding:22px 4vw 12px;border-bottom:1px solid #354050}h1{font-size:25px;display:inline;margin-right:14px}h2{font-size:21px;margin-top:0}.badge{color:#b5dcd2;font-size:13px}p{font-size:13px;line-height:1.7;color:#b2bece}main{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(360px,1fr);gap:28px;padding:26px 4vw}.viewer{min-width:0;position:sticky;top:15px;align-self:start}.editor{background:#1a2029;border:1px solid #303b4b;padding:20px;border-radius:12px}label{display:block;font-size:14px;margin:9px 0}input[type=text],input:not([type]),textarea,select{width:100%;background:#111820;color:inherit;border:1px solid #465366;border-radius:5px;padding:8px;font:inherit}button,.file{font:inherit;font-size:14px;background:#233c47;border:1px solid #4a6a76;border-radius:6px;padding:9px 12px;color:inherit;cursor:pointer}button:hover,.file:hover{background:#31525f}button:disabled{opacity:.5;cursor:wait}.file{display:inline-block}.file input{display:block;max-width:100%;margin-top:7px}.small{padding:7px}.small input{max-width:170px;font-size:12px}.actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center}fieldset{border:1px solid #3a4758;border-radius:7px;margin:16px 0;padding:12px}legend{color:#ccd8e5;font-size:14px}#comparison{position:relative;min-height:220px;background:#080c11;border-radius:8px;overflow:hidden;display:grid;place-items:center}#comparison img{display:block;width:100%;height:auto;grid-area:1/1;visibility:hidden}#comparison #original{z-index:2;clip-path:inset(0 50% 0 0)}#empty{position:absolute;padding:20px;text-align:center}input[type=range]{accent-color:#9cd7c4;width:100%;cursor:pointer}.slider{display:grid;grid-template-columns:72px minmax(80px,1fr) 30px;gap:10px;align-items:center;font-size:13px}.slider output{text-align:right;font-variant-numeric:tabular-nums}.sector{border-bottom:1px solid #303b4b;padding:9px 0}.sector h3{font-size:14px;margin:3px 0 7px}.sector h3 span{display:inline-block;width:10px;height:10px;border-radius:100%;margin-right:7px}.split{font-size:12px}pre{white-space:pre-wrap;font:12px/1.6 system-ui;max-height:300px;overflow:auto}#status{min-height:22px;color:#bce2d3}@media(max-width:900px){main{grid-template-columns:1fr;padding:20px}.viewer{position:static}.editor{padding:15px}header{padding:20px}h1{font-size:21px}}
+:root{color-scheme:dark;font-family:system-ui,"Microsoft YaHei",sans-serif;background:#11151b;color:#e8edf4}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;display:flex;flex-direction:column;height:100dvh;overflow:hidden}
+header{flex:none;padding:10px 24px;border-bottom:1px solid #354050;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px}
+header p{margin:0;flex-basis:100%}
+h1{font-size:20px;margin:0}
+h2{font-size:18px;margin:0}
+.badge{color:#b5dcd2;font-size:13px}
+p{font-size:13px;line-height:1.6;color:#b2bece}
+
+/* Two independently scrolling panes: the photo stays in view while the controls scroll. */
+main{flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(380px,1fr);gap:20px;padding:16px 24px}
+.viewer{min-width:0;min-height:0;display:flex;flex-direction:column;gap:8px;overflow:auto}
+.editor{min-height:0;overflow:auto;background:#1a2029;border:1px solid #303b4b;border-radius:12px;padding:0 16px 16px}
+
+.toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px}
+.toolbar #status{margin:0}
+#comparison{position:relative;flex:1 1 auto;min-height:260px;background:#080c11;border-radius:8px;overflow:hidden}
+#comparison img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;visibility:hidden}
+#comparison #original{z-index:2;clip-path:inset(0 50% 0 0)}
+#empty{position:absolute;inset:0;display:grid;place-items:center;margin:0;padding:20px;text-align:center}
+#empty[hidden]{display:none}
+#divider{position:absolute;top:0;bottom:0;left:50%;width:2px;margin-left:-1px;background:rgba(255,255,255,.75);box-shadow:0 0 3px rgba(0,0,0,.6);z-index:3;pointer-events:none}
+#divider[hidden]{display:none}
+.split{font-size:12px;margin:0}
+#decode{margin:0;font-size:12px}
+.fit-panel{flex:none;border:1px solid #3a4758;border-radius:7px;padding:8px 12px}
+.fit-panel summary{cursor:pointer;color:#ccd8e5;font-size:14px}
+.fit-panel[open] summary{margin-bottom:6px}
+
+/* Editor header stays visible while scrolling through the sliders. */
+.editor-head{position:sticky;top:0;z-index:3;background:#1a2029;padding:14px 0 10px;border-bottom:1px solid #303b4b;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px}
+.meta{display:grid;grid-template-columns:1fr 1.4fr;gap:0 12px}
+.hint{margin:6px 0}
+
+label{display:block;font-size:14px;margin:8px 0}
+input[type=text],input:not([type]),textarea,select{width:100%;background:#111820;color:inherit;border:1px solid #465366;border-radius:5px;padding:7px;font:inherit}
+textarea{resize:vertical}
+button,.file{font:inherit;font-size:14px;background:#233c47;border:1px solid #4a6a76;border-radius:6px;padding:7px 12px;color:inherit;cursor:pointer}
+button:hover,.file:hover{background:#31525f}
+button:disabled{opacity:.5;cursor:wait}
+.file{display:inline-block;margin:0}
+.file input{display:block;max-width:100%;margin-top:6px;font-size:12px}
+.small{padding:6px 10px}
+.small input{max-width:170px}
+.actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+fieldset{border:1px solid #3a4758;border-radius:7px;margin:14px 0;padding:10px 12px}
+legend{color:#ccd8e5;font-size:14px}
+
+/* Sector cards flow into two or three columns on wide screens. */
+#sectors{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.sector{background:#151b23;border:1px solid #2c3746;border-radius:8px;padding:8px 10px}
+.sector h3{font-size:13px;margin:0 0 4px}
+.sector h3 span{display:inline-block;width:10px;height:10px;border-radius:100%;margin-right:7px}
+.slider{display:grid;grid-template-columns:52px minmax(60px,1fr) 26px;gap:8px;align-items:center;font-size:12px;margin:2px 0}
+.slider output{text-align:right;font-variant-numeric:tabular-nums}
+input[type=range]{accent-color:#9cd7c4;width:100%;cursor:pointer;margin:4px 0}
+#other .slider{grid-template-columns:60px minmax(80px,1fr) 26px}
+pre{white-space:pre-wrap;font:12px/1.6 system-ui;max-height:240px;overflow:auto;margin:6px 0 0}
+#status{min-height:20px;color:#bce2d3}
+
+/* Narrow screens: one ordinary scrolling page, photo first. */
+@media(max-width:900px){
+  body{display:block;height:auto;overflow:auto}
+  header{padding:12px 16px}
+  main{display:block;padding:12px 16px}
+  .viewer{overflow:visible}
+  #comparison{flex:none;aspect-ratio:4/3;min-height:0}
+  .editor{overflow:visible;margin-top:16px;padding:0 12px 12px}
+  .meta{grid-template-columns:1fr}
+}
