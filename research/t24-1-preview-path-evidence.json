@@ -1,0 +1,1589 @@
+{
+  "issue": 63,
+  "task": "T24.1",
+  "baseline_main": "f24340be8df1cd5f563fbd140123e6e458179b81",
+  "reference": {
+    "url": "https://github.com/fishcu/oly_fw_analysis",
+    "commit": "539fcf1fa9eda5fdef8ede4deeab94a4691d94c3",
+    "policy": "Read/run only; no upstream code, assembly, documentation, OEM curves or listings copied"
+  },
+  "firmware": {
+    "model": "E-P7 E142",
+    "version": "1.1 / 1100",
+    "bytes": 111017984,
+    "sha256": "9d1610124ad98f6edae4540182205f06c9c703d9033ef0c4f19847193f95eaeb",
+    "decoded_main_sha256": "5dd9af164b4590c7e82f6905c919b3cc450bb58f2d5742ab2a0e3a4eb2e26190",
+    "code_mapping_base": "0x60020020",
+    "OE_components": 5,
+    "stock_roundtrip": true
+  },
+  "owner_observations": {
+    "source_issue": "https://github.com/ZakuZakuu/ep7-film-hack/issues/58#issuecomment-6416835422",
+    "updated_issue": "https://github.com/ZakuZakuu/ep7-film-hack/issues/63",
+    "v2_saved_jpeg": "Four profiles and identical S switch correct; green L not physically checked in the reported scene",
+    "v2_live_and_recview": "No visible effect, reboot unchanged; image playback/export shows effect",
+    "t20_live": "Visible hue effect reported",
+    "classification": "Owner-reported physical behavior, not performed by this agent; compact-route attribution still a software hypothesis"
+  },
+  "changes": {
+    "site": "0x603b14f3",
+    "resume": "0x603b14f8",
+    "selector": "0x603b0252",
+    "default_color_call": "0x603b02d9",
+    "native_builder": "0x603b0068",
+    "compact_job_callbacks": [
+      "0x60306ad5",
+      "0x6031b4de",
+      "0x0 with job+8 ==0"
+    ],
+    "image_owner_callbacks": [
+      "0x603e7b83",
+      "0x603e9631"
+    ],
+    "request_callback": "0x60355fd4",
+    "embedded_request_offset": 11364,
+    "operation_records": {
+      "offset": 14576,
+      "stride": 56,
+      "count": 16,
+      "parent_offset": 0
+    },
+    "current_profile": {
+      "address": "0x6250f836",
+      "key": 908,
+      "RDI": 63153,
+      "RDI_table": "0x604d6c14",
+      "width": 1,
+      "accepted_values": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "public_mode_mapping": [
+        54,
+        55,
+        56,
+        64
+      ],
+      "native_width_branch": "0x6005efc4..0x6005f002; MOVBU0x6005f000",
+      "address_basis": "T22 E07 verified current leaf, reused; no new arbitrary RAM offset"
+    },
+    "image_snapshot": {
+      "job_owner_offset": 8,
+      "owner_snapshot_offset": 28,
+      "mode_offset": 24053,
+      "profile_offset": 24083,
+      "global_fallback": false
+    },
+    "sparse_table": {
+      "row_bytes": 8,
+      "clear_H_offsets": "output+706+24*i, i0..11",
+      "clear_L_offsets": "output+710+24*i, i0..11",
+      "writes": [
+        [
+          706,
+          -3000,
+          706,
+          -3000
+        ],
+        [
+          782,
+          -200,
+          782,
+          -200
+        ],
+        [
+          730,
+          3000,
+          830,
+          100
+        ],
+        [
+          706,
+          0,
+          706,
+          0
+        ]
+      ],
+      "expands_to_v2_constant_rows": true,
+      "settings_writes": false
+    },
+    "guards": [
+      "canonical COLOR word",
+      "no custom descriptor",
+      "not f00d",
+      "native request callback",
+      "embedded request relation",
+      "one of16 operation record addresses",
+      "known owner/compact callback or null callback plus null owner",
+      "mode11 on image snapshot",
+      "profile1..4"
+    ]
+  },
+  "native_paths": {
+    "header_producers": [
+      {
+        "callback": "0x60306ad5",
+        "literal_producer": "0x60311541",
+        "native_header_conversion": "0x60321d69..0x60321e9b",
+        "native_job_copy": "0x60353915..0x60353922",
+        "job_callback_offset": 4,
+        "job_compact_owner_offset": 8
+      },
+      {
+        "callback": "0x6031b4de",
+        "literal_producer": "0x6031b1f8",
+        "native_header_conversion": "0x60321d69..0x60321e9b",
+        "native_job_copy": "0x60353915..0x60353922",
+        "job_callback_offset": 4,
+        "job_compact_owner_offset": 8
+      },
+      {
+        "callback": "0x0",
+        "literal_producer": "0x6030fe2b",
+        "native_header_conversion": "0x60321d69..0x60321e9b",
+        "native_job_copy": "0x60353915..0x60353922",
+        "job_callback_offset": 4,
+        "job_compact_owner_offset": 8
+      }
+    ],
+    "dispatch": [
+      {
+        "format": "0x105",
+        "native_start": "0x603aaced",
+        "native_stop": "0x603b17e6",
+        "instructions": 12
+      },
+      {
+        "format": "0x205",
+        "native_start": "0x603aaced",
+        "native_stop": "0x603b1466",
+        "instructions": 16
+      }
+    ],
+    "common_selector_routes": [
+      {
+        "callback": "0x60306ad5",
+        "profile": 1,
+        "start": "0x603b14b2",
+        "reached_hook_selector_builder": true,
+        "instructions": 1760
+      },
+      {
+        "callback": "0x60306ad5",
+        "profile": 2,
+        "start": "0x603b14b2",
+        "reached_hook_selector_builder": true,
+        "instructions": 1760
+      },
+      {
+        "callback": "0x60306ad5",
+        "profile": 3,
+        "start": "0x603b14b2",
+        "reached_hook_selector_builder": true,
+        "instructions": 1760
+      },
+      {
+        "callback": "0x60306ad5",
+        "profile": 4,
+        "start": "0x603b14b2",
+        "reached_hook_selector_builder": true,
+        "instructions": 1760
+      },
+      {
+        "callback": "0x6031b4de",
+        "profile": 1,
+        "start": "0x603b14b2",
+        "reached_hook_selector_builder": true,
+        "instructions": 1762
+      },
+      {
+        "callback": "0x6031b4de",
+        "profile": 2,
+        "start": "0x603b14b2",
+        "reached_hook_selector_builder": true,
+        "instructions": 1762
+      },
+      {
+        "callback": "0x6031b4de",
+        "profile": 3,
+        "start": "0x603b14b2",
+        "reached_hook_selector_builder": true,
+        "instructions": 1762
+      },
+      {
+        "callback": "0x6031b4de",
+        "profile": 4,
+        "start": "0x603b14b2",
+        "reached_hook_selector_builder": true,
+        "instructions": 1762
+      },
+      {
+        "callback": "0x0",
+        "profile": 1,
+        "start": "0x603b14b2",
+        "reached_hook_selector_builder": true,
+        "instructions": 1767
+      },
+      {
+        "callback": "0x0",
+        "profile": 2,
+        "start": "0x603b14b2",
+        "reached_hook_selector_builder": true,
+        "instructions": 1767
+      },
+      {
+        "callback": "0x0",
+        "profile": 3,
+        "start": "0x603b14b2",
+        "reached_hook_selector_builder": true,
+        "instructions": 1767
+      },
+      {
+        "callback": "0x0",
+        "profile": 4,
+        "start": "0x603b14b2",
+        "reached_hook_selector_builder": true,
+        "instructions": 1767
+      }
+    ],
+    "current_leaf": [
+      {
+        "profile": 1,
+        "rdi": 63153,
+        "bytes": 1,
+        "native_load": "0x6005f000"
+      },
+      {
+        "profile": 2,
+        "rdi": 63153,
+        "bytes": 1,
+        "native_load": "0x6005f000"
+      },
+      {
+        "profile": 3,
+        "rdi": 63153,
+        "bytes": 1,
+        "native_load": "0x6005f000"
+      },
+      {
+        "profile": 4,
+        "rdi": 63153,
+        "bytes": 1,
+        "native_load": "0x6005f000"
+      }
+    ],
+    "static_dispatch": "603aaced ->603b17e6/603b1819 ->603b1466 ->603b14f3 ->603b0252 ->603b02d9",
+    "limits": "Segmented native producers and downstream path; complete RTOS/menu/frame acquisition not replayed"
+  },
+  "native_windows": [
+    {
+      "start": "0x6031151e",
+      "end_exclusive": "0x6031155b",
+      "sha256": "a1227555446f3b4e6432fccc5415fb6dafcb261b904f8a15f2429558acdb4b97"
+    },
+    {
+      "start": "0x6031b1e5",
+      "end_exclusive": "0x6031b211",
+      "sha256": "0b6d7398bbfa87431e8b4f0f9aa3c3a3bf35cb489330e127078032a91758e9d0"
+    },
+    {
+      "start": "0x6030fe2b",
+      "end_exclusive": "0x6030fe81",
+      "sha256": "15fc673ed1e40f4ee3576c6529059630391db9908c2c73bdd8d0b2a8e945ecf7"
+    },
+    {
+      "start": "0x603132ca",
+      "end_exclusive": "0x6031335b",
+      "sha256": "2e3db9dbf7bb90f8fede5655ee03823f9595a93c02bf720fa6693673815b62fe"
+    },
+    {
+      "start": "0x60321d3b",
+      "end_exclusive": "0x60321eaf",
+      "sha256": "3f8bbac52ce78e99666dbd59a397c9dc4b65c55007fbd3303b83b6add54868f2"
+    },
+    {
+      "start": "0x60353915",
+      "end_exclusive": "0x60353940",
+      "sha256": "3286b4e9fdc9038547c331bfcbd969785892afa7c4063ed96d603aaf6cd931ae"
+    },
+    {
+      "start": "0x603aaced",
+      "end_exclusive": "0x603aad5d",
+      "sha256": "6a09a79fecc60945687e7952d8cffaa18bb6a358d95ea409e318de0e9075b715"
+    },
+    {
+      "start": "0x603b17e6",
+      "end_exclusive": "0x603b1843",
+      "sha256": "a44ce54ae89fd0a033d72eb1325675a7151c2ff57b02ed292f8c22a170857706"
+    },
+    {
+      "start": "0x603b1466",
+      "end_exclusive": "0x603b1517",
+      "sha256": "189581bf00beef3dd4b3b30ec687d468a53a1afeace95fc65f32cd9d14eb9316"
+    },
+    {
+      "start": "0x603af7b7",
+      "end_exclusive": "0x603af806",
+      "sha256": "685d86808c978bdc1374a24c0d84ce8b9ec945fcf889ad9082a99a68e69ab649"
+    },
+    {
+      "start": "0x603aade3",
+      "end_exclusive": "0x603aae13",
+      "sha256": "c1d5b8786a470bba67b85d15548082691f3fa26c9ff2c174297b6202e4ee325d"
+    },
+    {
+      "start": "0x6005efbd",
+      "end_exclusive": "0x6005f005",
+      "sha256": "b19caabb1d046dffbdf35b9669392972ed504922527c934bb5fba127b7e15066"
+    },
+    {
+      "start": "0x602cbd3b",
+      "end_exclusive": "0x602cbd97",
+      "sha256": "2e834d7f6a8c3c19a64ed1f08d3716f1d0baac990f969b4d9acb3b512cf56d05"
+    }
+  ],
+  "validation": {
+    "long_cases": [
+      {
+        "case": "equal_S_p1_dirty0",
+        "profile": 1,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1639
+      },
+      {
+        "case": "equal_S_p1_dirty2",
+        "profile": 1,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1637
+      },
+      {
+        "case": "equal_S_p2_dirty0",
+        "profile": 2,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1639
+      },
+      {
+        "case": "equal_S_p2_dirty2",
+        "profile": 2,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1637
+      },
+      {
+        "case": "equal_S_p3_dirty0",
+        "profile": 3,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1639
+      },
+      {
+        "case": "equal_S_p3_dirty2",
+        "profile": 3,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1637
+      },
+      {
+        "case": "equal_S_p4_dirty0",
+        "profile": 4,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1639
+      },
+      {
+        "case": "equal_S_p4_dirty2",
+        "profile": 4,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1637
+      },
+      {
+        "case": "factory_S_p1",
+        "profile": 1,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1639
+      },
+      {
+        "case": "factory_S_p2",
+        "profile": 2,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1639
+      },
+      {
+        "case": "factory_S_p3",
+        "profile": 3,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1639
+      },
+      {
+        "case": "factory_S_p4",
+        "profile": 4,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1639
+      },
+      {
+        "case": "edge_S_p1",
+        "profile": 1,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1639
+      },
+      {
+        "case": "edge_S_p2",
+        "profile": 2,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1639
+      },
+      {
+        "case": "edge_S_p3",
+        "profile": 3,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1639
+      },
+      {
+        "case": "alternate_header_owner",
+        "profile": 2,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1639
+      },
+      {
+        "case": "operation_record_1",
+        "profile": 3,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1639
+      },
+      {
+        "case": "operation_record_7",
+        "profile": 3,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1639
+      },
+      {
+        "case": "operation_record_15",
+        "profile": 3,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1639
+      },
+      {
+        "case": "Natural",
+        "profile": 1,
+        "eligible": false,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 37
+      },
+      {
+        "case": "MONO",
+        "profile": 1,
+        "eligible": false,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 37
+      },
+      {
+        "case": "invalid_profile_0",
+        "profile": 0,
+        "eligible": false,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1607
+      },
+      {
+        "case": "invalid_profile_5",
+        "profile": 5,
+        "eligible": false,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1607
+      },
+      {
+        "case": "unknown_owner",
+        "profile": 1,
+        "eligible": false,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1604
+      },
+      {
+        "case": "non_record_slot",
+        "profile": 1,
+        "eligible": false,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1602
+      },
+      {
+        "case": "f00d",
+        "profile": 1,
+        "eligible": false,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 33
+      },
+      {
+        "case": "custom_clean",
+        "profile": 1,
+        "eligible": false,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 28
+      },
+      {
+        "case": "custom_dirty",
+        "profile": 1,
+        "eligible": false,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1282
+      }
+    ],
+    "compact_cases": [
+      {
+        "case": "compact_60306ad5_p1",
+        "profile": 1,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1636
+      },
+      {
+        "case": "compact_60306ad5_p2",
+        "profile": 2,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1636
+      },
+      {
+        "case": "compact_60306ad5_p3",
+        "profile": 3,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1636
+      },
+      {
+        "case": "compact_60306ad5_p4",
+        "profile": 4,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1636
+      },
+      {
+        "case": "compact_6031b4de_p1",
+        "profile": 1,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1636
+      },
+      {
+        "case": "compact_6031b4de_p2",
+        "profile": 2,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1636
+      },
+      {
+        "case": "compact_6031b4de_p3",
+        "profile": 3,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1636
+      },
+      {
+        "case": "compact_6031b4de_p4",
+        "profile": 4,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1636
+      },
+      {
+        "case": "compact_0_p1",
+        "profile": 1,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1637
+      },
+      {
+        "case": "compact_0_p2",
+        "profile": 2,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1637
+      },
+      {
+        "case": "compact_0_p3",
+        "profile": 3,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1637
+      },
+      {
+        "case": "compact_0_p4",
+        "profile": 4,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1637
+      },
+      {
+        "case": "compact_slot_60306ad5_0",
+        "profile": 3,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1636
+      },
+      {
+        "case": "compact_slot_60306ad5_1",
+        "profile": 3,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1636
+      },
+      {
+        "case": "compact_slot_60306ad5_2",
+        "profile": 3,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1636
+      },
+      {
+        "case": "compact_slot_60306ad5_3",
+        "profile": 3,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1636
+      },
+      {
+        "case": "compact_slot_60306ad5_4",
+        "profile": 3,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1636
+      },
+      {
+        "case": "compact_slot_60306ad5_5",
+        "profile": 3,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1636
+      },
+      {
+        "case": "compact_slot_60306ad5_6",
+        "profile": 3,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1636
+      },
+      {
+        "case": "compact_slot_60306ad5_7",
+        "profile": 3,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1636
+      },
+      {
+        "case": "compact_slot_60306ad5_8",
+        "profile": 3,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1636
+      },
+      {
+        "case": "compact_slot_60306ad5_9",
+        "profile": 3,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1636
+      },
+      {
+        "case": "compact_slot_60306ad5_10",
+        "profile": 3,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1636
+      },
+      {
+        "case": "compact_slot_60306ad5_11",
+        "profile": 3,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1636
+      },
+      {
+        "case": "compact_slot_60306ad5_12",
+        "profile": 3,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1636
+      },
+      {
+        "case": "compact_slot_60306ad5_13",
+        "profile": 3,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1636
+      },
+      {
+        "case": "compact_slot_60306ad5_14",
+        "profile": 3,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1636
+      },
+      {
+        "case": "compact_slot_60306ad5_15",
+        "profile": 3,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1636
+      },
+      {
+        "case": "compact_slot_6031b4de_0",
+        "profile": 3,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1636
+      },
+      {
+        "case": "compact_slot_6031b4de_1",
+        "profile": 3,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1636
+      },
+      {
+        "case": "compact_slot_6031b4de_2",
+        "profile": 3,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1636
+      },
+      {
+        "case": "compact_slot_6031b4de_3",
+        "profile": 3,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1636
+      },
+      {
+        "case": "compact_slot_6031b4de_4",
+        "profile": 3,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1636
+      },
+      {
+        "case": "compact_slot_6031b4de_5",
+        "profile": 3,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1636
+      },
+      {
+        "case": "compact_slot_6031b4de_6",
+        "profile": 3,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1636
+      },
+      {
+        "case": "compact_slot_6031b4de_7",
+        "profile": 3,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1636
+      },
+      {
+        "case": "compact_slot_6031b4de_8",
+        "profile": 3,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1636
+      },
+      {
+        "case": "compact_slot_6031b4de_9",
+        "profile": 3,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1636
+      },
+      {
+        "case": "compact_slot_6031b4de_10",
+        "profile": 3,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1636
+      },
+      {
+        "case": "compact_slot_6031b4de_11",
+        "profile": 3,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1636
+      },
+      {
+        "case": "compact_slot_6031b4de_12",
+        "profile": 3,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1636
+      },
+      {
+        "case": "compact_slot_6031b4de_13",
+        "profile": 3,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1636
+      },
+      {
+        "case": "compact_slot_6031b4de_14",
+        "profile": 3,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1636
+      },
+      {
+        "case": "compact_slot_6031b4de_15",
+        "profile": 3,
+        "eligible": true,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1636
+      },
+      {
+        "case": "compact_exclusion_Natural",
+        "profile": 1,
+        "eligible": false,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 37
+      },
+      {
+        "case": "compact_exclusion_MONO",
+        "profile": 1,
+        "eligible": false,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 37
+      },
+      {
+        "case": "compact_exclusion_custom_clean",
+        "profile": 1,
+        "eligible": false,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 28
+      },
+      {
+        "case": "compact_exclusion_custom_dirty",
+        "profile": 1,
+        "eligible": false,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1282
+      },
+      {
+        "case": "compact_exclusion_f00d",
+        "profile": 1,
+        "eligible": false,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 33
+      },
+      {
+        "case": "compact_invalid_0",
+        "profile": 1,
+        "eligible": false,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1604
+      },
+      {
+        "case": "compact_invalid_5",
+        "profile": 1,
+        "eligible": false,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1604
+      },
+      {
+        "case": "compact_invalid_255",
+        "profile": 1,
+        "eligible": false,
+        "registers_equal": true,
+        "live_stack_equal": true,
+        "aligned": 1604
+      }
+    ],
+    "v2_v3_image_owner_comparison": [
+      {
+        "callback": "0x603e7b83",
+        "profile": 1,
+        "all_registers_equal": true,
+        "output_context_and_live_stack_equal": true,
+        "global_settings_unmapped": true
+      },
+      {
+        "callback": "0x603e7b83",
+        "profile": 2,
+        "all_registers_equal": true,
+        "output_context_and_live_stack_equal": true,
+        "global_settings_unmapped": true
+      },
+      {
+        "callback": "0x603e7b83",
+        "profile": 3,
+        "all_registers_equal": true,
+        "output_context_and_live_stack_equal": true,
+        "global_settings_unmapped": true
+      },
+      {
+        "callback": "0x603e7b83",
+        "profile": 4,
+        "all_registers_equal": true,
+        "output_context_and_live_stack_equal": true,
+        "global_settings_unmapped": true
+      },
+      {
+        "callback": "0x603e9631",
+        "profile": 1,
+        "all_registers_equal": true,
+        "output_context_and_live_stack_equal": true,
+        "global_settings_unmapped": true
+      },
+      {
+        "callback": "0x603e9631",
+        "profile": 2,
+        "all_registers_equal": true,
+        "output_context_and_live_stack_equal": true,
+        "global_settings_unmapped": true
+      },
+      {
+        "callback": "0x603e9631",
+        "profile": 3,
+        "all_registers_equal": true,
+        "output_context_and_live_stack_equal": true,
+        "global_settings_unmapped": true
+      },
+      {
+        "callback": "0x603e9631",
+        "profile": 4,
+        "all_registers_equal": true,
+        "output_context_and_live_stack_equal": true,
+        "global_settings_unmapped": true
+      }
+    ],
+    "same_S_sequences": {
+      "image_owner": [
+        1,
+        2,
+        3,
+        4,
+        3,
+        2,
+        1,
+        4
+      ],
+      "compact": [
+        [
+          1,
+          2,
+          3,
+          4,
+          3,
+          2,
+          1,
+          4
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          3,
+          2,
+          1,
+          4
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          3,
+          2,
+          1,
+          4
+        ]
+      ],
+      "all_24_HL_values_overwritten_each_default_COLOR_request": true
+    },
+    "ISP_uploads": {
+      "count": 64,
+      "banks": [
+        "0x9f001000",
+        "0x9f805000"
+      ],
+      "native_writer": "0x6034667e",
+      "destinations": "bank+752..1040 (288 bytes)",
+      "source": "output+688..976",
+      "all_matches": true,
+      "packer": "0x60343b23..0x60343b72",
+      "flags": [
+        "0x8",
+        "0x40000"
+      ],
+      "LUT_cache_decision_not_used_to_skip_coefficient_upload": true
+    },
+    "upstream_reentry_predicate": [
+      {
+        "input_format": "0x105",
+        "profile": 1,
+        "all_S_zero": true,
+        "original_dirty_flag": 0,
+        "admitted": true,
+        "instructions": 10
+      },
+      {
+        "input_format": "0x105",
+        "profile": 2,
+        "all_S_zero": true,
+        "original_dirty_flag": 0,
+        "admitted": true,
+        "instructions": 10
+      },
+      {
+        "input_format": "0x105",
+        "profile": 3,
+        "all_S_zero": true,
+        "original_dirty_flag": 0,
+        "admitted": true,
+        "instructions": 10
+      },
+      {
+        "input_format": "0x105",
+        "profile": 4,
+        "all_S_zero": true,
+        "original_dirty_flag": 0,
+        "admitted": true,
+        "instructions": 10
+      },
+      {
+        "input_format": "0x205",
+        "profile": 1,
+        "all_S_zero": true,
+        "original_dirty_flag": 0,
+        "admitted": true,
+        "instructions": 12
+      },
+      {
+        "input_format": "0x205",
+        "profile": 2,
+        "all_S_zero": true,
+        "original_dirty_flag": 0,
+        "admitted": true,
+        "instructions": 12
+      },
+      {
+        "input_format": "0x205",
+        "profile": 3,
+        "all_S_zero": true,
+        "original_dirty_flag": 0,
+        "admitted": true,
+        "instructions": 12
+      },
+      {
+        "input_format": "0x205",
+        "profile": 4,
+        "all_S_zero": true,
+        "original_dirty_flag": 0,
+        "admitted": true,
+        "instructions": 12
+      },
+      {
+        "input_format": "0x0",
+        "profile": 1,
+        "all_S_zero": true,
+        "original_dirty_flag": 0,
+        "admitted": false,
+        "instructions": 14
+      },
+      {
+        "input_format": "0x0",
+        "profile": 2,
+        "all_S_zero": true,
+        "original_dirty_flag": 0,
+        "admitted": false,
+        "instructions": 14
+      },
+      {
+        "input_format": "0x0",
+        "profile": 3,
+        "all_S_zero": true,
+        "original_dirty_flag": 0,
+        "admitted": false,
+        "instructions": 14
+      },
+      {
+        "input_format": "0x0",
+        "profile": 4,
+        "all_S_zero": true,
+        "original_dirty_flag": 0,
+        "admitted": false,
+        "instructions": 14
+      }
+    ],
+    "current_interleaving": {
+      "cases": [
+        {
+          "commit": "before_byte_read",
+          "selected_profile": 2,
+          "complete_row_only": true,
+          "write_to_current_settings": false
+        },
+        {
+          "commit": "after_byte_read",
+          "selected_profile": 1,
+          "complete_row_only": true,
+          "write_to_current_settings": false
+        }
+      ],
+      "current_load": "0x6055e6a0",
+      "width": 1,
+      "limit": "Current-profile byte may select an old/new preview frame; no lock or end-to-end scheduling guarantee"
+    },
+    "placement": {
+      "section": 2,
+      "start": "0x6055e5f0",
+      "end_exclusive": "0x6055e748",
+      "bytes": 344,
+      "prefix_margin": 64,
+      "suffix_margin": 184,
+      "native_load": {
+        "poison": 165,
+        "read_destination": "0xa0280800",
+        "read_source": "0x80900800",
+        "read_bytes": 3006464,
+        "sha256": "932b19f5091f801faa1cbf24c4f0f6c8fcfbec583b57ce6138f6f042fff14c46",
+        "loaded_bit": 2,
+        "model": "One exact successful logical read; no NAND/ECC/cache/timing simulation"
+      },
+      "native_reload": {
+        "poison": 85,
+        "read_destination": "0xa0280800",
+        "read_source": "0x80900800",
+        "read_bytes": 3006464,
+        "sha256": "932b19f5091f801faa1cbf24c4f0f6c8fcfbec583b57ce6138f6f042fff14c46",
+        "loaded_bit": 2,
+        "model": "One exact successful logical read; no NAND/ECC/cache/timing simulation"
+      },
+      "initializers": {
+        "callbacks_executed": 12,
+        "instructions": 18753,
+        "padding_unmapped": [
+          "0x6055e5b0",
+          "0x6055e800"
+        ],
+        "aligned_data_accesses": 5275
+      },
+      "initializer_counterfactual": {
+        "counterfactual_count": 52,
+        "expected_fault": "0x6055e5b0",
+        "access": "read"
+      },
+      "classified_references": [
+        {
+          "component": 4,
+          "alias_base": "0x6055e5f0",
+          "offset": "0x2699f4",
+          "value": "0x6055e62d",
+          "classification": "encoded JPEG data, Pillow full decode passed",
+          "containing_start": "0x2633e0",
+          "containing_end": "0x26bf3c",
+          "entropy_start": "0x26362d",
+          "size": [
+            640,
+            480
+          ]
+        },
+        {
+          "component": 4,
+          "alias_base": "0x6055e5f0",
+          "offset": "0x3b1316",
+          "value": "0x6055e69b",
+          "classification": "encoded JPEG data, Pillow full decode passed",
+          "containing_start": "0x3adfe0",
+          "containing_end": "0x3b2363",
+          "entropy_start": "0x3ae22d",
+          "size": [
+            248,
+            186
+          ]
+        },
+        {
+          "component": 4,
+          "alias_base": "0x6055e5f0",
+          "offset": "0x3cb916",
+          "value": "0x6055e69b",
+          "classification": "encoded JPEG data, Pillow full decode passed",
+          "containing_start": "0x3c85e0",
+          "containing_end": "0x3cc963",
+          "entropy_start": "0x3c882d",
+          "size": [
+            248,
+            186
+          ]
+        },
+        {
+          "component": 4,
+          "alias_base": "0xa055e5f0",
+          "offset": "0x606784",
+          "value": "0xa055e67d",
+          "classification": "encoded JPEG data, Pillow full decode passed",
+          "containing_start": "0x5fe3e0",
+          "containing_end": "0x607631",
+          "entropy_start": "0x5fe62d",
+          "size": [
+            640,
+            480
+          ]
+        },
+        {
+          "component": 2,
+          "alias_base": "0x40bde5f0",
+          "offset": "0x1d6ddb8",
+          "value": "0x40bde73f",
+          "classification": "encoded gzip data, zlib EOF/CRC validation passed",
+          "containing_start": "0x1cc7e78",
+          "containing_end": "0x1e80e84",
+          "decoded_bytes": 3593176
+        }
+      ],
+      "direct_branch_candidates": 0,
+      "limits": "No physical DMA/cache/concurrency/recovery guarantee"
+    },
+    "unit_tests": {
+      "new": 3,
+      "owned_synthetic_ABI_modes": 2,
+      "owned_cases_per_ABI_mode": 26,
+      "whole_suite": 94,
+      "passed": 88,
+      "skipped": 6,
+      "skip_reasons": [
+        "legacy GNU layouts",
+        "squashfs-tools",
+        "optional Recipe Studio dependencies"
+      ],
+      "new_strict_GNU_test_executed": true
+    }
+  },
+  "reproducibility": {
+    "v2": {
+      "input_sha256": "9d1610124ad98f6edae4540182205f06c9c703d9033ef0c4f19847193f95eaeb",
+      "prospective_output_sha256": "b1ad25019722af31e26bdf29aabaa1867320bea64c9bb2c0acc06cc5aadc4375",
+      "bytes": 111017984,
+      "decoded_output_sha256": "ce249b20d7010706fbe0fb26a18015b6729e36a14d2337614f2ac055201f02de",
+      "unchanged_components": 4,
+      "hook_source_sha256": "8a3907a14d3f1887879d6bb2a68ea1c4f66943116ba2885004f79cf1423de926",
+      "manifest_sha256": "a6e96eec715d6a3857bf316e1e04c7f4cc1d9f02a640e90ffda6a613600cd17e",
+      "tool_versions": {
+        "assembler": "GNU assembler (GNU Binutils) 2.45",
+        "linker": "GNU ld (GNU Binutils) 2.45",
+        "objcopy": "GNU objcopy (GNU Binutils) 2.45",
+        "objdump": "GNU objdump (GNU Binutils) 2.45"
+      },
+      "verify_only": true,
+      "package_files_created": false
+    },
+    "v3": {
+      "input_sha256": "9d1610124ad98f6edae4540182205f06c9c703d9033ef0c4f19847193f95eaeb",
+      "prospective_output_sha256": "1916c0cffd83dc0b83cdf34477f76943f37d79da551bc847061eb7d3cd796c91",
+      "bytes": 111017984,
+      "decoded_output_sha256": "8f806925ff9d7e304ca0f632cb022443411fb23b7cc4bfc74eaf2a6d9281044e",
+      "unchanged_components": 4,
+      "hook_source_sha256": "ad1605165f2f3ed6349cbb8c486bca0a2ea34c0dc0bf1ab0cd6770e8b8e61e06",
+      "manifest_sha256": "59db2758e6414ffeba6182e87b87e373dd01ac1368ec921332ce627d0e815d66",
+      "tool_versions": {
+        "assembler": "GNU assembler (GNU Binutils) 2.45",
+        "linker": "GNU ld (GNU Binutils) 2.45",
+        "objcopy": "GNU objcopy (GNU Binutils) 2.45",
+        "objdump": "GNU objdump (GNU Binutils) 2.45"
+      },
+      "verify_only": true,
+      "package_files_created": false
+    },
+    "v2_files_unchanged": true,
+    "v3_manifest": {
+      "schema_version": 1,
+      "model": "Olympus PEN E-P7 (E142)",
+      "firmware": "1.1 / build 1100",
+      "upstream_reference": "fishcu/oly_fw_analysis@539fcf1fa9eda5fdef8ede4deeab94a4691d94c3",
+      "input_bytes": 111017984,
+      "input_sha256": "9d1610124ad98f6edae4540182205f06c9c703d9033ef0c4f19847193f95eaeb",
+      "decoded_input_sha256": "5dd9af164b4590c7e82f6905c919b3cc450bb58f2d5742ab2a0e3a4eb2e26190",
+      "output_bytes": 111017984,
+      "decoded_output_sha256": "8f806925ff9d7e304ca0f632cb022443411fb23b7cc4bfc74eaf2a6d9281044e",
+      "output_sha256": "1916c0cffd83dc0b83cdf34477f76943f37d79da551bc847061eb7d3cd796c91",
+      "restore_sha256": "9d1610124ad98f6edae4540182205f06c9c703d9033ef0c4f19847193f95eaeb",
+      "tool_version": "2.45",
+      "hook_source_sha256": "ad1605165f2f3ed6349cbb8c486bca0a2ea34c0dc0bf1ab0cd6770e8b8e61e06",
+      "modified_ranges": [
+        {
+          "address": "0x603b14f3",
+          "decoded_offset": "0x3914d3",
+          "length": 5,
+          "original_sha256": "1b03aa08e2a91880a9b4a5b48bb4fbc4eb801f273922d08fa9de96829210fcaa",
+          "replacement_sha256": "3090be5ad13e5bca129f96ba788a7618e8eec358d690d68004619a5224f9348b"
+        },
+        {
+          "address": "0x6055e5f0",
+          "decoded_offset": "0x53e5d0",
+          "length": 344,
+          "original_sha256": "3037f064706622ffeb6597ff97546c1192c6adcddfefb0c8cb71c4b2de4f7ddd",
+          "replacement_sha256": "9ac40fdb57928191d54afa7caa0edde32461bd2d926dff452629598a852a9063"
+        }
+      ],
+      "symbols": {
+        "ep7_selector": "0x603b0252",
+        "ep7_resume": "0x603b14f8",
+        "ep7_request_callback": "0x60355fd4",
+        "ep7_owner_callback": "0x603e7b83",
+        "ep7_alternate_owner_callback": "0x603e9631",
+        "ep7_compact_callback": "0x60306ad5",
+        "ep7_compact_secondary_callback": "0x6031b4de",
+        "ep7_current_profile": "0x6250f836"
+      },
+      "constant_rows_native_physical_HL_pairs": [
+        [
+          -3000,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -200,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          3000,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          100,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "placement": {
+        "section": 2,
+        "start": "0x6055e5f0",
+        "end_exclusive": "0x6055e748",
+        "prefix_margin": 64,
+        "suffix_margin": 184
+      },
+      "install_path": "install/DCOLYMP/E1429999.BIN",
+      "restore_path": "restore-stock/DCOLYMP/E1429999.BIN",
+      "qualification": "v2 image-owner guards retained; compact callback 60306ad5/6031b4de, or null callback with null owner, use one current-profile byte. B3 physical preview/recview validation pending.",
+      "settings_storage": "No writes; constants only",
+      "prospective_hash_method": "Hash encoded main and unchanged stock tail; no complete firmware file created during T24.1",
+      "version": 3,
+      "constant_encoding": "Clear 24 H/L halfwords, then apply two bounded (offset,i16) writes from each 8-byte row; expands exactly to v2 constants.",
+      "preserved_v2_output_sha256": "b1ad25019722af31e26bdf29aabaa1867320bea64c9bb2c0acc06cc5aadc4375"
+    },
+    "source_sha256": {
+      "patches/hsl-profiles-preview/e-p7/hook.s": "ad1605165f2f3ed6349cbb8c486bca0a2ea34c0dc0bf1ab0cd6770e8b8e61e06",
+      "patches/hsl-profiles-preview/e-p7/build.py": "5f32a038f09caf933a0bd5a8dda45d55a36fb17e1d07b95cf243c2f70ab71cce",
+      "patches/hsl-profiles-preview/e-p7/patch.json": "59db2758e6414ffeba6182e87b87e373dd01ac1368ec921332ce627d0e815d66",
+      "tools/ep7_t24_1_probe.py": "2b9d59548c48709123fc8a1f62db300c8d2d641ab7654f4cc9c19bcd68244769",
+      "tests/test_ep7_hsl_preview.py": "80daf737eab3b49eeb2c0a46383c50ae7273b3e6f8b916750d0c0c1dcf202ca0"
+    }
+  },
+  "toolchain": {
+    "upstream_commit": "539fcf1fa9eda5fdef8ede4deeab94a4691d94c3",
+    "gnu_commit": "87ffb882e0f4d73401a0746177ffabb8e8bbe4ac",
+    "gnu_tree": "059d50a3cc76bd13dc10f21023863674e6da515c",
+    "archive_actual_sha256": "c8552c769e8802865bf906c53aa58a0164a6b282427d253103887b1966c01bd7",
+    "archive_documented_sha256": "a5e7cd02f844bb2873c25e0ac8e9a5b50a72c3e8e6570a6b7821d2e4c21178ad",
+    "core_original_sha256": {
+      "sim/mn10300/interp.c": "f6c34c6c81ff67bda52d6b57d0ea47954587e36908923cd7e4e59a90424cd37b",
+      "sim/mn10300/mn10300.igen": "355754c61879dc24bf6128bbba5a7931355731000e8cb213082b9b9cd4df0129"
+    },
+    "executable_sha256": "645b5cea4727da9bf859108120c76c6908a06e1b4995e1c72358665f7547175b"
+  },
+  "setup_repair": "Existing GNU source/build receipt referenced a different dynamic archive. Retained old ignored cache privately, rebuilt from tree-verified snapshot with unchanged setup/guards. No fabricated marker or weakened check.",
+  "limits": [
+    "Native chains are segmented, not a full RTOS/menu/frame/display run",
+    "Callback production validates layout, not exact user workflow naming",
+    "Already-submitted default COLOR requests rebuild and upload; full same-S UI scheduling not replayed",
+    "Forced current byte before/after cuts yield whole new/old rows; physical queue/cache timing and exactly-one-frame bound unproven",
+    "Automatic recview processed after another profile selection can use that current profile; saved JPEG remains image-owned",
+    "No ISP pixels, sensor, physical display, SD update, recovery, settings writes or device operations"
+  ],
+  "reproduce": {
+    "setup": "bash tools/setup_t20_environment.sh",
+    "probe": "python3 tools/ep7_t24_1_probe.py --upstream work/upstream/oly_fw_analysis --stock /tmp/private/stock.BIN --out /tmp/private/v3-checks",
+    "v2_verify": "python3 patches/hsl-profiles/e-p7/build.py --upstream work/upstream/oly_fw_analysis --stock /tmp/private/stock.BIN --verify-only",
+    "v3_verify": "python3 patches/hsl-profiles-preview/e-p7/build.py --upstream work/upstream/oly_fw_analysis --stock /tmp/private/stock.BIN --verify-only",
+    "synthetic_tests": "python3 -m unittest discover -s tests -p test_ep7_hsl_preview.py -v",
+    "private_outputs": "OEM input, decoded bytes, listings, traces and native memory remain private under /tmp; no update package files created"
+  }
+}
