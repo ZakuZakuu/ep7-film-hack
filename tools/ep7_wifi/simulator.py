@@ -49,6 +49,9 @@ class Model:
                     if parsed.path=='/switch_cammode.cgi' and q=={'mode':'rec'}:
                         state.rec=True;self.reply(200,b'<response/>');return
                     if parsed.path not in ('/get_mcon.cgi','/set_mcon.cgi'):raise ValueError()
+                    if not state.rec:
+                        # Real E-P7 1.1 (stock and v4): HTTP 520, errorcode 1004 before rec mode.
+                        self.reply(520,b'<?xml version="1.0"?><errorcode>1004</errorcode>');return
                     if not re.fullmatch('[0-9A-Fa-f]{1,4}',q.get('mode','')):raise ValueError()
                     key=int(q['mode'],16)
                     if parsed.path=='/get_mcon.cgi':
