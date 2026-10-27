@@ -3,3 +3,4 @@
 pefile>=2023.2.7,<2025
 capstone>=5.0,<6
 tifffile>=2024.8.30,<2027
+opencv-python-headless>=4.10,<5

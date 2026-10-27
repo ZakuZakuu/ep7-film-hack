@@ -143,5 +143,75 @@ class PEReferenceTests(unittest.TestCase):
             pe_evidence(bytes(data), 0x400, 3)
 
 
+try:
+    import cv2
+    import skimage
+except ImportError:
+    cv2 = skimage = None
+
+
+@unittest.skipIf(np is None or cv2 is None or skimage is None, "optional photo analysis dependencies absent")
+class PhotoObservationTests(unittest.TestCase):
+    def test_recovers_small_translation_without_color_adjustment(self):
+        from tools.recipe_studio.photo_validation import align_photo
+        rng = np.random.default_rng(71)
+        a = rng.integers(20, 230, (320, 400, 3), dtype=np.uint8)
+        a = cv2.GaussianBlur(a, (3, 3), .5)
+        moving = cv2.warpAffine(a, np.float32([[1, 0, 4], [0, 1, -3]]), (400, 320))
+        aligned, valid, report = align_photo(a, moving)
+        matrix = np.array(report["moving_to_reference"])
+        np.testing.assert_allclose(matrix[:, 2], [-4, 3], atol=.4)
+        self.assertLess(report["median_reprojection_px"], 1)
+        self.assertLess(np.abs(aligned[valid].astype(float) - a[valid]).mean(), 5)
+        with self.assertRaises(ValueError):
+            align_photo(np.zeros_like(a), np.zeros_like(a))
+        distant = cv2.warpAffine(a, np.float32([[1, 0, 40], [0, 1, 0]]), (400, 320))
+        with self.assertRaises(ValueError):
+            align_photo(a, distant)
+
+    def test_circular_hue_change_and_unchanged_hsl_lightness(self):
+        from skimage.color import hsv2rgb
+        from tools.recipe_studio.photo_validation import regional_observations
+        a = np.full((32, 32, 3), [200, 100, 102], dtype=np.uint8)
+        b = np.full((32, 32, 3), [200, 102, 100], dtype=np.uint8)
+        result = regional_observations(a, b, np.ones((32, 32), bool),
+                                      {"red": {"box": [0, 0, 1, 1], "hue_degrees": [350, 10]}})["red"]
+        self.assertEqual(result["status"], "observed")
+        self.assertAlmostEqual(result["median_delta_hue_degrees"], 2.4, delta=1e-6)
+        self.assertEqual(result["reference"]["median_hsl_lightness"], result["moving"]["median_hsl_lightness"])
+        with self.assertRaises(ValueError):
+            regional_observations(a, b, np.ones((32, 32), bool), {"bad": {"box": [1, 0, 0, 1]}})
+
+
+    def test_keeps_zero_channel_and_does_not_select_on_output(self):
+        from tools.recipe_studio.photo_validation import regional_observations
+        a = np.full((32, 32, 3), [0, 30, 100], dtype=np.uint8)
+        b = np.zeros_like(a)
+        report = regional_observations(a, b, np.ones((32, 32), bool),
+                                       {"blue": {"box": [0, 0, 1, 1]}})["blue"]
+        self.assertEqual(report["pixels"], 1024)
+        self.assertEqual(report["moving"]["median_lab_L"], 0)
+        self.assertIsNone(report["median_delta_hue_degrees"])
+        self.assertEqual(report["moving_channel_limit_fraction"], 1)
+
+
+    def test_declared_planar_alignment_recovers_perspective(self):
+        from tools.recipe_studio.photo_validation import align_planar_photo
+        rng = np.random.default_rng(72)
+        a = rng.integers(20, 230, (320, 400, 3), dtype=np.uint8)
+        a = cv2.GaussianBlur(a, (3, 3), .5)
+        transform = np.array([[1, .01, 3], [-.005, 1, -2], [.00002, -.00001, 1]], float)
+        b = cv2.warpPerspective(a, transform, (400, 320))
+        _, valid, report = align_planar_photo(a, b, [.05, .05, .95, .95])
+        estimated = np.array(report["moving_to_reference"])
+        points = np.float32([[[80, 80], [200, 160], [320, 240]]])
+        restored = cv2.perspectiveTransform(cv2.perspectiveTransform(points, transform), estimated)
+        np.testing.assert_allclose(restored, points, atol=.4)
+        self.assertGreater(valid.mean(), .6)
+        self.assertFalse(valid[0].any())
+        with self.assertRaises(ValueError):
+            align_planar_photo(a, b, [1, 0, 0, 1])
+
+
 if __name__ == "__main__":
     unittest.main()
