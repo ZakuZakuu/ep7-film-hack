@@ -9,7 +9,7 @@
 - 机主通过相机原厂**私人 Wi-Fi**连接电脑；默认 HTTP 地址 `192.168.0.10:80`。工具只允许 RFC1918 私网 IP 或测试用回环 IP，不跟随重定向、不使用 HTTP 代理。
 - `GET /get_caminfo.cgi`：原厂 XML 根 `caminfo` 的 `model` 必须精确为 `E-P7`。仅提取型号，不提取、记录或导出序列号、MAC 或整份响应。
 - `GET /get_mcon.cgi?mode=FFFF`：v4 返回 `45503731`（ASCII `EP71`）；同版原厂的未知编号返回 `00000000`。其他值、HTTP 错误、格式错误均视为不兼容，**禁止任何写入，包括 S**。标识不是密码学认证，也不远程证明安装包哈希。
-- `discover` 只做上述只读检查。明确执行写入时，完成身份检查后先请求原厂 `GET /switch_cammode.cgi?mode=rec`，再备份并写入；不启动取景流或拍照。沿用原厂应用状态准入，不绕过拒绝，也不发明一个“已验证空闲”字节。
+- **`get_mcon` / `set_mcon` 必须在原厂遥控模式下使用**：B4 实测（E-P7 1.1，原厂与 v4 均适用），未进入该模式时返回 HTTP 520、`<errorcode>1004</errorcode>`；执行 `GET /switch_cammode.cgi?mode=rec` 后，能力查询正常返回 `45503731`。因此 `discover`、`read`、`write` 在确认型号后都先请求 `switch_cammode.cgi?mode=rec`，再查询能力；这与 OI.Share 使用的模式切换相同，不启动取景流、不拍照、不改设置。沿用原厂应用状态准入，不绕过拒绝，也不发明一个“已验证空闲”字节。
 - 目标是当前应用设置上下文的 COLOR1–4；不直接选择或覆盖 9 个内部 bank。请机主在 PASM 下执行 B4；Myset 保存/召回另测。`rec`、`play` 或 HTTP 200 均不是经过证明的保存命令。
 
 ## 读取和逐值写入
