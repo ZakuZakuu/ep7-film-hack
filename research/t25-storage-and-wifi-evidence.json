@@ -1,0 +1,416 @@
+{
+  "issue": 65,
+  "stock_sha256": "9d1610124ad98f6edae4540182205f06c9c703d9033ef0c4f19847193f95eaeb",
+  "main_sha256": "5dd9af164b4590c7e82f6905c919b3cc450bb58f2d5742ab2a0e3a4eb2e26190",
+  "native_windows": [
+    {
+      "start": "0x602cbffe",
+      "end_exclusive": "0x602cc122",
+      "sha256": "a20192eff2b3f453697aa289f2eedbb24b5e9b381869ae5a4c6f9550928287f2"
+    },
+    {
+      "start": "0x6005e947",
+      "end_exclusive": "0x6005eb15",
+      "sha256": "166874e33f01e0b57af077be3aef1b1ae896ec8ef205b9d585f87dfe15aa7920"
+    },
+    {
+      "start": "0x6005efbd",
+      "end_exclusive": "0x6005f005",
+      "sha256": "b19caabb1d046dffbdf35b9669392972ed504922527c934bb5fba127b7e15066"
+    },
+    {
+      "start": "0x602cca80",
+      "end_exclusive": "0x602cca8c",
+      "sha256": "bab45e3a761dee4db6a2c2a1f03e22918627029922f081acc5f6a7e35e806b16"
+    },
+    {
+      "start": "0x6005c8cc",
+      "end_exclusive": "0x6005c8e2",
+      "sha256": "944eb894f4780e02fafc19f30d674689d4ef7fe96f4409a90255d3b8a7d6f4ac"
+    },
+    {
+      "start": "0x6005e65a",
+      "end_exclusive": "0x6005e676",
+      "sha256": "5ce9f970bdc0c73339c3cfe1ed3f6890aa0e708f2132f2c0b3ca9824436f919e"
+    },
+    {
+      "start": "0x60067102",
+      "end_exclusive": "0x60067146",
+      "sha256": "c8464aa63171e09563361c2fbe29d2a697870d436e4acd0fa51f31a053be8e88"
+    },
+    {
+      "start": "0x602b9bad",
+      "end_exclusive": "0x602b9c90",
+      "sha256": "c7ce315bc47aaba9b57ce7beb97200d1d9ffdf45778f4f7a815c0bd56d138902"
+    },
+    {
+      "start": "0x602b3330",
+      "end_exclusive": "0x602b3444",
+      "sha256": "1a8d70ffa904bf887c615f9f7d21a09cfffad72d2c40db03355e3340ef5d18f6"
+    },
+    {
+      "start": "0x602b38a7",
+      "end_exclusive": "0x602b392d",
+      "sha256": "4ad0af4f367087967912481f869f78d27960739c3c187d80176105fb292304ab"
+    },
+    {
+      "start": "0x602afa11",
+      "end_exclusive": "0x602afa30",
+      "sha256": "f05271dbf38f7c9a91a72b885ccfe669448b0ad2e0a7b270404958e41ab782ce"
+    },
+    {
+      "start": "0x602cc6c6",
+      "end_exclusive": "0x602cc6d8",
+      "sha256": "c0929beb5bc7fe3a45ca3925405f75512b3313f748da04f24bee51ed5def2d8d"
+    },
+    {
+      "start": "0x60bd408d",
+      "end_exclusive": "0x60bd4150",
+      "sha256": "fec1dc9aa9ba4bde3fa12cd175300a24ba51eab6e903d62b6f10c13bc31de713"
+    },
+    {
+      "start": "0x602b97c5",
+      "end_exclusive": "0x602b98a0",
+      "sha256": "30f6cfd349f41376d6d0bc636f796e4becfb738752c9db83224ad220456551c2"
+    }
+  ],
+  "firmware_modified": false,
+  "arrays": {
+    "native_part_roundtrips": 432,
+    "native_bank_saves": 9,
+    "native_bank_loads": 10,
+    "all_48_candidate_cells_preserved": true,
+    "part0_unchanged_by_HL_API": true,
+    "internal_banks_not_user_presets": true,
+    "native_part_api": "0x602cc0d0 /0x602cc0a7",
+    "native_bank_api": "0x602cc03a /0x602cbffe",
+    "staging_counterexample": {
+      "active_part1_changed": true,
+      "current_profile_unchanged": true,
+      "native_inhibit_still_zero": true,
+      "native_window": "0x602b3406..0x602b340f",
+      "native_caller_order": "0x602b33ec bank_load precedes0x602b33f7 filter;0x602b3408 loads selected bank",
+      "actual_concurrent_image_admission": "NOT established; a quiescent/publication join is required",
+      "not_claimed": "Does not prove a physical mixed frame; disproves treating ACTIVE pointer as intrinsically committed"
+    },
+    "fixture": "Owned full-sized Mode RAM, CPU0, coherent aliases; exact ROM routines; no NVS backend or complete Myset transaction"
+  },
+  "admission": {
+    "cases": [
+      {
+        "inhibit": 0,
+        "reaches_registered_edit": true,
+        "stopped_before_edit": true,
+        "capture_or_menu_state_checked": false
+      },
+      {
+        "inhibit": 1,
+        "reaches_registered_edit": false,
+        "stopped_before_edit": true,
+        "capture_or_menu_state_checked": false
+      },
+      {
+        "inhibit": 2,
+        "reaches_registered_edit": true,
+        "stopped_before_edit": true,
+        "capture_or_menu_state_checked": false
+      },
+      {
+        "inhibit": 255,
+        "reaches_registered_edit": true,
+        "stopped_before_edit": true,
+        "capture_or_menu_state_checked": false
+      }
+    ],
+    "native": "0x602afa11 ->0x602cc6cf ->0x602b0bc9",
+    "meaning": "One inhibit byte blocks only value1; this entry does not establish shooting/menu idle or acquire a 40-value transaction",
+    "next_boundary": "Wi-Fi application state selection precedes this function and remains unqualified"
+  },
+  "wifi_pending": {
+    "native_prefix": "0x60bd40e7..0x60bd40fb",
+    "pending_address": "0xa26a4524",
+    "bytes": 12,
+    "messages": [
+      {
+        "key": 927,
+        "type": 0,
+        "value": 3
+      },
+      {
+        "key": 939,
+        "type": 0,
+        "value": -2
+      }
+    ],
+    "second_replaces_first": true,
+    "stopped_before_event_post": "0x60bd548d",
+    "limits": "Native prefix only; no claim that stock worker races. A new bulk receiver needs owned immutable payload and timeout lifetime, not40 scalar posts."
+  },
+  "secondary_core": {
+    "cpu": 1,
+    "native_cached_pointer": "0x6250ba00",
+    "guard": "0x6005ea4a..0x6005ea71",
+    "stop": "0x60061808",
+    "storage_unchanged_before_stop": true,
+    "continuation_not_modeled": "Native code then resolves its global record and can use cross-core6005e6e9; complete transport/ack not replayed",
+    "conclusion": "CPU0 part tests do not qualify direct execution from an arbitrary HTTP/app worker"
+  },
+  "task": "T25",
+  "status": "blocked; no v4 receiver or package",
+  "baseline_main": "c80598014e55c1aad60bf4383d853ec6d43d83b8",
+  "upstream": {
+    "repository": "https://github.com/fishcu/oly_fw_analysis",
+    "commit": "539fcf1fa9eda5fdef8ede4deeab94a4691d94c3",
+    "use": "Read/run reference only; no source, assembly or docs copied"
+  },
+  "model_contract": {
+    "ROM": "Exact E142 build1100 readonly code",
+    "RAM": "Owned 262144-byte Mode-shaped record initialized with type7 and zero data; not captured camera settings",
+    "cpu": 0,
+    "aliases": "Explicit cached/uncached coherent model; no hardware cache timing",
+    "globals": {
+      "banks": "0x62253590 ->0x624ea8dc",
+      "ACTIVE": "0x62253594 ->0x6250ba00",
+      "LIVE": "0x62253598 ->0x62509e30"
+    },
+    "protected_record_guard": "Declared range begins0x10000000, outside the owned Mode; not a captured device value",
+    "register_stack": "Native CALL frames and restored SP checked",
+    "long_trace": "40-instruction tail in retained GNU BootState; native aligned u32 arrays and fixed strides; no claim of complete access trace",
+    "unknown_access": "Stops; no automatic zero-fill"
+  },
+  "reset": {
+    "cases": 48,
+    "keys": [
+      927,
+      928,
+      929,
+      930,
+      931,
+      932,
+      933,
+      934,
+      935,
+      936,
+      937,
+      938,
+      939,
+      940,
+      941,
+      942,
+      943,
+      944,
+      945,
+      946,
+      947,
+      948,
+      949,
+      950,
+      951,
+      952,
+      953,
+      954,
+      955,
+      956,
+      957,
+      958,
+      959,
+      960,
+      961,
+      962,
+      1655,
+      1656,
+      1657,
+      1658,
+      1659,
+      1660,
+      1661,
+      1662,
+      1663,
+      1664,
+      1665,
+      1666
+    ],
+    "all_neutral": true,
+    "native_default_lookup": true,
+    "native_ACTIVE_part_writes": true,
+    "modeled_registered_setter": "0x602b2250 current/staged",
+    "modeled_environment_query": "0x602cbc0a key4508 ->0",
+    "full_reset_save_reboot": false
+  },
+  "attempts": [
+    {
+      "approach": "Direct ACTIVE part API for committed H/L",
+      "result": "Numeric roundtrip and bank copy pass; ACTIVE changes in native caller window before later publication, old current config and inhibit0 remain",
+      "gate": "Must prove committed bank/values or quiescent frame admission"
+    },
+    {
+      "approach": "Add existing inhibit/native app setter gate",
+      "result": "Only byte1 blocks this entry; native callback/40-value ownership/idle state not established; secondary-core cached pointer reaches explicit native diagnostic cut",
+      "gate": "Must join actual application state, core, lifetime, refresh and save"
+    }
+  ],
+  "stored_cell_candidate": {
+    "marker": "0xe7410000",
+    "payload": "low nibble H, high nibble L, signed4; complemented payload byte in bits8..15",
+    "valid_pairs": 225,
+    "native_part0_preserved": true,
+    "invalid_default": "neutral (0,0)",
+    "installed": false,
+    "not_guarantees": [
+      "Mutex",
+      "40-value atomicity",
+      "Power-loss atomicity",
+      "Exclusive stock ownership"
+    ]
+  },
+  "stock_compatibility": {
+    "raw_branch_candidate_counts": {
+      "bank_get": 6,
+      "ACTIVE_get": 16,
+      "ACTIVE_set": 9,
+      "inhibit_set": 8
+    },
+    "qualification": "Raw candidates only, context windows retained privately; not exhaustive computed-call analysis",
+    "inspected_consumers": [
+      "Native mode filters (T22/T24 selectpart0 for COLOR)",
+      "Single/all/default reset paths",
+      "Two numeric diagnostic dumps iterateparts0/1",
+      "Raw/debug getter/setter"
+    ],
+    "no_new_proof": "No full exclusion of stock computed consumers or reverted-stock interpretation"
+  },
+  "remaining_criteria": {
+    "normal_NVS_save_cold_reload": "NOT completed",
+    "whole_reset_with_save": "NOT completed",
+    "Myset_UI_commit_recall": "NOT completed; native bank arrays only",
+    "Mode_checksum": "Prior T24 native checksum coverage retained, not a new full persistence proof",
+    "reverted_stock_harmlessness": "NOT established",
+    "HTTP_new_receiver_to_application": "NOT implemented",
+    "idle_admission_and_owned_40_value_transaction": "NOT established",
+    "new_values_to_ISP": "No v4 reader implemented",
+    "invalid_request_zero_writes": "No v4 parser implemented"
+  },
+  "protocol": {
+    "path": "docs/wifi-recipe-protocol.md",
+    "status": "UNRELEASED / BLOCKED",
+    "endpoints": null,
+    "capability_response": null,
+    "T26b_implementation_dependency_met": false
+  },
+  "setting_key_clues": {
+    "profiles": [
+      {
+        "slot": 1,
+        "S": 927,
+        "tone_trio_unlabeled": [
+          963,
+          964,
+          965
+        ],
+        "shading": 1667
+      },
+      {
+        "slot": 2,
+        "S": 939,
+        "tone_trio_unlabeled": [
+          966,
+          967,
+          968
+        ],
+        "shading": 1668
+      },
+      {
+        "slot": 3,
+        "S": 951,
+        "tone_trio_unlabeled": [
+          969,
+          970,
+          971
+        ],
+        "shading": 1669
+      },
+      {
+        "slot": 4,
+        "S": 1655,
+        "tone_trio_unlabeled": [
+          1672,
+          1673,
+          1674
+        ],
+        "shading": 1670
+      }
+    ],
+    "proof": "Native COLOR case calls602b2237; trio stored atbundle+144/+148/+152, shading at+140",
+    "limits": "Clues not promoted to validated high/mid/shadow setter units or wire fields"
+  },
+  "toolchain": {
+    "upstream_commit": "539fcf1fa9eda5fdef8ede4deeab94a4691d94c3",
+    "gnu_commit": "87ffb882e0f4d73401a0746177ffabb8e8bbe4ac",
+    "gnu_tree": "059d50a3cc76bd13dc10f21023863674e6da515c",
+    "archive_actual_sha256": "c8552c769e8802865bf906c53aa58a0164a6b282427d253103887b1966c01bd7",
+    "archive_documented_sha256": "a5e7cd02f844bb2873c25e0ac8e9a5b50a72c3e8e6570a6b7821d2e4c21178ad",
+    "core_original_sha256": {
+      "sim/mn10300/interp.c": "f6c34c6c81ff67bda52d6b57d0ea47954587e36908923cd7e4e59a90424cd37b",
+      "sim/mn10300/mn10300.igen": "355754c61879dc24bf6128bbba5a7931355731000e8cb213082b9b9cd4df0129"
+    },
+    "executable_sha256": "645b5cea4727da9bf859108120c76c6908a06e1b4995e1c72358665f7547175b"
+  },
+  "legacy_package_verification": {
+    "t20": {
+      "prospective_output_sha256": "d0fa93e752ec2680910dfabfef50cfc2ffb510aa8c8ec49cf6177868037bec8e",
+      "package_files_created": false
+    },
+    "v2": {
+      "input_sha256": "9d1610124ad98f6edae4540182205f06c9c703d9033ef0c4f19847193f95eaeb",
+      "prospective_output_sha256": "b1ad25019722af31e26bdf29aabaa1867320bea64c9bb2c0acc06cc5aadc4375",
+      "bytes": 111017984,
+      "decoded_output_sha256": "ce249b20d7010706fbe0fb26a18015b6729e36a14d2337614f2ac055201f02de",
+      "unchanged_components": 4,
+      "hook_source_sha256": "8a3907a14d3f1887879d6bb2a68ea1c4f66943116ba2885004f79cf1423de926",
+      "manifest_sha256": "a6e96eec715d6a3857bf316e1e04c7f4cc1d9f02a640e90ffda6a613600cd17e",
+      "tool_versions": {
+        "assembler": "GNU assembler (GNU Binutils) 2.45",
+        "linker": "GNU ld (GNU Binutils) 2.45",
+        "objcopy": "GNU objcopy (GNU Binutils) 2.45",
+        "objdump": "GNU objdump (GNU Binutils) 2.45"
+      },
+      "verify_only": true,
+      "package_files_created": false
+    },
+    "v3": {
+      "input_sha256": "9d1610124ad98f6edae4540182205f06c9c703d9033ef0c4f19847193f95eaeb",
+      "prospective_output_sha256": "1916c0cffd83dc0b83cdf34477f76943f37d79da551bc847061eb7d3cd796c91",
+      "bytes": 111017984,
+      "decoded_output_sha256": "8f806925ff9d7e304ca0f632cb022443411fb23b7cc4bfc74eaf2a6d9281044e",
+      "unchanged_components": 4,
+      "hook_source_sha256": "ad1605165f2f3ed6349cbb8c486bca0a2ea34c0dc0bf1ab0cd6770e8b8e61e06",
+      "manifest_sha256": "59db2758e6414ffeba6182e87b87e373dd01ac1368ec921332ce627d0e815d66",
+      "tool_versions": {
+        "assembler": "GNU assembler (GNU Binutils) 2.45",
+        "linker": "GNU ld (GNU Binutils) 2.45",
+        "objcopy": "GNU objcopy (GNU Binutils) 2.45",
+        "objdump": "GNU objdump (GNU Binutils) 2.45"
+      },
+      "verify_only": true,
+      "package_files_created": false
+    }
+  },
+  "source_sha256": {
+    "tools/ep7_t25_storage_probe.py": "ac06e82badfbff525f22359f3fc67c859dbe82d5299f3676cdf5dc4b5cf8b946",
+    "tests/test_ep7_t25_storage_codec.py": "eb065fb4fbb4216d7244f38fadd918f8e39e4f031c8b4670cd6ed74bee51411a"
+  },
+  "tests": {
+    "new_codec_tests": 3,
+    "full_tests": 97,
+    "passed": 91,
+    "optional_skipped": 6,
+    "native_pass_does_not_mean_v4_ready": true
+  },
+  "reproduction": {
+    "setup": "bash tools/setup_t20_environment.sh",
+    "native": "python3 tools/ep7_t25_storage_probe.py --upstream work/upstream/oly_fw_analysis --stock /tmp/private/stock.BIN --out /tmp/private/t25-checks",
+    "unit": "python3 -m unittest discover -s tests -p test_ep7_t25_storage_codec.py -v",
+    "private_only": "OEM code/data, listings, trace events and owned Mode state remain under private /tmp"
+  },
+  "decision": "Preserve candidate A and existing v3; stop implementation before unsupported writes/receiver. T26b blocked until actual firmware protocol is released, not replaced by an invented mock."
+}
