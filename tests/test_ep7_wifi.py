@@ -70,8 +70,8 @@ class Loopback(unittest.TestCase):
     def test_stock_and_wrong_version_refuse_before_rec_or_write(self):
         camera,state=self.camera(Model(stock=True))
         with self.assertRaises(Incompatible):Transfer(camera,self.directory/'p').write(1,self.recipe())
-        self.assertEqual(state.writes,0);self.assertFalse(state.rec)
-        self.assertEqual([p for p,_ in state.requests],['/get_caminfo.cgi','/get_mcon.cgi'])
+        self.assertEqual(state.writes,0)
+        self.assertEqual([p for p,_ in state.requests],['/get_caminfo.cgi','/switch_cammode.cgi','/get_mcon.cgi'])
         with patch.object(camera,'get_number',return_value=0x45503732):
             with self.assertRaises(Incompatible):camera.discover()
 
@@ -141,12 +141,18 @@ class Loopback(unittest.TestCase):
         camera,state=self.camera();args=['--host','127.0.0.1','--port',str(camera.port),'--gap','0']
         out=io.StringIO()
         with redirect_stdout(out):self.assertEqual(main(args+['discover']),0)
-        self.assertFalse(state.rec)
+        self.assertTrue(state.rec);self.assertEqual(state.writes,0)
         target=self.directory/'read.json'
         with redirect_stdout(io.StringIO()):self.assertEqual(main(args+['read','--slot','1','--out',str(target)]),0)
         self.assertEqual(vector(load_recipe(target)),[0]*40)
         self.assertTrue(load_recipe(target)['name'].startswith('COLOR 1 backup '))
-        self.assertEqual(state.writes,0);self.assertFalse(state.rec)
+        self.assertEqual(state.writes,0)
+
+    def test_get_mcon_requires_rec_mode_like_the_real_camera(self):
+        camera,state=self.camera()
+        with self.assertRaises(ClientError) as ctx:camera.get_number(65535)
+        self.assertIn('520',str(ctx.exception));self.assertIn('遥控模式',str(ctx.exception))
+        self.assertEqual(camera.discover()['protocol'],'EP71');self.assertTrue(state.rec)
 
     def test_no_public_or_dns_targets_and_no_redirect_following(self):
         for host in ('8.8.8.8','example.com','169.254.169.254','0.0.0.0','224.0.0.1','192.168.1.1.example.com','::','2001:4860:4860::8888'):
@@ -169,7 +175,7 @@ class Loopback(unittest.TestCase):
                      b'<response>\0<value>0</value></response>',b'garbage'):
             with self.assertRaises(ClientError):Camera.xml(body,'response','value')
         body=b'<caminfo><model>E-P7</model><serial>owned-private-metadata</serial><mac>owned-private-metadata</mac></caminfo>'
-        with patch.object(camera,'request',side_effect=[body,b'<response><value>45503731</value></response>']):
+        with patch.object(camera,'request',side_effect=[body,b'',b'<response><value>45503731</value></response>']):
             self.assertEqual(camera.discover(),{'model':'E-P7','protocol':'EP71','slots':4})
 
     def test_lock_and_backup_failure_prevent_marked_write(self):

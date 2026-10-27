@@ -124,7 +124,9 @@ class Camera:
             # no cookies, no serial/MAC query or raw-response logging.
             conn.request('GET',url,headers={'Connection':'close','Accept':'application/xml'})
             response=conn.getresponse();body=response.read(LIMIT+1)
-            if response.status!=200:raise ClientError('相机返回 HTTP '+str(response.status))
+            if response.status!=200:
+                hint='；相机可能不在遥控模式，或拒绝了该请求' if response.status==520 else ''
+                raise ClientError('相机返回 HTTP '+str(response.status)+hint)
             if len(body)>LIMIT:raise ClientError('相机响应过大')
             return body
         except (OSError,http.client.HTTPException) as exc:
@@ -152,6 +154,11 @@ class Camera:
     def discover(self):
         model=self.xml(self.request('/get_caminfo.cgi'),'caminfo','model')
         if model!='E-P7':raise Incompatible('机型不符；拒绝写入')
+        # Measured on E-P7 1.1 (B4, 2026-10-27): get_mcon/set_mcon answer HTTP 520
+        # with errorcode 1004 until the stock remote rec mode is entered, both on
+        # stock and v4. This is the same mode switch OI.Share uses; it does not
+        # start live view, press the shutter or change settings.
+        self.request('/switch_cammode.cgi',{'mode':'rec'})
         if self.get_number(65535)!=CAPABILITY:raise Incompatible('原厂固件或 EP71 版本不符；拒绝写入')
         return {'model':'E-P7','protocol':'EP71','slots':4}
 
@@ -197,7 +204,6 @@ class Transfer:
         with self.lock():
             if self.marker.exists():raise ClientError('存在不确定写入记录；先手动重连、只读核对并显式解除')
             self.camera.discover()
-            self.camera.request('/switch_cammode.cgi',{'mode':'rec'})
             before=self.camera.read(slot)
             stamp=datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S')+'-'+uuid.uuid4().hex[:8]
             backup=save_new(self.directory/'backups'/f'COLOR{slot}-{stamp}.json',before)
