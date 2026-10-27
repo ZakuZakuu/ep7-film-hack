@@ -27,7 +27,7 @@ py -3.12 -m tools.ep7_wifi restore --slot 1 "$HOME/COLOR1-backup.json"
 py -3.12 -m tools.ep7_wifi --host 192.168.0.10 --timeout 3 --gap 0.05 discover
 ```
 
-只接受 RFC1918 私网 IP 或测试用回环 IP；不接受域名、公网、链路本地地址或 URL，不跟随跳转。discover 和 read 不切换相机会话。明确 write/restore 时，在型号与 EP71 确认后请求原厂 rec 会话，再读取备份、只写差异、核对全部 40 值；不启动实时流、不按快门。
+只接受 RFC1918 私网 IP 或测试用回环 IP；不接受域名、公网、链路本地地址或 URL，不跟随跳转。相机只在原厂遥控模式（rec）下接受 `get_mcon` / `set_mcon`，否则返回 HTTP 520（错误码 1004），这是 B4 实测结果。所以 discover、read、write、restore 在确认型号后都会先请求 rec 模式，再查询 EP71 能力；write/restore 随后读取备份、只写差异、核对全部 40 值。切换 rec 模式不启动实时流、不按快门、不改设置。
 
 输出的白平衡、WB 偏移、曝光建议**仅提醒手动设置**，不上传。目标是当前应用上下文中的 COLOR 槽，不直接操作内部 bank；Myset 等行为仍待 B4。
 
