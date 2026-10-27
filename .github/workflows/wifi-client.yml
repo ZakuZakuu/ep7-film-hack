@@ -1,0 +1,17 @@
+name: EP71 client (loopback synthetic only)
+on:
+  push:
+  pull_request:
+jobs:
+  wifi-client:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Owned protocol simulator and client integration
+        run: python -m unittest discover -s tests -p test_ep7_wifi.py -v

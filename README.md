@@ -2,17 +2,21 @@
 
 **Evidence-driven research on Olympus PEN E-P7 native profiles, firmware, and in-camera film looks.**
 
-[中文说明](README.zh-CN.md) · [Research plan](docs/05-execution-plan.md) · [Feasibility gates](docs/09-feasibility-gates.md) · [Prior work](docs/04-reference-projects.md)
+[中文说明](README.zh-CN.md) · [Current instructions](AGENTS.md) · [Historical plan](docs/05-execution-plan.md) · [Historical gates](docs/09-feasibility-gates.md) · [Prior work](docs/04-reference-projects.md)
 
-> **Status: RESEARCH ONLY — no verified E-P7 firmware patch, arbitrary LUT import, ART-filter replacement, or camera-tested custom effect.** This is not an installer or a supported modification. Unofficial community project, not affiliated with OM Digital Solutions or Olympus.
+> **Status: experimental COLOR HSL software.** The owner reported successful T20 effects and v2 COLOR1–4 JPEG tests ([#49](https://github.com/ZakuZakuu/ep7-film-hack/issues/49), [#58](https://github.com/ZakuZakuu/ep7-film-hack/issues/58)). v4 EP71 and the desktop client have offline validation; their B4 camera tests are pending. No OEM firmware or install files are distributed here.
 
-## Why
+## Current software and goal
 
-The goal is *save a useful film look, select it quickly, preview it honestly and shoot a finished JPEG*. Issue #33 prioritizes the **ART ecosystem**: reuse stock color looks and eligible native effects, investigate color grain, and eventually add independently saved, named custom ART entries with original icons/previews while preserving stock filters. No arbitrary LUT runtime is required. These are product goals, not implemented features; manual stock editing is not automatic import or a user preset library.
+Save a useful native COLOR film look, switch profiles, retain camera preview and JPEG output. ART research is paused. [AGENTS.md](AGENTS.md) and the authorized Issue supersede the historical T0–T19 gates and plans below.
 
-**A goal is not a capability.** Stock four-profile editing/saving and on-screen effect are documented; automatic import, native parameter representation and the preview/JPEG consumer chain remain unverified. The candidate firmware is privately accessible; acceptance of modified updates and safe recovery remain unverified.
+- [Recipe Studio](tools/recipe_studio/README.md): offline recipe editing/approximation; a desktop preview is not an E-P7 quality measurement.
+- [v4 / EP71 protocol](docs/wifi-recipe-protocol.md): sequential native-setting writes and a published H/L RAM mirror, verified to the ISP coefficient boundary in explicit offline models. Real persistence, Wi-Fi, Myset and cache behavior remain B4 items.
+- [Desktop Wi-Fi client and Windows/macOS/WSL commands](tools/ep7_wifi/README.md): discover, read, automatic backup, write, verify and restore. Requires EP71; stock firmware is refused. Timeout does not imply cancellation.
 
-## Research strategy (borrow proven methods, not patches)
+Agents have not connected or operated a camera. Hardware installation and B4 remain owner decisions after review. Arbitrary LUT import, custom ART entries and production-safe firmware are not claimed.
+
+## Historical research strategy (T0–T19)
 
 | Candidate method | Public precedent | E-P7-specific proof required |
 | --- | --- | --- |
@@ -25,7 +29,7 @@ The goal is *save a useful film look, select it quickly, preview it honestly and
 
 Cross-camera implementations are **precedent for an investigation**, not evidence of compatibility or success on the E-P7. We prefer the smallest viable change and stop when facts contradict a proposed route.
 
-## Project state
+## Historical project state (T0–T19)
 
 - T0 review: [findings and three proposed experiments](research/first-pass-findings.md), [acquisition blocker](research/blockers/BLOCKER-firmware-acquisition.md), [source audit](research/source-access-review.md), and [synthetic validation](research/validation-t0.md). The historical G1 access blocker was subsequently resolved by T1/T1.1; protocol/native-profile routes remain conditional research.
 - Official firmware listing: E-P7 **1.1**, dated 2022-02-28 ([OM SYSTEM](https://support.jp.omsystem.com/en/support/imsg/digicamera/download/software/firm/e1/)). This is a listing, **not** a verified downloadable firmware image.
@@ -33,9 +37,9 @@ Cross-camera implementations are **precedent for an investigation**, not evidenc
 - No E-P7 hardware has been connected or tested.
 - Included helper `tools/inspect_blob.py` only reports metadata and sample entropy on user-provided files; it does **not** parse E-P7 firmware.
 
-## Current milestones and decision
+## Historical milestones and decisions (superseded by AGENTS.md)
 
-**Current: [Issue #47 native ART consumers](research/e142-art-native-consumers.md).** Native extra-effect state now joins real32-byte constructors and the previously verified effects receiver; per-variant records are independently shared with bracketing. This route clears FilmNoise, and a separate tagged block has an ExifTool-compatible metadata interpretation. Actual pixel rendering, named user looks and durable persistence remain unverified. [Reproduction/handoff](docs/25-t19-private-validation.md); G2 incomplete, G4/G5 NO-GO.
+**Historical T19: [Issue #47 native ART consumers](research/e142-art-native-consumers.md).** Native extra-effect state now joins real32-byte constructors and the previously verified effects receiver; per-variant records are independently shared with bracketing. This route clears FilmNoise, and a separate tagged block has an ExifTool-compatible metadata interpretation. Actual pixel rendering, named user looks and durable persistence remain unverified. [Reproduction/handoff](docs/25-t19-private-validation.md); G2 incomplete, G4/G5 NO-GO.
 
 **Previous: [Issue #45 ART parameter graph](research/e142-art-parameter-graph.md).** Native actuator/cache, registered hooks and156-byte bundle/scalar handoffs remain the baseline.
 
@@ -65,7 +69,7 @@ The following milestones retain their historical decisions; T9/T10 distinguish s
 
 [Issue #23 hand-off verdict](research/e142-picturemode-handoff-verdict.md) completes that experiment: `0x334780` reads group/options/flags and conditionally delegates, with no identified imaging consumer. Stop this incremental chain; neither new callee met the independent rendering-evidence condition. G2 is incomplete, G4/G5 remain NO-GO. Prefer a separately authorized stock COLOR expressivity pilot, or pause if manual controls cannot meet the owner's needs. The report includes the route comparison and private reproduction; no camera experiment or automatic import is claimed.
 
-Read [AGENTS.md](AGENTS.md), [research policy](RESEARCH_POLICY.md) and the authorized issue. [CODEX_START.md](CODEX_START.md) records the historical T0 scope.
+Read current [AGENTS.md](AGENTS.md) and the authorized Issue first; [RESEARCH_POLICY.md](RESEARCH_POLICY.md) is historical. [CODEX_START.md](CODEX_START.md) records the historical T0 scope.
 
 ```bash
 python3 -m unittest discover -s tests -v

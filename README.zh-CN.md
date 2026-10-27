@@ -1,8 +1,20 @@
 # Olympus PEN E-P7 · Film Simulation Reverse Engineering Research
 
-**公开研究进展 — 2026-10-13**
+**当前软件进展 — 2026-10-27**
 
-**当前：[Issue #47 原生 ART 消费者](research/e142-art-native-consumers.md)。** 已将原生附加效果字段连接到真实32字节参数构造器和既有效果接收器，并交叉验证逐变体参数与 bracketing 记录的共用关系。这条构造路径清除 FilmNoise；另一组半字标签与 ExifTool 元数据格式吻合，不能当成 ISP 接口。仍未验证像素处理、独立命名风格和永久保存。见[复现与 handoff](docs/25-t19-private-validation.md)，G2 未完成/G4G5 NO-GO。
+当前按 [AGENTS.md](AGENTS.md) 复用原生 COLOR HSL，ART 路线暂停。机主报告 T20 效果及 v2 四档 JPEG 实拍通过（[#49](https://github.com/ZakuZakuu/ep7-film-hack/issues/49)、[#58](https://github.com/ZakuZakuu/ep7-film-hack/issues/58)）；v4 与电脑工具已做离线验证，仍待 B4 实拍，不是生产安全保证。
+
+- [Recipe Studio](tools/recipe_studio/README.md)：离线配方编辑与近似预览。
+- [v4 / EP71 协议](docs/wifi-recipe-protocol.md)：原厂逐值设置、H/L 发布镜像和 ISP 系数证据；持久性、无线、Myset 与缓存列入 B4。
+- [电脑 Wi-Fi 工具](tools/ep7_wifi/README.md)：Windows/macOS/WSL 的读取、自动备份、差异写入、完整回读和还原；原厂固件拒绝写入，超时后不自动重试或回滚。
+
+本仓库不提供原厂数据或安装文件。Agent 未连接或操作相机；机主在审查后另行决定本地构建、安装和 B4。
+
+## T0–T19 历史记录
+
+下文保留当时的结论与停点，不代表当前任务规则；当前以 AGENTS.md 与授权 Issue 为准。
+
+**历史 T19：[Issue #47 原生 ART 消费者](research/e142-art-native-consumers.md)。** 已将原生附加效果字段连接到真实32字节参数构造器和既有效果接收器，并交叉验证逐变体参数与 bracketing 记录的共用关系。这条构造路径清除 FilmNoise；另一组半字标签与 ExifTool 元数据格式吻合，不能当成 ISP 接口。仍未验证像素处理、独立命名风格和永久保存。见[复现与 handoff](docs/25-t19-private-validation.md)，G2 未完成/G4G5 NO-GO。
 
 **上一轮：[Issue #45 ART 参数图](research/e142-art-parameter-graph.md)。** 原生控件缓存、注册回调及156字节参数包是本轮基线，历史成果保留。
 
@@ -14,7 +26,7 @@
 
 **已有基础：[Issue #37 系统逆向工作台](research/e142-system-re-workbench.md)。** 已有可复现的工具初始化脚本和经过真实固件校验的私有 GNU/SQLite 索引；可直接复制的 [Cloud Setup 内容与运行命令](docs/20-re-workbench.md)。Ghidra 无界面合成 ELF 验证成功，但 MN103 语言/反编译尚未准入，REA 实际调用受云运行时阻塞。尚未实现自定义 ART 或修改固件。
 
-**已有 ART 证据：[Issue #33 ART 颗粒门控与自定义项目边界](research/e142-art-host-gates.md)。** 新代码关系确认三个复合键强制 MonoEnable，以及独立的 Type 条件清除 FilmNoise、保留 MonoEnable。局部条件下保留颗粒位不等于相机接受彩色颗粒，更不等于真实处理或预览。**ART 是当前第一候选；仅继续有锚点的研究，不实现或刷写。** 新项目注册、独立保存、实际处理及名称/图标/预览映射仍有阻塞。见[精确复现](docs/19-art-gates-private-validation.md)。机主已确认专用 ART 的 Add Effects 无法从普通 P/A/S/M Picture Mode 调用，旧跨入口实验不再提议。[T10 对比](research/e142-cross-model-style-entrypoints.md)、[T9 原生能力](research/e142-native-style-workflows.md)保留为历史证据。
+**已有 ART 证据：[Issue #33 ART 颗粒门控与自定义项目边界](research/e142-art-host-gates.md)。** 新代码关系确认三个复合键强制 MonoEnable，以及独立的 Type 条件清除 FilmNoise、保留 MonoEnable。局部条件下保留颗粒位不等于相机接受彩色颗粒，更不等于真实处理或预览。**当时 ART 是第一候选；该路线现已暂停。** 新项目注册、独立保存、实际处理及名称/图标/预览映射仍有阻塞。见[精确复现](docs/19-art-gates-private-validation.md)。机主已确认专用 ART 的 Add Effects 无法从普通 P/A/S/M Picture Mode 调用，旧跨入口实验不再提议。[T10 对比](research/e142-cross-model-style-entrypoints.md)、[T9 原生能力](research/e142-native-style-workflows.md)保留为历史证据。
 
 **状态：已验证 OE、LZO SquashFS、MN103 代码及部分系统结构；尚未找到自定义色彩参数的真实预览/JPEG 消费者；未连接或修改相机。** [Issue #25 系统边界研究](research/e142-system-boundary-map.md)在四轮有依据的离线实验中恢复了初始化数据与辅助代码的搬移关系、三层方法名称查找、带类型的单次拍摄请求，以及通用自定义设置路径。原先未定位的复制/填充辅助函数已在 #0 找到；这些发现仍属于架构和控制层，没有证明 COLOR 槽记录、成像实现或外部风格导入。见[有限数值索引](research/e142-system-boundary-map.json)和[私有复现](docs/16-system-map-private-validation.md)。**该轮停止逐函数追踪；T14 现已建立有证据的离线工作台，仍未解锁成像消费者或固件修改。** G2 未通过，G4/G5 NO-GO；不自动开启下一项 callee 任务，也不要求用户做相机测量。
 
@@ -22,7 +34,7 @@
 
 ## 一句话目标
 
-让 Olympus PEN E-P7 像一台好用的数码胶片相机：当前首选 ART 生态，复用原厂彩色风格与兼容效果，研究可保存、快速切换的自建风格，最终争取保留原厂滤镜并增加自定义名称、原创图标和预览。彩色颗粒、柔焦组合须有真实处理依据；不要求任意 LUT 运行时。手动原厂编辑是有限基线，不是自动导入或已实现的命名风格库；不能隐瞒 WB 等全局状态或预览例外。
+让 Olympus PEN E-P7 像一台好用的数码胶片相机：历史路线首选 ART 生态，复用原厂彩色风格与兼容效果，研究可保存、快速切换的自建风格，最终争取保留原厂滤镜并增加自定义名称、原创图标和预览。彩色颗粒、柔焦组合须有真实处理依据；不要求任意 LUT 运行时。手动原厂编辑是有限基线，不是自动导入或已实现的命名风格库；不能隐瞒 WB 等全局状态或预览例外。
 
 [Issue #18 原生配置研究](research/e142-native-profile-chain.md)已验证两种 Picture Mode 诊断结构的字段读取，以及选择相关的地址辅助函数；尚未找到 COLOR1–4 持久化布局、上传接口或预览/JPEG 消费者。两条有限假设均已停止，四个官方 COLOR 槽仍是证据最强的条件性路线。[当前 blocker](research/blockers/BLOCKER-e142-native-profile-consumer.md)与[私有复现](docs/14-native-profile-private-validation.md)记录了下一项字段写入者实验；39 项合成测试通过，未操作相机或公开原厂数据。
 
@@ -67,4 +79,4 @@ T0 复核结果见 [首轮报告](research/first-pass-findings.md)、[固件获�
 
 [Issue #10 资源布局成果](research/e142-resource-mapping.md) · [T0 研究基线](research/first-pass-findings.md) · [T1 容器成果](research/e142-first-sample-analysis.md) · [T1.1 文件系统成果](research/e142-squashfs-validation.md) · [技术路线](docs/03-technical-playbook.md) · [完整资源](docs/08-sources.md)
 
-公开发布约束：本仓库不包含原厂固件或提取代码，也尚无已验证 E-P7 实机改造功能。详见 [English README](README.md)、[可行性闸门](docs/09-feasibility-gates.md) 及 [研究政策](RESEARCH_POLICY.md)。
+公开发布约束：本仓库不包含原厂固件、提取代码或安装文件；实拍证据与未验证边界见本页开头。详见 [English README](README.md)、[可行性闸门](docs/09-feasibility-gates.md) 及 [研究政策](RESEARCH_POLICY.md)。
