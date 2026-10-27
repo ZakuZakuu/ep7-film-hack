@@ -1,0 +1,329 @@
+{
+  "issue": "https://github.com/ZakuZakuu/ep7-film-hack/issues/70",
+  "baseline": "e0a4d869526dc29f1d472bf1d76ec74ce932603c",
+  "model": "E-P7",
+  "firmware": "1.1 / E142 1100",
+  "stock_bytes": 111017984,
+  "stock_sha256": "9d1610124ad98f6edae4540182205f06c9c703d9033ef0c4f19847193f95eaeb",
+  "decoded_main_sha256": "5dd9af164b4590c7e82f6905c919b3cc450bb58f2d5742ab2a0e3a4eb2e26190",
+  "code_base": "0x60020020",
+  "upstream": {"url": "https://github.com/fishcu/oly_fw_analysis", "commit": "539fcf1fa9eda5fdef8ede4deeab94a4691d94c3", "use": "Read/run and design reference only; no upstream implementation copied"},
+  "status": "Issue-authorized fallback: native UI map and design, NOT v5 firmware",
+  "levels": {"native": "GNU executes E142 instructions in declared owned RAM", "static": "Pinned-ROM disassembly, data table or instruction assertion", "model": "Explicit service fixture; not captured camera behavior", "design": "Unimplemented proposal; no assigned code/RAM address"},
+  "native_replay": {
+    "descriptors": [
+      {
+        "slot": 1,
+        "root": "0x13b3",
+        "descriptor": "0x61186934",
+        "child_keys": [1091, 927, 928, 929, 930, 931, 932, 933, 934, 935, 936, 937, 938],
+        "child_count": 13
+      },
+      {
+        "slot": 2,
+        "root": "0x13b4",
+        "descriptor": "0x6118699c",
+        "child_keys": [1096, 939, 940, 941, 942, 943, 944, 945, 946, 947, 948, 949, 950],
+        "child_count": 13
+      },
+      {
+        "slot": 3,
+        "root": "0x13b5",
+        "descriptor": "0x61186a04",
+        "child_keys": [1097, 951, 952, 953, 954, 955, 956, 957, 958, 959, 960, 961, 962],
+        "child_count": 13
+      },
+      {
+        "slot": 4,
+        "root": "0x140c",
+        "descriptor": "0x61186a6c",
+        "child_keys": [1686, 1655, 1656, 1657, 1658, 1659, 1660, 1661, 1662, 1663, 1664, 1665, 1666],
+        "child_count": 13
+      }
+    ],
+    "constructors": [
+      {
+        "slot": 1,
+        "counts": [13, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11],
+        "S_values": [5, 4, 3, 2, 1, 0, -1, -2, -3, -4, -5],
+        "neutral_index": 5,
+        "constructor_stack_balanced": true
+      },
+      {
+        "slot": 2,
+        "counts": [13, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11],
+        "S_values": [5, 4, 3, 2, 1, 0, -1, -2, -3, -4, -5],
+        "neutral_index": 5,
+        "constructor_stack_balanced": true
+      },
+      {
+        "slot": 3,
+        "counts": [13, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11],
+        "S_values": [5, 4, 3, 2, 1, 0, -1, -2, -3, -4, -5],
+        "neutral_index": 5,
+        "constructor_stack_balanced": true
+      },
+      {
+        "slot": 4,
+        "counts": [13, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11],
+        "S_values": [5, 4, 3, 2, 1, 0, -1, -2, -3, -4, -5],
+        "neutral_index": 5,
+        "constructor_stack_balanced": true
+      }
+    ],
+    "local_delete": {
+      "cases": [
+        {"event": "0x9016", "stopped_at_queue": true, "queue_argument": "0x9016", "indices_and_Mode_unchanged": true},
+        {"event": "0x9017", "stopped_at_queue": true, "queue_argument": "0xf802", "indices_and_Mode_unchanged": true},
+        {"event": "0x9042", "stopped_at_queue": false, "queue_argument": null, "indices_and_Mode_unchanged": true}
+      ],
+      "scope": "Local actuator only; queue boundary NOT modeled",
+      "query_model": "Output unused on these three native paths"
+    },
+    "child_events": {
+      "steps": [
+        {"target": "0x60de55fa", "old": 0, "new": 0},
+        {"target": "0x60de55fa", "old": 1, "new": 0},
+        {"target": "0x60de55fa", "old": 5, "new": 4},
+        {"target": "0x60de55fa", "old": 9, "new": 8},
+        {"target": "0x60de55fa", "old": 10, "new": 9},
+        {"target": "0x60de56e6", "old": 0, "new": 1},
+        {"target": "0x60de56e6", "old": 1, "new": 2},
+        {"target": "0x60de56e6", "old": 5, "new": 6},
+        {"target": "0x60de56e6", "old": 9, "new": 10},
+        {"target": "0x60de56e6", "old": 10, "new": 10}
+      ],
+      "reset": {"event": "0x903e", "default_query": "0x607f964a", "key": 927, "stopped_before_default_lookup": true},
+      "commit": {"event": "0x900c", "stopped_at": "0x60de5b16", "key": 927, "selected_index": 4, "selected_value": 1},
+      "cutoff": "Commit UI-service preparation and default query not modeled; NOT a persisted edit"
+    },
+    "negative_controls": {
+      "rejections": ["Unaligned 2-byte access", "Unmodeled editor boundary"],
+      "modified_firmware": false,
+      "scope": "Deliberately invalid owned child RAM, not OEM ROM changes"
+    },
+    "audited_native_ROM_accesses": 260206,
+    "gnu_completed_instructions": 1294581,
+    "unique_native_ROM_pcs": 2217
+  },
+  "fixture_scope": {
+    "current_S": "Owned neutral values in all 48 fields; NOT stock preset defaults or owner RAM",
+    "image": "Unchanged v4 UI instructions, v4 existing private in-memory fixture",
+    "initializer": {
+      "source_offsets": ["0x2107e0", "0x23eb30"],
+      "destination": "0x61f98540",
+      "sha256": "cb0e44e65a276938515657b2741e2e841da9e05445f8a92571acf7827f9ef39d"
+    },
+    "allocation": "Finite 4-byte-aligned owned allocations, zero initial contents, no physical heap claim",
+    "availability": "Explicitly available GUI context; native per-value enum filters still execute",
+    "service_invocations": {
+      "0x60e9e127": 176,
+      "0x60a4ec03": 56,
+      "0x607706af": 1320,
+      "0x60767ee5": 632,
+      "0x6076df51": 2640,
+      "0x6076e146": 52,
+      "0x6076e27c": 52,
+      "0x60767f0c": 688,
+      "0x6076e1bb": 1268,
+      "0x6076e1e9": 688,
+      "0x60a4ec0d": 104,
+      "0x607b3c32": 52,
+      "0x1c000100": 52,
+      "0x6076e1f8": 580,
+      "0x60e9e050": 119,
+      "0x60ea15ca": 53,
+      "0x60cf779d": 3,
+      "0x1c000120": 3
+    },
+    "alignment": "All recorded main-ROM memory operands checked, including controlled failure attempts; helper/host model code is outside this count",
+    "completeness": "Not a physical-key FSM, complete GUI, durable commit or v5 ABI proof"
+  },
+  "static_map": {
+    "event_name_records": [
+      {"record": "0x611eab50", "event": "0x900c", "name_pointer": "0x611e81fc"},
+      {"record": "0x611eab58", "event": "0x900d", "name_pointer": "0x611e820a"},
+      {"record": "0x611eaba0", "event": "0x9016", "name_pointer": "0x611e829f"},
+      {"record": "0x611eaba8", "event": "0x9017", "name_pointer": "0x611e82b1"},
+      {"record": "0x611eac40", "event": "0x903e", "name_pointer": "0x611e842f"},
+      {"record": "0x611eac60", "event": "0x9042", "name_pointer": "0x611e847f"}
+    ],
+    "gui_setter": "0x607fa129",
+    "gui_native_adapter": "0x60827440",
+    "gui_value_path": "0x602af890",
+    "display": {"entry": "0x60e27289", "key_table": "0x611899b8", "cursor_choices": 13, "S_choices": 11},
+    "excluded_C3d": {"setter": "0x607996ef", "getter": "0x607997cf", "copy_bytes": 12, "not_proven_color_wheel": true}
+  },
+  "construction": {
+    "parent_factory": "0x60e2054e",
+    "parent_bytes": 188,
+    "parent_vtable": "0x61187534",
+    "parent_initializer": "0x60e20760",
+    "root_callback_table": "0x6118474c",
+    "callback_row_bytes": 56,
+    "callback_rows": 151,
+    "root_descriptor_table": "0x61186ba4",
+    "root_descriptor_rows": 47,
+    "root_descriptor_row_bytes": 8,
+    "plural_constructor": "0x60e20aca",
+    "child_factory_dispatch": "0x60dd518e",
+    "child_type_zero_factory": "0x60de33a7",
+    "child_bytes": 144,
+    "child_initializer": "0x60de3534",
+    "selected_key_constructor": "0x60de83b7",
+    "enumeration_constructor": "0x60de3670",
+    "single_item_profile_panel_roots": ["0x140f", "0x1410", "0x1411", "0x1412"],
+    "warning": "These single-item panels are not the 13-child editor roots"
+  },
+  "native_object_layout": {
+    "parent": [
+      {"offset": 100, "type": "u16", "meaning": "root key"},
+      {"offset": 120, "type": "u16", "meaning": "child count"},
+      {"offset": 122, "type": "u16", "meaning": "current child index"},
+      {"offset": 124, "type": "pointer32[13]", "meaning": "cursor and 12 colors"}
+    ],
+    "child": [
+      {"offset": 76, "type": "pointer32", "meaning": "selected event handler"},
+      {"offset": 84, "type": "u16", "meaning": "property key"},
+      {"offset": 88, "type": "u16", "meaning": "enum count"},
+      {"offset": 90, "type": "u16", "meaning": "temporary enum index"},
+      {"offset": 96, "type": "pointer32 to u16[]", "meaning": "per-value availability flags"},
+      {"offset": 100, "type": "pointer32 to i32[]", "meaning": "enum values"},
+      {"offset": 104, "type": "u32", "meaning": "non-wrapping selection policy"}
+    ]
+  },
+  "gui_api": {
+    "singleton_getter": "0x607f9062",
+    "constructor": "0x607f90c7",
+    "vtable": "0x60acb0dc",
+    "slots": [
+      {"offset": 0, "target": "0x607fa129", "role": "set"},
+      {"offset": 8, "target": "0x607f9549", "role": "get"},
+      {"offset": 24, "target": "0x607f95dc", "role": "enum count"},
+      {"offset": 28, "target": "0x607f9912", "role": "enum index to value"},
+      {"offset": 152, "target": "0x607f964a", "role": "default query"}
+    ],
+    "commit_virtual_call": "0x60de5d67",
+    "admission_checks": ["0x607fa1b9", "0x607fa211", "0x607fa26b", "0x607fa27d", "0x607fa292"],
+    "adapter": "0x60827440",
+    "value_adapter_call": "0x6082748b",
+    "value_adapter_target": "0x602af890",
+    "coordination_call": "0x608274c3",
+    "coordination_target": "0x60813ffe",
+    "bridge_status": "No executed GUI-to-v4 tagged-write/IPC transaction established; do not bypass admission or send tagged values through stock S conversion"
+  },
+  "events": {
+    "ids": {
+      "OK_press": "0x900c",
+      "OK_release": "0x900d",
+      "OK_long": "0x903e",
+      "Delete_press": "0x9016",
+      "Delete_release": "0x9017",
+      "Delete_long": "0x9042"
+    },
+    "common_dispatch": "0x60dd5250",
+    "parent_misc_dispatch": "0x60e20cdc",
+    "parent_general": "0x60e22191",
+    "parent_fallback": "0x60e21fa6",
+    "parent_up": "0x60e20e0a",
+    "parent_down": "0x60e2107a",
+    "child_up_commit": "0x60de9920",
+    "child_down_commit": "0x60de993d",
+    "child_generic": "0x60de5ab8",
+    "child_special": "0x60de9886",
+    "queue_bookkeeping": {
+      "entry": "0x60d1050a",
+      "end_exclusive": "0x60d10586",
+      "head_and_tail": ["0x6246a6f0", "0x6246a6f2"],
+      "entries": 500,
+      "stride": 32,
+      "qualification": "Static: clears matching active entries under lock; NOT event forwarding. Replay stops before this live-queue service."
+    },
+    "unused_key_verdict": "NOT proved; a locally unhandled event does not establish whole-UI freedom",
+    "methods_tried": ["Native COLOR parent/child event dispatch with explicit queue cutoff", "Event-name records, common dispatcher and upper-state debug-name anchors"],
+    "rejected_live_state_anchors": ["0x611a7347", "0x611a7378", "0x611a73ab", "0x611a73df"],
+    "rejected_reason": "These anchors describe RAW edit states; not evidence for the shooting COLOR editor"
+  },
+  "display": {
+    "numeric_entry": "0x60e27289",
+    "native_key_lists": "0x611899b8",
+    "selected_value_getter": "0x60e27423",
+    "cursor_lookup": "0x60e2747d",
+    "S_lookup": "0x60e27496",
+    "lookup_function": "0x60df24f1",
+    "default_comparison_window": ["0x60e27950", "0x60e27ab1"],
+    "geometry_verdict": "Actual twelve-color wheel producer/consumer and axis-label draw API NOT established",
+    "two_methods": ["Trace selected-value and numeric consumers", "Inspect neighboring C3d interface and its typed loads/copy length"],
+    "C3d_counterevidence": "0x607996ef accesses halfwords at offsets 0,2,4,6,8,10; 0x607997cf copies 12 bytes. This is not proof of a 12-color saturation array."
+  },
+  "v4_reuse_design": {
+    "status": "Design only",
+    "part": 1,
+    "per_value_format": "0xe741CCVV",
+    "existing_app_entry": "0x60210b78",
+    "existing_wifi_app_call": "0x60888b35",
+    "native_registered_setting": "0x602afa11",
+    "mirror": "0x60210ec0",
+    "uncached_mirror": "0xa0210ec0",
+    "current_record_publication_call": "0x602cbcb5",
+    "wifi_read_entry": "0x60210cf3",
+    "evidence": "Unchanged v4 manifest/probe and owner B4; NOT a new local-H-to-ISP success",
+    "B4": "https://github.com/ZakuZakuu/ep7-film-hack/issues/65#issuecomment-6440964392"
+  },
+  "proposed_state": {
+    "status": "Unimplemented external state; do not insert into OEM classes",
+    "alignment": 4,
+    "size": 16,
+    "address": null,
+    "fields": [
+      {"offset": 0, "type": "u16", "meaning": "root key"},
+      {"offset": 2, "type": "u8", "meaning": "slot"},
+      {"offset": 3, "type": "u8", "meaning": "axis S/L/H"},
+      {"offset": 4, "type": "u32", "meaning": "active flag"},
+      {"offset": 8, "type": "pointer32", "meaning": "owning editor"},
+      {"offset": 12, "type": "u32", "meaning": "generation / stale event guard"}
+    ],
+    "lifecycle": "Enter S; switch only in qualified idle COLOR owner; rebuild 12 enum caches plus numeric/geometry views; clear on exit",
+    "ALL_and_long_OK": "Prefer disabled on H/L, before first mutation and timer delivery; preserve stock S and short-OK exit",
+    "scope": "Placement, hooks, timer cancellation, geometry and ABI remain unqualified"
+  },
+  "legacy_hash_reproduction": [
+    {"version": "T20", "expected_and_reproduced_sha256": "d0fa93e752ec2680910dfabfef50cfc2ffb510aa8c8ec49cf6177868037bec8e", "install_file_created": false, "manifest_changed": false},
+    {"version": "v2", "expected_and_reproduced_sha256": "b1ad25019722af31e26bdf29aabaa1867320bea64c9bb2c0acc06cc5aadc4375", "install_file_created": false, "manifest_changed": false},
+    {"version": "v3", "expected_and_reproduced_sha256": "1916c0cffd83dc0b83cdf34477f76943f37d79da551bc847061eb7d3cd796c91", "install_file_created": false, "manifest_changed": false},
+    {"version": "v4", "expected_and_reproduced_sha256": "719b57c4fa0b94da60d73f0ed70b0d5dcd536c970e44054152a63b55d30a59e6", "install_file_created": false, "manifest_changed": false}
+  ],
+  "validation": {
+    "existing_HSL_unit_tests": 15,
+    "result": "passed",
+    "static_anchor_checks": "passed separately",
+    "install_files_created": false,
+    "camera_connected": false,
+    "v5_patch_created": false
+  },
+  "instruction_windows": [
+    {"start": "0x60de33a7", "end_exclusive": "0x60de33c8", "sha256": "3b075ec7e4ec399a81d03a815c060023c0669e0a6590303b2d6c0cac2390cf4c"},
+    {"start": "0x60de34bb", "end_exclusive": "0x60de3670", "sha256": "26cfcae11916da551d6fee88a8cd4489e61a4ff263fb4aeb4f4bc05852b38c68"},
+    {"start": "0x60de3670", "end_exclusive": "0x60de3a01", "sha256": "6f513e888110114fd693a3652c3bfb9b4990d307fb28da241009efcafbdc2623"},
+    {"start": "0x60de83b7", "end_exclusive": "0x60de857f", "sha256": "08baf3b55e1c6da6a8c6630a6db552f2d1131c97372656ba4cbd80f441f38c35"},
+    {"start": "0x60de55fa", "end_exclusive": "0x60de5767", "sha256": "0182feb58233499cc2272aac17b0da8095908a62d38dae5224d3efaea8f0b486"},
+    {"start": "0x60de9886", "end_exclusive": "0x60de995a", "sha256": "d76432b88a0d2c024bdecfc4c024f8f3f18a0a3ccc6a16bdcd8c7ad2dac594bd"},
+    {"start": "0x60de5ab8", "end_exclusive": "0x60de5f9f", "sha256": "91f76544f68302b89988db9098dad376bd1446de26c827b82ac071c236d8e5e1"},
+    {"start": "0x60e2054e", "end_exclusive": "0x60e208c5", "sha256": "d9e3025a1f7873b7aed637fbf7a2e58e6c25969a48acc38ef9359a2b583bc8cd"},
+    {"start": "0x60e20aca", "end_exclusive": "0x60e20b2d", "sha256": "2335a3d8bce93eb61315d7d2e9ce3fd4ba3426095508f64919a554a4e130d279"},
+    {"start": "0x60e20cdc", "end_exclusive": "0x60e212f0", "sha256": "ab0567be0f371dca4c0d11c9f437ab434b509569c4f90f491087d7015134e86f"},
+    {"start": "0x60dd5250", "end_exclusive": "0x60dd5787", "sha256": "af47d5c1dbefd73a0fbf78e5bbe43a63ba87af85fdd7911059828a86e53f1442"},
+    {"start": "0x607f9549", "end_exclusive": "0x607f96dd", "sha256": "1853520c9c8989f5680e1769f7e328ac3eda7eedab7da2796d0bba63e40f58f4"},
+    {"start": "0x607f9912", "end_exclusive": "0x607f9999", "sha256": "0e9f77adf334f5742c8a2814be17b652f03af222a5948ae85ae85fd124476bf8"},
+    {"start": "0x607fa129", "end_exclusive": "0x607fa3c5", "sha256": "70afb1c25cee31c6b0f06fc3397a7b2ffc36afc791635f5c6956946b258e389f"},
+    {"start": "0x60827440", "end_exclusive": "0x608274e0", "sha256": "e041128adb1a325d6d17cd1e85881f978e32ca3c90cd5e32a568d0d2c71555cb"},
+    {"start": "0x607e945b", "end_exclusive": "0x607e9535", "sha256": "0840ad778b1f92b808bcb3719f3a3b7e2fcfcf126cfdf377267598a990825165"},
+    {"start": "0x607996ef", "end_exclusive": "0x607997f2", "sha256": "e16dcab4159d36ba05790e066db5acd89fca43af00b7327af701be47b7fe2ef1"},
+    {"start": "0x60e27289", "end_exclusive": "0x60e274ae", "sha256": "37c3bb5e1ec75c906e904c82f35641ee91791e78f86d92dc4a24c97a0d404076"},
+    {"start": "0x60e27950", "end_exclusive": "0x60e27ab1", "sha256": "11acdff606ef3e215ce1c00c1e74534cd84dcf221d1573798d39c1843c3c3c56"},
+    {"start": "0x60e21fa6", "end_exclusive": "0x60e223ae", "sha256": "763fa305f34657fc3e1774940812af57cedf67e1d1d753b078b7128d388d836a"},
+    {"start": "0x60d1050a", "end_exclusive": "0x60d10586", "sha256": "64821c7bea1b7b5bf4a637d913cc7fcb64ead073cc75b6dd39798ba72bb5d5e1"}
+  ],
+  "next_minimal_experiments": ["Recover the live shooting COLOR state registration/caller that invokes the common actuator; qualify one unused key including release/long-press/exit.", "Identify the live 12-color geometry draw request from the numeric-view root; execute its producer with declared layer/output ownership.", "Only then preserve GUI admission and prove a serialized local edit uses the existing v4 application setter/publication/readback path."],
+  "stop": "Two bounded key approaches and two display approaches did not close required evidence. No unanchored scan, fictitious v5 hash or B5 installation request."
+}
