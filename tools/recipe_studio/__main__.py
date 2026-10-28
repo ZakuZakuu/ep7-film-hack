@@ -1,10 +1,12 @@
 """python -m tools.recipe_studio: local-only preview, fit and calibration."""
 import argparse
 import json
+import os
 from pathlib import Path
 from .recipe import calibration, load_json, neutral, validate, vector
 from .images import read_image, png_bytes, private_output
-from .model import Model, raw_baseline
+from .model import raw_baseline
+from .backend import Model, backend_status
 from .lut import read_cube, read_hald, apply_lut
 from .fit import fit_pair, fit_reference
 
@@ -14,7 +16,9 @@ def write_json(path, obj):
 
 
 def main(argv=None):
-    p = argparse.ArgumentParser(description="E-P7 本地近似配方预览 / 拟合，不连接相机")
+    p = argparse.ArgumentParser(description="E-P7 本地配方预览 / 拟合，不连接相机")
+    p.add_argument("--model", choices=("workspace", "approximate"), help="优先 Workspace HSL 或显式近似后备")
+    p.add_argument("--workspace-qualification", help="本机原生验证生成的私有资格 JSON")
     p.add_argument("--calibration", help="本地校准文件；默认未校准模型")
     commands = p.add_subparsers(dest="command", required=True)
     serve = commands.add_parser("serve", help="仅监听 127.0.0.1 的浏览器界面")
@@ -34,19 +38,22 @@ def main(argv=None):
     fit.add_argument("--report", required=True)
     fit.add_argument("--max-nfev", type=int, default=100)
     fit.add_argument("--samples", type=int, default=768)
-    calibrate = commands.add_parser("calibrate")
+    calibrate = commands.add_parser("calibrate", help="仅校准近似后备的效果增益与 RAW 基线")
     calibrate.add_argument("--pairs", required=True)
     calibrate.add_argument("--output", required=True)
     calibrate.add_argument("--report", required=True)
     calibrate.add_argument("--max-nfev", type=int, default=80)
     args = p.parse_args(argv)
     try:
+        if args.model: os.environ["EP7_RECIPE_MODEL"] = args.model
+        if args.workspace_qualification: os.environ["EP7_WORKSPACE_QUALIFICATION"] = args.workspace_qualification
         cal = calibration(args.calibration)
         if args.command == "serve":
             from .server import create_app
             if not 1024 <= args.port <= 65535:
                 raise ValueError("端口需为 1024…65535")
-            print(f"本地近似预览：http://127.0.0.1:{args.port} （无相机连接、无外部上传）", flush=True)
+            print(f"本地预览：http://127.0.0.1:{args.port} （无相机连接、无外部上传）", flush=True)
+            print(backend_status()["label"], flush=True)
             create_app(cal).run(host="127.0.0.1", port=args.port, debug=False, threaded=True)
             return
         if args.command == "calibrate":
@@ -61,6 +68,7 @@ def main(argv=None):
             if args.command == "preview":
                 recipe = validate(load_json(Path(args.recipe).read_text(encoding="utf-8")), cal)
                 private_output(args.output).write_bytes(png_bytes(Model(base, cal).apply(vector(recipe))))
+                info["model"] = backend_status()
                 print(json.dumps(info, ensure_ascii=False))
                 return
             from .images import resize

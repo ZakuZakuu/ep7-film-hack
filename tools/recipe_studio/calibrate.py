@@ -95,7 +95,7 @@ def fit_calibration_cases(cases, cal, max_nfev=80):
     for case in cases:
         before.append(error_summary(predict(case, cal), case[1]))
         after.append(error_summary(predict(case, updated), case[1]))
-    report = {"format": "ep7-calibration-report-v1", "converged": bool(result.success),
+    report = {"format": "ep7-calibration-report-v1", "calibrated_model": "approximate-fallback", "converged": bool(result.success),
               "function_evaluations": result.nfev, "calibration_id": updated["id"],
               "trained_effect_gains": [GAINS[i] for i in active],
               "unobserved_effect_gains": [GAINS[i] for i in range(5) if i not in active],
@@ -105,7 +105,8 @@ def fit_calibration_cases(cases, cal, max_nfev=80):
                         for case, b, a in zip(cases, before, after)],
               "jacobian_rank": rank, "fitted_parameters": len(x0),
               "independent_validation_pairs": len(holdout),
-              "warnings": ["只拟合 RAW 显影的 RGB 增益/gamma 与有已知非零配方的全局效果增益",
+              "warnings": ["此校准的 HSL 增益只适用于近似后备；Workspace 固定 HSL 不使用这些增益",
+                           "只拟合 RAW 显影的 RGB 增益/gamma 与有已知非零配方的全局效果增益",
                            "无非零配方时不会声称校准 H/S/L、影调或暗角；不自动学习色区边界或真实 ISP",
                            "必须同 WB、曝光、镜头、裁切与配方；Natural 与 COLOR 默认差异需分别建模"]}
     if not holdout:

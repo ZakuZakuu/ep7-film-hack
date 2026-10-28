@@ -8,7 +8,8 @@ from urllib.parse import urlsplit
 from flask import Flask, jsonify, request, Response, abort
 from .images import read_image, resize, png_bytes
 from .recipe import calibration, validate, vector, load_json
-from .model import Model, raw_baseline
+from .model import raw_baseline
+from .backend import Model, backend_status
 from .lut import read_cube, read_hald, apply_lut
 from .fit import fit_pair, fit_reference
 
@@ -55,7 +56,7 @@ def create_app(cal=None):
 
     @app.get("/api/config")
     def config():
-        return jsonify(token=app.config["STUDIO_TOKEN"], calibration=cal)
+        return jsonify(token=app.config["STUDIO_TOKEN"], calibration=cal, model=backend_status())
 
     @app.post("/api/upload/<role>")
     def upload(role):
