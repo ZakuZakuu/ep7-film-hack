@@ -5,20 +5,21 @@
 本次保留近似模型，不把这些区域观测冒充 Workspace 的精确像素公式。
 
 ## 软件侧证据与阻塞
-
 - 基线为 main `e0a4d86`；参考固定为 [fishcu `539fcf1`](https://github.com/fishcu/oly_fw_analysis/tree/539fcf1)。
 - 本机为 `F:\Program Files (x86)\OMDS\OM Workspace`，程序文件版本 2.3.0.22。
 - 93 个 DLL 的 SHA-256、地址及指令证据仅存私有 `/tmp/ep7-workspace-research/`，不入库。
 - Acacia 和 Lilac 均含完整 3028 字节表，SHA-256 为 `a33d64bdb78ac41ba24ccbff820380f563211a095ac08a12a7c37a51b5c00531`。
 - Acacia 的 `OlyGetAcaciaInstance` 类型 4 分支复制此表；虚表 / 成员引用连接到候选消费者。
 - 消费者可见扇区选择、固定点乘法、算术右移和限幅；另一接口接收并重排三组 12 项参数。
-- 第一种方法 Capstone 已完成静态追踪；第二种方法 Ghidra headless 因工具链下载受阻未运行。
-  Adoptium API 返回 403；官方 GitHub 下载持续缓慢，Ghidra / Linux Java 均未完整下载。
-- 按 AGENTS.md 上限停止这一路；完整 ABI、色彩空间、全部 LUT 插值和 gamma 前后顺序未闭合。
-- 三段影调、创意暗角的实际像素入口未闭合；未执行未知 ABI 的 DLL 调用。
+- Capstone 静态追踪已由 Ghidra 11.0.3 反编译补充确认，工具链阻塞已解除。
+- 已确认 8 位回调包含 RGB / YCbCr 转换、定点极坐标、两组 6 区 HSL 处理及像素写回。
+- 原创 `workspace_polar.py` 与 Acacia 原生极坐标函数穷举 1,048,576 组输入，角度 / 半径零差异。
+- 新增 3 项纯合成测试通过；该内核不代表完整 HSL 模型，未替换现有 RGB 预览模型。
+- 已受控调用 HSL 阶段：中性及自定义黄色 H / 蓝色 L 三组各 100 个合成 YCbCr 像素正常返回。
+- 完整色区 / 系数 / LUT 及 RGB 写回仍待原创实现和原生对照；gamma 顺序、影调和暗角仍未闭合。
+- 原生调用脚本、私有 DLL 哈希及逐项报告仅在任务环境，未复制原厂源码或表数据。
 
 ## 已用现有照片完成的验证
-
 全部 35 张 JPEG 已核对元数据，14 个 ORF 已用相同 LibRaw 设置显影；无照片、EXIF 或派生图入库。
 B2 前 4 对的 ISO 均为 800、快门均为 1/25 秒，配对 S / 影调一致，自动白平衡系数略有差别。
 原厂第 5 张实际为 COLOR1 全区 S −5 / 影调 0，而非 Natural；据此与第 1 张 S 全 0 配对。
