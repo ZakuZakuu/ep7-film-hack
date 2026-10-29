@@ -37,7 +37,7 @@ python -m tools.recipe_studio fit /private/base.jpg --reference /private/other-s
 
 预览长边最多 1600 像素；浏览器显示长边最多 900，拟合代理最多 1024。成对图先检查原始尺寸，再缩小；不自动配准。支持带 RGB ICC 的 JPEG/PNG/TIFF（转 sRGB）；无标记图像按 sRGB，缺 ICC 的 Adobe RGB 标记拒绝。ORF 采用 LibRaw，相机白平衡、禁用自动提亮、16 位 sRGB；生成预览为 8 位 sRGB PNG，不复制 EXIF。
 
-LUT 只接受以已显影 sRGB 为输入的 3D `.cube`（边长 2…65、R 最快，含 DOMAIN）或无损 8 位 RGB Hald PNG/TIFF（level 2…8）。不支持 1D/shaper、Log、ACES 或自动识别 LUT 输入域。Hald 按数值读取、不做 ICC 转换；超出显示域的 LUT 输出裁切并提示。
+LUT 只接受以已显影 sRGB 为输入的 3D `.cube`（边长 2…128、R 最快，含 DOMAIN）或无损 8 位 RGB Hald PNG/TIFF（level 2…12）。不支持 1D/shaper、Log、ACES 或自动识别 LUT 输入域。Hald 按数值读取、不做 ICC 转换；超出显示域的 LUT 输出裁切并提示。
 
 成对/LUT 拟合使用 CIEDE2000，报告整数化配方的保留像素误差和各色区误差。异场景模式只比较共同色区的 H 圆均值、S/V 分位统计，报告的是统计色块误差，最高评为“近似”，不是照片配准或风格分离。没有覆盖的参数保持初值，不把它们解释为已验证的零。`--initial` 可指定初值；`--max-nfev` 5…300、`--samples` 64…4096 可调整预算（异场景不使用 samples）。
 
@@ -76,3 +76,35 @@ python -m unittest discover -s tests -p test_recipe_studio.py -v
 ```
 
 测试全部生成合成数组，不下载照片或访问相机；专用 CI 安装所需依赖。真实公开样片仅在私有目录手动验证，来源、CC0 许可和哈希记录在研究证据中。依赖使用 NumPy、SciPy、scikit-image、Pillow、rawpy/LibRaw 和 Flask，许可由各自发行包提供；不需要 GNU 模拟器、上游源码或固件环境初始化。
+
+## 给 LUT → 得到配方 JSON → ep7wifi
+
+无需照片，先运行：
+
+```sh
+python -m tools.recipe_studio fit --lut /private/ep7-recipes/luts/look.cube --output /private/ep7-recipes/compare/look.json --report /private/ep7-recipes/compare/look.report.json
+```
+
+可加 `--photo /private/photo.jpg`；生成同名 `.compare.png`（原图 / LUT / 配方加近似白平衡）。
+网页“自动拟合”选“仅 LUT”，载入 LUT 后直接开始；基准照片可选。可下载对比图，或采用不拆分白平衡的版本。
+配方 JSON 之后才交给现有 ep7wifi 流程；白平衡建议须手动设置，不由工具自动写入。
+报告含质量、整体及 12 色区 ΔE00、实际模型、白平衡近似建议、不拆分配方和不可表达效果。
+无本机 Workspace 资格时明确使用近似后备。白平衡每档幅度未经标定，影调仍近似。
+支持 .cube 边长 2 至 128、8 位 Hald level 2 至 12；不支持 Log/RAW/混合 shaper。
+权重与误差解释见 [研究说明](../../research/lut-only-fit.md)。
+
+## 平滑正则、曝光建议与真实照片验证
+
+仅 LUT 模式默认平滑正则 0.08、幅度正则 0.01、4 个起点。
+网页可调整这三个值；CLI 示例：
+
+```sh
+python -m tools.recipe_studio fit --lut /private/look.cube --smoothness 0.08 --magnitude 0.01 --starts 4 --validation-photo /private/scene1.orf --validation-photo /private/scene2.jpg --output /private/look.json --report /private/look.report.json
+```
+
+--validation-photo 可重复，只用于起点选择与主要验证；--photo 会加入训练颜色，两者含义不同。
+报告 primary_metric 优先使用真实照片样本；这类照片参与了选择，因此属于调参验证。
+曝光建议写入 recommendations.exposure_compensation；对比图包含曝光及白平衡的近似预览。
+两者需机主手动设置，不能等同相机内的应用顺序。unsplit 版本同时不拆曝光和白平衡。
+新增亮度分段色差、偏色方向、平滑渐变跳变及逐 LUT 表达限制。
+权重和目标公式见 [优化说明](../../research/lut-fitting-regularization.md)。

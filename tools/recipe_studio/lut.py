@@ -7,8 +7,9 @@ from .model import image_array
 
 
 def read_cube(text):
-    if len(text) > 32_000_000:
+    if len(text) > 128_000_000:
         raise ValueError("LUT 文件过大")
+    title = ""
     size, rows, low, high = None, [], [0., 0., 0.], [1., 1., 1.]
     seen = set()
     for line in text.splitlines():
@@ -23,12 +24,13 @@ def read_cube(text):
             if key == "TITLE":
                 if len(parts) != 2:
                     raise ValueError("TITLE 格式错误")
+                title = parts[1]
             elif key == "LUT_3D_SIZE":
                 if len(parts) != 2:
                     raise ValueError("LUT_3D_SIZE 格式错误")
                 size = int(parts[1])
-                if not 2 <= size <= 65:
-                    raise ValueError("3D LUT 边长必须在 2…65")
+                if not 2 <= size <= 128:
+                    raise ValueError("3D LUT 边长必须在 2…128")
             else:
                 if len(parts) != 4:
                     raise ValueError("DOMAIN 必须有三个值")
@@ -50,15 +52,15 @@ def read_cube(text):
         raise ValueError("LUT DOMAIN/数据必须有限且范围递增")
     # .cube convention: R changes fastest, then G, then B.
     return {"grid": a.reshape(size, size, size, 3).transpose(2, 1, 0, 3),
-            "low": lo, "high": hi, "clipped_values": bool(np.any((a < 0) | (a > 1)))}
+            "title": title, "low": lo, "high": hi, "clipped_values": bool(np.any((a < 0) | (a > 1)))}
 
 
 def read_hald(source):
     with Image.open(source) as image:
         w, h = image.size
         level = round(w ** (1 / 3))
-        if w != h or level ** 3 != w or not 2 <= level <= 8:
-            raise ValueError("需要无损正方形 Hald CLUT，边长 level³，level 为 2…8")
+        if w != h or level ** 3 != w or not 2 <= level <= 12:
+            raise ValueError("需要无损正方形 Hald CLUT，边长 level³，level 为 2…12")
         if image.format not in ("PNG", "TIFF") or image.mode not in ("RGB", "RGBA"):
             raise ValueError("Hald 仅支持 8 位 RGB/RGBA PNG/TIFF（LUT 数值不做 ICC 转换）")
         if (image.format == "TIFF" and max(image.tag_v2.get(258, (8,))) != 8) or any(

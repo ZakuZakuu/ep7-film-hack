@@ -28,7 +28,12 @@ def main(argv=None):
     preview.add_argument("recipe")
     preview.add_argument("--output", required=True)
     fit = commands.add_parser("fit")
-    fit.add_argument("source")
+    fit.add_argument("source", nargs="?")
+    fit.add_argument("--validation-photo",action="append",default=[],help="仅用于多起点选择和主要验证，可重复")
+    fit.add_argument("--smoothness",type=float,default=.08)
+    fit.add_argument("--magnitude",type=float,default=.01)
+    fit.add_argument("--starts",type=int,default=4)
+    fit.add_argument("--photo", help="LUT-only 可选照片颜色与对比图")
     group = fit.add_mutually_exclusive_group(required=True)
     group.add_argument("--target", help="已对齐的同场景目标照片")
     group.add_argument("--reference", help="不同场景参考，仅匹配分布")
@@ -61,7 +66,31 @@ def main(argv=None):
             updated, report = calibrate_pairs(args.pairs, cal, args.max_nfev)
             write_json(args.output, updated)
             write_json(args.report, report)
+        elif args.command == "fit" and args.lut:
+            from .lut_fit import fit_lut
+            from .lut_quality import recommendations_apply
+            lut = read_cube(Path(args.lut).read_text(encoding="utf-8-sig")) if Path(args.lut).suffix.lower() == ".cube" else read_hald(args.lut)
+            photo = None
+            if args.photo and args.source: raise ValueError("source 与 --photo 请选择一个")
+            if args.photo or args.source:
+                photo, photo_info = read_image(args.photo or args.source, max_side=1024)
+                if photo_info["kind"] == "raw": photo = raw_baseline(photo, cal)
+            initial = validate(load_json(Path(args.initial).read_text(encoding="utf-8")),cal) if args.initial else None
+            validation_photos=[]
+            for path in args.validation_photo:
+                decoded, vi = read_image(path,max_side=1024)
+                validation_photos.append(raw_baseline(decoded,cal) if vi["kind"]=="raw" else decoded)
+            recipe, report = fit_lut(lut,cal,photo,initial,args.max_nfev,args.samples,validation_photos=validation_photos,smoothness=args.smoothness,magnitude=args.magnitude,starts=args.starts)
+            write_json(args.output,recipe)
+            write_json(args.report,report)
+            if photo is not None:
+                import numpy as np
+                predicted = recommendations_apply(Model(photo,cal).apply(vector(recipe)),report["wb_shift"],report["exposure"]["ev"])
+                comparison = np.concatenate((photo,apply_lut(photo,lut),predicted),axis=1)
+                private_output(str(Path(args.output).with_suffix(".compare.png"))).write_bytes(png_bytes(comparison))
         else:
+            if not args.source: raise ValueError("此模式需要基准照片；仅 LUT 可省略")
+            if getattr(args,"photo",None): raise ValueError("--photo 仅用于不带 source 的 LUT 拟合")
             base, info = read_image(args.source, max_side=1600 if args.command == "preview" else 1024)
             if info["kind"] == "raw":
                 base = raw_baseline(base, cal)

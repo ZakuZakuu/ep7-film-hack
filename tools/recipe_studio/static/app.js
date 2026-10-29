@@ -63,26 +63,28 @@ $("base").onchange=async()=>{
 };
 $("target-file").onchange=async()=>{
   if(!$("target-file").files[0])return;
-  try{const form=new FormData();form.append("file",$("target-file").files[0]);await api("/api/upload/"+$("fit-mode").value,{method:"POST",body:form});editing++;status("目标已载入；确认方式与文件对应后开始拟合");}catch(e){status(e.message);}
+  try{const form=new FormData();form.append("file",$("target-file").files[0]);await api("/api/upload/"+($("fit-mode").value==="lut-only"?"lut":$("fit-mode").value),{method:"POST",body:form});editing++;status("目标已载入；确认方式与文件对应后开始拟合");}catch(e){status(e.message);}
 };
-$("fit-mode").onchange=()=>{$("target-file").value="";status("拟合方式已更改，请重新载入对应目标文件");};
+$("fit-mode").onchange=()=>{$("fit").disabled=!(ready||$("fit-mode").value==="lut-only");$("target-file").value="";status("拟合方式已更改，请重新载入对应目标文件");};
 $("save").onclick=async()=>{try{const valid=await(await post("/api/validate",metadata())).json();save("ep7-recipe.json",valid);}catch(e){status(e.message);}};
 $("recipe-file").onchange=async()=>{try{const f=$("recipe-file").files[0];if(!f)return;if(f.size>100000)throw Error("配方文件过大");recipe=await(await api("/api/validate",{method:"POST",headers:{"Content-Type":"application/json"},body:await f.text()})).json();editing++;controls();schedule();}catch(e){status(e.message);}};
-for(const key of ["name","description","white_balance","wb_shift","exposure_compensation"]) $(key).addEventListener("input",()=>editing++);
+for(const key of ["name","description","white_balance","wb_shift","exposure_compensation","smoothness","magnitude","starts"]) $(key).addEventListener("input",()=>editing++);
 $("reset").onclick=()=>{metadata();recipe.settings=neutral().settings;editing++;controls();schedule();};
 $("save-report").onclick=()=>save("ep7-fit-report.json",report);
 $("fit").onclick=async()=>{
   $("fit").disabled=true;const startEditing=editing;
   try{
-    await post("/api/fit",{mode:$("fit-mode").value,recipe:metadata()});status("拟合中；照片只在本机处理…");
+    await post("/api/fit",{mode:$("fit-mode").value,recipe:metadata(),smoothness:Number($("smoothness").value),magnitude:Number($("magnitude").value),starts:Number($("starts").value)});status("拟合中；照片只在本机处理…");
     while(true){await new Promise(r=>setTimeout(r,600));const result=await(await api("/api/fit")).json();
       if(result.status==="error")throw Error(result.error);
       if(result.status!=="done"){status(`拟合中 · 已评估 ${result.evaluations||0} 次模型`);continue;}
-      report=result.report;$("save-report").disabled=false;
+      report=result.report;$("save-report").disabled=false;$("unsplit").disabled=!report.unsplit;$("comparison-link").hidden=!(ready&&["lut-only","lut"].includes($("fit-mode").value));
       const stats=report.validation_pixels||report.distribution_swatches_only;
-      $("fit-summary").textContent=`拟合质量：${report.quality}\n${report.mode==="different-scene-distribution"?"统计色块":"保留像素验证"} ΔE00 均值 ${stats.mean_delta_e_2000.toFixed(2)}，P95 ${stats.p95_delta_e_2000.toFixed(2)}\n`+report.warnings.join("\n")+"\n\n各色区：\n"+Object.entries(report.per_sector).map(([k,v])=>`${k}: ${v.mean_delta_e_2000===null?"未覆盖":v.mean_delta_e_2000.toFixed(2)} (${v.count} 点)`).join("\n");
+      $("fit-summary").textContent=`拟合质量：${report.quality}\n${report.mode==="different-scene-distribution"?"统计色块":"保留像素验证"} ΔE00 均值 ${stats.mean_delta_e_2000.toFixed(2)}，P95 ${stats.p95_delta_e_2000.toFixed(2)}\n`+(report.wb_shift?JSON.stringify(report.wb_shift)+"\n":"")+report.warnings.join("\n")+"\n\n各色区：\n"+Object.entries(report.per_sector).map(([k,v])=>`${k}: ${v.mean_delta_e_2000===null?"未覆盖":v.mean_delta_e_2000.toFixed(2)} (${v.count} 点)`).join("\n");
       if(result.stale_input||editing!==startEditing){status("拟合期间输入已改变；结果仅保存在报告中，未覆盖当前配方");report.proposed_recipe=result.recipe;}else{recipe=result.recipe;editing++;controls();schedule();}break;
     }
-  }catch(e){status(e.message);}finally{$("fit").disabled=!ready;}
+  }catch(e){status(e.message);}finally{$("fit").disabled=!(ready||$("fit-mode").value==="lut-only");}
 };
-(async()=>{try{const data=await(await fetch("/api/config")).json();token=data.token;cal=data.calibration;modelLabel=data.model.label;document.querySelector(".badge").textContent=data.model.exact_hsl?"本地 · Workspace HSL":"本地 · 近似后备";recipe=neutral();controls();$("model-note").textContent=modelLabel;status("请选择基准照片");}catch(e){status("初始化失败："+e.message);}})();
+(async()=>{try{const data=await(await fetch("/api/config")).json();token=data.token;cal=data.calibration;modelLabel=data.model.label;document.querySelector(".badge").textContent=data.model.exact_hsl?"本地 · Workspace HSL":"本地 · 近似后备";recipe=neutral();controls();$("model-note").textContent=modelLabel;status("仅 LUT 可直接载入 LUT；基准照片可选");$("fit").disabled=false;}catch(e){status("初始化失败："+e.message);}})();
+
+$("unsplit").onclick=()=>{if(report&&report.unsplit){recipe=report.unsplit.recipe;editing++;controls();schedule();}};
