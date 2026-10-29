@@ -30,7 +30,8 @@ def private_report_path(path):
     path = Path(path).expanduser().resolve()
     root = Path(tempfile.gettempdir()).resolve()
     repo = Path(__file__).resolve().parents[2]
-    if root not in path.parents or path == repo or repo in path.parents:
+    wsl_tmp = str(path).replace("\\", "/").lower().startswith("//wsl.localhost/ubuntu/tmp/")
+    if (root not in path.parents and not wsl_tmp) or path == repo or repo in path.parents:
         raise ValueError("research reports must be outside the checkout, under the system temp directory")
     return path
 

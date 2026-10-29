@@ -2,7 +2,7 @@
 const $ = id => document.getElementById(id);
 const names = ["黄 / 金", "橙", "红", "玫红", "洋红", "紫", "蓝", "天蓝", "青", "青绿", "绿", "黄绿"];
 const colors = ["#e7c446","#e7983b","#dd5f50","#d96e94","#c96ac8","#9e78d4","#6384db","#65b4e4","#58d0d0","#55b39b","#88c764","#b8ca5b"];
-let token, cal, ready = false, recipe, timer, previewSeq = 0, report = null, editing = 0;
+let modelLabel="近似后备模型", token, cal, ready = false, recipe, timer, previewSeq = 0, report = null, editing = 0;
 function neutral() { return {format:"ep7-film-recipe-v1",name:"新配方",description:"",settings:{hue:Array(12).fill(0),saturation:Array(12).fill(0),lightness:Array(12).fill(0),tone:{shadows:0,midtones:0,highlights:0},shading:0},recommendations:{white_balance:"",wb_shift:"",exposure_compensation:""}}; }
 function status(text) { $("status").textContent = text; }
 async function api(path, options = {}) {
@@ -53,7 +53,7 @@ async function preview() {
   rendering=true;const seq=++previewSeq;
   try {
     const res=await post("/api/preview",metadata());const blob=await res.blob();
-    if(seq===previewSeq){const old=effectURL;effectURL=URL.createObjectURL(blob);$("effect").src=effectURL;$("effect").style.visibility="visible";if(old)URL.revokeObjectURL(old);status("近似预览已更新 · 相机效果仍需校准");}
+    if(seq===previewSeq){const old=effectURL;effectURL=URL.createObjectURL(blob);$("effect").src=effectURL;$("effect").style.visibility="visible";if(old)URL.revokeObjectURL(old);status("预览已更新 · "+modelLabel);}
   }catch(e){status(e.message);}finally{rendering=false;if(pending){pending=false;preview();}}
 }
 $("split").oninput=()=>{const v=Number($("split").value);$("original").style.clipPath=`inset(0 ${100-v}% 0 0)`;$("divider").style.left=`${v}%`;};
@@ -85,4 +85,4 @@ $("fit").onclick=async()=>{
     }
   }catch(e){status(e.message);}finally{$("fit").disabled=!ready;}
 };
-(async()=>{try{const data=await(await fetch("/api/config")).json();token=data.token;cal=data.calibration;recipe=neutral();controls();$("model-note").textContent=`模型：${cal.id} · ${cal.status==="uncalibrated"?"尚未用实拍校准":"本地拟合，泛化需检查"}`;status("请选择基准照片");}catch(e){status("初始化失败："+e.message);}})();
+(async()=>{try{const data=await(await fetch("/api/config")).json();token=data.token;cal=data.calibration;modelLabel=data.model.label;document.querySelector(".badge").textContent=data.model.exact_hsl?"本地 · Workspace HSL":"本地 · 近似后备";recipe=neutral();controls();$("model-note").textContent=modelLabel;status("请选择基准照片");}catch(e){status("初始化失败："+e.message);}})();

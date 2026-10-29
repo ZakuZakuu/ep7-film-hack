@@ -2,7 +2,8 @@
 import numpy as np
 from scipy.optimize import least_squares
 from skimage.color import rgb2lab, deltaE_ciede2000, rgb2hsv, hsv2rgb
-from .model import Model, coordinates, weights
+from .model import Model as ApproximateModel, coordinates, weights
+from .backend import Model, backend_status
 from .recipe import SECTORS, neutral, validate, vector, from_vector
 
 NAMES = ([f"hue.{s}" for s in SECTORS] + [f"saturation.{s}" for s in SECTORS] +
@@ -55,7 +56,7 @@ def _residual(a, target_lab):
 
 
 def _solve(base, target, xy, cal, initial, active, max_nfev, progress=None):
-    model = Model(base, cal, xy)
+    model = ApproximateModel(base, cal, xy)
     x0 = np.array(vector(initial), float)
     bound = limits(cal)
     target_lab = rgb2lab(target)
@@ -79,6 +80,7 @@ def _solve(base, target, xy, cal, initial, active, max_nfev, progress=None):
     # Integer coordinate polish scores the actual deployable recipe, not floats.
     def score(v):
         return float(np.mean(metric(model.apply(v), target)))
+    model = Model(base, cal, xy)
     best = score(rounded)
     for _ in range(2):
         improved = False
@@ -97,7 +99,8 @@ def _solve(base, target, xy, cal, initial, active, max_nfev, progress=None):
             break
     return rounded, {"converged": bool(result.success), "solver_message": result.message,
                      "residual_calls": calls, "function_evaluations": result.nfev,
-                     "train_mean_delta_e_2000": best}
+                     "train_mean_delta_e_2000": best, "polish_model": backend_status()["id"],
+                     "proposal_model": "continuous approximate surrogate"}
 
 
 def fit_pair(base, target, cal, initial=None, max_nfev=100, sample_count=768,
@@ -133,7 +136,7 @@ def fit_pair(base, target, cal, initial=None, max_nfev=100, sample_count=768,
         if mean <= cal["quality_mean_delta_e"][i] and p95 <= cal["quality_p95_delta_e"][i]:
             quality = label
     regions = sector_report(b[holdout], pred, t[holdout], cal)
-    warnings = ["质量仅衡量此近似模型对目标的拟合，不保证相机 JPEG 一致",
+    warnings = ["质量衡量最终量化配方在所选模型上的效果；不保证完整相机 JPEG 一致",
                 "同尺寸不能证明照片对齐；请手动确认机位、裁切、曝光与场景一致",
                 "不支持单一色区内部任意变化、局部蒙版、颗粒、模糊、锐化或空间位移"]
     if not all(covered):
@@ -146,7 +149,7 @@ def fit_pair(base, target, cal, initial=None, max_nfev=100, sample_count=768,
     if hit:
         warnings.append("部分参数达到边界；目标可能超出可表达范围")
     return recipe, {"format": "ep7-fit-report-v1", "mode": "aligned-pair-or-lut",
-                    "quality": quality, "calibration_id": cal["id"], "solver": solver,
+                    "quality": quality, "model": backend_status(), "calibration_id": cal["id"], "solver": solver,
                     "validation_pixels": summary, "per_sector": regions,
                     "unobserved_sectors": [SECTORS[i] for i, x in enumerate(covered) if not x],
                     "at_bounds": hit, "warnings": warnings,
@@ -188,7 +191,7 @@ def fit_reference(base, reference, cal, initial=None, max_nfev=80, progress=None
     return validate(from_vector(v, initial), cal), {
         "format": "ep7-fit-report-v1", "mode": "different-scene-distribution",
         "quality": "近似" if summary["mean_delta_e_2000"] < cal["quality_mean_delta_e"][1] else "差",
-        "distribution_swatches_only": summary, "per_sector": sector_report(b, pred, t, cal),
+        "model": backend_status(), "distribution_swatches_only": summary, "per_sector": sector_report(b, pred, t, cal),
         "common_sectors": [SECTORS[i] for i in common], "solver": solver,
         "calibration_id": cal["id"],
         "warnings": ["仅按共同色区的 H 圆均值及 S/V 10/50/90 分位分布匹配，无法分离场景内容与风格",
