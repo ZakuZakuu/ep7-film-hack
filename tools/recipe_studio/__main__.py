@@ -76,7 +76,10 @@ def main(argv=None):
                 photo, photo_info = read_image(args.photo or args.source, max_side=1024)
                 if photo_info["kind"] == "raw": photo = raw_baseline(photo, cal)
             initial = validate(load_json(Path(args.initial).read_text(encoding="utf-8")),cal) if args.initial else None
-            validation_photos=[read_image(p,max_side=1024)[0] for p in args.validation_photo]
+            validation_photos=[]
+            for path in args.validation_photo:
+                decoded, vi = read_image(path,max_side=1024)
+                validation_photos.append(raw_baseline(decoded,cal) if vi["kind"]=="raw" else decoded)
             recipe, report = fit_lut(lut,cal,photo,initial,args.max_nfev,args.samples,validation_photos=validation_photos,smoothness=args.smoothness,magnitude=args.magnitude,starts=args.starts)
             write_json(args.output,recipe)
             write_json(args.report,report)

@@ -68,7 +68,7 @@ $("target-file").onchange=async()=>{
 $("fit-mode").onchange=()=>{$("fit").disabled=!(ready||$("fit-mode").value==="lut-only");$("target-file").value="";status("拟合方式已更改，请重新载入对应目标文件");};
 $("save").onclick=async()=>{try{const valid=await(await post("/api/validate",metadata())).json();save("ep7-recipe.json",valid);}catch(e){status(e.message);}};
 $("recipe-file").onchange=async()=>{try{const f=$("recipe-file").files[0];if(!f)return;if(f.size>100000)throw Error("配方文件过大");recipe=await(await api("/api/validate",{method:"POST",headers:{"Content-Type":"application/json"},body:await f.text()})).json();editing++;controls();schedule();}catch(e){status(e.message);}};
-for(const key of ["name","description","white_balance","wb_shift","exposure_compensation"]) $(key).addEventListener("input",()=>editing++);
+for(const key of ["name","description","white_balance","wb_shift","exposure_compensation","smoothness","magnitude","starts"]) $(key).addEventListener("input",()=>editing++);
 $("reset").onclick=()=>{metadata();recipe.settings=neutral().settings;editing++;controls();schedule();};
 $("save-report").onclick=()=>save("ep7-fit-report.json",report);
 $("fit").onclick=async()=>{
