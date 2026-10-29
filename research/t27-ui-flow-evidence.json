@@ -1,0 +1,562 @@
+{
+  "stock_sha256": "9d1610124ad98f6edae4540182205f06c9c703d9033ef0c4f19847193f95eaeb",
+  "decoded_sha256": "5dd9af164b4590c7e82f6905c919b3cc450bb58f2d5742ab2a0e3a4eb2e26190",
+  "routing": {
+    "native_events": 47,
+    "states": 5,
+    "handler_functions": 36,
+    "existing_event_comparisons": 47,
+    "original_matrix_cells_preserved": 235,
+    "delete_cases": [
+      {
+        "state": 1,
+        "event": "0x9016",
+        "stock": {
+          "return_code": 3
+        },
+        "owned_RAM_prototype": {
+          "handler": "0x60dd4b47",
+          "event": "0x9016"
+        }
+      },
+      {
+        "state": 1,
+        "event": "0x9017",
+        "stock": {
+          "return_code": 3
+        },
+        "owned_RAM_prototype": {
+          "return_code": 3
+        }
+      },
+      {
+        "state": 1,
+        "event": "0x9042",
+        "stock": {
+          "return_code": 3
+        },
+        "owned_RAM_prototype": {
+          "return_code": 3
+        }
+      },
+      {
+        "state": 2,
+        "event": "0x9016",
+        "stock": {
+          "return_code": 3
+        },
+        "owned_RAM_prototype": {
+          "handler": "0x60e766ea",
+          "event": "0x9016"
+        }
+      },
+      {
+        "state": 2,
+        "event": "0x9017",
+        "stock": {
+          "return_code": 3
+        },
+        "owned_RAM_prototype": {
+          "return_code": 3
+        }
+      },
+      {
+        "state": 2,
+        "event": "0x9042",
+        "stock": {
+          "return_code": 3
+        },
+        "owned_RAM_prototype": {
+          "return_code": 3
+        }
+      },
+      {
+        "state": 3,
+        "event": "0x9016",
+        "stock": {
+          "return_code": 3
+        },
+        "owned_RAM_prototype": {
+          "handler": "0x60dd4b47",
+          "event": "0x9016"
+        }
+      },
+      {
+        "state": 3,
+        "event": "0x9017",
+        "stock": {
+          "return_code": 3
+        },
+        "owned_RAM_prototype": {
+          "return_code": 3
+        }
+      },
+      {
+        "state": 3,
+        "event": "0x9042",
+        "stock": {
+          "return_code": 3
+        },
+        "owned_RAM_prototype": {
+          "return_code": 3
+        }
+      },
+      {
+        "state": 4,
+        "event": "0x9016",
+        "stock": {
+          "return_code": 3
+        },
+        "owned_RAM_prototype": {
+          "handler": "0x60dd4b47",
+          "event": "0x9016"
+        }
+      },
+      {
+        "state": 4,
+        "event": "0x9017",
+        "stock": {
+          "return_code": 3
+        },
+        "owned_RAM_prototype": {
+          "return_code": 3
+        }
+      },
+      {
+        "state": 4,
+        "event": "0x9042",
+        "stock": {
+          "return_code": 3
+        },
+        "owned_RAM_prototype": {
+          "return_code": 3
+        }
+      },
+      {
+        "state": 5,
+        "event": "0x9016",
+        "stock": {
+          "return_code": 3
+        },
+        "owned_RAM_prototype": {
+          "handler": "0x60dd4b47",
+          "event": "0x9016"
+        }
+      },
+      {
+        "state": 5,
+        "event": "0x9017",
+        "stock": {
+          "return_code": 3
+        },
+        "owned_RAM_prototype": {
+          "return_code": 3
+        }
+      },
+      {
+        "state": 5,
+        "event": "0x9042",
+        "stock": {
+          "return_code": 3
+        },
+        "owned_RAM_prototype": {
+          "return_code": 3
+        }
+      }
+    ],
+    "initializer_stop": "0x60e76396 BEFORE entry body",
+    "native_dispatch": "0x60d11448",
+    "descriptor": "0x611ada58",
+    "catalog_slot": "0x611317c8",
+    "physical_key_delivery_proved": false,
+    "cave_placement_and_ROM_redirection_proved": false
+  },
+  "local_route": {
+    "chain": [
+      "0x60d11448",
+      "0x60e766ea",
+      "0x60e4d032",
+      "0x60dd5250"
+    ],
+    "event": "0x9016",
+    "root": "0x13b3",
+    "actual_native_parent": true,
+    "controller": "Explicit owned shell, not a captured live object",
+    "stopped_before_parent_body": true,
+    "axis_switch_implemented": false
+  },
+  "route_negative_controls": {
+    "rejected": [
+      "Unaligned 4-byte access",
+      "memory_fault"
+    ],
+    "scope": "Corrupted owned RAM pointers, not ROM"
+  },
+  "display": {
+    "record_id": 229,
+    "payload_bytes": 334,
+    "native_reader": "0x60d7ad1d",
+    "native_consumer": "0x60d7ae23",
+    "stock_digit_widget": "0x61032180",
+    "stock_frame_count": 6,
+    "digit_cases": [
+      {
+        "requested_frame": 0,
+        "stored_frame": 0,
+        "stopped_before_dirty_service": false
+      },
+      {
+        "requested_frame": 5,
+        "stored_frame": 5,
+        "stopped_before_dirty_service": true
+      },
+      {
+        "requested_frame": 6,
+        "stored_frame": 0,
+        "stopped_before_dirty_service": false
+      },
+      {
+        "requested_frame": 7,
+        "stored_frame": 0,
+        "stopped_before_dirty_service": false
+      }
+    ],
+    "inline_caption_cases": [
+      {
+        "text": "L +7",
+        "reached_text_setter": "0x60d4c9df",
+        "widget_index": 7,
+        "glyphs_or_pixels_not_executed": true
+      },
+      {
+        "text": "H -7",
+        "reached_text_setter": "0x60d4c9df",
+        "widget_index": 7,
+        "glyphs_or_pixels_not_executed": true
+      },
+      {
+        "text": "L 0",
+        "reached_text_setter": "0x60d4c9df",
+        "widget_index": 7,
+        "glyphs_or_pixels_not_executed": true
+      }
+    ],
+    "caption_type": 5,
+    "caption_payload_offset": 0,
+    "caption_UTF16_offset": 8,
+    "caption_visibility_offset": 74,
+    "production_viewer_not_redirected": true,
+    "visual_layout_unqualified": true
+  },
+  "commit": {
+    "cases": [
+      {
+        "start": "0x607fa129",
+        "stop": "0x600304fd",
+        "missing_read": "0x8ff00004",
+        "Mode_unchanged": true,
+        "reason": "Native synchronization-object creation reaches unmodeled kernel state"
+      },
+      {
+        "start": "0x60de9920",
+        "event": "0x900c",
+        "selected_S": 1,
+        "Mode_unchanged": true,
+        "stop": "0x600304fd",
+        "boundary": "Unmodeled editor boundary: ('0x600304fd', 'memory_fault', {'kind': 1, 'pc': 1610810621, 'map': 0, 'address': 2414870532, 'size': 4, 'access': 'read'})",
+        "GUI_setter_reached": false
+      }
+    ],
+    "GUI_to_HL_to_ISP_proved": false,
+    "earlier_allocation_boundary_resolved": "0x60a4ec2b/35 use the same 0x60022700 core as existing allocator models",
+    "design_only_shared_native_core": "0x602b0bc9",
+    "GUI_adapter_call": "0x6082748b -> 0x602af890",
+    "v4_admission_wrapper": "0x602afa11",
+    "warning": "Do not call v4 part-write before original GUI admission or leak H/L into S coordination"
+  },
+  "GNU_instructions": 349137,
+  "audited_native_ROM_accesses": 67675,
+  "executed_native_PCs": 2380,
+  "windows": [
+    {
+      "start": "0x60d113d1",
+      "end_exclusive": "0x60d115d4",
+      "sha256": "8c16a81cc924859f471e89adc6e762807b6dbed2f8581ec541f55b839a65c170"
+    },
+    {
+      "start": "0x60dd4b19",
+      "end_exclusive": "0x60dd4b4f",
+      "sha256": "d5c947cbd6c538defff6d3e72d209e2e45385e294c1caf146068596b4d029cd2"
+    },
+    {
+      "start": "0x60e766ea",
+      "end_exclusive": "0x60e76728",
+      "sha256": "17012faa7ffd2f11f47ab8ffb7535cddde3a79535d28b100e03b050b5c1d0cae"
+    },
+    {
+      "start": "0x60e4d032",
+      "end_exclusive": "0x60e4d144",
+      "sha256": "375b0d6a1805d6bd5631ee92fbd834e997fd427179d3a5f2fd8c958f33b8962c"
+    },
+    {
+      "start": "0x60d7ad12",
+      "end_exclusive": "0x60d7ad24",
+      "sha256": "2fd22dbfeb9c0ae491f57822fb49f3a47ef315890461bfcafb1c081209cf8529"
+    },
+    {
+      "start": "0x60d7ae23",
+      "end_exclusive": "0x60d7aece",
+      "sha256": "1ddfeffa1431d91e3d55591e0b75d97f134f2f63d4cd98cbfd2b66534eb4647e"
+    },
+    {
+      "start": "0x60d7b014",
+      "end_exclusive": "0x60d7b162",
+      "sha256": "eadcaac68edbdbe07e8820a96149977e9dcabf7e5a3fde9ccca18c2c3957fc5a"
+    },
+    {
+      "start": "0x60e850f8",
+      "end_exclusive": "0x60e85191",
+      "sha256": "00967ebde9f5c7a8cf8c1132d49517a105bfb0d1b206ba8a2be306b041c2c2a2"
+    },
+    {
+      "start": "0x60e8527d",
+      "end_exclusive": "0x60e852d1",
+      "sha256": "0d513d326ff114feb0891bb7046f56de202c18cf1555663047c35867934ccc89"
+    },
+    {
+      "start": "0x60d484d2",
+      "end_exclusive": "0x60d48510",
+      "sha256": "e5799b739930ac52f7fe0c833c789c0ee1870c4cabd85ac1d6d5346d17c57280"
+    },
+    {
+      "start": "0x60e8456d",
+      "end_exclusive": "0x60e84597",
+      "sha256": "672eb554a2253c9e013344c63cf3ce78a2dd8c22ed321802554a16857eb11c27"
+    },
+    {
+      "start": "0x60d48334",
+      "end_exclusive": "0x60d4833b",
+      "sha256": "0694dc7dd0b90d82d883de1aacad572a2253022e8b9f308366f704fadea8314e"
+    },
+    {
+      "start": "0x60d48b63",
+      "end_exclusive": "0x60d48ba0",
+      "sha256": "eb59a9598f571108ee439d8c73c2a223daf539593aac1e7b56ff35bf2ec4c579"
+    },
+    {
+      "start": "0x607fa129",
+      "end_exclusive": "0x607fa3c5",
+      "sha256": "70afb1c25cee31c6b0f06fc3397a7b2ffc36afc791635f5c6956946b258e389f"
+    },
+    {
+      "start": "0x602af890",
+      "end_exclusive": "0x602af89c",
+      "sha256": "7d981c1e2b46e9a4688630cb72dc830213851adae8a5bd6d602493edbebf4f9e"
+    },
+    {
+      "start": "0x602afa11",
+      "end_exclusive": "0x602afa30",
+      "sha256": "f05271dbf38f7c9a91a72b885ccfe669448b0ad2e0a7b270404958e41ab782ce"
+    },
+    {
+      "start": "0x60827440",
+      "end_exclusive": "0x608274e0",
+      "sha256": "e041128adb1a325d6d17cd1e85881f978e32ca3c90cd5e32a568d0d2c71555cb"
+    },
+    {
+      "start": "0x6076a9ff",
+      "end_exclusive": "0x6076aa4e",
+      "sha256": "c64a7483a82ca908b6f9aba4f69dcf3579a2534c918288e1a6d4a811fcbf4c2d"
+    },
+    {
+      "start": "0x60a4ec03",
+      "end_exclusive": "0x60a4ec3f",
+      "sha256": "f1a7877417bf14d96cdb1b87ef2a7868af199c1c8188b07671f5616746dea036"
+    },
+    {
+      "start": "0x60a4e93a",
+      "end_exclusive": "0x60a4e971",
+      "sha256": "361fec3ae63647e70645bd41137531bd5965cdb6a773f6b22863de8a9a124364"
+    }
+  ],
+  "models": {
+    "0x60e9e127": 41,
+    "0x60a4ec03": 14,
+    "0x607706af": 331,
+    "0x60767ee5": 159,
+    "0x6076df51": 661,
+    "0x6076e146": 13,
+    "0x6076e27c": 13,
+    "0x60767f0c": 172,
+    "0x6076e1bb": 317,
+    "0x6076e1e9": 172,
+    "0x60a4ec0d": 26,
+    "0x607b3c32": 13,
+    "0x1c000100": 13,
+    "0x6076e1f8": 145,
+    "0x60e9e050": 26,
+    "0x60ea15ca": 13,
+    "0x6076e178": 1,
+    "0x60a4ec35": 2,
+    "0x60a4ec2b": 4
+  },
+  "scope": "Owned RAM experiments on existing v4 UI bytes; no v5/v5a or physical key/draw proof",
+  "issue": 70,
+  "complete_v5_or_v5a": false,
+  "baseline_commit": "e2c62b341a3afe84df255427d5151c07796cca92",
+  "upstream_commit": "539fcf1fa9eda5fdef8ede4deeab94a4691d94c3",
+  "probe_source_sha256": "4e2a82dd38ab03099e5c143b8b8352b5c47cc73028ad134537abac043a1ad33a",
+  "prior_evidence": "research/t27-in-camera-editor-evidence.json (PR #72; preserved)",
+  "owner_comment": "https://github.com/ZakuZakuu/ep7-film-hack/issues/70#issuecomment-6470726983",
+  "model_details": {
+    "native_UI": "Unchanged v4 UI bytes; copied initializer is NOT a captured live task/heap",
+    "visibility": "One return-only cut at 0x60e84549; no glyph/framebuffer/device result fabricated",
+    "controller": "Owned null-callback shell, real native COLOR parent; stop before parent event body",
+    "FSM": "Owned RAM descriptor/catalog copies; no ROM pointer changed; no qualified cave placement",
+    "storage": "Owned full-size Mode; no durable backend, full GUI transaction or H/L editor implementation",
+    "allocation_variants": "60a4ec2b/35 share 60022700 with existing 60a4ec03/0d; finite owned allocator reused, native synchronization construction still executes",
+    "limitations": "FSM table prototype admits Delete to SetVal irrespective of property. A COLOR instance/key guard is still mandatory; it is not a safe standalone firmware change."
+  },
+  "native_entry_map": {
+    "shooting_state_entry": "0x60e76396",
+    "selected_property_u16": "0x61fc43cc",
+    "controller_pointer": "0x61fc43c0",
+    "group_factory": "0x60e4cea8",
+    "group_catalog": "0x6119fadc",
+    "group18_table": "0x6119dafc",
+    "group18_COLOR_rows": [
+      {
+        "address": "0x6119ea2c",
+        "key": "0x13b3",
+        "actuator_type": 26,
+        "viewer_type": 89
+      },
+      {
+        "address": "0x6119ea44",
+        "key": "0x13b4",
+        "actuator_type": 26,
+        "viewer_type": 89
+      },
+      {
+        "address": "0x6119ea5c",
+        "key": "0x13b5",
+        "actuator_type": 26,
+        "viewer_type": 89
+      },
+      {
+        "address": "0x6119ea74",
+        "key": "0x140c",
+        "actuator_type": 26,
+        "viewer_type": 89
+      }
+    ]
+  },
+  "inline_text_candidate": {
+    "widget_descriptor": "0x61032d88",
+    "widget_type": "0x8010",
+    "kind5_dispatch": "0x611b1604 -> 0x60e85186",
+    "UTF16_setter": "0x60d4c9df",
+    "scope": "Executed native record consumer to setter with owned caption input. No production redirection, font drawing, placement or pixels proved."
+  },
+  "wheel_methods": [
+    {
+      "method": "Named C3d interface, vtable and command-5 callers",
+      "interface_vtable": "0x60ac9ff4",
+      "slot_bytes": 44,
+      "adapter": "0x607e93e4",
+      "native_draw": "0x6079926a",
+      "command5": "0x60d1e293",
+      "caller": "0x60ea250b",
+      "result": "C3d transport found; no proven 12 COLOR values plus shared cursor producer"
+    },
+    {
+      "method": "Bounded GNU mov13 + following memcpy candidate inspection",
+      "range": [
+        "0x60800000",
+        "0x60a00000"
+      ],
+      "candidate_lengths": [
+        "0x6082c96b",
+        "0x6082c980"
+      ],
+      "memcpy": "0x47001052",
+      "source_call": "0x602cd24f",
+      "result": "13-byte copies found, but no independent COLOR/C3d relation. Not identified as wheel.",
+      "limits": "Instruction shape search only; not proof that no wheel producer exists"
+    }
+  ],
+  "additional_private_window_receipts": [
+    {
+      "start": "0x60d1e246",
+      "end_exclusive": "0x60d1e2d4",
+      "sha256": "15ee28daffdfbd18816d4af7ef3d803c83cdb54255fcff65a4ce4cf7694baf00"
+    },
+    {
+      "start": "0x607e93e4",
+      "end_exclusive": "0x607e9410",
+      "sha256": "ef559dd1241334fbbda72216c0dc2022754c5b4ab32146f6f098465633a93812"
+    },
+    {
+      "start": "0x6079926a",
+      "end_exclusive": "0x6079938c",
+      "sha256": "3a05d125ccc56876e2ad1bf566d60f78d9c4e13fa2c9ba1a6d68c2c514e24430"
+    },
+    {
+      "start": "0x6082c930",
+      "end_exclusive": "0x6082c9a0",
+      "sha256": "4ba3945cdf35223c9af0c141d8571a204c04fdad502285be6b53f95ed267161c"
+    },
+    {
+      "start": "0x602cd24f",
+      "end_exclusive": "0x602cd4a0",
+      "sha256": "7bdde00dd6ec2c041c872a4fcbd2877b109ba55178698de4ef04d74595e8113b"
+    },
+    {
+      "start": "0x611ada58",
+      "end_exclusive": "0x611ada78",
+      "sha256": "22d07f2e9e2a6b475d517c25e38bd8e6b55389123289733362306aef35e5d774"
+    },
+    {
+      "start": "0x61032180",
+      "end_exclusive": "0x610321d8",
+      "sha256": "8cd7092fdfacba32696f903a60eb7dc6ff310819ec524683a3cecb254c5ef572"
+    },
+    {
+      "start": "0x61032d88",
+      "end_exclusive": "0x61032de8",
+      "sha256": "cd173850ec5346357fe27cf816a4697d89c191b51242330ae2011a985535fad1"
+    }
+  ],
+  "legacy_reproducibility": [
+    {
+      "version": "T20",
+      "prospective_output_sha256": "d0fa93e752ec2680910dfabfef50cfc2ffb510aa8c8ec49cf6177868037bec8e",
+      "package_files_created": false
+    },
+    {
+      "version": "v2",
+      "prospective_output_sha256": "b1ad25019722af31e26bdf29aabaa1867320bea64c9bb2c0acc06cc5aadc4375",
+      "package_files_created": false
+    },
+    {
+      "version": "v3",
+      "prospective_output_sha256": "1916c0cffd83dc0b83cdf34477f76943f37d79da551bc847061eb7d3cd796c91",
+      "package_files_created": false
+    },
+    {
+      "version": "v4",
+      "prospective_output_sha256": "719b57c4fa0b94da60d73f0ed70b0d5dcd536c970e44054152a63b55d30a59e6",
+      "package_files_created": false
+    }
+  ],
+  "validation": {
+    "synthetic_existing_guard_tests": 15,
+    "new_native_route_comparisons": 47,
+    "delete_state_event_cases": 15,
+    "caption_cases": 3,
+    "bad_pointer_controls": 2,
+    "install_files_created": false,
+    "camera_connected": false,
+    "proprietary_bytes_exported": false
+  }
+}
