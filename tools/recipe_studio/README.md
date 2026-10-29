@@ -92,3 +92,19 @@ python -m tools.recipe_studio fit --lut /private/ep7-recipes/luts/look.cube --ou
 无本机 Workspace 资格时明确使用近似后备。白平衡每档幅度未经标定，影调仍近似。
 支持 .cube 边长 2 至 128、8 位 Hald level 2 至 12；不支持 Log/RAW/混合 shaper。
 权重与误差解释见 [研究说明](../../research/lut-only-fit.md)。
+
+## 平滑正则、曝光建议与真实照片验证
+
+仅 LUT 模式默认平滑正则 0.08、幅度正则 0.01、4 个起点。
+网页可调整这三个值；CLI 示例：
+
+```sh
+python -m tools.recipe_studio fit --lut /private/look.cube --smoothness 0.08 --magnitude 0.01 --starts 4 --validation-photo /private/scene1.orf --validation-photo /private/scene2.jpg --output /private/look.json --report /private/look.report.json
+```
+
+--validation-photo 可重复，只用于起点选择与主要验证；--photo 会加入训练颜色，两者含义不同。
+报告 primary_metric 优先使用真实照片样本；这类照片参与了选择，因此属于调参验证。
+曝光建议写入 recommendations.exposure_compensation；对比图包含曝光及白平衡的近似预览。
+两者需机主手动设置，不能等同相机内的应用顺序。unsplit 版本同时不拆曝光和白平衡。
+新增亮度分段色差、偏色方向、平滑渐变跳变及逐 LUT 表达限制。
+权重和目标公式见 [优化说明](../../research/lut-fitting-regularization.md)。

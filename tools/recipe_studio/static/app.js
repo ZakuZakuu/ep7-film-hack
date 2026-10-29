@@ -74,11 +74,11 @@ $("save-report").onclick=()=>save("ep7-fit-report.json",report);
 $("fit").onclick=async()=>{
   $("fit").disabled=true;const startEditing=editing;
   try{
-    await post("/api/fit",{mode:$("fit-mode").value,recipe:metadata()});status("拟合中；照片只在本机处理…");
+    await post("/api/fit",{mode:$("fit-mode").value,recipe:metadata(),smoothness:Number($("smoothness").value),magnitude:Number($("magnitude").value),starts:Number($("starts").value)});status("拟合中；照片只在本机处理…");
     while(true){await new Promise(r=>setTimeout(r,600));const result=await(await api("/api/fit")).json();
       if(result.status==="error")throw Error(result.error);
       if(result.status!=="done"){status(`拟合中 · 已评估 ${result.evaluations||0} 次模型`);continue;}
-      report=result.report;$("save-report").disabled=false;$("unsplit").disabled=!report.unsplit;$("comparison-link").hidden=!(ready&&$("fit-mode").value==="lut-only");
+      report=result.report;$("save-report").disabled=false;$("unsplit").disabled=!report.unsplit;$("comparison-link").hidden=!(ready&&["lut-only","lut"].includes($("fit-mode").value));
       const stats=report.validation_pixels||report.distribution_swatches_only;
       $("fit-summary").textContent=`拟合质量：${report.quality}\n${report.mode==="different-scene-distribution"?"统计色块":"保留像素验证"} ΔE00 均值 ${stats.mean_delta_e_2000.toFixed(2)}，P95 ${stats.p95_delta_e_2000.toFixed(2)}\n`+(report.wb_shift?JSON.stringify(report.wb_shift)+"\n":"")+report.warnings.join("\n")+"\n\n各色区：\n"+Object.entries(report.per_sector).map(([k,v])=>`${k}: ${v.mean_delta_e_2000===null?"未覆盖":v.mean_delta_e_2000.toFixed(2)} (${v.count} 点)`).join("\n");
       if(result.stale_input||editing!==startEditing){status("拟合期间输入已改变；结果仅保存在报告中，未覆盖当前配方");report.proposed_recipe=result.recipe;}else{recipe=result.recipe;editing++;controls();schedule();}break;

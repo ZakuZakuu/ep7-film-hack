@@ -14,6 +14,7 @@
 <label class="split">原图 ← 对比分界 → 效果<input id="split" type="range" min="0" max="100" value="50"></label>
 <p id="decode">RAW 显影不等同于机内成片。请勿把已经调过色的照片当作中性基准。</p>
 <details class="fit-panel"><summary>自动拟合起点</summary>
+<label>平滑正则<input id="smoothness" type="number" min="0" max="10" step="0.01" value="0.08"></label><label>幅度正则<input id="magnitude" type="number" min="0" max="10" step="0.01" value="0.01"></label><label>起点数量<input id="starts" type="number" min="2" max="8" value="4"></label>
 <label>目标方式<select id="fit-mode"><option value="lut-only">仅 LUT（基准照片可选）</option><option value="lut">sRGB LUT（.cube / Hald PNG）</option><option value="target">已对齐的同场景照片</option><option value="reference">不同场景参考照片（粗略）</option></select></label>
 <label class="file">载入目标 / 参考 / LUT<input id="target-file" type="file" accept=".cube,.png,.jpg,.jpeg,.tif,.tiff"></label>
 <div class="actions"><button id="fit" disabled>拟合当前照片</button><button id="save-report" disabled>保存误差报告</button></div>
@@ -32,5 +33,5 @@
 <label>白平衡偏移<input id="wb_shift" placeholder="如：A +2、G −1"></label>
 <label>曝光补偿<input id="exposure_compensation" placeholder="如：−0.3 EV"></label>
 </fieldset><p id="model-note"></p></section></main>
-<p><a id="comparison-link" href="/api/comparison.png" download="lut-comparison.png" hidden>下载对比：原图 / LUT / 配方加白平衡近似</a> <button id="unsplit" disabled>采用不拆分白平衡的版本</button></p>
+<p><a id="comparison-link" href="/api/comparison.png" download="lut-comparison.png" hidden>下载对比：原图 / LUT / 配方加白平衡及曝光近似</a> <button id="unsplit" disabled>采用不拆分白平衡的版本</button></p>
 <script src="/static/app.js"></script></body></html>

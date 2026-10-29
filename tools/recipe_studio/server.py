@@ -132,9 +132,9 @@ def create_app(cal=None):
                     state["progress"].update(update)
 
             def run():
-                if mode == "lut-only":
+                if mode in ("lut-only","lut"):
                     from .lut_fit import fit_lut
-                    result, report = fit_lut(lut,cal,rgb,initial,progress=progress)
+                    result, report = fit_lut(lut,cal,rgb,initial,progress=progress,smoothness=obj.get("smoothness",.08),magnitude=obj.get("magnitude",.01),starts=obj.get("starts",4))
                 elif mode == "reference":
                     result, report = fit_reference(rgb, target, cal, initial, progress=progress)
                 else:
@@ -145,11 +145,11 @@ def create_app(cal=None):
                     report["warnings"].append("LUT 必须以已显影 sRGB 为输入；不支持 Log/ACES/shaper 域")
                     if lut["clipped_values"]:
                         report["warnings"].append("LUT 具有超出显示域的值，已裁切")
-                if mode == "lut-only" and rgb is not None:
+                if mode in ("lut-only","lut") and rgb is not None:
                     import numpy as np
-                    from .lut_fit import wb_apply
+                    from .lut_quality import recommendations_apply
                     image = png_bytes(np.concatenate((rgb, apply_lut(rgb,lut),
-                        wb_apply(Model(rgb,cal).apply(vector(result)),report["wb_shift"])),axis=1))
+                        recommendations_apply(Model(rgb,cal).apply(vector(result)),report["wb_shift"],report["exposure"]["ev"])),axis=1))
                     with lock:
                         state["comparison"] = (revision, image)
                 return {"status": "done", "recipe": result, "report": report, "revision": revision}
