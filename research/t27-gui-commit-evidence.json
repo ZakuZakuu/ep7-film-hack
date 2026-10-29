@@ -8,10 +8,12 @@
     "task_complete": false,
     "v5a_release": false,
     "owner_build_allowed": false,
-    "core_phase": "COLOR1: interaction",
-    "complete_profiles": 0,
+    "core_phase": "grouped_profile_validation_complete",
+    "complete_profiles": 4,
+    "all_four_profile_interactions_passed": true,
     "blockers": [
-      "Three unclassified placement byte candidates; nested OE parse does not validate two of them",
+      "Three unclassified placement byte candidates; both containing inner ranges fail the current OE parser",
+      "Declared dial inputs do not move even the unchanged v4 cursor; input/activation fixture is incomplete",
       "Wheel H/L remapping is not implemented; no physical GUI/RTOS/cache or NVS persistence proof"
     ],
     "no_camera": true,
@@ -157,9 +159,265 @@
         "replacement_sha256": "dd256bb1c7ffd7492a33086a946c81b4aacf9a929cbdaa06398fed10469b6924"
       }
     ],
-    "models": {},
-    "interaction": [],
-    "phase": "COLOR1: interaction",
+    "interaction": [
+      {
+        "slot": 1,
+        "axes": [
+          {
+            "axis": "L",
+            "enum_count": 15,
+            "captions": [
+              {
+                "text": "L +7",
+                "native_record_bytes": 334,
+                "producer": "0x60e27289 + original caption adapter",
+                "pixels_or_glyphs_executed": false
+              },
+              {
+                "text": "L -7",
+                "native_record_bytes": 334,
+                "producer": "0x60e27289 + original caption adapter",
+                "pixels_or_glyphs_executed": false
+              },
+              {
+                "text": "L ALL",
+                "native_record_bytes": 334,
+                "producer": "0x60e27289 + original caption adapter",
+                "pixels_or_glyphs_executed": false
+              }
+            ],
+            "bounds": true,
+            "ALL": true,
+            "held_OK_all_12": true,
+            "short_OK_exit": 2,
+            "stock_S_unchanged": true
+          },
+          {
+            "axis": "H",
+            "enum_count": 15,
+            "captions": [
+              {
+                "text": "H +7",
+                "native_record_bytes": 334,
+                "producer": "0x60e27289 + original caption adapter",
+                "pixels_or_glyphs_executed": false
+              },
+              {
+                "text": "H -7",
+                "native_record_bytes": 334,
+                "producer": "0x60e27289 + original caption adapter",
+                "pixels_or_glyphs_executed": false
+              },
+              {
+                "text": "H ALL",
+                "native_record_bytes": 334,
+                "producer": "0x60e27289 + original caption adapter",
+                "pixels_or_glyphs_executed": false
+              }
+            ],
+            "bounds": true,
+            "ALL": true,
+            "held_OK_all_12": true,
+            "short_OK_exit": 2,
+            "stock_S_unchanged": true
+          }
+        ],
+        "returned_to_S": true
+      },
+      {
+        "slot": 2,
+        "axes": [
+          {
+            "axis": "L",
+            "enum_count": 15,
+            "captions": [
+              {
+                "text": "L +7",
+                "native_record_bytes": 334,
+                "producer": "0x60e27289 + original caption adapter",
+                "pixels_or_glyphs_executed": false
+              },
+              {
+                "text": "L -7",
+                "native_record_bytes": 334,
+                "producer": "0x60e27289 + original caption adapter",
+                "pixels_or_glyphs_executed": false
+              },
+              {
+                "text": "L ALL",
+                "native_record_bytes": 334,
+                "producer": "0x60e27289 + original caption adapter",
+                "pixels_or_glyphs_executed": false
+              }
+            ],
+            "bounds": true,
+            "ALL": true,
+            "held_OK_all_12": true,
+            "short_OK_exit": 2,
+            "stock_S_unchanged": true
+          },
+          {
+            "axis": "H",
+            "enum_count": 15,
+            "captions": [
+              {
+                "text": "H +7",
+                "native_record_bytes": 334,
+                "producer": "0x60e27289 + original caption adapter",
+                "pixels_or_glyphs_executed": false
+              },
+              {
+                "text": "H -7",
+                "native_record_bytes": 334,
+                "producer": "0x60e27289 + original caption adapter",
+                "pixels_or_glyphs_executed": false
+              },
+              {
+                "text": "H ALL",
+                "native_record_bytes": 334,
+                "producer": "0x60e27289 + original caption adapter",
+                "pixels_or_glyphs_executed": false
+              }
+            ],
+            "bounds": true,
+            "ALL": true,
+            "held_OK_all_12": true,
+            "short_OK_exit": 2,
+            "stock_S_unchanged": true
+          }
+        ],
+        "returned_to_S": true
+      },
+      {
+        "slot": 3,
+        "axes": [
+          {
+            "axis": "L",
+            "enum_count": 15,
+            "captions": [
+              {
+                "text": "L +7",
+                "native_record_bytes": 334,
+                "producer": "0x60e27289 + original caption adapter",
+                "pixels_or_glyphs_executed": false
+              },
+              {
+                "text": "L -7",
+                "native_record_bytes": 334,
+                "producer": "0x60e27289 + original caption adapter",
+                "pixels_or_glyphs_executed": false
+              },
+              {
+                "text": "L ALL",
+                "native_record_bytes": 334,
+                "producer": "0x60e27289 + original caption adapter",
+                "pixels_or_glyphs_executed": false
+              }
+            ],
+            "bounds": true,
+            "ALL": true,
+            "held_OK_all_12": true,
+            "short_OK_exit": 2,
+            "stock_S_unchanged": true
+          },
+          {
+            "axis": "H",
+            "enum_count": 15,
+            "captions": [
+              {
+                "text": "H +7",
+                "native_record_bytes": 334,
+                "producer": "0x60e27289 + original caption adapter",
+                "pixels_or_glyphs_executed": false
+              },
+              {
+                "text": "H -7",
+                "native_record_bytes": 334,
+                "producer": "0x60e27289 + original caption adapter",
+                "pixels_or_glyphs_executed": false
+              },
+              {
+                "text": "H ALL",
+                "native_record_bytes": 334,
+                "producer": "0x60e27289 + original caption adapter",
+                "pixels_or_glyphs_executed": false
+              }
+            ],
+            "bounds": true,
+            "ALL": true,
+            "held_OK_all_12": true,
+            "short_OK_exit": 2,
+            "stock_S_unchanged": true
+          }
+        ],
+        "returned_to_S": true
+      },
+      {
+        "slot": 4,
+        "axes": [
+          {
+            "axis": "L",
+            "enum_count": 15,
+            "captions": [
+              {
+                "text": "L +7",
+                "native_record_bytes": 334,
+                "producer": "0x60e27289 + original caption adapter",
+                "pixels_or_glyphs_executed": false
+              },
+              {
+                "text": "L -7",
+                "native_record_bytes": 334,
+                "producer": "0x60e27289 + original caption adapter",
+                "pixels_or_glyphs_executed": false
+              },
+              {
+                "text": "L ALL",
+                "native_record_bytes": 334,
+                "producer": "0x60e27289 + original caption adapter",
+                "pixels_or_glyphs_executed": false
+              }
+            ],
+            "bounds": true,
+            "ALL": true,
+            "held_OK_all_12": true,
+            "short_OK_exit": 2,
+            "stock_S_unchanged": true
+          },
+          {
+            "axis": "H",
+            "enum_count": 15,
+            "captions": [
+              {
+                "text": "H +7",
+                "native_record_bytes": 334,
+                "producer": "0x60e27289 + original caption adapter",
+                "pixels_or_glyphs_executed": false
+              },
+              {
+                "text": "H -7",
+                "native_record_bytes": 334,
+                "producer": "0x60e27289 + original caption adapter",
+                "pixels_or_glyphs_executed": false
+              },
+              {
+                "text": "H ALL",
+                "native_record_bytes": 334,
+                "producer": "0x60e27289 + original caption adapter",
+                "pixels_or_glyphs_executed": false
+              }
+            ],
+            "bounds": true,
+            "ALL": true,
+            "held_OK_all_12": true,
+            "short_OK_exit": 2,
+            "stock_S_unchanged": true
+          }
+        ],
+        "returned_to_S": true
+      }
+    ],
+    "phase": "grouped_profile_validation_complete",
     "admission": {
       "cases": [
         {
@@ -559,7 +817,8 @@
       ],
       "joined_v4_mirror": true,
       "limit": "Frame objects are owned fixtures; no captured camera frame or pixel execution"
-    }
+    },
+    "primary_checkpoint_phase": "COLOR3: construct"
   },
   "auxiliary": {
     "placement": {
@@ -836,15 +1095,35 @@
           "first_method": "Unclassified encoded reference {'component': 2, 'alias_base': '0x418c29f0', 'offset': '0x1df49d4', 'value': '0x418c2df6'}"
         }
       ],
-      "second_method": {
-        "start": "0x1c7ffe0",
-        "end": "0x27fffe0",
-        "sha256": "d61cb571bc2c2a22fe98a93fb92aad42d596af064efcb62e6255bc6819cc011e",
-        "parser": "pinned oly_container.parse",
-        "passed": false,
-        "error": "checksum mismatch at 0x0",
-        "conclusion": "Nested header/table is insufficient: integrity not established"
-      },
+      "second_method": [
+        {
+          "outer_descriptor": 4,
+          "start": "0xd3ffe0",
+          "end": "0x1a3ffe0",
+          "candidate_offsets": [
+            "0x132a214"
+          ],
+          "sha256": "40bb4b6b3bfec3d049892b562ccd0f3507f22e1a66bce1d6ff870ffa37fd7d16",
+          "parser": "pinned oly_container.parse",
+          "passed": false,
+          "error": "checksum mismatch at 0x0",
+          "conclusion": "Header/table insufficient; inner form/checksum domain unknown. This is not evidence stock is corrupt."
+        },
+        {
+          "outer_descriptor": 7,
+          "start": "0x1c7ffe0",
+          "end": "0x27fffe0",
+          "candidate_offsets": [
+            "0x1d6ddb8",
+            "0x1df49d4"
+          ],
+          "sha256": "d61cb571bc2c2a22fe98a93fb92aad42d596af064efcb62e6255bc6819cc011e",
+          "parser": "pinned oly_container.parse",
+          "passed": false,
+          "error": "checksum mismatch at 0x0",
+          "conclusion": "Header/table insufficient; inner form/checksum domain unknown. This is not evidence stock is corrupt."
+        }
+      ],
       "relative_candidates": [],
       "limits": "Opaque initializer callbacks; no exhaustive computed/DMA references, boot, cache or scheduling proof"
     },
@@ -1500,10 +1779,20 @@
         0,
         1,
         0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
         0,
         2
       ],
       "S_Mode_and_mirror_equal": true,
+      "S_comparison_baseline_sha256": "670c4cffe6876bd7a2aa27162b53aab56a36e48ec1894ca8463d1ad568ba1f2b",
+      "S_ALL_up_down_on_unmodified_v4": true,
       "delete_chain": [
         "0x60d11448",
         "0x60e766ea",
@@ -1515,8 +1804,100 @@
       "stale_virtual_child_rejected": true,
       "S_rebuilt_after_reload": true,
       "entry_exit_clear_before_native_bodies": true,
-      "unknown_sync_object_rejected": true
+      "unknown_sync_object_rejected": true,
+      "produced_display": {
+        "actual_produced_text": "L +3",
+        "text_setter": "0x60d4c9df",
+        "native_visibility_commands": {
+          "19": 1,
+          "20": 1,
+          "21": 1,
+          "22": 1,
+          "23": 1,
+          "24": 0,
+          "25": 0,
+          "26": 0
+        },
+        "native_frame_commands": [
+          {
+            "widget": 21,
+            "frame": 0
+          }
+        ],
+        "glyphs_or_pixels_executed": false,
+        "drawing_primitives": "Explicit void service models; command arguments verified"
+      },
+      "nonzero_S_notice": {
+        "service": "setting_notice",
+        "key": 927,
+        "value": -2,
+        "witnesses": [
+          14,
+          15,
+          16
+        ]
+      }
+    },
+    "GUI_S_bridge": {
+      "GUI_S_before": -1,
+      "raw_S_before": 4294967295,
+      "GUI_S_after_L": -1,
+      "pair_after_L": [
+        0,
+        1
+      ],
+      "GUI_S_after_H": -1,
+      "pair_after_H": [
+        -1,
+        1
+      ]
+    },
+    "dials": {
+      "passed": false,
+      "reference_program_sha256": "670c4cffe6876bd7a2aa27162b53aab56a36e48ec1894ca8463d1ad568ba1f2b",
+      "observation": {
+        "initial_GUI_cursor": 1,
+        "reference_GUI_cursor": 1,
+        "raw_setting": 1,
+        "parent_selected_child": 0,
+        "cursor_child_index": 1
+      },
+      "attempts": [
+        "Nominal latched event replay",
+        "Independent whole v4 reference using original GUI getter"
+      ],
+      "reason": "Declared dial inputs did not move even the unchanged v4 cursor: 1",
+      "conclusion": "Input/activation path not reproduced; no claim the prototype dial implementation is correct or broken",
+      "stop": "No guessed focus/activation field writes; stop after two bounded approaches"
     }
+  },
+  "execution_groups": {
+    "primary": "Profiles 1/2 in original Probe.evidence; controlled stop after their checkpoints",
+    "primary_checkpoint_phase": "COLOR3: construct",
+    "primary_instruction_total": "Not exported by the controlled checkpoint; no fabricated aggregate count",
+    "independent": [
+      {
+        "profile": 3,
+        "scope": "Fresh owned state using unchanged Probe.fresh/interaction",
+        "candidate_sha256": "4e7b3cbea63ad578136667b709c0de0c0ebb1ce015f2d180bed0a193493fa118",
+        "GNU_instructions": 11617763,
+        "aligned_accesses": 1560351
+      },
+      {
+        "profile": 4,
+        "scope": "Fresh owned state using unchanged Probe.fresh/interaction",
+        "candidate_sha256": "4e7b3cbea63ad578136667b709c0de0c0ebb1ce015f2d180bed0a193493fa118",
+        "GNU_instructions": 11662377,
+        "aligned_accesses": 1571998
+      },
+      {
+        "scope": "Additional controls incl nonzero S and actual produced display",
+        "candidate_sha256": "4e7b3cbea63ad578136667b709c0de0c0ebb1ce015f2d180bed0a193493fa118",
+        "GNU_instructions": 7954472,
+        "aligned_accesses": 1063729
+      }
+    ],
+    "scope": "Remaining profiles run original fresh/interaction methods in independent owned states; all candidate hashes must agree. Public full-probe command reproduces all four sequentially."
   },
   "legacy_builds": [
     {
@@ -1615,6 +1996,16 @@
       "start": "0x60045786",
       "end_exclusive": "0x6004586c",
       "sha256": "3f3028867e49eb099744d990856d183f741181e7a961ccdfc27df5c05381b50c"
+    },
+    {
+      "start": "0x60d7ae23",
+      "end_exclusive": "0x60d7aece",
+      "sha256": "1ddfeffa1431d91e3d55591e0b75d97f134f2f63d4cd98cbfd2b66534eb4647e"
+    },
+    {
+      "start": "0x60d7b014",
+      "end_exclusive": "0x60d7b162",
+      "sha256": "eadcaac68edbdbe07e8820a96149977e9dcabf7e5a3fde9ccca18c2c3957fc5a"
     }
   ],
   "model_contracts": {
@@ -1623,7 +2014,13 @@
     "gui_queue": "Owned empty indices; native queue loop retained; only the explicitly owned lock handle succeeds",
     "application": "Native 995 construction; opaque external request-connection and successful message delivery inputs; native setting notice carries real S",
     "records": "Only native C9A2 (two u16) and AA2 (one u16) stock defaults registered through native 6005d987; no general zero-filled kernel",
+    "inherited": "Finite allocation, diagnostics, timer, availability=allowed and unused context-query service models from the existing editor fixture; not proof of availability in every camera/menu state",
     "io": "Existing v4 side-consumer service cuts retained; no camera IO, pixel engine or NVS backend executed"
+  },
+  "external_tool_review": {
+    "container": "Fixed CONTAINERS.md explicitly covers scrambled OE; inner form is not established",
+    "resource_tool": "penf_resource_storage.py read: PEN-F-only pinned package/addresses, not imported as E142 evidence",
+    "no_upstream_code_copied": true
   },
   "native_dataflow": [
     "native child 60de9920/60de5ab8",
@@ -1638,6 +2035,7 @@
   "limitations": [
     "Program proof uses owned RAM and declared finite service inputs; it is not complete camera boot, physical input, task scheduling, glyph rendering or durable flash proof",
     "GUI/app and Wi-Fi read hooks join the unchanged v4 implementation; full HTTP transport is not a camera test",
+    "Owned viewer/header and stack fixtures are not a captured live GUI; original GUI task stack headroom is not established",
     "Stable prospective hash is a reproducibility receipt, never permission to install",
     "Placement methods stopped: existing pointer/branch and mature encoded-data classification; bounded nested OE validation from known outer descriptor"
   ],
@@ -1646,10 +2044,10 @@
     "patches/hsl-editor/e-p7/editor.s": "a1fab66ae40f11bcd5ffc493ce2eb0e2cbe064ad89c8ec638772c60be8dde344",
     "patches/hsl-editor/e-p7/symbols.json": "662fbe6e67ee35b064ad304243c18def769222aa17624ed62cc0ab3c0189fc58",
     "tools/ep7_t27_candidate.py": "63cd9df8f74026855b9d014fd7301c21452abbea0ea735806c383f9ccd5bbd40",
-    "tools/ep7_t27_editor_aux_probe.py": "bacc8de528a79cd872cdaeb6413bb425daf22e036dafe4cfc7c99319d094eeae",
+    "tools/ep7_t27_editor_aux_probe.py": "0f01ee5e6346c81b89418b668850a08383edae4e5bc4158cc7ba4a2b222d3d1e",
     "tools/ep7_t27_editor_fixture.py": "9fa8b94200a91e0b445c25fc223a9f9e3b06700a927f288ad8d380273495b931",
     "tools/ep7_t27_editor_probe.py": "def1c70558e1e0fcaddc064bc3c3a6c4db5993f5f0ae37e3226047e678029c2b",
-    "tools/ep7_t27_placement.py": "dfbcf7fd370f8f2629e599eb3a85ef8a2793581c4d60c4cc10e56621e8db7220",
+    "tools/ep7_t27_placement.py": "3c2063addda1dcb7536d227b18b8c1a5c61b1eb261345132c57dd511e2f91086",
     "tools/ep7_t27_ui_flow_probe.py": "4e2a82dd38ab03099e5c143b8b8352b5c47cc73028ad134537abac043a1ad33a",
     "tools/ep7_t27_v5_probe.py": "3aca05a7186b958c1df92fee186e8d97135581b7498345bb4fc1653f7bccab82"
   }

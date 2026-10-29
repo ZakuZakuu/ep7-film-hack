@@ -135,27 +135,33 @@ def qualify(x):
     # A second bounded method: use the previously established outer resource
     # descriptor to delimit a nested OE candidate; reuse the actual parser.
     # Failure is a STOP, never an excuse to mark the whole region "encoded".
-    second = None
+    second = []
     if unresolved:
         import oly_container as oe
         block = x.blocks[2]
-        address, length, zero1, zero2 = struct.unpack_from('<4I', block.payload, 7*16)
-        start = address - struct.unpack_from('<I', block.header, 8)[0] - 32
-        require(zero1 == zero2 == 0 and start >= 0
-                and start+length <= len(block.payload), 'Outer descriptor bounds')
-        segment = block.payload[start:start+length]
-        second = dict(start=hex(start), end=hex(start+length),
-                      sha256=digest(segment), parser='pinned oly_container.parse')
-        try:
-            nested = oe.parse(segment)
-        except ValueError as exc:
-            second.update(passed=False, error=str(exc),
-                          conclusion='Nested header/table is insufficient: integrity not established')
-        else:
-            # This task stops on the observed failure. A different input must
-            # not silently qualify without a reviewed domain/reference proof.
-            second.update(passed=True, blocks=len(nested),
-                          conclusion='Integrity alone does not establish address-domain isolation')
+        for index in (4, 7):
+            address, length, zero1, zero2 = struct.unpack_from('<4I', block.payload, index*16)
+            start = address - struct.unpack_from('<I', block.header, 8)[0] - 32
+            require(zero1 == zero2 == 0 and start >= 0
+                    and start+length <= len(block.payload), 'Outer descriptor bounds')
+            members = [z['offset'] for z in unresolved if z['component'] == 2
+                       and start <= int(z['offset'], 16) < start+length]
+            require(members, 'Resource extent does not contain a candidate')
+            segment = block.payload[start:start+length]
+            receipt = dict(outer_descriptor=index, start=hex(start), end=hex(start+length),
+                candidate_offsets=members, sha256=digest(segment),
+                parser='pinned oly_container.parse')
+            try:
+                nested = oe.parse(segment)
+            except ValueError as exc:
+                receipt.update(passed=False, error=str(exc),
+                    conclusion='Header/table insufficient; inner form/checksum domain unknown. This is not evidence stock is corrupt.')
+            else:
+                # A different input must not silently qualify without a
+                # separately reviewed domain/reference proof.
+                receipt.update(passed=True, blocks=len(nested),
+                    conclusion='Integrity alone does not establish address-domain isolation')
+            second.append(receipt)
     return dict(qualified=not unresolved and not branches,
                 loads=loads, initializer_dispatch=initializers,
                 initializer_table=hex(table), initializer_sha256=digest(x.read(table, size)),
