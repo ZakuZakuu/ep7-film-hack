@@ -40,5 +40,10 @@ CLI 可选照片的对比图依次为原图 / LUT / 配方加近似白平衡；�
 
 新增测试覆盖分布确定性、level 12 Hald 顺序、已知配方找回、纯偏色分离及无照片 HTTP 入口。
 私有 Workspace 资格存在时额外执行精确模型生成 LUT 的参数找回；CI 没有厂商数据时显式跳过此项。
-本机 /home/lenovo/ep7-recipes 存在，但其中没有 luts/；常用 Windows 对应路径也未找到。
-因此没有虚构 3 至 4 个胶片 LUT 的报告。提供该目录后可按 README 命令生成仓库外 compare/ 结果。
+机主提供的 4 个 sRGB cube 已用 Workspace HSL 模型拟合（100 次预算、768 个训练采样）。
+Classic Chrome：均值 4.40 / P95 8.23；Velvia：3.48 / 8.01；Reala Ace：5.04 / 9.52，均为“近似”。
+Classic Neg：6.83 / 12.17，为“差”；拆分建议 A +1、G 0，不拆分均值 6.83，未明显改善。
+其余三个建议 A 0、G 0。Classic Neg 存在随亮度变化的灰阶偏色，不能用单一白平衡表达。
+四者均提示内域触边（16.7% 至 57.2%），这是对合成分布的测量，不能推断真实照片的截断比例。
+私有 LUT、配方、完整报告、原创色谱对比图和 index.html 都在仓库外 /home/lenovo/ep7-recipes/{luts,compare}/。
+通用无依赖 CI 使用与现有测试一致的可选依赖跳过入口；专用 CI 安装依赖后完整执行。

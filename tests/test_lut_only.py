@@ -1,7 +1,14 @@
 import unittest
 import os
 from unittest.mock import patch
-import numpy as np
+try:
+    import numpy as np
+    import scipy
+    import flask
+    from PIL import Image
+    from skimage.color import rgb2lab
+except ImportError as e:
+    raise unittest.SkipTest("Recipe Studio optional dependencies absent; dedicated CI installs and runs this suite") from e
 from tools.recipe_studio.recipe import calibration, neutral, vector
 from tools.recipe_studio.backend import Model
 from tools.recipe_studio.lut_fit import representative_colors, wb_estimate, wb_apply, fit_lut, diagnostics
