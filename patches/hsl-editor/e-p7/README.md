@@ -5,7 +5,7 @@
 
 这是本仓库原创的有限原型：在未改动的 v4 设置、发布及成像扩展上，
 加入 COLOR 专属的 S → L → H 枚举、原厂 GUI 准入后的标记提交、轴文字、
-ALL 边界适配。色轮仍保持原厂 S；尚未达到“其他全部验收完成”的 v5a 标准。
+ALL 边界适配。未实现色轮的 H/L 显示重定向；尚未达到“其他全部验收完成”的 v5a 标准。
 参考 [PEN-F 设计](https://github.com/fishcu/oly_fw_analysis/blob/539fcf1fa9eda5fdef8ede4deeab94a4691d94c3/docs/color/pen-f/EDITOR.md)，
 只阅读、运行固定上游工具，没有复制其实现或地址。
 

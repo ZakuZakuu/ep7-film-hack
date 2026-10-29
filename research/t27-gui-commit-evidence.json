@@ -1,0 +1,1656 @@
+{
+  "issue": 70,
+  "baseline_main": "e011e054f519eafc85db9868010928381fd2d82a",
+  "upstream": "539fcf1fa9eda5fdef8ede4deeab94a4691d94c3",
+  "model": "E142",
+  "firmware": "1100",
+  "validation_status": {
+    "task_complete": false,
+    "v5a_release": false,
+    "owner_build_allowed": false,
+    "core_phase": "COLOR1: interaction",
+    "complete_profiles": 0,
+    "blockers": [
+      "Three unclassified placement byte candidates; nested OE parse does not validate two of them",
+      "Wheel H/L remapping is not implemented; no physical GUI/RTOS/cache or NVS persistence proof"
+    ],
+    "no_camera": true,
+    "no_install_files": true
+  },
+  "native": {
+    "stock_sha256": "9d1610124ad98f6edae4540182205f06c9c703d9033ef0c4f19847193f95eaeb",
+    "decoded_sha256": "5dd9af164b4590c7e82f6905c919b3cc450bb58f2d5742ab2a0e3a4eb2e26190",
+    "v4_baseline_sha256": "670c4cffe6876bd7a2aa27162b53aab56a36e48ec1894ca8463d1ad568ba1f2b",
+    "decoded_candidate_sha256": "4e7b3cbea63ad578136667b709c0de0c0ebb1ce015f2d180bed0a193493fa118",
+    "modified_ranges": [
+      {
+        "address": "0x60210e3c",
+        "length": 50,
+        "kind": "apply",
+        "original_sha256": "c4612d488c8b730aecd874b92924f9b8f4ecb8f3e78689adfbd94e2f9452c7fc",
+        "replacement_sha256": "da6a653bbe53d953f9b30b171506559838e936348dbd7735fb61bc8ca8d99e64"
+      },
+      {
+        "address": "0x60210e6e",
+        "length": 48,
+        "kind": "lifecycle",
+        "original_sha256": "80a76a18acf8cb64fec3a659ffc4bab4a87cd9a6fde4dab2161a8751d136c9d2",
+        "replacement_sha256": "fb441fcb7f7e238a7cb04f861624fc76bd860cb00eab3f74f022880ae9f8dafa"
+      },
+      {
+        "address": "0x60210fa0",
+        "length": 16,
+        "kind": "state",
+        "original_sha256": "5ac6a5945f16500911219129984ba8b387a06f24fe383ce4e81a73294065461b",
+        "replacement_sha256": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb"
+      },
+      {
+        "address": "0x6055e5f0",
+        "length": 440,
+        "kind": "api",
+        "original_sha256": "ccfdb707841cc9878b5aeac45b19e12d90d0250fb83a28bbffc99cc5979a36b6",
+        "replacement_sha256": "8a14604d3cc6d5ac30e421df0bb134a4a8fa109be7363f652dcc20721829c132"
+      },
+      {
+        "address": "0x6082748b",
+        "length": 5,
+        "kind": "apply_detour",
+        "original_sha256": "565d54681075180990c52cf576d2c6088588770658072aa9f96bf29b8b68c354",
+        "replacement_sha256": "11c0f9f8c34fbcf6a5ae17e83a7acbdfc375984708ea8bcc8d03023ff488a464"
+      },
+      {
+        "address": "0x60acb0dc",
+        "length": 4,
+        "kind": "v5_set",
+        "original_sha256": "090b9588b084d3ed2a1521f33a38d3140828f6ad4c6b6f1e6156d9c784efe7c7",
+        "replacement_sha256": "00a868c655b8d6c990e34899cb61d5b71923661b84c7fcc493b6e53c83adc435"
+      },
+      {
+        "address": "0x60acb0e4",
+        "length": 4,
+        "kind": "v5_get",
+        "original_sha256": "98d38bf8d59dee2e45a432a4f5e44286c7320486bc9410f7738d131d4d411f80",
+        "replacement_sha256": "e66eb370be6f9e8dd3bc83419565c79d1f177cc099fd9b5c6295f4076fe9fe48"
+      },
+      {
+        "address": "0x60acb0f4",
+        "length": 4,
+        "kind": "v5_count",
+        "original_sha256": "4763c7b206a97431cfcc5aa4e65b64daad6c79be0d0d453a126c0ba9aeb1e0a8",
+        "replacement_sha256": "36c5ff8271f89bca548122fcdf3432c27ccbff9c929fa7b4c7e8db07f74175d9"
+      },
+      {
+        "address": "0x60acb0f8",
+        "length": 4,
+        "kind": "v5_enum",
+        "original_sha256": "91fbd6e572d38ab5179a61267c9cec07632e42e5f350766745e77ad28394ccb4",
+        "replacement_sha256": "d83562969f2317200fa006cf1046eb8e3549cf0fd8e89d03dce88671866d25e8"
+      },
+      {
+        "address": "0x60acb100",
+        "length": 4,
+        "kind": "v5_valid",
+        "original_sha256": "8ec96eb81123f10cc0a6ca71c5017247738a7c6d808b8776d609754ea5db8557",
+        "replacement_sha256": "dd6fcfd3918986d9190779c8375f538abf4694f711e88b718b476a6e9532b138"
+      },
+      {
+        "address": "0x60acb174",
+        "length": 4,
+        "kind": "v5_default",
+        "original_sha256": "99e6f62f7869468d063ac263e85dcd31869d48523ac7261f19c4075bb36a242b",
+        "replacement_sha256": "88b4da1441ef9f482409e4d211c2042f73d2daf6e9a8f66e2cd0b36dbdc0031a"
+      },
+      {
+        "address": "0x60d1147e",
+        "length": 5,
+        "kind": "lookup_detour",
+        "original_sha256": "a91994b5acc8aacb24c0f98fe59f980ff519ee36d293a3ed4089f4a315b58165",
+        "replacement_sha256": "7d90800f5dfebf605dcb2173b47fb698c4356226b78c9fdcba04587be999a161"
+      },
+      {
+        "address": "0x60e20f0c",
+        "length": 5,
+        "kind": "upper",
+        "original_sha256": "9dbbf33348aac77e806f9ca1270b333ff524e20b6de95c8598239ed38376e445",
+        "replacement_sha256": "0459444da10ee50178ffc5031b0f149b9f191c6299c851681deca97d8658b187"
+      },
+      {
+        "address": "0x60e2116c",
+        "length": 5,
+        "kind": "lower",
+        "original_sha256": "71e83faa055fde84cfab6016dff2ed22b89e0576d8397a0ed9a236cdd7ffa4a2",
+        "replacement_sha256": "5c38d1b14ce2d54d720dff6dbfe8634a33a5a31728ba1d4d2e7e261ede0c9adb"
+      },
+      {
+        "address": "0x60e26ba1",
+        "length": 5,
+        "kind": "numeric_detour",
+        "original_sha256": "1a715b617ed1ba7275605d0692a50c86f4ec7c0f9a8940e88698388958b89216",
+        "replacement_sha256": "27a5df8647165a9c374707e456e8cae3f641cef63fd2c373e2eaa963158b2d40"
+      },
+      {
+        "address": "0x61187534",
+        "length": 4,
+        "kind": "v5_parent",
+        "original_sha256": "2420d738f64374a758f7177396628bdb231e6802f59bce5e9665c3d646390732",
+        "replacement_sha256": "d3d6db63dc78e52586d692961f8e318e73163e66e07002d46a499733ef2c57ec"
+      },
+      {
+        "address": "0x611ada34",
+        "length": 4,
+        "kind": "v5_enter",
+        "original_sha256": "1c3a5c43477f17a007b0b281a779ed375f138e8b58f261fa3b5c870b9c12eb16",
+        "replacement_sha256": "cde2484b5506dd8a56aa9a88c37b7115eb1d3bf0c1ded63d6ba43ea52fa9e537"
+      },
+      {
+        "address": "0x611ada48",
+        "length": 4,
+        "kind": "v5_exit",
+        "original_sha256": "3e0ffc90a855aef1aa1f44357c3964c9e0d47d88120178961e11e5bab4d2a7b0",
+        "replacement_sha256": "9aa9c1b8ce446ab26c2dc4011d295c24436f8c4ef9bb62101304b3a4d706f0cf"
+      },
+      {
+        "address": "0x612429f0",
+        "length": 1172,
+        "kind": "ui6",
+        "original_sha256": "887e807814190001ddd50375e7949895e0a1073ef47190df1869d7cc9591e2f7",
+        "replacement_sha256": "dd256bb1c7ffd7492a33086a946c81b4aacf9a929cbdaa06398fed10469b6924"
+      }
+    ],
+    "models": {},
+    "interaction": [],
+    "phase": "COLOR1: interaction",
+    "admission": {
+      "cases": [
+        {
+          "flags": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "accepted": true,
+          "actual_H": 3,
+          "busy_no_write": false
+        },
+        {
+          "flags": [
+            2,
+            0,
+            0,
+            0
+          ],
+          "accepted": false,
+          "actual_H": 2,
+          "busy_no_write": true
+        },
+        {
+          "flags": [
+            6,
+            0,
+            0,
+            0
+          ],
+          "accepted": true,
+          "actual_H": 3,
+          "busy_no_write": false
+        },
+        {
+          "flags": [
+            0,
+            2,
+            0,
+            0
+          ],
+          "accepted": false,
+          "actual_H": 2,
+          "busy_no_write": true
+        },
+        {
+          "flags": [
+            256,
+            2,
+            0,
+            0
+          ],
+          "accepted": true,
+          "actual_H": 3,
+          "busy_no_write": false
+        }
+      ],
+      "active_request_witness": [
+        {
+          "service": "sync",
+          "message_id": 995,
+          "response": 0
+        },
+        {
+          "service": "setting_notice",
+          "key": 927,
+          "value": 0,
+          "witnesses": [
+            14,
+            15,
+            16
+          ]
+        }
+      ],
+      "active_app_state": "0x10001 branch witness, not a measured task ID",
+      "peer_transport": "Explicit success input; message construction stays native"
+    },
+    "image_join": {
+      "cases": [
+        {
+          "compact": null,
+          "H0": -3000,
+          "L0": -100,
+          "uploads": [
+            {
+              "bank": 0,
+              "flag": "0x8",
+              "packer_prefix": "60343b23..60343b72",
+              "writer": "0x6034667e",
+              "all_288_coefficient_bytes_match": true,
+              "H": [
+                -3000,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "L": [
+                -100,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "instructions": 2132
+            },
+            {
+              "bank": 1,
+              "flag": "0x40000",
+              "packer_prefix": "60343b23..60343b72",
+              "writer": "0x6034667e",
+              "all_288_coefficient_bytes_match": true,
+              "H": [
+                -3000,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "L": [
+                -100,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "instructions": 2139
+            }
+          ]
+        },
+        {
+          "compact": "0x60306ad5",
+          "H0": -3000,
+          "L0": -100,
+          "uploads": [
+            {
+              "bank": 0,
+              "flag": "0x8",
+              "packer_prefix": "60343b23..60343b72",
+              "writer": "0x6034667e",
+              "all_288_coefficient_bytes_match": true,
+              "H": [
+                -3000,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "L": [
+                -100,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "instructions": 2132
+            },
+            {
+              "bank": 1,
+              "flag": "0x40000",
+              "packer_prefix": "60343b23..60343b72",
+              "writer": "0x6034667e",
+              "all_288_coefficient_bytes_match": true,
+              "H": [
+                -3000,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "L": [
+                -100,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "instructions": 2139
+            }
+          ]
+        },
+        {
+          "compact": "0x6031b4de",
+          "H0": -3000,
+          "L0": -100,
+          "uploads": [
+            {
+              "bank": 0,
+              "flag": "0x8",
+              "packer_prefix": "60343b23..60343b72",
+              "writer": "0x6034667e",
+              "all_288_coefficient_bytes_match": true,
+              "H": [
+                -3000,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "L": [
+                -100,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "instructions": 2132
+            },
+            {
+              "bank": 1,
+              "flag": "0x40000",
+              "packer_prefix": "60343b23..60343b72",
+              "writer": "0x6034667e",
+              "all_288_coefficient_bytes_match": true,
+              "H": [
+                -3000,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "L": [
+                -100,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "instructions": 2139
+            }
+          ]
+        },
+        {
+          "compact": "0x0",
+          "H0": -3000,
+          "L0": -100,
+          "uploads": [
+            {
+              "bank": 0,
+              "flag": "0x8",
+              "packer_prefix": "60343b23..60343b72",
+              "writer": "0x6034667e",
+              "all_288_coefficient_bytes_match": true,
+              "H": [
+                -3000,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "L": [
+                -100,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "instructions": 2132
+            },
+            {
+              "bank": 1,
+              "flag": "0x40000",
+              "packer_prefix": "60343b23..60343b72",
+              "writer": "0x6034667e",
+              "all_288_coefficient_bytes_match": true,
+              "H": [
+                -3000,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "L": [
+                -100,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "instructions": 2139
+            }
+          ]
+        }
+      ],
+      "joined_v4_mirror": true,
+      "limit": "Frame objects are owned fixtures; no captured camera frame or pixel execution"
+    }
+  },
+  "auxiliary": {
+    "placement": {
+      "qualified": false,
+      "loads": [
+        {
+          "section": 1,
+          "poison": 85,
+          "exact_copy": true,
+          "start": "0x600d7800",
+          "end": "0x60211000",
+          "source": "0x40757800"
+        },
+        {
+          "section": 1,
+          "poison": 165,
+          "exact_copy": true,
+          "start": "0x600d7800",
+          "end": "0x60211000",
+          "source": "0x40757800"
+        },
+        {
+          "section": 2,
+          "poison": 85,
+          "exact_copy": true,
+          "start": "0x60280800",
+          "end": "0x6055e800",
+          "source": "0x40900800"
+        },
+        {
+          "section": 2,
+          "poison": 165,
+          "exact_copy": true,
+          "start": "0x60280800",
+          "end": "0x6055e800",
+          "source": "0x40900800"
+        },
+        {
+          "section": 6,
+          "poison": 85,
+          "exact_copy": true,
+          "start": "0x60ba7000",
+          "end": "0x61243000",
+          "source": "0x41227000"
+        },
+        {
+          "section": 6,
+          "poison": 165,
+          "exact_copy": true,
+          "start": "0x60ba7000",
+          "end": "0x61243000",
+          "source": "0x41227000"
+        }
+      ],
+      "initializer_dispatch": [
+        {
+          "calls": 75,
+          "counterfactual": false,
+          "status": "returned"
+        },
+        {
+          "calls": 75,
+          "counterfactual": true,
+          "status": "memory_fault"
+        }
+      ],
+      "initializer_table": "0x61242884",
+      "initializer_sha256": "c77511948167c569ef808d2560a880cec30a7d2f39f7b0d3004af27555aa9b43",
+      "classified_references": [
+        {
+          "component": 2,
+          "alias_base": "0x60210e6e",
+          "offset": "0x23eb2da",
+          "value": "0x60210e87",
+          "classification": "Exact previously validated SquashFS bytes; serialized filesystem, not MN103 text",
+          "source": "research/e142-squashfs-validation.md"
+        },
+        {
+          "component": 4,
+          "alias_base": "0x6055e5f0",
+          "offset": "0x2699f4",
+          "value": "0x6055e62d",
+          "classification": "JPEG entropy data; Pillow complete decode passed",
+          "start": "0x2633e0",
+          "end": "0x26bf3c"
+        },
+        {
+          "component": 4,
+          "alias_base": "0x6055e5f0",
+          "offset": "0x3b1316",
+          "value": "0x6055e69b",
+          "classification": "JPEG entropy data; Pillow complete decode passed",
+          "start": "0x3adfe0",
+          "end": "0x3b2363"
+        },
+        {
+          "component": 4,
+          "alias_base": "0x6055e5f0",
+          "offset": "0x3cb916",
+          "value": "0x6055e69b",
+          "classification": "JPEG entropy data; Pillow complete decode passed",
+          "start": "0x3c85e0",
+          "end": "0x3cc963"
+        },
+        {
+          "component": 4,
+          "alias_base": "0xa055e5f0",
+          "offset": "0x606784",
+          "value": "0xa055e67d",
+          "classification": "JPEG entropy data; Pillow complete decode passed",
+          "start": "0x5fe3e0",
+          "end": "0x607631"
+        },
+        {
+          "component": 2,
+          "alias_base": "0x612429f0",
+          "offset": "0x65091a",
+          "value": "0x61242b36",
+          "classification": "JPEG entropy data; Pillow complete decode passed",
+          "start": "0x63d420",
+          "end": "0x6e8497"
+        },
+        {
+          "component": 2,
+          "alias_base": "0x612429f0",
+          "offset": "0x1f55770",
+          "value": "0x61242e21",
+          "classification": "gzip encoded data; zlib EOF/CRC passed",
+          "decoded_sha256": "d0d7a4539cbf286e2078f4b5479297d88443138fbf29566e3849b71238c1619e"
+        },
+        {
+          "component": 4,
+          "alias_base": "0x612429f0",
+          "offset": "0x41704e",
+          "value": "0x61242b90",
+          "classification": "JPEG entropy data; Pillow complete decode passed",
+          "start": "0x40dbe0",
+          "end": "0x418e94"
+        },
+        {
+          "component": 2,
+          "alias_base": "0xa12429f0",
+          "offset": "0x69e317",
+          "value": "0xa1242a58",
+          "classification": "JPEG entropy data; Pillow complete decode passed",
+          "start": "0x63d420",
+          "end": "0x6e8497"
+        },
+        {
+          "component": 2,
+          "alias_base": "0xa12429f0",
+          "offset": "0x202605d",
+          "value": "0xa1242c18",
+          "classification": "gzip encoded data; zlib EOF/CRC passed",
+          "decoded_sha256": "d0d7a4539cbf286e2078f4b5479297d88443138fbf29566e3849b71238c1619e"
+        },
+        {
+          "component": 2,
+          "alias_base": "0xa12429f0",
+          "offset": "0x2129133",
+          "value": "0xa1242cf4",
+          "classification": "gzip encoded data; zlib EOF/CRC passed",
+          "decoded_sha256": "d0d7a4539cbf286e2078f4b5479297d88443138fbf29566e3849b71238c1619e"
+        },
+        {
+          "component": 2,
+          "alias_base": "0xa12429f0",
+          "offset": "0x226194e",
+          "value": "0xa1242d02",
+          "classification": "Exact previously validated SquashFS bytes; serialized filesystem, not MN103 text",
+          "source": "research/e142-squashfs-validation.md"
+        },
+        {
+          "component": 2,
+          "alias_base": "0xa12429f0",
+          "offset": "0x23a2007",
+          "value": "0xa1242d72",
+          "classification": "Exact previously validated SquashFS bytes; serialized filesystem, not MN103 text",
+          "source": "research/e142-squashfs-validation.md"
+        },
+        {
+          "component": 4,
+          "alias_base": "0xa12429f0",
+          "offset": "0x3722a4",
+          "value": "0xa1242ba1",
+          "classification": "JPEG entropy data; Pillow complete decode passed",
+          "start": "0x36d7e0",
+          "end": "0x378361"
+        },
+        {
+          "component": 2,
+          "alias_base": "0x418c29f0",
+          "offset": "0x20ffd6f",
+          "value": "0x418c2df9",
+          "classification": "gzip encoded data; zlib EOF/CRC passed",
+          "decoded_sha256": "d0d7a4539cbf286e2078f4b5479297d88443138fbf29566e3849b71238c1619e"
+        },
+        {
+          "component": 2,
+          "alias_base": "0x418c29f0",
+          "offset": "0x220d1dd",
+          "value": "0x418c2b0b",
+          "classification": "Exact previously validated SquashFS bytes; serialized filesystem, not MN103 text",
+          "source": "research/e142-squashfs-validation.md"
+        },
+        {
+          "component": 2,
+          "alias_base": "0x418c29f0",
+          "offset": "0x229e5c4",
+          "value": "0x418c2b07",
+          "classification": "Exact previously validated SquashFS bytes; serialized filesystem, not MN103 text",
+          "source": "research/e142-squashfs-validation.md"
+        },
+        {
+          "component": 0,
+          "alias_base": "0x818c29f0",
+          "offset": "0xe380d5",
+          "value": "0x818c2cca",
+          "classification": "GNU verified short-branch/register instruction straddler"
+        },
+        {
+          "component": 0,
+          "alias_base": "0x818c29f0",
+          "offset": "0xe38135",
+          "value": "0x818c2cca",
+          "classification": "GNU verified short-branch/register instruction straddler"
+        },
+        {
+          "component": 0,
+          "alias_base": "0x818c29f0",
+          "offset": "0xe3834a",
+          "value": "0x818c2dca",
+          "classification": "GNU verified short-branch/register instruction straddler"
+        },
+        {
+          "component": 2,
+          "alias_base": "0x818c29f0",
+          "offset": "0x7eaf70",
+          "value": "0x818c2d88",
+          "classification": "JPEG entropy data; Pillow complete decode passed",
+          "start": "0x7e0020",
+          "end": "0x7ffb91"
+        },
+        {
+          "component": 4,
+          "alias_base": "0x818c29f0",
+          "offset": "0x6d9aff",
+          "value": "0x818c2b67",
+          "classification": "JPEG entropy data; Pillow complete decode passed",
+          "start": "0x6d23e0",
+          "end": "0x6dd3be"
+        }
+      ],
+      "unresolved_references": [
+        {
+          "component": 2,
+          "alias_base": "0x40bde5f0",
+          "offset": "0x1d6ddb8",
+          "value": "0x40bde73f",
+          "first_method": "Unclassified encoded reference {'component': 2, 'alias_base': '0x40bde5f0', 'offset': '0x1d6ddb8', 'value': '0x40bde73f'}"
+        },
+        {
+          "component": 2,
+          "alias_base": "0x612429f0",
+          "offset": "0x132a214",
+          "value": "0x61242ae7",
+          "first_method": "Unclassified encoded reference {'component': 2, 'alias_base': '0x612429f0', 'offset': '0x132a214', 'value': '0x61242ae7'}"
+        },
+        {
+          "component": 2,
+          "alias_base": "0x418c29f0",
+          "offset": "0x1df49d4",
+          "value": "0x418c2df6",
+          "first_method": "Unclassified encoded reference {'component': 2, 'alias_base': '0x418c29f0', 'offset': '0x1df49d4', 'value': '0x418c2df6'}"
+        }
+      ],
+      "second_method": {
+        "start": "0x1c7ffe0",
+        "end": "0x27fffe0",
+        "sha256": "d61cb571bc2c2a22fe98a93fb92aad42d596af064efcb62e6255bc6819cc011e",
+        "parser": "pinned oly_container.parse",
+        "passed": false,
+        "error": "checksum mismatch at 0x0",
+        "conclusion": "Nested header/table is insufficient: integrity not established"
+      },
+      "relative_candidates": [],
+      "limits": "Opaque initializer callbacks; no exhaustive computed/DMA references, boot, cache or scheduling proof"
+    },
+    "routing": {
+      "existing_routes": [
+        {
+          "event": "0x9626",
+          "handler": "0x60dd4b47"
+        },
+        {
+          "event": "0x9627",
+          "handler": "0x60e762f2"
+        },
+        {
+          "event": "0x9b00",
+          "handler": "0x60e76353"
+        },
+        {
+          "event": "0x9713",
+          "handler": "0x60dd4b47"
+        },
+        {
+          "event": "0x9749",
+          "handler": "0x60e766ea"
+        },
+        {
+          "event": "0x972b",
+          "handler": "0x60e771b8"
+        },
+        {
+          "event": "0x971d",
+          "handler": "0x60e766ea"
+        },
+        {
+          "event": "0x9004",
+          "handler": "0x60e766ea"
+        },
+        {
+          "event": "0x9006",
+          "handler": "0x60e766ea"
+        },
+        {
+          "event": "0x9008",
+          "handler": "0x60e766ea"
+        },
+        {
+          "event": "0x900a",
+          "handler": "0x60e766ea"
+        },
+        {
+          "event": "0x900c",
+          "handler": "0x60e766ea"
+        },
+        {
+          "event": "0x9014",
+          "handler": "0x60e766ea"
+        },
+        {
+          "event": "0x900e",
+          "handler": "0x60e766ea"
+        },
+        {
+          "event": "0x9031",
+          "handler": "0x60e766ea"
+        },
+        {
+          "event": "0x9032",
+          "handler": "0x60e766ea"
+        },
+        {
+          "event": "0x9601",
+          "handler": "0x60e76b23"
+        },
+        {
+          "event": "0x9b01",
+          "handler": "0x60e76b4a"
+        },
+        {
+          "event": "0x9a1e",
+          "handler": "0x60e76b66"
+        },
+        {
+          "event": "0x9404",
+          "handler": "0x60e76b7c"
+        },
+        {
+          "event": "0x962c",
+          "handler": "0x60e76b80"
+        },
+        {
+          "event": "0xa308",
+          "handler": "0x60dd4b47"
+        },
+        {
+          "event": "0xa309",
+          "handler": "0x60dd4b47"
+        },
+        {
+          "event": "0x9ab9",
+          "handler": "0x60dd4b47"
+        },
+        {
+          "event": "0x9305",
+          "handler": "0x60e766ea"
+        },
+        {
+          "event": "0xe000",
+          "handler": "0x60dd4b47"
+        },
+        {
+          "event": "0xf802",
+          "handler": "0x60e766ea"
+        },
+        {
+          "event": "0x9005",
+          "handler": "0x60e766ea"
+        },
+        {
+          "event": "0x9007",
+          "handler": "0x60e766ea"
+        },
+        {
+          "event": "0x9009",
+          "handler": "0x60e766ea"
+        },
+        {
+          "event": "0x900b",
+          "handler": "0x60e766ea"
+        },
+        {
+          "event": "0x9a51",
+          "handler": "0x60e766ea"
+        },
+        {
+          "event": "0x9ac6",
+          "handler": "0x60e766ea"
+        },
+        {
+          "event": "0x900d",
+          "handler": "0x60e766ea"
+        },
+        {
+          "event": "0x9015",
+          "handler": "0x60e766ea"
+        },
+        {
+          "event": "0x9c02",
+          "handler": "0x60e773e6"
+        },
+        {
+          "event": "0x9000",
+          "handler": "0x60dd4b47"
+        },
+        {
+          "event": "0xf000",
+          "handler": "0x60dd4b47"
+        },
+        {
+          "event": "0xf81e",
+          "handler": "0x60dd4b47"
+        },
+        {
+          "event": "0x971e",
+          "handler": "0x60dd4b47"
+        },
+        {
+          "event": "0x9639",
+          "handler": "0x60dd4b47"
+        },
+        {
+          "event": "0x9001",
+          "handler": "0x60dd4b47"
+        },
+        {
+          "event": "0xf809",
+          "handler": "0x60dd4b47"
+        },
+        {
+          "event": "0xf80a",
+          "handler": "0x60dd4b47"
+        },
+        {
+          "event": "0xf808",
+          "handler": "0x60dd4b47"
+        },
+        {
+          "event": "0xf807",
+          "handler": "0x60dd4b47"
+        },
+        {
+          "event": "0xf855",
+          "handler": "0x60e766ea"
+        }
+      ],
+      "scoped_delete": [
+        {
+          "root": "0x13b3",
+          "state": 1,
+          "event": "0x9016",
+          "eligible": false
+        },
+        {
+          "root": "0x13b3",
+          "state": 1,
+          "event": "0x9017",
+          "eligible": false
+        },
+        {
+          "root": "0x13b3",
+          "state": 1,
+          "event": "0x9042",
+          "eligible": false
+        },
+        {
+          "root": "0x13b3",
+          "state": 2,
+          "event": "0x9016",
+          "eligible": true
+        },
+        {
+          "root": "0x13b3",
+          "state": 2,
+          "event": "0x9017",
+          "eligible": false
+        },
+        {
+          "root": "0x13b3",
+          "state": 2,
+          "event": "0x9042",
+          "eligible": false
+        },
+        {
+          "root": "0x13b3",
+          "state": 3,
+          "event": "0x9016",
+          "eligible": false
+        },
+        {
+          "root": "0x13b3",
+          "state": 3,
+          "event": "0x9017",
+          "eligible": false
+        },
+        {
+          "root": "0x13b3",
+          "state": 3,
+          "event": "0x9042",
+          "eligible": false
+        },
+        {
+          "root": "0x13b3",
+          "state": 4,
+          "event": "0x9016",
+          "eligible": false
+        },
+        {
+          "root": "0x13b3",
+          "state": 4,
+          "event": "0x9017",
+          "eligible": false
+        },
+        {
+          "root": "0x13b3",
+          "state": 4,
+          "event": "0x9042",
+          "eligible": false
+        },
+        {
+          "root": "0x13b3",
+          "state": 5,
+          "event": "0x9016",
+          "eligible": false
+        },
+        {
+          "root": "0x13b3",
+          "state": 5,
+          "event": "0x9017",
+          "eligible": false
+        },
+        {
+          "root": "0x13b3",
+          "state": 5,
+          "event": "0x9042",
+          "eligible": false
+        },
+        {
+          "root": "0x13b4",
+          "state": 1,
+          "event": "0x9016",
+          "eligible": false
+        },
+        {
+          "root": "0x13b4",
+          "state": 1,
+          "event": "0x9017",
+          "eligible": false
+        },
+        {
+          "root": "0x13b4",
+          "state": 1,
+          "event": "0x9042",
+          "eligible": false
+        },
+        {
+          "root": "0x13b4",
+          "state": 2,
+          "event": "0x9016",
+          "eligible": true
+        },
+        {
+          "root": "0x13b4",
+          "state": 2,
+          "event": "0x9017",
+          "eligible": false
+        },
+        {
+          "root": "0x13b4",
+          "state": 2,
+          "event": "0x9042",
+          "eligible": false
+        },
+        {
+          "root": "0x13b4",
+          "state": 3,
+          "event": "0x9016",
+          "eligible": false
+        },
+        {
+          "root": "0x13b4",
+          "state": 3,
+          "event": "0x9017",
+          "eligible": false
+        },
+        {
+          "root": "0x13b4",
+          "state": 3,
+          "event": "0x9042",
+          "eligible": false
+        },
+        {
+          "root": "0x13b4",
+          "state": 4,
+          "event": "0x9016",
+          "eligible": false
+        },
+        {
+          "root": "0x13b4",
+          "state": 4,
+          "event": "0x9017",
+          "eligible": false
+        },
+        {
+          "root": "0x13b4",
+          "state": 4,
+          "event": "0x9042",
+          "eligible": false
+        },
+        {
+          "root": "0x13b4",
+          "state": 5,
+          "event": "0x9016",
+          "eligible": false
+        },
+        {
+          "root": "0x13b4",
+          "state": 5,
+          "event": "0x9017",
+          "eligible": false
+        },
+        {
+          "root": "0x13b4",
+          "state": 5,
+          "event": "0x9042",
+          "eligible": false
+        },
+        {
+          "root": "0x13b5",
+          "state": 1,
+          "event": "0x9016",
+          "eligible": false
+        },
+        {
+          "root": "0x13b5",
+          "state": 1,
+          "event": "0x9017",
+          "eligible": false
+        },
+        {
+          "root": "0x13b5",
+          "state": 1,
+          "event": "0x9042",
+          "eligible": false
+        },
+        {
+          "root": "0x13b5",
+          "state": 2,
+          "event": "0x9016",
+          "eligible": true
+        },
+        {
+          "root": "0x13b5",
+          "state": 2,
+          "event": "0x9017",
+          "eligible": false
+        },
+        {
+          "root": "0x13b5",
+          "state": 2,
+          "event": "0x9042",
+          "eligible": false
+        },
+        {
+          "root": "0x13b5",
+          "state": 3,
+          "event": "0x9016",
+          "eligible": false
+        },
+        {
+          "root": "0x13b5",
+          "state": 3,
+          "event": "0x9017",
+          "eligible": false
+        },
+        {
+          "root": "0x13b5",
+          "state": 3,
+          "event": "0x9042",
+          "eligible": false
+        },
+        {
+          "root": "0x13b5",
+          "state": 4,
+          "event": "0x9016",
+          "eligible": false
+        },
+        {
+          "root": "0x13b5",
+          "state": 4,
+          "event": "0x9017",
+          "eligible": false
+        },
+        {
+          "root": "0x13b5",
+          "state": 4,
+          "event": "0x9042",
+          "eligible": false
+        },
+        {
+          "root": "0x13b5",
+          "state": 5,
+          "event": "0x9016",
+          "eligible": false
+        },
+        {
+          "root": "0x13b5",
+          "state": 5,
+          "event": "0x9017",
+          "eligible": false
+        },
+        {
+          "root": "0x13b5",
+          "state": 5,
+          "event": "0x9042",
+          "eligible": false
+        },
+        {
+          "root": "0x140c",
+          "state": 1,
+          "event": "0x9016",
+          "eligible": false
+        },
+        {
+          "root": "0x140c",
+          "state": 1,
+          "event": "0x9017",
+          "eligible": false
+        },
+        {
+          "root": "0x140c",
+          "state": 1,
+          "event": "0x9042",
+          "eligible": false
+        },
+        {
+          "root": "0x140c",
+          "state": 2,
+          "event": "0x9016",
+          "eligible": true
+        },
+        {
+          "root": "0x140c",
+          "state": 2,
+          "event": "0x9017",
+          "eligible": false
+        },
+        {
+          "root": "0x140c",
+          "state": 2,
+          "event": "0x9042",
+          "eligible": false
+        },
+        {
+          "root": "0x140c",
+          "state": 3,
+          "event": "0x9016",
+          "eligible": false
+        },
+        {
+          "root": "0x140c",
+          "state": 3,
+          "event": "0x9017",
+          "eligible": false
+        },
+        {
+          "root": "0x140c",
+          "state": 3,
+          "event": "0x9042",
+          "eligible": false
+        },
+        {
+          "root": "0x140c",
+          "state": 4,
+          "event": "0x9016",
+          "eligible": false
+        },
+        {
+          "root": "0x140c",
+          "state": 4,
+          "event": "0x9017",
+          "eligible": false
+        },
+        {
+          "root": "0x140c",
+          "state": 4,
+          "event": "0x9042",
+          "eligible": false
+        },
+        {
+          "root": "0x140c",
+          "state": 5,
+          "event": "0x9016",
+          "eligible": false
+        },
+        {
+          "root": "0x140c",
+          "state": 5,
+          "event": "0x9017",
+          "eligible": false
+        },
+        {
+          "root": "0x140c",
+          "state": 5,
+          "event": "0x9042",
+          "eligible": false
+        },
+        {
+          "root": "0x13b2",
+          "state": 1,
+          "event": "0x9016",
+          "eligible": false
+        },
+        {
+          "root": "0x13b2",
+          "state": 1,
+          "event": "0x9017",
+          "eligible": false
+        },
+        {
+          "root": "0x13b2",
+          "state": 1,
+          "event": "0x9042",
+          "eligible": false
+        },
+        {
+          "root": "0x13b2",
+          "state": 2,
+          "event": "0x9016",
+          "eligible": false
+        },
+        {
+          "root": "0x13b2",
+          "state": 2,
+          "event": "0x9017",
+          "eligible": false
+        },
+        {
+          "root": "0x13b2",
+          "state": 2,
+          "event": "0x9042",
+          "eligible": false
+        },
+        {
+          "root": "0x13b2",
+          "state": 3,
+          "event": "0x9016",
+          "eligible": false
+        },
+        {
+          "root": "0x13b2",
+          "state": 3,
+          "event": "0x9017",
+          "eligible": false
+        },
+        {
+          "root": "0x13b2",
+          "state": 3,
+          "event": "0x9042",
+          "eligible": false
+        },
+        {
+          "root": "0x13b2",
+          "state": 4,
+          "event": "0x9016",
+          "eligible": false
+        },
+        {
+          "root": "0x13b2",
+          "state": 4,
+          "event": "0x9017",
+          "eligible": false
+        },
+        {
+          "root": "0x13b2",
+          "state": 4,
+          "event": "0x9042",
+          "eligible": false
+        },
+        {
+          "root": "0x13b2",
+          "state": 5,
+          "event": "0x9016",
+          "eligible": false
+        },
+        {
+          "root": "0x13b2",
+          "state": 5,
+          "event": "0x9017",
+          "eligible": false
+        },
+        {
+          "root": "0x13b2",
+          "state": 5,
+          "event": "0x9042",
+          "eligible": false
+        }
+      ],
+      "table_cells_unchanged": 235,
+      "physical_key_delivery": false
+    },
+    "controls": {
+      "S_codes": [
+        1,
+        0,
+        1,
+        0,
+        0,
+        2
+      ],
+      "S_Mode_and_mirror_equal": true,
+      "delete_chain": [
+        "0x60d11448",
+        "0x60e766ea",
+        "0x60e4d032",
+        "0x61242c4f"
+      ],
+      "stops_before_viewer": true,
+      "unrelated_API_reads_S": true,
+      "stale_virtual_child_rejected": true,
+      "S_rebuilt_after_reload": true,
+      "entry_exit_clear_before_native_bodies": true,
+      "unknown_sync_object_rejected": true
+    }
+  },
+  "legacy_builds": [
+    {
+      "version": "T20",
+      "prospective_output_sha256": "d0fa93e752ec2680910dfabfef50cfc2ffb510aa8c8ec49cf6177868037bec8e",
+      "package_files_created": false
+    },
+    {
+      "version": "hsl-profiles",
+      "prospective_output_sha256": "b1ad25019722af31e26bdf29aabaa1867320bea64c9bb2c0acc06cc5aadc4375",
+      "package_files_created": false
+    },
+    {
+      "version": "hsl-profiles-preview",
+      "prospective_output_sha256": "1916c0cffd83dc0b83cdf34477f76943f37d79da551bc847061eb7d3cd796c91",
+      "package_files_created": false
+    },
+    {
+      "version": "hsl-recipes",
+      "prospective_output_sha256": "719b57c4fa0b94da60d73f0ed70b0d5dcd536c970e44054152a63b55d30a59e6",
+      "package_files_created": false
+    },
+    {
+      "version": "hsl-editor",
+      "prospective_output_sha256": "d1a5e75db50ae67330cc40e3f43f90b0c6cddb567c20a15c37ff2d60f9e614f7",
+      "package_files_created": false
+    }
+  ],
+  "native_windows": [
+    {
+      "start": "0x60090ce0",
+      "end_exclusive": "0x60090ce8",
+      "sha256": "f672f368d41e4b99bbb990009923006d59157d99e8e27f6f049ba6a77c8241ad"
+    },
+    {
+      "start": "0x60090fac",
+      "end_exclusive": "0x60090fb4",
+      "sha256": "4fef80ba0a34b4aff9c803c3e8ad237a1ac32182c8c80de9a8bda399554df34d"
+    },
+    {
+      "start": "0x607684a4",
+      "end_exclusive": "0x60768588",
+      "sha256": "4fc4aa37a77047d5be567b8781e4c954a6a3b6e4acbc2457ce0d9b16bea09882"
+    },
+    {
+      "start": "0x6076a9ff",
+      "end_exclusive": "0x6076aa4e",
+      "sha256": "c64a7483a82ca908b6f9aba4f69dcf3579a2534c918288e1a6d4a811fcbf4c2d"
+    },
+    {
+      "start": "0x607fa129",
+      "end_exclusive": "0x607fa3c5",
+      "sha256": "70afb1c25cee31c6b0f06fc3397a7b2ffc36afc791635f5c6956946b258e389f"
+    },
+    {
+      "start": "0x60827440",
+      "end_exclusive": "0x608274e0",
+      "sha256": "e041128adb1a325d6d17cd1e85881f978e32ca3c90cd5e32a568d0d2c71555cb"
+    },
+    {
+      "start": "0x608280ac",
+      "end_exclusive": "0x60828130",
+      "sha256": "d0103a038bd30c613b20defc9675f3345ca164649ef194dd45b5fa6b02e4e019"
+    },
+    {
+      "start": "0x60813ffe",
+      "end_exclusive": "0x608140d9",
+      "sha256": "6aaaf755e21d4057b5b977b1462736850c7fe5b58ad3522fb04bc9f74a59c800"
+    },
+    {
+      "start": "0x60de9886",
+      "end_exclusive": "0x60de995a",
+      "sha256": "d76432b88a0d2c024bdecfc4c024f8f3f18a0a3ccc6a16bdcd8c7ad2dac594bd"
+    },
+    {
+      "start": "0x60de5ab8",
+      "end_exclusive": "0x60de5f9f",
+      "sha256": "91f76544f68302b89988db9098dad376bd1446de26c827b82ac071c236d8e5e1"
+    },
+    {
+      "start": "0x60e4d032",
+      "end_exclusive": "0x60e4d144",
+      "sha256": "375b0d6a1805d6bd5631ee92fbd834e997fd427179d3a5f2fd8c958f33b8962c"
+    },
+    {
+      "start": "0x60e26b9f",
+      "end_exclusive": "0x60e26ba8",
+      "sha256": "ed68b7fb1b020f6c0539445b471f45a41b6cb8f9ce761be0539c4b88360e4df2"
+    },
+    {
+      "start": "0x6018e1dd",
+      "end_exclusive": "0x6018e214",
+      "sha256": "0e1041eff93d3fd6087e09b2569b6f0c32924c8b9730f9c48e696a0cb1971982"
+    },
+    {
+      "start": "0x60045786",
+      "end_exclusive": "0x6004586c",
+      "sha256": "3f3028867e49eb099744d990856d183f741181e7a961ccdfc27df5c05381b50c"
+    }
+  ],
+  "model_contracts": {
+    "sync": "Owned uncontended resource5 and application-locator mutex headers; balanced enter/leave; unknown objects reject",
+    "capture_status": "Four explicit native predicate inputs, not captured live values",
+    "gui_queue": "Owned empty indices; native queue loop retained; only the explicitly owned lock handle succeeds",
+    "application": "Native 995 construction; opaque external request-connection and successful message delivery inputs; native setting notice carries real S",
+    "records": "Only native C9A2 (two u16) and AA2 (one u16) stock defaults registered through native 6005d987; no general zero-filled kernel",
+    "io": "Existing v4 side-consumer service cuts retained; no camera IO, pixel engine or NVS backend executed"
+  },
+  "native_dataflow": [
+    "native child 60de9920/60de5ab8",
+    "scoped GUI API adapter ->607fa129",
+    "native admission ->60827440",
+    "6082748b detour ->unchanged v4 app_edit60210b78",
+    "native part 1 API 0x602cc0d0 -> normal setting refresh",
+    "typed publication602cbcb5 -> unchanged v4 publish60210c5d",
+    "uncached v4 mirrora0210ec0",
+    "native image constructors and upload writers"
+  ],
+  "limitations": [
+    "Program proof uses owned RAM and declared finite service inputs; it is not complete camera boot, physical input, task scheduling, glyph rendering or durable flash proof",
+    "GUI/app and Wi-Fi read hooks join the unchanged v4 implementation; full HTTP transport is not a camera test",
+    "Stable prospective hash is a reproducibility receipt, never permission to install",
+    "Placement methods stopped: existing pointer/branch and mature encoded-data classification; bounded nested OE validation from known outer descriptor"
+  ],
+  "source_sha256": {
+    "patches/hsl-editor/e-p7/api.s": "e01b9c70d142bdf11760d1d08084545f60757bf42fb86642e367cd4611089e8a",
+    "patches/hsl-editor/e-p7/editor.s": "a1fab66ae40f11bcd5ffc493ce2eb0e2cbe064ad89c8ec638772c60be8dde344",
+    "patches/hsl-editor/e-p7/symbols.json": "662fbe6e67ee35b064ad304243c18def769222aa17624ed62cc0ab3c0189fc58",
+    "tools/ep7_t27_candidate.py": "63cd9df8f74026855b9d014fd7301c21452abbea0ea735806c383f9ccd5bbd40",
+    "tools/ep7_t27_editor_aux_probe.py": "bacc8de528a79cd872cdaeb6413bb425daf22e036dafe4cfc7c99319d094eeae",
+    "tools/ep7_t27_editor_fixture.py": "9fa8b94200a91e0b445c25fc223a9f9e3b06700a927f288ad8d380273495b931",
+    "tools/ep7_t27_editor_probe.py": "def1c70558e1e0fcaddc064bc3c3a6c4db5993f5f0ae37e3226047e678029c2b",
+    "tools/ep7_t27_placement.py": "dfbcf7fd370f8f2629e599eb3a85ef8a2793581c4d60c4cc10e56621e8db7220",
+    "tools/ep7_t27_ui_flow_probe.py": "4e2a82dd38ab03099e5c143b8b8352b5c47cc73028ad134537abac043a1ad33a",
+    "tools/ep7_t27_v5_probe.py": "3aca05a7186b958c1df92fee186e8d97135581b7498345bb4fc1653f7bccab82"
+  }
+}

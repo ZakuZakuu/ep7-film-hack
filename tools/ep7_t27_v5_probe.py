@@ -160,8 +160,11 @@ class Probe(Fixture):
             for i in range(12):
                 self.app(s, key+i, tag << 16)
             self.release(s, p, 0x9014)
-            require(u32(s, 0x61FC3800) or u32(s, 0x61FC3804), 'INFO did not select ALL')
+            # Original INFO changes the cursor. The real controller redraws
+            # next; its native numeric producer publishes the derived ALL flag.
+            # Reproduce that producer step before the next actuator event.
             captions.append(self.caption(s, p, slot, letter+' ALL'))
+            require(u32(s, 0x61FC3800) or u32(s, 0x61FC3804), 'INFO did not select ALL')
             self.release(s, p, 0x9004)
             require([v[pair_index] for v in self.pairs(s, slot)] == [1]*12,
                     'ALL increment not confined to current axis')
@@ -177,6 +180,7 @@ class Probe(Fixture):
             self.release(s, p, 0x9006)
             require(self.pairs(s, slot) == before, 'ALL lower group bound ignored')
             self.release(s, p, 0x9014)
+            self.caption(s, p, slot, letter+' +0')
             require(not u32(s, 0x61FC3800) and not u32(s, 0x61FC3804),
                     'INFO did not leave ALL')
             other = [v[1-pair_index] for v in self.pairs(s, slot)]
@@ -239,9 +243,15 @@ class Probe(Fixture):
         def checkpoint():
             (self.out/'summary.json').write_text(json.dumps(result, indent=2)+'\n')
         for slot in range(4):
+            result['phase'] = f'COLOR{slot+1}: construct'
+            checkpoint()
             s, p = self.fresh(slot)
             if slot == 0:
+                result['phase'] = 'admission'
+                checkpoint()
                 result['admission'] = self.admission(s, p)
+                result['phase'] = 'image join'
+                checkpoint()
                 # A fresh native GUI edit feeds both the v4 query hook and the
                 # original image constructors; no HTTP request overlaps API RAM.
                 self.axis(s, p, 2)
@@ -251,8 +261,12 @@ class Probe(Fixture):
                 require(self.native(s, self.labels['wifi_read'], '', 4,
                                    {'d0': 0x839F}) == 3, 'GUI -> Wi-Fi read hook')
                 result['image_join'] = self.image_join(s)
+                checkpoint()
+            result['phase'] = f'COLOR{slot+1}: interaction'
+            checkpoint()
             result['interaction'].append(self.interaction(s, p, slot))
             checkpoint()
+        result['phase'] = 'complete'
         result.update(GNU_instructions=self.gnu_steps,
                       aligned_accesses=self.aligned,
                       native_PCs=len(self.executed_pcs), models=self.model_counts,

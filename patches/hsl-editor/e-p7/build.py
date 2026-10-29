@@ -66,7 +66,8 @@ def build(args):
         total = sum(map(len, chunks))
         require(total == 111017984 and h.hexdigest() == manifest['output_sha256'],
                 'Prospective package mismatch')
-        result = dict(version='5a', input_sha256=STOCK_SHA,
+        result = dict(version='editor-prototype', owner_build_allowed=False,
+                      input_sha256=STOCK_SHA,
                       decoded_output_sha256=digest(candidate),
                       prospective_output_sha256=h.hexdigest(), bytes=total,
                       unchanged_components=4, tool_versions=versions,

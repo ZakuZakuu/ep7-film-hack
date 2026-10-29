@@ -102,7 +102,8 @@ class Fixture(Flow):
         s.write(COORDINATOR + 4, struct.pack('<I3H', 1, 14, 15, 16))
 
     def run_ui(self, s, stops):
-        peer = {0x607AAD76, 0x607AABFC, 0x602F8873} if self.active_peer else set()
+        peer = ({0x607AAD76, 0x607AABFC, 0x602F8873}
+                if getattr(self, 'active_peer', False) else set())
         queue = {0x6082C122, 0x6082C0F6}
         extra = {MUTEX_ENTER, MUTEX_LEAVE} | SERVICE_CUTS | DIAGNOSTICS | peer | queue
         # Twelve ALL commits each traverse the native per-setting status reads.

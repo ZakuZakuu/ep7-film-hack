@@ -7,7 +7,7 @@ import os
 import struct
 
 from ep7_color_min import SP, digest, require
-from ep7_t27_editor_probe import ROOTS, u32
+from ep7_t27_editor_probe import ROOTS, ARG, API, u16, u32
 from ep7_t27_ui_flow_probe import FSM, DISPATCH, CTRL, HANDLER
 from ep7_t27_v5_probe import Probe, STATE
 from ep7_t27_placement import qualify
@@ -71,10 +71,45 @@ def controls(x):
             'Controller parent dispatch anchor changed')
     x.run_ui(s, {0x60E4D101})
     require(u32(s, STATE+4) == 1, 'FSM Delete did not switch to L')
+    # API consumers other than the reviewed child/numeric call sites retain S.
+    require(x.app(s, 927, 0x45520003) == 0, 'Independent L seed')
+    x.ui_call(s, x.v5['v5_get'], '', 0, {'a0': API, 'd0': 927, 'a1': ARG})
+    require(u32(s, ARG) == 0, 'Virtual H/L escaped its caller whitelist')
+    child = u32(s, p+128)
+    require(u16(s, child+88) == 15, 'Expected native L enumeration')
+    s.write(STATE, bytes(16))
+    before = s.read(MODE, SIZE), s.read(0x60210EC0, 192)
+    x.ui_call(s, 0x60DE9920, '', 0, {'a0': child})
+    require(before == (s.read(MODE, SIZE), s.read(0x60210EC0, 192)),
+            'Reset volatile state leaked a stale virtual child into S')
+    # The next parent event rebinds in S and natively rebuilds all stale enums.
+    x.parent_event(s, p, 0x9005)
+    require(all(u16(s, u32(s, p+128+4*i)+88) == 11 for i in range(12)),
+            'Stale S enumeration recovery')
+    for name, original in [('v5_enter', 0x60E76396), ('v5_exit', 0x60E76BCF)]:
+        s.write(STATE, struct.pack('<4I', p, 2, ROOTS[0], 927))
+        s.enter(x.v5[name], '', 0, {})
+        x.run_ui(s, {original})
+        require(s.read(STATE, 16) == bytes(16), 'Axis lifecycle did not clear')
+    # Corrupt an owned synchronization input. There is no fallback successful
+    # mutex for other objects and no global zero-filled kernel RAM.
+    from ep7_t27_editor_fixture import RESOURCE_TABLE
+    s.write(RESOURCE_TABLE+20, struct.pack('<I', 0x1BFF4000))
+    try:
+        x.ui_call(s, 0x607FA129, '', 0,
+                  {'a0': API, 'd0': 927, 'd1': 0, 'a1': 1})
+    except ValueError as exc:
+        require('Unmodeled GUI synchronization object' in str(exc),
+                'Unexpected unknown-mutex failure')
+    else:
+        raise ValueError('An unowned mutex was accepted')
     return dict(S_codes=out[0][0], S_Mode_and_mirror_equal=True,
                 delete_chain=['0x60d11448', hex(HANDLER), '0x60e4d032',
                               hex(x.v5['v5_parent'])],
-                stops_before_viewer=True)
+                stops_before_viewer=True, unrelated_API_reads_S=True,
+                stale_virtual_child_rejected=True, S_rebuilt_after_reload=True,
+                entry_exit_clear_before_native_bodies=True,
+                unknown_sync_object_rejected=True)
 
 
 def main():
