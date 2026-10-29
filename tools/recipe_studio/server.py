@@ -102,27 +102,28 @@ def create_app(cal=None):
     @app.post("/api/fit")
     def start_fit():
         obj = load_json(request.get_data(as_text=True))
-        if not isinstance(obj, dict) or obj.get("mode") not in ("target", "reference", "lut"):
+        if not isinstance(obj, dict) or obj.get("mode") not in ("target", "reference", "lut", "lut-only"):
             raise ValueError("请选择同场景、异场景或 LUT")
         initial = validate(obj.get("recipe"), cal)
         mode = obj["mode"]
         with lock:
             if state["job"] is not None and not state["job"].done():
                 return jsonify(error="已有拟合在运行，请等待"), 409
-            if "base" not in state["images"]:
+            if mode != "lut-only" and "base" not in state["images"]:
                 raise ValueError("先载入基准照片")
-            rgb, base_info = state["images"]["base"]
-            if mode == "lut":
+            rgb, base_info = state["images"].get("base", (None, {}))
+            if mode in ("lut", "lut-only"):
                 if state["lut"] is None:
                     raise ValueError("先载入 LUT")
                 lut = state["lut"]
-                target = apply_lut(rgb, lut)
+                target = apply_lut(rgb, lut) if rgb is not None else None
             else:
                 if mode not in state["images"]:
                     raise ValueError("先载入目标/参考照片")
                 target, target_info = state["images"][mode]
                 if mode == "target" and target_info["original_shape"] != base_info["original_shape"]:
                     raise ValueError("成对照片原始尺寸不同；请先配准，不能靠预览缩小掩盖差异")
+            state.pop("comparison", None)
             state["progress"] = {"status": "running", "evaluations": 0}
             revision = state["revision"]
 
@@ -131,7 +132,10 @@ def create_app(cal=None):
                     state["progress"].update(update)
 
             def run():
-                if mode == "reference":
+                if mode == "lut-only":
+                    from .lut_fit import fit_lut
+                    result, report = fit_lut(lut,cal,rgb,initial,progress=progress)
+                elif mode == "reference":
                     result, report = fit_reference(rgb, target, cal, initial, progress=progress)
                 else:
                     result, report = fit_pair(rgb, target, cal, initial, progress=progress)
@@ -141,10 +145,25 @@ def create_app(cal=None):
                     report["warnings"].append("LUT 必须以已显影 sRGB 为输入；不支持 Log/ACES/shaper 域")
                     if lut["clipped_values"]:
                         report["warnings"].append("LUT 具有超出显示域的值，已裁切")
+                if mode == "lut-only" and rgb is not None:
+                    import numpy as np
+                    from .lut_fit import wb_apply
+                    image = png_bytes(np.concatenate((rgb, apply_lut(rgb,lut),
+                        wb_apply(Model(rgb,cal).apply(vector(result)),report["wb_shift"])),axis=1))
+                    with lock:
+                        state["comparison"] = (revision, image)
                 return {"status": "done", "recipe": result, "report": report, "revision": revision}
 
             state["job"] = worker.submit(run)
         return jsonify(status="running")
+
+    @app.get("/api/comparison.png")
+    def comparison():
+        with lock:
+            data = state.get("comparison")
+        if data is None or data[0] != state["revision"]:
+            abort(404)
+        return Response(data[1],mimetype="image/png")
 
     @app.get("/api/fit")
     def fit_status():

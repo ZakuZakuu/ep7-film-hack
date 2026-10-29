@@ -4,7 +4,7 @@
 <title>E-P7 配方工作室 · 本地预览</title><link rel="stylesheet" href="/static/style.css"></head>
 <body>
 <header><h1>E-P7 配方工作室</h1><span class="badge">本地 · 配方预览</span>
-<p>先选 Natural 或原厂默认 COLOR 照片，再调整配方。所有图像留在这台电脑；HSL 模型状态见下方，影调、暗角仍为近似。</p></header>
+<p>给 LUT 即可自动拟合配方，也可载入照片预览。所有图像留在这台电脑；HSL 模型状态见下方，影调、暗角仍为近似。</p></header>
 <main><section class="viewer">
 <div class="toolbar">
 <label class="file">载入基准 JPEG / ORF<input id="base" type="file" accept=".jpg,.jpeg,.png,.tif,.tiff,.orf"></label>
@@ -14,7 +14,7 @@
 <label class="split">原图 ← 对比分界 → 效果<input id="split" type="range" min="0" max="100" value="50"></label>
 <p id="decode">RAW 显影不等同于机内成片。请勿把已经调过色的照片当作中性基准。</p>
 <details class="fit-panel"><summary>自动拟合起点</summary>
-<label>目标方式<select id="fit-mode"><option value="lut">sRGB LUT（.cube / Hald PNG）</option><option value="target">已对齐的同场景照片</option><option value="reference">不同场景参考照片（粗略）</option></select></label>
+<label>目标方式<select id="fit-mode"><option value="lut-only">仅 LUT（基准照片可选）</option><option value="lut">sRGB LUT（.cube / Hald PNG）</option><option value="target">已对齐的同场景照片</option><option value="reference">不同场景参考照片（粗略）</option></select></label>
 <label class="file">载入目标 / 参考 / LUT<input id="target-file" type="file" accept=".cube,.png,.jpg,.jpeg,.tif,.tiff"></label>
 <div class="actions"><button id="fit" disabled>拟合当前照片</button><button id="save-report" disabled>保存误差报告</button></div>
 <p>同场景必须同尺寸、同裁切并事先对齐；不同场景只比较颜色分布，无法分离光线与场景差异。</p>
@@ -32,4 +32,5 @@
 <label>白平衡偏移<input id="wb_shift" placeholder="如：A +2、G −1"></label>
 <label>曝光补偿<input id="exposure_compensation" placeholder="如：−0.3 EV"></label>
 </fieldset><p id="model-note"></p></section></main>
+<p><a id="comparison-link" href="/api/comparison.png" download="lut-comparison.png" hidden>下载对比：原图 / LUT / 配方加白平衡近似</a> <button id="unsplit" disabled>采用不拆分白平衡的版本</button></p>
 <script src="/static/app.js"></script></body></html>

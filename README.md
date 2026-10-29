@@ -89,3 +89,5 @@ python3 tools/inspect_blob.py --help
 See [CONTRIBUTING.md](CONTRIBUTING.md), [RESEARCH_POLICY.md](RESEARCH_POLICY.md), the [evidence ledger](research/evidence-ledger.md), and the [research blocker template](.github/ISSUE_TEMPLATE/blocker.md).
 
 Original code and documentation in this repository are MIT-licensed (see [LICENSE](LICENSE)). All third-party repositories, firmware, images, trademarks, and algorithms remain under their respective owners' terms. This research does not imply permission to distribute or modify others' proprietary assets.
+
+给 LUT → 得到配方 JSON → ep7wifi：无需照片的用法见 [Recipe Studio](tools/recipe_studio/README.md)。
