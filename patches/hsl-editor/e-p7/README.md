@@ -13,6 +13,9 @@ ALL 边界适配。未实现色轮的 H/L 显示重定向；尚未达到“其�
 同步对象为明确拥有的单线程、无竞争夹具；应用消息的接收成功为外部输入。
 未知地址与未声明服务均停止，不能将模拟通过视为真实 RTOS、缓存或画面安全证明。
 
-入口脚本：`tools/ep7_t27_v5_probe.py`、`tools/ep7_t27_editor_aux_probe.py`。
+GUI 提交入口：`tools/ep7_t27_v5_probe.py`。
+本轮拨盘输入复现：`tools/ep7_t27_dial_probe.py`；放置复核：`tools/ep7_t27_placement_review.py`。
+`ep7_t27_editor_aux_probe.py` 保留历史冷夹具反证，不代表修正后的拨盘验收。
+放置尚未闭合，不更新本目录的补丁源码或原型哈希，不生成 v5 发布清单。
 所有输入、解码镜像、汇编产物和原厂执行记录仅允许留在私有 `/tmp`。
 详细成功项、未通过项及可直接继续的步骤见研究报告和证据 JSON。

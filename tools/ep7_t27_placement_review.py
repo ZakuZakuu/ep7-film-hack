@@ -16,8 +16,8 @@ from ep7_t27_v5_probe import Probe
 
 
 # Existing prototype spans only: no search for replacement addresses.
-def all_relative_candidates(scanner, data, ranges):
-    groups = scanner(data, BASE, ranges)
+def all_relative_candidates(scanner, data, ranges, base=BASE):
+    groups = scanner(data, base, ranges)
     require(len(groups) == len(ranges), 'Reference scanner changed result dimensions')
     return [row for group in groups for row in group]
 
@@ -141,6 +141,11 @@ def review(x):
     require([{k:v for k,v in r.items() if k != 'source_hex'} for r in rows]
             == prior['relative_candidates'], 'Placement scanner omitted a span')
     classified, unresolved_branches = numeric_data(x, rows)
+    # The same E142 bytes also execute at the independently mapped helper
+    # address. A flat-main scan cannot stand in for that relocated view.
+    helper = x.data[0x141C9E0:0x141C9E0+0x1800]
+    relocated = all_relative_candidates(branch_candidates, helper, spans,
+                                        base=0x47000800)
     inner = []
     import oly_container as oe
     for old in prior['second_method']:
@@ -183,6 +188,10 @@ def review(x):
     return dict(qualified=False, prior=prior,
         reference_scan=dict(all_spans=len(spans), raw_relative_candidates=len(rows),
             classified_numeric_data=classified, unresolved=unresolved_branches,
+            relocated_helper=dict(source_offset='0x141c9e0', runtime='0x47000800',
+                bytes=len(helper), sha256=digest(helper),
+                relative_candidates=[{k:v for k,v in row.items() if k != 'source_hex'}
+                                     for row in relocated]),
             correction='Previous [0] discarded all but the first range; fixed and all ranges rechecked'),
         literal_candidates=[dict(**z, classification='UNRESOLVED; not admitted as free-space evidence')
                             for z in prior['unresolved_references']], inner_records=inner,

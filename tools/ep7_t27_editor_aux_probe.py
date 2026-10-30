@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Additional bounded editor controls and placement receipts, NOT v5a release."""
+"""Historical additional controls, NOT v5a release.
+
+The dials() case deliberately retains the old cold/single-event hypothesis.
+Use ep7_t27_dial_probe.py for the corrected native input-producer fixture and
+ep7_t27_placement_review.py for the all-span placement follow-up.
+"""
 import argparse
 import copy
 import json
@@ -239,7 +244,11 @@ def gui_s_bridge(x):
 
 
 def dials(x):
-    """Preserve the stock cursor convention; never guess dial orientation."""
+    """Historical cold hypothesis, superseded by ep7_t27_dial_probe.py.
+
+    A first positive event can synchronize remembered 0 to current 1 without
+    visibly moving it. Failure here is not the current dial qualification.
+    """
     s, parent = x.fresh()
     x.app(s, 927, 0x45520003)
     x.fsm(s)
