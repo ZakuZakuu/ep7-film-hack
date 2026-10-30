@@ -130,8 +130,10 @@ def qualify(x):
         except ValueError as exc:
             unresolved.append(dict(**{k:v for k,v in row.items() if k != 'source_hex'},
                                    first_method=str(exc)))
-    branches = branch_candidates(x.data, BASE,
-                                [(a, a+n) for a, n in spans])[0]
+    # The provider returns one list PER requested range. Taking [0] silently
+    # audits only the first span and misses the UI section's data coincidences.
+    branches = [row for rows in branch_candidates(x.data, BASE,
+                                [(a, a+n) for a, n in spans]) for row in rows]
     # A second bounded method: use the previously established outer resource
     # descriptor to delimit a nested OE candidate; reuse the actual parser.
     # Failure is a STOP, never an excuse to mark the whole region "encoded".
