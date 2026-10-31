@@ -29,6 +29,10 @@ class CompactProbe(DialProbe):
             super().prepare()
         finally:
             candidate.PATCH = original
+        frozen_v4 = json.loads((original.parents[1]/'hsl-recipes/e-p7/patch.json').read_text())
+        require(digest(self.reference) == frozen_v4['decoded_output_sha256'],
+                'Compact experiment requires the exact hash-locked v4 baseline')
+        require(self.labels['cell_index'] == 0x60210B5E, 'Shared v4 helper moved')
 
 
 def passthrough_abi(x):

@@ -71,6 +71,17 @@ def study(upstream, out):
     result = dict(toolchain=run([assembler, '--version']).splitlines()[0],
                   v4=groups(V4_GROUPS, v4symbols, 0x60210940+size),
                   unused_raw_bytes=CAPACITY-size-MIRROR_BYTES, measurements=[])
+    relaxed_elf, relaxed_bin = out/'v4-relax.elf', out/'v4-relax.bin'
+    run([linker, '--relax', '-Ttext', '0x60210940', '-e', '_start',
+         *[f'--defsym={k}={v:#x}' for k,v in syms.items()], '-o', relaxed_elf, v4obj])
+    run([objcopy, '-O', 'binary', '-j', '.text', relaxed_elf, relaxed_bin])
+    changed = labels(nm, relaxed_elf)
+    result['v4_relax_size_only'] = dict(bytes=relaxed_bin.stat().st_size,
+        labels={k:hex(changed[k]) for k in ('cell_index', 'lightness_steps', 'hue_steps')},
+        unaligned_halfword_tables=[k for k in ('lightness_steps', 'hue_steps')
+                                   if changed[k] % 2],
+        executed=False, placement_qualified=False,
+        limit='Helper addresses moved. Size only; not admitted as preserving v4 behavior.')
     for variant in ('original', 'shared', 'dispatch', 'table'):
         path = materialize(out/variant, variant)
         symbols = json.loads((path/'symbols.json').read_text())
