@@ -4254,7 +4254,7 @@
     "aligned_accesses": 1273694
   },
   "native_editor_partial": {
-    "phase": "COLOR3: construct",
+    "phase": "COLOR4: construct",
     "interaction": [
       {
         "slot": 1,
@@ -4322,6 +4322,70 @@
       },
       {
         "slot": 2,
+        "axes": [
+          {
+            "axis": "L",
+            "enum_count": 15,
+            "captions": [
+              {
+                "text": "L +7",
+                "native_record_bytes": 334,
+                "producer": "0x60e27289 + original caption adapter",
+                "pixels_or_glyphs_executed": false
+              },
+              {
+                "text": "L -7",
+                "native_record_bytes": 334,
+                "producer": "0x60e27289 + original caption adapter",
+                "pixels_or_glyphs_executed": false
+              },
+              {
+                "text": "L ALL",
+                "native_record_bytes": 334,
+                "producer": "0x60e27289 + original caption adapter",
+                "pixels_or_glyphs_executed": false
+              }
+            ],
+            "bounds": true,
+            "ALL": true,
+            "held_OK_all_12": true,
+            "short_OK_exit": 2,
+            "stock_S_unchanged": true
+          },
+          {
+            "axis": "H",
+            "enum_count": 15,
+            "captions": [
+              {
+                "text": "H +7",
+                "native_record_bytes": 334,
+                "producer": "0x60e27289 + original caption adapter",
+                "pixels_or_glyphs_executed": false
+              },
+              {
+                "text": "H -7",
+                "native_record_bytes": 334,
+                "producer": "0x60e27289 + original caption adapter",
+                "pixels_or_glyphs_executed": false
+              },
+              {
+                "text": "H ALL",
+                "native_record_bytes": 334,
+                "producer": "0x60e27289 + original caption adapter",
+                "pixels_or_glyphs_executed": false
+              }
+            ],
+            "bounds": true,
+            "ALL": true,
+            "held_OK_all_12": true,
+            "short_OK_exit": 2,
+            "stock_S_unchanged": true
+          }
+        ],
+        "returned_to_S": true
+      },
+      {
+        "slot": 3,
         "axes": [
           {
             "axis": "L",
