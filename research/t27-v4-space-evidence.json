@@ -354,19 +354,19 @@
       "layout": "lab",
       "relax": false,
       "sections": {
-        "api": 304,
+        "api": 308,
         "apply": 50,
         "lifecycle": 48,
         "ui6": 1136,
         "state": 16
       },
-      "raw_bytes": 1554,
+      "raw_bytes": 1558,
       "fit": {
         "capacity": 1728,
         "v4_code": 1276,
         "mirror": 192,
-        "v5_added": 1554,
-        "deficit": 1294,
+        "v5_added": 1558,
+        "deficit": 1298,
         "raw_fits": false,
         "placement_qualified": false
       },
@@ -412,11 +412,11 @@
         {
           "function": "v5_get",
           "start": "0x6055e5f0",
-          "bytes": 196
+          "bytes": 200
         },
         {
           "function": "v5_apply_detour",
-          "start": "0x6055e6b4",
+          "start": "0x6055e6b8",
           "bytes": 108
         }
       ]
@@ -426,30 +426,30 @@
       "layout": "adjacent",
       "relax": false,
       "sections": {
-        "api": 304,
+        "api": 308,
         "apply": 50,
         "lifecycle": 48,
         "ui6": 1136,
         "state": 16
       },
-      "raw_bytes": 1554,
+      "raw_bytes": 1558,
       "fit": {
         "capacity": 1728,
         "v4_code": 1276,
         "mirror": 192,
-        "v5_added": 1554,
-        "deficit": 1294,
+        "v5_added": 1558,
+        "deficit": 1298,
         "raw_fits": false,
         "placement_qualified": false
       },
       "executable_placement": false,
-      "padded_span": 1556,
+      "padded_span": 1560,
       "padded_fit": {
         "capacity": 1728,
         "v4_code": 1276,
         "mirror": 192,
-        "v5_added": 1556,
-        "deficit": 1296,
+        "v5_added": 1560,
+        "deficit": 1300,
         "raw_fits": false,
         "placement_qualified": false
       },
@@ -494,19 +494,19 @@
       "layout": "lab",
       "relax": false,
       "sections": {
-        "api": 304,
+        "api": 308,
         "apply": 50,
         "lifecycle": 48,
         "ui6": 1140,
         "state": 16
       },
-      "raw_bytes": 1558,
+      "raw_bytes": 1562,
       "fit": {
         "capacity": 1728,
         "v4_code": 1276,
         "mirror": 192,
-        "v5_added": 1558,
-        "deficit": 1298,
+        "v5_added": 1562,
+        "deficit": 1302,
         "raw_fits": false,
         "placement_qualified": false
       },
@@ -557,11 +557,11 @@
         {
           "function": "v5_get",
           "start": "0x6055e5f0",
-          "bytes": 196
+          "bytes": 200
         },
         {
           "function": "v5_apply_detour",
-          "start": "0x6055e6b4",
+          "start": "0x6055e6b8",
           "bytes": 108
         }
       ]
@@ -571,30 +571,30 @@
       "layout": "adjacent",
       "relax": false,
       "sections": {
-        "api": 304,
+        "api": 308,
         "apply": 50,
         "lifecycle": 48,
         "ui6": 1140,
         "state": 16
       },
-      "raw_bytes": 1558,
+      "raw_bytes": 1562,
       "fit": {
         "capacity": 1728,
         "v4_code": 1276,
         "mirror": 192,
-        "v5_added": 1558,
-        "deficit": 1298,
+        "v5_added": 1562,
+        "deficit": 1302,
         "raw_fits": false,
         "placement_qualified": false
       },
       "executable_placement": false,
-      "padded_span": 1560,
+      "padded_span": 1564,
       "padded_fit": {
         "capacity": 1728,
         "v4_code": 1276,
         "mirror": 192,
-        "v5_added": 1560,
-        "deficit": 1300,
+        "v5_added": 1564,
+        "deficit": 1304,
         "raw_fits": false,
         "placement_qualified": false
       },
@@ -642,19 +642,19 @@
     "layout": "lab",
     "relax": false,
     "sections": {
-      "api": 304,
+      "api": 308,
       "apply": 50,
       "lifecycle": 48,
       "ui6": 1136,
       "state": 16
     },
-    "raw_bytes": 1554,
+    "raw_bytes": 1558,
     "fit": {
       "capacity": 1728,
       "v4_code": 1276,
       "mirror": 192,
-      "v5_added": 1554,
-      "deficit": 1294,
+      "v5_added": 1558,
+      "deficit": 1298,
       "raw_fits": false,
       "placement_qualified": false
     },
@@ -700,11 +700,11 @@
       {
         "function": "v5_get",
         "start": "0x6055e5f0",
-        "bytes": 196
+        "bytes": 200
       },
       {
         "function": "v5_apply_detour",
-        "start": "0x6055e6b4",
+        "start": "0x6055e6b8",
         "bytes": 108
       }
     ]
@@ -733,7 +733,7 @@
     },
     {
       "method": "common API gate instead of six repeated fast gates",
-      "saved_bytes": 136,
+      "saved_bytes": 132,
       "protective_checks_removed": false,
       "risk": "Ordinary S passthrough uses 48-byte wrapper stack rather than tail-jump; complete live stack headroom unknown"
     },
@@ -782,10 +782,10 @@
   ],
   "decision": {
     "fits": false,
-    "raw_measured_deficit": 1294,
+    "raw_measured_deficit": 1298,
     "optimistic_adjacent_padded_deficit": 1272,
     "identified_optional_gross": 153,
-    "deficit_if_gross_removed_without_compensation": 1141,
+    "deficit_if_gross_removed_without_compensation": 1145,
     "optimistic_deficit_if_gross_removed": 1119,
     "limit": "Not a global impossibility proof. No verified feature-cut plan achieves fit; dropping/profoundly redesigning core GUI adaptation would change this round scope. Ask owner; preserve v4."
   },
@@ -2177,12 +2177,215 @@
     "GNU_steps": 0,
     "aligned_accesses": 0
   },
-  "validation_status": "Compact dial/editor/protection suites running; do not claim passed yet",
+  "validation_status": "Corrected source: gate passed; full compact dial/editor/controls/ABI rerun pending",
   "synthetic_tests": {
     "legacy_hsl": 18,
     "prior_placement_guards": 3,
     "compact_guards": 4,
     "passed": true
   },
-  "source_only_repeat_bytes_equal": true
+  "source_only_repeat_bytes_equal": true,
+  "rejected_experiment": {
+    "added_bytes": 1554,
+    "lab_sha256": "0067b905bddf14a467888a93b9383bd143f05fe356118aff0df22d5b3e1d9024",
+    "accepted": false,
+    "failures": [
+      "COLOR1 H/L value dial modified wrong sector/axis",
+      "COLOR2 H/L value dial modified wrong sector/axis",
+      "Native busy/idle expected H value not reached"
+    ],
+    "cause": "Common gate overwrote d0 with axis-1 before override; ordinary S fallback restored arguments, hiding the fault from S ABI tests",
+    "correction": "Restore original key from (4,sp) before override; all guards retained",
+    "followup_gate": {
+      "passed": true,
+      "suite": "gate",
+      "variant": "dispatch",
+      "v4_sha256": "670c4cffe6876bd7a2aa27162b53aab56a36e48ec1894ca8463d1ad568ba1f2b",
+      "lab_sha256": "25693f81739cb89ed7dee5b0e54958ff8c2e62cfc068ea530e5c1f748c5597b4",
+      "placement_qualified": false,
+      "package_files_created": false,
+      "cases": [],
+      "gate_arguments": [
+        {
+          "axis": 1,
+          "API": "get",
+          "arguments_preserved": true
+        },
+        {
+          "axis": 1,
+          "API": "count",
+          "arguments_preserved": true
+        },
+        {
+          "axis": 1,
+          "API": "enum",
+          "arguments_preserved": true
+        },
+        {
+          "axis": 1,
+          "API": "valid",
+          "arguments_preserved": true
+        },
+        {
+          "axis": 1,
+          "API": "default",
+          "arguments_preserved": true
+        },
+        {
+          "axis": 1,
+          "API": "set",
+          "arguments_preserved": true
+        },
+        {
+          "axis": 2,
+          "API": "get",
+          "arguments_preserved": true
+        },
+        {
+          "axis": 2,
+          "API": "count",
+          "arguments_preserved": true
+        },
+        {
+          "axis": 2,
+          "API": "enum",
+          "arguments_preserved": true
+        },
+        {
+          "axis": 2,
+          "API": "valid",
+          "arguments_preserved": true
+        },
+        {
+          "axis": 2,
+          "API": "default",
+          "arguments_preserved": true
+        },
+        {
+          "axis": 2,
+          "API": "set",
+          "arguments_preserved": true
+        }
+      ],
+      "phase": "complete",
+      "GNU_steps": 264,
+      "aligned_accesses": 144
+    },
+    "full_native_rerun": "pending"
+  },
+  "native_passthrough_abi": {
+    "passed": true,
+    "suite": "abi",
+    "variant": "dispatch",
+    "v4_sha256": "670c4cffe6876bd7a2aa27162b53aab56a36e48ec1894ca8463d1ad568ba1f2b",
+    "lab_sha256": "25693f81739cb89ed7dee5b0e54958ff8c2e62cfc068ea530e5c1f748c5597b4",
+    "placement_qualified": false,
+    "package_files_created": false,
+    "cases": [],
+    "passthrough_abi": [
+      {
+        "API": "get",
+        "all_registers_and_outputs_equal": true
+      },
+      {
+        "API": "count",
+        "all_registers_and_outputs_equal": true
+      },
+      {
+        "API": "enum",
+        "all_registers_and_outputs_equal": true
+      },
+      {
+        "API": "valid",
+        "all_registers_and_outputs_equal": true
+      },
+      {
+        "API": "default",
+        "all_registers_and_outputs_equal": true
+      },
+      {
+        "API": "set",
+        "all_registers_and_outputs_equal": true
+      }
+    ],
+    "phase": "complete",
+    "GNU_steps": 21556,
+    "aligned_accesses": 3785
+  },
+  "native_gate_arguments": {
+    "passed": true,
+    "suite": "gate",
+    "variant": "dispatch",
+    "v4_sha256": "670c4cffe6876bd7a2aa27162b53aab56a36e48ec1894ca8463d1ad568ba1f2b",
+    "lab_sha256": "25693f81739cb89ed7dee5b0e54958ff8c2e62cfc068ea530e5c1f748c5597b4",
+    "placement_qualified": false,
+    "package_files_created": false,
+    "cases": [],
+    "gate_arguments": [
+      {
+        "axis": 1,
+        "API": "get",
+        "arguments_preserved": true
+      },
+      {
+        "axis": 1,
+        "API": "count",
+        "arguments_preserved": true
+      },
+      {
+        "axis": 1,
+        "API": "enum",
+        "arguments_preserved": true
+      },
+      {
+        "axis": 1,
+        "API": "valid",
+        "arguments_preserved": true
+      },
+      {
+        "axis": 1,
+        "API": "default",
+        "arguments_preserved": true
+      },
+      {
+        "axis": 1,
+        "API": "set",
+        "arguments_preserved": true
+      },
+      {
+        "axis": 2,
+        "API": "get",
+        "arguments_preserved": true
+      },
+      {
+        "axis": 2,
+        "API": "count",
+        "arguments_preserved": true
+      },
+      {
+        "axis": 2,
+        "API": "enum",
+        "arguments_preserved": true
+      },
+      {
+        "axis": 2,
+        "API": "valid",
+        "arguments_preserved": true
+      },
+      {
+        "axis": 2,
+        "API": "default",
+        "arguments_preserved": true
+      },
+      {
+        "axis": 2,
+        "API": "set",
+        "arguments_preserved": true
+      }
+    ],
+    "phase": "complete",
+    "GNU_steps": 264,
+    "aligned_accesses": 144
+  },
+  "current_native_lab_sha256": "25693f81739cb89ed7dee5b0e54958ff8c2e62cfc068ea530e5c1f748c5597b4"
 }

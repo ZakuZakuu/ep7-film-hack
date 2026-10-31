@@ -63,12 +63,32 @@ def passthrough_abi(x):
     return rows
 
 
+def gate_arguments(x):
+    """Execute actual compiled entry gates; stop BEFORE virtual interpretation.
+
+    Synthetic owned state is deliberately enough for the gate only. This
+    catches overwritten key/value arguments without pretending to test a GUI.
+    """
+    rows = []
+    for axis in (1, 2):
+        for kind, name in enumerate(('get', 'count', 'enum', 'valid', 'default', 'set')):
+            s = x.new_state()
+            s.write(0x60210FA0, struct.pack('<4I', 0x1C010000, axis, 0x13B3, 927))
+            x.ui_call(s, x.v5['v5_'+name], '', 0,
+                      dict(a0=API, a1=ARG, d0=927, d1=3), x.v5['v5_api_override'])
+            require((s.regs['d0'], s.regs['d1'], s.regs['a0'], s.regs['a1'],
+                     s.regs['d2']) == (927, 3, API, ARG, kind),
+                    'Entry gate changed original property arguments')
+            rows.append(dict(axis=axis, API=name, arguments_preserved=True))
+    return rows
+
+
 def main():
     os.umask(0o077)
     p = argparse.ArgumentParser(description=__doc__)
     for name in ('upstream', 'stock', 'out'):
         p.add_argument('--'+name, required=True)
-    p.add_argument('--suite', choices=('dial', 'editor', 'controls', 'v4', 'abi'), required=True)
+    p.add_argument('--suite', choices=('dial', 'editor', 'controls', 'v4', 'abi', 'gate'), required=True)
     p.add_argument('--slots', nargs='+', type=int, default=[1, 2, 3, 4])
     a = p.parse_args()
     require(a.slots and len(a.slots) == len(set(a.slots))
@@ -108,6 +128,8 @@ def main():
             checkpoint()
             result['GUI_S_bridge'] = gui_s_bridge(view)
             x.__dict__.update(view.__dict__)
+        elif a.suite == 'gate':
+            result['gate_arguments'] = gate_arguments(x)
         elif a.suite == 'abi':
             result['passthrough_abi'] = passthrough_abi(x)
         else:

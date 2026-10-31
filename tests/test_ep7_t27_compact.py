@@ -29,8 +29,8 @@ class CompactionGuards(unittest.TestCase):
             materialize(Path(__file__).resolve().parents[1]/'must-not-exist', 'dispatch')
 
     def test_capacity_counts_fixed_code_and_mirror(self):
-        self.assertEqual(fit(1276, 1554)['deficit'], 1294)
-        self.assertFalse(fit(1276, 1554)['raw_fits'])
+        self.assertEqual(fit(1276, 1558)['deficit'], 1298)
+        self.assertFalse(fit(1276, 1558)['raw_fits'])
         # Even an exactly full raw span has not established alignment/placement.
         self.assertTrue(fit(1276, 260)['raw_fits'])
         self.assertFalse(fit(1276, 260)['placement_qualified'])

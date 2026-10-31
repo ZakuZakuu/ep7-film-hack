@@ -61,6 +61,7 @@ def sources(variant):
     cmp 0x60de5d69,d3
     bne api_passthrough
 api_check_override:
+    mov (4,sp),d0
     call v5_api_override,[d2,d3,a2,a3],20
 '''
     api = once(api, anchor, gate)
