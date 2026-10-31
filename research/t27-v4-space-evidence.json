@@ -2795,5 +2795,353 @@
     "gnu_tree": "059d50a3cc76bd13dc10f21023863674e6da515c",
     "setup": "tools/setup_t20_environment.sh",
     "boundary_policy": "Existing strict GNU engine + explicit owned GUI/encoder/service/ISP fixtures; unknown accesses stop"
+  },
+  "native_dial_partial": {
+    "dial12": {
+      "cases": [
+        {
+          "program": "unchanged_v4",
+          "slot": 1,
+          "image_sha256": "670c4cffe6876bd7a2aa27162b53aab56a36e48ec1894ca8463d1ad568ba1f2b",
+          "initial": {
+            "cursor": 1,
+            "remembered": 0,
+            "native_index": 0
+          },
+          "warm": {
+            "cursor": 1,
+            "remembered": 1,
+            "native_index": 1
+          },
+          "warmup": {
+            "code": "0x9031",
+            "count": 1,
+            "filtered": false,
+            "packet": [
+              36913,
+              0,
+              0,
+              1,
+              0
+            ],
+            "GUI_return": true
+          },
+          "suppressed": [
+            {
+              "code": "0x9031",
+              "count": 0,
+              "filtered": true,
+              "packet": [
+                36913,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "code": "0x9032",
+              "count": 1,
+              "filtered": true,
+              "packet": [
+                36914,
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          ],
+          "axes": [
+            {
+              "axis": "S",
+              "selected": {
+                "cursor": 2,
+                "remembered": 2,
+                "native_index": 2
+              },
+              "current_axis_only": true,
+              "inverse": true
+            }
+          ],
+          "multi_detent": true,
+          "no_guessed_cursor_or_focus_writes": true,
+          "unqualified_spans_unmapped": true
+        },
+        {
+          "program": "prototype",
+          "slot": 1,
+          "image_sha256": "25693f81739cb89ed7dee5b0e54958ff8c2e62cfc068ea530e5c1f748c5597b4",
+          "initial": {
+            "cursor": 1,
+            "remembered": 0,
+            "native_index": 0
+          },
+          "warm": {
+            "cursor": 1,
+            "remembered": 1,
+            "native_index": 1
+          },
+          "warmup": {
+            "code": "0x9031",
+            "count": 1,
+            "filtered": false,
+            "packet": [
+              36913,
+              0,
+              0,
+              1,
+              0
+            ],
+            "GUI_return": true
+          },
+          "suppressed": [
+            {
+              "code": "0x9031",
+              "count": 0,
+              "filtered": true,
+              "packet": [
+                36913,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "code": "0x9032",
+              "count": 1,
+              "filtered": true,
+              "packet": [
+                36914,
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          ],
+          "axes": [
+            {
+              "axis": "S",
+              "selected": {
+                "cursor": 2,
+                "remembered": 2,
+                "native_index": 2
+              },
+              "current_axis_only": true,
+              "inverse": true
+            },
+            {
+              "axis": "L",
+              "selected": {
+                "cursor": 2,
+                "remembered": 2,
+                "native_index": 2
+              },
+              "current_axis_only": true,
+              "inverse": true
+            },
+            {
+              "axis": "H",
+              "selected": {
+                "cursor": 2,
+                "remembered": 2,
+                "native_index": 2
+              },
+              "current_axis_only": true,
+              "inverse": true
+            },
+            {
+              "axis": "S",
+              "selected": {
+                "cursor": 2,
+                "remembered": 2,
+                "native_index": 2
+              },
+              "current_axis_only": true,
+              "inverse": true
+            }
+          ],
+          "multi_detent": true,
+          "no_guessed_cursor_or_focus_writes": true,
+          "unqualified_spans_unmapped": false
+        }
+      ],
+      "complete": false
+    },
+    "dial34": {
+      "cases": [
+        {
+          "program": "unchanged_v4",
+          "slot": 3,
+          "image_sha256": "670c4cffe6876bd7a2aa27162b53aab56a36e48ec1894ca8463d1ad568ba1f2b",
+          "initial": {
+            "cursor": 1,
+            "remembered": 0,
+            "native_index": 0
+          },
+          "warm": {
+            "cursor": 1,
+            "remembered": 1,
+            "native_index": 1
+          },
+          "warmup": {
+            "code": "0x9031",
+            "count": 1,
+            "filtered": false,
+            "packet": [
+              36913,
+              0,
+              0,
+              1,
+              0
+            ],
+            "GUI_return": true
+          },
+          "suppressed": [
+            {
+              "code": "0x9031",
+              "count": 0,
+              "filtered": true,
+              "packet": [
+                36913,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "code": "0x9032",
+              "count": 1,
+              "filtered": true,
+              "packet": [
+                36914,
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          ],
+          "axes": [
+            {
+              "axis": "S",
+              "selected": {
+                "cursor": 2,
+                "remembered": 2,
+                "native_index": 2
+              },
+              "current_axis_only": true,
+              "inverse": true
+            }
+          ],
+          "multi_detent": true,
+          "no_guessed_cursor_or_focus_writes": true,
+          "unqualified_spans_unmapped": true
+        },
+        {
+          "program": "prototype",
+          "slot": 3,
+          "image_sha256": "25693f81739cb89ed7dee5b0e54958ff8c2e62cfc068ea530e5c1f748c5597b4",
+          "initial": {
+            "cursor": 1,
+            "remembered": 0,
+            "native_index": 0
+          },
+          "warm": {
+            "cursor": 1,
+            "remembered": 1,
+            "native_index": 1
+          },
+          "warmup": {
+            "code": "0x9031",
+            "count": 1,
+            "filtered": false,
+            "packet": [
+              36913,
+              0,
+              0,
+              1,
+              0
+            ],
+            "GUI_return": true
+          },
+          "suppressed": [
+            {
+              "code": "0x9031",
+              "count": 0,
+              "filtered": true,
+              "packet": [
+                36913,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "code": "0x9032",
+              "count": 1,
+              "filtered": true,
+              "packet": [
+                36914,
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          ],
+          "axes": [
+            {
+              "axis": "S",
+              "selected": {
+                "cursor": 2,
+                "remembered": 2,
+                "native_index": 2
+              },
+              "current_axis_only": true,
+              "inverse": true
+            },
+            {
+              "axis": "L",
+              "selected": {
+                "cursor": 2,
+                "remembered": 2,
+                "native_index": 2
+              },
+              "current_axis_only": true,
+              "inverse": true
+            },
+            {
+              "axis": "H",
+              "selected": {
+                "cursor": 2,
+                "remembered": 2,
+                "native_index": 2
+              },
+              "current_axis_only": true,
+              "inverse": true
+            },
+            {
+              "axis": "S",
+              "selected": {
+                "cursor": 2,
+                "remembered": 2,
+                "native_index": 2
+              },
+              "current_axis_only": true,
+              "inverse": true
+            }
+          ],
+          "multi_detent": true,
+          "no_guessed_cursor_or_focus_writes": true,
+          "unqualified_spans_unmapped": false
+        }
+      ],
+      "complete": false
+    }
   }
 }
