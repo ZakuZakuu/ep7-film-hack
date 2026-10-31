@@ -2387,5 +2387,413 @@
     "GNU_steps": 264,
     "aligned_accesses": 144
   },
-  "current_native_lab_sha256": "25693f81739cb89ed7dee5b0e54958ff8c2e62cfc068ea530e5c1f748c5597b4"
+  "current_native_lab_sha256": "25693f81739cb89ed7dee5b0e54958ff8c2e62cfc068ea530e5c1f748c5597b4",
+  "native_editor_admission": {
+    "cases": [
+      {
+        "flags": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "accepted": true,
+        "actual_H": 3,
+        "busy_no_write": false
+      },
+      {
+        "flags": [
+          2,
+          0,
+          0,
+          0
+        ],
+        "accepted": false,
+        "actual_H": 2,
+        "busy_no_write": true
+      },
+      {
+        "flags": [
+          6,
+          0,
+          0,
+          0
+        ],
+        "accepted": true,
+        "actual_H": 3,
+        "busy_no_write": false
+      },
+      {
+        "flags": [
+          0,
+          2,
+          0,
+          0
+        ],
+        "accepted": false,
+        "actual_H": 2,
+        "busy_no_write": true
+      },
+      {
+        "flags": [
+          256,
+          2,
+          0,
+          0
+        ],
+        "accepted": true,
+        "actual_H": 3,
+        "busy_no_write": false
+      }
+    ],
+    "active_request_witness": [
+      {
+        "service": "sync",
+        "message_id": 995,
+        "response": 0
+      },
+      {
+        "service": "setting_notice",
+        "key": 927,
+        "value": 0,
+        "witnesses": [
+          14,
+          15,
+          16
+        ]
+      }
+    ],
+    "active_app_state": "0x10001 branch witness, not a measured task ID",
+    "peer_transport": "Explicit success input; message construction stays native"
+  },
+  "native_gui_to_image": {
+    "cases": [
+      {
+        "compact": null,
+        "H0": -3000,
+        "L0": -100,
+        "uploads": [
+          {
+            "bank": 0,
+            "flag": "0x8",
+            "packer_prefix": "60343b23..60343b72",
+            "writer": "0x6034667e",
+            "all_288_coefficient_bytes_match": true,
+            "H": [
+              -3000,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "L": [
+              -100,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "instructions": 2132
+          },
+          {
+            "bank": 1,
+            "flag": "0x40000",
+            "packer_prefix": "60343b23..60343b72",
+            "writer": "0x6034667e",
+            "all_288_coefficient_bytes_match": true,
+            "H": [
+              -3000,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "L": [
+              -100,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "instructions": 2139
+          }
+        ]
+      },
+      {
+        "compact": "0x60306ad5",
+        "H0": -3000,
+        "L0": -100,
+        "uploads": [
+          {
+            "bank": 0,
+            "flag": "0x8",
+            "packer_prefix": "60343b23..60343b72",
+            "writer": "0x6034667e",
+            "all_288_coefficient_bytes_match": true,
+            "H": [
+              -3000,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "L": [
+              -100,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "instructions": 2132
+          },
+          {
+            "bank": 1,
+            "flag": "0x40000",
+            "packer_prefix": "60343b23..60343b72",
+            "writer": "0x6034667e",
+            "all_288_coefficient_bytes_match": true,
+            "H": [
+              -3000,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "L": [
+              -100,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "instructions": 2139
+          }
+        ]
+      },
+      {
+        "compact": "0x6031b4de",
+        "H0": -3000,
+        "L0": -100,
+        "uploads": [
+          {
+            "bank": 0,
+            "flag": "0x8",
+            "packer_prefix": "60343b23..60343b72",
+            "writer": "0x6034667e",
+            "all_288_coefficient_bytes_match": true,
+            "H": [
+              -3000,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "L": [
+              -100,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "instructions": 2132
+          },
+          {
+            "bank": 1,
+            "flag": "0x40000",
+            "packer_prefix": "60343b23..60343b72",
+            "writer": "0x6034667e",
+            "all_288_coefficient_bytes_match": true,
+            "H": [
+              -3000,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "L": [
+              -100,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "instructions": 2139
+          }
+        ]
+      },
+      {
+        "compact": "0x0",
+        "H0": -3000,
+        "L0": -100,
+        "uploads": [
+          {
+            "bank": 0,
+            "flag": "0x8",
+            "packer_prefix": "60343b23..60343b72",
+            "writer": "0x6034667e",
+            "all_288_coefficient_bytes_match": true,
+            "H": [
+              -3000,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "L": [
+              -100,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "instructions": 2132
+          },
+          {
+            "bank": 1,
+            "flag": "0x40000",
+            "packer_prefix": "60343b23..60343b72",
+            "writer": "0x6034667e",
+            "all_288_coefficient_bytes_match": true,
+            "H": [
+              -3000,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "L": [
+              -100,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "instructions": 2139
+          }
+        ]
+      }
+    ],
+    "joined_v4_mirror": true,
+    "limit": "Frame objects are owned fixtures; no captured camera frame or pixel execution"
+  },
+  "engine_provenance": {
+    "engine_sha256": "645b5cea4727da9bf859108120c76c6908a06e1b4995e1c72358665f7547175b",
+    "matches_native_trace": true,
+    "gnu_commit": "87ffb882e0f4d73401a0746177ffabb8e8bbe4ac",
+    "gnu_tree": "059d50a3cc76bd13dc10f21023863674e6da515c",
+    "setup": "tools/setup_t20_environment.sh",
+    "boundary_policy": "Existing strict GNU engine + explicit owned GUI/encoder/service/ISP fixtures; unknown accesses stop"
+  }
 }
