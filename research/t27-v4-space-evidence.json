@@ -787,7 +787,9 @@
     "identified_optional_gross": 153,
     "deficit_if_gross_removed_without_compensation": 1145,
     "optimistic_deficit_if_gross_removed": 1119,
-    "limit": "Not a global impossibility proof. No verified feature-cut plan achieves fit; dropping/profoundly redesigning core GUI adaptation would change this round scope. Ask owner; preserve v4."
+    "limit": "Not a global impossibility proof. No verified feature-cut plan achieves fit; dropping/profoundly redesigning core GUI adaptation would change this round scope. Ask owner; preserve v4.",
+    "validated_lab_only": true,
+    "only_currently_verified_fitting_feature_set": "Existing v4 without new in-camera H/L editor; no verified partial-cut editor fits"
   },
   "legacy_hash_checks": {
     "T20": {
@@ -2177,7 +2179,7 @@
     "GNU_steps": 0,
     "aligned_accesses": 0
   },
-  "validation_status": "Corrected source: gate passed; full compact dial/editor/controls/ABI rerun pending",
+  "validation_status": "All bounded native dial/editor/ABI/guard/v4 suites passed after correction; region fit FAILED",
   "synthetic_tests": {
     "legacy_hsl": 18,
     "prior_placement_guards": 3,
@@ -2271,7 +2273,7 @@
       "GNU_steps": 264,
       "aligned_accesses": 144
     },
-    "full_native_rerun": "pending"
+    "full_native_rerun": "All four corrected profiles and controls passed; rejected candidate remains unqualified"
   },
   "native_passthrough_abi": {
     "passed": true,
@@ -2388,406 +2390,6 @@
     "aligned_accesses": 144
   },
   "current_native_lab_sha256": "25693f81739cb89ed7dee5b0e54958ff8c2e62cfc068ea530e5c1f748c5597b4",
-  "native_editor_admission": {
-    "cases": [
-      {
-        "flags": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "accepted": true,
-        "actual_H": 3,
-        "busy_no_write": false
-      },
-      {
-        "flags": [
-          2,
-          0,
-          0,
-          0
-        ],
-        "accepted": false,
-        "actual_H": 2,
-        "busy_no_write": true
-      },
-      {
-        "flags": [
-          6,
-          0,
-          0,
-          0
-        ],
-        "accepted": true,
-        "actual_H": 3,
-        "busy_no_write": false
-      },
-      {
-        "flags": [
-          0,
-          2,
-          0,
-          0
-        ],
-        "accepted": false,
-        "actual_H": 2,
-        "busy_no_write": true
-      },
-      {
-        "flags": [
-          256,
-          2,
-          0,
-          0
-        ],
-        "accepted": true,
-        "actual_H": 3,
-        "busy_no_write": false
-      }
-    ],
-    "active_request_witness": [
-      {
-        "service": "sync",
-        "message_id": 995,
-        "response": 0
-      },
-      {
-        "service": "setting_notice",
-        "key": 927,
-        "value": 0,
-        "witnesses": [
-          14,
-          15,
-          16
-        ]
-      }
-    ],
-    "active_app_state": "0x10001 branch witness, not a measured task ID",
-    "peer_transport": "Explicit success input; message construction stays native"
-  },
-  "native_gui_to_image": {
-    "cases": [
-      {
-        "compact": null,
-        "H0": -3000,
-        "L0": -100,
-        "uploads": [
-          {
-            "bank": 0,
-            "flag": "0x8",
-            "packer_prefix": "60343b23..60343b72",
-            "writer": "0x6034667e",
-            "all_288_coefficient_bytes_match": true,
-            "H": [
-              -3000,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "L": [
-              -100,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "instructions": 2132
-          },
-          {
-            "bank": 1,
-            "flag": "0x40000",
-            "packer_prefix": "60343b23..60343b72",
-            "writer": "0x6034667e",
-            "all_288_coefficient_bytes_match": true,
-            "H": [
-              -3000,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "L": [
-              -100,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "instructions": 2139
-          }
-        ]
-      },
-      {
-        "compact": "0x60306ad5",
-        "H0": -3000,
-        "L0": -100,
-        "uploads": [
-          {
-            "bank": 0,
-            "flag": "0x8",
-            "packer_prefix": "60343b23..60343b72",
-            "writer": "0x6034667e",
-            "all_288_coefficient_bytes_match": true,
-            "H": [
-              -3000,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "L": [
-              -100,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "instructions": 2132
-          },
-          {
-            "bank": 1,
-            "flag": "0x40000",
-            "packer_prefix": "60343b23..60343b72",
-            "writer": "0x6034667e",
-            "all_288_coefficient_bytes_match": true,
-            "H": [
-              -3000,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "L": [
-              -100,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "instructions": 2139
-          }
-        ]
-      },
-      {
-        "compact": "0x6031b4de",
-        "H0": -3000,
-        "L0": -100,
-        "uploads": [
-          {
-            "bank": 0,
-            "flag": "0x8",
-            "packer_prefix": "60343b23..60343b72",
-            "writer": "0x6034667e",
-            "all_288_coefficient_bytes_match": true,
-            "H": [
-              -3000,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "L": [
-              -100,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "instructions": 2132
-          },
-          {
-            "bank": 1,
-            "flag": "0x40000",
-            "packer_prefix": "60343b23..60343b72",
-            "writer": "0x6034667e",
-            "all_288_coefficient_bytes_match": true,
-            "H": [
-              -3000,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "L": [
-              -100,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "instructions": 2139
-          }
-        ]
-      },
-      {
-        "compact": "0x0",
-        "H0": -3000,
-        "L0": -100,
-        "uploads": [
-          {
-            "bank": 0,
-            "flag": "0x8",
-            "packer_prefix": "60343b23..60343b72",
-            "writer": "0x6034667e",
-            "all_288_coefficient_bytes_match": true,
-            "H": [
-              -3000,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "L": [
-              -100,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "instructions": 2132
-          },
-          {
-            "bank": 1,
-            "flag": "0x40000",
-            "packer_prefix": "60343b23..60343b72",
-            "writer": "0x6034667e",
-            "all_288_coefficient_bytes_match": true,
-            "H": [
-              -3000,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "L": [
-              -100,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "instructions": 2139
-          }
-        ]
-      }
-    ],
-    "joined_v4_mirror": true,
-    "limit": "Frame objects are owned fixtures; no captured camera frame or pixel execution"
-  },
   "engine_provenance": {
     "engine_sha256": "645b5cea4727da9bf859108120c76c6908a06e1b4995e1c72358665f7547175b",
     "matches_native_trace": true,
@@ -4253,8 +3855,179 @@
     "GNU_steps": 9029818,
     "aligned_accesses": 1273694
   },
-  "native_editor_partial": {
-    "phase": "COLOR4: construct",
+  "frozen_patches_unchanged_from_start": true,
+  "tracked_upstream_changes": false,
+  "final_synthetic_tests": {
+    "legacy_hsl": 18,
+    "compact_and_placement": 7,
+    "passed": true
+  },
+  "host_preflight_provenance": "Immutable v4 hash/helper-address preflight added after full GUI worker launch, independently rerun in final gate suite; generated source and native program hashes unchanged.",
+  "native_editor": {
+    "stock_sha256": "9d1610124ad98f6edae4540182205f06c9c703d9033ef0c4f19847193f95eaeb",
+    "decoded_sha256": "5dd9af164b4590c7e82f6905c919b3cc450bb58f2d5742ab2a0e3a4eb2e26190",
+    "v4_baseline_sha256": "670c4cffe6876bd7a2aa27162b53aab56a36e48ec1894ca8463d1ad568ba1f2b",
+    "decoded_candidate_sha256": "25693f81739cb89ed7dee5b0e54958ff8c2e62cfc068ea530e5c1f748c5597b4",
+    "modified_ranges": [
+      {
+        "address": "0x60210e3c",
+        "length": 50,
+        "kind": "apply",
+        "original_sha256": "c4612d488c8b730aecd874b92924f9b8f4ecb8f3e78689adfbd94e2f9452c7fc",
+        "replacement_sha256": "da6a653bbe53d953f9b30b171506559838e936348dbd7735fb61bc8ca8d99e64"
+      },
+      {
+        "address": "0x60210e6e",
+        "length": 48,
+        "kind": "lifecycle",
+        "original_sha256": "80a76a18acf8cb64fec3a659ffc4bab4a87cd9a6fde4dab2161a8751d136c9d2",
+        "replacement_sha256": "fb441fcb7f7e238a7cb04f861624fc76bd860cb00eab3f74f022880ae9f8dafa"
+      },
+      {
+        "address": "0x60210fa0",
+        "length": 16,
+        "kind": "state",
+        "original_sha256": "5ac6a5945f16500911219129984ba8b387a06f24fe383ce4e81a73294065461b",
+        "replacement_sha256": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb"
+      },
+      {
+        "address": "0x6055e5f0",
+        "length": 308,
+        "kind": "api",
+        "original_sha256": "24ae50ba2ab855a4b185179127b8c1c5d9de0a07edb44a2005f2b82dfb2f3296",
+        "replacement_sha256": "2e6704aa0d6f5b4a943005c1097c68615384039cf99e7a1d756e99d10c98f1ac"
+      },
+      {
+        "address": "0x6082748b",
+        "length": 5,
+        "kind": "apply_detour",
+        "original_sha256": "565d54681075180990c52cf576d2c6088588770658072aa9f96bf29b8b68c354",
+        "replacement_sha256": "45b778b2b15c49e69d8f8521992fb5157c91f305855e1bdff8dc923ff439f899"
+      },
+      {
+        "address": "0x60acb0dc",
+        "length": 4,
+        "kind": "v5_set",
+        "original_sha256": "090b9588b084d3ed2a1521f33a38d3140828f6ad4c6b6f1e6156d9c784efe7c7",
+        "replacement_sha256": "7377a96c4849f8c644a492659f8467517374158247f312e75ca9172407dd0157"
+      },
+      {
+        "address": "0x60acb0e4",
+        "length": 4,
+        "kind": "v5_get",
+        "original_sha256": "98d38bf8d59dee2e45a432a4f5e44286c7320486bc9410f7738d131d4d411f80",
+        "replacement_sha256": "e66eb370be6f9e8dd3bc83419565c79d1f177cc099fd9b5c6295f4076fe9fe48"
+      },
+      {
+        "address": "0x60acb0f4",
+        "length": 4,
+        "kind": "v5_count",
+        "original_sha256": "4763c7b206a97431cfcc5aa4e65b64daad6c79be0d0d453a126c0ba9aeb1e0a8",
+        "replacement_sha256": "c352b612cd4990b75d2eec0025b8f99c26a868fe1d732ed292ed703331b96022"
+      },
+      {
+        "address": "0x60acb0f8",
+        "length": 4,
+        "kind": "v5_enum",
+        "original_sha256": "91fbd6e572d38ab5179a61267c9cec07632e42e5f350766745e77ad28394ccb4",
+        "replacement_sha256": "5607642145f9ea739baf88359b52c7c7ee0bfaeb6e38fe150b27d00fd73282e6"
+      },
+      {
+        "address": "0x60acb100",
+        "length": 4,
+        "kind": "v5_valid",
+        "original_sha256": "8ec96eb81123f10cc0a6ca71c5017247738a7c6d808b8776d609754ea5db8557",
+        "replacement_sha256": "9c15de0630e84b8a83ec96d8860225a9e08af43b6f48aef8c9b5bebaca3a63f5"
+      },
+      {
+        "address": "0x60acb174",
+        "length": 4,
+        "kind": "v5_default",
+        "original_sha256": "99e6f62f7869468d063ac263e85dcd31869d48523ac7261f19c4075bb36a242b",
+        "replacement_sha256": "9b89f97823d1eb9ed3850a8c4aaba871c89fd284cc37f6a83af5223825fc36b6"
+      },
+      {
+        "address": "0x60d1147e",
+        "length": 5,
+        "kind": "lookup_detour",
+        "original_sha256": "a91994b5acc8aacb24c0f98fe59f980ff519ee36d293a3ed4089f4a315b58165",
+        "replacement_sha256": "f70384a40b253f84e745ce8e885343a0efdffb767015ef32e3ba635c15f65de0"
+      },
+      {
+        "address": "0x60e20f0c",
+        "length": 5,
+        "kind": "upper",
+        "original_sha256": "9dbbf33348aac77e806f9ca1270b333ff524e20b6de95c8598239ed38376e445",
+        "replacement_sha256": "11aad3e59c31195aef531c699a6628041be0dd9411b855c676726695225b94f3"
+      },
+      {
+        "address": "0x60e2116c",
+        "length": 5,
+        "kind": "lower",
+        "original_sha256": "71e83faa055fde84cfab6016dff2ed22b89e0576d8397a0ed9a236cdd7ffa4a2",
+        "replacement_sha256": "04d628cc11567fdaa54997ed3118b5e64067289beacd66de97c8af0d07c4b3e5"
+      },
+      {
+        "address": "0x60e26ba1",
+        "length": 5,
+        "kind": "numeric_detour",
+        "original_sha256": "1a715b617ed1ba7275605d0692a50c86f4ec7c0f9a8940e88698388958b89216",
+        "replacement_sha256": "765d4c8408be251acdd4d2032fee47ec97b1d46a82f137f8087de4ce34d0ccb9"
+      },
+      {
+        "address": "0x61187534",
+        "length": 4,
+        "kind": "v5_parent",
+        "original_sha256": "2420d738f64374a758f7177396628bdb231e6802f59bce5e9665c3d646390732",
+        "replacement_sha256": "089a2b8585c63dcf368dce637bda95df1c93bf53909f1b328025a040bb6c5902"
+      },
+      {
+        "address": "0x611ada34",
+        "length": 4,
+        "kind": "v5_enter",
+        "original_sha256": "1c3a5c43477f17a007b0b281a779ed375f138e8b58f261fa3b5c870b9c12eb16",
+        "replacement_sha256": "cde2484b5506dd8a56aa9a88c37b7115eb1d3bf0c1ded63d6ba43ea52fa9e537"
+      },
+      {
+        "address": "0x611ada48",
+        "length": 4,
+        "kind": "v5_exit",
+        "original_sha256": "3e0ffc90a855aef1aa1f44357c3964c9e0d47d88120178961e11e5bab4d2a7b0",
+        "replacement_sha256": "9aa9c1b8ce446ab26c2dc4011d295c24436f8c4ef9bb62101304b3a4d706f0cf"
+      },
+      {
+        "address": "0x612429f0",
+        "length": 1136,
+        "kind": "ui6",
+        "original_sha256": "8f47e812216b1bca5de9ca708723806d3050762b22bbb0b3b7c84a4fe18225ba",
+        "replacement_sha256": "dac9e5c551b3fa03d36c0cbdddaa287429fe5faa08b4ea70153d443f648bef4b"
+      }
+    ],
+    "models": {
+      "0x60e9e127": 1421,
+      "0x60a4ec03": 60,
+      "0x607706af": 8080,
+      "0x60767ee5": 4280,
+      "0x6076df51": 16160,
+      "0x6076e146": 175,
+      "0x6076e27c": 112,
+      "0x60767f0c": 4514,
+      "0x6076e1bb": 7546,
+      "0x6076e1e9": 4175,
+      "0x60a4ec0d": 464,
+      "0x607b3c32": 232,
+      "0x1c000100": 232,
+      "0x6076e1f8": 3371,
+      "0x60e9e050": 931,
+      "0x60ea15ca": 966,
+      "0x60a4ec21": 360,
+      "0x6076e216": 422,
+      "0x6076e178": 359,
+      "0x60cf779d": 63,
+      "0x1c000120": 63,
+      "0x60a4ec2b": 1,
+      "0x60ea15a3": 16
+    },
     "interaction": [
       {
         "slot": 1,
@@ -4447,14 +4220,504 @@
           }
         ],
         "returned_to_S": true
+      },
+      {
+        "slot": 4,
+        "axes": [
+          {
+            "axis": "L",
+            "enum_count": 15,
+            "captions": [
+              {
+                "text": "L +7",
+                "native_record_bytes": 334,
+                "producer": "0x60e27289 + original caption adapter",
+                "pixels_or_glyphs_executed": false
+              },
+              {
+                "text": "L -7",
+                "native_record_bytes": 334,
+                "producer": "0x60e27289 + original caption adapter",
+                "pixels_or_glyphs_executed": false
+              },
+              {
+                "text": "L ALL",
+                "native_record_bytes": 334,
+                "producer": "0x60e27289 + original caption adapter",
+                "pixels_or_glyphs_executed": false
+              }
+            ],
+            "bounds": true,
+            "ALL": true,
+            "held_OK_all_12": true,
+            "short_OK_exit": 2,
+            "stock_S_unchanged": true
+          },
+          {
+            "axis": "H",
+            "enum_count": 15,
+            "captions": [
+              {
+                "text": "H +7",
+                "native_record_bytes": 334,
+                "producer": "0x60e27289 + original caption adapter",
+                "pixels_or_glyphs_executed": false
+              },
+              {
+                "text": "H -7",
+                "native_record_bytes": 334,
+                "producer": "0x60e27289 + original caption adapter",
+                "pixels_or_glyphs_executed": false
+              },
+              {
+                "text": "H ALL",
+                "native_record_bytes": 334,
+                "producer": "0x60e27289 + original caption adapter",
+                "pixels_or_glyphs_executed": false
+              }
+            ],
+            "bounds": true,
+            "ALL": true,
+            "held_OK_all_12": true,
+            "short_OK_exit": 2,
+            "stock_S_unchanged": true
+          }
+        ],
+        "returned_to_S": true
       }
-    ]
+    ],
+    "phase": "complete",
+    "admission": {
+      "cases": [
+        {
+          "flags": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "accepted": true,
+          "actual_H": 3,
+          "busy_no_write": false
+        },
+        {
+          "flags": [
+            2,
+            0,
+            0,
+            0
+          ],
+          "accepted": false,
+          "actual_H": 2,
+          "busy_no_write": true
+        },
+        {
+          "flags": [
+            6,
+            0,
+            0,
+            0
+          ],
+          "accepted": true,
+          "actual_H": 3,
+          "busy_no_write": false
+        },
+        {
+          "flags": [
+            0,
+            2,
+            0,
+            0
+          ],
+          "accepted": false,
+          "actual_H": 2,
+          "busy_no_write": true
+        },
+        {
+          "flags": [
+            256,
+            2,
+            0,
+            0
+          ],
+          "accepted": true,
+          "actual_H": 3,
+          "busy_no_write": false
+        }
+      ],
+      "active_request_witness": [
+        {
+          "service": "sync",
+          "message_id": 995,
+          "response": 0
+        },
+        {
+          "service": "setting_notice",
+          "key": 927,
+          "value": 0,
+          "witnesses": [
+            14,
+            15,
+            16
+          ]
+        }
+      ],
+      "active_app_state": "0x10001 branch witness, not a measured task ID",
+      "peer_transport": "Explicit success input; message construction stays native"
+    },
+    "image_join": {
+      "cases": [
+        {
+          "compact": null,
+          "H0": -3000,
+          "L0": -100,
+          "uploads": [
+            {
+              "bank": 0,
+              "flag": "0x8",
+              "packer_prefix": "60343b23..60343b72",
+              "writer": "0x6034667e",
+              "all_288_coefficient_bytes_match": true,
+              "H": [
+                -3000,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "L": [
+                -100,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "instructions": 2132
+            },
+            {
+              "bank": 1,
+              "flag": "0x40000",
+              "packer_prefix": "60343b23..60343b72",
+              "writer": "0x6034667e",
+              "all_288_coefficient_bytes_match": true,
+              "H": [
+                -3000,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "L": [
+                -100,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "instructions": 2139
+            }
+          ]
+        },
+        {
+          "compact": "0x60306ad5",
+          "H0": -3000,
+          "L0": -100,
+          "uploads": [
+            {
+              "bank": 0,
+              "flag": "0x8",
+              "packer_prefix": "60343b23..60343b72",
+              "writer": "0x6034667e",
+              "all_288_coefficient_bytes_match": true,
+              "H": [
+                -3000,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "L": [
+                -100,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "instructions": 2132
+            },
+            {
+              "bank": 1,
+              "flag": "0x40000",
+              "packer_prefix": "60343b23..60343b72",
+              "writer": "0x6034667e",
+              "all_288_coefficient_bytes_match": true,
+              "H": [
+                -3000,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "L": [
+                -100,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "instructions": 2139
+            }
+          ]
+        },
+        {
+          "compact": "0x6031b4de",
+          "H0": -3000,
+          "L0": -100,
+          "uploads": [
+            {
+              "bank": 0,
+              "flag": "0x8",
+              "packer_prefix": "60343b23..60343b72",
+              "writer": "0x6034667e",
+              "all_288_coefficient_bytes_match": true,
+              "H": [
+                -3000,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "L": [
+                -100,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "instructions": 2132
+            },
+            {
+              "bank": 1,
+              "flag": "0x40000",
+              "packer_prefix": "60343b23..60343b72",
+              "writer": "0x6034667e",
+              "all_288_coefficient_bytes_match": true,
+              "H": [
+                -3000,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "L": [
+                -100,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "instructions": 2139
+            }
+          ]
+        },
+        {
+          "compact": "0x0",
+          "H0": -3000,
+          "L0": -100,
+          "uploads": [
+            {
+              "bank": 0,
+              "flag": "0x8",
+              "packer_prefix": "60343b23..60343b72",
+              "writer": "0x6034667e",
+              "all_288_coefficient_bytes_match": true,
+              "H": [
+                -3000,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "L": [
+                -100,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "instructions": 2132
+            },
+            {
+              "bank": 1,
+              "flag": "0x40000",
+              "packer_prefix": "60343b23..60343b72",
+              "writer": "0x6034667e",
+              "all_288_coefficient_bytes_match": true,
+              "H": [
+                -3000,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "L": [
+                -100,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "instructions": 2139
+            }
+          ]
+        }
+      ],
+      "joined_v4_mirror": true,
+      "limit": "Frame objects are owned fixtures; no captured camera frame or pixel execution"
+    },
+    "GNU_instructions": 47711270,
+    "aligned_accesses": 6494344,
+    "native_PCs": 7038,
+    "package_files_created": false,
+    "camera_connected": false
   },
-  "frozen_patches_unchanged_from_start": true,
-  "tracked_upstream_changes": false,
-  "final_synthetic_tests": {
-    "legacy_hsl": 18,
-    "compact_and_placement": 7,
-    "passed": true
-  }
+  "native_editor_completion": {
+    "passed": true,
+    "suite": "editor",
+    "variant": "dispatch",
+    "v4_sha256": "670c4cffe6876bd7a2aa27162b53aab56a36e48ec1894ca8463d1ad568ba1f2b",
+    "lab_sha256": "25693f81739cb89ed7dee5b0e54958ff8c2e62cfc068ea530e5c1f748c5597b4",
+    "placement_qualified": false,
+    "package_files_created": false
+  },
+  "experiment_source_sha256": {
+    "tools/ep7_t27_compact_source.py": "24a5ce2cf62f16fd30135ca68f5635d9ded4fd53d18586830dde39ee332a44a8",
+    "tools/ep7_t27_compact_probe.py": "47ee81460080b84954bb92b8992f02285152a4e514de95acca12e147c49cff52",
+    "tools/ep7_t27_size_study.py": "709b9ecd7e3c542f88736fe6a7ddc620434f6a4ab1192aa8fceaa3c980b3e18d",
+    "tests/test_ep7_t27_compact.py": "d5231108fcbc47b8b7d4150990430d33caa701ed5e8baa9946fcf5c2b88546f0"
+  },
+  "materialized_own_source_sha256": {
+    "api.s": "a376303e1365bc944bf866c6e39f4bb565520e9d081dda0294ab04f52c3d8d38",
+    "editor.s": "0ddcb62b50940c4218ff25a7b074f2d2250fadaa18ce0ee71dd574eec1fbda2d",
+    "symbols.json": "f13f0a241c93823f9179379f4c2fc958dca81dbbed4eddca7e980b59be4f4efe"
+  },
+  "limits": [
+    "Prior simulator-only prototype mappings; no new admitted placement",
+    "Adjacent and v4-relaxed layouts are unexecuted size estimates, not a combined executable or mathematical global bound",
+    "Owned GUI/encoder/status/RTOS/drawing/frame/ISP fixtures; no complete camera boot, physical rendering, concurrent scheduling or real stack headroom proof",
+    "Optional cuts are exclusive gross code accounting only; no validated net savings or disabled-feature implementation",
+    "No installer/package, camera connection, next phase or new release hash"
+  ]
 }

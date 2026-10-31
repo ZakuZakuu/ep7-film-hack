@@ -60,11 +60,14 @@ v5 新增功能块（不含上述 v4；缩减版保留全部原型功能）：
 原始容量还没扣除对齐与保护间距；验证状态及限制见证据 JSON，不生成新的 v5 发布哈希。
 首次合并入口漏恢复参数键，原生 H/L 对照抓到回归；修正后重新执行入口参数和完整操作对照。
 色轮仍沿用 S，这是既有原型的限制；真实绘制、并发和实机栈余量也未验证。
+八个拨盘臂、四配置 H/L 交互、原生 S 对照、准入/隔离/成像组及 25 项保护测试全部通过（仅限所列模型）。
+T20–v4 的预期完整文件哈希通过仅校验复核；补丁目录与本轮起点一致，所有 v5 安装构建仍关闭。
 原厂文件重新从官方目录取得并严格核对大小与 SHA-256；原厂输入、解码、ELF、反汇编清单和模拟轨迹均只在私有 `/tmp`。
 
 复现：
 
 ```sh
+bash tools/setup_t20_environment.sh
 python3 tools/ep7_t27_size_study.py --upstream work/upstream/oly_fw_analysis --out /tmp/t27-size-new
 python3 tools/ep7_t27_compact_probe.py --upstream work/upstream/oly_fw_analysis \
   --stock /tmp/ep7-stock/OLY_E_142_1100_0000_0000.BIN --out /tmp/t27-dial-new --suite dial
