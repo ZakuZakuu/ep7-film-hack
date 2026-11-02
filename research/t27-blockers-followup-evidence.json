@@ -1,0 +1,1407 @@
+{
+  "issue": 70,
+  "PR": 79,
+  "baseline_main": "e011e054f519eafc85db9868010928381fd2d82a",
+  "upstream": "fishcu/oly_fw_analysis@539fcf1fa9eda5fdef8ede4deeab94a4691d94c3",
+  "stock_bytes": 111017984,
+  "stock_sha256": "9d1610124ad98f6edae4540182205f06c9c703d9033ef0c4f19847193f95eaeb",
+  "decoded_input_sha256": "5dd9af164b4590c7e82f6905c919b3cc450bb58f2d5742ab2a0e3a4eb2e26190",
+  "validation_status": {
+    "task_complete": false,
+    "dial_fixture_passed": true,
+    "placement_qualified": false,
+    "selected_placement": null,
+    "new_v5_build_manifest_generated": false,
+    "patch_source_changed": false,
+    "install_files_generated": false,
+    "camera_connected": false
+  },
+  "native_dials": {
+    "passed": true,
+    "cases": [
+      {
+        "program": "unchanged_v4",
+        "slot": 1,
+        "image_sha256": "670c4cffe6876bd7a2aa27162b53aab56a36e48ec1894ca8463d1ad568ba1f2b",
+        "initial": {
+          "cursor": 1,
+          "remembered": 0,
+          "native_index": 0
+        },
+        "warm": {
+          "cursor": 1,
+          "remembered": 1,
+          "native_index": 1
+        },
+        "warmup": {
+          "code": "0x9031",
+          "count": 1,
+          "filtered": false,
+          "packet": [
+            36913,
+            0,
+            0,
+            1,
+            0
+          ],
+          "GUI_return": true
+        },
+        "suppressed": [
+          {
+            "code": "0x9031",
+            "count": 0,
+            "filtered": true,
+            "packet": [
+              36913,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "code": "0x9032",
+            "count": 1,
+            "filtered": true,
+            "packet": [
+              36914,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "axes": [
+          {
+            "axis": "S",
+            "selected": {
+              "cursor": 2,
+              "remembered": 2,
+              "native_index": 2
+            },
+            "current_axis_only": true,
+            "inverse": true
+          }
+        ],
+        "multi_detent": true,
+        "no_guessed_cursor_or_focus_writes": true,
+        "unqualified_spans_unmapped": true
+      },
+      {
+        "program": "prototype",
+        "slot": 1,
+        "image_sha256": "4e7b3cbea63ad578136667b709c0de0c0ebb1ce015f2d180bed0a193493fa118",
+        "initial": {
+          "cursor": 1,
+          "remembered": 0,
+          "native_index": 0
+        },
+        "warm": {
+          "cursor": 1,
+          "remembered": 1,
+          "native_index": 1
+        },
+        "warmup": {
+          "code": "0x9031",
+          "count": 1,
+          "filtered": false,
+          "packet": [
+            36913,
+            0,
+            0,
+            1,
+            0
+          ],
+          "GUI_return": true
+        },
+        "suppressed": [
+          {
+            "code": "0x9031",
+            "count": 0,
+            "filtered": true,
+            "packet": [
+              36913,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "code": "0x9032",
+            "count": 1,
+            "filtered": true,
+            "packet": [
+              36914,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "axes": [
+          {
+            "axis": "S",
+            "selected": {
+              "cursor": 2,
+              "remembered": 2,
+              "native_index": 2
+            },
+            "current_axis_only": true,
+            "inverse": true
+          },
+          {
+            "axis": "L",
+            "selected": {
+              "cursor": 2,
+              "remembered": 2,
+              "native_index": 2
+            },
+            "current_axis_only": true,
+            "inverse": true
+          },
+          {
+            "axis": "H",
+            "selected": {
+              "cursor": 2,
+              "remembered": 2,
+              "native_index": 2
+            },
+            "current_axis_only": true,
+            "inverse": true
+          },
+          {
+            "axis": "S",
+            "selected": {
+              "cursor": 2,
+              "remembered": 2,
+              "native_index": 2
+            },
+            "current_axis_only": true,
+            "inverse": true
+          }
+        ],
+        "multi_detent": true,
+        "no_guessed_cursor_or_focus_writes": true,
+        "unqualified_spans_unmapped": false
+      },
+      {
+        "program": "unchanged_v4",
+        "slot": 2,
+        "image_sha256": "670c4cffe6876bd7a2aa27162b53aab56a36e48ec1894ca8463d1ad568ba1f2b",
+        "initial": {
+          "cursor": 1,
+          "remembered": 0,
+          "native_index": 0
+        },
+        "warm": {
+          "cursor": 1,
+          "remembered": 1,
+          "native_index": 1
+        },
+        "warmup": {
+          "code": "0x9031",
+          "count": 1,
+          "filtered": false,
+          "packet": [
+            36913,
+            0,
+            0,
+            1,
+            0
+          ],
+          "GUI_return": true
+        },
+        "suppressed": [
+          {
+            "code": "0x9031",
+            "count": 0,
+            "filtered": true,
+            "packet": [
+              36913,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "code": "0x9032",
+            "count": 1,
+            "filtered": true,
+            "packet": [
+              36914,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "axes": [
+          {
+            "axis": "S",
+            "selected": {
+              "cursor": 2,
+              "remembered": 2,
+              "native_index": 2
+            },
+            "current_axis_only": true,
+            "inverse": true
+          }
+        ],
+        "multi_detent": true,
+        "no_guessed_cursor_or_focus_writes": true,
+        "unqualified_spans_unmapped": true
+      },
+      {
+        "program": "prototype",
+        "slot": 2,
+        "image_sha256": "4e7b3cbea63ad578136667b709c0de0c0ebb1ce015f2d180bed0a193493fa118",
+        "initial": {
+          "cursor": 1,
+          "remembered": 0,
+          "native_index": 0
+        },
+        "warm": {
+          "cursor": 1,
+          "remembered": 1,
+          "native_index": 1
+        },
+        "warmup": {
+          "code": "0x9031",
+          "count": 1,
+          "filtered": false,
+          "packet": [
+            36913,
+            0,
+            0,
+            1,
+            0
+          ],
+          "GUI_return": true
+        },
+        "suppressed": [
+          {
+            "code": "0x9031",
+            "count": 0,
+            "filtered": true,
+            "packet": [
+              36913,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "code": "0x9032",
+            "count": 1,
+            "filtered": true,
+            "packet": [
+              36914,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "axes": [
+          {
+            "axis": "S",
+            "selected": {
+              "cursor": 2,
+              "remembered": 2,
+              "native_index": 2
+            },
+            "current_axis_only": true,
+            "inverse": true
+          },
+          {
+            "axis": "L",
+            "selected": {
+              "cursor": 2,
+              "remembered": 2,
+              "native_index": 2
+            },
+            "current_axis_only": true,
+            "inverse": true
+          },
+          {
+            "axis": "H",
+            "selected": {
+              "cursor": 2,
+              "remembered": 2,
+              "native_index": 2
+            },
+            "current_axis_only": true,
+            "inverse": true
+          },
+          {
+            "axis": "S",
+            "selected": {
+              "cursor": 2,
+              "remembered": 2,
+              "native_index": 2
+            },
+            "current_axis_only": true,
+            "inverse": true
+          }
+        ],
+        "multi_detent": true,
+        "no_guessed_cursor_or_focus_writes": true,
+        "unqualified_spans_unmapped": false
+      },
+      {
+        "program": "unchanged_v4",
+        "slot": 3,
+        "image_sha256": "670c4cffe6876bd7a2aa27162b53aab56a36e48ec1894ca8463d1ad568ba1f2b",
+        "initial": {
+          "cursor": 1,
+          "remembered": 0,
+          "native_index": 0
+        },
+        "warm": {
+          "cursor": 1,
+          "remembered": 1,
+          "native_index": 1
+        },
+        "warmup": {
+          "code": "0x9031",
+          "count": 1,
+          "filtered": false,
+          "packet": [
+            36913,
+            0,
+            0,
+            1,
+            0
+          ],
+          "GUI_return": true
+        },
+        "suppressed": [
+          {
+            "code": "0x9031",
+            "count": 0,
+            "filtered": true,
+            "packet": [
+              36913,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "code": "0x9032",
+            "count": 1,
+            "filtered": true,
+            "packet": [
+              36914,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "axes": [
+          {
+            "axis": "S",
+            "selected": {
+              "cursor": 2,
+              "remembered": 2,
+              "native_index": 2
+            },
+            "current_axis_only": true,
+            "inverse": true
+          }
+        ],
+        "multi_detent": true,
+        "no_guessed_cursor_or_focus_writes": true,
+        "unqualified_spans_unmapped": true
+      },
+      {
+        "program": "prototype",
+        "slot": 3,
+        "image_sha256": "4e7b3cbea63ad578136667b709c0de0c0ebb1ce015f2d180bed0a193493fa118",
+        "initial": {
+          "cursor": 1,
+          "remembered": 0,
+          "native_index": 0
+        },
+        "warm": {
+          "cursor": 1,
+          "remembered": 1,
+          "native_index": 1
+        },
+        "warmup": {
+          "code": "0x9031",
+          "count": 1,
+          "filtered": false,
+          "packet": [
+            36913,
+            0,
+            0,
+            1,
+            0
+          ],
+          "GUI_return": true
+        },
+        "suppressed": [
+          {
+            "code": "0x9031",
+            "count": 0,
+            "filtered": true,
+            "packet": [
+              36913,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "code": "0x9032",
+            "count": 1,
+            "filtered": true,
+            "packet": [
+              36914,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "axes": [
+          {
+            "axis": "S",
+            "selected": {
+              "cursor": 2,
+              "remembered": 2,
+              "native_index": 2
+            },
+            "current_axis_only": true,
+            "inverse": true
+          },
+          {
+            "axis": "L",
+            "selected": {
+              "cursor": 2,
+              "remembered": 2,
+              "native_index": 2
+            },
+            "current_axis_only": true,
+            "inverse": true
+          },
+          {
+            "axis": "H",
+            "selected": {
+              "cursor": 2,
+              "remembered": 2,
+              "native_index": 2
+            },
+            "current_axis_only": true,
+            "inverse": true
+          },
+          {
+            "axis": "S",
+            "selected": {
+              "cursor": 2,
+              "remembered": 2,
+              "native_index": 2
+            },
+            "current_axis_only": true,
+            "inverse": true
+          }
+        ],
+        "multi_detent": true,
+        "no_guessed_cursor_or_focus_writes": true,
+        "unqualified_spans_unmapped": false
+      },
+      {
+        "program": "unchanged_v4",
+        "slot": 4,
+        "image_sha256": "670c4cffe6876bd7a2aa27162b53aab56a36e48ec1894ca8463d1ad568ba1f2b",
+        "initial": {
+          "cursor": 1,
+          "remembered": 0,
+          "native_index": 0
+        },
+        "warm": {
+          "cursor": 1,
+          "remembered": 1,
+          "native_index": 1
+        },
+        "warmup": {
+          "code": "0x9031",
+          "count": 1,
+          "filtered": false,
+          "packet": [
+            36913,
+            0,
+            0,
+            1,
+            0
+          ],
+          "GUI_return": true
+        },
+        "suppressed": [
+          {
+            "code": "0x9031",
+            "count": 0,
+            "filtered": true,
+            "packet": [
+              36913,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "code": "0x9032",
+            "count": 1,
+            "filtered": true,
+            "packet": [
+              36914,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "axes": [
+          {
+            "axis": "S",
+            "selected": {
+              "cursor": 2,
+              "remembered": 2,
+              "native_index": 2
+            },
+            "current_axis_only": true,
+            "inverse": true
+          }
+        ],
+        "multi_detent": true,
+        "no_guessed_cursor_or_focus_writes": true,
+        "unqualified_spans_unmapped": true
+      },
+      {
+        "program": "prototype",
+        "slot": 4,
+        "image_sha256": "4e7b3cbea63ad578136667b709c0de0c0ebb1ce015f2d180bed0a193493fa118",
+        "initial": {
+          "cursor": 1,
+          "remembered": 0,
+          "native_index": 0
+        },
+        "warm": {
+          "cursor": 1,
+          "remembered": 1,
+          "native_index": 1
+        },
+        "warmup": {
+          "code": "0x9031",
+          "count": 1,
+          "filtered": false,
+          "packet": [
+            36913,
+            0,
+            0,
+            1,
+            0
+          ],
+          "GUI_return": true
+        },
+        "suppressed": [
+          {
+            "code": "0x9031",
+            "count": 0,
+            "filtered": true,
+            "packet": [
+              36913,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "code": "0x9032",
+            "count": 1,
+            "filtered": true,
+            "packet": [
+              36914,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "axes": [
+          {
+            "axis": "S",
+            "selected": {
+              "cursor": 2,
+              "remembered": 2,
+              "native_index": 2
+            },
+            "current_axis_only": true,
+            "inverse": true
+          },
+          {
+            "axis": "L",
+            "selected": {
+              "cursor": 2,
+              "remembered": 2,
+              "native_index": 2
+            },
+            "current_axis_only": true,
+            "inverse": true
+          },
+          {
+            "axis": "H",
+            "selected": {
+              "cursor": 2,
+              "remembered": 2,
+              "native_index": 2
+            },
+            "current_axis_only": true,
+            "inverse": true
+          },
+          {
+            "axis": "S",
+            "selected": {
+              "cursor": 2,
+              "remembered": 2,
+              "native_index": 2
+            },
+            "current_axis_only": true,
+            "inverse": true
+          }
+        ],
+        "multi_detent": true,
+        "no_guessed_cursor_or_focus_writes": true,
+        "unqualified_spans_unmapped": false
+      }
+    ],
+    "execution_groups": [
+      {
+        "slot": 1,
+        "source": "primary completed two arms checkpoint",
+        "cases": 2,
+        "completion": "Both COLOR1 arms returned; later incomplete COLOR2 work intentionally interrupted/excluded to avoid duplicating independent COLOR2 replay",
+        "single_run_total_exported": false
+      },
+      {
+        "slot": 2,
+        "source": "independent --slots 2",
+        "cases": 2,
+        "completion": "passed",
+        "GUI_full_trace_steps": 2579217,
+        "aligned_accesses": 427264
+      },
+      {
+        "slot": 3,
+        "source": "independent --slots 3",
+        "cases": 2,
+        "completion": "passed",
+        "GUI_full_trace_steps": 2593254,
+        "aligned_accesses": 429047
+      },
+      {
+        "slot": 4,
+        "source": "independent --slots 4",
+        "cases": 2,
+        "completion": "passed",
+        "GUI_full_trace_steps": 2620345,
+        "aligned_accesses": 436200
+      }
+    ],
+    "scope": "Four independently initialized owned-profile states; each complete unmodified-v4 arm precedes frozen-prototype arm. Not claimed to be one sequential camera run.",
+    "limits": "Hardware encoder count/status and received messages are declared inputs; original filter, latch, packet, GUI task bridge/FSM/controller/controls execute. Stop before viewer/receive loop."
+  },
+  "native_input_map": {
+    "preprocessor": "0x60e9fa88",
+    "message_table_selection": "0x60e9fb74 -> 0x60ea0037",
+    "message_table_value": "0x60e9fb7d -> 0x60ea00c0",
+    "native_encoder_facade": "0x607b013f",
+    "modeled_backend": "0x60771b67",
+    "admitted_backend_return": "0x607b0190",
+    "selector_by_event": {
+      "0x9031": 1,
+      "0x9032": 0
+    },
+    "latch_writer": "0x60ea3b2c",
+    "latch_reader": "0x60ea3b35",
+    "signed_latch": "0x61fc4fb8",
+    "GUI_task_filter_call": "0x60cfd53a",
+    "GUI_task_dispatch": "0x60cfd546..0x60cfd55f",
+    "message_layout": {
+      "bytes": 20,
+      "event": 0,
+      "A1_argument": 12,
+      "D1_argument": 16,
+      "D1_in_fixture": 0
+    },
+    "dispatch": "0x60d1144d",
+    "local_handler": "0x60e766ea",
+    "controller": "0x60e4d032",
+    "selection_consumer": "0x60e21efb",
+    "value_consumer": "0x60e21cae",
+    "cold_cursor_constructor": "0x60de83b7",
+    "native_index_to_cursor_value": "0x60de5bb1..0x60de5bcf",
+    "event_history_initializer": "0x60e9e82c",
+    "history_records": 120,
+    "history_record_bytes": 16,
+    "interpretation": "Cold owned state current=1, remembered=0/index=0. First native +1 synchronizes to1; next moves2. Generic -1 enum entries are corrected by original cursor-specific commit, not proof missing schema."
+  },
+  "placement": {
+    "qualified": false,
+    "prior": {
+      "qualified": false,
+      "loads": [
+        {
+          "section": 1,
+          "poison": 85,
+          "exact_copy": true,
+          "start": "0x600d7800",
+          "end": "0x60211000",
+          "source": "0x40757800"
+        },
+        {
+          "section": 1,
+          "poison": 165,
+          "exact_copy": true,
+          "start": "0x600d7800",
+          "end": "0x60211000",
+          "source": "0x40757800"
+        },
+        {
+          "section": 2,
+          "poison": 85,
+          "exact_copy": true,
+          "start": "0x60280800",
+          "end": "0x6055e800",
+          "source": "0x40900800"
+        },
+        {
+          "section": 2,
+          "poison": 165,
+          "exact_copy": true,
+          "start": "0x60280800",
+          "end": "0x6055e800",
+          "source": "0x40900800"
+        },
+        {
+          "section": 6,
+          "poison": 85,
+          "exact_copy": true,
+          "start": "0x60ba7000",
+          "end": "0x61243000",
+          "source": "0x41227000"
+        },
+        {
+          "section": 6,
+          "poison": 165,
+          "exact_copy": true,
+          "start": "0x60ba7000",
+          "end": "0x61243000",
+          "source": "0x41227000"
+        }
+      ],
+      "initializer_dispatch": [
+        {
+          "calls": 75,
+          "counterfactual": false,
+          "status": "returned"
+        },
+        {
+          "calls": 75,
+          "counterfactual": true,
+          "status": "memory_fault"
+        }
+      ],
+      "initializer_table": "0x61242884",
+      "initializer_sha256": "c77511948167c569ef808d2560a880cec30a7d2f39f7b0d3004af27555aa9b43",
+      "limits": "Opaque initializer callbacks; no exhaustive computed/DMA references, boot, cache or scheduling proof"
+    },
+    "reference_scan": {
+      "all_spans": 5,
+      "raw_relative_candidates": 5,
+      "classified_numeric_data": [
+        {
+          "site": "0x611e2a34",
+          "target": "0x61242a33",
+          "encoding": "calls",
+          "qualification": "Raw encoding match; source may be data or misaligned.",
+          "classification": "Signed -4 and type 5 data words in complete numeric-label table",
+          "table": "0x611e29b0",
+          "table_bytes": 180,
+          "table_sha256": "f345c6260678f0febf07b7c31ba6a866970b6c5b88ded9c93e027171b09dabfb",
+          "pointer_fields": [
+            "0x611e2f44",
+            "0x611e30b0"
+          ],
+          "all_15_labels_verified": true,
+          "instruction_boundary": false
+        },
+        {
+          "site": "0x611e2b28",
+          "target": "0x61242b27",
+          "encoding": "calls",
+          "qualification": "Raw encoding match; source may be data or misaligned.",
+          "classification": "Signed -4 and type 5 data words in complete numeric-label table",
+          "table": "0x611e2aa4",
+          "table_bytes": 180,
+          "table_sha256": "f345c6260678f0febf07b7c31ba6a866970b6c5b88ded9c93e027171b09dabfb",
+          "pointer_fields": [
+            "0x611e2f5c",
+            "0x611e30c8"
+          ],
+          "all_15_labels_verified": true,
+          "instruction_boundary": false
+        },
+        {
+          "site": "0x611e2bdc",
+          "target": "0x61242bdb",
+          "encoding": "calls",
+          "qualification": "Raw encoding match; source may be data or misaligned.",
+          "classification": "Signed -4 and type 5 data words in complete numeric-label table",
+          "table": "0x611e2b58",
+          "table_bytes": 180,
+          "table_sha256": "f345c6260678f0febf07b7c31ba6a866970b6c5b88ded9c93e027171b09dabfb",
+          "pointer_fields": [
+            "0x611e2f60",
+            "0x611e30cc"
+          ],
+          "all_15_labels_verified": true,
+          "instruction_boundary": false
+        },
+        {
+          "site": "0x611e2cd0",
+          "target": "0x61242ccf",
+          "encoding": "calls",
+          "qualification": "Raw encoding match; source may be data or misaligned.",
+          "classification": "Signed -4 and type 5 data words in complete numeric-label table",
+          "table": "0x611e2c4c",
+          "table_bytes": 180,
+          "table_sha256": "f345c6260678f0febf07b7c31ba6a866970b6c5b88ded9c93e027171b09dabfb",
+          "pointer_fields": [
+            "0x611e2f78"
+          ],
+          "all_15_labels_verified": true,
+          "instruction_boundary": false
+        },
+        {
+          "site": "0x611e2d84",
+          "target": "0x61242d83",
+          "encoding": "calls",
+          "qualification": "Raw encoding match; source may be data or misaligned.",
+          "classification": "Signed -4 and type 5 data words in complete numeric-label table",
+          "table": "0x611e2d00",
+          "table_bytes": 180,
+          "table_sha256": "f345c6260678f0febf07b7c31ba6a866970b6c5b88ded9c93e027171b09dabfb",
+          "pointer_fields": [
+            "0x611e2f7c"
+          ],
+          "all_15_labels_verified": true,
+          "instruction_boundary": false
+        }
+      ],
+      "unresolved": [],
+      "relocated_helper": {
+        "source_offset": "0x141c9e0",
+        "runtime": "0x47000800",
+        "bytes": 6144,
+        "sha256": "42d4de67ae7ad60b5502033d3b82a5821fb33c51305bdccfdb8c6c92ba6cf759",
+        "relative_candidates": []
+      },
+      "correction": "Previous [0] discarded all but the first range; fixed and all ranges rechecked"
+    },
+    "literal_candidates": [
+      {
+        "component": 2,
+        "alias_base": "0x40bde5f0",
+        "offset": "0x1d6ddb8",
+        "value": "0x40bde73f",
+        "first_method": "Unclassified encoded reference {'component': 2, 'alias_base': '0x40bde5f0', 'offset': '0x1d6ddb8', 'value': '0x40bde73f'}",
+        "classification": "UNRESOLVED; not admitted as free-space evidence"
+      },
+      {
+        "component": 2,
+        "alias_base": "0x612429f0",
+        "offset": "0x132a214",
+        "value": "0x61242ae7",
+        "first_method": "Unclassified encoded reference {'component': 2, 'alias_base': '0x612429f0', 'offset': '0x132a214', 'value': '0x61242ae7'}",
+        "classification": "UNRESOLVED; not admitted as free-space evidence"
+      },
+      {
+        "component": 2,
+        "alias_base": "0x418c29f0",
+        "offset": "0x1df49d4",
+        "value": "0x418c2df6",
+        "first_method": "Unclassified encoded reference {'component': 2, 'alias_base': '0x418c29f0', 'offset': '0x1df49d4', 'value': '0x418c2df6'}",
+        "classification": "UNRESOLVED; not admitted as free-space evidence"
+      }
+    ],
+    "inner_records": [
+      {
+        "outer_descriptor": 4,
+        "start": "0xd3ffe0",
+        "end": "0x1a3ffe0",
+        "sha256": "40bb4b6b3bfec3d049892b562ccd0f3507f22e1a66bce1d6ff870ffa37fd7d16",
+        "address": "0x447e0000",
+        "kind": 6,
+        "repeated_metadata_equal": true,
+        "exact_extent": true,
+        "raw_checksum_residual": "0x55f9e973",
+        "decoded_checksum_residual": "0x32e43787",
+        "parser_accepted": false,
+        "candidate_offsets": [
+          "0x132a214"
+        ],
+        "conclusion": "Unclassified OEM inner representation; no proof of MN103 operands or address-domain isolation"
+      },
+      {
+        "outer_descriptor": 7,
+        "start": "0x1c7ffe0",
+        "end": "0x27fffe0",
+        "sha256": "d61cb571bc2c2a22fe98a93fb92aad42d596af064efcb62e6255bc6819cc011e",
+        "address": "0x45720000",
+        "kind": 6,
+        "repeated_metadata_equal": true,
+        "exact_extent": true,
+        "raw_checksum_residual": "0x9e9aa78c",
+        "decoded_checksum_residual": "0xe049cc91",
+        "parser_accepted": false,
+        "candidate_offsets": [
+          "0x1d6ddb8",
+          "0x1df49d4"
+        ],
+        "conclusion": "Unclassified OEM inner representation; no proof of MN103 operands or address-domain isolation"
+      }
+    ],
+    "startup_prefix": {
+      "entry": "0x600200f9",
+      "instructions": 3,
+      "status": "memory_fault",
+      "fault": {
+        "kind": 1,
+        "pc": 1610744063,
+        "map": 1,
+        "address": 2414872316,
+        "size": 4,
+        "access": "write"
+      },
+      "complete_boot": false,
+      "candidate_intervals_unmapped": true
+    },
+    "requested_path_coverage": {
+      "startup": "Section load/reload passed; real boot prefix stops at the recorded unknown boundary; initializer callbacks are opaque",
+      "shooting": "Existing native frame/ISP parameter fixtures; no boot-to-shooting task coverage",
+      "playback": "No complete playback-task fixture; compact image builders are not renamed as playback",
+      "wifi": "Existing v4 pending/application setting fixture; no complete Wi-Fi task coverage",
+      "menus": "Bounded COLOR FSM/control fixture only; no whole-menu reachability proof"
+    },
+    "alternatives": {
+      "v4_section1_start": "0x60210940",
+      "end_exclusive": "0x60211000",
+      "total_bytes": 1728,
+      "unchanged_v4_code_bytes": 1276,
+      "mirror_bytes": 192,
+      "unoccupied_bytes": 260,
+      "prototype_additional_bytes": 1726,
+      "minimum_size_reduction": 1466,
+      "choices": [
+        "Keep v4 unchanged; need a separately qualified larger resident region",
+        "Separate v5 design: share/refactor or compress code to fit the v4-owned extent; preserve all legacy version sources and hashes, then revalidate startup/ABI/dataflow",
+        "Runtime allocation/copy is not a proven alternative: lifetime, executable ownership and reload are unknown"
+      ]
+    },
+    "selected_placement": null,
+    "stop": "No span admitted for complete v5. Static absences and limited simulations do not prove unused memory across the five workflows.",
+    "guarded_v4_workflows": {
+      "passed": true,
+      "v4_sha256": "670c4cffe6876bd7a2aa27162b53aab56a36e48ec1894ca8463d1ad568ba1f2b",
+      "H": 3,
+      "L": -2,
+      "candidate_spans_unmapped": true,
+      "pipeline": {
+        "chain": "native query parser -> pending -> modeled RTOS delivery -> native app dispatcher/registered setter -> part API -> typed COLOR publication -> mirror -> native constructor -> ISP writer",
+        "cases": [
+          {
+            "compact": null,
+            "registers_equal": true,
+            "H0": -3000,
+            "L0": -50,
+            "uploads": [
+              {
+                "bank": 0,
+                "flag": "0x8",
+                "packer_prefix": "60343b23..60343b72",
+                "writer": "0x6034667e",
+                "all_288_coefficient_bytes_match": true,
+                "H": [
+                  -3000,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "L": [
+                  -50,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "instructions": 2132
+              },
+              {
+                "bank": 1,
+                "flag": "0x40000",
+                "packer_prefix": "60343b23..60343b72",
+                "writer": "0x6034667e",
+                "all_288_coefficient_bytes_match": true,
+                "H": [
+                  -3000,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "L": [
+                  -50,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "instructions": 2139
+              }
+            ]
+          },
+          {
+            "compact": "0x60306ad5",
+            "registers_equal": true,
+            "H0": -3000,
+            "L0": -50,
+            "uploads": [
+              {
+                "bank": 0,
+                "flag": "0x8",
+                "packer_prefix": "60343b23..60343b72",
+                "writer": "0x6034667e",
+                "all_288_coefficient_bytes_match": true,
+                "H": [
+                  -3000,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "L": [
+                  -50,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "instructions": 2132
+              },
+              {
+                "bank": 1,
+                "flag": "0x40000",
+                "packer_prefix": "60343b23..60343b72",
+                "writer": "0x6034667e",
+                "all_288_coefficient_bytes_match": true,
+                "H": [
+                  -3000,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "L": [
+                  -50,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "instructions": 2139
+              }
+            ]
+          },
+          {
+            "compact": "0x6031b4de",
+            "registers_equal": true,
+            "H0": -3000,
+            "L0": -50,
+            "uploads": [
+              {
+                "bank": 0,
+                "flag": "0x8",
+                "packer_prefix": "60343b23..60343b72",
+                "writer": "0x6034667e",
+                "all_288_coefficient_bytes_match": true,
+                "H": [
+                  -3000,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "L": [
+                  -50,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "instructions": 2132
+              },
+              {
+                "bank": 1,
+                "flag": "0x40000",
+                "packer_prefix": "60343b23..60343b72",
+                "writer": "0x6034667e",
+                "all_288_coefficient_bytes_match": true,
+                "H": [
+                  -3000,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "L": [
+                  -50,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "instructions": 2139
+              }
+            ]
+          },
+          {
+            "compact": "0x0",
+            "registers_equal": true,
+            "H0": -3000,
+            "L0": -50,
+            "uploads": [
+              {
+                "bank": 0,
+                "flag": "0x8",
+                "packer_prefix": "60343b23..60343b72",
+                "writer": "0x6034667e",
+                "all_288_coefficient_bytes_match": true,
+                "H": [
+                  -3000,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "L": [
+                  -50,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "instructions": 2132
+              },
+              {
+                "bank": 1,
+                "flag": "0x40000",
+                "packer_prefix": "60343b23..60343b72",
+                "writer": "0x6034667e",
+                "all_288_coefficient_bytes_match": true,
+                "H": [
+                  -3000,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "L": [
+                  -50,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "instructions": 2139
+              }
+            ]
+          }
+        ],
+        "physical_pixels_not_emulated": true
+      },
+      "scope": "Native HTTP parsers/pending/application, four owned image contexts and two ISP banks; not complete radio/RTOS/capture/playback tasks"
+    },
+    "reused_literal_classification": {
+      "replayed_candidates": 22,
+      "source": "research/t27-gui-commit-evidence.json#/auxiliary/placement/classified_references",
+      "scope": "Existing JPEG/gzip/SquashFS/CMIO/ISA-straddler classifications revalidated on the same exact stock; full rows remain in private reproduction"
+    }
+  },
+  "dynamic_receipt_provenance": {
+    "tool_checkpoint": "4c16d63",
+    "unchanged_functions": [
+      "guarded_workflows",
+      "remove_regions"
+    ],
+    "added_static_view": "Known E142 relocated helper; five spans checked, zero candidates"
+  },
+  "synthetic_tests": {
+    "existing_build_protection": 18,
+    "scanner_and_unmapped_alias": 3,
+    "passed": true
+  },
+  "legacy": {
+    "patch_trees_unchanged_from_main": [
+      "hsl-min",
+      "hsl-profiles",
+      "hsl-profiles-preview",
+      "hsl-recipes"
+    ],
+    "existing_prototype_manifest_unchanged": true,
+    "frozen_source_pins_verified": 8,
+    "new_release_hashes_computed": false
+  },
+  "limitations": [
+    "No full boot, ordinary playback, whole shooting/radio/menu-task proof; no assertion unused forever",
+    "No physical direction, cache/RTOS scheduling, rendering, wheel geometry, actual GUI stack capacity or durable NVS verification",
+    "Three inner-record byte matches are unresolved, not proven live references or proven harmless coincidences"
+  ],
+  "source_sha256": {
+    "tools/ep7_t27_dial_probe.py": "d0115eb4954bd20475bb5dbeed39e6ede4bd764c9b44ea0db7b5ad0ea51af110",
+    "tools/ep7_t27_placement.py": "cda09392ecf83497794f4fcf179a7315cc7342e0efb4b7d2595cd1e8702dbbf4",
+    "tools/ep7_t27_placement_review.py": "342b54564245e3d2b2e085843e33edb70ae93a8470eb5ea889bb291cec503409",
+    "tools/ep7_t27_editor_fixture.py": "9fa8b94200a91e0b445c25fc223a9f9e3b06700a927f288ad8d380273495b931",
+    "tests/test_ep7_t27_placement.py": "21b6b3fd64fefcdd04e5aa5413c2110cb6ae104cad97d0719ee3958f7a275335"
+  }
+}

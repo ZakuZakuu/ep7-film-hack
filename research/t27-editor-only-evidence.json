@@ -1,0 +1,1187 @@
+{
+  "scope": "T27 / Issue #70 / existing PR #79; owner editor-only v5 revision; no EP71 recipe protocol in proposed v5; independent v4 frozen",
+  "baseline_main": "e011e054f519eafc85db9868010928381fd2d82a",
+  "prior_PR_checkpoint": "44db02857e3764f8420428e1de058758345b547a",
+  "firmware": {
+    "model": "E-P7",
+    "version": "1.1",
+    "bytes": 111017984,
+    "sha256": "9d1610124ad98f6edae4540182205f06c9c703d9033ef0c4f19847193f95eaeb",
+    "decoded_main_sha256": "5dd9af164b4590c7e82f6905c919b3cc450bb58f2d5742ab2a0e3a4eb2e26190",
+    "exact_OE_roundtrip": true,
+    "private_inputs_outputs_only": true
+  },
+  "reference": {
+    "repository": "https://github.com/fishcu/oly_fw_analysis",
+    "commit": "539fcf1fa9eda5fdef8ede4deeab94a4691d94c3",
+    "tracked_files_clean": true,
+    "use": "Read/run reference only; no upstream implementation or document text copied",
+    "documents": [
+      "docs/color/pen-f/EDITOR.md",
+      "docs/color/pen-f/EDIT_AND_CAPTURE_MAP.md",
+      "docs/color/pen-f/SETTINGS_STORAGE.md",
+      "docs/safety/CODE_SPACE.md",
+      "docs/safety/VALIDATION.md",
+      "docs/tooling/EMULATOR.md"
+    ]
+  },
+  "own_source_sha256": {
+    "tools/ep7_t27_editor_only_source.py": "f003481c0b61e532cf9e85bc00b01fd7a7f5574722009824546269077a248778",
+    "tools/ep7_t27_editor_only_study.py": "9ccc77373f4d727ade18628c6416bca3432a0ba052296933b19e41b008e905b6",
+    "tools/ep7_t27_editor_only_probe.py": "95d312e9ef2000fe570fc603b54c7e3d4ba0679d325085ea83ced512dfd1fbe9",
+    "tests/test_ep7_t27_editor_only.py": "a72297e63e982975432d365dbd5558f42b6ef8d865da4f820155d80098755227"
+  },
+  "frozen_patch_files_sha256": {
+    "patches/hsl-editor/e-p7/README.md": "449997341dd44c9007843fef347944fc49c350e465d90245e178e2c7d4e61653",
+    "patches/hsl-editor/e-p7/api.s": "e01b9c70d142bdf11760d1d08084545f60757bf42fb86642e367cd4611089e8a",
+    "patches/hsl-editor/e-p7/build.py": "905877b0a82d483f8c1bf78bace60ffe9e06c155028307ecdff0d07c56ed93b0",
+    "patches/hsl-editor/e-p7/editor.s": "a1fab66ae40f11bcd5ffc493ce2eb0e2cbe064ad89c8ec638772c60be8dde344",
+    "patches/hsl-editor/e-p7/patch.json": "755fb39fd9f5d2e508a614ba0d3190f91002f1e4fd258c4aa8e9dfeb507a4cf6",
+    "patches/hsl-editor/e-p7/symbols.json": "662fbe6e67ee35b064ad304243c18def769222aa17624ed62cc0ab3c0189fc58",
+    "patches/hsl-min/e-p7/README.md": "995bb74f2c38f5fa08935981586a1ada6c9d20ac893cb5cffc38b1f0b3d352f5",
+    "patches/hsl-min/e-p7/build.py": "b0663f5757cdc81e5c549ff305d9df0fa4aa81d5dce3225f272f1f25a14458dd",
+    "patches/hsl-min/e-p7/hook.s": "7b142632b85c621e8c470b7eb3d464b48448e6be397372bac479c639df562e3d",
+    "patches/hsl-min/e-p7/patch.json": "51ac03c81f55637200d8c341a3d50b36744913bf2fe9d24a5b7c6b229c960999",
+    "patches/hsl-profiles/e-p7/README.md": "4a4aabb38dda0c44e72dc39ee5107a61dc09e3fc0aaa34fa0749421c1e07ec45",
+    "patches/hsl-profiles/e-p7/build.py": "f8ba943373dd2a52b582a34bea579b0fcf7e3bf8e9e40bc33d11a884f262868a",
+    "patches/hsl-profiles/e-p7/hook.s": "8a3907a14d3f1887879d6bb2a68ea1c4f66943116ba2885004f79cf1423de926",
+    "patches/hsl-profiles/e-p7/patch.json": "a6e96eec715d6a3857bf316e1e04c7f4cc1d9f02a640e90ffda6a613600cd17e",
+    "patches/hsl-profiles-preview/e-p7/README.md": "7596cdfeb5c8445c1031f42f73a552b900d5b2c9f2182c40ec5416a8fed69051",
+    "patches/hsl-profiles-preview/e-p7/build.py": "5f32a038f09caf933a0bd5a8dda45d55a36fb17e1d07b95cf243c2f70ab71cce",
+    "patches/hsl-profiles-preview/e-p7/hook.s": "ad1605165f2f3ed6349cbb8c486bca0a2ea34c0dc0bf1ab0cd6770e8b8e61e06",
+    "patches/hsl-profiles-preview/e-p7/patch.json": "59db2758e6414ffeba6182e87b87e373dd01ac1368ec921332ce627d0e815d66",
+    "patches/hsl-recipes/e-p7/README.md": "76ca8cefc01993b23232faed8206e6303ceeda50dd04d69727e986c24425c9f5",
+    "patches/hsl-recipes/e-p7/build.py": "4c256d11894427c71919226ebe991fa21b2955d5169924579b039a32958f07a0",
+    "patches/hsl-recipes/e-p7/hook.s": "7006dea725075c4e7bc6d0825ddf48dc34a543ff26577452be2f480593c6a719",
+    "patches/hsl-recipes/e-p7/patch.json": "9588c8081875873939e2366ccdf32b9152b7ab5644b3aca5c102fa43f4127b58",
+    "patches/hsl-recipes/e-p7/symbols.json": "e6e584f29fbdcee568f68b10224cf595d1b61f10e03a6d05bb9744ac7f4270f7"
+  },
+  "split_and_size": {
+    "versions": {
+      "gas/as-new": "GNU assembler (GNU Binutils) 2.45",
+      "ld/ld-new": "GNU ld (GNU Binutils) 2.45",
+      "binutils/objcopy": "GNU objcopy (GNU Binutils) 2.45",
+      "binutils/nm-new": "GNU nm (GNU Binutils) 2.45"
+    },
+    "old_v4_groups": [
+      {
+        "function": "_start",
+        "start": "0x60210940",
+        "bytes": 327
+      },
+      {
+        "function": "wifi_write",
+        "start": "0x60210a87",
+        "bytes": 105
+      },
+      {
+        "function": "validate",
+        "start": "0x60210af0",
+        "bytes": 110
+      },
+      {
+        "function": "cell_index",
+        "start": "0x60210b5e",
+        "bytes": 26
+      },
+      {
+        "function": "app_edit",
+        "start": "0x60210b78",
+        "bytes": 176
+      },
+      {
+        "function": "decode_cell",
+        "start": "0x60210c28",
+        "bytes": 53
+      },
+      {
+        "function": "publish",
+        "start": "0x60210c5d",
+        "bytes": 150
+      },
+      {
+        "function": "wifi_read",
+        "start": "0x60210cf3",
+        "bytes": 97
+      },
+      {
+        "function": "lightness_steps",
+        "start": "0x60210d54",
+        "bytes": 30
+      },
+      {
+        "function": "id_parse",
+        "start": "0x60210d72",
+        "bytes": 39
+      },
+      {
+        "function": "value_parse",
+        "start": "0x60210d99",
+        "bytes": 81
+      },
+      {
+        "function": "canonical_hex",
+        "start": "0x60210dea",
+        "bytes": 50
+      },
+      {
+        "function": "hue_steps",
+        "start": "0x60210e1c",
+        "bytes": 32
+      }
+    ],
+    "split": {
+      "A_unchanged_functions": 618,
+      "B_only_functions": 372,
+      "shared_app_and_validation": 286,
+      "mirror": 192
+    },
+    "layouts": [
+      {
+        "layout": "lab",
+        "relax": false,
+        "sections": {
+          "core": 804,
+          "api": 308,
+          "apply": 50,
+          "lifecycle": 48,
+          "ui6": 1144,
+          "state": 16
+        },
+        "raw_bytes": 2370,
+        "padded_span": null,
+        "total_with_mirror": 2562,
+        "capacity": 1728,
+        "deficit": 834,
+        "fits": false,
+        "placement_qualified": false,
+        "limit": "Lab mapping is prior simulation only; adjacent link ignores fixed mirror/guards and is unexecuted",
+        "A_functions": [
+          {
+            "function": "_start",
+            "start": "0x60210940",
+            "bytes": 327
+          },
+          {
+            "function": "cell_index",
+            "start": "0x60210a87",
+            "bytes": 26
+          },
+          {
+            "function": "a_apply",
+            "start": "0x60210aa1",
+            "bytes": 144
+          },
+          {
+            "function": "validate_gui",
+            "start": "0x60210b31",
+            "bytes": 43
+          },
+          {
+            "function": "decode_cell",
+            "start": "0x60210b5c",
+            "bytes": 53
+          },
+          {
+            "function": "publish",
+            "start": "0x60210b91",
+            "bytes": 151
+          },
+          {
+            "function": "lightness_steps",
+            "start": "0x60210c28",
+            "bytes": 30
+          },
+          {
+            "function": "hue_steps",
+            "start": "0x60210c46",
+            "bytes": 30
+          }
+        ],
+        "persistent_decoder_bytes_identical": true
+      },
+      {
+        "layout": "adjacent",
+        "relax": false,
+        "sections": {
+          "core": 804,
+          "api": 308,
+          "apply": 50,
+          "lifecycle": 48,
+          "ui6": 1144,
+          "state": 16
+        },
+        "raw_bytes": 2370,
+        "padded_span": 2372,
+        "total_with_mirror": 2564,
+        "capacity": 1728,
+        "deficit": 836,
+        "fits": false,
+        "placement_qualified": false,
+        "limit": "Lab mapping is prior simulation only; adjacent link ignores fixed mirror/guards and is unexecuted"
+      },
+      {
+        "layout": "adjacent",
+        "relax": true,
+        "sections": {
+          "core": 794,
+          "api": 300,
+          "apply": 46,
+          "lifecycle": 48,
+          "ui6": 1125,
+          "state": 16
+        },
+        "raw_bytes": 2329,
+        "padded_span": 2336,
+        "total_with_mirror": 2528,
+        "capacity": 1728,
+        "deficit": 800,
+        "fits": false,
+        "placement_qualified": false,
+        "limit": "Lab mapping is prior simulation only; adjacent link ignores fixed mirror/guards and is unexecuted"
+      }
+    ],
+    "optional_features": {
+      "exclusive_gross_bytes": {
+        "ALL": 125,
+        "held_OK_stub": 9,
+        "held_OK_scope": 15,
+        "held_OK_table_entry": 4
+      },
+      "gross_total": 153,
+      "implemented": false,
+      "net_saved_bytes": null,
+      "deficit_even_if_gross_removed_free": 681,
+      "limitation": "Disabling INFO/ALL and preventing native S reset need protective code; no safe net saving proved"
+    },
+    "release_manifest_generated": false,
+    "installer_created": false,
+    "storage_format": "0xe741CCVV; same 48 part-1 cells; same native typed publication",
+    "removed_hooks": [
+      "0x60bd2a60",
+      "0x60bd2a8f",
+      "0x60bd2aba",
+      "0x60bd2785",
+      "0x60888b35"
+    ],
+    "retained_hooks": [
+      "0x603b14f3",
+      "0x602cbcb5"
+    ],
+    "required_removal": "All network parser/read/write and application marker hooks revert to exact stock bytes"
+  },
+  "accounting": {
+    "old_code": 1276,
+    "original_region": {
+      "start": "0x60210940",
+      "end_exclusive": "0x60211000",
+      "bytes": 1728
+    },
+    "A_retained_original_function_groups": 618,
+    "B_exclusive": 372,
+    "old_shared_app_and_validation": 286,
+    "new_A_local_apply": 144,
+    "new_A_GUI_validation": 43,
+    "relocated_retained_groups_including_padding": 617,
+    "new_A_total": 804,
+    "net_old_code_reduction": 472,
+    "mirror": 192,
+    "new_editor_available_before_padding": 732,
+    "new_editor_sections": {
+      "API_dispatch": 200,
+      "GUI_commit_adapter": 108,
+      "axis_apply": 50,
+      "lifecycle": 48,
+      "UI": 1144,
+      "state": 16
+    },
+    "new_editor_total": 1566,
+    "new_editor_old_compact_total": 1558,
+    "reason_8_more_bytes": "Direct published-mirror axis reader replaces old Wi-Fi read helper; no active-bank staging read",
+    "required_raw_total_with_mirror": 2562,
+    "raw_deficit": 834,
+    "qualifier": "Raw bytes are a lower occupancy estimate for this implementation, not a globally optimal lower bound; fixed mirror and guard placement not solved"
+  },
+  "native_reuse_review": [
+    {
+      "facility": "Enumeration/list cache constructor",
+      "E_P7_entry": "0x60de3670",
+      "status": "Already called by own prototype",
+      "limit": "Native S has 11 values; H/L require 15 and guarded temporary properties. Calling stock constructor does not remove property adapters."
+    },
+    {
+      "facility": "Parent input/reset/INFO/default loop",
+      "E_P7_entry": "0x60dd5250",
+      "status": "Already called by own prototype",
+      "limit": "Deletion-axis routing, active-axis bounds and preventing H/L reset from writing S still require adapters."
+    },
+    {
+      "facility": "Input preprocessing and dial route",
+      "E_P7_entry": "0x60e9fa88",
+      "status": "Native original route already reused by historical v4/compact dial fixtures",
+      "limit": "New editor-only full GUI has not been requalified after the capacity failure."
+    },
+    {
+      "facility": "Numeric value producer / actual text setter",
+      "E_P7_entries": [
+        "0x60e27289",
+        "0x60d4c9df"
+      ],
+      "status": "Native producer and setter already reused",
+      "limit": "Axis caption remains own glue; drawing primitives are explicit models; color-wheel still S."
+    },
+    {
+      "facility": "Published mirror reader, slot index and storage codec",
+      "status": "Shared A/core functions plus direct mirror reader",
+      "limit": "Do not substitute staging ACTIVE cells for the publication mirror or bypass native normal-edit lifecycle."
+    }
+  ],
+  "native_reuse_provenance": [
+    "research/t27-in-camera-editor-evidence.json",
+    "research/t27-gui-commit-evidence.json",
+    "research/t27-blockers-followup-evidence.json",
+    "research/t27-v4-space-evidence.json",
+    "tools/ep7_t27_dial_probe.py",
+    "tools/ep7_t27_editor_aux_probe.py",
+    "patches/hsl-editor/e-p7/editor.s",
+    "patches/hsl-editor/e-p7/symbols.json"
+  ],
+  "native_A_checks": {
+    "passed": true,
+    "core_only": true,
+    "code_sha256": "2e8382175b4347639072a48016c0ef8f16a3ab831881aa82ff9d35168a7dcb17",
+    "installation_qualified": false,
+    "installer_created": false,
+    "camera_connected": false,
+    "A_edits": [
+      {
+        "address": "0x60210940",
+        "length": 804,
+        "replacement_sha256": "fe6638e2895e5a4ca01536e2f9e5d2df25fc21c904e2acb22a88115f30d0700e"
+      },
+      {
+        "address": "0x60210ec0",
+        "length": 192,
+        "replacement_sha256": "5d89f056865052bcb89c910d2d62872e029fb273c3db03f8968a52a41593c1b5"
+      },
+      {
+        "address": "0x603b14f3",
+        "length": 5,
+        "replacement_sha256": "8f74c45ea6c0554212b956ae41645186eb97bb1f1ec5cba12b9a6fe3f16986bc"
+      },
+      {
+        "address": "0x602cbcb5",
+        "length": 7,
+        "replacement_sha256": "5507373e3910969839264a6fca2d90fc87bd47644ca146e761946c19f68080ba"
+      }
+    ],
+    "interop": {
+      "cases": [
+        {
+          "key": 927,
+          "v4_word": "0xe7411ce3",
+          "A_word": "0xe7418679",
+          "pair_after_A": [
+            -7,
+            7
+          ],
+          "v4_readback": [
+            -7,
+            7
+          ],
+          "S_unchanged": true,
+          "native_part_normal_edit_publication": true
+        },
+        {
+          "key": 938,
+          "v4_word": "0xe7411ce3",
+          "A_word": "0xe7418679",
+          "pair_after_A": [
+            -7,
+            7
+          ],
+          "v4_readback": [
+            -7,
+            7
+          ],
+          "S_unchanged": true,
+          "native_part_normal_edit_publication": true
+        },
+        {
+          "key": 939,
+          "v4_word": "0xe7411ce3",
+          "A_word": "0xe7418679",
+          "pair_after_A": [
+            -7,
+            7
+          ],
+          "v4_readback": [
+            -7,
+            7
+          ],
+          "S_unchanged": true,
+          "native_part_normal_edit_publication": true
+        },
+        {
+          "key": 962,
+          "v4_word": "0xe7411ce3",
+          "A_word": "0xe7418679",
+          "pair_after_A": [
+            -7,
+            7
+          ],
+          "v4_readback": [
+            -7,
+            7
+          ],
+          "S_unchanged": true,
+          "native_part_normal_edit_publication": true
+        },
+        {
+          "key": 1655,
+          "v4_word": "0xe7411ce3",
+          "A_word": "0xe7418679",
+          "pair_after_A": [
+            -7,
+            7
+          ],
+          "v4_readback": [
+            -7,
+            7
+          ],
+          "S_unchanged": true,
+          "native_part_normal_edit_publication": true
+        },
+        {
+          "key": 1666,
+          "v4_word": "0xe7411ce3",
+          "A_word": "0xe7418679",
+          "pair_after_A": [
+            -7,
+            7
+          ],
+          "v4_readback": [
+            -7,
+            7
+          ],
+          "S_unchanged": true,
+          "native_part_normal_edit_publication": true
+        }
+      ],
+      "invalid": [
+        {
+          "key": 926,
+          "axis": "H",
+          "value": 1,
+          "no_write": true
+        },
+        {
+          "key": 927,
+          "axis": "H",
+          "value": 8,
+          "no_write": true
+        },
+        {
+          "key": 1655,
+          "axis": "L",
+          "value": -8,
+          "no_write": true
+        },
+        {
+          "key": 1667,
+          "axis": "L",
+          "value": 0,
+          "no_write": true
+        }
+      ],
+      "inhibit_no_write": true,
+      "limitation": "Same owned bank RAM across native programs, NOT a physical cross-version firmware/reboot test"
+    },
+    "http": {
+      "set_mcon": [
+        {
+          "key": 927,
+          "value": "0x3",
+          "same_status_events_Mode": true
+        },
+        {
+          "key": 1655,
+          "value": "0xfffffffb",
+          "same_status_events_Mode": true
+        },
+        {
+          "key": 927,
+          "value": "0x45510003",
+          "same_status_events_Mode": true
+        },
+        {
+          "key": 927,
+          "value": "0x4552fffe",
+          "same_status_events_Mode": true
+        }
+      ],
+      "get_mcon": [
+        {
+          "key": "0x39f",
+          "value": "0x0",
+          "stock_equal": true
+        },
+        {
+          "key": "0x677",
+          "value": "0x0",
+          "stock_equal": true
+        },
+        {
+          "key": "0xffff",
+          "value": "0x0",
+          "stock_equal": true
+        },
+        {
+          "key": "0x839f",
+          "value": "0x0",
+          "stock_equal": true
+        },
+        {
+          "key": "0xc39f",
+          "value": "0x0",
+          "stock_equal": true
+        }
+      ],
+      "stock_capability": true,
+      "exact_stock_network_patch_sites": [
+        {
+          "address": "0x60bd2a60",
+          "bytes": 7,
+          "stock_sha256": "62e43b11c76ea064f22dacfe70d161a6a135e58f8b433222655fc5f613411d34",
+          "exact_stock": true
+        },
+        {
+          "address": "0x60bd2a8f",
+          "bytes": 7,
+          "stock_sha256": "ad9428bd1442e5143adcfab9943b389c7573159cc234f9d621d3ad5419b6bcb9",
+          "exact_stock": true
+        },
+        {
+          "address": "0x60bd2aba",
+          "bytes": 10,
+          "stock_sha256": "404c3e28bbd288bb407ecc3a7facf3f077c487d8b06ded88b3f519f9e17fde2b",
+          "exact_stock": true
+        },
+        {
+          "address": "0x60bd2785",
+          "bytes": 7,
+          "stock_sha256": "2d5bde4b4b36dd482821514dd8be1a92461bf18229f04c9f800636c704a49eae",
+          "exact_stock": true
+        },
+        {
+          "address": "0x60888b35",
+          "bytes": 7,
+          "stock_sha256": "2e91da4c8053a11a8cf0236727965fea72ff246ede1271527182148141c1e514",
+          "exact_stock": true
+        }
+      ],
+      "limitation": "Finite native HTTP parser/response fixtures; no radio connection"
+    },
+    "image_matrix": [
+      {
+        "profile": 1,
+        "eligible": true,
+        "fixture": {
+          "compact": null
+        },
+        "ABI_equal": true,
+        "only_expected_HL": true,
+        "inaccessible_mirror_when_excluded": false
+      },
+      {
+        "profile": 1,
+        "eligible": true,
+        "fixture": {
+          "compact": 1613785813
+        },
+        "ABI_equal": true,
+        "only_expected_HL": true,
+        "inaccessible_mirror_when_excluded": false
+      },
+      {
+        "profile": 1,
+        "eligible": true,
+        "fixture": {
+          "compact": 1613870302
+        },
+        "ABI_equal": true,
+        "only_expected_HL": true,
+        "inaccessible_mirror_when_excluded": false
+      },
+      {
+        "profile": 1,
+        "eligible": true,
+        "fixture": {
+          "compact": 0
+        },
+        "ABI_equal": true,
+        "only_expected_HL": true,
+        "inaccessible_mirror_when_excluded": false
+      },
+      {
+        "profile": 2,
+        "eligible": true,
+        "fixture": {
+          "compact": null
+        },
+        "ABI_equal": true,
+        "only_expected_HL": true,
+        "inaccessible_mirror_when_excluded": false
+      },
+      {
+        "profile": 2,
+        "eligible": true,
+        "fixture": {
+          "compact": 1613785813
+        },
+        "ABI_equal": true,
+        "only_expected_HL": true,
+        "inaccessible_mirror_when_excluded": false
+      },
+      {
+        "profile": 2,
+        "eligible": true,
+        "fixture": {
+          "compact": 1613870302
+        },
+        "ABI_equal": true,
+        "only_expected_HL": true,
+        "inaccessible_mirror_when_excluded": false
+      },
+      {
+        "profile": 2,
+        "eligible": true,
+        "fixture": {
+          "compact": 0
+        },
+        "ABI_equal": true,
+        "only_expected_HL": true,
+        "inaccessible_mirror_when_excluded": false
+      },
+      {
+        "profile": 3,
+        "eligible": true,
+        "fixture": {
+          "compact": null
+        },
+        "ABI_equal": true,
+        "only_expected_HL": true,
+        "inaccessible_mirror_when_excluded": false
+      },
+      {
+        "profile": 3,
+        "eligible": true,
+        "fixture": {
+          "compact": 1613785813
+        },
+        "ABI_equal": true,
+        "only_expected_HL": true,
+        "inaccessible_mirror_when_excluded": false
+      },
+      {
+        "profile": 3,
+        "eligible": true,
+        "fixture": {
+          "compact": 1613870302
+        },
+        "ABI_equal": true,
+        "only_expected_HL": true,
+        "inaccessible_mirror_when_excluded": false
+      },
+      {
+        "profile": 3,
+        "eligible": true,
+        "fixture": {
+          "compact": 0
+        },
+        "ABI_equal": true,
+        "only_expected_HL": true,
+        "inaccessible_mirror_when_excluded": false
+      },
+      {
+        "profile": 4,
+        "eligible": true,
+        "fixture": {
+          "compact": null
+        },
+        "ABI_equal": true,
+        "only_expected_HL": true,
+        "inaccessible_mirror_when_excluded": false
+      },
+      {
+        "profile": 4,
+        "eligible": true,
+        "fixture": {
+          "compact": 1613785813
+        },
+        "ABI_equal": true,
+        "only_expected_HL": true,
+        "inaccessible_mirror_when_excluded": false
+      },
+      {
+        "profile": 4,
+        "eligible": true,
+        "fixture": {
+          "compact": 1613870302
+        },
+        "ABI_equal": true,
+        "only_expected_HL": true,
+        "inaccessible_mirror_when_excluded": false
+      },
+      {
+        "profile": 4,
+        "eligible": true,
+        "fixture": {
+          "compact": 0
+        },
+        "ABI_equal": true,
+        "only_expected_HL": true,
+        "inaccessible_mirror_when_excluded": false
+      },
+      {
+        "profile": 3,
+        "eligible": true,
+        "fixture": {
+          "compact": 1613785813,
+          "record": 0
+        },
+        "ABI_equal": true,
+        "only_expected_HL": true,
+        "inaccessible_mirror_when_excluded": false
+      },
+      {
+        "profile": 3,
+        "eligible": true,
+        "fixture": {
+          "compact": 1613785813,
+          "record": 1
+        },
+        "ABI_equal": true,
+        "only_expected_HL": true,
+        "inaccessible_mirror_when_excluded": false
+      },
+      {
+        "profile": 3,
+        "eligible": true,
+        "fixture": {
+          "compact": 1613785813,
+          "record": 2
+        },
+        "ABI_equal": true,
+        "only_expected_HL": true,
+        "inaccessible_mirror_when_excluded": false
+      },
+      {
+        "profile": 3,
+        "eligible": true,
+        "fixture": {
+          "compact": 1613785813,
+          "record": 3
+        },
+        "ABI_equal": true,
+        "only_expected_HL": true,
+        "inaccessible_mirror_when_excluded": false
+      },
+      {
+        "profile": 3,
+        "eligible": true,
+        "fixture": {
+          "compact": 1613785813,
+          "record": 4
+        },
+        "ABI_equal": true,
+        "only_expected_HL": true,
+        "inaccessible_mirror_when_excluded": false
+      },
+      {
+        "profile": 3,
+        "eligible": true,
+        "fixture": {
+          "compact": 1613785813,
+          "record": 5
+        },
+        "ABI_equal": true,
+        "only_expected_HL": true,
+        "inaccessible_mirror_when_excluded": false
+      },
+      {
+        "profile": 3,
+        "eligible": true,
+        "fixture": {
+          "compact": 1613785813,
+          "record": 6
+        },
+        "ABI_equal": true,
+        "only_expected_HL": true,
+        "inaccessible_mirror_when_excluded": false
+      },
+      {
+        "profile": 3,
+        "eligible": true,
+        "fixture": {
+          "compact": 1613785813,
+          "record": 7
+        },
+        "ABI_equal": true,
+        "only_expected_HL": true,
+        "inaccessible_mirror_when_excluded": false
+      },
+      {
+        "profile": 3,
+        "eligible": true,
+        "fixture": {
+          "compact": 1613785813,
+          "record": 8
+        },
+        "ABI_equal": true,
+        "only_expected_HL": true,
+        "inaccessible_mirror_when_excluded": false
+      },
+      {
+        "profile": 3,
+        "eligible": true,
+        "fixture": {
+          "compact": 1613785813,
+          "record": 9
+        },
+        "ABI_equal": true,
+        "only_expected_HL": true,
+        "inaccessible_mirror_when_excluded": false
+      },
+      {
+        "profile": 3,
+        "eligible": true,
+        "fixture": {
+          "compact": 1613785813,
+          "record": 10
+        },
+        "ABI_equal": true,
+        "only_expected_HL": true,
+        "inaccessible_mirror_when_excluded": false
+      },
+      {
+        "profile": 3,
+        "eligible": true,
+        "fixture": {
+          "compact": 1613785813,
+          "record": 11
+        },
+        "ABI_equal": true,
+        "only_expected_HL": true,
+        "inaccessible_mirror_when_excluded": false
+      },
+      {
+        "profile": 3,
+        "eligible": true,
+        "fixture": {
+          "compact": 1613785813,
+          "record": 12
+        },
+        "ABI_equal": true,
+        "only_expected_HL": true,
+        "inaccessible_mirror_when_excluded": false
+      },
+      {
+        "profile": 3,
+        "eligible": true,
+        "fixture": {
+          "compact": 1613785813,
+          "record": 13
+        },
+        "ABI_equal": true,
+        "only_expected_HL": true,
+        "inaccessible_mirror_when_excluded": false
+      },
+      {
+        "profile": 3,
+        "eligible": true,
+        "fixture": {
+          "compact": 1613785813,
+          "record": 14
+        },
+        "ABI_equal": true,
+        "only_expected_HL": true,
+        "inaccessible_mirror_when_excluded": false
+      },
+      {
+        "profile": 3,
+        "eligible": true,
+        "fixture": {
+          "compact": 1613785813,
+          "record": 15
+        },
+        "ABI_equal": true,
+        "only_expected_HL": true,
+        "inaccessible_mirror_when_excluded": false
+      },
+      {
+        "profile": 2,
+        "eligible": true,
+        "fixture": {
+          "callback": 1614714417
+        },
+        "ABI_equal": true,
+        "only_expected_HL": true,
+        "inaccessible_mirror_when_excluded": false
+      },
+      {
+        "profile": 1,
+        "eligible": false,
+        "fixture": {
+          "key": 2
+        },
+        "ABI_equal": true,
+        "only_expected_HL": true,
+        "inaccessible_mirror_when_excluded": true
+      },
+      {
+        "profile": 1,
+        "eligible": false,
+        "fixture": {
+          "key": 12
+        },
+        "ABI_equal": true,
+        "only_expected_HL": true,
+        "inaccessible_mirror_when_excluded": true
+      },
+      {
+        "profile": 1,
+        "eligible": false,
+        "fixture": {
+          "special": true
+        },
+        "ABI_equal": true,
+        "only_expected_HL": true,
+        "inaccessible_mirror_when_excluded": true
+      },
+      {
+        "profile": 1,
+        "eligible": false,
+        "fixture": {
+          "custom": true
+        },
+        "ABI_equal": true,
+        "only_expected_HL": true,
+        "inaccessible_mirror_when_excluded": true
+      },
+      {
+        "profile": 1,
+        "eligible": false,
+        "fixture": {
+          "callback": 305419896
+        },
+        "ABI_equal": true,
+        "only_expected_HL": true,
+        "inaccessible_mirror_when_excluded": true
+      },
+      {
+        "profile": 1,
+        "eligible": false,
+        "fixture": {
+          "record": -1
+        },
+        "ABI_equal": true,
+        "only_expected_HL": true,
+        "inaccessible_mirror_when_excluded": true
+      },
+      {
+        "profile": 1,
+        "eligible": false,
+        "fixture": {
+          "compact": 1613785813,
+          "current": 0
+        },
+        "ABI_equal": true,
+        "only_expected_HL": true,
+        "inaccessible_mirror_when_excluded": true
+      },
+      {
+        "profile": 1,
+        "eligible": false,
+        "fixture": {
+          "compact": 1613785813,
+          "current": 5
+        },
+        "ABI_equal": true,
+        "only_expected_HL": true,
+        "inaccessible_mirror_when_excluded": true
+      },
+      {
+        "profile": 1,
+        "eligible": false,
+        "fixture": {
+          "compact": 1613785813,
+          "current": 255
+        },
+        "ABI_equal": true,
+        "only_expected_HL": true,
+        "inaccessible_mirror_when_excluded": true
+      }
+    ],
+    "boot_and_staging": {
+      "native_boot_refresh_cells": 48,
+      "boot_loop": "602cc540 ->602cbc74 ->602cbcb5",
+      "staging_does_not_publish": true,
+      "invalid_cells_neutral": 5,
+      "NVS_reload_not_emulated": true
+    }
+  },
+  "storage_compatibility": {
+    "word_format": "0xe741CCVV",
+    "VV": "H signed 4-bit nibble in low 4 bits; L signed 4-bit nibble in high 4 bits",
+    "CC": "bitwise complement of VV",
+    "nibble_range": "-7..7; invalid marker/complement/range yields neutral",
+    "part": 1,
+    "keys": [
+      [
+        927,
+        962
+      ],
+      [
+        1655,
+        1666
+      ]
+    ],
+    "count": 48,
+    "mirror": "0x60210ec0, 48 naturally aligned pairs of signed halfwords",
+    "decoder_53_bytes_identical_to_v4": true,
+    "normal_setter_and_publication_retained": true,
+    "native_cross_program_cases": 6,
+    "scope": "Preserved owned Mode RAM bank across v4 -> A -> v4, same key/encoding/interpretation. No physical flashing, flash erase policy, NVS restart or power-loss persistence verified."
+  },
+  "legacy_hash_locks": {
+    "t20": {
+      "input_sha256": "9d1610124ad98f6edae4540182205f06c9c703d9033ef0c4f19847193f95eaeb",
+      "prospective_output_sha256": "d0fa93e752ec2680910dfabfef50cfc2ffb510aa8c8ec49cf6177868037bec8e",
+      "bytes": 111017984,
+      "decoded_output_sha256": "43f866197867bc699cbe21ea011059fd4742542dce3f421a83b64673393a6aa0",
+      "unchanged_components": 4,
+      "hook_source_sha256": "7b142632b85c621e8c470b7eb3d464b48448e6be397372bac479c639df562e3d",
+      "manifest_sha256": "51ac03c81f55637200d8c341a3d50b36744913bf2fe9d24a5b7c6b229c960999",
+      "tool_versions": {
+        "assembler": "GNU assembler (GNU Binutils) 2.45",
+        "linker": "GNU ld (GNU Binutils) 2.45",
+        "objcopy": "GNU objcopy (GNU Binutils) 2.45"
+      },
+      "verify_only": true,
+      "package_files_created": false
+    },
+    "v2": {
+      "input_sha256": "9d1610124ad98f6edae4540182205f06c9c703d9033ef0c4f19847193f95eaeb",
+      "prospective_output_sha256": "b1ad25019722af31e26bdf29aabaa1867320bea64c9bb2c0acc06cc5aadc4375",
+      "bytes": 111017984,
+      "decoded_output_sha256": "ce249b20d7010706fbe0fb26a18015b6729e36a14d2337614f2ac055201f02de",
+      "unchanged_components": 4,
+      "hook_source_sha256": "8a3907a14d3f1887879d6bb2a68ea1c4f66943116ba2885004f79cf1423de926",
+      "manifest_sha256": "a6e96eec715d6a3857bf316e1e04c7f4cc1d9f02a640e90ffda6a613600cd17e",
+      "tool_versions": {
+        "assembler": "GNU assembler (GNU Binutils) 2.45",
+        "linker": "GNU ld (GNU Binutils) 2.45",
+        "objcopy": "GNU objcopy (GNU Binutils) 2.45",
+        "objdump": "GNU objdump (GNU Binutils) 2.45"
+      },
+      "verify_only": true,
+      "package_files_created": false
+    },
+    "v3": {
+      "input_sha256": "9d1610124ad98f6edae4540182205f06c9c703d9033ef0c4f19847193f95eaeb",
+      "prospective_output_sha256": "1916c0cffd83dc0b83cdf34477f76943f37d79da551bc847061eb7d3cd796c91",
+      "bytes": 111017984,
+      "decoded_output_sha256": "8f806925ff9d7e304ca0f632cb022443411fb23b7cc4bfc74eaf2a6d9281044e",
+      "unchanged_components": 4,
+      "hook_source_sha256": "ad1605165f2f3ed6349cbb8c486bca0a2ea34c0dc0bf1ab0cd6770e8b8e61e06",
+      "manifest_sha256": "59db2758e6414ffeba6182e87b87e373dd01ac1368ec921332ce627d0e815d66",
+      "tool_versions": {
+        "assembler": "GNU assembler (GNU Binutils) 2.45",
+        "linker": "GNU ld (GNU Binutils) 2.45",
+        "objcopy": "GNU objcopy (GNU Binutils) 2.45",
+        "objdump": "GNU objdump (GNU Binutils) 2.45"
+      },
+      "verify_only": true,
+      "package_files_created": false
+    },
+    "v4": {
+      "input_sha256": "9d1610124ad98f6edae4540182205f06c9c703d9033ef0c4f19847193f95eaeb",
+      "prospective_output_sha256": "719b57c4fa0b94da60d73f0ed70b0d5dcd536c970e44054152a63b55d30a59e6",
+      "bytes": 111017984,
+      "decoded_output_sha256": "670c4cffe6876bd7a2aa27162b53aab56a36e48ec1894ca8463d1ad568ba1f2b",
+      "unchanged_components": 4,
+      "hook_source_sha256": "7006dea725075c4e7bc6d0825ddf48dc34a543ff26577452be2f480593c6a719",
+      "manifest_sha256": "9588c8081875873939e2366ccdf32b9152b7ab5644b3aca5c102fa43f4127b58",
+      "tool_versions": {
+        "assembler": "GNU assembler (GNU Binutils) 2.45",
+        "linker": "GNU ld (GNU Binutils) 2.45",
+        "objcopy": "GNU objcopy (GNU Binutils) 2.45",
+        "objdump": "GNU objdump (GNU Binutils) 2.45"
+      },
+      "verify_only": true,
+      "package_files_created": false
+    }
+  },
+  "own_guard_tests": {
+    "command": [
+      "python3 -m unittest discover -s tests -p test_ep7_hsl*.py",
+      "python3 -m unittest discover -s tests -p test_ep7_t27*.py"
+    ],
+    "legacy_tests": 18,
+    "T27_tests": 12,
+    "new_editor_only_guard_tests": 5,
+    "passed": true,
+    "scope": "Synthetic guard/tool tests, separate from real native machine-code tests"
+  },
+  "superseded_reference_audit": {
+    "status": "Paused when owner changed scope to editor-only A/B split; no candidate admitted",
+    "component2_kind": "0x106",
+    "component2_sha256": "d0c658cb00b32783e68bcba9e24b0e2a2d9077adf995126a3d7a70ebdca3ceba",
+    "raw_hits": [
+      {
+        "offset": "0x132a214",
+        "word": "0x61242ae7",
+        "container": "bank 4 / subentry 5",
+        "payload_offset": "0x11e07e0",
+        "payload_bytes": "0x200000",
+        "classification": "Unknown resource data; native type 0x8006 consumers identified, complete lifetime/mode use not proved"
+      },
+      {
+        "offset": "0x1d6ddb8",
+        "word": "0x40bde73f",
+        "container": "bank 7 / subentry 3",
+        "classification": "Inside zImage gzip member, not direct MN103 operand"
+      },
+      {
+        "offset": "0x1df49d4",
+        "word": "0x418c2df6",
+        "container": "bank 7 / subentry 3",
+        "classification": "Inside same zImage gzip member, not direct MN103 operand"
+      }
+    ],
+    "zImage": {
+      "payload_offset": "0x1cc37e0",
+      "payload_bytes": "0x1bd800",
+      "gzip_start": "0x4698",
+      "gzip_end_exclusive": "0x1bd6a4",
+      "gzip_CRC_ISIZE_verified": true,
+      "decoded_bytes": 3593176,
+      "decoded_sha256": "cfc019c2545b8179b6befc5e292eec57190bd023080541155fe4c05c7d8d2272",
+      "native_loader_call": "0x6005a47b -> 0x6015afd0, type 0x800e, entry 3, destination 0xc0008000"
+    },
+    "limit": "No safe-placement conclusion. Full boot/shoot/playback/menu/Wi-Fi/USB/update/suspend-wake lifetimes not covered; unadmitted vendor instructions remain."
+  },
+  "decision": {
+    "status": "capacity_gate_failed",
+    "release_manifest_generated": false,
+    "v5_installable": false,
+    "full_new_v5_GUI_rerun": false,
+    "reason": "User makes full v5 controls and release hash conditional on fitting; only new A native tests qualified here",
+    "new_area_admitted": false,
+    "installer_created": false,
+    "camera_connected": false,
+    "optional_cuts_implemented": false,
+    "owner_choice_needed": "ALL + held-OK gross 153 cannot close raw 834 deficit (681 remains even at zero disabling cost). Keep independent v4; decide whether to stop or authorize a fundamentally smaller editor design. No protection removal or additional-area search this round."
+  }
+}
